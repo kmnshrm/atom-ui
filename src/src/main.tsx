@@ -17,15 +17,13 @@ try {
 }
 
 try {
-  console.log("Attempting to render App...");
+  defineCustomElements(window).catch((err: any) => console.error("Loader error:", err));
+  
   createRoot(document.getElementById('root')!).render(
     <StrictMode>
       <App />
     </StrictMode>,
   )
-  defineCustomElements(window, {
-    resourcesUrl: '/exploration-project-tailwind/'
-  }).catch((err: any) => console.error("Loader error:", err));
 } catch (e) {
   console.error("Error during initialization:", e);
 }

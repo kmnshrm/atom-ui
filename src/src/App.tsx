@@ -13,6 +13,9 @@ export default function App() {
   const navRef = useRef<any>(null);
   const [collapsed, setCollapsed] = useState(false);
   const [activeItem, setActiveItem] = useState('home');
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+
+  const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
 
   useEffect(() => {
     if (navRef.current) {
@@ -75,7 +78,7 @@ export default function App() {
   };
 
   return (
-    <div className={`app-container layout-sidebar ${collapsed ? 'sidebar-collapsed' : ''}`}>
+    <div className={`app-container layout-sidebar ${collapsed ? 'sidebar-collapsed' : ''} theme-${theme}`}>
       {/* Sidebar Navigation */}
       <ui-navigation-bar 
         ref={navRef} 
@@ -83,7 +86,7 @@ export default function App() {
         orientation="vertical"
         collapsible="true"
         mode={collapsed ? 'collapsed' : 'expanded'}
-        theme="dark"
+        theme={theme}
         show-search="true"
         max-items="8"
         company-name="AetherUI"
@@ -119,6 +122,15 @@ export default function App() {
               <button className="p-2 hover:bg-[#222] rounded-full transition-colors text-gray-400 hover:text-white">
                 <ui-icon name="settings" size="20"></ui-icon>
               </button>
+              
+              <button 
+                onClick={toggleTheme}
+                className="p-2 hover:bg-[#222] rounded-full transition-colors text-gray-400 hover:text-white flex items-center gap-2"
+                title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              >
+                <ui-icon name={theme === 'dark' ? 'sun' : 'moon'} size="20"></ui-icon>
+              </button>
+              
               <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-purple-500 to-blue-500 border border-white/20"></div>
             </div>
           </header>

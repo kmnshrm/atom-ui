@@ -15,6 +15,28 @@
     background-color: var(--background);
     color: var(--text-primary);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .theme-light {
+    --background: #f9fafb;
+    --surface: #ffffff;
+    --surface-hover: #f3f4f6;
+    --primary: #111827;
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --border: #e5e7eb;
+  }
+
+  ui-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
