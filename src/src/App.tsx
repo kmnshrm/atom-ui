@@ -70,7 +70,7 @@ export default function App() {
   const navRef = useRef<any>(null);
   const [collapsed, setCollapsed] = useState(false);
   const [activeItem, setActiveItem] = useState('home');
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
 
@@ -160,24 +160,27 @@ export default function App() {
               <h1 className="text-lg font-medium capitalize">{activeItem.replace(/-/g, ' ')}</h1>
             </div>
             <div className="flex items-center gap-4">
-              <div className="relative">
-                <ui-icon name="search" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size="18" />
-                <input
-                  type="text"
-                  placeholder="Search components..."
-                  className="bg-[#111] border border-[#333] rounded-full py-2 pl-10 pr-4 text-sm focus:outline-none focus:border-green-500 transition-colors w-64"
-                />
-              </div>
-              <button className="p-2 hover:bg-[#222] rounded-full transition-colors text-gray-400 hover:text-white">
-                <ui-icon name="bell" size="20" />
-              </button>
-              <button
+              <ui-input
+                type="search"
+                placeholder="Search components..."
+                prefix-icon="search"
+                size="sm"
+                class="w-64"
+              />
+              <ui-button
+                icon="bell"
+                icon-only
+                shape="circle"
+                variant="ghost"
+              />
+              <ui-button
+                icon={theme === 'dark' ? 'sun' : 'moon'}
+                icon-only
+                shape="circle"
+                variant="ghost"
                 onClick={toggleTheme}
-                className="p-2 hover:bg-[#222] rounded-full transition-colors text-gray-400 hover:text-white"
                 title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-              >
-                <ui-icon name={theme === 'dark' ? 'sun' : 'moon'} size="20" />
-              </button>
+              />
               <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-purple-500 to-blue-500 border border-white/20" />
             </div>
           </header>
@@ -187,21 +190,30 @@ export default function App() {
         {isComponentPage && (
           <div className="cp-topbar">
             <div className="cp-topbar-breadcrumb">
-              <button className="cp-topbar-home" onClick={() => setActiveItem('home')}>
-                <ui-icon name="house" size="14" />
-              </button>
+              <ui-button
+                icon="house"
+                icon-only
+                shape="circle"
+                variant="ghost"
+                size="sm"
+                class="cp-topbar-home"
+                onClick={() => setActiveItem('home')}
+              />
               <ui-icon name="chevron-right" size="12" />
               <span className="cp-topbar-category">Components</span>
               <ui-icon name="chevron-right" size="12" />
               <span className="cp-topbar-current">{activeItem.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}</span>
             </div>
-            <button
+            <ui-button
+              icon={theme === 'dark' ? 'sun' : 'moon'}
+              icon-only
+              shape="circle"
+              variant="ghost"
+              size="sm"
+              class="cp-topbar-theme-btn"
               onClick={toggleTheme}
-              className="cp-topbar-theme-btn"
               title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            >
-              <ui-icon name={theme === 'dark' ? 'sun' : 'moon'} size="16" />
-            </button>
+            />
           </div>
         )}
 

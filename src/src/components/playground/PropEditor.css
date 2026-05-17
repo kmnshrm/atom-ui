@@ -229,21 +229,26 @@
   color: #f87171;
 }
 
+/* ui-dropdown: full width in prop editor panel */
+.pe-dropdown {
+  display: block;
+  width: 100%;
+}
+
+/* ui-input compact number variant */
+.pe-number-input {
+  display: inline-block;
+  width: 80px;
+  flex-shrink: 0;
+}
+
 /* Light Theme */
 .theme-light .pe-prop-name { color: rgba(0,0,0,0.6); }
 .theme-light .pe-input,
-.theme-light .pe-textarea,
 .theme-light .pe-json-textarea {
   border-color: rgba(0,0,0,0.1);
   background: rgba(255,255,255,0.8);
   color: #0f172a;
 }
 .theme-light .pe-input:focus { border-color: #059669; }
-.theme-light .pe-toggle { border-color: rgba(0,0,0,0.1); background: rgba(0,0,0,0.03); }
-.theme-light .pe-toggle--on { border-color: rgba(5,150,105,0.4); background: rgba(5,150,105,0.06); }
-.theme-light .pe-toggle-knob { background: rgba(0,0,0,0.2); }
-.theme-light .pe-toggle--on .pe-toggle-knob { background: #059669; }
-.theme-light .pe-option { border-color: rgba(0,0,0,0.08); color: rgba(0,0,0,0.45); background: rgba(0,0,0,0.02); }
-.theme-light .pe-option:hover { color: #000; border-color: rgba(0,0,0,0.2); }
-.theme-light .pe-option--active { border-color: #059669; background: rgba(5,150,105,0.07); color: #059669; }
 .theme-light .pe-json-textarea { background: #f8fafc; color: #059669; }

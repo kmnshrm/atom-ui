@@ -71,10 +71,15 @@ export default function CodePreview({ code, language = 'html' }: CodePreviewProp
     <div className="code-preview">
       <div className="code-preview-header">
         <span className="code-preview-lang">{language.toUpperCase()}</span>
-        <button className="code-preview-copy" onClick={handleCopy}>
-          <ui-icon name={copied ? 'check' : 'copy'} size="14" />
+        <ui-button
+          variant={copied ? 'success' : 'ghost'}
+          size="sm"
+          icon={copied ? 'check' : 'copy'}
+          class="code-preview-copy"
+          onClick={handleCopy}
+        >
           {copied ? 'Copied!' : 'Copy'}
-        </button>
+        </ui-button>
       </div>
       <pre className="code-preview-pre">
         <code>

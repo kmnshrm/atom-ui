@@ -87,7 +87,7 @@ export default function ComponentPlayground({
       {/* Header */}
       <div className="cp-header">
         <div className="cp-header-title">
-          <div className="cp-tag-badge">&lt;{tagName}&gt;</div>
+          <ui-tag label={`<${tagName}>`} color="success" />
           <h1 className="cp-component-name">{componentName}</h1>
         </div>
         <p className="cp-description">{description}</p>
@@ -115,10 +115,15 @@ export default function ComponentPlayground({
             <div className="cp-preview-label">
               <span>Live Preview</span>
               <div className="cp-preview-actions">
-                <button className="cp-icon-btn" onClick={handleCopyCode} title="Copy code">
-                  <ui-icon name={copiedCode ? 'check' : 'copy'} size="16" />
+                <ui-button
+                  variant={copiedCode ? 'success' : 'outline'}
+                  size="sm"
+                  icon={copiedCode ? 'check' : 'copy'}
+                  onClick={handleCopyCode}
+                  title="Copy code"
+                >
                   {copiedCode ? 'Copied!' : 'Copy Code'}
-                </button>
+                </ui-button>
               </div>
             </div>
             <div className="cp-preview-stage">
@@ -144,17 +149,19 @@ export default function ComponentPlayground({
               values={propValues}
               onChange={handlePropChange}
             />
-            <button
-              className="cp-reset-btn"
+            <ui-button
+              variant="ghost"
+              icon="rotate-ccw"
+              full-width
+              class="cp-reset-btn"
               onClick={() => {
                 const defaults: Record<string, any> = {};
                 propConfigs.forEach(p => { defaults[p.name] = p.defaultValue; });
                 setPropValues(defaults);
               }}
             >
-              <ui-icon name="rotate-ccw" size="14" />
               Reset to Defaults
-            </button>
+            </ui-button>
           </div>
         </div>
       )}
@@ -262,14 +269,22 @@ function ExampleCard({ example, index }: { example: ExampleConfig; index: number
           {example.description && <p className="cp-example-desc">{example.description}</p>}
         </div>
         <div className="cp-example-actions">
-          <button className="cp-icon-btn" onClick={handleCopy}>
-            <ui-icon name={copied ? 'check' : 'copy'} size="14" />
+          <ui-button
+            variant={copied ? 'success' : 'outline'}
+            size="sm"
+            icon={copied ? 'check' : 'copy'}
+            onClick={handleCopy}
+          >
             {copied ? 'Copied!' : 'Copy'}
-          </button>
-          <button className={`cp-icon-btn ${showCode ? 'cp-icon-btn--active' : ''}`} onClick={() => setShowCode(v => !v)}>
-            <ui-icon name="code-2" size="14" />
+          </ui-button>
+          <ui-button
+            variant={showCode ? 'primary' : 'outline'}
+            size="sm"
+            icon="code-2"
+            onClick={() => setShowCode(v => !v)}
+          >
             {showCode ? 'Hide Code' : 'Show Code'}
-          </button>
+          </ui-button>
         </div>
       </div>
 

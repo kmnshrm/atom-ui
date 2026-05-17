@@ -37,6 +37,47 @@ function PropControl({
     typeof value === 'object' ? JSON.stringify(value, null, 2) : ''
   );
 
+  // Stable callback ref — always points to the latest onChange
+  const onChangeRef = useRef(onChange);
+  onChangeRef.current = onChange;
+
+  // Refs for web components
+  const inputRef = useRef<any>(null);
+  const switchRef = useRef<any>(null);
+  const dropdownRef = useRef<any>(null);
+
+  // ui-input: fires uiInput with detail.value on every keystroke
+  useEffect(() => {
+    const el = inputRef.current;
+    if (!el) return;
+    const isNumber = config.type === 'number';
+    const handler = (e: any) =>
+      onChangeRef.current(isNumber ? Number(e.detail.value) : e.detail.value);
+    el.addEventListener('uiInput', handler);
+    return () => el.removeEventListener('uiInput', handler);
+  }, [config.type]);
+
+  // ui-switch: fires uiChange with detail.checked
+  useEffect(() => {
+    const el = switchRef.current;
+    if (!el) return;
+    const handler = (e: any) => onChangeRef.current(e.detail.checked);
+    el.addEventListener('uiChange', handler);
+    return () => el.removeEventListener('uiChange', handler);
+  }, []);
+
+  // ui-dropdown: set options property then listen for uiChange with detail.value
+  useEffect(() => {
+    const el = dropdownRef.current;
+    if (!el) return;
+    if (config.options) {
+      el.options = config.options.map((opt: string) => ({ value: opt, label: opt }));
+    }
+    const handler = (e: any) => onChangeRef.current(e.detail.value);
+    el.addEventListener('uiChange', handler);
+    return () => el.removeEventListener('uiChange', handler);
+  }, [config.options]);
+
   const handleJsonChange = (text: string) => {
     setJsonText(text);
     try {
@@ -58,44 +99,41 @@ function PropControl({
       </label>
 
       {config.type === 'boolean' && (
-        <button
-          className={`pe-toggle ${value ? 'pe-toggle--on' : ''}`}
-          onClick={() => onChange(!value)}
-          role="switch"
-          aria-checked={value}
-        >
-          <span className="pe-toggle-knob" />
-          <span className="pe-toggle-label">{value ? 'true' : 'false'}</span>
-        </button>
+        <ui-switch
+          ref={switchRef}
+          checked={value || undefined}
+          label={value ? 'true' : 'false'}
+          size="sm"
+          color="success"
+        />
       )}
 
       {config.type === 'string' && (
-        <input
-          className="pe-input"
-          type="text"
+        <ui-input
+          ref={inputRef}
           value={value ?? ''}
-          onChange={e => onChange(e.target.value)}
           placeholder={config.label}
+          size="sm"
         />
       )}
 
       {config.type === 'textarea' && (
-        <textarea
-          className="pe-textarea"
+        <ui-input
+          ref={inputRef}
           value={value ?? ''}
-          onChange={e => onChange(e.target.value)}
           placeholder={config.label}
-          rows={3}
+          size="sm"
         />
       )}
 
       {config.type === 'number' && (
         <div className="pe-number-row">
-          <input
-            className="pe-input pe-input--number"
+          <ui-input
+            ref={inputRef}
             type="number"
-            value={value ?? 0}
-            onChange={e => onChange(Number(e.target.value))}
+            value={String(value ?? 0)}
+            size="sm"
+            class="pe-number-input"
           />
           <input
             className="pe-range"
@@ -127,17 +165,13 @@ function PropControl({
       )}
 
       {config.type === 'select' && (
-        <div className="pe-select-group">
-          {config.options?.map(opt => (
-            <button
-              key={opt}
-              className={`pe-option ${value === opt ? 'pe-option--active' : ''}`}
-              onClick={() => onChange(opt)}
-            >
-              {opt}
-            </button>
-          ))}
-        </div>
+        <ui-dropdown
+          ref={dropdownRef}
+          value={value}
+          size="sm"
+          placeholder="Select..."
+          class="pe-dropdown"
+        />
       )}
 
       {config.type === 'json' && (
