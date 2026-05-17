@@ -7,13 +7,7 @@ export default function Home({ onNavigate }: { onNavigate?: (id: string) => void
     transition: { duration: 0.6 }
   };
 
-  const stagger = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
+
 
   const statsCards = [
     {

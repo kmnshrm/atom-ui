@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 
+// @ts-ignore
 import { defineCustomElements } from 'atomicuilibrary/loader'
 
 // Import a mock or real registerIconLibrary if available, 

@@ -6,5 +6,13 @@ export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
     exclude: ['atomicuilibrary']
+  },
+  server: {
+    fs: {
+      allow: [
+        '..',
+        'P:/Repository/stenciljs/atomicUILibrary'
+      ]
+    }
   }
 })

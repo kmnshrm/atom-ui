@@ -1,0 +1,249 @@
+/* PropEditor.css */
+
+.pe-root {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pe-control {
+  padding: 0.875rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.pe-control:last-child {
+  border-bottom: none;
+}
+
+.pe-label {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-bottom: 0.5rem;
+}
+
+.pe-prop-name {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.65);
+}
+
+.pe-prop-hint {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.35);
+  cursor: help;
+  flex-shrink: 0;
+}
+
+/* Input */
+.pe-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.85);
+  font-size: 0.82rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+
+.pe-input:focus {
+  border-color: #34d399;
+  background: rgba(52, 211, 153, 0.04);
+}
+
+.pe-textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.85);
+  font-size: 0.82rem;
+  font-family: inherit;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+
+.pe-textarea:focus {
+  border-color: #34d399;
+}
+
+/* Toggle */
+.pe-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.35rem 0.75rem 0.35rem 0.35rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  cursor: pointer;
+  transition: all 0.2s;
+  width: fit-content;
+}
+
+.pe-toggle--on {
+  border-color: rgba(52, 211, 153, 0.4);
+  background: rgba(52, 211, 153, 0.08);
+}
+
+.pe-toggle-knob {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.pe-toggle--on .pe-toggle-knob {
+  background: #34d399;
+}
+
+.pe-toggle-label {
+  font-size: 0.78rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: rgba(255,255,255,0.5);
+}
+
+.pe-toggle--on .pe-toggle-label {
+  color: #34d399;
+}
+
+/* Number */
+.pe-number-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pe-input--number {
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.pe-range {
+  flex: 1;
+  accent-color: #34d399;
+  cursor: pointer;
+}
+
+/* Color */
+.pe-color-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pe-color-picker {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 2px;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.pe-input--color-text {
+  flex: 1;
+}
+
+/* Select Group */
+.pe-select-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.pe-option {
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  color: rgba(255,255,255,0.45);
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.pe-option:hover {
+  border-color: rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.8);
+}
+
+.pe-option--active {
+  border-color: #34d399;
+  background: rgba(52, 211, 153, 0.1);
+  color: #34d399;
+}
+
+/* JSON Editor */
+.pe-json-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.pe-json-textarea {
+  width: 100%;
+  padding: 0.625rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: #0d0d14;
+  color: #a7f3d0;
+  font-size: 0.78rem;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  line-height: 1.6;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+
+.pe-json-textarea:focus {
+  border-color: #34d399;
+}
+
+.pe-json-textarea--error {
+  border-color: #f87171 !important;
+}
+
+.pe-json-error {
+  font-size: 0.72rem;
+  color: #f87171;
+}
+
+/* Light Theme */
+.theme-light .pe-prop-name { color: rgba(0,0,0,0.6); }
+.theme-light .pe-input,
+.theme-light .pe-textarea,
+.theme-light .pe-json-textarea {
+  border-color: rgba(0,0,0,0.1);
+  background: rgba(255,255,255,0.8);
+  color: #0f172a;
+}
+.theme-light .pe-input:focus { border-color: #059669; }
+.theme-light .pe-toggle { border-color: rgba(0,0,0,0.1); background: rgba(0,0,0,0.03); }
+.theme-light .pe-toggle--on { border-color: rgba(5,150,105,0.4); background: rgba(5,150,105,0.06); }
+.theme-light .pe-toggle-knob { background: rgba(0,0,0,0.2); }
+.theme-light .pe-toggle--on .pe-toggle-knob { background: #059669; }
+.theme-light .pe-option { border-color: rgba(0,0,0,0.08); color: rgba(0,0,0,0.45); background: rgba(0,0,0,0.02); }
+.theme-light .pe-option:hover { color: #000; border-color: rgba(0,0,0,0.2); }
+.theme-light .pe-option--active { border-color: #059669; background: rgba(5,150,105,0.07); color: #059669; }
+.theme-light .pe-json-textarea { background: #f8fafc; color: #059669; }

@@ -1,0 +1,64 @@
+/* CodePreview.css */
+
+.code-preview {
+  background: #0d0d14;
+  border-radius: 0;
+  overflow: hidden;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+}
+
+.code-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.code-preview-lang {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.2);
+}
+
+.code-preview-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: transparent;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+
+.code-preview-copy:hover {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.8);
+}
+
+.code-preview-pre {
+  margin: 0;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: #e2e8f0;
+  white-space: pre;
+  tab-size: 2;
+}
+
+/* Syntax Tokens */
+.token-tag { color: #60a5fa; }
+.token-attr-name { color: #f9a8d4; }
+.token-attr-value { color: #86efac; }
+.token-punctuation { color: #64748b; }
+.token-comment { color: #475569; font-style: italic; }
+.token-jsx-expr { color: #fbbf24; }
+.token-text { color: #cbd5e1; }

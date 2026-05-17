@@ -1,0 +1,292 @@
+import { useState, useRef, useEffect } from 'react';
+import PropEditor from './PropEditor';
+import CodePreview from './CodePreview';
+import DemoRenderer from './DemoRenderer';
+import './ComponentPlayground.css';
+
+export interface PropConfig {
+  name: string;
+  type: 'string' | 'boolean' | 'number' | 'select' | 'color' | 'json' | 'textarea';
+  label: string;
+  defaultValue: any;
+  options?: string[];
+  description?: string;
+}
+
+export interface ExampleConfig {
+  title: string;
+  description?: string;
+  code: string;
+  render: () => React.ReactNode;
+}
+
+export interface DemoSection {
+  title: string;
+  description?: string;
+  /** Raw HTML string from the original JS demo files */
+  html: string;
+}
+
+export interface DocSection {
+  title: string;
+  content: string;
+}
+
+export interface ComponentPlaygroundProps {
+  componentName: string;
+  tagName: string;
+  description: string;
+  props: PropConfig[];
+  renderPreview: (props: Record<string, any>) => React.ReactNode;
+  buildCode: (props: Record<string, any>) => string;
+  docs: DocSection[];
+  examples: ExampleConfig[];
+  /** Raw HTML demo sections pulled from the original demo JS files */
+  demoSections?: DemoSection[];
+}
+
+export default function ComponentPlayground({
+  componentName,
+  tagName,
+  description,
+  props: propConfigs,
+  renderPreview,
+  buildCode,
+  docs,
+  examples,
+  demoSections = [],
+}: ComponentPlaygroundProps) {
+  const [activeTab, setActiveTab] = useState<'playground' | 'docs' | 'examples' | 'demos'>('playground');
+  const [propValues, setPropValues] = useState<Record<string, any>>(() => {
+    const defaults: Record<string, any> = {};
+    propConfigs.forEach(p => { defaults[p.name] = p.defaultValue; });
+    return defaults;
+  });
+  const [copiedCode, setCopiedCode] = useState(false);
+
+  const handlePropChange = (name: string, value: any) => {
+    setPropValues(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleCopyCode = () => {
+    navigator.clipboard.writeText(buildCode(propValues));
+    setCopiedCode(true);
+    setTimeout(() => setCopiedCode(false), 2000);
+  };
+
+  const tabs = [
+    { id: 'playground', label: 'Design Studio', icon: 'sliders-horizontal' },
+    { id: 'docs', label: 'Documentation', icon: 'book-open' },
+    { id: 'examples', label: 'Examples', icon: 'code-2' },
+    ...(demoSections.length > 0 ? [{ id: 'demos', label: 'Live Demos', icon: 'play-circle' }] : []),
+  ] as const;
+
+
+  return (
+    <div className="cp-root">
+      {/* Header */}
+      <div className="cp-header">
+        <div className="cp-header-title">
+          <div className="cp-tag-badge">&lt;{tagName}&gt;</div>
+          <h1 className="cp-component-name">{componentName}</h1>
+        </div>
+        <p className="cp-description">{description}</p>
+
+        {/* Tabs */}
+        <div className="cp-tabs">
+          {tabs.map(tab => (
+            <button
+              key={tab.id}
+              className={`cp-tab ${activeTab === tab.id ? 'cp-tab--active' : ''}`}
+              onClick={() => setActiveTab(tab.id)}
+            >
+              <ui-icon name={tab.icon} size="16" />
+              {tab.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Playground Tab */}
+      {activeTab === 'playground' && (
+        <div className="cp-playground-layout">
+          {/* Preview Panel */}
+          <div className="cp-preview-panel">
+            <div className="cp-preview-label">
+              <span>Live Preview</span>
+              <div className="cp-preview-actions">
+                <button className="cp-icon-btn" onClick={handleCopyCode} title="Copy code">
+                  <ui-icon name={copiedCode ? 'check' : 'copy'} size="16" />
+                  {copiedCode ? 'Copied!' : 'Copy Code'}
+                </button>
+              </div>
+            </div>
+            <div className="cp-preview-stage">
+              <div className="cp-preview-grid-bg" />
+              <div className="cp-preview-content">
+                {renderPreview(propValues)}
+              </div>
+            </div>
+            {/* Code Preview */}
+            <div className="cp-code-section">
+              <CodePreview code={buildCode(propValues)} language="html" />
+            </div>
+          </div>
+
+          {/* Controls Panel */}
+          <div className="cp-controls-panel">
+            <div className="cp-controls-header">
+              <ui-icon name="settings-2" size="16" />
+              <span>Properties</span>
+            </div>
+            <PropEditor
+              propConfigs={propConfigs}
+              values={propValues}
+              onChange={handlePropChange}
+            />
+            <button
+              className="cp-reset-btn"
+              onClick={() => {
+                const defaults: Record<string, any> = {};
+                propConfigs.forEach(p => { defaults[p.name] = p.defaultValue; });
+                setPropValues(defaults);
+              }}
+            >
+              <ui-icon name="rotate-ccw" size="14" />
+              Reset to Defaults
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Docs Tab */}
+      {activeTab === 'docs' && (
+        <div className="cp-docs-layout">
+          <div className="cp-docs-content">
+            {/* Props Table */}
+            <section className="cp-docs-section">
+              <h2 className="cp-docs-section-title">
+                <ui-icon name="list" size="18" />
+                Props Reference
+              </h2>
+              <div className="cp-props-table-wrapper">
+                <table className="cp-props-table">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Type</th>
+                      <th>Default</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {propConfigs.map(prop => (
+                      <tr key={prop.name}>
+                        <td><code className="cp-code-inline">{prop.name}</code></td>
+                        <td><span className="cp-type-badge">{prop.type === 'select' ? prop.options?.join(' | ') : prop.type}</span></td>
+                        <td><code className="cp-code-inline">{String(prop.defaultValue)}</code></td>
+                        <td className="cp-prop-desc">{prop.description || '—'}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* Doc Sections */}
+            {docs.map((section, i) => (
+              <section key={i} className="cp-docs-section">
+                <h2 className="cp-docs-section-title">
+                  <ui-icon name="file-text" size="18" />
+                  {section.title}
+                </h2>
+                <div className="cp-docs-text" dangerouslySetInnerHTML={{ __html: section.content }} />
+              </section>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Examples Tab */}
+      {activeTab === 'examples' && (
+        <div className="cp-examples-layout">
+          {examples.map((example, i) => (
+            <ExampleCard key={i} example={example} index={i} />
+          ))}
+        </div>
+      )}
+
+      {/* Live Demos Tab — raw HTML from original demo files */}
+      {activeTab === 'demos' && (
+        <div className="cp-demos-layout">
+          <div className="cp-demos-intro">
+            <ui-icon name="play-circle" size="18" />
+            <span>Real demos ported directly from the <code>{tagName}</code> demo files</span>
+          </div>
+          {demoSections.map((section, i) => (
+            <div key={i} className="cp-demo-section">
+              <div className="cp-demo-section-header">
+                <span className="cp-demo-section-number">{i + 1}</span>
+                <div>
+                  <h3 className="cp-demo-section-title">{section.title}</h3>
+                  {section.description && <p className="cp-demo-section-desc">{section.description}</p>}
+                </div>
+              </div>
+              <div className="cp-demo-section-body">
+                <DemoRenderer html={section.html} />
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function ExampleCard({ example, index }: { example: ExampleConfig; index: number }) {
+  const [showCode, setShowCode] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(example.code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="cp-example-card">
+      <div className="cp-example-header">
+        <div>
+          <div className="cp-example-number">Example {index + 1}</div>
+          <h3 className="cp-example-title">{example.title}</h3>
+          {example.description && <p className="cp-example-desc">{example.description}</p>}
+        </div>
+        <div className="cp-example-actions">
+          <button className="cp-icon-btn" onClick={handleCopy}>
+            <ui-icon name={copied ? 'check' : 'copy'} size="14" />
+            {copied ? 'Copied!' : 'Copy'}
+          </button>
+          <button className={`cp-icon-btn ${showCode ? 'cp-icon-btn--active' : ''}`} onClick={() => setShowCode(v => !v)}>
+            <ui-icon name="code-2" size="14" />
+            {showCode ? 'Hide Code' : 'Show Code'}
+          </button>
+        </div>
+      </div>
+
+      {/* Preview */}
+      <div className="cp-example-preview">
+        <div className="cp-preview-grid-bg" />
+        <div className="cp-preview-content">
+          {example.render()}
+        </div>
+      </div>
+
+      {/* Code */}
+      {showCode && (
+        <div className="cp-example-code">
+          <CodePreview code={example.code} language="html" />
+        </div>
+      )}
+    </div>
+  );
+}
