@@ -31,6 +31,7 @@ const buildCode = (p: Record<string, any>) => {
 const renderPreview = (p: Record<string, any>) => (
   <div style={{ width: p.variant === 'circular' ? 'auto' : '320px' }}>
     <ui-progress
+      key={JSON.stringify(p)}
       value={String(p.value)}
       max={String(p.max)}
       variant={p.variant}

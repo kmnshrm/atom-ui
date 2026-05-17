@@ -252,3 +252,89 @@
 }
 .theme-light .pe-input:focus { border-color: #059669; }
 .theme-light .pe-json-textarea { background: #f8fafc; color: #059669; }
+
+/* =========================================================================
+   Intelligent Segregation Layouts (Accordions & Dense Grids)
+   ========================================================================= */
+.pe-accordion {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.pe-accordion:last-child {
+  border-bottom: none;
+}
+
+.pe-accordion-header {
+  list-style: none; /* Hide default arrow */
+  cursor: pointer;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.9);
+  user-select: none;
+}
+
+.pe-accordion-header::-webkit-details-marker {
+  display: none;
+}
+
+.pe-accordion-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pe-accordion-badge {
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
+  padding: 0.15rem 0.4rem;
+  border-radius: 99px;
+  font-size: 0.65rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.pe-accordion-body {
+  padding-bottom: 1.25rem;
+}
+
+/* Dense 2-Column Grid for Selects & Inputs */
+.pe-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem 1rem;
+}
+
+.pe-grid-2 .pe-control {
+  border-bottom: none;
+  padding: 0;
+}
+
+/* Super Dense Wrap for Booleans */
+.pe-booleans-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 1.25rem;
+}
+
+.pe-booleans-wrap .pe-control {
+  border-bottom: none;
+  padding: 0;
+  width: auto;
+}
+
+/* Light Theme Overrides for Segregation Layout */
+.theme-light .pe-accordion {
+  border-bottom-color: rgba(0,0,0,0.06);
+}
+
+.theme-light .pe-accordion-header {
+  color: #1e293b;
+}
+
+.theme-light .pe-accordion-badge {
+  background: rgba(0,0,0,0.06);
+  color: #475569;
+}

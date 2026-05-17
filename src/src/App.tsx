@@ -17,6 +17,11 @@ const AvatarPage = lazy(() => import('./pages/components/AvatarPage'));
 const BadgePage = lazy(() => import('./pages/components/BadgePage'));
 const ProgressPage = lazy(() => import('./pages/components/ProgressPage'));
 const SwitchPage = lazy(() => import('./pages/components/SwitchPage'));
+const RadioPage = lazy(() => import('./pages/components/RadioPage'));
+const AccordionPage = lazy(() => import('./pages/components/AccordionPage'));
+const ButtonTogglePage = lazy(() => import('./pages/components/ButtonTogglePage'));
+const DropdownPage = lazy(() => import('./pages/components/DropdownPage'));
+const DynamicComponentPage = lazy(() => import('./pages/components/DynamicComponentPage'));
 
 // Map nav IDs → component pages
 const COMPONENT_PAGES: Record<string, React.ComponentType> = {
@@ -28,6 +33,11 @@ const COMPONENT_PAGES: Record<string, React.ComponentType> = {
   badge: BadgePage,
   progress: ProgressPage,
   switch: SwitchPage,
+  radio: RadioPage,
+  accordion: AccordionPage,
+  accordian: AccordionPage,
+  'button-toggle': ButtonTogglePage,
+  dropdown: DropdownPage,
 };
 
 // All nav IDs that are component pages
@@ -68,11 +78,16 @@ function ComponentPlaceholder({ id }: { id: string }) {
 
 export default function App() {
   const navRef = useRef<any>(null);
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const [activeItem, setActiveItem] = useState('home');
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+
+  useEffect(() => {
+    document.body.classList.remove('theme-light', 'theme-dark');
+    document.body.classList.add(`theme-${theme}`);
+  }, [theme]);
 
   useEffect(() => {
     if (navRef.current) {
@@ -122,12 +137,23 @@ export default function App() {
       );
     }
 
-    // Placeholder for unmapped components
+    // Fallback to Dynamic Design Studio for all other library components
+    const isStatic = ['home', 'overview', 'documentation', 'design-house', 'installation', 'components-guide'].includes(activeItem);
+    if (!isStatic) {
+      return (
+        <Suspense fallback={<PageLoader />}>
+          <DynamicComponentPage id={activeItem} />
+        </Suspense>
+      );
+    }
+
+    // Placeholder for other elements
     return <ComponentPlaceholder id={activeItem} />;
   };
 
   const isHome = activeItem === 'home';
-  const isComponentPage = COMPONENT_IDS.has(activeItem);
+  const isStaticPage = ['home', 'overview', 'documentation', 'design-house', 'installation', 'components-guide'].includes(activeItem);
+  const isComponentPage = !isStaticPage;
 
   return (
     <div className={`app-container layout-sidebar ${collapsed ? 'sidebar-collapsed' : ''} theme-${theme}`}>

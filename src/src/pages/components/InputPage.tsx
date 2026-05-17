@@ -39,6 +39,7 @@ const buildCode = (p: Record<string, any>) => {
 const renderPreview = (p: Record<string, any>) => (
   <div style={{ width: '320px' }}>
     <ui-input
+      key={JSON.stringify(p)}
       type={p.type}
       label={p.label}
       placeholder={p.placeholder}

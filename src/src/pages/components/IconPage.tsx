@@ -20,6 +20,7 @@ const buildCode = (p: Record<string, any>) => {
 
 const renderPreview = (p: Record<string, any>) => (
   <ui-icon
+    key={JSON.stringify(p)}
     name={p.name}
     size={String(p.size)}
     color={p.color}

@@ -14,11 +14,18 @@
 }
 
 /* Update app-container to not max-width inside the flex layout directly, or handle it here */
+#root {
+  height: 100vh !important;
+  max-height: 100vh !important;
+  overflow: hidden !important;
+}
+
 .app-container {
   display: flex;
-  height: 100vh;
+  height: 100vh !important;
+  max-height: 100vh !important;
   width: 100vw;
-  overflow: hidden;
+  overflow: hidden !important;
   background-color: var(--background);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;

@@ -1,0 +1,326 @@
+import { getPropsForComponent, getDescriptionForComponent, getDemosForComponent } from '../../utils/componentMetadata';
+import ComponentPlayground from '../../components/playground/ComponentPlayground';
+import type { PropConfig, ExampleConfig, DocSection } from '../../components/playground/ComponentPlayground';
+
+interface DynamicMetadata {
+  description: string;
+  props: PropConfig[];
+  children?: string; // Optional inner text/HTML for the element
+}
+
+const tagNameMap: Record<string, string> = {
+  aside: 'ui-aside-panel',
+  dialog: 'ui-dialog-box',
+};
+
+const componentRegistry: Record<string, DynamicMetadata> = {
+  card: {
+    description: 'A premium layout card with elevate, padding, and hover effect controls.',
+    props: [
+      { name: 'header', type: 'string', label: 'Header Text', defaultValue: 'Card Header', description: 'Header of the card' },
+      { name: 'footer', type: 'string', label: 'Footer Text', defaultValue: 'Card Footer', description: 'Footer of the card' },
+      { name: 'elevation', type: 'number', label: 'Elevation (0-5)', defaultValue: 1, description: 'Shadow depth' },
+      { name: 'hoverable', type: 'boolean', label: 'Hoverable', defaultValue: true, description: 'Enables scaling and shadow shift on hover' },
+      { name: 'border', type: 'boolean', label: 'Border', defaultValue: false, description: 'Shows border outline' },
+    ],
+    children: 'This is the main card body content. You can drop any HTML or text inside the default slot.',
+  },
+  divider: {
+    description: 'A clean divider separator supporting standard, dotted, or dashed lines.',
+    props: [
+      { name: 'variant', type: 'select', label: 'Variant', defaultValue: 'solid', options: ['solid', 'dashed', 'dotted'], description: 'Visual stroke style' },
+      { name: 'color', type: 'select', label: 'Color', defaultValue: 'primary', options: ['primary', 'secondary', 'success', 'warning', 'danger', 'info'], description: 'Color override' },
+      { name: 'spacing', type: 'select', label: 'Spacing', defaultValue: 'md', options: ['xs', 'sm', 'md', 'lg', 'xl'], description: 'Vertical spacing padding' },
+    ],
+  },
+  rating: {
+    description: 'A premium star rating component supporting fully customizable ratings and color states.',
+    props: [
+      { name: 'value', type: 'number', label: 'Rating Value', defaultValue: 3, description: 'Active rating value' },
+      { name: 'max', type: 'number', label: 'Max Stars', defaultValue: 5, description: 'Maximum stars allowed' },
+      { name: 'color', type: 'select', label: 'Color', defaultValue: 'warning', options: ['primary', 'success', 'warning', 'danger', 'info'], description: 'Active icon color' },
+      { name: 'readonly', type: 'boolean', label: 'Read-only', defaultValue: false, description: 'Disables modification of rating' },
+    ],
+  },
+  knob: {
+    description: 'A circular gauge/knob control for elegant volume, parameter, or analytical telemetry input.',
+    props: [
+      { name: 'value', type: 'number', label: 'Knob Value', defaultValue: 45, description: 'Current value' },
+      { name: 'min', type: 'number', label: 'Minimum', defaultValue: 0, description: 'Minimum bounds' },
+      { name: 'max', type: 'number', label: 'Maximum', defaultValue: 100, description: 'Maximum bounds' },
+      { name: 'color', type: 'select', label: 'Color', defaultValue: 'success', options: ['primary', 'secondary', 'success', 'warning', 'danger', 'info'], description: 'Indicator track color' },
+    ],
+  },
+  'otp-input': {
+    description: 'Secure, high-fidelity One-Time-Password inputs with automated shift focus.',
+    props: [
+      { name: 'length', type: 'number', label: 'OTP Length', defaultValue: 6, description: 'Number of passcode boxes' },
+      { name: 'placeholder', type: 'string', label: 'Placeholder', defaultValue: '-', description: 'Single box empty character' },
+      { name: 'disabled', type: 'boolean', label: 'Disabled', defaultValue: false, description: 'Disables all inputs' },
+    ],
+  },
+  'pattern-input': {
+    description: 'Regular-expression validation inputs supporting customizable regex format structures.',
+    props: [
+      { name: 'pattern', type: 'string', label: 'Regex Pattern', defaultValue: '^[0-9]*$', description: 'Regex validation string' },
+      { name: 'placeholder', type: 'string', label: 'Placeholder', defaultValue: 'Numbers only...', description: 'Input placeholder text' },
+      { name: 'error-msg', type: 'string', label: 'Error Message', defaultValue: 'Invalid input pattern', description: 'Shown on validation error' },
+    ],
+  },
+  'range-slider': {
+    description: 'Premium dual-handle range selectors for filtering numerical ranges.',
+    props: [
+      { name: 'min', type: 'number', label: 'Min Value', defaultValue: 0, description: 'Minimum bound' },
+      { name: 'max', type: 'number', label: 'Max Value', defaultValue: 100, description: 'Maximum bound' },
+      { name: 'value', type: 'number', label: 'Value', defaultValue: 50, description: 'Current active value' },
+      { name: 'color', type: 'select', label: 'Color', defaultValue: 'primary', options: ['primary', 'success', 'warning', 'danger', 'info'], description: 'Active slide color' },
+    ],
+  },
+  tag: {
+    description: 'Premium visual label tags supporting custom variants, shapes, and badges.',
+    props: [
+      { name: 'label', type: 'string', label: 'Tag Label', defaultValue: 'Beta v1.0', description: 'Displayed text inside tag' },
+      { name: 'variant', type: 'select', label: 'Variant', defaultValue: 'soft', options: ['filled', 'outline', 'soft', 'raised'], description: 'Visual style' },
+      { name: 'color', type: 'select', label: 'Color', defaultValue: 'info', options: ['primary', 'secondary', 'success', 'warning', 'danger', 'info'], description: 'Accent theme color' },
+      { name: 'rounded', type: 'boolean', label: 'Rounded/Pill', defaultValue: true, description: 'Fully rounded corners' },
+    ],
+  },
+  skeleton: {
+    description: 'Premium placeholder loaders mirroring final layouts during API fetch.',
+    props: [
+      { name: 'variant', type: 'select', label: 'Variant', defaultValue: 'rectangular', options: ['text', 'circular', 'rectangular'], description: 'Visual shape' },
+      { name: 'animation', type: 'select', label: 'Animation', defaultValue: 'pulse', options: ['pulse', 'wave', 'none'], description: 'Loading shimmer effect' },
+      { name: 'width', type: 'string', label: 'Width', defaultValue: '100%', description: 'Width constraint' },
+      { name: 'height', type: 'string', label: 'Height', defaultValue: '60px', description: 'Height constraint' },
+    ],
+  },
+  tooltip: {
+    description: 'State-of-the-art interactive tooltips showing helpful hints on hover.',
+    props: [
+      { name: 'content', type: 'string', label: 'Tooltip Hint', defaultValue: 'Helpful information popup!', description: 'Popup text content' },
+      { name: 'position', type: 'select', label: 'Position', defaultValue: 'top', options: ['top', 'bottom', 'left', 'right'], description: 'Placement direction' },
+    ],
+    children: '<ui-button variant="outline">Hover Over Me</ui-button>',
+  },
+  'advanced-data-table': {
+    description: 'Enterprise-grade advanced data table with pagination, column sorting, resizing, filtering, and rich cells.',
+    props: [
+      { name: 'bordered', type: 'boolean', label: 'Bordered', defaultValue: true, description: 'Shows borders around cells' },
+      { name: 'striped', type: 'boolean', label: 'Striped', defaultValue: true, description: 'Alternate row backgrounds' },
+      { name: 'hoverable', type: 'boolean', label: 'Hoverable', defaultValue: true, description: 'Highlight row on hover' },
+      { name: 'searchable', type: 'boolean', label: 'Searchable', defaultValue: true, description: 'Shows global search input' },
+      { name: 'filterable', type: 'boolean', label: 'Filterable', defaultValue: true, description: 'Allows column-based filtering' },
+      { name: 'sortable', type: 'boolean', label: 'Sortable', defaultValue: true, description: 'Allows column-based sorting' },
+      { name: 'pagination', type: 'boolean', label: 'Pagination', defaultValue: true, description: 'Shows pagination controls' },
+      { name: 'columns', type: 'json', label: 'Columns Definition', defaultValue: [
+        { field: 'name', header: 'Name', sortable: true, filterable: true },
+        { field: 'role', header: 'Role', sortable: true, filterable: true },
+        { field: 'status', header: 'Status', sortable: true }
+      ], description: 'Table column definitions' },
+      { name: 'data', type: 'json', label: 'Table Data', defaultValue: [
+        { id: 1, name: 'Praveen Rajkumar', role: 'Architect', status: 'Active' },
+        { id: 2, name: 'Sarah Chen', role: 'Developer', status: 'Away' },
+        { id: 3, name: 'Alex Johnson', role: 'Designer', status: 'Active' }
+      ], description: 'Table rows data' }
+    ]
+  },
+  'transfer-list': {
+    description: 'High-performance interactive dual transfer lists supporting search, reordering, and item movement.',
+    props: [
+      { name: 'searchable', type: 'boolean', label: 'Searchable', defaultValue: true, description: 'Enables search filtering' },
+      { name: 'allowReorder', type: 'boolean', label: 'Allow Reorder', defaultValue: true, description: 'Enables reordering of target list items' },
+      { name: 'oneWay', type: 'boolean', label: 'One Way', defaultValue: false, description: 'Target items are copied instead of moved' },
+      { name: 'titles', type: 'json', label: 'Titles', defaultValue: ['Available Roles', 'Assigned Roles'], description: 'Left and right header titles' },
+      { name: 'sourceItems', type: 'json', label: 'Source Items', defaultValue: [
+        { id: '1', label: 'Software Engineer', value: 'swe' },
+        { id: '2', label: 'Product Manager', value: 'pm' },
+        { id: '3', label: 'UX Designer', value: 'uxd' },
+        { id: '4', label: 'QA Engineer', value: 'qa' }
+      ], description: 'Items in left list' },
+      { name: 'targetItems', type: 'json', label: 'Target Items', defaultValue: [
+        { id: '5', label: 'Data Analyst', value: 'da' }
+      ], description: 'Items in right list' }
+    ]
+  },
+  tree: {
+    description: 'Hierarchical tree diagram supporting node expansion, collapse, and multi-level nesting.',
+    props: [
+      { name: 'data', type: 'json', label: 'Tree Data', defaultValue: [
+        { id: '1', label: 'Root Folder', children: [
+          { id: '1-1', label: 'Subfolder A', children: [
+            { id: '1-1-1', label: 'File 1.txt' }
+          ] },
+          { id: '1-2', label: 'File 2.txt' }
+        ] }
+      ], description: 'Tree node structure' }
+    ]
+  },
+  carousel: {
+    description: 'High-end responsive carousel slider supporting auto-play, touch swipe, and custom overlays.',
+    props: [
+      { name: 'autoplay', type: 'boolean', label: 'Auto-play', defaultValue: true, description: 'Automatically cycles slides' },
+      { name: 'interval', type: 'number', label: 'Slide Interval (ms)', defaultValue: 3000, description: 'Time per slide' },
+      { name: 'images', type: 'json', label: 'Images List', defaultValue: [
+        'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1511497584788-876760111969?w=800&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&auto=format&fit=crop'
+      ], description: 'List of slide image URLs' }
+    ]
+  },
+  masonry: {
+    description: 'A responsive masonry grid layout with infinite scroll, responsive columns, and selection overlays.',
+    props: [
+      { name: 'columns', type: 'number', label: 'Columns', defaultValue: 3, description: 'Number of columns' },
+      { name: 'gap', type: 'number', label: 'Item Gap (px)', defaultValue: 16, description: 'Gap between items' },
+      { name: 'layoutType', type: 'select', label: 'Layout Type', defaultValue: 'masonry', options: ['masonry', 'grid', 'columns'], description: 'Layout engine type' },
+      { name: 'selectable', type: 'boolean', label: 'Selectable Items', defaultValue: true, description: 'Shows checkboxes on hover' },
+      { name: 'showFilters', type: 'boolean', label: 'Show Category Filters', defaultValue: true, description: 'Displays filtering tabs' },
+      { name: 'filterOptions', type: 'json', label: 'Filter Tabs', defaultValue: [
+        { key: 'all', label: 'All Images' },
+        { key: 'nature', label: 'Nature' },
+        { key: 'urban', label: 'Urban' }
+      ], description: 'Filter options' },
+      { name: 'items', type: 'json', label: 'Masonry Items', defaultValue: [
+        { id: 1, title: 'Mountain Lake', category: 'nature', image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=500&auto=format&fit=crop' },
+        { id: 2, title: 'Urban Skyline', category: 'urban', image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=500&auto=format&fit=crop' },
+        { id: 3, title: 'Forest Pathway', category: 'nature', image: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=500&auto=format&fit=crop' },
+        { id: 4, title: 'Neon Street', category: 'urban', image: 'https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=500&auto=format&fit=crop' }
+      ], description: 'List of items to render' }
+    ]
+  },
+  aside: {
+    description: 'A slide-in auxiliary panel supporting resizing, blurred glass overlays, and slide-in directions.',
+    props: [
+      { name: 'open', type: 'boolean', label: 'Panel Open', defaultValue: true, description: 'Shows the slide-in panel' },
+      { name: 'direction', type: 'select', label: 'Slide Direction', defaultValue: 'right', options: ['left', 'right', 'top', 'bottom'], description: 'Which edge the panel slides out of' },
+      { name: 'size', type: 'string', label: 'Panel Size', defaultValue: '320px', description: 'Width or height constraint' },
+      { name: 'resizable', type: 'boolean', label: 'Resizable', defaultValue: true, description: 'User can drag the edge to resize' },
+      { name: 'variant', type: 'select', label: 'Visual Variant', defaultValue: 'glass', options: ['default', 'glass'], description: 'Backdrop texture styling' },
+      { name: 'backdropBlur', type: 'string', label: 'Backdrop Blur', defaultValue: '8px', description: 'CSS blur filter' }
+    ],
+    children: `
+      <div style="padding: 24px; color: white;">
+        <h3 style="margin-top: 0; font-size: 1.25rem; font-weight: 600; color: #10B981;">Aside Panel Drawer</h3>
+        <p style="font-size: 0.875rem; color: #9CA3AF; margin-bottom: 24px;">This is the content inside the custom slide-out drawer panel. You can drop any HTML or React content inside.</p>
+        <ui-button variant="filled" color="success">Perform Action</ui-button>
+      </div>
+    `
+  },
+  dialog: {
+    description: 'A modal pop-up box with click overlay locks and high-fidelity trigger animations.',
+    props: [
+      { name: 'open', type: 'boolean', label: 'Dialog Open', defaultValue: true, description: 'Opens the modal popup window' },
+      { name: 'title', type: 'string', label: 'Modal Title', defaultValue: 'Confirm Action', description: 'Title header' },
+      { name: 'size', type: 'select', label: 'Modal Size', defaultValue: 'md', options: ['sm', 'md', 'lg', 'xl'], description: 'Dialog size bounds' }
+    ],
+    children: `
+      <div style="padding: 24px; color: white;">
+        <p style="margin: 0 0 24px 0; font-size: 0.875rem; color: #9CA3AF;">Are you sure you want to proceed? This will execute the database migration and publish changes to production.</p>
+        <div style="display: flex; justify-content: flex-end; gap: 12px;">
+          <ui-button variant="outline">Cancel</ui-button>
+          <ui-button variant="filled" color="danger">Confirm & Execute</ui-button>
+        </div>
+      </div>
+    `
+  }
+};
+
+export default function DynamicComponentPage({ id }: { id: string }) {
+  const tagName = tagNameMap[id] || `ui-${id}`;
+  const componentName = id
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+
+  const meta = componentRegistry[id] || {
+    description: `Interactive playground for the dynamic <ui-${id}> component library module.`,
+    props: [],
+    children: 'Dynamic Playground Sandbox Content',
+  };
+
+  // Fetch true TypeScript props from docs.json compiled metadata
+  const dynamicProps = getPropsForComponent(tagName);
+
+  // Merge dynamic props with premium registry props if they match, retaining premium default values & mock datasets
+  const registryProps = meta.props || [];
+  const mergedProps = dynamicProps.length > 0 ? dynamicProps.map(dp => {
+    const regProp = registryProps.find(rp => rp.name === dp.name);
+    if (regProp) {
+      return {
+        ...dp,
+        defaultValue: regProp.defaultValue !== undefined ? regProp.defaultValue : dp.defaultValue,
+        options: regProp.options || dp.options,
+        type: regProp.type || dp.type,
+      };
+    }
+    return dp;
+  }) : registryProps;
+
+  // Resolve dynamic description and live demos
+  const componentDescription = getDescriptionForComponent(tagName, meta.description);
+  const componentDemos = getDemosForComponent(id);
+
+  const buildCode = (p: Record<string, any>) => {
+    const attrs: string[] = [];
+    Object.entries(p).forEach(([key, val]) => {
+      if (val === true) attrs.push(key);
+      else if (val !== false && val !== undefined && val !== null && val !== '') {
+        if (typeof val === 'object') {
+          attrs.push(`${key}='${JSON.stringify(val)}'`);
+        } else {
+          attrs.push(`${key}="${val}"`);
+        }
+      }
+    });
+
+    if (meta.children) {
+      return `<${tagName} ${attrs.join(' ')}>\n  ${meta.children}\n</${tagName}>`;
+    }
+    return `<${tagName} ${attrs.join(' ')}></${tagName}>`;
+  };
+
+  const renderPreview = (p: Record<string, any>) => {
+    const CustomElement = tagName as any;
+    const customProps: Record<string, any> = {};
+
+    Object.entries(p).forEach(([key, val]) => {
+      if (val !== undefined && val !== null) {
+        if (typeof val === 'object') {
+          customProps[key] = JSON.stringify(val);
+        } else {
+          customProps[key] = val;
+        }
+      }
+    });
+
+    if (meta.children) {
+      return (
+        <CustomElement {...customProps} dangerouslySetInnerHTML={{ __html: meta.children }} />
+      );
+    }
+    return <CustomElement {...customProps} />;
+  };
+
+  const docs: DocSection[] = [
+    {
+      title: 'Overview',
+      content: `
+        <p>The <code>${tagName}</code> component is fully operational under the dynamic Design Studio page. You can customize, test states, toggle styling variables, and view generated HTML tags in real-time.</p>
+      `,
+    },
+  ];
+
+  return (
+    <ComponentPlayground
+      componentName={componentName}
+      tagName={tagName}
+      description={componentDescription}
+      props={mergedProps}
+      renderPreview={renderPreview}
+      buildCode={buildCode}
+      docs={docs}
+      examples={[]}
+      demoSections={componentDemos}
+    />
+  );
+}

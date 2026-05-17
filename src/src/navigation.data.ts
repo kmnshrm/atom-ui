@@ -110,7 +110,7 @@ export const categoryNavItems: NavItem[] = [
         icon: 'toggle-left',
         iconLibrary: 'lucide',
       },
-      { id: 'cascade-select', label: 'Cascade Select', icon: 'target', iconLibrary: 'lucide' },
+      //{ id: 'cascade-select', label: 'Cascade Select', icon: 'target', iconLibrary: 'lucide' },
       { id: 'checkbox', label: 'Checkbox', icon: 'check-square', iconLibrary: 'lucide' },
       { id: 'dropdown', label: 'Dropdown', icon: 'chevron-down-square', iconLibrary: 'lucide' },
       { id: 'input', label: 'Input', icon: 'pencil', iconLibrary: 'lucide' },
@@ -160,6 +160,7 @@ export const categoryNavItems: NavItem[] = [
     icon: 'monitor',
     iconLibrary: 'lucide',
     children: [
+      { id: 'accordion', label: 'Accordion', icon: 'align-justify', iconLibrary: 'lucide' },
       {
         id: 'animate-on-scroll',
         label: 'Animate on Scroll',

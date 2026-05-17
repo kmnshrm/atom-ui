@@ -59,6 +59,7 @@ const buildCode = (p: Record<string, any>) => {
 
 const renderPreview = (p: Record<string, any>) => (
   <ui-badge
+    key={JSON.stringify(p)}
     value={p.value}
     max={p.max}
     show-zero={p['show-zero'] || undefined}

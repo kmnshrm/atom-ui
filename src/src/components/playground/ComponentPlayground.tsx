@@ -56,7 +56,7 @@ export default function ComponentPlayground({
   examples,
   demoSections = [],
 }: ComponentPlaygroundProps) {
-  const [activeTab, setActiveTab] = useState<'playground' | 'docs' | 'examples' | 'demos'>('playground');
+  const [activeTab, setActiveTab] = useState<'playground' | 'docs' | 'examples'>('playground');
   const [propValues, setPropValues] = useState<Record<string, any>>(() => {
     const defaults: Record<string, any> = {};
     propConfigs.forEach(p => { defaults[p.name] = p.defaultValue; });
@@ -77,8 +77,7 @@ export default function ComponentPlayground({
   const tabs = [
     { id: 'playground', label: 'Design Studio', icon: 'sliders-horizontal' },
     { id: 'docs', label: 'Documentation', icon: 'book-open' },
-    { id: 'examples', label: 'Examples', icon: 'code-2' },
-    ...(demoSections.length > 0 ? [{ id: 'demos', label: 'Live Demos', icon: 'play-circle' }] : []),
+    { id: 'examples', label: 'Examples & Demos', icon: 'code-2' },
   ] as const;
 
 
@@ -166,84 +165,77 @@ export default function ComponentPlayground({
         </div>
       )}
 
-      {/* Docs Tab */}
-      {activeTab === 'docs' && (
-        <div className="cp-docs-layout">
-          <div className="cp-docs-content">
-            {/* Props Table */}
-            <section className="cp-docs-section">
-              <h2 className="cp-docs-section-title">
-                <ui-icon name="list" size="18" />
-                Props Reference
-              </h2>
-              <div className="cp-props-table-wrapper">
-                <table className="cp-props-table">
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Type</th>
-                      <th>Default</th>
-                      <th>Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {propConfigs.map(prop => (
-                      <tr key={prop.name}>
-                        <td><code className="cp-code-inline">{prop.name}</code></td>
-                        <td><span className="cp-type-badge">{prop.type === 'select' ? prop.options?.join(' | ') : prop.type}</span></td>
-                        <td><code className="cp-code-inline">{String(prop.defaultValue)}</code></td>
-                        <td className="cp-prop-desc">{prop.description || '—'}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </section>
+      {/* Tab Contents Container */}
+      {activeTab !== 'playground' && (
+        <div className="cp-tab-container">
+          {/* Docs Tab */}
+          {activeTab === 'docs' && (
+            <div className="cp-docs-layout">
+              <div className="cp-docs-content">
+                {/* Props Table */}
+                <section className="cp-docs-section">
+                  <h2 className="cp-docs-section-title">
+                    <ui-icon name="list" size="18" />
+                    Props Reference
+                  </h2>
+                  <div className="cp-props-table-wrapper">
+                    <table className="cp-props-table">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Type</th>
+                          <th>Default</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {propConfigs.map(prop => (
+                          <tr key={prop.name}>
+                            <td><code className="cp-code-inline">{prop.name}</code></td>
+                            <td><span className="cp-type-badge">{prop.type === 'select' ? prop.options?.join(' | ') : prop.type}</span></td>
+                            <td><code className="cp-code-inline">{String(prop.defaultValue)}</code></td>
+                            <td className="cp-prop-desc">{prop.description || '—'}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
 
-            {/* Doc Sections */}
-            {docs.map((section, i) => (
-              <section key={i} className="cp-docs-section">
-                <h2 className="cp-docs-section-title">
-                  <ui-icon name="file-text" size="18" />
-                  {section.title}
-                </h2>
-                <div className="cp-docs-text" dangerouslySetInnerHTML={{ __html: section.content }} />
-              </section>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Examples Tab */}
-      {activeTab === 'examples' && (
-        <div className="cp-examples-layout">
-          {examples.map((example, i) => (
-            <ExampleCard key={i} example={example} index={i} />
-          ))}
-        </div>
-      )}
-
-      {/* Live Demos Tab — raw HTML from original demo files */}
-      {activeTab === 'demos' && (
-        <div className="cp-demos-layout">
-          <div className="cp-demos-intro">
-            <ui-icon name="play-circle" size="18" />
-            <span>Real demos ported directly from the <code>{tagName}</code> demo files</span>
-          </div>
-          {demoSections.map((section, i) => (
-            <div key={i} className="cp-demo-section">
-              <div className="cp-demo-section-header">
-                <span className="cp-demo-section-number">{i + 1}</span>
-                <div>
-                  <h3 className="cp-demo-section-title">{section.title}</h3>
-                  {section.description && <p className="cp-demo-section-desc">{section.description}</p>}
-                </div>
-              </div>
-              <div className="cp-demo-section-body">
-                <DemoRenderer html={section.html} />
+                {/* Doc Sections */}
+                {docs.map((section, i) => (
+                  <section key={i} className="cp-docs-section">
+                    <h2 className="cp-docs-section-title">
+                      <ui-icon name="file-text" size="18" />
+                      {section.title}
+                    </h2>
+                    <div className="cp-docs-text" dangerouslySetInnerHTML={{ __html: section.content }} />
+                  </section>
+                ))}
               </div>
             </div>
-          ))}
+          )}
+
+          {/* Examples & Demos Tab */}
+          {activeTab === 'examples' && (
+            <div className="cp-examples-layout">
+              {examples.map((example, i) => (
+                <ExampleCard key={`ex-${i}`} example={example} index={i} />
+              ))}
+
+              {demoSections.length > 0 && (
+                <>
+                  <div className="cp-demos-intro" style={{ marginTop: '1rem' }}>
+                    <ui-icon name="play-circle" size="18" />
+                    <span>Real demos ported directly from the <code>{tagName}</code> demo files</span>
+                  </div>
+                  {demoSections.map((section, i) => (
+                    <DemoCard key={`demo-${i}`} section={section} index={i} />
+                  ))}
+                </>
+              )}
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -300,6 +292,59 @@ function ExampleCard({ example, index }: { example: ExampleConfig; index: number
       {showCode && (
         <div className="cp-example-code">
           <CodePreview code={example.code} language="html" />
+        </div>
+      )}
+    </div>
+  );
+}
+
+function DemoCard({ section, index }: { section: DemoSection; index: number }) {
+  const [showCode, setShowCode] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(section.html);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="cp-demo-section">
+      <div className="cp-demo-section-header">
+        <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+          <span className="cp-demo-section-number">{index + 1}</span>
+          <div>
+            <h3 className="cp-demo-section-title">{section.title}</h3>
+            {section.description && <p className="cp-demo-section-desc">{section.description}</p>}
+          </div>
+        </div>
+        <div className="cp-example-actions">
+          <ui-button
+            variant={copied ? 'success' : 'outline'}
+            size="sm"
+            icon={copied ? 'check' : 'copy'}
+            onClick={handleCopy}
+          >
+            {copied ? 'Copied!' : 'Copy'}
+          </ui-button>
+          <ui-button
+            variant={showCode ? 'primary' : 'outline'}
+            size="sm"
+            icon="code-2"
+            onClick={() => setShowCode(v => !v)}
+          >
+            {showCode ? 'Hide Code' : 'Show Code'}
+          </ui-button>
+        </div>
+      </div>
+      
+      <div className="cp-demo-section-body">
+        <DemoRenderer html={section.html} />
+      </div>
+
+      {showCode && (
+        <div className="cp-example-code">
+          <CodePreview code={section.html} language="html" />
         </div>
       )}
     </div>

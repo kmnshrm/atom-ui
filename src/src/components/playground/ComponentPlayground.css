@@ -93,6 +93,37 @@
   background: rgba(52, 211, 153, 0.06);
 }
 
+.cp-tab-container {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  /* Styled scrollbar at the right viewport edge */
+  scrollbar-width: auto;
+  scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.02);
+}
+.cp-tab-container::-webkit-scrollbar {
+  width: 8px;
+}
+.cp-tab-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.cp-tab-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 99px;
+}
+.cp-tab-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
 /* ============================================
    Playground Layout
    ============================================ */
@@ -266,30 +297,17 @@
    Docs Layout
    ============================================ */
 .cp-docs-layout {
-  padding: 2rem 2.5rem;
-  max-width: 900px;
-  flex: 1;
-  min-height: 0;
-  overflow-y: scroll;
-  scrollbar-width: auto;
-  scrollbar-color: rgba(255, 255, 255, 0.35) rgba(255, 255, 255, 0.04);
-}
-.cp-docs-layout::-webkit-scrollbar {
-  width: 10px;
-}
-.cp-docs-layout::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.04);
-}
-.cp-docs-layout::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.35);
-  border-radius: 99px;
-}
-.cp-docs-layout::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.55);
+  padding: 2.5rem 2.5rem 3rem 2.5rem;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .cp-docs-section {
-  margin-bottom: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.cp-docs-section:last-child {
+  margin-bottom: 0;
 }
 
 .cp-docs-section-title {
@@ -298,7 +316,7 @@
   gap: 0.625rem;
   font-size: 1.1rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid rgba(255,255,255,0.06);
   color: rgba(255,255,255,0.9);
@@ -386,28 +404,12 @@
    Examples Layout
    ============================================ */
 .cp-examples-layout {
-  padding: 2rem 2.5rem;
+  padding: 2.5rem 2.5rem 3rem 2.5rem;
+  max-width: 1200px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  flex: 1;
-  min-height: 0;
-  overflow-y: scroll;
-  scrollbar-width: auto;
-  scrollbar-color: rgba(255, 255, 255, 0.35) rgba(255, 255, 255, 0.04);
-}
-.cp-examples-layout::-webkit-scrollbar {
-  width: 10px;
-}
-.cp-examples-layout::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.04);
-}
-.cp-examples-layout::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.35);
-  border-radius: 99px;
-}
-.cp-examples-layout::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.55);
 }
 
 .cp-example-card {
@@ -556,28 +558,12 @@
    Live Demos Layout
    ============================================ */
 .cp-demos-layout {
-  padding: 2rem 2.5rem;
+  padding: 2.5rem 2.5rem 3rem 2.5rem;
+  max-width: 1200px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  flex: 1;
-  min-height: 0;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.18) rgba(255, 255, 255, 0.02);
-}
-.cp-demos-layout::-webkit-scrollbar {
-  width: 8px;
-}
-.cp-demos-layout::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.02);
-}
-.cp-demos-layout::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.18);
-  border-radius: 99px;
-}
-.cp-demos-layout::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
 }
 
 .cp-demos-intro {
@@ -608,6 +594,7 @@
 .cp-demo-section-header {
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
   gap: 1rem;
   padding: 1.25rem 1.5rem;
   border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -678,4 +665,125 @@
 
 .theme-light .cp-demo-section-desc {
   color: rgba(0,0,0,0.45);
+}
+
+/* Light Theme Scrollbars Overrides */
+.theme-light .cp-tab-container,
+.theme-light .cp-controls-panel,
+.theme-light .cp-preview-panel {
+  scrollbar-color: rgba(0, 0, 0, 0.22) rgba(0, 0, 0, 0.02) !important;
+}
+
+.theme-light .cp-tab-container::-webkit-scrollbar-thumb,
+.theme-light .cp-controls-panel::-webkit-scrollbar-thumb,
+.theme-light .cp-preview-panel::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.22) !important;
+}
+
+.theme-light .cp-tab-container::-webkit-scrollbar-thumb:hover,
+.theme-light .cp-controls-panel::-webkit-scrollbar-thumb:hover,
+.theme-light .cp-preview-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4) !important;
+}
+
+.theme-light .cp-tab-container::-webkit-scrollbar-track,
+.theme-light .cp-controls-panel::-webkit-scrollbar-track,
+.theme-light .cp-preview-panel::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.02) !important;
+}
+
+/* Light Theme Docs & Props Table Premium Styling */
+.theme-light .cp-docs-section {
+  margin-bottom: 3.5rem;
+}
+
+.theme-light .cp-docs-section:last-child {
+  margin-bottom: 0;
+}
+
+/* Light Theme Header & Tabs Premium Styling Overrides */
+.theme-light .cp-header {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.theme-light .cp-tab {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.theme-light .cp-tab:hover {
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.theme-light .cp-tab--active {
+  color: #059669;
+  border-bottom-color: #059669;
+  background: rgba(5, 150, 105, 0.05);
+}
+
+.theme-light .cp-tab-container {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  margin: 0 !important;
+}
+
+.theme-light .cp-docs-section-title {
+  border-bottom-color: rgba(0, 0, 0, 0.06);
+  color: #1e293b;
+}
+
+.theme-light .cp-docs-section-title ui-icon {
+  color: #059669;
+}
+
+.theme-light .cp-props-table-wrapper {
+  border-color: rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+}
+
+.theme-light .cp-props-table thead {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.theme-light .cp-props-table th {
+  color: #475569;
+  border-bottom-color: rgba(0, 0, 0, 0.06);
+}
+
+.theme-light .cp-props-table td {
+  color: #334155;
+  border-bottom-color: rgba(0, 0, 0, 0.04);
+}
+
+.theme-light .cp-props-table tr:hover td {
+  background: rgba(0, 0, 0, 0.01);
+}
+
+.theme-light .cp-code-inline {
+  color: #059669;
+  background: rgba(5, 150, 105, 0.08);
+}
+
+.theme-light .cp-type-badge {
+  color: #4f46e5;
+  background: rgba(79, 70, 229, 0.08);
+}
+
+.theme-light .cp-prop-desc {
+  color: #64748b;
+}
+
+.theme-light .cp-docs-text {
+  color: #334155;
+}
+
+.theme-light .cp-docs-text h3 {
+  color: #1e293b;
+}
+
+.theme-light .cp-docs-text p {
+  color: #475569;
 }

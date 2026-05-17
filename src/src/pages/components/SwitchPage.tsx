@@ -1,3 +1,4 @@
+import { getPropsForComponent, getDemosForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
 import type { PropConfig, ExampleConfig, DocSection } from '../../components/playground/ComponentPlayground';
 
@@ -21,6 +22,7 @@ const buildCode = (p: Record<string, any>) => {
 
 const renderPreview = (p: Record<string, any>) => (
   <ui-switch
+    key={JSON.stringify(p)}
     label={p.label}
     checked={p.checked || undefined}
     size={p.size}
@@ -78,16 +80,31 @@ const examples: ExampleConfig[] = [
 ];
 
 export default function SwitchPage() {
+  const dynamicProps = getPropsForComponent('ui-switch');
+  const mergedProps = dynamicProps.length > 0 ? dynamicProps.map(dp => {
+    const localProp = propConfigs.find(lp => lp.name === dp.name);
+    if (localProp) {
+      return {
+        ...dp,
+        defaultValue: localProp.defaultValue !== undefined ? localProp.defaultValue : dp.defaultValue,
+        options: localProp.options || dp.options,
+        type: localProp.type || dp.type,
+      };
+    }
+    return dp;
+  }) : propConfigs;
+
   return (
     <ComponentPlayground
       componentName="Switch"
       tagName="ui-switch"
       description="A binary toggle control ideal for settings and feature flags."
-      props={propConfigs}
+      props={mergedProps}
       renderPreview={renderPreview}
       buildCode={buildCode}
       docs={docs}
       examples={examples}
+      demoSections={getDemosForComponent('switch')}
     />
   );
 }

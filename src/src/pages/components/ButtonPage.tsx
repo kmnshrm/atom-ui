@@ -1,3 +1,4 @@
+import { getPropsForComponent, getDemosForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
 import type { PropConfig, ExampleConfig, DocSection, DemoSection } from '../../components/playground/ComponentPlayground';
 
@@ -76,6 +77,7 @@ const buildCode = (p: Record<string, any>) => {
 
 const renderPreview = (p: Record<string, any>) => (
   <ui-button
+    key={JSON.stringify(p)}
     variant={p.variant}
     size={p.size}
     color={p.color !== 'none' ? p.color : undefined}
@@ -565,17 +567,31 @@ const demoSections: DemoSection[] = [
 ];
 
 export default function ButtonPage() {
+  const dynamicProps = getPropsForComponent('ui-button');
+  const mergedProps = dynamicProps.length > 0 ? dynamicProps.map(dp => {
+    const localProp = propConfigs.find(lp => lp.name === dp.name);
+    if (localProp) {
+      return {
+        ...dp,
+        defaultValue: localProp.defaultValue !== undefined ? localProp.defaultValue : dp.defaultValue,
+        options: localProp.options || dp.options,
+        type: localProp.type || dp.type,
+      };
+    }
+    return dp;
+  }) : propConfigs;
+
   return (
     <ComponentPlayground
       componentName="Button"
       tagName="ui-button"
-      description="The foundational interactive element. Supports 29 props covering variants, sizes, icons, badges, states, animations, links, and clipboard actions."
-      props={propConfigs}
+      description="The foundational interactive element. Supports pristine, compile-time props and high-fidelity live demos directly from the Stencil package."
+      props={mergedProps}
       renderPreview={renderPreview}
       buildCode={buildCode}
       docs={docs}
       examples={examples}
-      demoSections={demoSections}
+      demoSections={getDemosForComponent('button')}
     />
   );
 }

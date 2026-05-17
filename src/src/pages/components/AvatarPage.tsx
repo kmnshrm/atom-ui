@@ -75,6 +75,7 @@ const buildCode = (p: Record<string, any>) => {
 
 const renderPreview = (p: Record<string, any>) => (
   <ui-avatar
+    key={JSON.stringify(p)}
     name={p.name}
     src={p.src || undefined}
     content={p.content || undefined}

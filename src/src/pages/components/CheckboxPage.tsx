@@ -68,6 +68,7 @@ const buildCode = (p: Record<string, any>) => {
 
 const renderPreview = (p: Record<string, any>) => (
   <ui-checkbox
+    key={JSON.stringify(p)}
     label={p.label}
     checked={p.checked || undefined}
     indeterminate={p.indeterminate || undefined}

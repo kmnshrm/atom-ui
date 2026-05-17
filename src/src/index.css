@@ -9,6 +9,9 @@
     --text-primary: #ffffff;
     --text-secondary: #888888;
     --border: #333333;
+    --bg-primary: #18181b;
+    --dropdown-selected-bg: rgba(52, 211, 153, 0.15);
+    --dropdown-selected-text: #34d399;
   }
 
   body {
@@ -31,6 +34,9 @@
     --text-primary: #111827;
     --text-secondary: #4b5563;
     --border: #e5e7eb;
+    --bg-primary: #ffffff;
+    --dropdown-selected-bg: #ecfdf5;
+    --dropdown-selected-text: #059669;
   }
 
   ui-icon {
