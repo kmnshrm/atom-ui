@@ -160,6 +160,26 @@ ui-navigation-bar {
   /* Let it grow to fill and allow the parent to scroll */
 }
 
+.main-content--component {
+  overflow: hidden !important;
+}
+
+.content-body--component {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.cp-wrapper {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 .content-body::-webkit-scrollbar {
   width: 6px;

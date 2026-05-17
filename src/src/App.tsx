@@ -152,7 +152,7 @@ export default function App() {
       </ui-navigation-bar>
 
       {/* Main Content Area */}
-      <main className="main-content">
+      <main className={`main-content ${isComponentPage ? 'main-content--component' : ''}`}>
         {/* Top Bar — hidden on home and component pages (they have their own header) */}
         {!isHome && !isComponentPage && (
           <header className="h-16 border-b border-[#222] bg-black/50 backdrop-blur-md flex items-center justify-between px-8 z-20 flex-shrink-0">
@@ -211,7 +211,7 @@ export default function App() {
             <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-900/10 blur-[100px] rounded-full" />
             <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-green-900/10 blur-[100px] rounded-full" />
           </div>
-          <div className={`relative z-10 ${isHome || isComponentPage ? '' : 'max-w-6xl mx-auto p-8'}`}>
+          <div className={`relative z-10 ${isComponentPage ? 'cp-wrapper' : isHome ? '' : 'max-w-6xl mx-auto p-8'}`}>
             {renderContent()}
           </div>
         </div>
