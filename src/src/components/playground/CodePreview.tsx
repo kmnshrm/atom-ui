@@ -12,7 +12,6 @@ function tokenize(code: string, language: string): { type: string; value: string
     const tokens: { type: string; value: string }[] = [];
     const regex = /(<\/?)([a-zA-Z-]+)([^>]*?)(\/?>)|(\{[^}]*\})|("(?:[^"\\]|\\.)*")|([a-zA-Z-]+=)|(<!--[\s\S]*?-->)|([^<{]+)/g;
     let match;
-    let lastIndex = 0;
 
     while ((match = regex.exec(code)) !== null) {
       if (match[1] !== undefined) {

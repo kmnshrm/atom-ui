@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import PropEditor from './PropEditor';
 import CodePreview from './CodePreview';
 import DemoRenderer from './DemoRenderer';
@@ -218,22 +218,39 @@ export default function ComponentPlayground({
 
           {/* Examples & Demos Tab */}
           {activeTab === 'examples' && (
-            <div className="cp-examples-layout">
-              {examples.map((example, i) => (
-                <ExampleCard key={`ex-${i}`} example={example} index={i} />
-              ))}
+            <div className="cp-examples-split-layout">
+              {/* Left sticky sidebar navigation using ui-anchor */}
+              <div className="cp-examples-sidebar">
+                <ui-anchor
+                  auto-gen-container=".cp-examples-scroll-container"
+                  scroll-container=".cp-examples-scroll-container"
+                  sticky="true"
+                  scroll-offset="40"
+                  smooth-scroll="true"
+                  theme="dark"
+                  size="sm"
+                  active-color="#10b981"
+                />
+              </div>
 
-              {demoSections.length > 0 && (
-                <>
-                  <div className="cp-demos-intro" style={{ marginTop: '1rem' }}>
-                    <ui-icon name="play-circle" size="18" />
-                    <span>Real demos ported directly from the <code>{tagName}</code> demo files</span>
-                  </div>
-                  {demoSections.map((section, i) => (
-                    <DemoCard key={`demo-${i}`} section={section} index={i} />
-                  ))}
-                </>
-              )}
+              {/* Right scrollable content containing Example and Demo Cards */}
+              <div className="cp-examples-scroll-container">
+                {examples.map((example, i) => (
+                  <ExampleCard key={`ex-${i}`} example={example} index={i} />
+                ))}
+
+                {demoSections.length > 0 && (
+                  <>
+                    <div className="cp-demos-intro" style={{ marginTop: '1rem' }}>
+                      <ui-icon name="play-circle" size="18" />
+                      <span>Real demos ported directly from the <code>{tagName}</code> demo files</span>
+                    </div>
+                    {demoSections.map((section, i) => (
+                      <DemoCard key={`demo-${i}`} section={section} index={i} />
+                    ))}
+                  </>
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -257,7 +274,7 @@ function ExampleCard({ example, index }: { example: ExampleConfig; index: number
       <div className="cp-example-header">
         <div>
           <div className="cp-example-number">Example {index + 1}</div>
-          <h3 className="cp-example-title">{example.title}</h3>
+          <h3 className="cp-example-title" id={`example-heading-${index}`}>{example.title}</h3>
           {example.description && <p className="cp-example-desc">{example.description}</p>}
         </div>
         <div className="cp-example-actions">
@@ -314,7 +331,7 @@ function DemoCard({ section, index }: { section: DemoSection; index: number }) {
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
           <span className="cp-demo-section-number">{index + 1}</span>
           <div>
-            <h3 className="cp-demo-section-title">{section.title}</h3>
+            <h3 className="cp-demo-section-title" id={`demo-heading-${index}`}>{section.title}</h3>
             {section.description && <p className="cp-demo-section-desc">{section.description}</p>}
           </div>
         </div>

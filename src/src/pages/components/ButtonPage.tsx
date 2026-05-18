@@ -1,4 +1,4 @@
-import { getPropsForComponent, getDemosForComponent } from '../../utils/componentMetadata';
+import { getPropsForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
 import type { PropConfig, ExampleConfig, DocSection, DemoSection } from '../../components/playground/ComponentPlayground';
 
@@ -591,7 +591,7 @@ export default function ButtonPage() {
       buildCode={buildCode}
       docs={docs}
       examples={examples}
-      demoSections={getDemosForComponent('button')}
+      demoSections={demoSections}
     />
   );
 }

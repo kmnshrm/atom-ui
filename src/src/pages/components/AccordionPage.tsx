@@ -1,6 +1,6 @@
 import { getPropsForComponent, getDemosForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
-import type { PropConfig, ExampleConfig, DocSection, DemoSection } from '../../components/playground/ComponentPlayground';
+import type { PropConfig, ExampleConfig, DocSection } from '../../components/playground/ComponentPlayground';
 
 const propConfigs: PropConfig[] = [
   // JSON Config

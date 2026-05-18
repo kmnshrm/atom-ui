@@ -1,6 +1,6 @@
 import { getPropsForComponent, getDescriptionForComponent, getDemosForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
-import type { PropConfig, ExampleConfig, DocSection } from '../../components/playground/ComponentPlayground';
+import type { PropConfig, DocSection } from '../../components/playground/ComponentPlayground';
 
 interface DynamicMetadata {
   description: string;
@@ -11,6 +11,8 @@ interface DynamicMetadata {
 const tagNameMap: Record<string, string> = {
   aside: 'ui-aside-panel',
   dialog: 'ui-dialog-box',
+  'dock-overlay': 'ui-dock',
+  'layout-manager': 'layout-manager',
 };
 
 const componentRegistry: Record<string, DynamicMetadata> = {
@@ -32,6 +34,25 @@ const componentRegistry: Record<string, DynamicMetadata> = {
       { name: 'color', type: 'select', label: 'Color', defaultValue: 'primary', options: ['primary', 'secondary', 'success', 'warning', 'danger', 'info'], description: 'Color override' },
       { name: 'spacing', type: 'select', label: 'Spacing', defaultValue: 'md', options: ['xs', 'sm', 'md', 'lg', 'xl'], description: 'Vertical spacing padding' },
     ],
+  },
+  dock: {
+    description: 'A macOS-style docking station with magnification effect, glass blur, active indicators, and spring animations.',
+    props: [
+      { name: 'items', type: 'json', label: 'Dock Items', defaultValue: [
+        { id: 'finder', label: 'Finder', icon: 'smile' },
+        { id: 'mail', label: 'Mail', icon: 'mail', badge: 3 },
+        { id: 'browser', label: 'Safari', icon: 'globe' },
+        { id: 'music', label: 'Music', icon: 'music' },
+        { id: 'settings', label: 'Settings', icon: 'settings' }
+      ], description: 'JSON array of items to render' },
+      { name: 'position', type: 'select', label: 'Position', defaultValue: 'bottom', options: ['bottom', 'top', 'left', 'right'], description: 'Position of the dock container' },
+      { name: 'size', type: 'select', label: 'Size', defaultValue: 'md', options: ['sm', 'md', 'lg'], description: 'Size of the dock icons' },
+      { name: 'magnify', type: 'boolean', label: 'Magnify Effect', defaultValue: true, description: 'Enable magnification on hover' },
+      { name: 'blurEffect', type: 'boolean', label: 'Glass Blur', defaultValue: true, description: 'Frosted glass backdrop effect' },
+      { name: 'showLabels', type: 'boolean', label: 'Show Labels', defaultValue: true, description: 'Show item name labels' },
+      { name: 'iconLibrary', type: 'select', label: 'Icon Library', defaultValue: 'lucide', options: ['default', 'lucide', 'bootstrap', 'fontawesome'], description: 'Default library for icons' },
+      { name: 'persistKey', type: 'string', label: 'Persistence Key', defaultValue: '', description: 'localStorage key for reordering persistence' }
+    ]
   },
   rating: {
     description: 'A premium star rating component supporting fully customizable ratings and color states.',
@@ -222,18 +243,64 @@ const componentRegistry: Record<string, DynamicMetadata> = {
         </div>
       </div>
     `
+  },
+  'layout-manager': {
+    description: 'An advanced layout manager with support for drag-and-drop panels, splitters, tab merging, and resizable layout zones.',
+    props: [
+      { name: 'initialLayout', type: 'json', label: 'Initial Layout', defaultValue: { root: { id: 'root', type: 'horizontal', children: [ { type: 'panel', id: 'panel-1', title: 'Panel 1', content: '<div style="padding: 20px; color: #10B981;"><h3>Panel 1</h3><p>This is a resizable pane.</p></div>', closable: true }, { type: 'panel', id: 'panel-2', title: 'Panel 2', content: '<div style="padding: 20px; color: #60A5FA;"><h3>Panel 2</h3><p>This is another resizable pane.</p></div>', closable: true } ] }, floating: [] }, description: 'Initial window/panel structure layout JSON' }
+    ]
+  },
+  splitter: {
+    description: 'A high-performance resizable partition container supporting vertical or horizontal splits, snap thresholds, and double-click collapse.',
+    props: [
+      { name: 'direction', type: 'select', label: 'Direction', defaultValue: 'horizontal', options: ['horizontal', 'vertical'], description: 'Split direction layout' },
+      { name: 'gutterSize', type: 'number', label: 'Gutter Size (px)', defaultValue: 8, description: 'Width/height of splitter bar' },
+      { name: 'gutterColor', type: 'string', label: 'Gutter Color', defaultValue: '#222222', description: 'Gutter separator bar color' },
+      { name: 'gutterHoverColor', type: 'string', label: 'Gutter Hover Color', defaultValue: '#10B981', description: 'Gutter hover color' },
+      { name: 'snapThreshold', type: 'number', label: 'Snap Threshold (px)', defaultValue: 20, description: 'Edge snap constraint' }
+    ],
+    children: `
+      <div slot="panel-0" style="padding: 24px; background: #1f2937; color: white; height: 100%; min-height: 200px;">
+        <h3>Left Pane</h3>
+        <p>Drag the vertical gutter bar to resize the split panels.</p>
+      </div>
+      <div slot="panel-1" style="padding: 24px; background: #111827; color: white; height: 100%; min-height: 200px;">
+        <h3>Right Pane</h3>
+        <p>The layout uses highly responsive proportional percentages.</p>
+      </div>
+    `
+  },
+  stack: {
+    description: 'A flexible stack layout supporting horizontal or vertical layout flow, avatar/card overlap effects, item limits (+N badges), and responsive dividers.',
+    props: [
+      { name: 'direction', type: 'select', label: 'Direction', defaultValue: 'horizontal', options: ['horizontal', 'vertical'], description: 'Flow direction' },
+      { name: 'spacing', type: 'string', label: 'Spacing', defaultValue: '12px', description: 'Gap spacing between items (negative values create overlay stacks)' },
+      { name: 'align', type: 'select', label: 'Align Items', defaultValue: 'center', options: ['start', 'center', 'end', 'stretch'], description: 'Cross-axis alignment' },
+      { name: 'justify', type: 'select', label: 'Justify Content', defaultValue: 'start', options: ['start', 'center', 'end', 'space-between'], description: 'Main-axis alignment' },
+      { name: 'max', type: 'number', label: 'Max Items to Show', defaultValue: 0, description: 'Truncates stack items to this number and shows a +N badge on click' },
+      { name: 'overlap', type: 'boolean', label: 'Overlap Mode', defaultValue: false, description: 'Enables overlapping stacks like avatar piles' },
+      { name: 'showDividers', type: 'boolean', label: 'Show Dividers', defaultValue: false, description: 'Displays dividers between non-overlapping items' },
+      { name: 'dividerType', type: 'select', label: 'Divider Type', defaultValue: 'solid', options: ['solid', 'dashed', 'dotted'], description: 'Divider stroke style' }
+    ],
+    children: `
+      <div style="width: 48px; height: 48px; border-radius: 9999px; background: #10B981; border: 2px solid #000; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;">A</div>
+      <div style="width: 48px; height: 48px; border-radius: 9999px; background: #3B82F6; border: 2px solid #000; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;">B</div>
+      <div style="width: 48px; height: 48px; border-radius: 9999px; background: #EC4899; border: 2px solid #000; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;">C</div>
+      <div style="width: 48px; height: 48px; border-radius: 9999px; background: #F59E0B; border: 2px solid #000; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;">D</div>
+    `
   }
 };
 
 export default function DynamicComponentPage({ id }: { id: string }) {
-  const tagName = tagNameMap[id] || `ui-${id}`;
-  const componentName = id
+  const resolvedId = id === 'dock-overlay' ? 'dock' : id;
+  const tagName = tagNameMap[id] || `ui-${resolvedId}`;
+  const componentName = resolvedId
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
 
-  const meta = componentRegistry[id] || {
-    description: `Interactive playground for the dynamic <ui-${id}> component library module.`,
+  const meta = componentRegistry[resolvedId] || {
+    description: `Interactive playground for the dynamic <ui-${resolvedId}> component library module.`,
     props: [],
     children: 'Dynamic Playground Sandbox Content',
   };
@@ -258,17 +325,18 @@ export default function DynamicComponentPage({ id }: { id: string }) {
 
   // Resolve dynamic description and live demos
   const componentDescription = getDescriptionForComponent(tagName, meta.description);
-  const componentDemos = getDemosForComponent(id);
+  const componentDemos = getDemosForComponent(resolvedId);
 
   const buildCode = (p: Record<string, any>) => {
     const attrs: string[] = [];
     Object.entries(p).forEach(([key, val]) => {
-      if (val === true) attrs.push(key);
+      const attrName = key.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
+      if (val === true) attrs.push(attrName);
       else if (val !== false && val !== undefined && val !== null && val !== '') {
         if (typeof val === 'object') {
-          attrs.push(`${key}='${JSON.stringify(val)}'`);
+          attrs.push(`${attrName}='${JSON.stringify(val)}'`);
         } else {
-          attrs.push(`${key}="${val}"`);
+          attrs.push(`${attrName}="${val}"`);
         }
       }
     });

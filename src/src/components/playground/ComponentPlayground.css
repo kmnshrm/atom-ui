@@ -96,8 +96,7 @@
 .cp-tab-container {
   flex: 1;
   min-height: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -300,6 +299,9 @@
   padding: 2.5rem 2.5rem 3rem 2.5rem;
   max-width: 1200px;
   width: 100%;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
 }
 
 .cp-docs-section {
@@ -787,3 +789,105 @@
 .theme-light .cp-docs-text p {
   color: #475569;
 }
+
+/* ============================================
+   Examples Split Layout (Anchor Navigation)
+   ============================================ */
+.cp-examples-split-layout {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+  background: transparent;
+}
+
+.cp-examples-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem 1rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+.cp-examples-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cp-examples-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cp-examples-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 99px;
+}
+
+.cp-examples-sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.cp-examples-scroll-container {
+  flex: 1;
+  padding: 2.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  scroll-behavior: smooth;
+  scrollbar-width: auto;
+  scrollbar-color: rgba(255, 255, 255, 0.25) rgba(255, 255, 255, 0.02);
+}
+
+.cp-examples-scroll-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.cp-examples-scroll-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.cp-examples-scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 99px;
+}
+
+.cp-examples-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Light Theme overrides for Examples Split Layout */
+.theme-light .cp-examples-sidebar {
+  border-right-color: rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.4);
+  scrollbar-color: rgba(0, 0, 0, 0.1) transparent;
+}
+
+.theme-light .cp-examples-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.theme-light .cp-examples-sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.theme-light .cp-examples-scroll-container {
+  scrollbar-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.01);
+}
+
+.theme-light .cp-examples-scroll-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.01);
+}
+
+.theme-light .cp-examples-scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.theme-light .cp-examples-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.35);
+}
+

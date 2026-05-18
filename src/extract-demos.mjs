@@ -77,6 +77,15 @@ function extractDemos() {
 
     console.log(`Processing file: ${file} (Component: ${componentId})`);
 
+    let sharedData = '';
+    if (baseName === 'advanced-data-table') {
+      const startIdx = content.indexOf('const sampleData = [');
+      const endIdx = content.indexOf('function showMasterTier');
+      if (startIdx !== -1 && endIdx !== -1) {
+        sharedData = content.slice(startIdx, endIdx).trim();
+      }
+    }
+
     const sections = [];
     
     // Find all functions in this file sequentially using exec loop
@@ -94,11 +103,43 @@ function extractDemos() {
       const bodyStartIndex = match.index + match[0].length - 1; // index of '{'
       let braceCount = 1;
       let bodyEndIndex = bodyStartIndex + 1;
+      let inString = null; // '"', "'", "`"
+      let inComment = null; // 'line', 'block'
 
       while (bodyEndIndex < content.length && braceCount > 0) {
         const char = content[bodyEndIndex];
-        if (char === '{') braceCount++;
-        else if (char === '}') braceCount--;
+        const nextChar = content[bodyEndIndex + 1];
+
+        if (inComment === 'line') {
+          if (char === '\n' || char === '\r') {
+            inComment = null;
+          }
+        } else if (inComment === 'block') {
+          if (char === '*' && nextChar === '/') {
+            inComment = null;
+            bodyEndIndex++;
+          }
+        } else if (inString) {
+          if (char === '\\') {
+            bodyEndIndex++; // Skip escaped char
+          } else if (char === inString) {
+            inString = null;
+          }
+        } else {
+          if (char === '/' && nextChar === '/') {
+            inComment = 'line';
+            bodyEndIndex++;
+          } else if (char === '/' && nextChar === '*') {
+            inComment = 'block';
+            bodyEndIndex++;
+          } else if (char === "'" || char === '"' || char === '`') {
+            inString = char;
+          } else if (char === '{') {
+            braceCount++;
+          } else if (char === '}') {
+            braceCount--;
+          }
+        }
         bodyEndIndex++;
       }
 
@@ -141,8 +182,12 @@ function extractDemos() {
 
         // If there's JS logic, wrap it in a <script> tag and append to HTML!
         if (jsLogic && jsLogic.length > 10) {
+          let fullJsLogic = jsLogic;
+          if (sharedData) {
+            fullJsLogic = sharedData + '\n\n' + jsLogic;
+          }
           // Wrap the script in an IIFE so variables don't bleed
-          html += `\n<script>\n(function() {\n  ${jsLogic}\n})();\n</script>`;
+          html += `\n<script>\n(function() {\n  ${fullJsLogic}\n})();\n</script>`;
         }
 
         // Avoid adding duplicate sections with the same title
