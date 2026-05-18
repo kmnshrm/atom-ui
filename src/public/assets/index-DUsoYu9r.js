@@ -597,8 +597,8 @@ var newVNode = (tag, text) => {
   }
   return vnode;
 };
-var Host = {};
-var isHost = (node) => node && node.$tag$ === Host;
+var Host = { __stencil_host: true };
+var isHost = (node) => node && node.$tag$ && typeof node.$tag$ === 'object';
 var vdomFnUtils = {
   forEach: (children, cb) => children.map(convertToPublic).forEach(cb),
   map: (children, cb) => children.map(convertToPublic).map(cb).map(convertToPrivate)
@@ -929,9 +929,13 @@ var createElm = (oldParentVNode, newParentVNode, childIndex) => {
     if (!win.document) {
       throw new Error("You are trying to render a Stencil component in an environment that doesn't support the DOM.");
     }
+    if (typeof newVNode2.$tag$ === 'object') {
+      console.warn("DEBUG: createElementNS called with object tag!", newVNode2.$tag$, newVNode2);
+      console.trace("Trace for object tag VNode");
+    }
     elm = newVNode2.$elm$ = win.document.createElementNS(
       isSvgMode ? SVG_NS : HTML_NS,
-      !useNativeShadowDom && BUILD.slotRelocation && newVNode2.$flags$ & 2 /* isSlotFallback */ ? "slot-fb" : newVNode2.$tag$
+      !useNativeShadowDom && BUILD.slotRelocation && newVNode2.$flags$ & 2 /* isSlotFallback */ ? "slot-fb" : (typeof newVNode2.$tag$ === 'object' ? 'div' : newVNode2.$tag$)
     ) ;
     if (isSvgMode && newVNode2.$tag$ === "foreignObject") {
       isSvgMode = false;

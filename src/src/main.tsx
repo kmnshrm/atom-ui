@@ -18,8 +18,7 @@ try {
 }
 
 try {
-  const isProd = import.meta.env.PROD;
-  const base = isProd ? '/atom-ui/' : '/';
+  const base = import.meta.env.BASE_URL || '/';
   const resourcesUrl = `${window.location.origin}${base}exploration-project-tailwind/`;
 
   defineCustomElements(window, {

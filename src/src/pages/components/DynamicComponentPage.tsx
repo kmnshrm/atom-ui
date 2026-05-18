@@ -6,6 +6,7 @@ interface DynamicMetadata {
   description: string;
   props: PropConfig[];
   children?: string; // Optional inner text/HTML for the element
+  overrideProps?: Record<string, any>; // Props always applied to the live preview (overrides user values)
 }
 
 const tagNameMap: Record<string, string> = {
@@ -110,19 +111,80 @@ const componentRegistry: Record<string, DynamicMetadata> = {
   skeleton: {
     description: 'Premium placeholder loaders mirroring final layouts during API fetch.',
     props: [
-      { name: 'variant', type: 'select', label: 'Variant', defaultValue: 'rectangular', options: ['text', 'circular', 'rectangular'], description: 'Visual shape' },
-      { name: 'animation', type: 'select', label: 'Animation', defaultValue: 'pulse', options: ['pulse', 'wave', 'none'], description: 'Loading shimmer effect' },
+      { name: 'shape', type: 'select', label: 'Shape', defaultValue: 'rectangle', options: ['rectangle', 'circle', 'text', 'avatar', 'button', 'card', 'image', 'input', 'thumbnail', 'title'], description: 'Visual shape of the skeleton' },
+      { name: 'animationType', type: 'select', label: 'Animation', defaultValue: 'pulse', options: ['pulse', 'shimmer', 'wave', 'glow', 'flicker', 'sheen', 'none'], description: 'Loading animation style' },
       { name: 'width', type: 'string', label: 'Width', defaultValue: '100%', description: 'Width constraint' },
       { name: 'height', type: 'string', label: 'Height', defaultValue: '60px', description: 'Height constraint' },
+      { name: 'count', type: 'number', label: 'Count', defaultValue: 1, description: 'Number of skeleton rows to render' },
+      { name: 'template', type: 'select', label: 'Template', defaultValue: 'none', options: ['none', 'card', 'feed-item', 'list-item', 'profile', 'table-row', 'dashboard'], description: 'Predefined multi-part skeleton layout' },
+      { name: 'speed', type: 'select', label: 'Speed', defaultValue: 'normal', options: ['slow', 'normal', 'fast'], description: 'Animation speed' },
     ],
   },
   tooltip: {
     description: 'State-of-the-art interactive tooltips showing helpful hints on hover.',
     props: [
-      { name: 'content', type: 'string', label: 'Tooltip Hint', defaultValue: 'Helpful information popup!', description: 'Popup text content' },
-      { name: 'position', type: 'select', label: 'Position', defaultValue: 'top', options: ['top', 'bottom', 'left', 'right'], description: 'Placement direction' },
+      { name: 'content', type: 'string', label: 'Content', defaultValue: 'Helpful information popup!', description: 'Popup text content' },
+      { name: 'position', type: 'select', label: 'Position', defaultValue: 'top', options: ['top', 'bottom', 'left', 'right', 'auto'], description: 'Placement direction' },
+      { name: 'variant', type: 'select', label: 'Variant', defaultValue: 'dark', options: ['dark', 'default', 'glass', 'primary', 'success', 'warning', 'danger', 'info'], description: 'Visual color theme' },
+      { name: 'trigger', type: 'select', label: 'Trigger', defaultValue: 'hover', options: ['hover', 'click', 'focus', 'manual'], description: 'Event that shows the tooltip' },
+      { name: 'animation', type: 'select', label: 'Animation', defaultValue: 'fade-in', options: ['fade-in', 'scale', 'slide', 'none'], description: 'Entrance animation' },
+      { name: 'arrow', type: 'boolean', label: 'Show Arrow', defaultValue: true, description: 'Displays a directional arrow' },
+      { name: 'size', type: 'select', label: 'Size', defaultValue: 'md', options: ['sm', 'md', 'lg'], description: 'Tooltip box size' },
+      { name: 'shape', type: 'select', label: 'Shape', defaultValue: 'rounded', options: ['rounded', 'pill', 'square'], description: 'Corner rounding' },
     ],
-    children: '<ui-button variant="outline">Hover Over Me</ui-button>',
+    children: '<ui-button slot="target" variant="outline" color="primary">Hover Over Me</ui-button>',
+    // Disable portal mode so the tooltip renders inline — portal:true causes Stencil vdom crashes inside the React sandbox
+    overrideProps: { portal: false },
+  },
+  snackbar: {
+    description: 'A global notification system supporting stacked toasts, types, and rich content via an imperative `.add()` API.',
+    props: [
+      { name: 'duration', type: 'number', label: 'Duration (ms)', defaultValue: 5000, description: 'Auto-dismiss delay in milliseconds' },
+      { name: 'maxVisible', type: 'number', label: 'Max Visible', defaultValue: 5, description: 'Maximum number of toasts shown at once' },
+      { name: 'openMode', type: 'select', label: 'Open Mode', defaultValue: 'slide-down', options: ['slide-down', 'slide-up', 'fade', 'scale', 'bounce'], description: 'Entrance animation for each toast' },
+      { name: 'particles', type: 'boolean', label: 'Particles', defaultValue: true, description: 'Show particle animations on success' },
+      { name: 'pauseOnHover', type: 'boolean', label: 'Pause on Hover', defaultValue: true, description: 'Pauses auto-dismiss when hovered' },
+      { name: 'cardStack', type: 'boolean', label: 'Card Stack', defaultValue: false, description: 'Stacks toasts in deck mode' },
+    ],
+    children: `
+      <div style="display:flex;gap:12px;flex-wrap:wrap;padding:16px 0;">
+        <ui-button variant="filled" color="success" onclick="this.closest('ui-snackbar,*').__snackbarEl?.add({message:'Action completed!',type:'success'}) || document.querySelector('ui-snackbar')?.add({message:'Action completed!',type:'success'})">Success</ui-button>
+        <ui-button variant="filled" color="danger" onclick="document.querySelector('ui-snackbar')?.add({message:'Something went wrong.',type:'error'})">Error</ui-button>
+        <ui-button variant="filled" color="warning" onclick="document.querySelector('ui-snackbar')?.add({message:'Please review before continuing.',type:'warning'})">Warning</ui-button>
+        <ui-button variant="filled" color="info" onclick="document.querySelector('ui-snackbar')?.add({message:'Here is some information.',type:'info'})">Info</ui-button>
+      </div>
+    `,
+  },
+  popover: {
+    description: 'A rich floating popover supporting slots, triggers, smart placement, and accessible interactions.',
+    props: [
+      { name: 'content', type: 'string', label: 'Content', defaultValue: 'Popover content goes here.', description: 'Text content of the popover' },
+      { name: 'heading', type: 'string', label: 'Heading', defaultValue: 'Popover Title', description: 'Optional heading inside the popover' },
+      { name: 'placement', type: 'select', label: 'Placement', defaultValue: 'bottom', options: ['top', 'bottom', 'left', 'right', 'top-left', 'top-right', 'bottom-left', 'bottom-right'], description: 'Placement relative to trigger' },
+      { name: 'trigger', type: 'select', label: 'Trigger', defaultValue: 'click', options: ['click', 'hover', 'focus', 'manual'], description: 'Event that opens the popover' },
+      { name: 'variant', type: 'select', label: 'Variant', defaultValue: 'default', options: ['default', 'dark', 'glass', 'primary', 'success', 'warning', 'danger', 'info'], description: 'Visual style' },
+      { name: 'animation', type: 'select', label: 'Animation', defaultValue: 'scale', options: ['scale', 'fade', 'slide', 'none'], description: 'Entrance animation' },
+      { name: 'showArrow', type: 'boolean', label: 'Show Arrow', defaultValue: true, description: 'Displays a pointing arrow' },
+      { name: 'showCloseButton', type: 'boolean', label: 'Show Close Button', defaultValue: false, description: 'Shows an X button inside the popover' },
+    ],
+    children: '<ui-button variant="outline" color="secondary">Click Me</ui-button>',
+  },
+  'resizable-panel': {
+    description: 'An animated resizable panel container supporting horizontal/vertical splits, min/max sizes, and state persistence.',
+    props: [
+      { name: 'direction', type: 'select', label: 'Direction', defaultValue: 'horizontal', options: ['horizontal', 'vertical'], description: 'Split axis orientation' },
+      { name: 'handleSize', type: 'number', label: 'Handle Size (px)', defaultValue: 6, description: 'Thickness of the drag handle' },
+      { name: 'handleColor', type: 'string', label: 'Handle Color', defaultValue: '#374151', description: 'Default handle bar color' },
+      { name: 'handleHoverColor', type: 'string', label: 'Handle Hover Color', defaultValue: '#10B981', description: 'Handle color on hover' },
+      { name: 'animated', type: 'boolean', label: 'Animated', defaultValue: true, description: 'Smooth resize animation' },
+      { name: 'snapToEdge', type: 'boolean', label: 'Snap to Edge', defaultValue: true, description: 'Snap panel to min/max on release' },
+      { name: 'showHandleIcon', type: 'boolean', label: 'Show Handle Icon', defaultValue: true, description: 'Shows grip dots on the handle' },
+      { name: 'theme', type: 'select', label: 'Theme', defaultValue: 'default', options: ['default', 'dark', 'light', 'green', 'auto'], description: 'Visual color theme' },
+    ],
+    children: `
+      <div slot="panel-1" style="padding: 24px; height: 200px; display:flex; align-items:center; justify-content:center; background:#1e293b; color:#10B981; font-weight:600;">Panel 1</div>
+      <div slot="panel-2" style="padding: 24px; height: 200px; display:flex; align-items:center; justify-content:center; background:#0f172a; color:#60A5FA; font-weight:600;">Panel 2</div>
+    `,
   },
   'advanced-data-table': {
     description: 'Enterprise-grade advanced data table with pagination, column sorting, resizing, filtering, and rich cells.',
@@ -217,8 +279,10 @@ const componentRegistry: Record<string, DynamicMetadata> = {
       { name: 'direction', type: 'select', label: 'Slide Direction', defaultValue: 'right', options: ['left', 'right', 'top', 'bottom'], description: 'Which edge the panel slides out of' },
       { name: 'size', type: 'string', label: 'Panel Size', defaultValue: '320px', description: 'Width or height constraint' },
       { name: 'resizable', type: 'boolean', label: 'Resizable', defaultValue: true, description: 'User can drag the edge to resize' },
-      { name: 'variant', type: 'select', label: 'Visual Variant', defaultValue: 'glass', options: ['default', 'glass'], description: 'Backdrop texture styling' },
-      { name: 'backdropBlur', type: 'string', label: 'Backdrop Blur', defaultValue: '8px', description: 'CSS blur filter' }
+      { name: 'variant', type: 'select', label: 'Layout Variant', defaultValue: 'default', options: ['default', 'floating', 'glass', 'none'], description: 'Panel layout style' },
+      { name: 'theme', type: 'select', label: 'Visual Theme', defaultValue: 'default', options: ['default', 'glass', 'radiant', 'zenith', 'none'], description: 'Visual color theme' },
+      { name: 'animationType', type: 'select', label: 'Animation', defaultValue: 'slide-in', options: ['slide-in', 'slide', 'fade', 'fade-in', 'scale', 'zoom-in', 'none'], description: 'Entrance animation style' },
+      { name: 'backdropBlur', type: 'string', label: 'Backdrop Blur', defaultValue: '8px', description: 'CSS blur filter for the overlay' },
     ],
     children: `
       <div style="padding: 24px; color: white;">
@@ -401,6 +465,9 @@ export default function DynamicComponentPage({ id }: { id: string }) {
     return dp;
   }) : registryProps;
 
+  // Build the set of prop names explicitly defined in the registry (used to limit live preview props)
+  const registryPropNames = new Set(registryProps.map(rp => rp.name));
+
   // Resolve dynamic description and live demos
   const componentDescription = getDescriptionForComponent(tagName, meta.description);
   const componentDemos = getDemosForComponent(resolvedId);
@@ -429,7 +496,13 @@ export default function DynamicComponentPage({ id }: { id: string }) {
     const CustomElement = tagName as any;
     const customProps: Record<string, any> = {};
 
+    // When the registry defines specific props, only pass those to the live preview.
+    // This prevents side-effect props (portal, followCursor, etc.) from docs.json
+    // from interfering with Stencil's rendering in the React sandbox.
+    const shouldFilterProps = registryPropNames.size > 0;
+
     Object.entries(p).forEach(([key, val]) => {
+      if (shouldFilterProps && !registryPropNames.has(key)) return;
       if (val !== undefined && val !== null) {
         if (typeof val === 'object') {
           customProps[key] = JSON.stringify(val);
@@ -438,6 +511,11 @@ export default function DynamicComponentPage({ id }: { id: string }) {
         }
       }
     });
+
+    // Apply component-specific prop overrides (e.g. portal:false for tooltip)
+    if (meta.overrideProps) {
+      Object.assign(customProps, meta.overrideProps);
+    }
 
     if (meta.children) {
       return (
