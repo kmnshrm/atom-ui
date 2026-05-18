@@ -1,0 +1,28 @@
+import { r as registerInstance, h } from './index-DUsoYu9r.js';
+
+const stepCss = () => `.sr-only{position:absolute !important;width:1px !important;height:1px !important;padding:0 !important;margin:-1px !important;overflow:hidden !important;clip:rect(0, 0, 0, 0) !important;white-space:nowrap !important;border-width:0 !important}.a11y-sr-only{position:absolute !important;width:1px !important;height:1px !important;padding:0 !important;margin:-1px !important;overflow:hidden !important;clip:rect(0, 0, 0, 0) !important;white-space:nowrap !important;border-width:0 !important}.stepper{display:flex;position:relative;--connector-color:var(--step-color, #4b6bfb)}.stepper[data-style=solid]::before{content:"";position:absolute;top:50%;left:0;right:0;height:2px;background:var(--connector-color)}.stepper[data-style=dotted]::before{content:"";position:absolute;top:50%;left:0;right:0;height:2px;background:repeating-linear-gradient(to right, var(--connector-color) 0 4px, transparent 4px 8px)}.stepper[data-style=dashed]::before{content:"";position:absolute;top:50%;left:0;right:0;height:2px;background:repeating-linear-gradient(to right, var(--connector-color) 0 10px, transparent 10px 20px)}.stepper[data-style=segmented]::before{content:"";position:absolute;top:50%;left:0;right:0;height:4px;background:linear-gradient(to right, var(--connector-color) 0 20%, transparent 20% 25%, var(--connector-color) 25% 45%, transparent 45% 50%, var(--connector-color) 50% 70%, transparent 70% 75%, var(--connector-color) 75% 100%)}.stepper[data-reduced=true] *{animation:none !important;transition:none !important}`;
+
+const Step = class {
+    constructor(hostRef) {
+        registerInstance(this, hostRef);
+    }
+    /** parent will set index */
+    index = 0;
+    stepTitle = '';
+    subtitle = null;
+    icon = null; // could be an icon name or HTML string
+    badge = null;
+    tooltip = null;
+    status = 'upcoming';
+    disabled = false;
+    /** A developer can provide a validation function on the DOM element before proceeding */
+    validate;
+    /** optional custom renderer - parent will call if present */
+    renderContent;
+    render() {
+        return (h("div", { key: '439655eeb3c34f1fb7a09232397787d8bb2edf9e', class: "ui-step-container", role: "presentation" }, h("div", { key: 'b9237abc63d6676e3e388c60bc189542eebc768e', class: "ui-step-slots-hidden", style: { display: 'none' } }, h("slot", { key: '84f2032dbf5c05170c1219e0ef81c40701460967', name: "icon" }), h("slot", { key: 'a7c22833c64c592f755bd31e8690d7d96e6da3d8', name: "title" }), h("slot", { key: 'fdb8aae3e821578d0cfc199247577c5c435445f5', name: "description" })), h("slot", { key: '09ffd6d687bf76e5692b20c9fa8238e460c09c9c' })));
+    }
+};
+Step.style = stepCss();
+
+export { Step as ui_step };
