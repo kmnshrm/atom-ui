@@ -13,6 +13,7 @@ const tagNameMap: Record<string, string> = {
   dialog: 'ui-dialog-box',
   'dock-overlay': 'ui-dock',
   'layout-manager': 'layout-manager',
+  'tree-list': 'ui-tree',
 };
 
 const componentRegistry: Record<string, DynamicMetadata> = {
@@ -288,11 +289,88 @@ const componentRegistry: Record<string, DynamicMetadata> = {
       <div style="width: 48px; height: 48px; border-radius: 9999px; background: #EC4899; border: 2px solid #000; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;">C</div>
       <div style="width: 48px; height: 48px; border-radius: 9999px; background: #F59E0B; border: 2px solid #000; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;">D</div>
     `
-  }
+  },
+  'meter-group': {
+    description: 'Visual segmented progress bars representing multiple proportional values with labels, legend, and circle modes.',
+    props: [
+      { name: 'values', type: 'json', label: 'Values', defaultValue: [
+        { label: 'Used', value: 65, color: '#ef4444' },
+        { label: 'Cache', value: 20, color: '#f59e0b' },
+        { label: 'Free', value: 15, color: '#10b981' },
+      ], description: 'Array of { label, value, color } objects' },
+      { name: 'max', type: 'number', label: 'Max', defaultValue: 100, description: 'Maximum total value' },
+      { name: 'orientation', type: 'select', label: 'Orientation', defaultValue: 'horizontal', options: ['horizontal', 'vertical'], description: 'Bar orientation' },
+      { name: 'shape', type: 'select', label: 'Shape', defaultValue: 'line', options: ['line', 'circle'], description: 'Bar shape style' },
+      { name: 'size', type: 'select', label: 'Size', defaultValue: 'md', options: ['sm', 'md', 'lg'], description: 'Size variant' },
+      { name: 'showLabels', type: 'boolean', label: 'Show Labels', defaultValue: true, description: 'Show segment labels' },
+      { name: 'showLegend', type: 'boolean', label: 'Show Legend', defaultValue: true, description: 'Show color legend below' },
+      { name: 'showValues', type: 'boolean', label: 'Show Values', defaultValue: true, description: 'Show numeric values' },
+      { name: 'animated', type: 'boolean', label: 'Animated', defaultValue: true, description: 'Animate on mount' },
+      { name: 'interactive', type: 'boolean', label: 'Interactive', defaultValue: false, description: 'Hoverable segments with tooltips' },
+    ],
+  },
+  timeline: {
+    description: 'A chronological event sequence component with vertical/horizontal layouts, rich markers, and variants.',
+    props: [
+      { name: 'events', type: 'json', label: 'Events', defaultValue: [
+        { label: 'Project Kickoff', timestamp: '2024-01-01', description: 'Initial meeting with stakeholders', status: 'success' },
+        { label: 'Design Phase', timestamp: '2024-02-15', description: 'UI/UX mockups & prototyping', status: 'success' },
+        { label: 'Development', timestamp: '2024-03-20', description: 'Building core features', status: 'active' },
+        { label: 'Beta Launch', timestamp: '2024-06-10', description: 'Internal testing & feedback', status: 'pending' },
+      ], description: 'Array of timeline event objects' },
+      { name: 'mode', type: 'select', label: 'Mode', defaultValue: 'vertical', options: ['vertical', 'horizontal'], description: 'Layout direction' },
+      { name: 'align', type: 'select', label: 'Align', defaultValue: 'left', options: ['left', 'right', 'alternate'], description: 'Content alignment' },
+      { name: 'variant', type: 'select', label: 'Variant', defaultValue: 'default', options: ['default', 'filled', 'outlined', 'panel', 'minimal', 'dots-only'], description: 'Visual style' },
+      { name: 'marker', type: 'select', label: 'Marker', defaultValue: 'dot', options: ['dot', 'icon', 'number'], description: 'Marker shape' },
+      { name: 'dotColor', type: 'string', label: 'Dot Color', defaultValue: '#10b981', description: 'Color of timeline dots' },
+      { name: 'lineColor', type: 'string', label: 'Line Color', defaultValue: '#10b981', description: 'Color of connecting line' },
+      { name: 'showDates', type: 'boolean', label: 'Show Dates', defaultValue: true, description: 'Display timestamps' },
+      { name: 'animateOnScroll', type: 'boolean', label: 'Animate on Scroll', defaultValue: false, description: 'Animate items as they enter viewport' },
+    ],
+  },
+  list: {
+    description: 'A versatile list component supporting selection, search, grouping, drag-to-reorder, pagination, and virtualization.',
+    props: [
+      { name: 'items', type: 'json', label: 'Items', defaultValue: [
+        { value: '1', label: 'Home', description: 'Dashboard overview', icon: 'home' },
+        { value: '2', label: 'Profile', description: 'User profile settings', icon: 'user' },
+        { value: '3', label: 'Messages', description: '3 unread notifications', icon: 'mail', badge: '3', badgeColor: 'danger' },
+        { value: '4', label: 'Settings', description: 'App configuration', icon: 'settings' },
+        { value: '5', label: 'Logout', description: 'Sign out of account', icon: 'log-out' },
+      ], description: 'Array of list items' },
+      { name: 'variant', type: 'select', label: 'Variant', defaultValue: 'text', options: ['text', 'outlined', 'filled', 'soft'], description: 'Visual style' },
+      { name: 'size', type: 'select', label: 'Size', defaultValue: 'md', options: ['sm', 'md', 'lg'], description: 'Item size' },
+      { name: 'selectable', type: 'boolean', label: 'Selectable', defaultValue: true, description: 'Enable item selection' },
+      { name: 'multiSelect', type: 'boolean', label: 'Multi-Select', defaultValue: false, description: 'Allow multiple selections' },
+      { name: 'searchable', type: 'boolean', label: 'Searchable', defaultValue: false, description: 'Show search bar' },
+      { name: 'dividers', type: 'boolean', label: 'Dividers', defaultValue: false, description: 'Show item dividers' },
+      { name: 'dense', type: 'boolean', label: 'Dense', defaultValue: false, description: 'Compact item height' },
+      { name: 'rounded', type: 'boolean', label: 'Rounded', defaultValue: false, description: 'Rounded corners' },
+    ],
+  },
+  pagination: {
+    description: 'Navigation controls for paginated data with multiple styles, shapes, and responsive behaviors.',
+    props: [
+      { name: 'totalItems', type: 'number', label: 'Total Items', defaultValue: 100, description: 'Total number of items' },
+      { name: 'itemsPerPage', type: 'number', label: 'Items Per Page', defaultValue: 10, description: 'Items per page' },
+      { name: 'currentPage', type: 'number', label: 'Current Page', defaultValue: 1, description: 'Active page number' },
+      { name: 'type', type: 'select', label: 'Type', defaultValue: 'basic', options: ['basic', 'compact', 'detailed', 'minimal', 'input', 'dropdown', 'indicator', 'advanced'], description: 'Pagination style type' },
+      { name: 'variant', type: 'select', label: 'Variant', defaultValue: 'default', options: ['default', 'soft', 'filled', 'outlined', 'glass', 'modern', 'minimalist', 'premium', 'floating', 'underline'], description: 'Visual theme' },
+      { name: 'size', type: 'select', label: 'Size', defaultValue: 'md', options: ['sm', 'md', 'lg'], description: 'Control size' },
+      { name: 'shape', type: 'select', label: 'Shape', defaultValue: 'default', options: ['default', 'rounded', 'circle', 'pill', 'square'], description: 'Button shape' },
+      { name: 'theme', type: 'select', label: 'Theme', defaultValue: 'primary', options: ['primary', 'success', 'warning', 'danger', 'info'], description: 'Color theme' },
+      { name: 'showFirstLast', type: 'boolean', label: 'Show First/Last', defaultValue: true, description: 'First and last page buttons' },
+      { name: 'showPrevNext', type: 'boolean', label: 'Show Prev/Next', defaultValue: true, description: 'Previous and next page buttons' },
+      { name: 'showPageSize', type: 'boolean', label: 'Show Page Size', defaultValue: false, description: 'Page size selector' },
+      { name: 'showTotal', type: 'boolean', label: 'Show Total', defaultValue: false, description: 'Total item count' },
+      { name: 'showJumpTo', type: 'boolean', label: 'Show Jump To', defaultValue: false, description: 'Jump to page input' },
+      { name: 'showProgress', type: 'boolean', label: 'Show Progress', defaultValue: false, description: 'Show progress bar' },
+    ],
+  },
 };
 
 export default function DynamicComponentPage({ id }: { id: string }) {
-  const resolvedId = id === 'dock-overlay' ? 'dock' : id;
+  const resolvedId = id === 'dock-overlay' ? 'dock' : id === 'tree-list' ? 'tree' : id;
   const tagName = tagNameMap[id] || `ui-${resolvedId}`;
   const componentName = resolvedId
     .split('-')

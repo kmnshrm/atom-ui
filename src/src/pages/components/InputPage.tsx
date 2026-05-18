@@ -1,4 +1,4 @@
-import { getDemosForComponent } from '../../utils/componentMetadata';
+import { getDemosForComponent, getPropsForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
 import type { PropConfig, ExampleConfig, DocSection } from '../../components/playground/ComponentPlayground';
 
@@ -138,12 +138,18 @@ const examples: ExampleConfig[] = [
 ];
 
 export default function InputPage() {
+  const dynamicProps = getPropsForComponent('ui-input');
+  const mergedProps = dynamicProps.length > 0 ? dynamicProps.map(dp => {
+    const local = propConfigs.find(lp => lp.name === dp.name);
+    if (local) return { ...dp, defaultValue: local.defaultValue !== undefined ? local.defaultValue : dp.defaultValue, options: local.options || dp.options, type: local.type || dp.type };
+    return dp;
+  }) : propConfigs;
   return (
     <ComponentPlayground
       componentName="Input"
       tagName="ui-input"
       description="A versatile text field with labels, validation, icon slots, and multiple visual variants."
-      props={propConfigs}
+      props={mergedProps}
       renderPreview={renderPreview}
       buildCode={buildCode}
       docs={docs}

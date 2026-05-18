@@ -18,7 +18,13 @@ try {
 }
 
 try {
-  defineCustomElements(window).catch((err: any) => console.error("Loader error:", err));
+  const isProd = import.meta.env.PROD;
+  const base = isProd ? '/atom-ui/' : '/';
+  const resourcesUrl = `${window.location.origin}${base}exploration-project-tailwind/`;
+
+  defineCustomElements(window, {
+    resourcesUrl
+  });
   
   createRoot(document.getElementById('root')!).render(
     <StrictMode>

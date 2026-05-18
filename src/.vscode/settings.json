@@ -1,0 +1,24 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^node -e \"const d = require\\('\\./src/docs\\.json'\\); const tags = \\['ui-button-toggle','ui-dropdown','ui-input','ui-meter-group','ui-timeline','ui-list','ui-pagination'\\]; tags\\.forEach\\(t => \\{ const c = d\\.components\\.find\\(x => x\\.tag === t\\); if\\(c\\) \\{ console\\.log\\('\\\\n=== ' \\+ t \\+ ' ==='\\); c\\.props\\.forEach\\(p => console\\.log\\(p\\.name \\+ ' \\| ' \\+ p\\.type \\+ ' \\| default:' \\+ p\\.default\\)\\); \\} else console\\.log\\(t \\+ ' NOT FOUND'\\); \\}\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^node -e \"const d = require\\('\\./src/docs\\.json'\\); const tags = \\['ui-timeline','ui-list','ui-pagination','ui-tree-list'\\]; tags\\.forEach\\(t => \\{ const c = d\\.components\\.find\\(x => x\\.tag === t\\); if\\(c\\) \\{ console\\.log\\('\\\\n=== ' \\+ t \\+ ' ==='\\); c\\.props\\.forEach\\(p => console\\.log\\(p\\.name \\+ ' \\| ' \\+ p\\.type \\+ ' \\| default:' \\+ p\\.default\\)\\); \\} else console\\.log\\(t \\+ ' NOT FOUND'\\); \\}\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^node -e \"const d = require\\('\\./src/docs\\.json'\\); const tags = d\\.components\\.map\\(c=>c\\.tag\\)\\.filter\\(t=>t\\.includes\\('tree'\\)\\|\\|t\\.includes\\('transfer'\\)\\|\\|t\\.includes\\('list'\\)\\); console\\.log\\(tags\\.join\\('\\\\n'\\)\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^node -e \"const d = require\\('\\./src/docs\\.json'\\); const c = d\\.components\\.find\\(x=>x\\.tag==='ui-transfer-list'\\); if\\(c\\)\\{c\\.props\\.forEach\\(p=>console\\.log\\(p\\.name\\+'\\|'\\+p\\.type\\+'\\|default:'\\+p\\.default\\)\\)\\} else console\\.log\\('NOT FOUND'\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^node -e \"const d = require\\('\\./src/demos\\.json'\\); const keys = Object\\.keys\\(d\\); console\\.log\\('demos keys:', keys\\.filter\\(k=>k\\.includes\\('transfer'\\)\\|\\|k\\.includes\\('tree'\\)\\|\\|k\\.includes\\('meter'\\)\\|\\|k\\.includes\\('timeline'\\)\\|\\|k\\.includes\\('list'\\)\\|\\|k\\.includes\\('pagination'\\)\\)\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
