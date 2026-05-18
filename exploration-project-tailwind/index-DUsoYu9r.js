@@ -931,10 +931,11 @@ var createElm = (oldParentVNode, newParentVNode, childIndex) => {
     }
     if (typeof newVNode2.$tag$ === 'object') {
       console.warn("DEBUG: createElementNS called with object tag!", newVNode2.$tag$, newVNode2);
+      console.trace("Trace for object tag VNode");
     }
     elm = newVNode2.$elm$ = win.document.createElementNS(
       isSvgMode ? SVG_NS : HTML_NS,
-      !useNativeShadowDom && BUILD.slotRelocation && newVNode2.$flags$ & 2 /* isSlotFallback */ ? "slot-fb" : newVNode2.$tag$
+      !useNativeShadowDom && BUILD.slotRelocation && newVNode2.$flags$ & 2 /* isSlotFallback */ ? "slot-fb" : (typeof newVNode2.$tag$ === 'object' ? 'div' : newVNode2.$tag$)
     ) ;
     if (isSvgMode && newVNode2.$tag$ === "foreignObject") {
       isSvgMode = false;
