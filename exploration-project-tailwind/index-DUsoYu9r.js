@@ -597,8 +597,8 @@ var newVNode = (tag, text) => {
   }
   return vnode;
 };
-var Host = {};
-var isHost = (node) => node && node.$tag$ === Host;
+var Host = { __stencil_host: true };
+var isHost = (node) => node && node.$tag$ && typeof node.$tag$ === 'object';
 var vdomFnUtils = {
   forEach: (children, cb) => children.map(convertToPublic).forEach(cb),
   map: (children, cb) => children.map(convertToPublic).map(cb).map(convertToPrivate)
