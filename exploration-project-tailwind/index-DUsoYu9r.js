@@ -929,6 +929,9 @@ var createElm = (oldParentVNode, newParentVNode, childIndex) => {
     if (!win.document) {
       throw new Error("You are trying to render a Stencil component in an environment that doesn't support the DOM.");
     }
+    if (typeof newVNode2.$tag$ === 'object') {
+      console.warn("DEBUG: createElementNS called with object tag!", newVNode2.$tag$, newVNode2);
+    }
     elm = newVNode2.$elm$ = win.document.createElementNS(
       isSvgMode ? SVG_NS : HTML_NS,
       !useNativeShadowDom && BUILD.slotRelocation && newVNode2.$flags$ & 2 /* isSlotFallback */ ? "slot-fb" : newVNode2.$tag$
