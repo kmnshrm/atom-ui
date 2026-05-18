@@ -1,3 +1,4 @@
+import { getDemosForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
 import type { PropConfig, ExampleConfig, DocSection } from '../../components/playground/ComponentPlayground';
 
@@ -219,6 +220,7 @@ export default function BadgePage() {
       buildCode={buildCode}
       docs={docs}
       examples={examples}
+      demoSections={getDemosForComponent('badge')}
     />
   );
 }

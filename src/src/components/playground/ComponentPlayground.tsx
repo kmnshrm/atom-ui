@@ -222,7 +222,6 @@ export default function ComponentPlayground({
               {/* Left sticky sidebar navigation using ui-anchor */}
               <div className="cp-examples-sidebar">
                 <ui-anchor
-                  auto-gen-container=".cp-examples-scroll-container"
                   scroll-container=".cp-examples-scroll-container"
                   sticky="true"
                   scroll-offset="40"
@@ -230,6 +229,18 @@ export default function ComponentPlayground({
                   theme="dark"
                   size="sm"
                   active-color="#10b981"
+                  items={JSON.stringify([
+                    ...examples.map((ex, i) => ({
+                      id: `link-ex-${i}`,
+                      label: ex.title,
+                      target: `example-heading-${i}`
+                    })),
+                    ...demoSections.map((demo, i) => ({
+                      id: `link-demo-${i}`,
+                      label: demo.title,
+                      target: `demo-heading-${i}`
+                    }))
+                  ])}
                 />
               </div>
 

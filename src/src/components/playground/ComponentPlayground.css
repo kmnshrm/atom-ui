@@ -417,7 +417,7 @@
 .cp-example-card {
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 16px;
-  overflow: hidden;
+  /* overflow: auto; */
   background: rgba(255,255,255,0.015);
 }
 
@@ -589,7 +589,7 @@
 .cp-demo-section {
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 16px;
-  overflow: hidden;
+  /* overflow: hidden; */
   background: rgba(255,255,255,0.01);
 }
 

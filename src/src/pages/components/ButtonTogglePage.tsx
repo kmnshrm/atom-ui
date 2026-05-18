@@ -1,5 +1,6 @@
+import { getDemosForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
-import type { PropConfig, ExampleConfig, DocSection, DemoSection } from '../../components/playground/ComponentPlayground';
+import type { PropConfig, ExampleConfig, DocSection } from '../../components/playground/ComponentPlayground';
 
 const propConfigs: PropConfig[] = [
   { name: 'label', type: 'string', label: 'Label', defaultValue: 'Toggle Button', description: 'Toggle label text' },
@@ -56,7 +57,6 @@ const docs: DocSection[] = [
 ];
 
 const examples: ExampleConfig[] = [];
-const demoSections: DemoSection[] = [];
 
 export default function ButtonTogglePage() {
   return (
@@ -69,7 +69,7 @@ export default function ButtonTogglePage() {
       buildCode={buildCode}
       docs={docs}
       examples={examples}
-      demoSections={demoSections}
+      demoSections={getDemosForComponent('button-toggle')}
     />
   );
 }

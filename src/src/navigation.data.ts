@@ -186,14 +186,7 @@ export const categoryNavItems: NavItem[] = [
     icon: 'message-circle',
     iconLibrary: 'lucide',
     children: [
-      { id: 'accordian', label: 'Accordion', icon: 'chevrons-down-up', iconLibrary: 'lucide' },
       { id: 'aside', label: 'Aside Panel', icon: 'panel-right-close', iconLibrary: 'lucide' },
-      {
-        id: 'context-menu',
-        label: 'Context Menu',
-        icon: 'mouse-pointer-click',
-        iconLibrary: 'lucide',
-      },
       { id: 'dialog', label: 'Dialog', icon: 'message-square', iconLibrary: 'lucide' },
       { id: 'panel', label: 'Panel', icon: 'frame', iconLibrary: 'lucide' },
       { id: 'popover', label: 'Popover', icon: 'message-circle', iconLibrary: 'lucide' },

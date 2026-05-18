@@ -1,5 +1,6 @@
+import { getDemosForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
-import type { PropConfig, ExampleConfig, DocSection, DemoSection } from '../../components/playground/ComponentPlayground';
+import type { PropConfig, ExampleConfig, DocSection } from '../../components/playground/ComponentPlayground';
 
 const propConfigs: PropConfig[] = [
   { name: 'placeholder', type: 'string', label: 'Placeholder', defaultValue: 'Select an option', description: 'Placeholder text' },
@@ -54,7 +55,6 @@ const docs: DocSection[] = [
 ];
 
 const examples: ExampleConfig[] = [];
-const demoSections: DemoSection[] = [];
 
 export default function DropdownPage() {
   return (
@@ -67,7 +67,7 @@ export default function DropdownPage() {
       buildCode={buildCode}
       docs={docs}
       examples={examples}
-      demoSections={demoSections}
+      demoSections={getDemosForComponent('dropdown')}
     />
   );
 }

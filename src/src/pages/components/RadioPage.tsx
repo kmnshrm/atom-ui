@@ -1,5 +1,6 @@
+import { getDemosForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
-import type { PropConfig, ExampleConfig, DocSection, DemoSection } from '../../components/playground/ComponentPlayground';
+import type { PropConfig, ExampleConfig, DocSection } from '../../components/playground/ComponentPlayground';
 
 const propConfigs: PropConfig[] = [
   // Content
@@ -81,8 +82,6 @@ const examples: ExampleConfig[] = [
   },
 ];
 
-const demoSections: DemoSection[] = [];
-
 export default function RadioPage() {
   return (
     <ComponentPlayground
@@ -94,7 +93,7 @@ export default function RadioPage() {
       buildCode={buildCode}
       docs={docs}
       examples={examples}
-      demoSections={demoSections}
+      demoSections={getDemosForComponent('radio')}
     />
   );
 }
