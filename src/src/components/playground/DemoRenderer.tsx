@@ -18,6 +18,26 @@ export default function DemoRenderer({ html, label }: DemoRendererProps) {
 
   useEffect(() => {
     if (!ref.current) return;
+
+    // Inject shared dialog/aside utility globals that are normally defined
+    // at the top of the original demo source files but not in extracted HTML blocks.
+    if (!(window as any).openDialog) {
+      (window as any).openDialog = (id: string) => {
+        const el = document.getElementById(id) as any;
+        if (!el) return;
+        if (typeof el.show === 'function') el.show();
+        else el.open = true;
+      };
+    }
+    if (!(window as any).closeDialog) {
+      (window as any).closeDialog = (id: string) => {
+        const el = document.getElementById(id) as any;
+        if (!el) return;
+        if (typeof el.hide === 'function') el.hide();
+        else el.open = false;
+      };
+    }
+
     // Insert HTML so <script> tags inside demos can run
     ref.current.innerHTML = html;
 

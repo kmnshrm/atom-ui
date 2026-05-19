@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { getPropsForComponent, getDescriptionForComponent, getDemosForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
 import type { PropConfig, DocSection } from '../../components/playground/ComponentPlayground';
@@ -7,6 +8,67 @@ interface DynamicMetadata {
   props: PropConfig[];
   children?: string; // Optional inner text/HTML for the element
   overrideProps?: Record<string, any>; // Props always applied to the live preview (overrides user values)
+  /** Label for an "Open" trigger button shown in the Design Studio preview (aside, dialog) */
+  triggerButton?: string;
+  /** Separate HTML buttons rendered outside the component for snackbar-style triggers */
+  triggerContent?: string;
+}
+
+// ─── Overlay Preview Components ───────────────────────────────────────────────
+
+/** Wraps aside/dialog components with a trigger button that sets open=true */
+function OpenTriggerPreview({
+  tagName,
+  componentProps,
+  childrenHtml,
+  triggerLabel,
+}: {
+  tagName: string;
+  componentProps: Record<string, any>;
+  childrenHtml?: string;
+  triggerLabel: string;
+}) {
+  const [open, setOpen] = useState(false);
+  const CustomElement = tagName as any;
+
+  useEffect(() => {
+    if (componentProps.open !== undefined) {
+      setOpen(Boolean(componentProps.open));
+    }
+  }, [componentProps.open]);
+
+  const allProps = { ...componentProps, open };
+
+  return (
+    <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '16px', padding: '32px', minHeight: '140px' }}>
+      <ui-button variant="filled" color="primary" onClick={() => setOpen(true)}>
+        {triggerLabel}
+      </ui-button>
+      {childrenHtml
+        ? <CustomElement {...allProps} dangerouslySetInnerHTML={{ __html: childrenHtml }} />
+        : <CustomElement {...allProps} />}
+    </div>
+  );
+}
+
+/** Renders snackbar component alongside separate trigger buttons */
+function SnackbarTriggerPreview({
+  tagName,
+  componentProps,
+  triggerContent,
+}: {
+  tagName: string;
+  componentProps: Record<string, any>;
+  triggerContent: string;
+}) {
+  const CustomElement = tagName as any;
+  return (
+    <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px', padding: '32px' }}>
+      <p style={{ margin: 0, fontSize: '0.8rem', color: '#6B7280', textAlign: 'center' }}>Click a button to trigger a notification</p>
+      <div dangerouslySetInnerHTML={{ __html: triggerContent }} />
+      <CustomElement {...componentProps} />
+    </div>
+  );
 }
 
 const tagNameMap: Record<string, string> = {
@@ -15,9 +77,25 @@ const tagNameMap: Record<string, string> = {
   'dock-overlay': 'ui-dock',
   'layout-manager': 'layout-manager',
   'tree-list': 'ui-tree',
+  'smart-menu': 'ui-smart-context-menu',
 };
 
 const componentRegistry: Record<string, DynamicMetadata> = {
+  'callout-banner': {
+    description: 'A premium industrial notification banner supporting status variants, slide-in entries, auto-dismiss, pulse highlights, and text marquee animations.',
+    props: [
+      { name: 'variant', type: 'select', label: 'Variant', defaultValue: 'info', options: ['info', 'success', 'warning', 'danger', 'neutral'], description: 'Semantic color variant' },
+      { name: 'heading', type: 'string', label: 'Heading', defaultValue: 'Industrial Notice', description: 'Header text' },
+      { name: 'message', type: 'string', label: 'Message', defaultValue: 'Primary system telemetry is operating within nominal thresholds.', description: 'Body text content' },
+      { name: 'size', type: 'select', label: 'Size', defaultValue: 'md', options: ['sm', 'md', 'lg'], description: 'Visual sizing scale' },
+      { name: 'closable', type: 'boolean', label: 'Closable', defaultValue: true, description: 'Shows an X dismiss icon' },
+      { name: 'solid', type: 'boolean', label: 'Solid Background', defaultValue: false, description: 'Enables high-contrast filled styling' },
+      { name: 'outlined', type: 'boolean', label: 'Outlined', defaultValue: false, description: 'Enables border outline style' },
+      { name: 'pulse', type: 'boolean', label: 'Pulse Glow', defaultValue: false, description: 'Highlights the banner with a breathing attention pulse' },
+      { name: 'marquee', type: 'boolean', label: 'Marquee Text', defaultValue: false, description: 'Enables horizontal scrolling for long text' },
+      { name: 'loading', type: 'boolean', label: 'Loading Spinner', defaultValue: false, description: 'Shows an active loading indicator' },
+    ],
+  },
   card: {
     description: 'A premium layout card with elevate, padding, and hover effect controls.',
     props: [
@@ -138,6 +216,14 @@ const componentRegistry: Record<string, DynamicMetadata> = {
   },
   snackbar: {
     description: 'A global notification system supporting stacked toasts, types, and rich content via an imperative `.add()` API.',
+    triggerContent: `
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+        <ui-button variant="filled" color="success" onclick="document.querySelector('ui-snackbar')?.add({message:'Action completed!',type:'success'})">Success</ui-button>
+        <ui-button variant="filled" color="danger" onclick="document.querySelector('ui-snackbar')?.add({message:'Something went wrong.',type:'error'})">Error</ui-button>
+        <ui-button variant="filled" color="warning" onclick="document.querySelector('ui-snackbar')?.add({message:'Please review before continuing.',type:'warning'})">Warning</ui-button>
+        <ui-button variant="filled" color="info" onclick="document.querySelector('ui-snackbar')?.add({message:'Here is some information.',type:'info'})">Info</ui-button>
+      </div>
+    `,
     props: [
       { name: 'duration', type: 'number', label: 'Duration (ms)', defaultValue: 5000, description: 'Auto-dismiss delay in milliseconds' },
       { name: 'maxVisible', type: 'number', label: 'Max Visible', defaultValue: 5, description: 'Maximum number of toasts shown at once' },
@@ -146,14 +232,6 @@ const componentRegistry: Record<string, DynamicMetadata> = {
       { name: 'pauseOnHover', type: 'boolean', label: 'Pause on Hover', defaultValue: true, description: 'Pauses auto-dismiss when hovered' },
       { name: 'cardStack', type: 'boolean', label: 'Card Stack', defaultValue: false, description: 'Stacks toasts in deck mode' },
     ],
-    children: `
-      <div style="display:flex;gap:12px;flex-wrap:wrap;padding:16px 0;">
-        <ui-button variant="filled" color="success" onclick="this.closest('ui-snackbar,*').__snackbarEl?.add({message:'Action completed!',type:'success'}) || document.querySelector('ui-snackbar')?.add({message:'Action completed!',type:'success'})">Success</ui-button>
-        <ui-button variant="filled" color="danger" onclick="document.querySelector('ui-snackbar')?.add({message:'Something went wrong.',type:'error'})">Error</ui-button>
-        <ui-button variant="filled" color="warning" onclick="document.querySelector('ui-snackbar')?.add({message:'Please review before continuing.',type:'warning'})">Warning</ui-button>
-        <ui-button variant="filled" color="info" onclick="document.querySelector('ui-snackbar')?.add({message:'Here is some information.',type:'info'})">Info</ui-button>
-      </div>
-    `,
   },
   popover: {
     description: 'A rich floating popover supporting slots, triggers, smart placement, and accessible interactions.',
@@ -229,7 +307,7 @@ const componentRegistry: Record<string, DynamicMetadata> = {
   tree: {
     description: 'Hierarchical tree diagram supporting node expansion, collapse, and multi-level nesting.',
     props: [
-      { name: 'data', type: 'json', label: 'Tree Data', defaultValue: [
+      { name: 'nodes', type: 'json', label: 'Tree Data', defaultValue: [
         { id: '1', label: 'Root Folder', children: [
           { id: '1-1', label: 'Subfolder A', children: [
             { id: '1-1-1', label: 'File 1.txt' }
@@ -274,8 +352,9 @@ const componentRegistry: Record<string, DynamicMetadata> = {
   },
   aside: {
     description: 'A slide-in auxiliary panel supporting resizing, blurred glass overlays, and slide-in directions.',
+    triggerButton: 'Open Aside Panel',
     props: [
-      { name: 'open', type: 'boolean', label: 'Panel Open', defaultValue: true, description: 'Shows the slide-in panel' },
+      { name: 'open', type: 'boolean', label: 'Panel Open', defaultValue: false, description: 'Shows the slide-in panel' },
       { name: 'direction', type: 'select', label: 'Slide Direction', defaultValue: 'right', options: ['left', 'right', 'top', 'bottom'], description: 'Which edge the panel slides out of' },
       { name: 'size', type: 'string', label: 'Panel Size', defaultValue: '320px', description: 'Width or height constraint' },
       { name: 'resizable', type: 'boolean', label: 'Resizable', defaultValue: true, description: 'User can drag the edge to resize' },
@@ -294,8 +373,9 @@ const componentRegistry: Record<string, DynamicMetadata> = {
   },
   dialog: {
     description: 'A modal pop-up box with click overlay locks and high-fidelity trigger animations.',
+    triggerButton: 'Open Dialog',
     props: [
-      { name: 'open', type: 'boolean', label: 'Dialog Open', defaultValue: true, description: 'Opens the modal popup window' },
+      { name: 'open', type: 'boolean', label: 'Dialog Open', defaultValue: false, description: 'Opens the modal popup window' },
       { name: 'title', type: 'string', label: 'Modal Title', defaultValue: 'Confirm Action', description: 'Title header' },
       { name: 'size', type: 'select', label: 'Modal Size', defaultValue: 'md', options: ['sm', 'md', 'lg', 'xl'], description: 'Dialog size bounds' }
     ],
@@ -431,6 +511,363 @@ const componentRegistry: Record<string, DynamicMetadata> = {
       { name: 'showProgress', type: 'boolean', label: 'Show Progress', defaultValue: false, description: 'Show progress bar' },
     ],
   },
+  panel: {
+    description: 'A fully-featured content panel with draggable, resizable, collapsible, minimizable, and maximizable capabilities, rich header controls, themes, and glassmorphism.',
+    props: [
+      { name: 'panelTitle', type: 'string', label: 'Title', defaultValue: 'Panel Title', description: 'Header title text' },
+      { name: 'panelSubtitle', type: 'string', label: 'Subtitle', defaultValue: 'Subtitle or description', description: 'Secondary header line' },
+      { name: 'variant', type: 'select', label: 'Variant', defaultValue: 'elevated', options: ['elevated', 'flat', 'outlined', 'glass'], description: 'Visual style variant' },
+      { name: 'theme', type: 'select', label: 'Theme', defaultValue: 'default', options: ['default', 'dark', 'primary', 'success', 'warning', 'danger', 'info'], description: 'Color theme' },
+      { name: 'icon', type: 'string', label: 'Header Icon', defaultValue: 'layout-panel-top', description: 'Lucide icon name in the header' },
+      { name: 'elevation', type: 'number', label: 'Elevation (1-5)', defaultValue: 2, description: 'Box shadow depth level' },
+      { name: 'width', type: 'string', label: 'Width', defaultValue: '100%', description: 'CSS width of the panel' },
+      { name: 'showClose', type: 'boolean', label: 'Show Close', defaultValue: true, description: 'Shows the × close button' },
+      { name: 'showSettings', type: 'boolean', label: 'Show Settings', defaultValue: true, description: 'Shows the settings gear button' },
+      { name: 'toggleable', type: 'boolean', label: 'Toggleable', defaultValue: true, description: 'Allows collapse/expand via header click' },
+      { name: 'collapsed', type: 'boolean', label: 'Collapsed', defaultValue: false, description: 'Starts the panel in collapsed state' },
+      { name: 'minimizable', type: 'boolean', label: 'Minimizable', defaultValue: false, description: 'Shows minimize button' },
+      { name: 'maximizable', type: 'boolean', label: 'Maximizable', defaultValue: false, description: 'Shows maximize button' },
+      { name: 'isDraggable', type: 'boolean', label: 'Draggable', defaultValue: false, description: 'Enables drag to reposition' },
+      { name: 'resizable', type: 'boolean', label: 'Resizable', defaultValue: false, description: 'Enables resize handles' },
+      { name: 'glass', type: 'boolean', label: 'Glass Effect', defaultValue: false, description: 'Applies glassmorphism backdrop blur' },
+      { name: 'aura', type: 'boolean', label: 'Aura Glow', defaultValue: false, description: 'Adds a glowing aura behind the panel' },
+      { name: 'loading', type: 'boolean', label: 'Loading', defaultValue: false, description: 'Shows loading overlay spinner' },
+      { name: 'animationType', type: 'select', label: 'Animation', defaultValue: 'slide', options: ['slide', 'fade', 'scale', 'none'], description: 'Collapse/expand animation style' },
+      { name: 'badge', type: 'string', label: 'Badge', defaultValue: '', description: 'Badge value shown in header (number or text)' },
+    ],
+    children: `
+      <div style="padding: 20px; color: #9CA3AF; line-height: 1.7; font-size: 0.875rem;">
+        <p style="margin: 0 0 12px 0;">This is the main body content of the panel. You can place any HTML, charts, forms, or components inside the default slot.</p>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <ui-badge label="Status: Online" variant="success" rounded></ui-badge>
+          <ui-badge label="v2.4.1" variant="outline" rounded></ui-badge>
+          <ui-badge label="Enterprise" variant="primary" rounded></ui-badge>
+        </div>
+      </div>
+    `,
+  },
+
+  // ─── New Components ───────────────────────────────────────────────────────
+  'button-toggle-group': {
+    description: 'A container for grouping related button toggles with single or multiple selection, validation states, and accessible labeling.',
+    props: [
+      { name: 'label', type: 'string', label: 'Group Label', defaultValue: 'Select Option', description: 'Label above the toggle group' },
+      { name: 'value', type: 'string', label: 'Selected Value', defaultValue: 'opt1', description: 'Active button-toggle value' },
+      { name: 'disabled', type: 'boolean', label: 'Disabled', defaultValue: false, description: 'Disables all toggles in the group' },
+      { name: 'invalid', type: 'boolean', label: 'Invalid', defaultValue: false, description: 'Shows validation error state' },
+      { name: 'helperText', type: 'string', label: 'Helper Text', defaultValue: 'Choose one option', description: 'Instructional text below the group' },
+    ],
+    children: `
+      <ui-button-toggle value="opt1">Option A</ui-button-toggle>
+      <ui-button-toggle value="opt2">Option B</ui-button-toggle>
+      <ui-button-toggle value="opt3">Option C</ui-button-toggle>
+    `,
+  },
+  'checkbox-group': {
+    description: 'A fieldset-style container grouping multiple checkboxes with shared name, value binding, and accessible validation.',
+    props: [
+      { name: 'label', type: 'string', label: 'Group Label', defaultValue: 'Select Features', description: 'Label for the group' },
+      { name: 'helperText', type: 'string', label: 'Helper Text', defaultValue: 'Select at least one', description: 'Hint text below the group' },
+      { name: 'disabled', type: 'boolean', label: 'Disabled', defaultValue: false, description: 'Disables all checkboxes in group' },
+      { name: 'required', type: 'boolean', label: 'Required', defaultValue: false, description: 'Marks the group as required' },
+      { name: 'invalid', type: 'boolean', label: 'Invalid', defaultValue: false, description: 'Shows validation error' },
+      { name: 'errorMessage', type: 'string', label: 'Error Message', defaultValue: 'Please select an option', description: 'Error text shown when invalid' },
+    ],
+    children: `
+      <ui-checkbox value="dark-mode">Dark Mode</ui-checkbox>
+      <ui-checkbox value="notifications">Notifications</ui-checkbox>
+      <ui-checkbox value="analytics">Analytics</ui-checkbox>
+    `,
+  },
+  'code-preview': {
+    description: 'A multi-language code block viewer with tabs for HTML, CSS, JS, and TypeScript, syntax highlighting, and copy support.',
+    props: [
+      { name: 'htmlCode', type: 'textarea', label: 'HTML Code', defaultValue: '<ui-button variant="filled" color="primary">Click Me</ui-button>', description: 'HTML snippet to display' },
+      { name: 'jsCode', type: 'textarea', label: 'JS Code', defaultValue: "const btn = document.querySelector('ui-button');\nbtn.addEventListener('click', () => console.log('clicked'));", description: 'JavaScript snippet' },
+      { name: 'label', type: 'string', label: 'Label', defaultValue: 'Example', description: 'Optional heading label' },
+      { name: 'expanded', type: 'boolean', label: 'Expanded', defaultValue: true, description: 'Whether the code block is open' },
+    ],
+  },
+  'color-controller': {
+    description: 'A compact inline color palette controller for quickly selecting predefined or custom colors.',
+    props: [
+      { name: 'value', type: 'string', label: 'Color Value', defaultValue: '#10b981', description: 'Currently selected hex color' },
+      { name: 'label', type: 'string', label: 'Label', defaultValue: 'Theme Color', description: 'Label for the controller' },
+    ],
+  },
+  'color-picker': {
+    description: 'A full-featured color picker supporting HEX, RGB, RGBA, HSL, and HSLA color models with opacity control.',
+    props: [
+      { name: 'value', type: 'string', label: 'Color Value', defaultValue: '#3bf673', description: 'Active hex color' },
+      { name: 'label', type: 'string', label: 'Label', defaultValue: 'Pick a Color', description: 'Optional label' },
+      { name: 'showHex', type: 'boolean', label: 'Show HEX', defaultValue: true, description: 'Show HEX input' },
+      { name: 'showRgb', type: 'boolean', label: 'Show RGB', defaultValue: true, description: 'Show RGB input' },
+      { name: 'showHsl', type: 'boolean', label: 'Show HSL', defaultValue: true, description: 'Show HSL input' },
+      { name: 'showAlpha', type: 'boolean', label: 'Show Alpha', defaultValue: false, description: 'Show alpha/opacity channel' },
+    ],
+  },
+  'command-palette': {
+    description: 'A keyboard-driven command search palette supporting categories, shortcuts, recent history, and instant fuzzy search.',
+    triggerButton: 'Open Command Palette',
+    props: [
+      { name: 'open', type: 'boolean', label: 'Open', defaultValue: false, description: 'Opens the command palette' },
+      { name: 'placeholder', type: 'string', label: 'Placeholder', defaultValue: 'Search commands\u2026', description: 'Input placeholder text' },
+      { name: 'maxVisible', type: 'number', label: 'Max Visible', defaultValue: 8, description: 'Max results shown at once' },
+      { name: 'showRecent', type: 'boolean', label: 'Show Recent', defaultValue: true, description: 'Show recently used commands' },
+      { name: 'commands', type: 'json', label: 'Commands', defaultValue: [
+        { id: 'new-file', label: 'New File', category: 'File', shortcut: 'Ctrl+N', icon: 'file-plus' },
+        { id: 'open-file', label: 'Open File', category: 'File', shortcut: 'Ctrl+O', icon: 'folder-open' },
+        { id: 'save', label: 'Save', category: 'File', shortcut: 'Ctrl+S', icon: 'save' },
+        { id: 'toggle-theme', label: 'Toggle Theme', category: 'View', shortcut: 'Ctrl+Shift+T', icon: 'sun-moon' },
+        { id: 'settings', label: 'Settings', category: 'System', shortcut: 'Ctrl+,', icon: 'settings' },
+        { id: 'docs', label: 'View Documentation', category: 'Help', icon: 'book-open' },
+      ], description: 'Array of command items' },
+    ],
+  },
+  'drag-drop': {
+    description: 'A drag-and-drop list container supporting vertical/horizontal orientation, group linking, and animated reordering.',
+    props: [
+      { name: 'orientation', type: 'select', label: 'Orientation', defaultValue: 'vertical', options: ['vertical', 'horizontal'], description: 'List layout direction' },
+      { name: 'gap', type: 'string', label: 'Gap', defaultValue: '0.5rem', description: 'Gap between drag items' },
+      { name: 'draggableEnabled', type: 'boolean', label: 'Draggable', defaultValue: true, description: 'Enables drag interaction' },
+      { name: 'items', type: 'json', label: 'Items', defaultValue: [
+        { id: '1', label: 'Design System', icon: 'palette' },
+        { id: '2', label: 'Component Library', icon: 'layers' },
+        { id: '3', label: 'Documentation', icon: 'book-open' },
+        { id: '4', label: 'Unit Tests', icon: 'check-circle' },
+        { id: '5', label: 'CI/CD Pipeline', icon: 'git-branch' },
+      ], description: 'Array of draggable item objects' },
+    ],
+  },
+  fab: {
+    description: 'A Floating Action Button with expandable speed-dial, radial/directional layouts, custom icons, and corner position control.',
+    props: [
+      { name: 'position', type: 'select', label: 'Position', defaultValue: 'bottom-right', options: ['bottom-right', 'bottom-left', 'top-right', 'top-left'], description: 'Corner position of the FAB' },
+      { name: 'direction', type: 'select', label: 'Expand Direction', defaultValue: 'top', options: ['top', 'bottom', 'left', 'right', 'radial'], description: 'Direction items expand into' },
+      { name: 'variant', type: 'select', label: 'Variant', defaultValue: 'primary', options: ['primary', 'success', 'warning', 'danger', 'info'], description: 'Color variant' },
+      { name: 'size', type: 'select', label: 'Size', defaultValue: 'md', options: ['mini', 'sm', 'md', 'lg'], description: 'FAB size' },
+      { name: 'icon', type: 'string', label: 'Icon', defaultValue: 'plus', description: 'Icon name for the main button' },
+      { name: 'label', type: 'string', label: 'Label', defaultValue: 'Actions', description: 'Accessible label' },
+      { name: 'defaultOpen', type: 'boolean', label: 'Default Open', defaultValue: false, description: 'Start in expanded state' },
+    ],
+    children: `
+      <ui-fab-item icon="pencil" label="Edit" color="primary"></ui-fab-item>
+      <ui-fab-item icon="share-2" label="Share" color="success"></ui-fab-item>
+      <ui-fab-item icon="trash-2" label="Delete" color="danger"></ui-fab-item>
+    `,
+  },
+  'file-upload': {
+    description: 'A drag-and-drop file upload zone with preview support, validation, size constraints, and multi-file handling.',
+    props: [
+      { name: 'label', type: 'string', label: 'Label', defaultValue: 'Upload Files', description: 'Upload zone label' },
+      { name: 'helperText', type: 'string', label: 'Helper Text', defaultValue: 'Drag & drop or click to select', description: 'Hint shown in drop zone' },
+      { name: 'accept', type: 'string', label: 'Accept', defaultValue: 'image/*', description: 'Accepted file MIME types' },
+      { name: 'multiple', type: 'boolean', label: 'Multiple Files', defaultValue: true, description: 'Allow multiple file selection' },
+      { name: 'maxFiles', type: 'number', label: 'Max Files', defaultValue: 5, description: 'Maximum number of files' },
+      { name: 'showPreview', type: 'boolean', label: 'Show Preview', defaultValue: true, description: 'Shows image previews after upload' },
+    ],
+  },
+  'horizontal-nav': {
+    description: 'A horizontal navigation bar with pills, underline, segmented, and default variants, responsive scrolling, and active state tracking.',
+    props: [
+      { name: 'variant', type: 'select', label: 'Variant', defaultValue: 'pills', options: ['default', 'pills', 'underline', 'segmented'], description: 'Visual style of the nav bar' },
+      { name: 'size', type: 'select', label: 'Size', defaultValue: 'md', options: ['sm', 'md', 'lg'], description: 'Component size' },
+      { name: 'align', type: 'select', label: 'Alignment', defaultValue: 'start', options: ['start', 'center', 'end', 'space-between'], description: 'Item alignment' },
+      { name: 'scrollable', type: 'boolean', label: 'Scrollable', defaultValue: false, description: 'Enable horizontal scrolling for overflow' },
+      { name: 'showDivider', type: 'boolean', label: 'Show Divider', defaultValue: false, description: 'Shows divider line below navigation' },
+      { name: 'fullWidth', type: 'boolean', label: 'Full Width', defaultValue: false, description: 'Stretch items to fill the container' },
+      { name: 'items', type: 'json', label: 'Nav Items', defaultValue: [
+        { id: 'overview', label: 'Overview', icon: 'home' },
+        { id: 'analytics', label: 'Analytics', icon: 'bar-chart' },
+        { id: 'reports', label: 'Reports', icon: 'file-text' },
+        { id: 'settings', label: 'Settings', icon: 'settings' },
+      ], description: 'Array of nav items' },
+    ],
+  },
+  icon: {
+    description: 'A universal icon renderer supporting Lucide, Bootstrap, FontAwesome and custom SVG libraries with spin, color, and size control.',
+    props: [
+      { name: 'name', type: 'string', label: 'Icon Name', defaultValue: 'star', description: 'Name of the icon to display' },
+      { name: 'library', type: 'select', label: 'Library', defaultValue: 'lucide', options: ['default', 'lucide', 'bootstrap', 'fontawesome'], description: 'Icon library to use' },
+      { name: 'size', type: 'number', label: 'Size (px)', defaultValue: 48, description: 'Icon size in pixels' },
+      { name: 'color', type: 'string', label: 'Color', defaultValue: '#10b981', description: 'Icon fill color' },
+      { name: 'spin', type: 'boolean', label: 'Spin', defaultValue: false, description: 'Continuously rotates the icon' },
+    ],
+  },
+  'image-button': {
+    description: 'A rich image tile button with hover effects, labels, aspect ratio control, and configurable overlay modes.',
+    props: [
+      { name: 'src', type: 'string', label: 'Image URL', defaultValue: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&auto=format&fit=crop', description: 'Image source URL' },
+      { name: 'alt', type: 'string', label: 'Alt Text', defaultValue: 'Mountain Lake', description: 'Accessibility alt text' },
+      { name: 'label', type: 'string', label: 'Label', defaultValue: 'Mountain Lake', description: 'Text label on the button' },
+      { name: 'description', type: 'string', label: 'Description', defaultValue: 'A serene alpine landscape', description: 'Subtitle text' },
+      { name: 'effect', type: 'select', label: 'Hover Effect', defaultValue: 'zoom', options: ['zoom', 'lift', 'brighten', 'none'], description: 'Image hover interaction' },
+      { name: 'ratio', type: 'select', label: 'Aspect Ratio', defaultValue: 'video', options: ['square', 'video', 'portrait', 'auto'], description: 'Image container ratio' },
+      { name: 'labelMode', type: 'select', label: 'Label Mode', defaultValue: 'hover', options: ['always', 'hover'], description: 'When to show the label' },
+      { name: 'size', type: 'select', label: 'Size', defaultValue: 'md', options: ['sm', 'md', 'lg', 'xl'], description: 'Component size' },
+    ],
+  },
+  'input-pair': {
+    description: 'A side-by-side dual input layout with individual labels, values, and placeholder support in a single row.',
+    props: [
+      { name: 'labelLeft', type: 'string', label: 'Left Label', defaultValue: 'First Name', description: 'Label for the left input' },
+      { name: 'labelRight', type: 'string', label: 'Right Label', defaultValue: 'Last Name', description: 'Label for the right input' },
+      { name: 'placeholderLeft', type: 'string', label: 'Left Placeholder', defaultValue: 'Enter first name', description: 'Placeholder for left input' },
+      { name: 'placeholderRight', type: 'string', label: 'Right Placeholder', defaultValue: 'Enter last name', description: 'Placeholder for right input' },
+      { name: 'label', type: 'string', label: 'Group Label', defaultValue: 'Full Name', description: 'Optional group heading label' },
+    ],
+  },
+  'list-group': {
+    description: 'A structured list group container with headers, item slots, and flexible padding for sidebar menus and content lists.',
+    props: [
+      { name: 'label', type: 'string', label: 'Group Label', defaultValue: 'Quick Actions', description: 'Header label for the group' },
+    ],
+    children: `
+      <ui-list-item label="Dashboard" icon="layout-dashboard"></ui-list-item>
+      <ui-list-item label="Analytics" icon="bar-chart"></ui-list-item>
+      <ui-list-item label="Reports" icon="file-text"></ui-list-item>
+      <ui-list-item label="Settings" icon="settings"></ui-list-item>
+    `,
+  },
+  'number-input': {
+    description: 'A numeric input with increment/decrement controls, min/max bounds, step precision, and prefix icon support.',
+    props: [
+      { name: 'value', type: 'number', label: 'Value', defaultValue: 10, description: 'Current numeric value' },
+      { name: 'min', type: 'number', label: 'Minimum', defaultValue: 0, description: 'Minimum allowed value' },
+      { name: 'max', type: 'number', label: 'Maximum', defaultValue: 100, description: 'Maximum allowed value' },
+      { name: 'step', type: 'number', label: 'Step', defaultValue: 1, description: 'Increment/decrement amount' },
+      { name: 'label', type: 'string', label: 'Label', defaultValue: 'Quantity', description: 'Input label' },
+      { name: 'prefixIcon', type: 'string', label: 'Prefix Icon', defaultValue: 'package', description: 'Icon shown at left of input' },
+    ],
+  },
+  'radio-group': {
+    description: 'An accessible radio button group with shared value binding, validation, orientation, and label support.',
+    props: [
+      { name: 'label', type: 'string', label: 'Group Label', defaultValue: 'Select Plan', description: 'Label for the radio group' },
+      { name: 'value', type: 'string', label: 'Selected Value', defaultValue: 'pro', description: 'Currently selected radio value' },
+      { name: 'disabled', type: 'boolean', label: 'Disabled', defaultValue: false, description: 'Disables all radios in group' },
+      { name: 'invalid', type: 'boolean', label: 'Invalid', defaultValue: false, description: 'Shows validation error state' },
+      { name: 'helperText', type: 'string', label: 'Helper Text', defaultValue: 'Choose a billing plan', description: 'Hint text below the group' },
+    ],
+    children: `
+      <ui-radio value="free">Free</ui-radio>
+      <ui-radio value="pro">Pro</ui-radio>
+      <ui-radio value="enterprise">Enterprise</ui-radio>
+    `,
+  },
+  'smart-location-dropdown': {
+    description: 'An intelligent location-aware dropdown with geolocation support, search filtering, and hierarchical region selection.',
+    props: [
+      { name: 'placeholder', type: 'string', label: 'Placeholder', defaultValue: 'Select location\u2026', description: 'Display text when empty' },
+    ],
+  },
+  'smart-menu': {
+    description: 'An AI-driven adaptive context menu with intelligent grouping, search, keyboard navigation, and dynamic sub-menus.',
+    props: [
+      { name: 'items', type: 'json', label: 'Menu Items', defaultValue: [
+        { id: 'copy', label: 'Copy', icon: 'copy', shortcut: 'Ctrl+C' },
+        { id: 'paste', label: 'Paste', icon: 'clipboard', shortcut: 'Ctrl+V' },
+        { id: 'cut', label: 'Cut', icon: 'scissors', shortcut: 'Ctrl+X' },
+        { id: 'delete', label: 'Delete', icon: 'trash-2', color: 'danger' },
+      ], description: 'Array of context menu items' },
+    ],
+  },
+  stepper: {
+    description: 'A multi-step progress indicator supporting horizontal/vertical orientation, numbered steps, descriptions, and built-in navigation controls.',
+    props: [
+      { name: 'activeStep', type: 'number', label: 'Active Step', defaultValue: 1, description: 'Currently active step index (0-based)' },
+      { name: 'orientation', type: 'select', label: 'Orientation', defaultValue: 'horizontal', options: ['horizontal', 'vertical'], description: 'Layout direction' },
+      { name: 'size', type: 'select', label: 'Size', defaultValue: 'md', options: ['sm', 'md', 'lg'], description: 'Step indicator size' },
+      { name: 'showNumbers', type: 'boolean', label: 'Show Numbers', defaultValue: true, description: 'Display step numbers' },
+      { name: 'showDescriptions', type: 'boolean', label: 'Show Descriptions', defaultValue: true, description: 'Show step description text' },
+      { name: 'showControls', type: 'boolean', label: 'Show Controls', defaultValue: true, description: 'Show Next/Previous buttons' },
+      { name: 'steps', type: 'json', label: 'Steps', defaultValue: [
+        { id: 'info', label: 'Personal Info', description: 'Enter your basic details', status: 'complete' },
+        { id: 'account', label: 'Account Setup', description: 'Configure your account', status: 'active' },
+        { id: 'plan', label: 'Choose Plan', description: 'Select a billing tier', status: 'pending' },
+        { id: 'review', label: 'Review & Submit', description: 'Confirm your selections', status: 'pending' },
+      ], description: 'Array of step objects' },
+    ],
+  },
+  'tag-group': {
+    description: 'A container for grouping tags with overlap stacking, selection modes, size/variant overrides, and +N overflow badge.',
+    props: [
+      { name: 'spacing', type: 'string', label: 'Spacing', defaultValue: '8px', description: 'Gap between tags' },
+      { name: 'overlap', type: 'boolean', label: 'Overlap', defaultValue: false, description: 'Enable overlapping tag stack' },
+      { name: 'selectionMode', type: 'select', label: 'Selection Mode', defaultValue: 'none', options: ['none', 'single', 'multiple'], description: 'Interaction selection behavior' },
+      { name: 'max', type: 'number', label: 'Max Visible', defaultValue: 0, description: 'Truncate to N tags with +more badge' },
+      { name: 'size', type: 'select', label: 'Size', defaultValue: 'md', options: ['sm', 'md', 'lg'], description: 'Tag size' },
+      { name: 'variant', type: 'select', label: 'Variant', defaultValue: 'filled', options: ['filled', 'outlined', 'light', 'dot'], description: 'Tag visual style' },
+      { name: 'color', type: 'select', label: 'Color', defaultValue: 'primary', options: ['primary', 'success', 'warning', 'danger', 'info'], description: 'Tag color' },
+    ],
+    children: `
+      <ui-tag label="React"></ui-tag>
+      <ui-tag label="TypeScript"></ui-tag>
+      <ui-tag label="Tailwind CSS"></ui-tag>
+      <ui-tag label="Stencil.js"></ui-tag>
+      <ui-tag label="Web Components"></ui-tag>
+    `,
+  },
+  'toggle-group': {
+    description: 'A group of toggle buttons sharing a value model with single and multi-select modes, accessible validation, and helper text.',
+    props: [
+      { name: 'label', type: 'string', label: 'Label', defaultValue: 'Text Formatting', description: 'Group label' },
+      { name: 'disabled', type: 'boolean', label: 'Disabled', defaultValue: false, description: 'Disables all items in the group' },
+      { name: 'invalid', type: 'boolean', label: 'Invalid', defaultValue: false, description: 'Shows validation error' },
+      { name: 'helperText', type: 'string', label: 'Helper Text', defaultValue: 'Select formatting options', description: 'Hint text below group' },
+    ],
+    children: `
+      <ui-switch value="bold"><ui-icon name="bold" size="16"></ui-icon> Bold</ui-switch>
+      <ui-switch value="italic"><ui-icon name="italic" size="16"></ui-icon> Italic</ui-switch>
+      <ui-switch value="underline"><ui-icon name="underline" size="16"></ui-icon> Underline</ui-switch>
+    `,
+  },
+  toolbar: {
+    description: 'A configurable toolbar supporting dynamic item schemas, groups, dividers, vertical/horizontal orientation, and sticky positioning.',
+    props: [
+      { name: 'variant', type: 'select', label: 'Variant', defaultValue: 'default', options: ['default', 'glass', 'dark', 'minimal', 'compact'], description: 'Visual style variant' },
+      { name: 'size', type: 'select', label: 'Size', defaultValue: 'md', options: ['sm', 'md', 'lg'], description: 'Toolbar item size' },
+      { name: 'orientation', type: 'select', label: 'Orientation', defaultValue: 'horizontal', options: ['horizontal', 'vertical'], description: 'Layout direction' },
+      { name: 'alignment', type: 'select', label: 'Alignment', defaultValue: 'start', options: ['start', 'center', 'end', 'space-between'], description: 'Item alignment' },
+      { name: 'items', type: 'json', label: 'Toolbar Items', defaultValue: [
+        { id: 'bold', type: 'button', icon: 'bold', tooltip: 'Bold', variant: 'ghost' },
+        { id: 'italic', type: 'button', icon: 'italic', tooltip: 'Italic', variant: 'ghost' },
+        { id: 'sep1', type: 'divider' },
+        { id: 'link', type: 'button', icon: 'link', tooltip: 'Insert Link', variant: 'ghost' },
+        { id: 'image', type: 'button', icon: 'image', tooltip: 'Insert Image', variant: 'ghost' },
+        { id: 'sep2', type: 'divider' },
+        { id: 'undo', type: 'button', icon: 'undo-2', tooltip: 'Undo', variant: 'ghost' },
+        { id: 'redo', type: 'button', icon: 'redo-2', tooltip: 'Redo', variant: 'ghost' },
+      ], description: 'Array of toolbar item definitions' },
+    ],
+  },
+  'top-bar': {
+    description: 'An enterprise application top bar with company branding, user avatar, notification badges, and configurable action buttons.',
+    props: [
+      { name: 'companyName', type: 'string', label: 'Company Name', defaultValue: 'Atom UI', description: 'Company or app name' },
+      { name: 'companyLogo', type: 'string', label: 'Company Logo', defaultValue: '\u26a1', description: 'Logo icon or emoji' },
+      { name: 'userName', type: 'string', label: 'User Name', defaultValue: 'Praveen Rajkumar', description: 'Logged-in user display name' },
+      { name: 'userAvatar', type: 'string', label: 'User Avatar', defaultValue: 'user', description: 'Avatar icon name' },
+      { name: 'actions', type: 'json', label: 'Action Buttons', defaultValue: [
+        { id: 'notifications', icon: 'bell', badge: '5', tooltip: 'Notifications' },
+        { id: 'settings', icon: 'settings', tooltip: 'Settings' },
+        { id: 'help', icon: 'help-circle', tooltip: 'Help' },
+      ], description: 'Array of top-right action buttons' },
+    ],
+  },
+  'workspace-manager': {
+    description: 'An advanced multi-region workspace layout manager with resizable panels, drag-to-reorder, and localStorage state persistence.',
+    props: [
+      { name: 'direction', type: 'select', label: 'Direction', defaultValue: 'horizontal', options: ['horizontal', 'vertical'], description: 'Main split direction' },
+      { name: 'saveState', type: 'boolean', label: 'Save State', defaultValue: true, description: 'Persist layout to localStorage' },
+      { name: 'stateKey', type: 'string', label: 'State Key', defaultValue: 'workspace-state', description: 'localStorage key for state' },
+      { name: 'regions', type: 'json', label: 'Regions', defaultValue: [
+        { id: 'sidebar', label: 'Sidebar', size: '20%', minSize: '150px', content: '<div style="padding:16px;color:#10B981;font-weight:600;">Sidebar</div>' },
+        { id: 'main', label: 'Main Panel', size: '60%', content: '<div style="padding:16px;color:#60A5FA;font-weight:600;">Main Content</div>' },
+        { id: 'inspector', label: 'Inspector', size: '20%', minSize: '150px', content: '<div style="padding:16px;color:#F59E0B;font-weight:600;">Inspector</div>' },
+      ], description: 'Array of layout region configs' },
+    ],
+  },
 };
 
 export default function DynamicComponentPage({ id }: { id: string }) {
@@ -515,6 +952,29 @@ export default function DynamicComponentPage({ id }: { id: string }) {
     // Apply component-specific prop overrides (e.g. portal:false for tooltip)
     if (meta.overrideProps) {
       Object.assign(customProps, meta.overrideProps);
+    }
+
+    // Overlay components: aside & dialog get an Open trigger button
+    if (meta.triggerButton) {
+      return (
+        <OpenTriggerPreview
+          tagName={tagName}
+          componentProps={customProps}
+          childrenHtml={meta.children}
+          triggerLabel={meta.triggerButton}
+        />
+      );
+    }
+
+    // Snackbar: render component + external trigger buttons
+    if (meta.triggerContent) {
+      return (
+        <SnackbarTriggerPreview
+          tagName={tagName}
+          componentProps={customProps}
+          triggerContent={meta.triggerContent}
+        />
+      );
     }
 
     if (meta.children) {

@@ -3,6 +3,12 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 
+import { initTreeGlobals } from './utils/treeGlobals'
+import { initTransferListGlobals } from './utils/transferListGlobals'
+
+initTreeGlobals();
+initTransferListGlobals();
+
 // @ts-ignore
 import { defineCustomElements } from 'atomicuilibrary/loader'
 

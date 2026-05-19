@@ -124,7 +124,7 @@ function PropControl({
       el.removeEventListener('uiChange', handler);
       el.removeEventListener('change', handler);
     };
-  }, []);
+  }, [value]);
 
   // ui-dropdown: listen for valueChange with detail.value
   useEffect(() => {
@@ -142,7 +142,7 @@ function PropControl({
       el.removeEventListener('uiChange', handler);
       el.removeEventListener('change', handler);
     };
-  }, []);
+  }, [value]);
 
   const handleJsonChange = (text: string) => {
     setJsonText(text);
@@ -167,7 +167,6 @@ function PropControl({
       {config.type === 'boolean' && (
         <ui-switch
           ref={switchRef}
-          key={String(value)}
           checked={value || undefined}
           label={value ? 'true' : 'false'}
           size="sm"
@@ -234,7 +233,6 @@ function PropControl({
       {config.type === 'select' && (
         <ui-dropdown
           ref={dropdownRef}
-          key={String(value)}
           value={value}
           size="sm"
           placeholder="Select..."
