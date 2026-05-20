@@ -35803,21 +35803,21 @@ const printCurrentTable = function () {\r
       updatePlaygroundAnchor();\r
     }, 100);
 })();
-<\/script>`}],aside:[{title:`≡ƒææ Sovereign Zenith Edition`,description:`The apex of technical workspace orchestration. Hands-free voice control and 3D depth tilt.`,html:`<div class="demo-block">\r
-        <h3 style="display: flex; align-items: center; gap: 8px;">≡ƒææ Sovereign Zenith Edition</h3>\r
+<\/script>`}],aside:[{title:`👑 Sovereign Zenith Edition`,description:`The apex of technical workspace orchestration. Hands-free voice control and 3D depth tilt.`,html:`<div class="demo-block">\r
+        <h3 style="display: flex; align-items: center; gap: 8px;">👑 Sovereign Zenith Edition</h3>\r
         <p style="opacity: 0.7; margin-bottom: 24px;">The apex of technical workspace orchestration. Hands-free voice control and 3D depth tilt.</p>\r
         \r
         <div class="demo-mastery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 32px;">\r
           <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 24px; border-radius: 16px;">\r
-            <h4 style="margin-top:0;">≡ƒñû Industrial Control</h4>\r
+            <h4 style="margin-top:0;">🤖 Industrial Control</h4>\r
             <div style="display: flex; flex-direction: column; gap: 10px;">\r
-              <ui-button id="btnTogglePrimary" variant="outline" color="success" label="ΓÜí Toggle Primary Panel"></ui-button>\r
-              <ui-button id="btnToggleMini" variant="outline" color="primary" label="≡ƒñÅ Toggle Mini State"></ui-button>\r
-              <ui-button id="btnInitVoice" variant="outline" color="success" label="≡ƒÄÖ∩╕Å Audio Commands: ENABLE" style="font-family: monospace;"></ui-button>\r
+              <ui-button id="btnTogglePrimary" variant="outline" color="success" label="👑 Toggle Primary Panel"></ui-button>\r
+              <ui-button id="btnToggleMini" variant="outline" color="primary" label="🤏 Toggle Mini State"></ui-button>\r
+              <ui-button id="btnInitVoice" variant="outline" color="success" label="🎙️ Audio Commands: ENABLE" style="font-family: monospace;"></ui-button>\r
             </div>\r
           </div>\r
           <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 24px; border-radius: 16px;">\r
-            <h4 style="margin-top:0;">Γ£¿ High-Fidelity Themes</h4>\r
+            <h4 style="margin-top:0;">✨ High-Fidelity Themes</h4>\r
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">\r
               <ui-button id="themeDefault" variant="outline" color="secondary" label="Default"></ui-button>\r
               <ui-button id="themeGlass" variant="outline" color="secondary" label="Glass"></ui-button>\r
@@ -35888,8 +35888,8 @@ const printCurrentTable = function () {\r
       });\r
     }, 50);
 })();
-<\/script>`},{title:`≡ƒÆÄ Premium Features Showcase`,description:`Explore elite-tier features like Glassmorphism, Persistence, and Loading states.`,html:`<div class="demo-block">\r
-          <h3>≡ƒÆÄ Premium Features Showcase</h3>\r
+<\/script>`},{title:`💎 Premium Features Showcase`,description:`Explore elite-tier features like Glassmorphism, Persistence, and Loading states.`,html:`<div class="demo-block">\r
+          <h3>💎 Premium Features Showcase</h3>\r
           <p style="color: #6b7280; margin-bottom: 24px;">Explore elite-tier features like Glassmorphism, Persistence, and Loading states.</p>\r
 \r
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">\r
@@ -35917,7 +35917,7 @@ const printCurrentTable = function () {\r
 \r
           <ui-aside-panel id="glassPanel" variant="glass" backdrop-blur="8px" direction="right" size="450px">\r
             <div slot="header" style="color: inherit;">\r
-              <h3 style="margin: 0;">Γ£¿ Premium Glass</h3>\r
+              <h3 style="margin: 0;">✨ Premium Glass</h3>\r
             </div>\r
             <div slot="content">\r
               <div style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 12px; margin-bottom: 20px;">\r
@@ -35930,7 +35930,7 @@ const printCurrentTable = function () {\r
 \r
           <ui-aside-panel id="persistentPanel" persist-key="demo-panel" resizable="true" direction="right" size="400px">\r
             <div slot="header">\r
-              <h3 style="margin: 0;">≡ƒÆ╛ Persistent Panel</h3>\r
+              <h3 style="margin: 0;">💾 Persistent Panel</h3>\r
             </div>\r
             <div slot="content">\r
               <p>Try resizing this panel or closing it, then refresh the page. It will remember its exact state!</p>\r
@@ -35942,7 +35942,7 @@ const printCurrentTable = function () {\r
 \r
           <ui-aside-panel id="loadingPanel" loading="true" direction="right" size="400px">\r
             <div slot="header">\r
-              <h3 style="margin: 0;">ΓÅ│ Loading Data...</h3>\r
+              <h3 style="margin: 0;">⏳ Loading Data...</h3>\r
             </div>\r
             <div slot="content">\r
               <p>Content is currently being fetched.</p>\r
@@ -35976,106 +35976,114 @@ const printCurrentTable = function () {\r
       document.getElementById('btnStopLoading')?.addEventListener('click', stopAsideLoading);\r
     }, 50);
 })();
-<\/script>`},{title:`≡ƒ¢╕ Non-Full Layouts (Floating)`,description:`Floating panels that don't span the full height or width. Perfect for feedback widgets or quick toolbars.`,html:`<div class="demo-block">\r
-        <h3 style="display: flex; align-items: center; gap: 8px;">≡ƒ¢╕ Non-Full Layouts (Floating)</h3>\r
-        <p style="opacity: 0.7; margin-bottom: 24px;">Floating panels that don't span the full height or width. Perfect for feedback widgets or quick toolbars.</p>\r
-        \r
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 32px;">\r
-          <div style="background: var(--bg-secondary); border: 1px solid var(--border-default); padding: 24px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">\r
-            <h4 style="margin-top:0; color: var(--text-primary);">≡ƒÆ¼ Feedback Widget</h4>\r
-            <p style="font-size:13px; color: var(--text-secondary);">Bottom-aligned floating panel matching industrial survey layouts.</p>\r
-            <ui-button id="btnOpenFeedback" variant="outline" color="success" label="Open Feedback Panel" style="width: 100%"></ui-button>\r
-          </div>\r
-          <div style="background: var(--bg-secondary); border: 1px solid var(--border-default); padding: 24px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">\r
-            <h4 style="margin-top:0; color: var(--text-primary);">≡ƒÄ» Centered Flyout</h4>\r
-            <p style="font-size:13px; color: var(--text-secondary);">Vertically centered panel on the screen edge.</p>\r
-            <ui-button id="btnOpenCentered" variant="outline" color="success" label="Open Centered Flyout" style="width: 100%"></ui-button>\r
-          </div>\r
-        </div>\r
-\r
-        <ui-aside-panel \r
-          id="feedbackPanel" \r
-          direction="right" \r
-          variant="floating" \r
-          floating-align="end" \r
-          floating-offset="30px"\r
-          size="450px" \r
-          secondary-size="650px"\r
-        >\r
-          <div slot="header">\r
-             <div style="display: flex; align-items: center; gap: 10px;">\r
-                <img src="https://www.se.com/favicon.ico" style="width: 24px; height: 24px;">\r
-                <h3 style="margin:0;">Schneider Electric Feedback</h3>\r
-             </div>\r
-          </div>\r
-          <div slot="content">\r
-             <p style="font-weight: bold; margin-bottom: 12px;">How satisfied are you today? *</p>\r
-             <div style="display: flex; justify-content: space-between; gap: 4px; margin-bottom: 24px;">\r
-                \${[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => 
+<\/script>`},{title:`Non-Full Layouts (Floating)`,description:`Floating panels that don't span the full height or width. Perfect for feedback widgets or quick toolbars.`,html:`<div class="demo-block">
+  <h3 style="display: flex; align-items: center; gap: 8px;">Non-Full Layouts (Floating)</h3>
+  <p style="opacity: 0.7; margin-bottom: 24px;">Floating panels that don't span the full height or width. Perfect for feedback widgets or quick toolbars.</p>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 32px;">
+    <div style="background: var(--bg-secondary); border: 1px solid var(--border-default); padding: 24px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+      <h4 style="margin-top:0; color: var(--text-primary);">Feedback Widget</h4>
+      <p style="font-size:13px; color: var(--text-secondary);">Bottom-aligned floating panel matching industrial survey layouts.</p>
+      <ui-button id="btnOpenFeedback" variant="outline" color="success" label="Open Feedback Panel" style="width: 100%"></ui-button>
+    </div>
+    <div style="background: var(--bg-secondary); border: 1px solid var(--border-default); padding: 24px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+      <h4 style="margin-top:0; color: var(--text-primary);">Centered Flyout</h4>
+      <p style="font-size:13px; color: var(--text-secondary);">Vertically centered panel on the screen edge.</p>
+      <ui-button id="btnOpenCentered" variant="outline" color="success" label="Open Centered Flyout" style="width: 100%"></ui-button>
+    </div>
+  </div>
+
+  <ui-aside-panel 
+    id="feedbackPanel" 
+    direction="right" 
+    variant="floating" 
+    floating-align="end" 
+    floating-offset="30px"
+    size="450px" 
+    secondary-size="650px"
+  >
+    <div slot="header">
+       <div style="display: flex; align-items: center; gap: 10px;">
+          <img src="https://www.se.com/favicon.ico" style="width: 24px; height: 24px;">
+          <h3 style="margin:0;">Schneider Electric Feedback</h3>
+       </div>
+    </div>
+    <div slot="content">
+       <p style="font-weight: bold; margin-bottom: 12px;">How satisfied are you today? *</p>
+       <div style="display: flex; justify-content: space-between; gap: 4px; margin-bottom: 24px;">
+          <ui-button variant="outline" color="secondary" label="0" size="md" style="flex: 1"></ui-button>
+          <ui-button variant="outline" color="secondary" label="1" size="md" style="flex: 1"></ui-button>
+          <ui-button variant="outline" color="secondary" label="2" size="md" style="flex: 1"></ui-button>
+          <ui-button variant="outline" color="secondary" label="3" size="md" style="flex: 1"></ui-button>
+          <ui-button variant="outline" color="secondary" label="4" size="md" style="flex: 1"></ui-button>
+          <ui-button variant="outline" color="secondary" label="5" size="md" style="flex: 1"></ui-button>
+          <ui-button variant="outline" color="secondary" label="6" size="md" style="flex: 1"></ui-button>
+          <ui-button variant="outline" color="secondary" label="7" size="md" style="flex: 1"></ui-button>
+          <ui-button variant="outline" color="secondary" label="8" size="md" style="flex: 1"></ui-button>
+          <ui-button variant="outline" color="secondary" label="9" size="md" style="flex: 1"></ui-button>
+          <ui-button variant="outline" color="secondary" label="10" size="md" style="flex: 1"></ui-button>
+       </div>
+       
+       <div style="display: grid; gap: 16px; margin-bottom: 24px;">
+           <ui-input multiline="true" rows="3" label="Could you please describe your recent experience with us?" placeholder="Your thoughts..."></ui-input>
+           <ui-input multiline="true" rows="3" label="What suggestions would you recommend?" placeholder="Enhancements..."></ui-input>
+       </div>
+     
+     <div style="display: flex; gap: 10px;">
+        <ui-button id="btnCloseFeedback" variant="outline" color="secondary" label="Close" style="flex: 1"></ui-button>
+        <ui-button id="btnSubmitFeedback" variant="outline" color="success" label="Submit" style="flex: 1"></ui-button>
+     </div>
+     
+     <p style="text-align: center; font-size: 11px; color: #94a3b8; margin-top: 24px;">Powered by <b>Medallia</b></p>
+    </div>
+  </ui-aside-panel>
+
+  <ui-aside-panel 
+    id="centerFloatPanel" 
+    direction="right" 
+    variant="floating" 
+    floating-align="center" 
+    floating-offset="20px"
+    size="350px" 
+    secondary-size="400px"
+    backdrop-blur="4px"
+  >
+    <div slot="header">
+       <div style="display: flex; align-items: center; gap: 8px;">
+          <ui-icon name="target" library="lucide" size="18px"></ui-icon>
+          <h3 style="margin:0;">Centered Flyout</h3>
+       </div>
+    </div>
+    <div slot="content">
+       <p style="color: #64748b; font-size: 14px; line-height: 1.6;">This panel is vertically centered on the screen edge using <code>floating-align="center"</code>.</p>
+       <div style="margin-top: 20px; padding: 16px; background: #f1f5f9; border-radius: 12px; font-size: 13px;">
+          Perfect for quick tool selections or contextual utilities.
+       </div>
+    </div>
+  </ui-aside-panel>
+</div>
+
 <script>
 (function() {
-  <ui-button variant="outline" color="secondary" label="\${n}" size="md"yle="flex: 1"></ui-button>\`).join('')}\r
-             </div>\r
-             \r
-             <div style="display: grid; gap: 16px; margin-bottom: 24px;">\r
-                 <ui-input multiline="true" rows="3" label="Could you please describe your recent experience with us?" placeholder="Your thoughts..."></ui-input>\r
-                 <ui-input multiline="true" rows="3" label="What suggestions would you recommend?" placeholder="Enhancements..."></ui-input>\r
-             </div>\r
-           \r
-           <div style="display: flex; gap: 10px;">\r
-              <ui-button id="btnCloseFeedback" variant="outline" color="secondary" label="Close" style="flex: 1"></ui-button>\r
-              <ui-button id="btnSubmitFeedback" variant="outline" color="success" label="Submit" style="flex: 1"></ui-button>\r
-           </div>\r
-           \r
-           <p style="text-align: center; font-size: 11px; color: #94a3b8; margin-top: 24px;">Powered by <b>Medallia</b></p>\r
-        </div>\r
-      </ui-aside-panel>\r
-\r
-      <ui-aside-panel \r
-        id="centerFloatPanel" \r
-        direction="right" \r
-        variant="floating" \r
-        floating-align="center" \r
-        floating-offset="20px"\r
-        size="350px" \r
-        secondary-size="400px"\r
-        backdrop-blur="4px"\r
-      >\r
-        <div slot="header">\r
-           <div style="display: flex; align-items: center; gap: 8px;">\r
-              <ui-icon name="target" library="lucide" size="18px"></ui-icon>\r
-              <h3 style="margin:0;">Centered Flyout</h3>\r
-           </div>\r
-        </div>\r
-        <div slot="content">\r
-           <p style="color: #64748b; font-size: 14px; line-height: 1.6;">This panel is vertically centered on the screen edge using <code>floating-align="center"</code>.</p>\r
-           <div style="margin-top: 20px; padding: 16px; background: #f1f5f9; border-radius: 12px; font-size: 13px;">\r
-              Perfect for quick tool selections or contextual utilities.\r
-           </div>\r
-        </div>\r
-      </ui-aside-panel>\r
-    </div>\r
-  \`;\r
-\r
-    setTimeout(() => {\r
-      document.getElementById('btnOpenFeedback')?.addEventListener('click', () => document.getElementById('feedbackPanel')?.show());\r
-      document.getElementById('btnCloseFeedback')?.addEventListener('click', () => document.getElementById('feedbackPanel')?.hide());\r
-      document.getElementById('btnSubmitFeedback')?.addEventListener('click', () => {\r
-        alert('Feedback Submitted!');\r
-        document.getElementById('feedbackPanel')?.hide();\r
-      });\r
-      document.getElementById('btnOpenCentered')?.addEventListener('click', () => document.getElementById('centerFloatPanel')?.show());\r
-    }, 50);
+  setTimeout(() => {
+    document.getElementById('btnOpenFeedback')?.addEventListener('click', () => document.getElementById('feedbackPanel')?.show());
+    document.getElementById('btnCloseFeedback')?.addEventListener('click', () => document.getElementById('feedbackPanel')?.hide());
+    document.getElementById('btnSubmitFeedback')?.addEventListener('click', () => {
+      alert('Feedback Submitted!');
+      document.getElementById('feedbackPanel')?.hide();
+    });
+    document.getElementById('btnOpenCentered')?.addEventListener('click', () => document.getElementById('centerFloatPanel')?.show());
+  }, 100);
 })();
-<\/script>`},{title:`≡ƒ¢╕ Symmetrical Flyouts Mastery`,description:`A showcase of floating panels sliding from every axis. Each is centered along its respective edge with ultra-smooth transitions.`,html:`<div class="demo-block">\r
-      <h3 style="display: flex; align-items: center; gap: 8px;">≡ƒ¢╕ Symmetrical Flyouts Mastery</h3>\r
+<\/script>`},{title:`🎛️ Symmetrical Flyouts Mastery`,description:`A showcase of floating panels sliding from every axis. Each is centered along its respective edge with ultra-smooth transitions.`,html:`<div class="demo-block">\r
+      <h3 style="display: flex; align-items: center; gap: 8px;">🎛️ Symmetrical Flyouts Mastery</h3>\r
       <p style="opacity: 0.7; margin-bottom: 24px;">A showcase of floating panels sliding from every axis. Each is centered along its respective edge with ultra-smooth transitions.</p>\r
       \r
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 40px; background: var(--bg-secondary); padding: 20px; border-radius: 12px; border: 1px dashed var(--border-default);">\r
-         <ui-button id="btnFlyLeft" variant="outline" color="success" label="Γ¼à∩╕Å Fly Left" style="height: 60px;"></ui-button>\r
-         <ui-button id="btnFlyRight" variant="outline" color="primary" label="Γ₧í∩╕Å Fly Right" style="height: 60px;"></ui-button>\r
-         <ui-button id="btnFlyTop" variant="outline" color="warning" label="Γ¼å∩╕Å Fly Top" style="height: 60px;"></ui-button>\r
-         <ui-button id="btnFlyBottom" variant="outline" color="danger" label="Γ¼ç∩╕Å Fly Bottom" style="height: 60px;"></ui-button>\r
+         <ui-button id="btnFlyLeft" variant="outline" color="success" label="⬅️ Fly Left" style="height: 60px;"></ui-button>\r
+         <ui-button id="btnFlyRight" variant="outline" color="primary" label="➡️ Fly Right" style="height: 60px;"></ui-button>\r
+         <ui-button id="btnFlyTop" variant="outline" color="warning" label="⬆️ Fly Top" style="height: 60px;"></ui-button>\r
+         <ui-button id="btnFlyBottom" variant="outline" color="danger" label="⬇️ Fly Bottom" style="height: 60px;"></ui-button>\r
       </div>\r
       \r
       <div style="background: #fff; padding: 30px; border-radius: 16px; border: 1px solid #e2e8f0; text-align: center;">\r
@@ -36132,8 +36140,8 @@ const printCurrentTable = function () {\r
       document.getElementById('btnFlyBottom')?.addEventListener('click', () => document.getElementById('flyBottom')?.show());\r
     }, 50);
 })();
-<\/script>`},{title:`≡ƒôÜ Multilayer Stack Orchestration`,description:`Using stack-offset to layer multiple concurrent panels.`,html:`<div class="demo-block">\r
-        <h3>≡ƒôÜ Multilayer Stack Orchestration</h3>\r
+<\/script>`},{title:`📚 Multilayer Stack Orchestration`,description:`Using stack-offset to layer multiple concurrent panels.`,html:`<div class="demo-block">\r
+        <h3>📚 Multilayer Stack Orchestration</h3>\r
         <p>Using <code>stack-offset</code> to layer multiple concurrent panels.</p>\r
         <div style="display: flex; gap: 10px;">\r
           <ui-button id="btnStack1" variant="outline" color="success" label="Layer 1"></ui-button>\r
@@ -36158,8 +36166,8 @@ const printCurrentTable = function () {\r
       document.getElementById('btnStack2')?.addEventListener('click', () => document.getElementById('stack2')?.show());\r
     }, 100);
 })();
-<\/script>`},{title:`≡ƒôä Technical Documentation Reader`,description:`The Sovereign Aside Panel is a high-fidelity workspace component designed for technical orchestration.`,html:`<div class="demo-block">\r
-        <h3>≡ƒôä Technical Documentation Reader</h3>\r
+<\/script>`},{title:`📄 Technical Documentation Reader`,description:`The Sovereign Aside Panel is a high-fidelity workspace component designed for technical orchestration.`,html:`<div class="demo-block">\r
+        <h3>📄 Technical Documentation Reader</h3>\r
         <ui-button id="btnOpenManual" variant="outline" color="success" label="OPEN MANUAL" size="large"></ui-button>\r
 \r
         <ui-aside-panel id="docAside" direction="right" size="600px" resizable="true">\r
@@ -36193,18 +36201,18 @@ const printCurrentTable = function () {\r
       document.getElementById('btnOpenManual')?.addEventListener('click', () => document.getElementById('docAside')?.show());\r
     }, 100);
 })();
-<\/script>`},{title:`≡ƒîì (RTL) ╫₧╫ª╫æ ╫₧╫Ö╫₧╫Ö╫ƒ ╫£╫⌐╫₧╫É╫£`,description:`Globalized interface support for Right-to-Left languages.`,html:`<div class="demo-block" dir="rtl">\r
-        <h3>≡ƒîì (RTL) ╫₧╫ª╫æ ╫₧╫Ö╫₧╫Ö╫ƒ ╫£╫⌐╫₧╫É╫£</h3>\r
+<\/script>`},{title:`🌐 (RTL) Right-to-Left Layout (RTL)`,description:`Globalized interface support for Right-to-Left languages.`,html:`<div class="demo-block" dir="rtl">\r
+        <h3>🌐 (RTL) Right-to-Left Layout (RTL)</h3>\r
         <p>Globalized interface support for Right-to-Left languages.</p>\r
-        <ui-button id="btnOpenRtl" variant="outline" color="warning" label="╫ñ╫¬╫ù ╫ñ╫á╫£ (Open RTL)" size="large"></ui-button>\r
+        <ui-button id="btnOpenRtl" variant="outline" color="warning" label="פתח פנל (Open RTL)" size="large"></ui-button>\r
 \r
         <ui-aside-panel id="rtlAside" rtl="true" direction="right" size="400px">\r
-           <div slot="header"><h3>╫⌐╫ò╫¿╫¬ ╫¢╫ò╫¬╫¿╫¬</h3></div>\r
+           <div slot="header"><h3>שורת כותרת</h3></div>\r
            <div slot="content">\r
-              <p>╫¬╫ò╫¢╫ƒ ╫ö╫ñ╫É╫á╫£ ╫₧╫ò╫ª╫Æ ╫₧╫Ö╫₧╫Ö╫ƒ ╫£╫⌐╫₧╫É╫£ ╫æ╫É╫ò╫ñ╫ƒ ╫É╫ò╫ÿ╫ò╫₧╫ÿ╫Ö.</p>\r
+              <p>תוכן הפאנל מוצג מימין לשמאל באופן אוטומטי..</p>\r
               <ul style="padding-right: 20px;">\r
-                <li>╫ñ╫¿╫Ö╫ÿ ╫¿╫É╫⌐╫ò╫ƒ</li>\r
-                <li>╫ñ╫¿╫Ö╫ÿ ╫⌐╫á╫Ö</li>\r
+                <li>פריט ראשון</li>\r
+                <li>פריט שני</li>\r
               </ul>\r
            </div>\r
         </ui-aside-panel>\r
@@ -36216,11 +36224,11 @@ const printCurrentTable = function () {\r
       document.getElementById('btnOpenRtl')?.addEventListener('click', () => document.getElementById('rtlAside')?.show());\r
     }, 100);
 })();
-<\/script>`},{title:`≡ƒÜÇ Non-Blocking Utility (Modeless)`,description:`Configured with show-overlay="false". The background page remains interactive while the panel is open.`,html:`<div class="demo-block">\r
-        <h3 style="display: flex; align-items: center; gap: 8px;">≡ƒÜÇ Non-Blocking Utility (Modeless)</h3>\r
+<\/script>`},{title:`🚀 Non-Blocking Utility (Modeless)`,description:`Configured with show-overlay="false". The background page remains interactive while the panel is open.`,html:`<div class="demo-block">\r
+        <h3 style="display: flex; align-items: center; gap: 8px;">🚀 Non-Blocking Utility (Modeless)</h3>\r
         <p style="opacity: 0.7; margin-bottom: 24px;">Configured with <code>show-overlay="false"</code>. The background page remains interactive while the panel is open.</p>\r
         \r
-        <ui-button id="btnOpenModeless" variant="outline" color="primary" label="≡ƒÜÇ OPEN MODELESS DRAWER" size="large"></ui-button>\r
+        <ui-button id="btnOpenModeless" variant="outline" color="primary" label="🚀 OPEN MODELESS DRAWER" size="large"></ui-button>\r
 \r
         <ui-aside-panel \r
           id="modelessAside" \r
@@ -36254,11 +36262,11 @@ const printCurrentTable = function () {\r
       document.getElementById('modelessAside')?.show();\r
     }, 100);
 })();
-<\/script>`},{title:`≡ƒºè Zero-Frame Mode (Transparent)`,description:`Configured with variant="none". Only your slotted content is rendered, with no industrial frame, background, or shadows.`,html:`<div class="demo-block">\r
-        <h3 style="display: flex; align-items: center; gap: 8px;">≡ƒºè Zero-Frame Mode (Transparent)</h3>\r
+<\/script>`},{title:`🪟 Zero-Frame Mode (Transparent)`,description:`Configured with variant="none". Only your slotted content is rendered, with no industrial frame, background, or shadows.`,html:`<div class="demo-block">\r
+        <h3 style="display: flex; align-items: center; gap: 8px;">🪟 Zero-Frame Mode (Transparent)</h3>\r
         <p style="opacity: 0.7; margin-bottom: 24px;">Configured with <code>variant="none"</code>. Only your slotted content is rendered, with no industrial frame, background, or shadows.</p>\r
         \r
-        <ui-button id="btnOpenRaw" variant="outline" color="success" label="Γ£¿ SUMMON RAW CONTENT" size="large"></ui-button>\r
+        <ui-button id="btnOpenRaw" variant="outline" color="success" label="✨ SUMMON RAW CONTENT" size="large"></ui-button>\r
 \r
         <ui-aside-panel \r
           id="rawAside" \r
@@ -36269,7 +36277,7 @@ const printCurrentTable = function () {\r
         >\r
           <div slot="content">\r
              <div style="background: linear-gradient(135deg, #059669 0%, #047857 100%); color: white; padding: 40px; border-radius: 24px; box-shadow: 0 40px 80px rgba(0,0,0,0.4); text-align: center; border: 1px solid rgba(255,255,255,0.2);">\r
-                <div style="font-size: 40px; margin-bottom: 10px;">≡ƒ¢í∩╕Å</div>\r
+                <div style="font-size: 40px; margin-bottom: 10px;">🛡️</div>\r
                 <h2 style="margin:0 0 10px; font-weight: 800; letter-spacing: -0.02em;">Sovereign Protocol Activated</h2>\r
                 <p style="opacity: 0.9; margin-bottom: 30px; line-height: 1.6;">This interface has no native background. You are seeing a custom-styled div delivered through the raw Aside vessel.</p>\r
                 <ui-button id="btnConfirmRaw" variant="outline" color="secondary" label="CONFIRM DEPLOYMENT" style="width: 100%"></ui-button>\r
@@ -36326,9 +36334,9 @@ const printCurrentTable = function () {\r
             </div>\r
             <div slot="content">\r
               <ul style="margin: 0; padding: 0; list-style: none;">\r
-                <li style="padding: 12px; border-bottom: 1px solid #e5e7eb; cursor: pointer;">≡ƒÅá Dashboard</li>\r
-                <li style="padding: 12px; border-bottom: 1px solid #e5e7eb; cursor: pointer;">≡ƒôè Analytics</li>\r
-                <li style="padding: 12px; border-bottom: 1px solid #e5e7eb; cursor: pointer;">ΓÜÖ∩╕Å Settings</li>\r
+                <li style="padding: 12px; border-bottom: 1px solid #e5e7eb; cursor: pointer;">🏠 Dashboard</li>\r
+                <li style="padding: 12px; border-bottom: 1px solid #e5e7eb; cursor: pointer;">📊 Analytics</li>\r
+                <li style="padding: 12px; border-bottom: 1px solid #e5e7eb; cursor: pointer;">⚙️ Settings</li>\r
               </ul>\r
             </div>\r
           </ui-aside-panel>\r
@@ -36341,10 +36349,10 @@ const printCurrentTable = function () {\r
 <\/script>`},{title:`Panels from All Directions`,description:`Useful for notifications, banners, or temporary messages.`,html:`<div class="demo-block">\r
           <h3>Panels from All Directions</h3>\r
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 20px;">\r
-            <ui-button id="openTopPanel" variant="outline" color="success" label="Γ¼å∩╕Å Top"></ui-button>\r
-            <ui-button id="openRightPanel2" variant="outline" color="success" label="Γ₧í∩╕Å Right"></ui-button>\r
-            <ui-button id="openBottomPanel" variant="outline" color="warning" label="Γ¼ç∩╕Å Bottom"></ui-button>\r
-            <ui-button id="openLeftPanel2" variant="outline" color="danger" label="Γ¼à∩╕Å Left"></ui-button>\r
+            <ui-button id="openTopPanel" variant="outline" color="success" label="⬆️ Top"></ui-button>\r
+            <ui-button id="openRightPanel2" variant="outline" color="success" label="➡️ Right"></ui-button>\r
+            <ui-button id="openBottomPanel" variant="outline" color="warning" label="⬇️ Bottom"></ui-button>\r
+            <ui-button id="openLeftPanel2" variant="outline" color="danger" label="⬅️ Left"></ui-button>\r
           </div>\r
 \r
           <ui-aside-panel id="topPanel" direction="top" size="250px">\r
@@ -36385,10 +36393,10 @@ const printCurrentTable = function () {\r
           <p style="opacity: 0.7; margin-bottom: 24px;">Interact with handles on all four axes. Width-based resizing for Left/Right and Height-based for Top/Bottom.</p>\r
           \r
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 20px;">\r
-            <ui-button id="openResizableRight" variant="outline" color="success" label="Γ₧í∩╕Å Right"></ui-button>\r
-            <ui-button id="openResizableLeft" variant="outline" color="success" label="Γ¼à∩╕Å Left"></ui-button>\r
-            <ui-button id="openResizableTop" variant="outline" color="warning" label="Γ¼å∩╕Å Top"></ui-button>\r
-            <ui-button id="openResizableBottom" variant="outline" color="danger" label="Γ¼ç∩╕Å Bottom"></ui-button>\r
+            <ui-button id="openResizableRight" variant="outline" color="success" label="➡️ Right"></ui-button>\r
+            <ui-button id="openResizableLeft" variant="outline" color="success" label="⬅️ Left"></ui-button>\r
+            <ui-button id="openResizableTop" variant="outline" color="warning" label="⬆️ Top"></ui-button>\r
+            <ui-button id="openResizableBottom" variant="outline" color="danger" label="⬇️ Bottom"></ui-button>\r
           </div>\r
 \r
           <ui-aside-panel id="resRight" direction="right" size="400px" resizable="true" min-size="250" max-size="600">\r
@@ -36419,9 +36427,9 @@ const printCurrentTable = function () {\r
     document.getElementById('openResizableTop')?.addEventListener('click', () => document.getElementById('resTop').show());\r
     document.getElementById('openResizableBottom')?.addEventListener('click', () => document.getElementById('resBottom').show());
 })();
-<\/script>`},{title:`≡ƒÄ« Grand Maestro Control Center`,description:`Orchestrate every Sovereign-tier parameter in real-time.`,html:`<div class="demo-block master-playground" style="background: white; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0;">\r
+<\/script>`},{title:`🎮 Grand Maestro Control Center`,description:`Orchestrate every Sovereign-tier parameter in real-time.`,html:`<div class="demo-block master-playground" style="background: white; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #e2e8f0;">\r
           <div style="background: #0f172a; padding: 24px; color: white;">\r
-            <h3 style="margin:0; display: flex; align-items: center; gap: 10px;">≡ƒÄ« Grand Maestro Control Center</h3>\r
+            <h3 style="margin:0; display: flex; align-items: center; gap: 10px;">🎮 Grand Maestro Control Center</h3>\r
             <p style="margin: 8px 0 0; opacity: 0.7; font-size: 14px;">Orchestrate every Sovereign-tier parameter in real-time.</p>\r
           </div>\r
           \r
@@ -36429,21 +36437,21 @@ const printCurrentTable = function () {\r
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-bottom: 32px;">\r
               <!-- Section 1: Spatial Layout -->\r
               <div class="control-card">\r
-                <h4 style="margin: 0 0 16px; font-size: 13px; text-transform: uppercase; color: #64748b; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px;">≡ƒôÉ Spatial Layout</h4>\r
+                <h4 style="margin: 0 0 16px; font-size: 13px; text-transform: uppercase; color: #64748b; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px;">📐 Spatial Layout</h4>\r
                 <div style="display: flex; flex-direction: column; gap: 12px;">\r
                    <ui-dropdown label="Direction" id="asideDirection" value="right" options='[{"label":"Right","value":"right"},{"label":"Left","value":"left"},{"label":"Top","value":"top"},{"label":"Bottom","value":"bottom"}]'></ui-dropdown>\r
                    <ui-input label="Base Size" id="asideSize" value="400px"></ui-input>\r
                    <ui-input label="Mini Size" id="asideMiniSize" value="64px"></ui-input>\r
                    <div style="display: flex; gap: 15px;">\r
-                      <ui-checkbox label="MINI ≡ƒñÅ" id="asideMini"></ui-checkbox>\r
-                      <ui-checkbox label="MAXIMIZED ≡ƒö▓" id="asideMaximized"></ui-checkbox>\r
+                      <ui-checkbox label="MINI 🤏" id="asideMini"></ui-checkbox>\r
+                      <ui-checkbox label="MAXIMIZED 🔲" id="asideMaximized"></ui-checkbox>\r
                    </div>\r
                 </div>\r
               </div>\r
 \r
               <!-- Section 2: Visual High-Fidelity -->\r
               <div class="control-card">\r
-                <h4 style="margin: 0 0 16px; font-size: 13px; text-transform: uppercase; color: #64748b; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px;">Γ£¿ Visual Fidelity</h4>\r
+                <h4 style="margin: 0 0 16px; font-size: 13px; text-transform: uppercase; color: #64748b; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px;">✨ Visual Fidelity</h4>\r
                 <div style="display: flex; flex-direction: column; gap: 12px;">\r
                    <ui-dropdown label="Theme Engine" id="asideTheme" value="default" options='[{"label":"Default","value":"default"},{"label":"Glass","value":"glass"},{"label":"Radiant","value":"radiant"},{"label":"Zenith","value":"zenith"},{"label":"None (Transparent)","value":"none"}]'></ui-dropdown>\r
                    <ui-input label="Backdrop Blur" id="asideBlur" value="0" placeholder="e.g., 8px"></ui-input>\r
@@ -36456,21 +36464,21 @@ const printCurrentTable = function () {\r
                       <ui-color-picker id="asideBgColor" value="#ffffff"></ui-color-picker>\r
                    </div>\r
                    <div style="display: flex; gap: 15px;">\r
-                      <ui-checkbox label="Indicator ≡ƒÜÑ" id="asideShowIndicator" checked></ui-checkbox>\r
-                      <ui-checkbox label="Shimmer ΓÅ│" id="asideLoading"></ui-checkbox>\r
+                      <ui-checkbox label="Indicator 🚨" id="asideShowIndicator" checked></ui-checkbox>\r
+                      <ui-checkbox label="Shimmer ⏳" id="asideLoading"></ui-checkbox>\r
                    </div>\r
                 </div>\r
               </div>\r
 \r
               <!-- Section 3: Industrial & Sovereign -->\r
               <div class="control-card">\r
-                <h4 style="margin: 0 0 16px; font-size: 13px; text-transform: uppercase; color: #64748b; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px;">≡ƒææ Sovereign Controls</h4>\r
+                <h4 style="margin: 0 0 16px; font-size: 13px; text-transform: uppercase; color: #64748b; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px;">👑 Sovereign Controls</h4>\r
                 <div style="display: flex; flex-direction: column; gap: 12px;">\r
                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">\r
-                      <ui-checkbox label="Haptics ≡ƒöè" id="asideHaptic"></ui-checkbox>\r
-                      <ui-checkbox label="3D Tilt ≡ƒºè" id="asideParallax"></ui-checkbox>\r
-                      <ui-checkbox label="Voice ≡ƒÄÖ∩╕Å" id="asideVoice"></ui-checkbox>\r
-                      <ui-checkbox label="Actions Γï«" id="asideShowActions"></ui-checkbox>\r
+                      <ui-checkbox label="Haptics 🔊" id="asideHaptic"></ui-checkbox>\r
+                      <ui-checkbox label="3D Tilt 🪟" id="asideParallax"></ui-checkbox>\r
+                      <ui-checkbox label="Voice 🎙️" id="asideVoice"></ui-checkbox>\r
+                      <ui-checkbox label="Actions ⋮" id="asideShowActions"></ui-checkbox>\r
                    </div>\r
                    <ui-input label="Ctrl Shortcut" id="asideShortcut" placeholder="B" maxlength="1"></ui-input>\r
                    <div style="display: flex; flex-direction: column; gap: 4px;">\r
@@ -36482,13 +36490,13 @@ const printCurrentTable = function () {\r
 \r
               <!-- Section 4: Safety & Workflow -->\r
               <div class="control-card">\r
-                <h4 style="margin: 0 0 16px; font-size: 13px; text-transform: uppercase; color: #64748b; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px;">≡ƒ¢í∩╕Å Safety & Workflow</h4>\r
+                <h4 style="margin: 0 0 16px; font-size: 13px; text-transform: uppercase; color: #64748b; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px;">🛡️ Safety & Workflow</h4>\r
                 <div style="display: flex; flex-direction: column; gap: 12px;">\r
                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">\r
-                      <ui-checkbox label="Locked ≡ƒöÆ" id="asidePinned"></ui-checkbox>\r
-                      <ui-checkbox label="Resizable Γåö∩╕Å" id="asideResizable" checked></ui-checkbox>\r
-                      <ui-checkbox label="Auto-Mini ≡ƒô▒" id="asideAutoMini" checked></ui-checkbox>\r
-                      <ui-checkbox label="Escape ≡ƒ¢æ" id="asideEsc" checked></ui-checkbox>\r
+                      <ui-checkbox label="Locked 🔒" id="asidePinned"></ui-checkbox>\r
+                      <ui-checkbox label="Resizable ↔️" id="asideResizable" checked></ui-checkbox>\r
+                      <ui-checkbox label="Auto-Mini 📱" id="asideAutoMini" checked></ui-checkbox>\r
+                      <ui-checkbox label="Escape 🛑" id="asideEsc" checked></ui-checkbox>\r
                    </div>\r
                    <ui-checkbox label="Overlay Click" id="asideOverlay" checked></ui-checkbox>\r
                    <ui-checkbox label="Show Overlay" id="asideShowOverlay"></ui-checkbox>\r
@@ -36508,7 +36516,7 @@ const printCurrentTable = function () {\r
 \r
               <!-- Section 5: Metadata & Limits -->\r
               <div class="control-card">\r
-                <h4 style="margin: 0 0 16px; font-size: 13px; text-transform: uppercase; color: #64748b; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px;">≡ƒôè Constraints & Meta</h4>\r
+                <h4 style="margin: 0 0 16px; font-size: 13px; text-transform: uppercase; color: #64748b; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px;">📊 Constraints & Meta</h4>\r
                 <div style="display: flex; flex-direction: column; gap: 12px;">\r
                    <ui-input label="Status Badge" id="asideBadge" placeholder="LIVE"></ui-input>\r
                    <ui-input label="Sync Group" id="asideSync" placeholder="diag-stream"></ui-input>\r
@@ -36520,7 +36528,7 @@ const printCurrentTable = function () {\r
             </div>\r
             \r
             <div style="display: flex; gap: 16px;">\r
-              <ui-button id="openInteractivePanel" variant="outline" color="success" label="≡ƒÜÇ SUMMON CONFIGURED ENGINE" size="large" style="flex: 2;"></ui-button>\r
+              <ui-button id="openInteractivePanel" variant="outline" color="success" label="🚀 SUMMON CONFIGURED ENGINE" size="large" style="flex: 2;"></ui-button>\r
               <ui-button id="dismissInteractivePanel" variant="outline" color="secondary" label="DISMISS" size="large" style="flex: 1; border: 1px solid #e2e8f0;"></ui-button>\r
             </div>\r
           </div>\r
@@ -39249,16 +39257,108 @@ const printCurrentTable = function () {\r
 \r
     updateInteractiveToggle();
 })();
-<\/script>`}],"callout-banner":[{title:`pg Update`,description:``,html:`<ui-callout-banner style="width:100%; max-width:400px;" \r
-            variant="\${v}" \r
-            placement="\${p}" \r
-            loading="\${l}" \r
-            pulse="\${pu}" \r
-            marquee="\${m}" \r
-            solid="\${s}" \r
-            heading="Sandbox Result" \r
-            message="Testing industrial properties in a unified component context.">\r
-        </ui-callout-banner>`}],card:[{title:`Color Variants`,description:``,html:`<div class="demo-grid">\r
+<\/script>`}],"callout-banner":[{title:`Visual Color Variants`,description:`Vibrant, high-depth semantic color styles for warnings, processes, readiness, and alerts.`,html:`<div class="demo-block">
+  <h3>Visual Color Variants</h3>
+  <p style="color:#6b7280; margin-bottom:16px;">Vibrant, high-depth semantic color styles for warnings, processes, readiness, and alerts.</p>
+  <div style="display:flex; flex-direction:column; gap:16px; width:100%;">
+    <ui-callout-banner variant="info" heading="System Readiness" message="All primary subsystems are nominal. Execution environment ready."></ui-callout-banner>
+    <ui-callout-banner variant="success" heading="Process Optimized" message="Refactoring complete. Latency reduced by 14.2ms across all nodes."></ui-callout-banner>
+    <ui-callout-banner variant="warning" heading="Kernel Exception" message="Detected unusual memory allocation patterns in Sector 4."></ui-callout-banner>
+    <ui-callout-banner variant="danger" heading="IO_TIMEOUT_ERROR" message="Connectivity lost with Database Cluster C. Retrying..."></ui-callout-banner>
+    <ui-callout-banner variant="neutral" heading="Internal Notice" message="Workspace maintenance scheduled for Wednesday at 03:00."></ui-callout-banner>
+  </div>
+</div>`},{title:`Visual Sizing Scales`,description:`Banners support multiple sizes: sm, md (default), and lg sizes to fit into sidebars, tables, or splash headers.`,html:`<div class="demo-block">
+  <h3>Visual Sizing Scales</h3>
+  <p style="color:#6b7280; margin-bottom:16px;">Banners support multiple sizes to fit into sidebars, tables, or splash headers.</p>
+  <div style="display:flex; flex-direction:column; gap:16px; width:100%;">
+    <ui-callout-banner size="sm" variant="info" heading="Small Scale" message="Optimized for compact sidebar widgets and high density layouts."></ui-callout-banner>
+    <ui-callout-banner size="md" variant="info" heading="Medium Scale (Default)" message="Standard industrial UI spacing and comfortable read."></ui-callout-banner>
+    <ui-callout-banner size="lg" variant="info" heading="Large Scale" message="High visibility hero notification for dashboard splash views."></ui-callout-banner>
+  </div>
+</div>`},{title:`Compact Density Mode`,description:`Compact modifier strips away padding for maximum density context.`,html:`<div class="demo-block">
+  <h3>Compact Density Mode</h3>
+  <p style="color:#6b7280; margin-bottom:16px;">Compact modifier strips away padding for maximum density context.</p>
+  <div style="display:flex; flex-direction:column; gap:12px; width:100%;">
+    <ui-callout-banner compact variant="info" heading="Compact Node" message="v4.2.1 active"></ui-callout-banner>
+    <ui-callout-banner compact variant="success" heading="Synced" message="14,204 records updated."></ui-callout-banner>
+    <ui-callout-banner compact outlined variant="danger" heading="Locked" message="Account suspended."></ui-callout-banner>
+  </div>
+</div>`},{title:`Site-wide Banner Mode`,description:`Stretches the callout banner full-width to display notices at the top/bottom of screen bounds with slot action triggers.`,html:`<div class="demo-block">
+  <h3>Site-wide Banner Mode</h3>
+  <p style="color:#6b7280; margin-bottom:16px;">Stretches the callout banner full-width to display notices with action buttons.</p>
+  <div style="display:flex; flex-direction:column; gap:16px; width:100%;">
+    <ui-callout-banner banner variant="info" heading="Site-Wide Maintenance" message="Facility systems will be offline for 2 hours for security patches.">
+      <ui-button slot="actions" variant="outline" color="primary" label="View Schedule" size="md"></ui-button>
+    </ui-callout-banner>
+    <ui-callout-banner banner variant="success" heading="Enterprise Mode Active" message="Dedicated cloud environment initialized. All security protocols enforced." closable="false"></ui-callout-banner>
+  </div>
+</div>`},{title:`Premium Modifiers & Animations`,description:`Toggle pulse glows, active loading state widgets, and solid backgrounds.`,html:`<div class="demo-block">
+  <h3>Premium Modifiers & Animations</h3>
+  <p style="color:#6b7280; margin-bottom:16px;">Toggle pulse glows, active loading state widgets, and solid backgrounds.</p>
+  <div style="display:flex; flex-direction:column; gap:16px; width:100%;">
+    <ui-callout-banner loading variant="info" heading="Initializing Resources" message="Provisioning remote compute containers..."></ui-callout-banner>
+    <ui-callout-banner pulse variant="danger" heading="ALARM: BREACH" message="Atmospheric seal compromise in Deck 4. Evacuate immediately."></ui-callout-banner>
+    <ui-callout-banner solid variant="info" heading="Solid Primary Background" message="High-contrast solid treatment optimized for industrial telemetry dashboards."></ui-callout-banner>
+    <ui-callout-banner accent-bar variant="warning" heading="Accent Bar Style" message="Visual alignment with modern IDE environments and developer tools."></ui-callout-banner>
+  </div>
+</div>`},{title:`📍 Coordinate-Aware Map Annotations`,description:`Banners function beautifully as pointer-anchored overlay tags on interactive visual canvas boards.`,html:`<div class="demo-block">
+  <h3>📍 Coordinate-Aware Map Annotations</h3>
+  <p style="color:#6b7280; margin-bottom:16px;">Banners function beautifully as pointer-anchored overlay tags on interactive visual canvas boards.</p>
+  <div style="width:100%; height:350px; background:#0f172a; border-radius:12px; position:relative; overflow:hidden; border:1px solid rgba(255,255,255,0.05);">
+    <div style="width: 10px; height: 10px; border-radius: 50%; position: absolute; top: 20%; left: 30%; background: #ef4444; box-shadow: 0 0 10px #ef4444; animation: pt-pulse 1.5s infinite;"></div>
+    <ui-callout-banner variant="danger" placement="bottom" heading="PUMP_FAIL" pulse="true" size="md" style="position: absolute; top: 25%; left: 30%; transform: translateX(-50%); width: 180px;">Check valve 7.</ui-callout-banner>
+
+    <div style="width: 10px; height: 10px; border-radius: 50%; position: absolute; top: 70%; left: 75%; background: #22c55e; box-shadow: 0 0 10px #22c55e;"></div>
+    <ui-callout-banner variant="success" placement="top" heading="BOILER_OK" size="md" style="position: absolute; top: 62%; left: 75%; transform: translateX(-50%); width: 140px;">Efficiency: 98%.</ui-callout-banner>
+
+    <div style="width: 10px; height: 10px; border-radius: 50%; position: absolute; top: 50%; left: 10%; background: #10b981; box-shadow: 0 0 10px #10b981;"></div>
+    <ui-callout-banner variant="info" placement="right" heading="SENSOR_HUB" size="md" style="position: absolute; top: 50%; left: 14%; transform: translateY(-50%); width: 160px;">Link active.</ui-callout-banner>
+  </div>
+</div>`},{title:`📈 Real-time Marquee Stock Tickers`,description:`Announce high-speed data feeds with custom scroll speed and automatic pause-on-hover logic.`,html:`<div class="demo-block">
+  <h3>📈 Real-time Marquee Stock Tickers</h3>
+  <p style="color:#6b7280; margin-bottom:16px;">Announce high-speed data feeds with custom scroll speed and automatic pause-on-hover logic.</p>
+  
+  <div style="display:flex; flex-direction:column; gap:16px; width:100%;">
+    <ui-callout-banner banner="true" marquee="true" marquee-speed="15" variant="neutral" no-icon="true" size="md" pause-on-hover="true" style="background:#000; color:#fff; font-family:monospace; border-bottom:1px solid #333;">
+      AAPL <span style="color:#22c55e">▲ 184.22 (+1.4%)</span> &bull; 
+      MSFT <span style="color:#ef4444">▼ 328.79 (-0.8%)</span> &bull; 
+      GOOGL <span style="color:#22c55e">▲ 138.21 (+0.5%)</span> &bull; 
+      TSLA <span style="color:#ef4444">▼ 214.50 (-3.2%)</span> &bull; 
+      NVDA <span style="color:#22c55e">▲ 485.42 (+4.1%)</span> &bull; 
+      AMZN <span style="color:#22c55e">▲ 145.22 (+1.1%)</span> &bull;
+      META <span style="color:#ef4444">▼ 312.44 (-0.2%)</span> &bull;
+    </ui-callout-banner>
+
+    <ui-callout-banner marquee="true" marquee-speed="12" variant="info" no-icon="true" size="md">
+      EUR/USD 1.0854 &plusmn;0.0002 &bull; GBP/USD 1.2642 +0.0014 &bull; USD/JPY 149.22 -0.15 &bull; AUD/USD 0.6542 -0.0022 &bull; USD/CAD 1.3482 +0.0011 &bull;
+    </ui-callout-banner>
+  </div>
+</div>`},{title:`💾 Persistent Local Dismissal`,description:`Banners store their dismissal state inside localStorage so they remember to stay closed even after page refresh.`,html:`<div class="demo-block">
+  <h3>💾 Persistent Local Dismissal</h3>
+  <p style="color:#6b7280; margin-bottom:16px;">Banners store their dismissal state inside localStorage so they remember to stay closed even after page refresh.</p>
+  
+  <div style="display:flex; flex-direction:column; gap:16px; width:100%;">
+    <ui-callout-banner persist-key="demo-banner-1" variant="info" heading="Terms Update" message="We've updated our service protocols. Dismiss this to never see it again on this device."></ui-callout-banner>
+    <ui-callout-banner persist-key="demo-banner-2" variant="success" heading="Tip: Key Shortcuts" message="Press [CTRL+K] to open the global command palette."></ui-callout-banner>
+
+    <div style="margin-top:20px; padding:15px; background:var(--bg-secondary); border:1px solid var(--border-default); border-radius:8px;">
+      <h4 style="margin:0 0 8px 0; font-size:14px; color:var(--text-primary);">Developer Debug</h4>
+      <ui-button id="btnClearPersistence" variant="outline" color="danger" label="Clear Storage & Reload" size="md"></ui-button>
+      <p style="margin:8px 0 0 0; font-size:11px; color:var(--text-secondary); opacity:0.8;">Clearing storage will reset the dismissal state for all banners in this demo.</p>
+    </div>
+  </div>
+</div>
+<script>
+(function() {
+  const btn = document.getElementById('btnClearPersistence');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      localStorage.clear();
+      window.location.reload();
+    });
+  }
+})();
+<\/script>`}],card:[{title:`Color Variants`,description:``,html:`<div class="demo-grid">\r
         <h3 class="section-title">Color Variants</h3>\r
         <ui-card variant="default" card-title="Default" extra="Status: Idle"></ui-card>\r
         <ui-card variant="primary" card-title="Primary" extra="Status: Active"></ui-card>\r
@@ -40846,8 +40946,8 @@ const printCurrentTable = function () {\r
       });\r
     }, 100);
 })();
-<\/script>`},{title:`≡ƒô£ Scrolling Behaviors`,description:`Choose how the dialog handles overflow: either the entire panel scrolls (Body) or only the content area (Paper).`,html:`<div class="demo-block">\r
-            <h3>≡ƒô£ Scrolling Behaviors</h3>\r
+<\/script>`},{title:`📜 Scrolling Behaviors`,description:`Choose how the dialog handles overflow: either the entire panel scrolls (Body) or only the content area (Paper).`,html:`<div class="demo-block">\r
+            <h3>📜 Scrolling Behaviors</h3>\r
             <p style="margin-bottom: 20px; color: #6b7280;">Choose how the dialog handles overflow: either the entire panel scrolls (Body) or only the content area (Paper).</p>\r
             <div style="display:flex; gap:12px; flex-wrap:wrap;">\r
                 <ui-button id="btnOpenScrollPaper" size="md" variant="outline" color="success" label="Open Scroll Paper"></ui-button>\r
@@ -40916,20 +41016,20 @@ const printCurrentTable = function () {\r
       });\r
     }, 100);
 })();
-<\/script>`},{title:`≡ƒÆÄ Premium Capabilities`,description:`Experience the high-fidelity features designed for professional applications.`,html:`<div class="demo-block">\r
-        <h3>≡ƒÆÄ Premium Capabilities</h3>\r
+<\/script>`},{title:`💎 Premium Capabilities`,description:`Experience the high-fidelity features designed for professional applications.`,html:`<div class="demo-block">\r
+        <h3>💎 Premium Capabilities</h3>\r
         <p style="color: #6b7280; margin-bottom: 20px;">Experience the high-fidelity features designed for professional applications.</p>\r
         \r
         <!-- Feature 1: Async Workflow -->\r
         <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 16px; margin-bottom: 16px;">\r
-           <h4 style="margin-top:0; color: #1e40af;">≡ƒöä Async Validation & Loading</h4>\r
+           <h4 style="margin-top:0; color: #1e40af;">🔄 Async Validation & Loading</h4>\r
            <p style="font-size: 14px; color: #10b981;">Simulates a server request with button loading states and data persistence.</p>\r
            <ui-button id="btnOpenAsync" size="md" variant="outline" color="primary" label="Test Async Workflow" size="md" variant="outline"></ui-button>\r
         </div>\r
 \r
         <!-- Feature 2: Transitions -->\r
         <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 8px; padding: 16px; margin-bottom: 16px;">\r
-           <h4 style="margin-top:0; color: #86198f;">Γ£¿ Animation Gallery</h4>\r
+           <h4 style="margin-top:0; color: #86198f;">✨ Animation Gallery</h4>\r
            <p style="font-size: 14px; color: #c026d3;">Smooth entry and exit transitions for different contexts.</p>\r
            <div style="display: flex; gap: 10px; flex-wrap: wrap;">\r
              <ui-button id="btnOpenAnimScale" size="md" variant="outline" color="secondary" label="Scale (Default)" size="md" variant="outline" style="--btn-bg: white; --btn-border: #e879f9; --btn-text: #a21caf;"></ui-button>\r
@@ -40941,7 +41041,7 @@ const printCurrentTable = function () {\r
 \r
         <!-- Feature 3: Window Management -->\r
         <div style="background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 16px;">\r
-           <h4 style="margin-top:0; color: #15803d;">≡ƒ¬ƒ Persistent Window Widget</h4>\r
+           <h4 style="margin-top:0; color: #15803d;">🪟 Persistent Window Widget</h4>\r
            <p style="font-size: 14px; color: #16a34a;">Draggable, Resizable, Non-Modal, and Persistent state (Keep Mounted).</p>\r
            <ui-button id="btnOpenWidget" size="md" variant="outline" color="success" label="Open Main Widget" size="md" variant="outline"></ui-button>\r
            <ui-button id="btnSpawnWidget" size="md" variant="outline" color="success" label="Spawn New Note (+)" size="md" variant="outline" style="margin-left: 10px; --btn-bg: #15803d;"></ui-button>\r
@@ -40991,7 +41091,7 @@ const printCurrentTable = function () {\r
 \r
         <!-- Widget Dialog (Persistent Notepad) -->\r
         <ui-dialog-box id="dWidget" \r
-          dialog-title="≡ƒô¥ Sticky Notes" \r
+          dialog-title="📝 Sticky Notes" \r
           backdrop="none" \r
           draggable="true" \r
           resizable="true" \r
@@ -41121,7 +41221,7 @@ const printCurrentTable = function () {\r
 <\/script>`},{title:`Auth Session Demo`,description:`Your session is about to expire due to inactivity. For your security, we will automatically log you out once the timer reaches zero.`,html:`<div style="padding: 10px 0;">\r
         <p>Your session is about to expire due to inactivity. For your security, we will automatically log you out once the timer reaches zero.</p>\r
         <div style="background: #fffbeb; border: 1px solid #fde68a; padding: 12px; border-radius: 6px; display: flex; align-items: flex-start; gap: 10px;">\r
-           <span style="font-size: 20px;">ΓÜá∩╕Å</span>\r
+           <span style="font-size: 20px;">⚠️</span>\r
            <div>\r
               <div style="font-weight: 600; color: #92400e;">Unsaved data may be lost</div>\r
               <div style="font-size: 13px; color: #b45309;">Please click 'Stay Logged In' to extend your session validity.</div>\r
@@ -41138,56 +41238,44 @@ const printCurrentTable = function () {\r
       document.body.removeChild(dialog);\r
     });
 })();
-<\/script>`},{title:`Nested Dialogs`,description:"Stack Level: ${level}",html:`<div style="padding: 10px;">\r
-                <p><strong>Stack Level: \${level}</strong></p>\r
-                <p>This dialog should appear above Level \${level - 1}.</p>\r
-                <div style="display: flex; gap: 10px; margin-top: 15px;">\r
-                    <ui-button class="btn-next-level" size="md" variant="outline" color="secondary" label="Open Level \${level + 1} Γ₧ò" style="flex: 1; --btn-bg: #ec4899;"></ui-button>\r
-                    <ui-button class="btn-close-dialog" size="md" variant="outline" color="secondary" label="Close" style="--btn-bg: #6b7280;"></ui-button>\r
-                </div>\r
-            </div>\r
-        
+<\/script>`},{title:`Nested Dialogs Stack`,description:`Nesting dialogs stacked perfectly above each other with appropriate backing overlay constraints.`,html:`<div class="demo-block">
+  <h3>Nested Dialogs Stack</h3>
+  <p style="color: #6b7280; margin-bottom: 16px;">Open a dialog that contains a button to open another nested dialog on top.</p>
+  <ui-button id="btnOpenParentDialog" variant="filled" color="primary" label="Open Parent Dialog"></ui-button>
+  
+  <ui-dialog id="parentDialog" title="Parent Dialog (Level 1)" width="500px" icon-library="lucide">
+    <div style="padding: 16px;">
+      <p style="margin-bottom: 20px;">This is the first level dialog. Click below to open a second dialog on top of this one.</p>
+      <div style="display: flex; gap: 12px;">
+        <ui-button id="btnOpenChildDialog" variant="filled" color="success" label="Open Child Dialog"></ui-button>
+        <ui-button id="btnCloseParentDialog" variant="outline" color="secondary" label="Cancel"></ui-button>
+      </div>
+    </div>
+  </ui-dialog>
+
+  <ui-dialog id="childDialog" title="Child Dialog (Level 2)" width="380px" icon-library="lucide" is-nested="true">
+    <div style="padding: 16px;">
+      <p style="margin-bottom: 20px;">This is a nested dialog (Level 2) that stacks perfectly above the first dialog.</p>
+      <ui-button id="btnCloseChildDialog" variant="filled" color="primary" label="Got It"></ui-button>
+    </div>
+  </ui-dialog>
+</div>
+
 <script>
 (function() {
-  );\r
-      d.setAttribute('width', '350px');\r
-      d.setAttribute('icon-library', 'lucide');\r
-      d.setAttribute('status', level % 2 === 0 ? 'info' : 'default'); // Alternate styles\r
-\r
-      // NEW: Enable high-fidelity nesting visuals for Level 2+\r
-      if (level > 1) {\r
-        d.setAttribute('is-nested', 'true');\r
-      }\r
-\r
-      d.innerHTML = \`\r
-            <div style="padding: 10px;">\r
-                <p><strong>Stack Level: \${level}</strong></p>\r
-                <p>This dialog should appear above Level \${level - 1}.</p>\r
-                <div style="display: flex; gap: 10px; margin-top: 15px;">\r
-                    <ui-button class="btn-next-level" size="md" variant="outline" color="secondary" label="Open Level \${level + 1} Γ₧ò" style="flex: 1; --btn-bg: #ec4899;"></ui-button>\r
-                    <ui-button class="btn-close-dialog" size="md" variant="outline" color="secondary" label="Close" style="--btn-bg: #6b7280;"></ui-button>\r
-                </div>\r
-            </div>\r
-        \`;\r
-      document.body.appendChild(d);\r
-\r
-      setTimeout(() => {\r
-        d.show();\r
-        const btnNext = d.querySelector('.btn-next-level');\r
-        if (btnNext) {\r
-          btnNext.onclick = () => openLevel(level + 1);\r
-        }\r
-        const btnClose = d.querySelector('.btn-close-dialog');\r
-        if (btnClose) {\r
-          btnClose.onclick = () => d.hide();\r
-        }\r
-      }, 50);\r
-    };\r
-\r
-    openLevel(1);
+  setTimeout(() => {
+    const parentDialog = document.getElementById('parentDialog');
+    const childDialog = document.getElementById('childDialog');
+    
+    document.getElementById('btnOpenParentDialog')?.addEventListener('click', () => parentDialog?.show());
+    document.getElementById('btnCloseParentDialog')?.addEventListener('click', () => parentDialog?.hide());
+    
+    document.getElementById('btnOpenChildDialog')?.addEventListener('click', () => childDialog?.show());
+    document.getElementById('btnCloseChildDialog')?.addEventListener('click', () => childDialog?.hide());
+  }, 100);
 })();
-<\/script>`},{title:`≡ƒÄ« Custom Dialog Builder`,description:``,html:`<div class="demo-block">\r
-        <h3 style="margin-bottom: 24px; font-weight: 800; letter-spacing: -0.02em;">≡ƒÄ« Custom Dialog Builder</h3>\r
+<\/script>`},{title:`🎮 Custom Dialog Builder`,description:``,html:`<div class="demo-block">\r
+        <h3 style="margin-bottom: 24px; font-weight: 800; letter-spacing: -0.02em;">🎮 Custom Dialog Builder</h3>\r
         \r
         <div style="background: white; border: 1px solid #eef2f6; border-radius: 20px; padding: 28px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); margin-bottom: 30px;">\r
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; align-items: flex-end;">\r
@@ -41301,13 +41389,13 @@ const printCurrentTable = function () {\r
 \r
     updateInteractiveDialog();
 })();
-<\/script>`},{title:`≡ƒîî Apex Tier: Application Framework`,description:`Transforming the dialog into a full-featured application frame with Toolbars, Side-Navs, and Edge Snapping.`,html:`<div class="demo-block">\r
-        <h3>≡ƒîî Apex Tier: Application Framework</h3>\r
+<\/script>`},{title:`🌌 Apex Tier: Application Framework`,description:`Transforming the dialog into a full-featured application frame with Toolbars, Side-Navs, and Edge Snapping.`,html:`<div class="demo-block">\r
+        <h3>🌌 Apex Tier: Application Framework</h3>\r
         <p style="color: #6b7280; margin-bottom: 20px;">Transforming the dialog into a full-featured application frame with Toolbars, Side-Navs, and Edge Snapping.</p>\r
         \r
         <div style="display: flex; gap: 15px; flex-wrap: wrap;">\r
-           <ui-button id="btnLaunchApexApp" size="md" variant="outline" color="primary" label="≡ƒÜÇ Launch Master/Detail App" style="--btn-bg: linear-gradient(to right, #10b981, #8b5cf6);"></ui-button>\r
-           <ui-button id="btnLaunchSnapping" size="md" variant="outline" color="secondary" label="≡ƒº▓ Test Edge Snapping" style="--btn-bg: #111827;"></ui-button>\r
+           <ui-button id="btnLaunchApexApp" size="md" variant="outline" color="primary" label="🚀 Launch Master/Detail App" style="--btn-bg: linear-gradient(to right, #10b981, #8b5cf6);"></ui-button>\r
+           <ui-button id="btnLaunchSnapping" size="md" variant="outline" color="secondary" label="🧲 Test Edge Snapping" style="--btn-bg: #111827;"></ui-button>\r
         </div>\r
 \r
         <!-- Apex Master/Detail Dialog -->\r
@@ -41324,10 +41412,10 @@ const printCurrentTable = function () {\r
           icon-library="lucide">\r
           \r
           <div slot="side-nav" style="padding: 16px; display: flex; flex-direction: column; gap: 8px;">\r
-            <div style="padding: 10px; background: rgba(0,0,0,0.05); border-radius: 6px; font-weight: 600; font-size: 13px;">≡ƒôü Projects</div>\r
-            <div style="padding: 10px; border-radius: 6px; font-size: 13px; color: #666; cursor: pointer;">≡ƒîÉ Domains</div>\r
-            <div style="padding: 10px; border-radius: 6px; font-size: 13px; color: #666; cursor: pointer;">≡ƒöÉ Security</div>\r
-            <div style="padding: 10px; border-radius: 6px; font-size: 13px; color: #666; cursor: pointer;">ΓÜÖ∩╕Å Settings</div>\r
+            <div style="padding: 10px; background: rgba(0,0,0,0.05); border-radius: 6px; font-weight: 600; font-size: 13px;">📁 Projects</div>\r
+            <div style="padding: 10px; border-radius: 6px; font-size: 13px; color: #666; cursor: pointer;">🌐 Domains</div>\r
+            <div style="padding: 10px; border-radius: 6px; font-size: 13px; color: #666; cursor: pointer;">🔐 Security</div>\r
+            <div style="padding: 10px; border-radius: 6px; font-size: 13px; color: #666; cursor: pointer;">⚙️ Settings</div>\r
           </div>\r
 \r
           <div slot="toolbar" style="display: flex; align-items: center; gap: 8px; width: 100%;">\r
@@ -41366,7 +41454,7 @@ const printCurrentTable = function () {\r
           width="400px" \r
           icon-library="lucide">\r
           <div style="padding: 20px;">\r
-             <h3>Try Edge Snapping! ≡ƒº▓</h3>\r
+             <h3>Try Edge Snapping! 🧲</h3>\r
              <p>Drag this dialog to the <b>Top, Left, or Right</b> edges of your screen.</p>\r
              <div style="background: #fffbeb; border: 1px solid #fde68a; padding: 12px; border-radius: 8px; font-size: 13px; color: #92400e;">\r
                 A blue highlight bar will appear to show where the window will snap.\r
@@ -41392,13 +41480,13 @@ const printCurrentTable = function () {\r
       }\r
     };
 })();
-<\/script>`},{title:`≡ƒÄ¡ God Tier: Ultimate Window Experience`,description:`Experience the absolute pinnacle of UI with Physical Shadows, Global Blurring, and Integrated Wizard Steppers.`,html:`<div class="demo-block">\r
-        <h3>≡ƒÄ¡ God Tier: Ultimate Window Experience</h3>\r
+<\/script>`},{title:`🎭 God Tier: Ultimate Window Experience`,description:`Experience the absolute pinnacle of UI with Physical Shadows, Global Blurring, and Integrated Wizard Steppers.`,html:`<div class="demo-block">\r
+        <h3>🎭 God Tier: Ultimate Window Experience</h3>\r
         <p style="color: #6b7280; margin-bottom: 20px;">Experience the absolute pinnacle of UI with Physical Shadows, Global Blurring, and Integrated Wizard Steppers.</p>\r
         \r
         <div style="display: flex; gap: 15px; flex-wrap: wrap;">\r
-           <ui-button id="btnLaunchWizard" size="md" variant="outline" color="primary" label="≡ƒº¢ Launch Setup Wizard" style="--btn-bg: linear-gradient(to right, #7c3aed, #db2777);"></ui-button>\r
-           <ui-button id="btnLaunchGlobalBlur" size="md" variant="outline" color="secondary" label="Γÿü∩╕Å Global Backdrop Blur" style="--btn-bg: #111827;"></ui-button>\r
+           <ui-button id="btnLaunchWizard" size="md" variant="outline" color="primary" label="🧙 Launch Setup Wizard" style="--btn-bg: linear-gradient(to right, #7c3aed, #db2777);"></ui-button>\r
+           <ui-button id="btnLaunchGlobalBlur" size="md" variant="outline" color="secondary" label="☁️ Global Backdrop Blur" style="--btn-bg: #111827;"></ui-button>\r
         </div>\r
 \r
         <!-- Wizard Dialog -->\r
@@ -41466,14 +41554,14 @@ const printCurrentTable = function () {\r
       }\r
     }, 100);
 })();
-<\/script>`},{title:`ΓÜí Sovereign Tier: Operating System Simulation`,description:`The absolute zenith of component engineering. Truly multi-window orchestration with dock, detached pop-outs, and intelligent guards.`,html:`<div class="demo-block">\r
-        <h3>ΓÜí Sovereign Tier: Operating System Simulation</h3>\r
+<\/script>`},{title:`👑 Sovereign Tier: Operating System Simulation`,description:`The absolute zenith of component engineering. Truly multi-window orchestration with dock, detached pop-outs, and intelligent guards.`,html:`<div class="demo-block">\r
+        <h3>👑 Sovereign Tier: Operating System Simulation</h3>\r
         <p style="color: #6b7280; margin-bottom: 20px;">The absolute zenith of component engineering. Truly multi-window orchestration with dock, detached pop-outs, and intelligent guards.</p>\r
         \r
         <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 30px;">\r
-           <ui-button id="btnSpawnTerminal" size="md" variant="outline" color="secondary" label="≡ƒôƒ Spawn Terminal" style="--btn-bg: #111827;"></ui-button>\r
-           <ui-button id="btnSpawnEditor" size="md" variant="outline" color="success" label="≡ƒô¥ Spawn Editor (Dirty)"></ui-button>\r
-           <ui-button id="btnSpawnMonitor" size="md" variant="outline" color="success" label="≡ƒôê Spawn Monitor (Skeleton)"></ui-button>\r
+           <ui-button id="btnSpawnTerminal" size="md" variant="outline" color="secondary" label="📟 Spawn Terminal" style="--btn-bg: #111827;"></ui-button>\r
+           <ui-button id="btnSpawnEditor" size="md" variant="outline" color="success" label="📝 Spawn Editor (Dirty)"></ui-button>\r
+           <ui-button id="btnSpawnMonitor" size="md" variant="outline" color="success" label="📈 Spawn Monitor (Skeleton)"></ui-button>\r
         </div>\r
 \r
         <div style="background: #f3f4f6; padding: 20px; border-radius: 12px; border: 1px solid #ddd;">\r
@@ -41547,14 +41635,14 @@ const printCurrentTable = function () {\r
       setTimeout(() => d.show(), 50);\r
     };
 })();
-<\/script>`},{title:`≡ƒÄ¿ Ultra-Custom Header Architecture`,description:`Take full control of the frame. Inject images, remove OS controls, or replace the entire header via slots.`,html:`<div class="demo-block">\r
-        <h3>≡ƒÄ¿ Ultra-Custom Header Architecture</h3>\r
+<\/script>`},{title:`🎨 Ultra-Custom Header Architecture`,description:`Take full control of the frame. Inject images, remove OS controls, or replace the entire header via slots.`,html:`<div class="demo-block">\r
+        <h3>🎨 Ultra-Custom Header Architecture</h3>\r
         <p style="color: #6b7280; margin-bottom: 20px;">Take full control of the frame. Inject images, remove OS controls, or replace the entire header via slots.</p>\r
         \r
         <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 30px;">\r
-           <ui-button onclick="openDialog('dBranded')" size="md" variant="outline" color="secondary" label="≡ƒû╝∩╕Å Branded with Image" style="--btn-bg: #111827;"></ui-button>\r
-           <ui-button onclick="openDialog('dStealth')" size="md" variant="outline" color="primary" label="≡ƒò╡∩╕Å Stealth (No Controls)" style="--btn-bg: #6366f1;"></ui-button>\r
-           <ui-button onclick="openDialog('dFullHeader')" size="md" variant="outline" color="secondary" label="≡ƒº⌐ Full Slot Replacement" style="--btn-bg: #ec4899;"></ui-button>\r
+           <ui-button onclick="openDialog('dBranded')" size="md" variant="outline" color="secondary" label="🖼️ Branded with Image" style="--btn-bg: #111827;"></ui-button>\r
+           <ui-button onclick="openDialog('dStealth')" size="md" variant="outline" color="primary" label="🕵️ Stealth (No Controls)" style="--btn-bg: #6366f1;"></ui-button>\r
+           <ui-button onclick="openDialog('dFullHeader')" size="md" variant="outline" color="secondary" label="🧩 Full Slot Replacement" style="--btn-bg: #ec4899;"></ui-button>\r
         </div>\r
 \r
         <!-- Branded -->\r
@@ -41574,7 +41662,7 @@ const printCurrentTable = function () {\r
         <!-- Full Header Replacement -->\r
         <ui-dialog-box id="dFullHeader" width="500px" ok-text="Save" cancel-text="Close">\r
            <div slot="header" style="background: linear-gradient(90deg, #ec4899, #8b5cf6); padding: 15px 20px; color: white; display: flex; justify-content: space-between; align-items:center;">\r
-              <div style="font-weight: bold; font-size: 1.2rem;">Γ£¿ MAGICAL HEADER SLOT</div>\r
+              <div style="font-weight: bold; font-size: 1.2rem;">✨ MAGICAL HEADER SLOT</div>\r
               <ui-button onclick="closeDialog('dFullHeader')" variant="ghost" color="secondary" label="├ù" style="--btn-text: white; font-size: 20px;"></ui-button>\r
            </div>\r
            <div style="padding: 40px; text-align: center;">\r
@@ -41583,12 +41671,12 @@ const printCurrentTable = function () {\r
            </div>\r
         </ui-dialog-box>\r
 \r
-      </div>`},{title:`≡ƒôÉ Pixel-Perfect Mockup Matcher`,description:`Every pixel matters. This demo follows the 24px outer / 20px inner spacing rules, blue primary buttons, and left-aligned Reset actions.`,html:`<div class="demo-block">\r
-        <h3>≡ƒôÉ Pixel-Perfect Mockup Matcher</h3>\r
+      </div>`},{title:`📐 Pixel-Perfect Mockup Matcher`,description:`Every pixel matters. This demo follows the 24px outer / 20px inner spacing rules, blue primary buttons, and left-aligned Reset actions.`,html:`<div class="demo-block">\r
+        <h3>📐 Pixel-Perfect Mockup Matcher</h3>\r
         <p style="color: #6b7280; margin-bottom: 20px;">Every pixel matters. This demo follows the 24px outer / 20px inner spacing rules, blue primary buttons, and left-aligned Reset actions.</p>\r
         \r
         <div style="display: flex; gap: 12px; margin-bottom: 30px;">\r
-           <ui-button onclick="openDialog('dMockup')" size="md" variant="outline" color="secondary" label="≡ƒÜÇ Launch Mockup Modal" style="--btn-bg: #111827;"></ui-button>\r
+           <ui-button onclick="openDialog('dMockup')" size="md" variant="outline" color="secondary" label="🚀 Launch Mockup Modal" style="--btn-bg: #111827;"></ui-button>\r
         </div>\r
 \r
         <ui-dialog-box \r
@@ -41613,8 +41701,8 @@ const printCurrentTable = function () {\r
            </div>\r
         </ui-dialog-box>\r
 \r
-      </div>`},{title:`ΓÜû∩╕Å Terms and Agreement Mode`,description:`The type="terms" preset automatically configures the title, Accept/Decline labels, and enforces a scrollable 'paper' layout.`,html:`<div class="demo-block">\r
-        <h3>ΓÜû∩╕Å Terms and Agreement Mode</h3>\r
+      </div>`},{title:`⚖️ Terms and Agreement Mode`,description:`The type="terms" preset automatically configures the title, Accept/Decline labels, and enforces a scrollable 'paper' layout.`,html:`<div class="demo-block">\r
+        <h3>⚖️ Terms and Agreement Mode</h3>\r
         <p style="color: #6b7280; margin-bottom: 20px;">The <code>type="terms"</code> preset automatically configures the title, Accept/Decline labels, and enforces a scrollable 'paper' layout.</p>\r
         \r
         <ui-button onclick="openDialog('dTerms')" size="md" variant="outline" color="success" label="View License Agreement" style="--btn-bg: #059669;"></ui-button>\r
@@ -41660,8 +41748,8 @@ const printCurrentTable = function () {\r
       }\r
     }, 100);
 })();
-<\/script>`},{title:`≡ƒÅå "Elite" Intelligence Features`,description:`Features that differentiate standard modals from professional windowing systems.`,html:`<div class="demo-block">\r
-        <h3>≡ƒÅå "Elite" Intelligence Features</h3>\r
+<\/script>`},{title:`🏆 "Elite" Intelligence Features`,description:`Features that differentiate standard modals from professional windowing systems.`,html:`<div class="demo-block">\r
+        <h3>🏆 "Elite" Intelligence Features</h3>\r
         <p style="color: #6b7280; margin-bottom: 20px;">Features that differentiate standard modals from professional windowing systems.</p>\r
         \r
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">\r
@@ -41683,7 +41771,7 @@ const printCurrentTable = function () {\r
         <ui-dialog-box id="dPersistent" dialog-title="I Remember You" ok-text="Save Position" cancel-text="Close" remember="true" resizable="true" is-draggable="true" icon-library="lucide">\r
            <div style="padding: 24px; text-align: center;">\r
               <p>Move me to the corner, resize me, or maximize me. Then <b>refresh the page</b>.</p>\r
-              <div style="margin-top: 10px; font-weight: bold; color: #059669;">Γ£¿ Your layout will be restored automatically.</div>\r
+              <div style="margin-top: 10px; font-weight: bold; color: #059669;">✨ Your layout will be restored automatically.</div>\r
            </div>\r
         </ui-dialog-box>\r
 \r
@@ -41695,8 +41783,8 @@ const printCurrentTable = function () {\r
               </div>\r
            </div>\r
         </ui-dialog-box>\r
-      </div>`},{title:`≡ƒöÉ Security & Lifecycle Operations`,description:`Mission-critical features for sensitive applications and advanced UX feedback.`,html:`<div class="demo-block">\r
-        <h3>≡ƒöÉ Security & Lifecycle Operations</h3>\r
+      </div>`},{title:`🔐 Security & Lifecycle Operations`,description:`Mission-critical features for sensitive applications and advanced UX feedback.`,html:`<div class="demo-block">\r
+        <h3>🔐 Security & Lifecycle Operations</h3>\r
         <p style="color: #6b7280; margin-bottom: 20px;">Mission-critical features for sensitive applications and advanced UX feedback.</p>\r
         \r
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">\r
@@ -41734,26 +41822,26 @@ const printCurrentTable = function () {\r
   // Add event listeners for audit logs\r
     setTimeout(() => {\r
       const d = document.getElementById('dSnsitive');\r
-      if (d) d.addEventListener('auditLog', e => console.log('≡ƒ¢í∩╕Å Audit Log:', e.detail));\r
+      if (d) d.addEventListener('auditLog', e => console.log('🛡️ Audit Log:', e.detail));\r
     }, 100);
 })();
-<\/script>`},{title:`≡ƒÆÄ Header Mastery Showcase`,description:`The ui-dialog-header is fully extensible. Use slots for branding, multi-action toolbars, and status-driven visuals.`,html:`<div class="demo-block">\r
-        <h3>≡ƒÆÄ Header Mastery Showcase</h3>\r
+<\/script>`},{title:`💎 Header Mastery Showcase`,description:`The ui-dialog-header is fully extensible. Use slots for branding, multi-action toolbars, and status-driven visuals.`,html:`<div class="demo-block">\r
+        <h3>💎 Header Mastery Showcase</h3>\r
         <p style="color: #64748b; margin-bottom: 24px;">The <code>ui-dialog-header</code> is fully extensible. Use slots for branding, multi-action toolbars, and status-driven visuals.</p>\r
         \r
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px;">\r
           <div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 16px;">\r
-            <h4 style="margin: 0;">≡ƒÅ╖∩╕Å Branded Slot Header</h4>\r
+            <h4 style="margin: 0;">🏷️ Branded Slot Header</h4>\r
             <p style="font-size: 13px; color: #64748b;">Override the entire header content with a custom slot for deep branding.</p>\r
             <ui-button onclick="openDialog('dBrandedHeader')" size="md" variant="outline" color="success" label="Open Branded Dialog" style="margin-top:auto;"></ui-button>\r
           </div>\r
           <div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 16px;">\r
-            <h4 style="margin: 0;">≡ƒ¢á∩╕Å Multi-Action Toolbar</h4>\r
+            <h4 style="margin: 0;">🛠️ Multi-Action Toolbar</h4>\r
             <p style="font-size: 13px; color: #64748b;">Inject additional action buttons into the header via <code>slot="header-actions"</code>.</p>\r
             <ui-button onclick="openDialog('dMultiAction')" size="md" variant="outline" color="secondary" label="Open Multi-Action Dialog" style="margin-top:auto; --btn-bg: #8b5cf6;"></ui-button>\r
           </div>\r
           <div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 16px;">\r
-            <h4 style="margin: 0;">≡ƒÄ¿ Status Elevation</h4>\r
+            <h4 style="margin: 0;">🎨 Status Elevation</h4>\r
             <p style="font-size: 13px; color: #64748b;">Headers that react to the <code>status</code> prop for high-urgency notifications.</p>\r
             <div style="display: flex; gap: 8px;">\r
                <ui-button onclick="openDialog('dStatusSuccess')" size="md" variant="outline" color="success" label="Success"style="flex:1;"></ui-button>\r
@@ -41765,7 +41853,7 @@ const printCurrentTable = function () {\r
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; margin-top: 24px;">\r
           <!-- Case 4: Avatar Header -->\r
           <div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 16px;">\r
-            <h4 style="margin: 0;">≡ƒæñ Profile/Avatar Headers</h4>\r
+            <h4 style="margin: 0;">👥 Profile/Avatar Headers</h4>\r
             <p style="font-size: 13px; color: #64748b;">Direct support for user avatars and custom icons without manual slots.</p>\r
             <ui-button onclick="openDialog('dAvatarHeader')" size="md" variant="outline" color="success" label="Open Profile Dialog" style="margin-top:auto;"></ui-button>\r
           </div>\r
@@ -41808,12 +41896,12 @@ const printCurrentTable = function () {\r
         <ui-dialog-box id="dStatusError" status="error" dialog-title="Security Alert" ok-text="Acknowledge">\r
            <div style="padding: 24px;"><h4>Connection Refused</h4></div>\r
         </ui-dialog-box>\r
-      </div>`},{title:`≡ƒû▒ Smooth Drag ΓÇö No Jump on Click`,description:`Draggable dialogs now anchor position on first move (>5 px threshold), so clicking the header\r
+      </div>`},{title:`🖱️ Smooth Drag — No Jump on Click`,description:`Draggable dialogs now anchor position on first move (>5 px threshold), so clicking the header\r
             no longer snaps the dialog to the cursor.`,html:`<div class="demo-block" style="display:flex;flex-direction:column;gap:40px;">\r
 \r
-        <!-- Γæá Smooth Drag (no jump on click) -->\r
+        <!-- ① Smooth Drag (no jump on click) -->\r
         <div>\r
-          <h3 style="margin:0 0 6px;">≡ƒû▒ Smooth Drag ΓÇö No Jump on Click</h3>\r
+          <h3 style="margin:0 0 6px;">🖱️ Smooth Drag — No Jump on Click</h3>\r
           <p style="font-size:13px;color:#64748b;margin:0 0 12px;">\r
             Draggable dialogs now anchor position on first move (>5 px threshold), so clicking the header\r
             no longer snaps the dialog to the cursor.\r
@@ -41823,17 +41911,17 @@ const printCurrentTable = function () {\r
           ok-text="Accept" cancel-text="Dismiss"\r
           icon-library="lucide" dialog-title="Desktop Experience">\r
             <div style="padding:12px 0; font-size:14px; color:#475569;">\r
-              <p><b>Γ£¿ Windows Snap:</b> Try dragging me to the very top, left, or right edge of the screen to snap and maximize.</p>\r
-              <p><b>Γ£¿ Integrated Tray:</b> When I am minimized, I move to the new global tray at the bottom center of the screen. Try clicking my tab there to open a <b>Peek Panel</b>!</p>\r
+              <p><b>✨ Windows Snap:</b> Try dragging me to the very top, left, or right edge of the screen to snap and maximize.</p>\r
+              <p><b>✨ Integrated Tray:</b> When I am minimized, I move to the new global tray at the bottom center of the screen. Try clicking my tab there to open a <b>Peek Panel</b>!</p>\r
             </div>\r
           </ui-dialog-box>\r
         </div>\r
 \r
-        <!-- Γæí Nested z-index auto-stacking -->\r
+        <!-- ② Nested z-index auto-stacking -->\r
         <div>\r
-          <h3 style="margin:0 0 6px;">≡ƒùé Auto Z-Index Stacking</h3>\r
+          <h3 style="margin:0 0 6px;">📥 Auto Z-Index Stacking</h3>\r
           <p style="font-size:13px;color:#64748b;margin:0 0 12px;">\r
-            Every newly opened dialog automatically rises above all existing open dialogs ΓÇö no manual\r
+            Every newly opened dialog automatically rises above all existing open dialogs — no manual\r
             z-index required.\r
           </p>\r
           <ui-button onclick="openDialog('wfParentDialog')" size="md" variant="outline" color="primary" label="Open Parent Dialog" style="--btn-bg: #6366f1;"></ui-button>\r
@@ -41846,14 +41934,14 @@ const printCurrentTable = function () {\r
           </ui-dialog-box>\r
           <ui-dialog-box id="wfChildDialog" is-draggable="true" ok-text="Accept" cancel-text="Close" icon-library="lucide" dialog-title="Child Dialog (auto z-index)">\r
             <div style="padding:8px 0;font-size:14px;color:#475569;">\r
-              I automatically opened above the parent ΓÇö no extra z-index config.\r
+              I automatically opened above the parent — no extra z-index config.\r
             </div>\r
           </ui-dialog-box>\r
         </div>\r
 \r
         <!-- NEW: Programmatic Control Demo -->\r
         <div>\r
-          <h3 style="margin:0 0 6px;">ΓÜí Programmatic API Control</h3>\r
+          <h3 style="margin:0 0 6px;">👑 Programmatic API Control</h3>\r
           <p style="font-size:13px;color:#64748b;margin:0 0 12px;">\r
             Trigger window states directly from your app logic using <code>.minimize()</code> and <code>.maximize()</code>.\r
           </p>\r
@@ -41870,9 +41958,9 @@ const printCurrentTable = function () {\r
           </ui-dialog-box>\r
         </div>\r
 \r
-        <!-- Γæó Return value auto-form-collection -->\r
+        <!-- ③ Return value auto-form-collection -->\r
         <div>\r
-          <h3 style="margin:0 0 6px;">≡ƒôï Return Value ΓÇö Auto Form Collection</h3>\r
+          <h3 style="margin:0 0 6px;">📋 Return Value — Auto Form Collection</h3>\r
           <p style="font-size:13px;color:#64748b;margin:0 0 12px;">\r
             <code>showWithResult()</code> auto-collects all named inputs (including selects).\r
           </p>\r
@@ -41893,16 +41981,16 @@ const printCurrentTable = function () {\r
           </ui-dialog-box>\r
         </div>\r
 \r
-        <!-- Γæú Action Menu (menuItems + menuIcon + menuTitle) -->\r
+        <!-- ④ Action Menu (menuItems + menuIcon + menuTitle) -->\r
         <div>\r
-          <h3 style="margin:0 0 6px;">ΓÜÖ Action Menu ΓÇö menuItems + menuIcon + menuTitle</h3>\r
+          <h3 style="margin:0 0 6px;">⚙️ Action Menu — menuItems + menuIcon + menuTitle</h3>\r
           <p style="font-size:13px;color:#64748b;margin:0 0 12px;">\r
             Set <code>menu-items</code> JSON on a dialog to auto-show a header menu button.\r
             Customise the icon with <code>menu-icon</code> and tooltip with <code>menu-title</code>.\r
           </p>\r
           <div style="display:flex;gap:10px;flex-wrap:wrap;">\r
-            <ui-button onclick="openDialog('wfMenuDialog1')" size="md" variant="outline" color="secondary" label="Default Menu (Γï»)" style="--btn-bg: #f59e0b;"></ui-button>\r
-            <ui-button onclick="openDialog('wfMenuDialog2')" size="md" variant="outline" color="secondary" label="Settings Menu (ΓÜÖ)" style="--btn-bg: #ef4444;"></ui-button>\r
+            <ui-button onclick="openDialog('wfMenuDialog1')" size="md" variant="outline" color="secondary" label="Default Menu (⋯)" style="--btn-bg: #f59e0b;"></ui-button>\r
+            <ui-button onclick="openDialog('wfMenuDialog2')" size="md" variant="outline" color="secondary" label="Settings Menu (⚙️)" style="--btn-bg: #ef4444;"></ui-button>\r
             <ui-button onclick="openDialog('wfMenuDialog3')" size="md" variant="outline" color="secondary" label="Filter Menu (sliders)" style="--btn-bg: #8b5cf6;"></ui-button>\r
           </div>\r
  \r
@@ -41910,7 +41998,7 @@ const printCurrentTable = function () {\r
           <ui-dialog-box id="wfMenuDialog1" icon-library="lucide" dialog-title="Default Action Menu" ok-text="Accept" cancel-text="Close"\r
             menu-items='[{"label":"Rename","icon":"pencil"},{"label":"Duplicate","icon":"copy"},{"divider":true},{"label":"Delete","icon":"trash-2","danger":true}]'>\r
             <div style="padding:8px 0;font-size:14px;color:#475569;">\r
-              The header shows a <strong>Γï»</strong> button (default <code>menu-icon="more-horizontal"</code>)\r
+              The header shows a <strong>⋯</strong> button (default <code>menu-icon="more-horizontal"</code>)\r
               when <code>menu-items</code> is set. Try clicking it.\r
             </div>\r
           </ui-dialog-box>\r
@@ -41928,7 +42016,7 @@ const printCurrentTable = function () {\r
           <!-- Sliders / filter icon -->\r
           <ui-dialog-box id="wfMenuDialog3" icon-library="lucide" dialog-title="Filter Menu" ok-text="Apply Filters" cancel-text="Close"\r
             menu-icon="sliders-horizontal" menu-title="Filters"\r
-            menu-items='[{"label":"Sort A ΓåÆ Z","icon":"arrow-up-az"},{"label":"Sort Z ΓåÆ A","icon":"arrow-down-az"},{"divider":true},{"label":"Date Range","icon":"calendar"},{"label":"Clear Filters","icon":"x-circle","danger":true}]'>\r
+            menu-items='[{"label":"Sort A ➡️ Z","icon":"arrow-up-az"},{"label":"Sort Z ➡️ A","icon":"arrow-down-az"},{"divider":true},{"label":"Date Range","icon":"calendar"},{"label":"Clear Filters","icon":"x-circle","danger":true}]'>\r
             <div style="padding:8px 0;font-size:14px;color:#475569;">\r
               <code>menu-icon="sliders-horizontal"</code> and\r
               <code>menu-title="Filters"</code> for a data-table style filter menu.\r
@@ -41951,7 +42039,7 @@ const printCurrentTable = function () {\r
             if (!result.canceled && result.data) {\r
               out.innerHTML = '<pre style="background:#f1f5f9;padding:12px;border-radius:8px;font-size:12px;">' + JSON.stringify(result.data, null, 2) + '</pre>';\r
             } else {\r
-              out.textContent = result.canceled ? '(dialog cancelled)' : '(no data returned ΓÇö form empty)';\r
+              out.textContent = result.canceled ? '(dialog cancelled)' : '(no data returned — form empty)';\r
             }\r
           }\r
         });\r
@@ -41962,8 +42050,8 @@ const printCurrentTable = function () {\r
       if (dlg && dlg.submit) dlg.submit(); // submit resolves the promise with the form data\r
     };
 })();
-<\/script>`},{title:`≡ƒôÉ Enterprise Drawer System`,description:`Drawers are ideal for navigation, detail panels, and quick settings. They slide from the viewport edges.`,html:`<div class="demo-block">\r
-        <h3>≡ƒôÉ Enterprise Drawer System</h3>\r
+<\/script>`},{title:`📐 Enterprise Drawer System`,description:`Drawers are ideal for navigation, detail panels, and quick settings. They slide from the viewport edges.`,html:`<div class="demo-block">\r
+        <h3>📐 Enterprise Drawer System</h3>\r
         <p style="margin-bottom: 20px; color: #6b7280;">Drawers are ideal for navigation, detail panels, and quick settings. They slide from the viewport edges.</p>\r
         \r
         <div style="display: flex; gap: 12px; flex-wrap: wrap;">\r
@@ -41995,16 +42083,16 @@ const printCurrentTable = function () {\r
 \r
         <ui-dialog-box id="drawerBottom" type="drawer" position="bottom" ok-text="Execute" cancel-text="Close" dialog-title="System Actions" subtitle="Select an action to continue" icon="zap" icon-library="lucide">\r
            <div style="padding: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px;">\r
-              <ui-button label="≡ƒÜÇ Deploy" size="md" variant="outline" color="secondary" style="height: 80px; --btn-bg: #f3f4f6; --btn-text: #1e293b; border: 1px solid #e5e7eb;"></ui-button>\r
-              <ui-button label="≡ƒº¬ Test" size="md" variant="outline" color="secondary" style="height: 80px; --btn-bg: #f3f4f6; --btn-text: #1e293b; border: 1px solid #e5e7eb;"></ui-button>\r
-              <ui-button label="≡ƒùæ∩╕Å Delete" size="md" variant="outline" color="danger" style="height: 80px; --btn-bg: #fef2f2; border: 1px solid #fee2e2;"></ui-button>\r
+              <ui-button label="🚀 Deploy" size="md" variant="outline" color="secondary" style="height: 80px; --btn-bg: #f3f4f6; --btn-text: #1e293b; border: 1px solid #e5e7eb;"></ui-button>\r
+              <ui-button label="🧪 Test" size="md" variant="outline" color="secondary" style="height: 80px; --btn-bg: #f3f4f6; --btn-text: #1e293b; border: 1px solid #e5e7eb;"></ui-button>\r
+              <ui-button label="⚠️ Delete" size="md" variant="outline" color="danger" style="height: 80px; --btn-bg: #fef2f2; border: 1px solid #fee2e2;"></ui-button>\r
            </div>\r
         </ui-dialog-box>\r
-      </div>`},{title:`≡ƒûÑ∩╕Å Fullscreen Interaction`,description:`The fullscreen type occupies the entire viewport, providing an immersive experience for complex editors or wizards.`,html:`<div class="demo-block">\r
-        <h3>≡ƒûÑ∩╕Å Fullscreen Interaction</h3>\r
+      </div>`},{title:`🖥️ Fullscreen Interaction`,description:`The fullscreen type occupies the entire viewport, providing an immersive experience for complex editors or wizards.`,html:`<div class="demo-block">\r
+        <h3>🖥️ Fullscreen Interaction</h3>\r
         <p style="margin-bottom: 20px; color: #6b7280;">The fullscreen type occupies the entire viewport, providing an immersive experience for complex editors or wizards.</p>\r
         \r
-        <ui-button onclick="openDialog('fullDialog')" size="md" variant="outline" color="secondary" label="≡ƒûÑ∩╕Å Open Immersive Editor" style="--btn-bg: #111827; border-radius: 12px;"></ui-button>\r
+        <ui-button onclick="openDialog('fullDialog')" size="md" variant="outline" color="secondary" label="🖥️ Open Immersive Editor" style="--btn-bg: #111827; border-radius: 12px;"></ui-button>\r
 \r
         <ui-dialog-box id="fullDialog" type="fullscreen" dialog-title="Zenith Cloud IDE" icon="code" icon-library="lucide" ok-text="Build & Deploy" cancel-text="Discard Changes">\r
            <div style="height: 100%; display: flex; flex-direction: column; background: #000;">\r
@@ -42027,8 +42115,8 @@ const printCurrentTable = function () {\r
               </div>\r
            </div>\r
         </ui-dialog-box>\r
-      </div>`},{title:`ΓÜû∩╕Å Visual Density Comparison`,description:`Three density levels to match different UI contexts and user preferences.`,html:`<div class="demo-block">\r
-        <h3>ΓÜû∩╕Å Visual Density Comparison</h3>\r
+      </div>`},{title:`⚖️ Visual Density Comparison`,description:`Three density levels to match different UI contexts and user preferences.`,html:`<div class="demo-block">\r
+        <h3>⚖️ Visual Density Comparison</h3>\r
         <p style="margin-bottom: 20px; color: #6b7280;">Three density levels to match different UI contexts and user preferences.</p>\r
         \r
         <div style="display: flex; gap: 12px; flex-wrap: wrap;">\r
@@ -42048,11 +42136,11 @@ const printCurrentTable = function () {\r
         <ui-dialog-box id="densComfortable" density="comfortable" dialog-title="Comfortable Dialog" icon="coffee" icon-library="lucide" ok-text="Done">\r
            <div style="font-size: 18px;">Comfortable mode provides generous white space and larger fonts for readability.</div>\r
         </ui-dialog-box>\r
-      </div>`},{title:`≡ƒñ¥ Promise-based API (Modern DX)`,description:`Use await dialog.openDialog() to write clean, linear code for complex user flows.`,html:`<div class="demo-block">\r
-        <h3>≡ƒñ¥ Promise-based API (Modern DX)</h3>\r
+      </div>`},{title:`🤝 Promise-based API (Modern DX)`,description:`Use await dialog.openDialog() to write clean, linear code for complex user flows.`,html:`<div class="demo-block">\r
+        <h3>🤝 Promise-based API (Modern DX)</h3>\r
         <p style="margin-bottom: 20px; color: #6b7280;">Use <code>await dialog.openDialog()</code> to write clean, linear code for complex user flows.</p>\r
         \r
-        <ui-button id="promiseFlowBtn" onclick="startWizardSequence()" size="md" variant="outline" color="secondary" label="≡ƒÜÇ Launch Project Wizard" style="--btn-bg: #f59e0b; border-radius: 12px;"></ui-button>\r
+        <ui-button id="promiseFlowBtn" onclick="startWizardSequence()" size="md" variant="outline" color="secondary" label="🚀 Launch Project Wizard" style="--btn-bg: #f59e0b; border-radius: 12px;"></ui-button>\r
         <div id="promiseStatus" style="margin-top: 16px; font-weight: 600; color: #10b981;">Status: Idle</div>\r
 \r
         <ui-dialog-box id="wizardDialog" width="500px" icon-library="lucide" cancel-text="Cancel">\r
@@ -42102,7 +42190,7 @@ const printCurrentTable = function () {\r
       await new Promise(r => dlg.addEventListener('ok', r, { once: true }));\r
 \r
       // Step 4\r
-      setStepUI(4, 'Completion', '<h4>Γ£¿ Success!</h4><p>All settings have been applied successfully. You can now close this wizard.</p>', true, 'Finish');\r
+      setStepUI(4, 'Completion', '<h4>✨ Success!</h4><p>All settings have been applied successfully. You can now close this wizard.</p>', true, 'Finish');\r
       await new Promise(r => dlg.addEventListener('ok', r, { once: true }));\r
 \r
       dlg.hide();\r
@@ -42110,8 +42198,8 @@ const printCurrentTable = function () {\r
       startBtn.disabled = false;\r
     };
 })();
-<\/script>`},{title:`≡ƒÆÄ Enterprise Slots & Parts Mastery`,description:`Granular control over specific sections using Slots for content and CSS Parts for styling.`,html:`<div class="demo-block">\r
-        <h3>≡ƒÆÄ Enterprise Slots & Parts Mastery</h3>\r
+<\/script>`},{title:`💎 Enterprise Slots & Parts Mastery`,description:`Granular control over specific sections using Slots for content and CSS Parts for styling.`,html:`<div class="demo-block">\r
+        <h3>💎 Enterprise Slots & Parts Mastery</h3>\r
         <p style="margin-bottom: 20px; color: #6b7280;">Granular control over specific sections using <b>Slots</b> for content and <b>CSS Parts</b> for styling.</p>\r
         \r
         <div style="display: flex; gap: 12px; flex-wrap: wrap;">\r
@@ -42147,8 +42235,8 @@ const printCurrentTable = function () {\r
            #dPartsStyling::part(footer) { background: #1e293b; border-top: 1px solid #00fff2; }\r
            #dPartsStyling::part(ok-btn) { background: #00fff2; color: #0f172a; font-weight: 900; text-transform: uppercase; border-radius: 0; clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%); }\r
         </style>\r
-      </div>`},{title:`≡ƒÆ¼ Enterprise MessageBox`,description:`Simplified modal layout optimized for system notifications and informational alerts. Centers the content and provides high-visibility headers.`,html:`<div class="demo-block" style="padding: 24px; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">\r
-        <h3 style="margin-top: 0; color: #1e293b;">≡ƒÆ¼ Enterprise MessageBox</h3>\r
+      </div>`},{title:`💬 Enterprise MessageBox`,description:`Simplified modal layout optimized for system notifications and informational alerts. Centers the content and provides high-visibility headers.`,html:`<div class="demo-block" style="padding: 24px; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;">\r
+        <h3 style="margin-top: 0; color: #1e293b;">💬 Enterprise MessageBox</h3>\r
         <p style="color: #64748b; font-size: 14px; line-height: 1.6;">\r
           Simplified modal layout optimized for system notifications and informational alerts. Centers the content and provides high-visibility headers.\r
         </p>\r
@@ -42156,12 +42244,12 @@ const printCurrentTable = function () {\r
       </div>\r
       <ui-dialog-box id="msgBoxDialog" type="messagebox" status="success" dialog-title="Cloud Sync Complete" subtitle="Project: Zenith Core v4.0" ok-text="Understood" icon-library="lucide" icon="cloud-check">\r
         <div style="padding: 24px; text-align: center;">\r
-           <div style="font-size: 48px; margin-bottom: 16px;">Γ£à</div>\r
+           <div style="font-size: 48px; margin-bottom: 16px;">✅</div>\r
            <p style="margin: 0; font-weight: 600; font-size: 18px;">Deployment Successful</p>\r
            <p style="color: #64748b; margin-top: 8px;">All assets have been optimized and synchronized with the production cluster in <b>us-east-1</b>.</p>\r
         </div>\r
-      </ui-dialog-box>`},{title:`≡ƒùæ∩╕Å High-Stakes Confirmation`,description:`Specialized "confirm" type for destructive actions. Features custom confirmation text that must be acknowledged before proceeding.`,html:`<div class="demo-block" style="padding: 24px; background: #fef2f2; border-radius: 12px; border: 1px solid #fee2e2;">\r
-        <h3 style="margin-top: 0; color: #991b1b;">≡ƒùæ∩╕Å High-Stakes Confirmation</h3>\r
+      </ui-dialog-box>`},{title:`⚠️ High-Stakes Confirmation`,description:`Specialized "confirm" type for destructive actions. Features custom confirmation text that must be acknowledged before proceeding.`,html:`<div class="demo-block" style="padding: 24px; background: #fef2f2; border-radius: 12px; border: 1px solid #fee2e2;">\r
+        <h3 style="margin-top: 0; color: #991b1b;">⚠️ High-Stakes Confirmation</h3>\r
         <p style="color: #b91c1c; font-size: 14px; line-height: 1.6;">\r
           Specialized "confirm" type for destructive actions. Features custom confirmation text that must be acknowledged before proceeding.\r
         </p>\r
@@ -42180,8 +42268,8 @@ const printCurrentTable = function () {\r
         <div style="padding: 24px;">\r
            <p style="margin: 0;">You are attempting to delete the <b>Zenith_Sales_2024</b> database. This will affect 45 related services and cannot be reversed.</p>\r
         </div>\r
-      </ui-dialog-box>`},{title:`Γ£ì∩╕Å Alert Input (Prompt)`,description:`Built-in input field for collecting user input with full async result support.`,html:`<div class="demo-block" style="padding: 20px; background: #f3f4f6; border-radius: 12px; border: 1px dashed #d1d5db;">\r
-        <h3 style="margin-top: 0;">Γ£ì∩╕Å Alert Input (Prompt)</h3>\r
+      </ui-dialog-box>`},{title:`✓ Alert Input (Prompt)`,description:`Built-in input field for collecting user input with full async result support.`,html:`<div class="demo-block" style="padding: 20px; background: #f3f4f6; border-radius: 12px; border: 1px dashed #d1d5db;">\r
+        <h3 style="margin-top: 0;">✓ Alert Input (Prompt)</h3>\r
         <p style="color: #6b7280; font-size: 14px;">Built-in input field for collecting user input with full async result support.</p>\r
         <ui-button id="promptBtn" size="md" variant="outline" color="secondary" label="Launch Prompt" style="--btn-bg: #0891b2;"></ui-button>\r
         <div id="promptResult" style="margin-top: 16px; min-height: 40px; padding: 12px; background: white; border-radius: 6px; border: 1px solid #e5e7eb; display: flex; align-items: center;">\r
@@ -42201,15 +42289,15 @@ const printCurrentTable = function () {\r
         resultDisplay.innerHTML = '<span style="color: #10b981;">Waiting for input...</span>';\r
         const result = await dialog.showWithResult();\r
         if (result.canceled) {\r
-          resultDisplay.innerHTML = '<span style="color: #ef4444; font-weight: bold;">Γ£ò Creation Canceled</span>';\r
+          resultDisplay.innerHTML = '<span style="color: #ef4444; font-weight: bold;">❌ Creation Canceled</span>';\r
         } else {\r
-          resultDisplay.innerHTML = \`<div style="display: flex; flex-direction: column;"><span style="color: #10b981; font-weight: bold;">Γ£ô Project Initialized Successfully</span><span style="font-size: 12px; color: #6b7280;">Returned Value: \${result.data}</span></div>\`;\r
+          resultDisplay.innerHTML = \`<div style="display: flex; flex-direction: column;"><span style="color: #10b981; font-weight: bold;">✓ Project Initialized Successfully</span><span style="font-size: 12px; color: #6b7280;">Returned Value: \${result.data}</span></div>\`;\r
         }\r
       };\r
     }
 })();
-<\/script>`},{title:`Γï« Enterprise Action Menu`,description:`Elevate headers with context-aware actions. Customize the trigger icon and tooltip title for branded experiences.`,html:`<div class="demo-block" style="padding: 24px; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 20px;">\r
-        <h3 style="margin-top: 0; color: #1e293b;">Γï« Enterprise Action Menu</h3>\r
+<\/script>`},{title:`⋮ Enterprise Action Menu`,description:`Elevate headers with context-aware actions. Customize the trigger icon and tooltip title for branded experiences.`,html:`<div class="demo-block" style="padding: 24px; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 20px;">\r
+        <h3 style="margin-top: 0; color: #1e293b;">⋮ Enterprise Action Menu</h3>\r
         <p style="color: #64748b; font-size: 14px; line-height: 1.6;">\r
           Elevate headers with context-aware actions. Customize the trigger icon and tooltip title for branded experiences.\r
         </p>\r
@@ -42225,7 +42313,7 @@ const printCurrentTable = function () {\r
           icon="activity"\r
           menu-items='[{"id":"refresh", "label":"Refresh Data", "icon":"refresh-cw"}, {"id":"export", "label":"Export CSV", "icon":"download"}, {"type":"separator"}, {"id":"clear", "label":"Clear History", "icon":"trash-2", "variant":"danger"}]'>\r
         <div style="padding: 20px;">\r
-          <p>Click the standard <b>Γï«</b> button in the header to see available actions.</p>\r
+          <p>Click the standard <b>⋮</b> button in the header to see available actions.</p>\r
         </div>\r
       </ui-dialog-box>\r
 \r
@@ -42252,22 +42340,22 @@ const printCurrentTable = function () {\r
       }\r
     });
 })();
-<\/script>`},{title:`≡ƒùé Global Tray & Peek System`,description:`Modern enterprise application taskbar. Minimized windows move to a centered dock with scrollable tabs and status indicators.`,html:`<div class="demo-block">\r
-        <h3>≡ƒùé Global Tray & Peek System</h3>\r
+<\/script>`},{title:`📥 Global Tray & Peek System`,description:`Modern enterprise application taskbar. Minimized windows move to a centered dock with scrollable tabs and status indicators.`,html:`<div class="demo-block">\r
+        <h3>📥 Global Tray & Peek System</h3>\r
         <p style="margin-bottom: 20px; color: #6b7280;">Modern enterprise application taskbar. Minimized windows move to a centered dock with scrollable tabs and status indicators.</p>\r
         \r
         <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 30px;">\r
-           <ui-button onclick="spawnTrayDialog('Terminal', 'terminal', 'info')" size="md" variant="outline" color="secondary" label="≡ƒûÑ∩╕Å Open Terminal" style="--btn-bg: #1e293b;"></ui-button>\r
-           <ui-button onclick="spawnTrayDialog('Messages', 'message-square', 'success')" size="md" variant="outline" color="success" label="≡ƒÆ¼ Open Chat" style="--btn-bg: #059669;"></ui-button>\r
-           <ui-button onclick="spawnTrayDialog('Errors', 'alert-circle', 'error')" size="md" variant="outline" color="danger" label="≡ƒÜ¿ Open Alerts" style="--btn-bg: #dc2626;"></ui-button>\r
-           <ui-button onclick="spawnManyTrayDialogs(8)" size="md" variant="outline" color="primary" label="≡ƒîÇ Spawn 8+ Windows" style="--btn-bg: #4f46e5;"></ui-button>\r
+           <ui-button onclick="spawnTrayDialog('Terminal', 'terminal', 'info')" size="md" variant="outline" color="secondary" label="🖥️ Open Terminal" style="--btn-bg: #1e293b;"></ui-button>\r
+           <ui-button onclick="spawnTrayDialog('Messages', 'message-square', 'success')" size="md" variant="outline" color="success" label="💬 Open Chat" style="--btn-bg: #059669;"></ui-button>\r
+           <ui-button onclick="spawnTrayDialog('Errors', 'alert-circle', 'error')" size="md" variant="outline" color="danger" label="🚨 Open Alerts" style="--btn-bg: #dc2626;"></ui-button>\r
+           <ui-button onclick="spawnManyTrayDialogs(8)" size="md" variant="outline" color="primary" label="🌀 Spawn 8+ Windows" style="--btn-bg: #4f46e5;"></ui-button>\r
         </div>\r
 \r
         <div style="background: rgba(59, 130, 246, 0.05); border: 2px dashed #10b981; border-radius: 16px; padding: 40px; text-align: center;">\r
-           <div style="font-size: 24px; margin-bottom: 12px;">≡ƒæç</div>\r
+           <div style="font-size: 24px; margin-bottom: 12px;">👇</div>\r
            <p style="font-weight: 700; color: #1e3a8a; margin: 0;">MINIMIZE THE WINDOWS ABOVE</p>\r
            <p style="color: #10b981; font-size: 14px;">They will cluster into the global tray at the bottom center of the screen.</p>\r
-           <p style="color: #64748b; font-size: 13px; margin-top: 20px;"><b>Pro Tip:</b> Use the "Γëí All Tabs" menu in the tray to manage many windows at once!</p>\r
+           <p style="color: #64748b; font-size: 13px; margin-top: 20px;"><b>Pro Tip:</b> Use the "≡ All Tabs" menu in the tray to manage many windows at once!</p>\r
         </div>\r
       </div>\r
     
@@ -42325,35 +42413,35 @@ const printCurrentTable = function () {\r
       }\r
     };
 })();
-<\/script>`},{title:`Γ£¿ Glass & Status Showroom`,description:`Showcasing ultra-modern visual variants and status-aware styling.`,html:`<div class="demo-block">\r
-        <h3>Γ£¿ Glass & Status Showroom</h3>\r
+<\/script>`},{title:`✨ Glass & Status Showroom`,description:`Showcasing ultra-modern visual variants and status-aware styling.`,html:`<div class="demo-block">\r
+        <h3>✨ Glass & Status Showroom</h3>\r
         <p style="margin-bottom: 30px; color: #64748b;">Showcasing ultra-modern visual variants and status-aware styling.</p>\r
         \r
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">\r
            <!-- Glass Info -->\r
            <div style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); padding: 24px; border-radius: 16px;">\r
-              <h4 style="margin-top:0; color: #2563eb;">≡ƒÆÄ Glass Variant</h4>\r
+              <h4 style="margin-top:0; color: #2563eb;">💎 Glass Variant</h4>\r
               <p style="font-size: 13px; color: #1e40af;">Frosted glass effect with high-fidelity blur. Works best over colorful backgrounds.</p>\r
               <ui-button onclick="openDialog('showroomGlass')" size="md" variant="outline" color="primary" label="Open Glass" style="--btn-bg: #2563eb;"></ui-button>\r
            </div>\r
            \r
            <!-- Minimal Primary -->\r
            <div style="background: rgba(244, 114, 182, 0.1); border: 1px solid rgba(244, 114, 182, 0.2); padding: 24px; border-radius: 16px;">\r
-              <h4 style="margin-top:0; color: #db2777;">≡ƒôÅ Minimal Variant</h4>\r
+              <h4 style="margin-top:0; color: #db2777;">📐 Minimal Variant</h4>\r
               <p style="font-size: 13px; color: #9d174d;">Clean, floating look without a background color on the header. Modern and lightweight.</p>\r
               <ui-button onclick="openDialog('showroomMinimal')" size="md" variant="outline" color="secondary" label="Open Minimal" style="--btn-bg: #db2777;"></ui-button>\r
            </div>\r
 \r
            <!-- Ghost Success -->\r
            <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); padding: 24px; border-radius: 16px;">\r
-              <h4 style="margin-top:0; color: #059669;">≡ƒæ╗ Ghost Variant</h4>\r
+              <h4 style="margin-top:0; color: #059669;">👻 Ghost Variant</h4>\r
               <p style="font-size: 13px; color: #065f46;">Fully transparent surface with border emphasis. Minimalist design.</p>\r
               <ui-button onclick="openDialog('showroomGhost')" size="md" variant="outline" color="success" label="Open Ghost" style="--btn-bg: #059669;"></ui-button>\r
            </div>\r
 \r
            <!-- Status Tints -->\r
            <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.2); padding: 24px; border-radius: 16px;">\r
-              <h4 style="margin-top:0; color: #d97706;">≡ƒÄ¿ Status Tints</h4>\r
+              <h4 style="margin-top:0; color: #d97706;">🎨 Status Tints</h4>\r
               <p style="font-size: 13px; color: #92400e;">Automatic top-border and icon tinting based on status (info, success, warning, error).</p>\r
               <div style="display:flex; gap:8px;">\r
                  <ui-button onclick="document.getElementById('showroomStatus').status='error'; openDialog('showroomStatus')" size="md" variant="outline" color="danger" label="Error"></ui-button>\r
@@ -42388,14 +42476,14 @@ const printCurrentTable = function () {\r
               <p>Status tints apply to the top indicator bar and header icons automatically.</p>\r
            </div>\r
         </ui-dialog-box>\r
-      </div>`},{title:`≡ƒºá Advanced Enterprise Logic`,description:`Showcasing recursive nesting, time-sensitive alerts, and layout persistence.`,html:`<div class="demo-block">\r
-        <h3>≡ƒºá Advanced Enterprise Logic</h3>\r
+      </div>`},{title:`🧠 Advanced Enterprise Logic`,description:`Showcasing recursive nesting, time-sensitive alerts, and layout persistence.`,html:`<div class="demo-block">\r
+        <h3>🧠 Advanced Enterprise Logic</h3>\r
         <p style="margin-bottom: 24px; color: #64748b;">Showcasing recursive nesting, time-sensitive alerts, and layout persistence.</p>\r
         \r
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">\r
            <!-- Recursive Nesting -->\r
            <div style="background: white; border: 1px solid #e2e8f0; padding: 24px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">\r
-              <h4 style="margin: 0 0 10px 0; color: #7c3aed;">≡ƒî│ Triple Nesting</h4>\r
+              <h4 style="margin: 0 0 10px 0; color: #7c3aed;">🌲 Triple Nesting</h4>\r
               <p style="font-size: 13px; color: #6b7280; line-height: 1.5; margin-bottom: 20px;">\r
                 Demonstrates automatic backdrop dimming, focus trapping, and recursive z-index management across three levels of depth.\r
               </p>\r
@@ -42404,7 +42492,7 @@ const printCurrentTable = function () {\r
 \r
            <!-- Auto-Closing Alert -->\r
            <div style="background: white; border: 1px solid #e2e8f0; padding: 24px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">\r
-              <h4 style="margin: 0 0 10px 0; color: #f59e0b;">ΓÅ▒∩╕Å Auto-Expiring Alert</h4>\r
+              <h4 style="margin: 0 0 10px 0; color: #f59e0b;">⏱️ Auto-Expiring Alert</h4>\r
               <p style="font-size: 13px; color: #6b7280; line-height: 1.5; margin-bottom: 20px;">\r
                 Programmatic lifecycle control with a synchronized countdown timer and progress bar for time-sensitive notifications.\r
               </p>\r
@@ -42413,7 +42501,7 @@ const printCurrentTable = function () {\r
 \r
            <!-- Workspace Persistence -->\r
            <div style="background: white; border: 1px solid #e2e8f0; padding: 24px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">\r
-              <h4 style="margin: 0 0 10px 0; color: #10b981;">≡ƒÆ╛ Layout Persistence</h4>\r
+              <h4 style="margin: 0 0 10px 0; color: #10b981;">💾 Layout Persistence</h4>\r
               <p style="font-size: 13px; color: #6b7280; line-height: 1.5; margin-bottom: 20px;">\r
                 Remembers window position and size across page reloads using localStorage. Drag/resize then refresh the browser.\r
               </p>\r
@@ -42422,7 +42510,7 @@ const printCurrentTable = function () {\r
 \r
            <!-- Custom Sizing -->\r
            <div style="background: white; border: 1px solid #e2e8f0; padding: 24px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">\r
-              <h4 style="margin: 0 0 10px 0; color: #10b981;">≡ƒôÉ Custom Dimension</h4>\r
+              <h4 style="margin: 0 0 10px 0; color: #10b981;">📐 Custom Dimension</h4>\r
               <p style="font-size: 13px; color: #6b7280; line-height: 1.5; margin-bottom: 20px;">\r
                 Bypass semantic sizing (sm, md, lg) and define pixel-perfect footprints.\r
               </p>\r
@@ -42808,7 +42896,6 @@ const printCurrentTable = function () {\r
       updateDividerPlayground();\r
     }, 100);\r
     updateDividerPlayground();\r
-  }\r
 \r
   function updateDividerPlayground() {\r
     const preview = document.getElementById('dividerPreview');\r
@@ -51413,34 +51500,34 @@ await manager.loadLayout(saved);</code></pre>\r
       <h4 style="margin-top:32px;">Click trigger (default)</h4>\r
       <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:16px;">\r
         <ui-popover trigger="click" placement="top" heading="Information" content="<p>This is a <strong>popover</strong> with HTML content. Click outside to close.</p>">\r
-          \${btn('Top')}\r
+          <ui-button label="Top" color="success" variant="outline"></ui-button>\r
         </ui-popover>\r
-        <ui-popover trigger="click" placement="bottom" heading="Notes" content="<p>Bottom placement ΓÇö flips to top when near edge.</p>">\r
-          \${btn('Bottom', '#10b981')}\r
+        <ui-popover trigger="click" placement="bottom" heading="Notes" content="<p>Bottom placement — flips to top when near edge.</p>">\r
+          <ui-button label="Bottom" color="success" variant="outline"></ui-button>\r
         </ui-popover>\r
         <ui-popover trigger="click" placement="left" content="<p>Left placement</p>">\r
-          \${btn('Left', '#f59e0b')}\r
+          <ui-button label="Left" color="warning" variant="outline"></ui-button>\r
         </ui-popover>\r
         <ui-popover trigger="click" placement="right" content="<p>Right placement</p>">\r
-          \${btn('Right', '#8b5cf6')}\r
+          <ui-button label="Right" color="secondary" variant="outline"></ui-button>\r
         </ui-popover>\r
       </div>\r
 \r
       <h4 style="margin-top:40px;">No arrow / No heading</h4>\r
       <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:16px;">\r
-        <ui-popover trigger="click" placement="bottom" show-arrow="false" content="<p>Arrow-free popover ΓÇö great for menus and dropdowns.</p>">\r
-          \${btn('No Arrow', '#6366f1')}\r
+        <ui-popover trigger="click" placement="bottom" show-arrow="false" content="<p>Arrow-free popover — great for menus and dropdowns.</p>">\r
+          <ui-button label="No Arrow" color="primary" variant="outline"></ui-button>\r
         </ui-popover>\r
         <ui-popover trigger="click" placement="bottom" content="<p>No heading, just body content.</p>">\r
-          \${btn('No Heading', '#ec4899')}\r
+          <ui-button label="No Heading" color="error" variant="outline"></ui-button>\r
         </ui-popover>\r
       </div>\r
 \r
-      <h4 style="margin-top:40px;">maxHeight ΓÇö scrollable body</h4>\r
+      <h4 style="margin-top:40px;">maxHeight — scrollable body</h4>\r
       <p style="color:#6b7280;font-size:13px;">Set <code>max-height</code> to enable internal scrolling for long content.</p>\r
       <ui-popover trigger="click" placement="bottom" heading="Long List" max-height="200px"\r
         content="<ul style='margin:0;padding-left:18px;line-height:2;'><li>Item 1</li><li>Item 2</li><li>Item 3</li><li>Item 4</li><li>Item 5</li><li>Item 6</li><li>Item 7</li><li>Item 8</li><li>Item 9</li><li>Item 10</li></ul>">\r
-        \${btn('Scrollable Content', '#0891b2')}\r
+        <ui-button label="Scrollable Content" color="info" variant="outline"></ui-button>\r
       </ui-popover>\r
     </div>`},{title:`Trigger Modes`,description:`Toggle on click, close on outside click or Esc.`,html:`<div class="demo-block">\r
       <h3>Trigger Modes</h3>\r
@@ -51451,15 +51538,15 @@ await manager.loadLayout(saved);</code></pre>\r
           <h4 style="margin:0 0 8px;">click</h4>\r
           <p style="font-size:13px;color:#6b7280;margin-bottom:16px;">Toggle on click, close on outside click or Esc.</p>\r
           <ui-popover trigger="click" placement="bottom" heading="Click Trigger" content="<p>Opened by clicking the button.</p>">\r
-            \${btn('Click Me', '#10b981')}\r
+            <ui-button label="Click Me" color="success" variant="outline"></ui-button>\r
           </ui-popover>\r
         </div>\r
 \r
         <div style="background:#f0fdf4;padding:20px;border-radius:12px;border:1px solid #bbf7d0;">\r
           <h4 style="margin:0 0 8px;">hover</h4>\r
-          <p style="font-size:13px;color:#6b7280;margin-bottom:16px;">Opens on mouse enter, closes after <code>hide-delay</code> ms. Move cursor into popover body ΓÇö it stays open (<code>interactive</code>).</p>\r
-          <ui-popover trigger="hover" placement="bottom" show-delay="200" hide-delay="400" heading="Hover Trigger" content="<p>Hover into this area ΓÇö it stays open!</p>">\r
-            \${btn('Hover Me', '#10b981')}\r
+          <p style="font-size:13px;color:#6b7280;margin-bottom:16px;">Opens on mouse enter, closes after <code>hide-delay</code> ms. Move cursor into popover body — it stays open (<code>interactive</code>).</p>\r
+          <ui-popover trigger="hover" placement="bottom" show-delay="200" hide-delay="400" heading="Hover Trigger" content="<p>Hover into this area — it stays open!</p>">\r
+            <ui-button label="Hover Me" color="success" variant="outline"></ui-button>\r
           </ui-popover>\r
         </div>\r
 \r
@@ -51473,7 +51560,7 @@ await manager.loadLayout(saved);</code></pre>\r
 \r
         <div style="background:#fdf4ff;padding:20px;border-radius:12px;border:1px solid #e9d5ff;">\r
           <h4 style="margin:0 0 8px;">manual</h4>\r
-          <p style="font-size:13px;color:#6b7280;margin-bottom:16px;">No automatic trigger ΓÇö control via <code>show()</code> / <code>hide()</code> methods.</p>\r
+          <p style="font-size:13px;color:#6b7280;margin-bottom:16px;">No automatic trigger — control via <code>show()</code> / <code>hide()</code> methods.</p>\r
           <div style="display:flex;gap:8px;margin-bottom:16px;">\r
             <ui-button label="Show" variant="outline" color="primary" onclick="document.getElementById('manualPop').show()" style="flex:1;"></ui-button>\r
             <ui-button label="Hide" variant="outline" color="secondary" onclick="document.getElementById('manualPop').hide()" style="flex:1;"></ui-button>\r
@@ -51486,17 +51573,17 @@ await manager.loadLayout(saved);</code></pre>\r
 \r
         <div style="background:#fff7ed;padding:20px;border-radius:12px;border:1px solid #fed7aa;">\r
           <h4 style="margin:0 0 8px;">interactive: false</h4>\r
-          <p style="font-size:13px;color:#6b7280;margin-bottom:16px;">In hover mode with <code>interactive="false"</code> ΓÇö popover closes immediately when cursor leaves trigger (pure tooltip).</p>\r
+          <p style="font-size:13px;color:#6b7280;margin-bottom:16px;">In hover mode with <code>interactive="false"</code> — popover closes immediately when cursor leaves trigger (pure tooltip).</p>\r
           <ui-popover trigger="hover" interactive="false" placement="bottom" hide-delay="0" content="<p>I close instantly when you leave me.</p>">\r
-            \${btn('Hover (non-interactive)', '#ea580c')}\r
+            <ui-button label="Hover (non-interactive)" color="warning" variant="outline"></ui-button>\r
           </ui-popover>\r
         </div>\r
 \r
         <div style="background:#f0fdf4;padding:20px;border-radius:12px;border:1px solid #bbf7d0;">\r
           <h4 style="margin:0 0 8px;">closeOnScroll</h4>\r
-          <p style="font-size:13px;color:#6b7280;margin-bottom:16px;">Popover closes automatically when the page is scrolled ΓÇö ideal for popovers inside scrollable lists.</p>\r
-          <ui-popover trigger="click" close-on-scroll="true" placement="bottom" content="<p>Scroll the page ΓÇö I'll close automatically.</p>">\r
-            \${btn('Open + Scroll closes', '#16a34a')}\r
+          <p style="font-size:13px;color:#6b7280;margin-bottom:16px;">Popover closes automatically when the page is scrolled — ideal for popovers inside scrollable lists.</p>\r
+          <ui-popover trigger="click" close-on-scroll="true" placement="bottom" content="<p>Scroll the page — I'll close automatically.</p>">\r
+            <ui-button label="Open + Scroll closes" color="success" variant="outline"></ui-button>\r
           </ui-popover>\r
         </div>\r
 \r
@@ -51508,32 +51595,32 @@ await manager.loadLayout(saved);</code></pre>\r
       <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:28px;">\r
         <ui-popover trigger="click" variant="light" placement="bottom" heading="Light (default)"\r
           content="<p>Default clean white popover.</p>">\r
-          \${btn('Light', '#374151')}\r
+          <ui-button label="Light" color="secondary" variant="outline"></ui-button>\r
         </ui-popover>\r
 \r
         <ui-popover trigger="click" variant="dark" placement="bottom" heading="Dark Mode"\r
           content="<p>Sleek dark variant for dark-theme UIs.</p>">\r
-          \${btn('Dark', '#1f2937')}\r
+          <ui-button label="Dark" color="secondary" variant="outline"></ui-button>\r
         </ui-popover>\r
 \r
         <ui-popover trigger="click" variant="success" placement="bottom" heading="All systems go"\r
           content="<p>Deployment completed successfully in 2.3s.</p>">\r
-          \${btn('Success', '#16a34a')}\r
+          <ui-button label="Success" color="success" variant="outline"></ui-button>\r
         </ui-popover>\r
 \r
         <ui-popover trigger="click" variant="warning" placement="bottom" heading="Heads up"\r
           content="<p>Your API quota is at 85%. Consider upgrading.</p>">\r
-          \${btn('Warning', '#d97706')}\r
+          <ui-button label="Warning" color="warning" variant="outline"></ui-button>\r
         </ui-popover>\r
 \r
         <ui-popover trigger="click" variant="error" placement="bottom" heading="Action failed"\r
           content="<p>Could not save changes. Please try again.</p>" show-close-button="true">\r
-          \${btn('Error', '#dc2626')}\r
+          <ui-button label="Error" color="error" variant="outline"></ui-button>\r
         </ui-popover>\r
 \r
         <ui-popover trigger="click" variant="info" placement="bottom" heading="Did you know?"\r
           content="<p>You can use the <code>footer</code> slot for action buttons.</p>">\r
-          \${btn('Info', '#2563eb')}\r
+          <ui-button label="Info" color="primary" variant="outline"></ui-button>\r
         </ui-popover>\r
       </div>\r
 \r
@@ -51542,7 +51629,7 @@ await manager.loadLayout(saved);</code></pre>\r
 \r
       <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:16px;">\r
         <ui-popover id="footerPop1" trigger="click" variant="error" placement="bottom" heading="Delete Project?" show-close-button="true">\r
-          \${btn('DeleteΓÇª', '#dc2626')}\r
+          <ui-button label="Delete…" color="error" variant="outline"></ui-button>\r
           <div slot="content"><p>This action is permanent and cannot be undone. All project files, history, and collaborators will be removed.</p></div>\r
           <div slot="footer" style="display:flex;justify-content:flex-end;gap:8px;">\r
             <ui-button label="Cancel" variant="outline" color="secondary" size="md"click="document.getElementById('footerPop1').hide()"></ui-button>\r
@@ -51551,14 +51638,14 @@ await manager.loadLayout(saved);</code></pre>\r
         </ui-popover>\r
 \r
         <ui-popover id="footerPop2" trigger="click" variant="info" placement="bottom" heading="Keyboard Shortcuts">\r
-          \${btn('Shortcuts', '#2563eb')}\r
+          <ui-button label="Shortcuts" color="primary" variant="outline"></ui-button>\r
           <div slot="content" style="font-size:13px;">\r
             <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #bfdbfe;"><span>Save</span><kbd style="background:#dbeafe;padding:2px 6px;border-radius:4px;">Ctrl+S</kbd></div>\r
             <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #bfdbfe;"><span>Undo</span><kbd style="background:#dbeafe;padding:2px 6px;border-radius:4px;">Ctrl+Z</kbd></div>\r
             <div style="display:flex;justify-content:space-between;padding:6px 0;"><span>Search</span><kbd style="background:#dbeafe;padding:2px 6px;border-radius:4px;">Ctrl+K</kbd></div>\r
           </div>\r
           <div slot="footer" style="text-align:center;font-size:12px;color:#1e40af;">\r
-            <a href="#" style="color:#2563eb;">View all shortcuts ΓåÆ</a>\r
+            <a href="#" style="color:#2563eb;">View all shortcuts ➡️</a>\r
           </div>\r
         </ui-popover>\r
       </div>\r
@@ -51570,7 +51657,7 @@ await manager.loadLayout(saved);</code></pre>\r
         <div>\r
           <h4>User Profile Card</h4>\r
           <ui-popover trigger="click" placement="bottom-start" width="300px">\r
-            \${btn('View Profile', '#8b5cf6')}\r
+            <ui-button label="View Profile" color="secondary" variant="outline"></ui-button>\r
             <div slot="content" style="padding:4px;">\r
               <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">\r
                 <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px;">JD</div>\r
@@ -51614,7 +51701,7 @@ await manager.loadLayout(saved);</code></pre>\r
                 .join('')}\r
             </div>\r
             <div slot="footer" style="text-align:center;">\r
-              <a href="#" style="font-size:13px;color:#10b981;text-decoration:none;font-weight:600;">View all notifications ΓåÆ</a>\r
+              <a href="#" style="font-size:13px;color:#10b981;text-decoration:none;font-weight:600;">View all notifications ➡️</a>\r
             </div>\r
           </ui-popover>\r
         </div>\r
@@ -51623,7 +51710,7 @@ await manager.loadLayout(saved);</code></pre>\r
       <div style="margin-top:40px;">\r
         <h4>Colour Picker</h4>\r
         <ui-popover trigger="click" placement="bottom" width="240px" heading="Pick a colour">\r
-          \${btn('≡ƒÄ¿ Choose Colour', '#ec4899')}\r
+          <ui-button label="🎨 Choose Colour" color="error" variant="outline"></ui-button>\r
           <div slot="content">\r
             <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px;padding:4px;">\r
               \${['#ef4444', '#f97316', '#eab308', '#22c55e', '#10b981', '#8b5cf6', '#ec4899', '#0ea5e9', '#14b8a6', '#6b7280', '#1f2937', '#ffffff']\r
@@ -51697,7 +51784,7 @@ await manager.loadLayout(saved);</code></pre>\r
           <div slot="content" style="padding:4px 0;">\r
             <div style="padding:8px 12px;font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.05em;">Notifications</div>\r
             <div style="padding:10px 12px;font-size:13px;border-radius:6px;background:#eff6ff;margin:4px;">\r
-              <div style="font-weight:600;color:#1e40af;">Build passed Γ£ô</div>\r
+              <div style="font-weight:600;color:#1e40af;">Build passed ✓</div>\r
               <div style="color:#10b981;font-size:12px;">pipeline #247 ┬╖ 1m ago</div>\r
             </div>\r
           </div>\r
@@ -51735,10 +51822,10 @@ await manager.loadLayout(saved);</code></pre>\r
 \r
       <h4 style="margin-top:24px;">Animations</h4>\r
       <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:16px;">\r
-        <ui-popover trigger="hover" placement="top" animation="scale" content="<p>Scale animation (default).</p>">\${btn('Scale', '#8b5cf6')}</ui-popover>\r
-        <ui-popover trigger="hover" placement="top" animation="slide" content="<p>Slides in from below.</p>">\${btn('Slide', '#6366f1')}</ui-popover>\r
-        <ui-popover trigger="hover" placement="top" animation="fade"  content="<p>Simple opacity fade.</p>">\${btn('Fade', '#ec4899')}</ui-popover>\r
-        <ui-popover trigger="hover" placement="top" animation="none"  content="<p>No animation ΓÇö instant show.</p>">\${btn('None', '#374151')}</ui-popover>\r
+        <ui-popover trigger="hover" placement="top" animation="scale" content="<p>Scale animation (default).</p>"><ui-button label="Scale" color="secondary" variant="outline"></ui-button></ui-popover>\r
+        <ui-popover trigger="hover" placement="top" animation="slide" content="<p>Slides in from below.</p>"><ui-button label="Slide" color="primary" variant="outline"></ui-button></ui-popover>\r
+        <ui-popover trigger="hover" placement="top" animation="fade"  content="<p>Simple opacity fade.</p>"><ui-button label="Fade" color="error" variant="outline"></ui-button></ui-popover>\r
+        <ui-popover trigger="hover" placement="top" animation="none"  content="<p>No animation — instant show.</p>"><ui-button label="None" color="secondary" variant="outline"></ui-button></ui-popover>\r
       </div>\r
 \r
       <h4 style="margin-top:40px;">Backdrop (modal behaviour)</h4>\r
@@ -51746,7 +51833,7 @@ await manager.loadLayout(saved);</code></pre>\r
       <ui-popover id="backdropPop" trigger="click" placement="bottom" backdrop="true" width="320px"\r
         heading="Important Action" show-close-button="true" variant="error"\r
         content="<p>This popover acts like a lightweight modal. Click the backdrop or press Esc to close.</p>">\r
-        \${btn('Show with Backdrop', '#ef4444')}\r
+        <ui-button label="Show with Backdrop" color="error" variant="outline"></ui-button>\r
         <div slot="footer" style="display:flex;justify-content:flex-end;gap:8px;">\r
           <ui-button label="Cancel" variant="outline" color="secondary" size="md"click="document.getElementById('backdropPop').hide()"></ui-button>\r
           <ui-button label="Confirm" variant="outline" color="error" size="md"click="document.getElementById('backdropPop').hide()"></ui-button>\r
@@ -51757,9 +51844,9 @@ await manager.loadLayout(saved);</code></pre>\r
       <p style="color:#6b7280;font-size:13px;">Listen to <code>uiBeforeOpen</code> / <code>uiBeforeClose</code> and call <code>event.preventDefault()</code> to cancel.</p>\r
       <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;">\r
         <ui-popover id="cancelShowPop" trigger="click" placement="bottom" heading="Before-Show Gated" content="<p>You confirmed you want to open me!</p>">\r
-          \${btn('Gated Open', '#059669')}\r
+          <ui-button label="Gated Open" color="success" variant="outline"></ui-button>\r
         </ui-popover>\r
-        <div id="cancelEventLog" style="padding:8px 12px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;color:#374151;min-width:220px;display:flex;align-items:center;">Waiting for eventsΓÇª</div>\r
+        <div id="cancelEventLog" style="padding:8px 12px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;color:#374151;min-width:220px;display:flex;align-items:center;">Waiting for events…</div>\r
       </div>\r
 \r
       <h4 style="margin-top:40px;">Disabled</h4>\r
@@ -51767,40 +51854,40 @@ await manager.loadLayout(saved);</code></pre>\r
         <ui-button label="Disabled Trigger" disabled="true" variant="outline" color="secondary"></ui-button>\r
       </ui-popover>\r
       <h4 style="margin-top:40px;">Skeleton Loading</h4>\r
-      <ui-popover trigger="click" placement="bottom" skeleton="true" heading="LoadingΓÇª" width="260px" content="">\r
-        \${btn('Show Skeleton', '#6366f1')}\r
+      <ui-popover trigger="click" placement="bottom" skeleton="true" heading="Loading…" width="260px" content="">\r
+        <ui-button label="Show Skeleton" color="primary" variant="outline"></ui-button>\r
       </ui-popover>\r
     </div>`},{title:`Edge Detection &amp; Auto-Positioning`,description:`Four buttons are pinned to the actual viewport edges using\r
         position:fixed. Each prefers a placement that would clip off-screen\r
-        ΓÇö the engine automatically flips and clamps so the panel stays visible.`,html:`<div class="demo-block">\r
+        — the engine automatically flips and clamps so the panel stays visible.`,html:`<div class="demo-block">\r
       <h3>Edge Detection &amp; Auto-Positioning</h3>\r
       <p>\r
         Four buttons are pinned to the <strong>actual viewport edges</strong> using\r
         <code>position:fixed</code>. Each prefers a placement that would clip off-screen\r
-        ΓÇö the engine automatically flips and clamps so the panel stays visible.\r
+        — the engine automatically flips and clamps so the panel stays visible.\r
       </p>\r
 \r
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:24px;">\r
         <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:14px;">\r
-          <div style="font-size:11px;font-weight:700;color:#1e40af;letter-spacing:.05em;margin-bottom:6px;">≡ƒö╡ TOP EDGE</div>\r
+          <div style="font-size:11px;font-weight:700;color:#1e40af;letter-spacing:.05em;margin-bottom:6px;">🔵 TOP EDGE</div>\r
           <p style="font-size:13px;color:#1e3a8a;margin:0;line-height:1.6;">\r
             Prefers <code>top</code>. Flips to <strong>bottom</strong> because there's no room above.\r
           </p>\r
         </div>\r
         <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:14px;">\r
-          <div style="font-size:11px;font-weight:700;color:#14532d;letter-spacing:.05em;margin-bottom:6px;">≡ƒƒó BOTTOM EDGE</div>\r
+          <div style="font-size:11px;font-weight:700;color:#14532d;letter-spacing:.05em;margin-bottom:6px;">🟢 BOTTOM EDGE</div>\r
           <p style="font-size:13px;color:#14532d;margin:0;line-height:1.6;">\r
             Prefers <code>bottom</code>. Flips to <strong>top</strong> because there's no room below.\r
           </p>\r
         </div>\r
         <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:14px;">\r
-          <div style="font-size:11px;font-weight:700;color:#78350f;letter-spacing:.05em;margin-bottom:6px;">≡ƒƒí LEFT EDGE</div>\r
+          <div style="font-size:11px;font-weight:700;color:#78350f;letter-spacing:.05em;margin-bottom:6px;">🟡 LEFT EDGE</div>\r
           <p style="font-size:13px;color:#78350f;margin:0;line-height:1.6;">\r
             Prefers <code>left</code>. Flips to <strong>right</strong> because there's no room on the left.\r
           </p>\r
         </div>\r
         <div style="background:#fdf4ff;border:1px solid #e9d5ff;border-radius:10px;padding:14px;">\r
-          <div style="font-size:11px;font-weight:700;color:#581c87;letter-spacing:.05em;margin-bottom:6px;">≡ƒƒú RIGHT EDGE</div>\r
+          <div style="font-size:11px;font-weight:700;color:#581c87;letter-spacing:.05em;margin-bottom:6px;">🟣 RIGHT EDGE</div>\r
           <p style="font-size:13px;color:#581c87;margin:0;line-height:1.6;">\r
             Prefers <code>right</code>. Flips to <strong>left</strong> because there's no room on the right.\r
           </p>\r
@@ -51808,7 +51895,7 @@ await manager.loadLayout(saved);</code></pre>\r
       </div>\r
 \r
       <div style="margin-top:20px;padding:14px 18px;background:#fefce8;border:1px solid #fde68a;border-radius:10px;display:flex;align-items:center;gap:12px;">\r
-        <span style="font-size:22px;">≡ƒæå</span>\r
+        <span style="font-size:22px;">👆</span>\r
         <span style="font-size:13px;color:#78350f;">\r
           <strong>Four coloured buttons have been pinned to the edges of your browser window.</strong>\r
           Scroll up/down to reach the top and bottom buttons, then click each one to see the flip in action.\r
@@ -51826,7 +51913,7 @@ await manager.loadLayout(saved);</code></pre>\r
           <ui-button label="\\u25C0 Far Left" color="success" variant="outline" onclick=""></ui-button>\r
         </ui-popover>\r
         <ui-popover trigger="click" placement="bottom" heading="Centre (bottom)"\r
-          content="<p>Plenty of space ΓÇö no flip or clamping needed.</p>">\r
+          content="<p>Plenty of space — no flip or clamping needed.</p>">\r
           <ui-button label="Centre" color="secondary" variant="outline" onclick=""></ui-button>\r
         </ui-popover>\r
         <ui-popover trigger="click" placement="bottom-end" heading="Far Right (bottom-end)"\r
@@ -51836,29 +51923,29 @@ await manager.loadLayout(saved);</code></pre>\r
       </div>\r
 \r
       <div style="margin-top:24px;background:#eff6ff;border-radius:10px;padding:20px;border:1px solid #bfdbfe;">\r
-        <h4 style="margin:0 0 10px;color:#1e40af;">≡ƒÆí Positioning engine features</h4>\r
+        <h4 style="margin:0 0 10px;color:#1e40af;">💡 Positioning engine features</h4>\r
         <ul style="margin:0;color:#1e40af;line-height:2;font-size:13px;">\r
-          <li><strong>Top Γåö Bottom flip</strong> ΓÇö triggered when vertical overflow is detected</li>\r
-          <li><strong>Left Γåö Right flip</strong> ΓÇö triggered when horizontal overflow is detected</li>\r
-          <li><strong>Horizontal clamping</strong> ΓÇö guarantees no pixel bleeds off-screen left or right</li>\r
-          <li><strong>Vertical clamping</strong> ΓÇö applied in both directions for tall content</li>\r
-          <li><strong>First-render safe</strong> ΓÇö falls back to prop width when layout isn't ready yet</li>\r
-          <li><strong>Arrow compensation</strong> ΓÇö arrow re-tracks the trigger after clamping</li>\r
+          <li><strong>Top ↔️ Bottom flip</strong> — triggered when vertical overflow is detected</li>\r
+          <li><strong>Left ↔️ Right flip</strong> — triggered when horizontal overflow is detected</li>\r
+          <li><strong>Horizontal clamping</strong> — guarantees no pixel bleeds off-screen left or right</li>\r
+          <li><strong>Vertical clamping</strong> — applied in both directions for tall content</li>\r
+          <li><strong>First-render safe</strong> — falls back to prop width when layout isn't ready yet</li>\r
+          <li><strong>Arrow compensation</strong> — arrow re-tracks the trigger after clamping</li>\r
         </ul>\r
       </div>\r
     </div>\r
   
 <script>
 (function() {
-  // ΓöÇΓöÇ Inject real fixed-position triggers at each viewport edge ΓöÇΓöÇ\r
+  // ── Inject real fixed-position triggers at each viewport edge ──\r
   var edgeDefs = [\r
     {\r
       id: 'edgeFixedTop',\r
       cssText: 'position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:50000;',\r
       placement: 'top',\r
       bg: '#10b981',\r
-      label: 'Γû╝ TOP EDGE',\r
-      heading: 'Top Edge ΓÇö flipped to bottom',\r
+      label: '▼ TOP EDGE',\r
+      heading: 'Top Edge — flipped to bottom',\r
       body: "I preferred to open <em>above</em> but there's no room. I flipped to <strong>below</strong>.",\r
     },\r
     {\r
@@ -51866,8 +51953,8 @@ await manager.loadLayout(saved);</code></pre>\r
       cssText: 'position:fixed;bottom:0;left:50%;transform:translateX(-50%);z-index:50000;',\r
       placement: 'bottom',\r
       bg: '#10b981',\r
-      label: 'Γû▓ BOTTOM EDGE',\r
-      heading: 'Bottom Edge ΓÇö flipped to top',\r
+      label: '▲ BOTTOM EDGE',\r
+      heading: 'Bottom Edge — flipped to top',\r
       body: "I preferred to open <em>below</em> but there's no room. I flipped to <strong>above</strong>.",\r
     },\r
     {\r
@@ -51875,8 +51962,8 @@ await manager.loadLayout(saved);</code></pre>\r
       cssText: 'position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:50000;',\r
       placement: 'left',\r
       bg: '#d97706',\r
-      label: 'Γû╢ LEFT',\r
-      heading: 'Left Edge ΓÇö flipped to right',\r
+      label: '◀ LEFT',\r
+      heading: 'Left Edge — flipped to right',\r
       body: "I preferred to open to the <em>left</em> but there's no room. I flipped to <strong>right</strong>.",\r
     },\r
     {\r
@@ -51884,8 +51971,8 @@ await manager.loadLayout(saved);</code></pre>\r
       cssText: 'position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:50000;',\r
       placement: 'right',\r
       bg: '#8b5cf6',\r
-      label: 'ΓùÇ RIGHT',\r
-      heading: 'Right Edge ΓÇö flipped to left',\r
+      label: '◀ RIGHT',\r
+      heading: 'Right Edge — flipped to left',\r
       body: "I preferred to open to the <em>right</em> but there's no room. I flipped to <strong>left</strong>.",\r
     },\r
   ];\r
@@ -51928,9 +52015,9 @@ await manager.loadLayout(saved);</code></pre>\r
     b.addEventListener('click', cleanup, { once: true });\r
   });
 })();
-<\/script>`},{title:`≡ƒÄ« Interactive Playground`,description:`Configure every property and see changes in real-time.`,html:`<div style="background:white;border-radius:14px;padding:30px;box-shadow:0 4px 24px rgba(0,0,0,0.08);border:1px solid #f1f5f9;">\r
+<\/script>`},{title:`🎮 Interactive Playground`,description:`Configure every property and see changes in real-time.`,html:`<div style="background:white;border-radius:14px;padding:30px;box-shadow:0 4px 24px rgba(0,0,0,0.08);border:1px solid #f1f5f9;">\r
       <h3 style="margin-top:0;display:flex;align-items:center;gap:10px;">\r
-        <span style="font-size:26px;">≡ƒÄ«</span> Interactive Playground\r
+        <span style="font-size:26px;">🎮</span> Interactive Playground\r
       </h3>\r
       <p style="color:#64748b;margin-bottom:28px;">Configure every property and see changes in real-time.</p>\r
 \r
@@ -51938,7 +52025,7 @@ await manager.loadLayout(saved);</code></pre>\r
 \r
         <!-- Config panel -->\r
         <div style="background:#f8fafc;padding:24px;border-radius:10px;border:1px solid #e5e7eb;height:fit-content;display:flex;flex-direction:column;gap:18px;">\r
-          <h4 style="margin:0 0 4px;color:#1e293b;font-size:13px;text-transform:uppercase;letter-spacing:.06em;">ΓÜÖ∩╕Å Properties</h4>\r
+          <h4 style="margin:0 0 4px;color:#1e293b;font-size:13px;text-transform:uppercase;letter-spacing:.06em;">⚙️ Properties</h4>\r
 \r
           <ui-dropdown id="ppTrigger" label="Trigger" value="click" options='[\r
             {"label": "Click", "value": "click"},\r
@@ -52007,7 +52094,7 @@ await manager.loadLayout(saved);</code></pre>\r
 \r
           <div id="pgEventLog" style="background:#0f172a;border-radius:10px;padding:14px 18px;font-family:monospace;font-size:12px;color:#94a3b8;min-height:60px;">\r
             <div style="color:#475569;font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;">Event Log</div>\r
-            <div id="pgEventContent">Waiting for eventsΓÇª</div>\r
+            <div id="pgEventContent">Waiting for events…</div>\r
           </div>\r
 \r
           <!-- Code block -->\r
@@ -54540,36 +54627,68 @@ await manager.loadLayout(saved);</code></pre>\r
       updateInteractiveSkeleton();\r
     }, 50);
 })();
-<\/script>`},{title:`update Interactive Skeleton`,description:``,html:`<ui-skeleton \r
-          shape="\${shape}"\r
-          size="\${size}"\r
-          width="\${width}"\r
-          height="\${height}"\r
-          template="\${template}"\r
-          rows="\${rows}"\r
-          last-row-width="\${lastRowWidth}"\r
-          border-radius="\${borderRadius}"\r
-          animation-type="\${animationType}"\r
-          \${animated ? 'animated="true"' : 'animated="false"'}>\r
-        </ui-skeleton>\r
-      
+<\/script>`},{title:`Interactive Playground`,description:`Configure and generate custom skeleton components in real time.`,html:`<div class="demo-block">
+  <h3>Interactive Playground</h3>
+  <p style="color: #6b7280; margin-bottom: 20px;">Toggle props and see the Skeleton in action.</p>
+  
+  <div style="background: var(--bg-secondary); border: 1px solid var(--border-default); padding: 20px; border-radius: 8px; margin-bottom: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px;">
+    <div style="display:flex; flex-direction:column; gap:5px;">
+      <label style="font-weight:600; font-size:12px;">Shape</label>
+      <ui-dropdown id="sk-shape" value="rectangle" options='[{"label":"Rectangle","value":"rectangle"},{"label":"Circle","value":"circle"},{"label":"Text Rows","value":"text"}]'></ui-dropdown>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:5px;">
+      <label style="font-weight:600; font-size:12px;">Animation</label>
+      <ui-dropdown id="sk-anim" value="pulse" options='[{"label":"Pulse","value":"pulse"},{"label":"Shimmer","value":"shimmer"},{"label":"None","value":"none"}]'></ui-dropdown>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:5px;">
+      <label style="font-weight:600; font-size:12px;">Rows (Text mode)</label>
+      <ui-number-input id="sk-rows" value="3" min="1"></ui-number-input>
+    </div>
+    <div style="display:flex; align-items:center; gap:8px; margin-top:20px;">
+      <ui-checkbox id="sk-animated" label="Animated" checked="true"></ui-checkbox>
+    </div>
+  </div>
+
+  <div id="skeletonPlaygroundPreview" style="background: white; padding: 30px; border: 1px dashed #d1d5db; border-radius: 8px; min-height: 120px; display: flex; align-items: center; justify-content: center;">
+    <ui-skeleton id="playground-skeleton" shape="rectangle" width="100%" height="80px" animation-type="pulse" animated="true"></ui-skeleton>
+  </div>
+</div>
+
 <script>
 (function() {
-  // Generate code block\r
-      const codeBlock = document.getElementById('skeletonCodeBlock');\r
-      if (codeBlock) {\r
-        let props = '';\r
-        if (shape !== 'rectangle') props += \` shape="\${shape}"\`;\r
-        if (size !== 'md') props += \` size="\${size}"\`;\r
-        if (width !== '200px') props += \` width="\${width}"\`;\r
-        if (height !== '100px') props += \` height="\${height}"\`;\r
-        if (borderRadius !== '8px') props += \` border-radius="\${borderRadius}"\`;\r
-        if (animationType !== 'pulse') props += \` animation-type="\${animationType}"\`;\r
-        if (!animated) props += ' animated="false"';\r
-\r
-        codeBlock.innerText = \`<ui-skeleton\${props}></ui-skeleton>\`;\r
-      }\r
+  const el = document.getElementById('playground-skeleton');
+  if (!el) return;
+
+  window.updateSkeletonPlayground = () => {
+    const shape = document.getElementById('sk-shape').value;
+    const anim = document.getElementById('sk-anim').value;
+    const rows = parseInt(document.getElementById('sk-rows').value) || 3;
+    const animated = document.getElementById('sk-animated').checked;
+
+    el.shape = shape;
+    el.animationType = anim;
+    el.rows = rows;
+    el.animated = animated;
+
+    if (shape === 'circle') {
+      el.width = '80px';
+      el.height = '80px';
+    } else if (shape === 'text') {
+      el.width = '100%';
+      el.height = 'auto';
+    } else {
+      el.width = '100%';
+      el.height = '80px';
     }
+  };
+
+  setTimeout(() => {
+    document.getElementById('sk-shape')?.addEventListener('dropdownChange', window.updateSkeletonPlayground);
+    document.getElementById('sk-anim')?.addEventListener('dropdownChange', window.updateSkeletonPlayground);
+    document.getElementById('sk-rows')?.addEventListener('inputChange', window.updateSkeletonPlayground);
+    document.getElementById('sk-animated')?.addEventListener('checkboxChange', window.updateSkeletonPlayground);
+    window.updateSkeletonPlayground();
+  }, 100);
 })();
 <\/script>`}],"smart-menu":[{title:`Basic Smart Menu`,description:`Right-click on the area below to open the smart menu`,html:`<div style="max-width: 600px; margin: 0 auto;">\r
           <h4>Basic Smart Menu</h4>\r
@@ -60630,197 +60749,197 @@ await manager.loadLayout(saved);</code></pre>\r
         if (showShadowCheck) showShadowCheck.addEventListener('checkboxChange', updatePlaygroundTopBar);\r
       }, 100);
 })();
-<\/script>`}],"transfer-list":[{title:`🎮 Interactive Playground`,description:`Toggle props and see the Transfer List in action.`,html:`<div class="demo-block">\r
-        <h3>🎮 Interactive Playground</h3>\r
-        <p style="color: #6b7280; margin-bottom: 20px;">Toggle props and see the Transfer List in action.</p>\r
-        \r
-        <div class="playground-settings" style="background: var(--bg-secondary); border: 1px solid var(--border-default);">\r
-          <div class="settings-grid">\r
-            <div class="setting-item">\r
-              <label style="color: var(--text-primary);">Mode</label>\r
-              <ui-dropdown id="pg-mode" value="list" options='[{"label":"List","value":"list"},{"label":"Tree","value":"tree"},{"label":"Table","value":"table"}]'></ui-dropdown>\r
-            </div>\r
-            <div class="setting-item">\r
-              <label style="color: var(--text-primary);">Search Placeholder</label>\r
-              <ui-input id="pg-searchPlaceholder" value="Search items..."></ui-input>\r
-            </div>\r
-            <div class="setting-item">\r
-              <label style="color: var(--text-primary);">Max Selected Items</label>\r
-              <ui-number-input id="pg-max" value="10" min="1"></ui-number-input>\r
-            </div>\r
-            <div class="setting-item">\r
-               <label style="color: var(--text-primary);">List Height</label>\r
-               <ui-input id="pg-height" value="300px"></ui-input>\r
-            </div>\r
-          </div>\r
-          \r
-          <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--border-default);">\r
-            <ui-checkbox id="pg-searchable" label="Searchable" checked="true"></ui-checkbox>\r
-            <ui-checkbox id="pg-enableDrag" label="Enable Drag" checked="true"></ui-checkbox>\r
-            <ui-checkbox id="pg-sortable" label="Sortable"></ui-checkbox>\r
-            <ui-checkbox id="pg-allowReorder" label="Allow Reorder" checked="true"></ui-checkbox>\r
-            <ui-checkbox id="pg-oneWay" label="One Way"></ui-checkbox>\r
-            <ui-checkbox id="pg-pagination" label="Pagination"></ui-checkbox>\r
-            <ui-checkbox id="pg-loading" label="Loading"></ui-checkbox>\r
-          </div>\r
-        </div>\r
-\r
-        <div id="playgroundPreview" style="background: white; padding: 20px; border: 1px dashed #d1d5db; border-radius: 8px;">\r
-          <ui-transfer-list id="playground-component" icon-library="lucide"></ui-transfer-list>\r
-        </div>\r
-        \r
-        <div id="pg-events" style="margin-top: 20px; padding: 15px; background: #f8fafc; border-radius: 6px; font-family: monospace; font-size: 12px; max-height: 150px; overflow: auto; border: 1px solid #e2e8f0;">\r
-          <div style="color: #64748b; margin-bottom: 5px;">Events Log:</div>\r
-          <div id="pg-log-content"></div>\r
-        </div>\r
-\r
-        <div style="margin-top: 20px; background: #1e293b; padding: 16px; border-radius: 8px; position: relative;">\r
-          <ui-button onclick="copyTransferCode()" id="copyTransferBtn" variant="outline" color="secondary" label="Copy" size="md"yle="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.1); color: white;"></ui-button>\r
-          <code id="transferCodeBlock" style="color: #e2e8f0; font-family: monospace; font-size: 13px; display: block; overflow-x: auto; padding-right: 50px; white-space: pre-wrap;">\r
-            &lt;ui-transfer-list ...&gt;&lt;/ui-transfer-list&gt;\r
-          </code>\r
-        </div>\r
-      </div>\r
+<\/script>`}],"transfer-list":[{title:`Interactive Playground`,description:`Toggle props and see the Transfer List in action.`,html:`<div class="demo-block">
+  <h3>Interactive Playground</h3>
+  <p style="color: #6b7280; margin-bottom: 20px;">Toggle props and see the Transfer List in action.</p>
+  
+  <div class="playground-settings" style="background: var(--bg-secondary); border: 1px solid var(--border-default); padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+    <div class="settings-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+      <div class="setting-item" style="display: flex; flex-direction: column; gap: 5px;">
+        <label style="color: var(--text-primary); font-size: 13px; font-weight: 600;">Mode</label>
+        <ui-dropdown id="pg-mode" value="list" options='[{"label":"List","value":"list"},{"label":"Tree","value":"tree"},{"label":"Table","value":"table"}]'></ui-dropdown>
+      </div>
+      <div class="setting-item" style="display: flex; flex-direction: column; gap: 5px;">
+        <label style="color: var(--text-primary); font-size: 13px; font-weight: 600;">Search Placeholder</label>
+        <ui-input id="pg-searchPlaceholder" value="Search items..."></ui-input>
+      </div>
+      <div class="setting-item" style="display: flex; flex-direction: column; gap: 5px;">
+        <label style="color: var(--text-primary); font-size: 13px; font-weight: 600;">Max Selected Items</label>
+        <ui-number-input id="pg-max" value="10" min="1"></ui-number-input>
+      </div>
+      <div class="setting-item" style="display: flex; flex-direction: column; gap: 5px;">
+         <label style="color: var(--text-primary); font-size: 13px; font-weight: 600;">List Height</label>
+         <ui-input id="pg-height" value="300px"></ui-input>
+      </div>
+    </div>
     
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--border-default);">
+      <ui-checkbox id="pg-searchable" label="Searchable" checked="true"></ui-checkbox>
+      <ui-checkbox id="pg-enableDrag" label="Enable Drag" checked="true"></ui-checkbox>
+      <ui-checkbox id="pg-sortable" label="Sortable"></ui-checkbox>
+      <ui-checkbox id="pg-allowReorder" label="Allow Reorder" checked="true"></ui-checkbox>
+      <ui-checkbox id="pg-oneWay" label="One Way"></ui-checkbox>
+      <ui-checkbox id="pg-pagination" label="Pagination"></ui-checkbox>
+      <ui-checkbox id="pg-loading" label="Loading"></ui-checkbox>
+    </div>
+  </div>
+
+  <div id="playgroundPreview" style="background: white; padding: 20px; border: 1px dashed #d1d5db; border-radius: 8px;">
+    <ui-transfer-list id="playground-component" icon-library="lucide"></ui-transfer-list>
+  </div>
+  
+  <div id="pg-events" style="margin-top: 20px; padding: 15px; background: #f8fafc; border-radius: 6px; font-family: monospace; font-size: 12px; max-height: 150px; overflow: auto; border: 1px solid #e2e8f0;">
+    <div style="color: #64748b; margin-bottom: 5px;">Events Log:</div>
+    <div id="pg-log-content"></div>
+  </div>
+
+  <div style="margin-top: 20px; background: #1e293b; padding: 16px; border-radius: 8px; position: relative;">
+    <ui-button id="copyTransferBtn" variant="outline" color="secondary" label="Copy" size="md" style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.1); color: white;"></ui-button>
+    <code id="transferCodeBlock" style="color: #e2e8f0; font-family: monospace; font-size: 13px; display: block; overflow-x: auto; padding-right: 50px; white-space: pre-wrap;">&lt;ui-transfer-list ...&gt;&lt;/ui-transfer-list&gt;</code>
+  </div>
+</div>
+
 <script>
 (function() {
-  window.copyTransferCode = () => {\r
-      const code = document.getElementById('transferCodeBlock').innerText;\r
-      const btn = document.getElementById('copyTransferBtn');\r
-\r
-      navigator.clipboard.writeText(code).then(() => {\r
-        const originalText = btn.innerText;\r
-        btn.innerText = 'Copied!';\r
-        btn.style.background = '#10b981';\r
-\r
-        setTimeout(() => {\r
-          btn.innerText = originalText;\r
-          btn.style.background = 'rgba(255,255,255,0.1)';\r
-        }, 2000);\r
-      });\r
-    };\r
-\r
-    window.updateTransferCode = () => {\r
-      const el = document.getElementById('playground-component');\r
-      const codeBlock = document.getElementById('transferCodeBlock');\r
-      if (!el || !codeBlock) return;\r
-\r
-      let props = '';\r
-      if (el.mode && el.mode !== 'list') props += \` mode="\${el.mode}"\`;\r
-      if (el.searchable) props += \` searchable\`;\r
-      if (el.enableDrag) props += \` enable-drag\`;\r
-      if (el.sortable) props += \` sortable\`;\r
-      if (el.allowReorder) props += \` allow-reorder\`;\r
-      if (el.oneWay) props += \` one-way\`;\r
-      if (el.pagination) props += \` pagination\`;\r
-      if (el.loading) props += \` loading\`;\r
-      if (el.searchPlaceholder && el.searchPlaceholder !== 'Search...') props += \` search-placeholder="\${el.searchPlaceholder}"\`;\r
-      if (el.max && el.max !== 999) props += \` max="\${el.max}"\`;\r
-      if (el.height && el.height !== '300px') props += \` height="\${el.height}"\`;\r
-\r
-      let scriptStr = '';\r
-      if (el.mode === 'tree' || el.mode === 'table') {\r
-        scriptStr += \`\\n  // Data Setup for \${el.mode} mode\\n  transferList.sourceItems = items;\`;\r
-        if (el.mode === 'table') scriptStr += \`\\n  transferList.columns = columns;\`;\r
-      } else {\r
-        scriptStr += \`\\n  // Items setup\\n  transferList.sourceItems = items;\`;\r
-      }\r
-\r
-      codeBlock.innerText = \`<ui-transfer-list icon-library="lucide"\${props}></ui-transfer-list>\\n<script>\${scriptStr}\\n<\/script>\`;\r
-    };\r
-\r
-    window.updatePlayground = () => {\r
-      const el = document.getElementById('playground-component');\r
-      if (!el) return;\r
-\r
-      const mode = document.getElementById('pg-mode').value;\r
-      const searchable = document.getElementById('pg-searchable').checked;\r
-      const enableDrag = document.getElementById('pg-enableDrag').checked;\r
-      const sortable = document.getElementById('pg-sortable').checked;\r
-      const allowReorder = document.getElementById('pg-allowReorder').checked;\r
-      const oneWay = document.getElementById('pg-oneWay').checked;\r
-      const pagination = document.getElementById('pg-pagination').checked;\r
-      const loading = document.getElementById('pg-loading').checked;\r
-      const searchPlaceholder = document.getElementById('pg-searchPlaceholder').value;\r
-      const max = parseInt(document.getElementById('pg-max').value) || 999;\r
-      const height = document.getElementById('pg-height').value || '300px';\r
-\r
-      // Set Props\r
-      el.mode = mode;\r
-      el.searchable = searchable;\r
-      el.enableDrag = enableDrag;\r
-      el.sortable = sortable;\r
-      el.allowReorder = allowReorder;\r
-      el.oneWay = oneWay;\r
-      el.pagination = pagination;\r
-      el.loading = loading;\r
-      el.searchPlaceholder = searchPlaceholder;\r
-      el.max = max;\r
-      el.height = height;\r
-\r
-      // Update Sample Data based on mode\r
-      if (mode === 'tree') {\r
-        el.sourceItems = treeItems;\r
-        el.targetItems = [];\r
-      } else if (mode === 'table') {\r
-        el.columns = tableColumns;\r
-        el.sourceItems = sourceItems;\r
-        el.targetItems = [];\r
-      } else {\r
-        el.sourceItems = pagination\r
-          ? Array.from({ length: 30 }, (_, i) => ({\r
-              key: i,\r
-              label: \`Item \${i + 1}\`,\r
-              description: \`Pageable item \${i + 1}\`,\r
-            }))\r
-          : sourceItems;\r
-        el.targetItems = [];\r
-      }\r
-      window.updateTransferCode();\r
-    };\r
-\r
-    const setupListeners = () => {\r
-      const modeDrop = document.getElementById('pg-mode');\r
-      const searchInput = document.getElementById('pg-searchPlaceholder');\r
-      const maxInput = document.getElementById('pg-max');\r
-      const heightInput = document.getElementById('pg-height');\r
-\r
-      const searchableCheck = document.getElementById('pg-searchable');\r
-      const drugCheck = document.getElementById('pg-enableDrag');\r
-      const sortCheck = document.getElementById('pg-sortable');\r
-      const reorderCheck = document.getElementById('pg-allowReorder');\r
-      const onewayCheck = document.getElementById('pg-oneWay');\r
-      const paginationCheck = document.getElementById('pg-pagination');\r
-      const loadingCheck = document.getElementById('pg-loading');\r
-\r
-      if (modeDrop) modeDrop.addEventListener('dropdownChange', updatePlayground);\r
-      if (searchInput) searchInput.addEventListener('inputChange', updatePlayground);\r
-      if (maxInput) maxInput.addEventListener('inputChange', updatePlayground);\r
-      if (heightInput) heightInput.addEventListener('inputChange', updatePlayground);\r
-\r
-      if (searchableCheck) searchableCheck.addEventListener('checkboxChange', updatePlayground);\r
-      if (drugCheck) drugCheck.addEventListener('checkboxChange', updatePlayground);\r
-      if (sortCheck) sortCheck.addEventListener('checkboxChange', updatePlayground);\r
-      if (reorderCheck) reorderCheck.addEventListener('checkboxChange', updatePlayground);\r
-      if (onewayCheck) onewayCheck.addEventListener('checkboxChange', updatePlayground);\r
-      if (paginationCheck) paginationCheck.addEventListener('checkboxChange', updatePlayground);\r
-      if (loadingCheck) loadingCheck.addEventListener('checkboxChange', updatePlayground);\r
-    };\r
-\r
-    setTimeout(setupListeners, 100);\r
-\r
-    const el = document.getElementById('playground-component');\r
-    if (el) {\r
-      el.addEventListener('transferChange', e => {\r
-        const log = document.getElementById('pg-log-content');\r
-        if (log) {\r
-          const div = document.createElement('div');\r
-          div.textContent = \`[TransferChange] Selected: \${e.detail.target.length}\`;\r
-          log.prepend(div);\r
-        }\r
-      });\r
-      updatePlayground();\r
+  const el = document.getElementById('playground-component');
+  if (!el) return;
+
+  window.copyTransferCode = () => {
+    const code = document.getElementById('transferCodeBlock').innerText;
+    const btn = document.getElementById('copyTransferBtn');
+
+    navigator.clipboard.writeText(code).then(() => {
+      const originalText = btn.innerText;
+      btn.innerText = 'Copied!';
+      btn.style.background = '#10b981';
+
+      setTimeout(() => {
+        btn.innerText = originalText;
+        btn.style.background = 'rgba(255,255,255,0.1)';
+      }, 2000);
+    });
+  };
+
+  window.updateTransferCode = () => {
+    const el = document.getElementById('playground-component');
+    const codeBlock = document.getElementById('transferCodeBlock');
+    if (!el || !codeBlock) return;
+
+    let props = '';
+    if (el.mode && el.mode !== 'list') props += ' mode="' + el.mode + '"';
+    if (el.searchable) props += ' searchable';
+    if (el.enableDrag) props += ' enable-drag';
+    if (el.sortable) props += ' sortable';
+    if (el.allowReorder) props += ' allow-reorder';
+    if (el.oneWay) props += ' one-way';
+    if (el.pagination) props += ' pagination';
+    if (el.loading) props += ' loading';
+    if (el.searchPlaceholder && el.searchPlaceholder !== 'Search...') props += ' search-placeholder="' + el.searchPlaceholder + '"';
+    if (el.max && el.max !== 999) props += ' max="' + el.max + '"';
+    if (el.height && el.height !== '300px') props += ' height="' + el.height + '"';
+
+    let scriptStr = '';
+    if (el.mode === 'tree' || el.mode === 'table') {
+      scriptStr += '\\n  // Data Setup for ' + el.mode + ' mode\\n  transferList.sourceItems = items;';
+      if (el.mode === 'table') scriptStr += '\\n  transferList.columns = columns;';
+    } else {
+      scriptStr += '\\n  // Items setup\\n  transferList.sourceItems = items;';
     }
+
+    codeBlock.innerText = '<ui-transfer-list icon-library="lucide"' + props + '></ui-transfer-list>\\n<' + 'script>' + scriptStr + '\\n<' + '/script>';
+  };
+
+  window.updatePlayground = () => {
+    const el = document.getElementById('playground-component');
+    if (!el) return;
+
+    const mode = document.getElementById('pg-mode').value;
+    const searchable = document.getElementById('pg-searchable').checked;
+    const enableDrag = document.getElementById('pg-enableDrag').checked;
+    const sortable = document.getElementById('pg-sortable').checked;
+    const allowReorder = document.getElementById('pg-allowReorder').checked;
+    const oneWay = document.getElementById('pg-oneWay').checked;
+    const pagination = document.getElementById('pg-pagination').checked;
+    const loading = document.getElementById('pg-loading').checked;
+    const searchPlaceholder = document.getElementById('pg-searchPlaceholder').value;
+    const max = parseInt(document.getElementById('pg-max').value) || 999;
+    const height = document.getElementById('pg-height').value || '300px';
+
+    // Set Props
+    el.mode = mode;
+    el.searchable = searchable;
+    el.enableDrag = enableDrag;
+    el.sortable = sortable;
+    el.allowReorder = allowReorder;
+    el.oneWay = oneWay;
+    el.pagination = pagination;
+    el.loading = loading;
+    el.searchPlaceholder = searchPlaceholder;
+    el.max = max;
+    el.height = height;
+
+    // Update Sample Data based on mode
+    if (mode === 'tree') {
+      el.sourceItems = window.treeItems || [];
+      el.targetItems = [];
+    } else if (mode === 'table') {
+      el.columns = window.tableColumns || [];
+      el.sourceItems = window.sourceItems || [];
+      el.targetItems = [];
+    } else {
+      el.sourceItems = pagination
+        ? Array.from({ length: 30 }, (_, i) => ({
+            key: i,
+            label: 'Item ' + (i + 1),
+            description: 'Pageable item ' + (i + 1),
+          }))
+        : (window.sourceItems || []);
+      el.targetItems = [];
+    }
+    window.updateTransferCode();
+  };
+
+  const setupListeners = () => {
+    const modeDrop = document.getElementById('pg-mode');
+    const searchInput = document.getElementById('pg-searchPlaceholder');
+    const maxInput = document.getElementById('pg-max');
+    const heightInput = document.getElementById('pg-height');
+
+    const searchableCheck = document.getElementById('pg-searchable');
+    const drugCheck = document.getElementById('pg-enableDrag');
+    const sortCheck = document.getElementById('pg-sortable');
+    const reorderCheck = document.getElementById('pg-allowReorder');
+    const onewayCheck = document.getElementById('pg-oneWay');
+    const paginationCheck = document.getElementById('pg-pagination');
+    const loadingCheck = document.getElementById('pg-loading');
+
+    if (modeDrop) modeDrop.addEventListener('dropdownChange', window.updatePlayground);
+    if (searchInput) searchInput.addEventListener('inputChange', window.updatePlayground);
+    if (maxInput) maxInput.addEventListener('inputChange', window.updatePlayground);
+    if (heightInput) heightInput.addEventListener('inputChange', window.updatePlayground);
+
+    if (searchableCheck) searchableCheck.addEventListener('checkboxChange', window.updatePlayground);
+    if (drugCheck) drugCheck.addEventListener('checkboxChange', window.updatePlayground);
+    if (sortCheck) sortCheck.addEventListener('checkboxChange', window.updatePlayground);
+    if (reorderCheck) reorderCheck.addEventListener('checkboxChange', window.updatePlayground);
+    if (onewayCheck) onewayCheck.addEventListener('checkboxChange', window.updatePlayground);
+    if (paginationCheck) paginationCheck.addEventListener('checkboxChange', window.updatePlayground);
+    if (loadingCheck) loadingCheck.addEventListener('checkboxChange', window.updatePlayground);
+  };
+
+  setTimeout(setupListeners, 100);
+
+  el.addEventListener('transferChange', e => {
+    const log = document.getElementById('pg-log-content');
+    if (log) {
+      const div = document.createElement('div');
+      div.textContent = '[TransferChange] Selected: ' + e.detail.target.length;
+      log.prepend(div);
+    }
+  });
+
+  document.getElementById('copyTransferBtn').addEventListener('click', window.copyTransferCode);
+  window.updatePlayground();
 })();
 <\/script>`},{title:`Reordering & Constraints`,description:`Manual reordering in target list and max selection limit (Max: 3).`,html:`<div class="demo-block">\r
         <h3>Reordering & Constraints</h3>\r
@@ -60890,27 +61009,23 @@ await manager.loadLayout(saved);</code></pre>\r
       el.sourceItems = sourceItems;\r
     }
 })();
-<\/script>`},{title:`Pagination & Performance`,description:`Pagination logic for large datasets (50 items).`,html:`<div class="demo-block">\r
-        <h3>Pagination & Performance</h3>\r
-        <p style="color: #6b7280; margin-bottom: 12px;">Pagination logic for large datasets (50 items).</p>\r
-        <ui-transfer-list pagination="true" page-size="5" id="pagination-demo-list" icon-library="lucide"></ui-transfer-list>\r
-      </div>\r
-    
+<\/script>`},{title:`Pagination & Performance`,description:`Pagination logic for large datasets (50 items).`,html:`<div class="demo-block">
+  <h3>Pagination & Performance</h3>
+  <p style="color: #6b7280; margin-bottom: 12px;">Pagination logic for large datasets (50 items).</p>
+  <ui-transfer-list pagination="true" page-size="5" id="pagination-demo-list" icon-library="lucide"></ui-transfer-list>
+</div>
 <script>
 (function() {
-  ,\r
-      description: \`Description for item \${i + 1}\`,\r
-    }));\r
-\r
-    container.innerHTML = \`\r
-      <div class="demo-block">\r
-        <h3>Pagination & Performance</h3>\r
-        <p style="color: #6b7280; margin-bottom: 12px;">Pagination logic for large datasets (50 items).</p>\r
-        <ui-transfer-list pagination="true" page-size="5" id="pagination-demo-list" icon-library="lucide"></ui-transfer-list>\r
-      </div>\r
-    \`;\r
-    const el = document.getElementById('pagination-demo-list');\r
-    if (el) el.sourceItems = manyItems;
+  setTimeout(() => {
+    const el = document.getElementById('pagination-demo-list');
+    if (el) {
+      el.sourceItems = Array.from({ length: 50 }, (_, i) => ({
+        key: i,
+        label: 'Item ' + (i + 1),
+        description: 'Description for item ' + (i + 1),
+      }));
+    }
+  }, 50);
 })();
 <\/script>`},{title:`One-Way Mode`,description:`Copy items instead of moving them. 'Source' remains constant.`,html:`<div class="demo-block">\r
         <h3>One-Way Mode</h3>\r
@@ -61493,5 +61608,971 @@ await manager.loadLayout(saved);</code></pre>\r
       }
     </div>
   </ui-resizable-panel>
-</div>`}]},n={};function r(t){if(n[t])return n[t];let r=e.components.find(e=>e.tag===t);if(!r)return[];let i=r.props.map(e=>{let t=`string`,n,r=e.type.trim();r===`boolean`?t=`boolean`:r===`number`?t=`number`:r.includes(`|`)||e.values&&e.values.length>1&&e.values.every(e=>e.value!==void 0)?(t=`select`,n=e.values&&e.values.length>0&&e.values.every(e=>e.value!==void 0)?e.values.map(e=>e.value):r.split(`|`).map(e=>e.trim().replace(/^['"]|['"]$/g,``)).filter(e=>e!==`undefined`&&e!==`null`)):(r.includes(`[]`)||r===`any`||r.includes(`Record<`)||r.includes(`Array<`))&&(t=`json`);let i;if(e.default!==void 0){let n=e.default.trim();if(t===`boolean`)i=n===`true`;else if(t===`number`)i=Number(n),isNaN(i)&&(i=0);else if(t===`select`||t===`string`)i=n.replace(/^['"`]|['"`]$/g,``);else if(t===`json`)try{i=JSON.parse(n)}catch{i=void 0}}let a=e.name.replace(/([A-Z])/g,` $1`).trim().replace(/^\w/,e=>e.toUpperCase());return{name:e.name,type:t,label:a,defaultValue:i,options:n,description:e.docs||`${a} property`}});return n[t]=i,i}function i(t,n){let r=e.components.find(e=>e.tag===t);return r&&(r.docs||r.readme?.split(`
+</div>`}],"code-preview":[{title:`Multi-language Support`,description:`Perfect for React components where both JS and TS versions are provided.`,html:`<div class="demo-block">\r
+          <h3 style="margin-bottom: 12px; font-weight: 700; color: var(--text-primary);">Multi-language Support</h3>\r
+          <p style="color: var(--text-secondary); margin-bottom: 24px;">Perfect for React components where both JS and TS versions are provided.</p>\r
+          <ui-code-preview \r
+            id="mui-demo"\r
+            label="MUI Autocomplete Demo" \r
+            js-code="\${jsSample.replace(/"/g, '&quot;')}"\r
+            ts-code="\${tsSample.replace(/"/g, '&quot;')}"\r
+            html-code="\${htmlSample.replace(/"/g, '&quot;')}"\r
+            css-code="\${cssSample.replace(/"/g, '&quot;')}"\r
+            expanded="true"\r
+            show-reset="true"\r
+          ></ui-code-preview>\r
+        </div>`},{title:`HTML & CSS Tabs`,description:`Useful for showing markup and styling side-by-side.`,html:`<div class="demo-block">\r
+          <h3 style="margin-bottom: 12px; font-weight: 700; color: var(--text-primary);">HTML & CSS Tabs</h3>\r
+          <p style="color: var(--text-secondary); margin-bottom: 24px;">Useful for showing markup and styling side-by-side.</p>\r
+          <ui-code-preview \r
+            label="Hero Section" \r
+            html-code="\${htmlSample.replace(/"/g, '&quot;')}"\r
+            css-code="\${cssSample.replace(/"/g, '&quot;')}"\r
+            expanded="true"\r
+          ></ui-code-preview>\r
+        </div>`},{title:`Collapsible State`,description:`Default to collapsed to keep documentation clean. Expands with smooth animation.`,html:`<div class="demo-block">\r
+          <h3 style="margin-bottom: 12px; font-weight: 700; color: var(--text-primary);">Collapsible State</h3>\r
+          <p style="color: var(--text-secondary); margin-bottom: 24px;">Default to collapsed to keep documentation clean. Expands with smooth animation.</p>\r
+          <div style="background: var(--bg-secondary); border: 1px solid var(--border-default); border-radius: 12px; padding: 40px; margin-bottom: 16px; display: flex; justify-content: center;">\r
+               <div style="padding: 20px; background: var(--bg-primary); border: 1px solid var(--border-default); border-radius: 8px; box-shadow: var(--shadow-sm); color: var(--text-primary);">\r
+                  Component Preview Area\r
+               </div>\r
+          </div>\r
+          <ui-code-preview \r
+            label="View Source Code" \r
+            html-code="\${htmlSample.replace(/"/g, '&quot;')}"\r
+            expanded="false"\r
+          ></ui-code-preview>\r
+        </div>`},{title:`Dynamic Languages`,description:`Support for arbitrary languages (C#, Python, Java, etc.) via snippets prop.`,html:`<div class="demo-block">\r
+          <h3 style="margin-bottom: 12px; font-weight: 700; color: var(--text-primary);">Dynamic Languages</h3>\r
+          <p style="color: var(--text-secondary); margin-bottom: 24px;">Support for arbitrary languages (C#, Python, Java, etc.) via <code>snippets</code> prop.</p>\r
+          <div id="dynamic-lang-demo"></div>\r
+        </div>`}],icon:[{title:`Icon Library Showcase`,description:``,html:`<div class="demo-header">\r
+      <h1>Icon Component</h1>\r
+      <p>A versatile icon wrapper supporting 8+ major libraries, SVG paths, URLs, and emojis.</p>\r
+    </div>\r
+\r
+    <div class="demo-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 24px;">\r
+      <!-- 1. QuartzDS (Se Icons) -->\r
+      <div class="demo-card">\r
+        <div class="badge" style="float: right; background: #0f172a; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">ENTERPRISE</div>\r
+        <h3>QuartzDS (Se)</h3>\r
+        <p>Enterprise-grade icons from the core library.</p>\r
+        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
+          <ui-icon library="se" name="house" size="2rem" color="#6366f1"></ui-icon>\r
+          <ui-icon library="se" name="gear" size="2rem" color="#94a3b8"></ui-icon>\r
+          <ui-icon library="se" name="user" size="2rem" color="#10b981"></ui-icon>\r
+          <ui-icon library="se" name="bell" size="2rem" color="#f59e0b"></ui-icon>\r
+        </div>\r
+        <pre class="demo-code"><code>&lt;ui-icon library="se" name="house"&gt;&lt;/ui-icon&gt;</code></pre>\r
+      </div>\r
+\r
+      <!-- 2. FontAwesome 6 -->\r
+      <div class="demo-card">\r
+        <div class="badge" style="float: right; background: #10b981; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">POPULAR</div>\r
+        <h3>FontAwesome 6</h3>\r
+        <p>The world's most popular icon set.</p>\r
+        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
+          <ui-icon library="fontawesome" name="fa-solid fa-star" size="2rem" color="#fbbf24"></ui-icon>\r
+          <ui-icon library="fontawesome" name="fa-brands fa-github" size="2rem" color="#333"></ui-icon>\r
+          <ui-icon library="fontawesome" name="fa-solid fa-heart" size="2rem" color="#ef4444"></ui-icon>\r
+          <ui-icon library="fontawesome" name="fa-solid fa-rocket" size="2rem" color="#6366f1"></ui-icon>\r
+        </div>\r
+        <pre class="demo-code"><code>&lt;ui-icon library="fontawesome" name="fa-star"&gt;&lt;/ui-icon&gt;</code></pre>\r
+      </div>\r
+\r
+      <!-- 3. Icons8 (Line Awesome) -->\r
+      <div class="demo-card">\r
+        <div class="badge" style="float: right; background: #10b981; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">MODERN</div>\r
+        <h3>Icons8 (Line Awesome)</h3>\r
+        <p>Beautiful line-style replacements for FA.</p>\r
+        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
+          <ui-icon library="icons8" name="las la-home" size="2.5rem" color="#6366f1"></ui-icon>\r
+          <ui-icon library="icons8" name="lar la-envelope" size="2.5rem" color="#10b981"></ui-icon>\r
+          <ui-icon library="icons8" name="lab la-react" size="2.5rem" color="#61dafb"></ui-icon>\r
+          <ui-icon library="icons8" name="las la-cog" size="2.5rem" color="#94a3b8"></ui-icon>\r
+        </div>\r
+        <pre class="demo-code"><code>&lt;ui-icon library="icons8" name="home"&gt;&lt;/ui-icon&gt;</code></pre>\r
+      </div>\r
+\r
+      <!-- 4. Lucide Icons -->\r
+      <div class="demo-card">\r
+        <div class="badge" style="float: right; background: #6366f1; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">CLEAN</div>\r
+        <h3>Lucide</h3>\r
+        <p>Beautiful & consistent icons (Feather fork).</p>\r
+        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
+          <ui-icon library="lucide" name="flower" size="2rem" color="#10b981"></ui-icon>\r
+          <ui-icon library="lucide" name="activity" size="2rem" color="#f43f5e"></ui-icon>\r
+          <ui-icon library="lucide" name="shopping-cart" size="2rem" color="#6366f1"></ui-icon>\r
+          <ui-icon library="lucide" name="terminal" size="2rem" color="#334155"></ui-icon>\r
+        </div>\r
+        <pre class="demo-code"><code>&lt;ui-icon library="lucide" name="flower"&gt;&lt;/ui-icon&gt;</code></pre>\r
+      </div>\r
+\r
+      <!-- 5. Iconoir -->\r
+      <div class="demo-card">\r
+        <div class="badge" style="float: right; background: #f43f5e; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">MINIMAL</div>\r
+        <h3>Iconoir</h3>\r
+        <p>High-quality minimalist icon library.</p>\r
+        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
+          <ui-icon library="iconoir" name="home" size="2.2rem" color="#6366f1"></ui-icon>\r
+          <ui-icon library="iconoir" name="user" size="2.2rem" color="#ec4899"></ui-icon>\r
+          <ui-icon library="iconoir" name="settings" size="2.2rem" color="#94a3b8"></ui-icon>\r
+          <ui-icon library="iconoir" name="bell" size="2.2rem" color="#f59e0b"></ui-icon>\r
+        </div>\r
+        <pre class="demo-code"><code>&lt;ui-icon library="iconoir" name="home"&gt;&lt;/ui-icon&gt;</code></pre>\r
+      </div>\r
+\r
+      <!-- 6. Ionicons -->\r
+      <div class="demo-card">\r
+        <div class="badge" style="float: right; background: #4e8ef7; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">IONIC</div>\r
+        <h3>Ionicons</h3>\r
+        <p>Open source icons from the Ionic team.</p>\r
+        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
+          <ui-icon library="ionicons" name="heart" size="2rem" color="#ef4444"></ui-icon>\r
+          <ui-icon library="ionicons" name="logo-ionic" size="2rem" color="#4e8ef7"></ui-icon>\r
+          <ui-icon library="ionicons" name="cloud-upload" size="2rem" color="#10b981"></ui-icon>\r
+          <ui-icon library="ionicons" name="help-circle" size="2rem" color="#94a3b8"></ui-icon>\r
+        </div>\r
+        <pre class="demo-code"><code>&lt;ui-icon library="ionicons" name="heart"&gt;&lt;/ui-icon&gt;</code></pre>\r
+      </div>\r
+\r
+      <!-- 7. Bootstrap Icons -->\r
+      <div class="demo-card">\r
+        <div class="badge" style="float: right; background: #7952b3; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">BI</div>\r
+        <h3>Bootstrap Icons</h3>\r
+        <p>Official icons for the Bootstrap framework.</p>\r
+        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
+          <ui-icon library="bootstrap" name="bootstrap-fill" size="2rem" color="#7952b3"></ui-icon>\r
+          <ui-icon library="bootstrap" name="check-circle-fill" size="2rem" color="#198754"></ui-icon>\r
+          <ui-icon library="bootstrap" name="info-circle-fill" size="2rem" color="#0dcaf0"></ui-icon>\r
+          <ui-icon library="bootstrap" name="exclamation-triangle-fill" size="2rem" color="#ffc107"></ui-icon>\r
+        </div>\r
+        <pre class="demo-code"><code>&lt;ui-icon library="bootstrap" name="bootstrap"&gt;&lt;/ui-icon&gt;</code></pre>\r
+      </div>\r
+\r
+      <!-- 8. Google Material Symbols -->\r
+      <div class="demo-card">\r
+        <div class="badge" style="float: right; background: #4285f4; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">GOOGLE</div>\r
+        <h3>Google Material Symbols</h3>\r
+        <p>Variable font-based icons from Google.</p>\r
+        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
+          <ui-icon library="google" name="home" size="2.5rem" color="#4285f4"></ui-icon>\r
+          <ui-icon library="google" name="search" size="2.5rem" color="#34a853"></ui-icon>\r
+          <ui-icon library="google" name="settings" size="2.5rem" color="#fbbc05"></ui-icon>\r
+          <ui-icon library="google" name="favorite" size="2.5rem" color="#ea4335"></ui-icon>\r
+        </div>\r
+        <pre class="demo-code"><code>&lt;ui-icon library="google" name="home"&gt;&lt;/ui-icon&gt;</code></pre>\r
+      </div>\r
+\r
+      <!-- 9. Remix Icon -->\r
+      <div class="demo-card">\r
+        <div class="badge" style="float: right; background: #6366f1; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">REMIX</div>\r
+        <h3>Remix Icon</h3>\r
+        <p>Beautiful, neutral-style open-source icons.</p>\r
+        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
+          <ui-icon library="remixicon" name="ri-home-line" size="2.5rem" color="#6366f1"></ui-icon>\r
+          <ui-icon library="remixicon" name="ri-user-line" size="2.5rem" color="#ec4899"></ui-icon>\r
+          <ui-icon library="remixicon" name="ri-settings-3-line" size="2.5rem" color="#94a3b8"></ui-icon>\r
+          <ui-icon library="remixicon" name="ri-heart-fill" size="2.5rem" color="#ef4444"></ui-icon>\r
+        </div>\r
+        <pre class="demo-code"><code>&lt;ui-icon library="remixicon" name="ri-home-line"&gt;&lt;/ui-icon&gt;</code></pre>\r
+      </div>\r
+\r
+      <!-- 8. SVG Paths -->\r
+      <div class="demo-card">\r
+        <h3>SVG Paths</h3>\r
+        <p>Render custom icons using SVG path data directly.</p>\r
+        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
+          <ui-icon name="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" size="2rem" color="#6366f1"></ui-icon>\r
+          <ui-icon name="M12 2v20m10-10H2" size="2rem" color="#10b981"></ui-icon>\r
+          <ui-icon name="M5 13l4 4L19 7" size="2rem" color="#ef4444"></ui-icon>\r
+        </div>\r
+        <pre class="demo-code"><code>&lt;ui-icon name="M12 2L..."&gt;&lt;/ui-icon&gt;</code></pre>\r
+      </div>\r
+\r
+      <!-- 9. Image/URL Icons -->\r
+      <div class="demo-card">\r
+        <h3>URL & Brands</h3>\r
+        <p>Load external SVGs or brand logos.</p>\r
+        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
+          <ui-icon name="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/react.svg" size="2rem" color="#61dafb"></ui-icon>\r
+          <ui-icon name="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/vuejs.svg" size="2rem" color="#42b883"></ui-icon>\r
+          <ui-icon name="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/chrome.svg" size="2rem"></ui-icon>\r
+        </div>\r
+        <pre class="demo-code"><code>&lt;ui-icon name="https://..."&gt;&lt;/ui-icon&gt;</code></pre>\r
+      </div>\r
+\r
+      <!-- FontAwesome Gallery -->\r
+      <div class="demo-card" style="grid-column: 1 / -1; background: linear-gradient(to bottom right, #ffffff, #f8fafc);">\r
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px;">\r
+          <div>\r
+            <h3>FontAwesome Gallery</h3>\r
+            <p>A comprehensive set of icons categorized by style. Use the <code>library="fontawesome"</code> prop.</p>\r
+          </div>\r
+          <a href="https://fontawesome.com/icons" target="_blank" style="color: #6366f1; font-size: 12px; font-weight: 600; text-decoration: none; border: 1px solid rgba(99, 102, 241, 0.2); padding: 4px 12px; border-radius: 6px;">Browse All Icons →</a>\r
+        </div>\r
+        \r
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">\r
+          <!-- Solid -->\r
+          <div>\r
+            <h4 style="font-size: 12px; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 16px;">Solid Icons</h4>\r
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">\r
+              <div class="icon-box" title="fa-house"><ui-icon library="fontawesome" name="fa-solid fa-house" size="20px"></ui-icon></div>\r
+              <div class="icon-box" title="fa-user"><ui-icon library="fontawesome" name="fa-solid fa-user" size="20px"></ui-icon></div>\r
+              <div class="icon-box" title="fa-check"><ui-icon library="fontawesome" name="fa-solid fa-check" size="20px"></ui-icon></div>\r
+              <div class="icon-box" title="fa-magnifying-glass"><ui-icon library="fontawesome" name="fa-solid fa-magnifying-glass" size="20px"></ui-icon></div>\r
+              <div class="icon-box" title="fa-envelope"><ui-icon library="fontawesome" name="fa-solid fa-envelope" size="20px"></ui-icon></div>\r
+              <div class="icon-box" title="fa-gear"><ui-icon library="fontawesome" name="fa-solid fa-gear" size="20px"></ui-icon></div>\r
+              <div class="icon-box" title="fa-bell"><ui-icon library="fontawesome" name="fa-solid fa-bell" size="20px"></ui-icon></div>\r
+              <div class="icon-box" title="fa-location-dot"><ui-icon library="fontawesome" name="fa-solid fa-location-dot" size="20px"></ui-icon></div>\r
+            </div>\r
+          </div>\r
+\r
+          <!-- Regular / Outline -->\r
+          <div>\r
+            <h4 style="font-size: 12px; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 16px;">Regular (Outline)</h4>\r
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">\r
+              <div class="icon-box" title="fa-face-smile"><ui-icon library="fontawesome" name="fa-regular fa-face-smile" size="20px"></ui-icon></div>\r
+              <div class="icon-box" title="fa-circle-check"><ui-icon library="fontawesome" name="fa-regular fa-circle-check" size="20px"></ui-icon></div>\r
+              <div class="icon-box" title="fa-comment"><ui-icon library="fontawesome" name="fa-regular fa-comment" size="20px"></ui-icon></div>\r
+              <div class="icon-box" title="fa-copy"><ui-icon library="fontawesome" name="fa-regular fa-copy" size="20px"></ui-icon></div>\r
+              <div class="icon-box" title="fa-file-lines"><ui-icon library="fontawesome" name="fa-regular fa-file-lines" size="20px"></ui-icon></div>\r
+              <div class="icon-box" title="fa-image"><ui-icon library="fontawesome" name="fa-regular fa-image" size="20px"></ui-icon></div>\r
+              <div class="icon-box" title="fa-lightbulb"><ui-icon library="fontawesome" name="fa-regular fa-lightbulb" size="20px"></ui-icon></div>\r
+              <div class="icon-box" title="fa-paper-plane"><ui-icon library="fontawesome" name="fa-regular fa-paper-plane" size="20px"></ui-icon></div>\r
+            </div>\r
+          </div>\r
+\r
+          <!-- Brands -->\r
+          <div>\r
+            <h4 style="font-size: 12px; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 16px;">Brand Icons</h4>\r
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">\r
+              <div class="icon-box" style="color: #1877f2;"><ui-icon library="fontawesome" name="fa-brands fa-facebook" size="20px"></ui-icon></div>\r
+              <div class="icon-box" style="color: #4cd964;"><ui-icon library="fontawesome" name="fa-brands fa-whatsapp" size="20px"></ui-icon></div>\r
+              <div class="icon-box" style="color: #1da1f2;"><ui-icon library="fontawesome" name="fa-brands fa-twitter" size="20px"></ui-icon></div>\r
+              <div class="icon-box" style="color: #ff0000;"><ui-icon library="fontawesome" name="fa-brands fa-youtube" size="20px"></ui-icon></div>\r
+              <div class="icon-box" style="color: #0077b5;"><ui-icon library="fontawesome" name="fa-brands fa-linkedin" size="20px"></ui-icon></div>\r
+              <div class="icon-box" style="color: #333;"><ui-icon library="fontawesome" name="fa-brands fa-github" size="20px"></ui-icon></div>\r
+              <div class="icon-box" style="color: #61dafb;"><ui-icon library="fontawesome" name="fa-brands fa-react" size="20px"></ui-icon></div>\r
+              <div class="icon-box" style="color: #ff3e00;"><ui-icon library="fontawesome" name="fa-brands fa-html5" size="20px"></ui-icon></div>\r
+            </div>\r
+          </div>\r
+        </div>\r
+      </div>\r
+\r
+      <!-- SVG Path Icons -->\r
+      <div class="demo-card">\r
+        <h3>SVG Paths</h3>\r
+        <p>Directly render custom vector paths.</p>\r
+        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
+          <ui-icon name="M12 2L2 7l10 5l10-5l-10-5zM2 17l10 5l10-5M2 12l10 5l10-5" size="2rem" color="#6366f1"></ui-icon>\r
+          <ui-icon name="M12 2v20m10-10H2" size="2rem" color="#10b981"></ui-icon>\r
+          <ui-icon name="M5 13l4 4L19 7" size="2rem" color="#ef4444"></ui-icon>\r
+        </div>\r
+        <pre class="demo-code"><code>&lt;ui-icon name="M12 2..."&gt;&lt;/ui-icon&gt;</code></pre>\r
+      </div>\r
+\r
+      <!-- Image/URL Icons -->\r
+      <div class="demo-card">\r
+        <h3>URL & Brands</h3>\r
+        <p>Load external SVGs or brand logos.</p>\r
+        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
+          <ui-icon name="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/react.svg" size="2rem" color="#61dafb"></ui-icon>\r
+          <ui-icon name="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/vuejs.svg" size="2rem" color="#42b883"></ui-icon>\r
+          <ui-icon name="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/chrome.svg" size="2rem"></ui-icon>\r
+        </div>\r
+        <pre class="demo-code"><code>&lt;ui-icon name="https://..."&gt;&lt;/ui-icon&gt;</code></pre>\r
+      </div>\r
+\r
+\r
+      <!-- Emoji -->\r
+      <div class="demo-card">\r
+        <div class="badge" style="float: right; background: #f97316; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">EMOJI</div>\r
+        <h3>Emoji</h3>\r
+        <p>Render any Unicode emoji natively with full color and platform support.</p>\r
+        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
+          <ui-icon library="emoji" name="🚀" size="2.5rem"></ui-icon>\r
+          <ui-icon library="emoji" name="🔥" size="2.5rem"></ui-icon>\r
+          <ui-icon library="emoji" name="🎉" size="2.5rem"></ui-icon>\r
+          <ui-icon library="emoji" name="💡" size="2.5rem"></ui-icon>\r
+          <ui-icon library="emoji" name="⭐" size="2.5rem"></ui-icon>\r
+          <ui-icon library="emoji" name="🎨" size="2.5rem"></ui-icon>\r
+        </div>\r
+        <pre class="demo-code"><code>&lt;ui-icon library="emoji" name="🚀"&gt;&lt;/ui-icon&gt;</code></pre>\r
+      </div>\r
+\r
+      <!-- Playground -->\r
+      <div class="demo-card" style="grid-column: 1 / -1;">\r
+        <h3>Interactive Playground</h3>\r
+        <div style="display: flex; gap: 40px; flex-wrap: wrap;">\r
+          <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 16px;">\r
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">\r
+              <div>\r
+                <label style="display: block; font-weight: 600; margin-bottom: 4px;">Library</label>\r
+                <ui-dropdown id="playgroundLibrary" class="demo-input">\r
+                  <option value="default">Default (SVG/URL/Text)</option>\r
+                  <option value="se">QuartzDS (Se)</option>\r
+                  <option value="fontawesome">FontAwesome</option>\r
+                  <option value="icons8">Icons8 (Line Awesome)</option>\r
+                  <option value="iconoir">Iconoir</option>\r
+                  <option value="ionicons">Ionicons</option>\r
+                  <option value="lucide">Lucide</option>\r
+                  <option value="bootstrap">Bootstrap Icons</option>\r
+                  <option value="google">Google Material Symbols</option>\r
+                  <option value="remixicon">Remix Icon</option>\r
+                  <option value="emoji">Emoji</option>\r
+                </ui-dropdown>\r
+              </div>\r
+              <div>\r
+                <label style="display: block; font-weight: 600; margin-bottom: 4px;">Size</label>\r
+                <ui-input type="text" id="playgroundSize" class="demo-input" value="4rem">\r
+              </div>\r
+            </div>\r
+            <div>\r
+              <label style="display: block; font-weight: 600; margin-bottom: 4px;">Icon Name / Content</label>\r
+              <ui-input type="text" id="playgroundName" class="demo-input" value="🚀">\r
+              <small style="color: #64748b; margin-top: 4px; display: block;">e.g., 'house' (se), 'fa-star' (fa), '🚀' (emoji), or an SVG path</small>\r
+            </div>\r
+            <div>\r
+              <label style="display: block; font-weight: 600; margin-bottom: 4px;">Color</label>\r
+              <ui-input type="color" id="playgroundColor" class="demo-input" value="#6366f1" style="height: 42px; padding: 2px;">\r
+            </div>\r
+          </div>\r
+          <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f8fafc; border-radius: 12px; border: 2px dashed #e2e8f0; padding: 40px;">\r
+            <div id="playgroundPreview">\r
+              <ui-icon name="🚀" size="4rem" color="#6366f1"></ui-icon>\r
+            </div>\r
+            <pre id="playgroundCode" style="margin-top: 24px; width: 100%; background: #1e293b; color: #f8fafc; padding: 12px; border-radius: 8px; font-size: 13px; white-space: pre-wrap;"><code>&lt;ui-icon name="🚀" size="4rem" color="#6366f1"&gt;&lt;/ui-icon&gt;</code></pre>\r
+          </div>\r
+        </div>\r
+      </div>\r
+    </div>\r
+\r
+    <style>\r
+      .demo-header { margin-bottom: 32px; }\r
+      .demo-header h2 { font-size: 1.8rem; font-weight: 800; color: #1e293b; }\r
+      .demo-header p { color: #64748b; font-size: 1.1rem; }\r
+      .demo-card { background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }\r
+      .demo-card h3 { margin: 0 0 8px 0; color: #1e293b; font-size: 1.1rem; font-weight: 700; }\r
+      .demo-card p { margin: 0 0 16px 0; color: #64748b; font-size: 0.9rem; }\r
+      .demo-code { background: #f1f5f9; padding: 12px; border-radius: 8px; font-size: 12px; margin-top: 16px; overflow-x: auto; font-family: 'JetBrains Mono', monospace; }\r
+      .demo-input { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; background: white; }\r
+      .icon-box { display: flex; align-items: center; justify-content: center; background: white; border: 1px solid #f1f5f9; border-radius: 8px; padding: 12px; transition: all 0.2s; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }\r
+      .icon-box:hover { transform: translateY(-2px); box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-color: #6366f1; cursor: pointer; }\r
+    </style>`}],carousel:[{title:`Carousel Showcase`,description:``,html:`<div class="demo-wrapper">\r
+      <div class="demo-header-section" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">\r
+        <h2 class="demo-section-title" style="display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.75rem; color: var(--text-primary);">\r
+          Carousel \r
+          <span style="font-size: 0.4em; vertical-align: middle; background: linear-gradient(135deg, #f59e0b, #ef4444); color: white; padding: 4px 12px; border-radius: 20px; font-weight: 800; letter-spacing: 0.05em; box-shadow: 0 4px 10px rgba(245, 158, 11, 0.25);">APEX SUPREME</span>\r
+        </h2>\r
+      </div>\r
+\r
+      <nav id="carouselNavPills" style="margin-bottom: 24px; display: flex; gap: 8px; flex-wrap: wrap; background: var(--bg-secondary); padding: 10px; border-radius: 12px; border: 1px solid var(--border-default);">\r
+        <ui-button variant="outline" color="warning" label="Core & Scroll" data-tab="core" size="md"ui-button>\r
+        <ui-button variant="outline" color="warning" label="Motion Engine" data-tab="motion" size="md"ui-button>\r
+        <ui-button variant="outline" color="warning" label="Social Engine" data-tab="social" size="md"ui-button>\r
+        <ui-button variant="outline" color="warning" label="Variable Width" data-tab="variable" size="md"ui-button>\r
+        <ui-button variant="outline" color="warning" label="Infinity Lab" data-tab="infinity" size="md"ui-button>\r
+        <ui-button variant="outline" color="warning" label="Legendary lab" data-tab="legendary" size="md"ui-button>\r
+        <ui-button variant="outline" color="warning" label="Ticker Lab (Auto-Moving)" data-tab="ticker" size="md"ui-button>\r
+        <ui-button variant="outline" color="warning" label="Lazy Lab (SEO/Perf)" data-tab="lazy" size="md"ui-button>\r
+        <ui-button variant="outline" color="warning" label="Cinematic Lab (Premium)" data-tab="cinematic" size="md"ui-button>\r
+      </nav>\r
+\r
+      <div id="carouselDemoContainer" style="min-height: 500px;"></div>\r
+    </div>\r
+\r
+    <style>\r
+      /* Legendary Stagger logic */\r
+      [data-active="true"] .slide-badge,\r
+      [data-active="true"] .slide-title,\r
+      [data-active="true"] .slide-desc,\r
+      [data-active="true"] .slide-btn {\r
+         animation: apexSlideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;\r
+         opacity: 0;\r
+      }\r
+      [data-active="true"] .slide-badge { animation-delay: 0.1s; }\r
+      [data-active="true"] .slide-title { animation-delay: 0.25s; }\r
+      [data-active="true"] .slide-desc { animation-delay: 0.4s; }\r
+      [data-active="true"] .slide-btn { animation-delay: 0.55s; }\r
+\r
+      @keyframes apexSlideUp {\r
+        from { transform: translateY(40px); opacity: 0; }\r
+        to { transform: translateY(0); opacity: 1; }\r
+      }\r
+\r
+      .stagger-slide { height: 100%; width: 100%; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 60px; color: white; }\r
+      .stagger-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }\r
+      .stagger-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent 80%); z-index: 1; }\r
+      .slide-badge { background: #f59e0b; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 800; width: fit-content; margin-bottom: 12px; position: relative; z-index: 2; }\r
+      .slide-title { font-size: 2.5rem; font-weight: 800; margin: 0 0 10px; position: relative; z-index: 2; line-height: 1.1; }\r
+      \r
+      .social-preview { background: #000; padding: 50px; border-radius: 40px; display: flex; justify-content: center; }\r
+      .phone-wrap { width: 330px; height: 600px; border: 12px solid #282828; border-radius: 56px; overflow: hidden; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }\r
+      .card-item { background: var(--bg-primary); border-radius: 12px; border: 1px solid var(--border-default); display: flex; align-items: center; justify-content: center; font-weight: 800; box-shadow: var(--shadow-sm); flex-shrink:0; }\r
+      .ticker-card { padding: 20px; border-radius: 12px; background: var(--bg-primary); border: 1px solid var(--border-default); display: flex; align-items: center; gap: 15px; min-width: 200px; box-shadow: var(--shadow-sm); }\r
+    </style>`}],"animate-on-scroll":[{title:`Animate On Scroll`,description:``,html:`<div class="demo-header">\r
+      <h1>Animate On Scroll</h1>\r
+      <p>A powerful component that triggers animations when elements enter the viewport or based on scroll progress. Supports staggered children and parallax scrubbing.</p>\r
+    </div>\r
+\r
+    <div class="demo-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 24px;">\r
+      \r
+      <!-- 1. Basic Entrances -->\r
+      <div class="demo-card">\r
+        <h3>Entrance Animations</h3>\r
+        <p>Trigger beautiful entrance effects as they scroll into view.</p>\r
+        <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 24px;">\r
+          <ui-animate-on-scroll enter-class="fade-in" duration="800">\r
+            <div class="demo-box" style="background: #10b981;">Fade In</div>\r
+          </ui-animate-on-scroll>\r
+          \r
+          <ui-animate-on-scroll enter-class="slide-in-up" duration="800">\r
+            <div class="demo-box" style="background: #10b981;">Slide In Up</div>\r
+          </ui-animate-on-scroll>\r
+          \r
+          <ui-animate-on-scroll enter-class="blur-reveal" blur-amount="20px" duration="1200">\r
+            <div class="demo-box" style="background: #8b5cf6;">Blur Reveal</div>\r
+          </ui-animate-on-scroll>\r
+        </div>\r
+        <pre class="demo-code"><code>&lt;ui-animate-on-scroll enter-class="blur-reveal"&gt;...&lt;/ui-animate-on-scroll&gt;</code></pre>\r
+      </div>\r
+\r
+      <!-- 2. Professional Flips -->\r
+      <div class="demo-card">\r
+        <h3>3D Flips</h3>\r
+        <p>Utilize the perspective engine for high-end 3D transitions.</p>\r
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px;">\r
+          <ui-animate-on-scroll enter-class="flip-in-x" perspective="800px">\r
+            <div class="demo-box" style="background: #f59e0b; height: 80px;">Flip X</div>\r
+          </ui-animate-on-scroll>\r
+          <ui-animate-on-scroll enter-class="flip-in-y" perspective="800px">\r
+            <div class="demo-box" style="background: #ef4444; height: 80px;">Flip Y</div>\r
+          </ui-animate-on-scroll>\r
+          <ui-animate-on-scroll enter-class="roll-in">\r
+            <div class="demo-box" style="background: #ec4899; height: 80px;">Roll In</div>\r
+          </ui-animate-on-scroll>\r
+          <ui-animate-on-scroll enter-class="zoom-in-up">\r
+            <div class="demo-box" style="background: #06b6d4; height: 80px;">Zoom In Up</div>\r
+          </ui-animate-on-scroll>\r
+        </div>\r
+        <pre class="demo-code"><code>&lt;ui-animate-on-scroll enter-class="flip-in-y" perspective="800px"&gt;...&lt;/ui-animate-on-scroll&gt;</code></pre>\r
+      </div>\r
+\r
+      <!-- 3. Attention Seekers -->\r
+      <div class="demo-card">\r
+        <h3>Attention Seekers</h3>\r
+        <p>Perfect for Call-to-Action buttons or highlighting important updates.</p>\r
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px;">\r
+          <ui-animate-on-scroll enter-class="pulse" once="false">\r
+             <ui-button color="primary" variant="outline" label="Pulse" style="padding: 12px 20px;"></ui-button>\r
+          </ui-animate-on-scroll>\r
+          <ui-animate-on-scroll enter-class="tada" once="false">\r
+             <ui-button color="success" variant="outline" label="Tada!" style="padding: 12px 20px;"></ui-button>\r
+          </ui-animate-on-scroll>\r
+          <ui-animate-on-scroll enter-class="rubber-band" once="false">\r
+             <ui-button color="warning" variant="outline" label="Rubber Band" style="padding: 12px 20px;"></ui-button>\r
+          </ui-animate-on-scroll>\r
+          <ui-animate-on-scroll enter-class="jello" once="false">\r
+             <ui-button color="danger" variant="outline" label="Jello" style="padding: 12px 20px;"></ui-button>\r
+          </ui-animate-on-scroll>\r
+        </div>\r
+        <pre class="demo-code"><code>&lt;ui-animate-on-scroll enter-class="tada" once="false"&gt;...&lt;/ui-animate-on-scroll&gt;</code></pre>\r
+      </div>\r
+\r
+      <!-- 4. Staggered Children -->\r
+      <div class="demo-card" style="grid-column: 1 / -1;">\r
+        <h3>Staggered Sequences</h3>\r
+        <p>Automatically create a cascade effect for lists or grids of items.</p>\r
+        <ui-animate-on-scroll enter-class="slide-in-up" stagger="150" duration="600">\r
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; margin-top: 24px;">\r
+            <div class="demo-item">Item One</div>\r
+            <div class="demo-item">Item Two</div>\r
+            <div class="demo-item">Item Three</div>\r
+            <div class="demo-item">Item Four</div>\r
+            <div class="demo-item">Item Five</div>\r
+            <div class="demo-item">Item Six</div>\r
+          </div>\r
+        </ui-animate-on-scroll>\r
+        <pre class="demo-code"><code>&lt;ui-animate-on-scroll stagger="150" enter-class="slide-in-up"&gt;...&lt;/ui-animate-on-scroll&gt;</code></pre>\r
+      </div>\r
+\r
+      <!-- 5. Back Effects (Premium) -->\r
+      <div class="demo-card">\r
+        <div class="badge" style="float: right; background: #6366f1; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">PREMIUM</div>\r
+        <h3>Back Entrance Effects</h3>\r
+        <p>High-end entrance animations with a slight overshoot for a physical feel.</p>\r
+        <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 24px;">\r
+          <ui-animate-on-scroll enter-class="back-in-up">\r
+            <div class="demo-box" style="background: linear-gradient(to right, #6366f1, #a855f7); border-radius: 12px;">Back In Up</div>\r
+          </ui-animate-on-scroll>\r
+          <ui-animate-on-scroll enter-class="back-in-left">\r
+            <div class="demo-box" style="background: linear-gradient(to right, #10b981, #06b6d4); border-radius: 12px;">Back In Left</div>\r
+          </ui-animate-on-scroll>\r
+        </div>\r
+        <pre class="demo-code"><code>&lt;ui-animate-on-scroll enter-class="back-in-up"&gt;...&lt;/ui-animate-on-scroll&gt;</code></pre>\r
+      </div>\r
+\r
+      <!-- 6. Parallax Scrubbing -->\r
+      <div class="demo-card">\r
+        <div class="badge" style="float: right; background: #ec4899; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">SCROLL SYNC</div>\r
+        <h3>Parallax Scrubbing</h3>\r
+        <p>Animation progress is mapped directly to your scroll position. Now features smooth LERP interpolation.</p>\r
+        <div style="background: #f8fafc; border-radius: 12px; padding: 40px; margin-top: 24px; text-align: center; overflow: hidden;">\r
+          <ui-animate-on-scroll scrub="true" enter-class="rotate-in" duration="1000">\r
+            <div style="font-size: 80px;">⚙️</div>\r
+          </ui-animate-on-scroll>\r
+          <p style="margin-top: 16px; font-weight: 600; color: #64748b;">(Scroll the page to rotate me smoothly)</p>\r
+        </div>\r
+        <pre class="demo-code"><code>&lt;ui-animate-on-scroll scrub="true"&gt;...&lt;/ui-animate-on-scroll&gt;</code></pre>\r
+      </div>\r
+\r
+      <!-- 7. Advanced Controls -->\r
+      <div class="demo-card" style="grid-column: 1 / -1;">\r
+        <h3>Advanced Controls</h3>\r
+        <p>Fine-tune your animations with precision props.</p>\r
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 24px;">\r
+          <div class="demo-card-inner">\r
+            <h4>Custom Distance</h4>\r
+            <ui-animate-on-scroll enter-class="slide-in-up" distance="200px" duration="1500" mirror="true">\r
+              <div class="demo-box" style="background: #10b981;">200px Slide Up</div>\r
+            </ui-animate-on-scroll>\r
+          </div>\r
+          \r
+          <div class="demo-card-inner">\r
+            <h4>Mirror Reset</h4>\r
+            <ui-animate-on-scroll enter-class="zoom-in" mirror="true" duration="800">\r
+              <div class="demo-box" style="background: #f59e0b;">Resets on Scroll Up</div>\r
+            </ui-animate-on-scroll>\r
+          </div>\r
+\r
+          <div class="demo-card-inner">\r
+            <h4>Transform Origin</h4>\r
+            <ui-animate-on-scroll enter-class="flip-in-x" transform-origin="top" duration="1000">\r
+              <div class="demo-box" style="background: #ef4444;">Top Hinged Flip</div>\r
+            </ui-animate-on-scroll>\r
+          </div>\r
+        </div>\r
+        <pre class="demo-code"><code>&lt;ui-animate-on-scroll distance="200px" mirror="true" transform-origin="top"&gt;</code></pre>\r
+      </div>\r
+\r
+    </div>\r
+\r
+    <style>\r
+      .demo-box {\r
+        padding: 30px;\r
+        color: white;\r
+        text-align: center;\r
+        font-weight: 700;\r
+        border-radius: 8px;\r
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);\r
+      }\r
+      .demo-item {\r
+        background: white;\r
+        border: 1px solid #e2e8f0;\r
+        padding: 24px;\r
+        border-radius: 12px;\r
+        text-align: center;\r
+        font-weight: 600;\r
+        color: #475569;\r
+        box-shadow: 0 2px 4px rgba(0,0,0,0.02);\r
+      }\r
+    </style>`}],"color-picker":[{title:`Basic Selection`,description:``,html:`<div class="demo-block">\r
+          <h3 style="margin-bottom: 16px; color: var(--text-primary);">Basic Selection</h3>\r
+          <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start;">\r
+            <ui-color-picker label="Primary Color" value="#10b981"></ui-color-picker>\r
+            <ui-color-picker label="Success Color" value="#22c55e"></ui-color-picker>\r
+            <ui-color-picker label="Accent Color" value="#8b5cf6"></ui-color-picker>\r
+          </div>\r
+        </div>`},{title:`Extended Features`,description:``,html:`<div class="demo-block">\r
+          <h3 style="margin-bottom: 16px; color: var(--text-primary);">Extended Features</h3>\r
+          <div style="display: flex; gap: 24px; flex-wrap: wrap;">\r
+            <ui-color-picker label="With Alpha Channel" value="#ef4444" show-alpha="true" format="rgba"></ui-color-picker>\r
+            <ui-color-picker label="No Swatches" value="#06b6d4" show-swatches="false"></ui-color-picker>\r
+            <ui-color-picker label="No Hex Input" value="#f59e0b" show-hex="false"></ui-color-picker>\r
+          </div>\r
+        </div>`},{title:`Multi-Format Input Variant`,description:`The variant="input" Displays all format channels (HEX, RGB, HSL) in a single integrated panel.`,html:`<div class="demo-block">\r
+          <h3 style="margin-bottom: 8px; color: var(--text-primary);">Multi-Format Input Variant</h3>\r
+          <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 20px;">\r
+            The <code>variant="input"</code> Displays all format channels (HEX, RGB, HSL) in a single integrated panel.\r
+          </p>\r
+          <div style="display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start;">\r
+            <ui-color-picker \r
+              label="Interactive Channels"\r
+              variant="input"\r
+              inline="true"\r
+              show-hex="true"\r
+              show-rgb="true"\r
+              show-rgba="true"\r
+              show-hsl="true"\r
+              show-hsla="true"\r
+              show-alpha="true"\r
+              value="#10b981"\r
+            ></ui-color-picker>\r
+            \r
+            <div style="flex: 1; min-width: 280px; padding: 24px; background: var(--bg-secondary); border-radius: 16px; border: 1px solid var(--border-default);">\r
+              <h4 style="margin: 0 0 12px 0; font-size: 12px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.5px;">Technical Details</h4>\r
+              <ul style="font-size: 13px; color: var(--text-secondary); padding-left: 18px; margin: 0; line-height: 1.6;">\r
+                <li>Individual channel validation with real-time feedback.</li>\r
+                <li>Hashless HEX input for cleaner interaction.</li>\r
+                <li>Direct attribute binding for all color spaces.</li>\r
+                <li>Responsive layout handles multi-channel flow.</li>\r
+              </ul>\r
+            </div>\r
+          </div>\r
+        </div>`},{title:`Live Preview Engine`,description:``,html:`<div class="demo-block">\r
+          <h3 style="margin-bottom: 16px; color: var(--text-primary);">Live Preview Engine</h3>\r
+          <div style="display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start;">\r
+            <div>\r
+              <ui-color-picker id="cp-inline" inline="true" value="#10b981"></ui-color-picker>\r
+            </div>\r
+            <div style="width: 240px; padding: 24px; background: var(--bg-secondary); border-radius: 16px; border: 1px solid var(--border-default); display: flex; flex-direction: column; gap: 16px; align-items: center;">\r
+              <div id="cp-preview-box" style="width: 100%; height: 100px; border-radius: 12px; background: #10b981; box-shadow: 0 8px 24px rgba(16, 185, 129, 0.25);"></div>\r
+              <div style="font-family: monospace; font-size: 14px; font-weight: 700; color: var(--text-primary);" id="cp-preview-hex">#10B981</div>\r
+              <div id="cp-preview-text" style="width: 100%; padding: 12px; border-radius: 8px; background: #10b981; color: white; font-weight: 800; text-align: center; font-size: 13px;">SAMPLE TEXT</div>\r
+            </div>\r
+          </div>\r
+        </div>`},{title:`States & Interaction`,description:``,html:`<div class="demo-block">\r
+          <h3 style="margin-bottom: 16px; color: var(--text-primary);">States & Interaction</h3>\r
+          <div style="display: flex; gap: 24px; flex-wrap: wrap;">\r
+            <ui-color-picker label="Disabled State" value="#64748b" disabled="true"></ui-color-picker>\r
+            <ui-color-picker label="Read Only (Value)" value="#3b82f6" disabled="true"></ui-color-picker>\r
+          </div>\r
+        </div>`}],"command-palette":[{title:`Command Palette`,description:``,html:`<div class="demo-wrapper">\r
+      <div class="demo-header-section" style="margin-bottom: 24px;">\r
+        <h2 class="demo-section-title">Command Palette</h2>\r
+        <p class="demo-section-subtitle">Fuzzy-search enabled control center for complex applications.</p>\r
+      </div>\r
+\r
+      <div class="demo-block" style="text-align: center; padding: 60px 40px;">\r
+        <div style="max-width: 600px; margin: 0 auto;">\r
+          <p style="font-size: 16px; color: var(--text-secondary); margin-bottom: 32px;">\r
+            Press <kbd style="background: var(--bg-secondary); border: 1px solid var(--border-default); border-radius: 6px; padding: 4px 10px; font-size: 14px; font-family: inherit; font-weight: 700; color: var(--text-primary);">Ctrl/⌘ + K</kbd>\r
+            to activate the command palette globally.\r
+          </p>\r
+\r
+          <ui-button id="cp-open-btn" variant="outline" color="primary" label="Open Palette (⌘K)" size="large" style="min-width: 240px;"></ui-button>\r
+        </div>\r
+      </div>\r
+\r
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px;">\r
+        <div class="demo-block" style="margin-bottom: 0;">\r
+          <h4 style="margin: 0 0 16px 0; font-size: 14px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.5px;">Premium Features</h4>\r
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">\r
+            \${['🔍 Fuzzy search algorithm', '⌨ Advanced keyboard logic', '📁 Category grouping', '⚡ Shortcut visualization', '🕐 Execution history', '🔲 Focus management'].map(f =>`}],"number-input":[{title:`Number Input Controls`,description:``,html:`<div class="demo-section-header">\r
+      <h2 class="demo-section-title">Number Input</h2>\r
+      <p class="demo-section-subtitle">Precision numerical input with stepper controls, affixes, and validation.</p>\r
+    </div>\r
+\r
+    <div class="demo-grid">\r
+      <!-- Basic Usage -->\r
+      <div class="demo-card">\r
+        <h3 class="demo-card-title">Basic Usage</h3>\r
+        <div class="demo-card-content">\r
+          <ui-number-input \r
+            label="Age" \r
+            value="25" \r
+            min="0" \r
+            max="120" \r
+            helper-text="Enter your age (0-120)">\r
+          </ui-number-input>\r
+          \r
+          <ui-number-input \r
+            label="Quantity" \r
+            value="1" \r
+            step="5" \r
+            min="0"\r
+            helper-text="Steps of 5">\r
+          </ui-number-input>\r
+        </div>\r
+      </div>\r
+\r
+      <!-- Stepper Layouts -->\r
+      <div class="demo-card">\r
+        <h3 class="demo-card-title">Stepper Layouts</h3>\r
+        <div class="demo-card-content" style="display: flex; flex-direction: column; gap: 20px;">\r
+          <ui-number-input \r
+            label="Sides Layout (Default)" \r
+            value="10" \r
+            stepper-layout="sides">\r
+          </ui-number-input>\r
+          \r
+          <ui-number-input \r
+            label="Right Stacked Layout" \r
+            value="10" \r
+            stepper-layout="right">\r
+          </ui-number-input>\r
+\r
+          <ui-number-input \r
+            label="No Steppers" \r
+            value="10" \r
+            stepper-layout="none">\r
+          </ui-number-input>\r
+        </div>\r
+      </div>\r
+\r
+      <!-- Precision & Affixes -->\r
+      <div class="demo-card">\r
+        <h3 class="demo-card-title">Precision & Affixes</h3>\r
+        <div class="demo-card-content">\r
+          <ui-number-input \r
+            label="Currency (USD)" \r
+            value="99.99" \r
+            precision="2" \r
+            step="0.01" \r
+            prefix-text="$">\r
+          </ui-number-input>\r
+          \r
+          <ui-number-input \r
+            label="Weight" \r
+            value="75" \r
+            suffix-text="kg" \r
+            step="0.5">\r
+          </ui-number-input>\r
+\r
+          <ui-number-input \r
+            label="Percentage" \r
+            value="50" \r
+            suffix-text="%" \r
+            min="0" \r
+            max="100">\r
+          </ui-number-input>\r
+        </div>\r
+      </div>\r
+\r
+      <!-- Sizes & States -->\r
+      <div class="demo-card">\r
+        <h3 class="demo-card-title">Sizes & States</h3>\r
+          <ui-number-input label="Small" size="sm" value="10"></ui-number-input>\r
+          <ui-number-input label="Medium" size="md" value="10"></ui-number-input>\r
+          <ui-number-input label="Large" size="lg" value="10"></ui-number-input>\r
+          <ui-number-input label="Disabled" value="10" disabled="true" size="md"></ui-number-input>\r
+          <ui-number-input label="Invalid State" value="-5" error-text="Value cannot be negative" size="md"></ui-number-input>\r
+        </div>\r
+      </div>\r
+\r
+      <!-- Variants -->\r
+      <div class="demo-card">\r
+        <h3 class="demo-card-title">Variants</h3>\r
+        <div class="demo-card-content" style="display: flex; flex-direction: column; gap: 20px;">\r
+          <ui-number-input \r
+            label="Default Variant" \r
+            value="100" \r
+            suffix-text="Units"\r
+            size="md">\r
+          </ui-number-input>\r
+          \r
+          <ui-number-input \r
+            label="Plain Variant" \r
+            variant="plain" \r
+            value="100" \r
+            helper-text="Automatically hides steppers and suffices"\r
+            size="md">\r
+          </ui-number-input>\r
+          \r
+          <div style="padding: 12px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">\r
+             <p style="font-size: 12px; color: #64748b; margin: 0;">The <strong>plain</strong> variant is designed for dense UIs like pagination, where a borderless, icon-free appearance is preferred.</p>\r
+          </div>\r
+        </div>\r
+      </div>\r
+    </div>\r
+\r
+    <!-- Full Width & Global -->\r
+    <div class="demo-card" style="margin-top: 24px;">\r
+      <h3 class="demo-card-title">Full Width & Scroll Wheel</h3>\r
+      <div class="demo-card-content">\r
+        <ui-number-input \r
+          label="Full Width Amount" \r
+          value="1000" \r
+          full-width="true" \r
+          prefix-text="€" \r
+          step="50"\r
+          helper-text="Try using your mouse scroll wheel while focused!"\r
+          size="md">\r
+        </ui-number-input>\r
+      </div>\r
+    </div>\r
+\r
+    <!-- Playground -->\r
+    <div class="demo-playground" style="margin-top: 40px;">\r
+      <h3 class="demo-card-title">Interactive Playground</h3>\r
+      <div class="playground-layout">\r
+        <div class="playground-preview">\r
+          <ui-number-input id="playgroundNumberInput" label="Interactive Control" value="0" size="md"></ui-number-input>\r
+          <div id="numberValueDisplay" style="margin-top: 10px; font-size: 14px; font-weight: 600; color: #6366f1;">\r
+            Current Value: 0\r
+          </div>\r
+        </div>\r
+        <div class="playground-controls" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; width: 100%;">\r
+          <div class="control-group">\r
+            <label>Variant</label>\r
+            <ui-dropdown onchange="updateNumberProp('variant', this.value)" size="md" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;">\r
+              <option value="default" selected>Default</option>\r
+              <option value="plain">Plain</option>\r
+            </ui-dropdown>\r
+          </div>\r
+          <div class="control-group">\r
+            <label>Size</label>\r
+            <ui-dropdown onchange="updateNumberProp('size', this.value)" size="md" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;">\r
+              <option value="sm">Small</option>\r
+              <option value="md" selected>Medium</option>\r
+              <option value="lg">Large</option>\r
+            </ui-dropdown>\r
+          </div>\r
+          <div class="control-group">\r
+            <label>Layout</label>\r
+            <ui-dropdown onchange="updateNumberProp('stepper-layout', this.value)" size="md" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;">\r
+              <option value="sides" selected>Sides</option>\r
+              <option value="right">Right Stacked</option>\r
+              <option value="none">None</option>\r
+            </ui-dropdown>\r
+          </div>\r
+          <div class="control-group">\r
+            <label>Color</label>\r
+            <ui-dropdown onchange="updateNumberProp('color', this.value)" size="md" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;">\r
+              <option value="primary" selected>Primary</option>\r
+              <option value="success">Success</option>\r
+              <option value="danger">Danger</option>\r
+              <option value="warning">Warning</option>\r
+              <option value="info">Info</option>\r
+            </ui-dropdown>\r
+          </div>\r
+          <div class="control-group">\r
+            <label>Min</label>\r
+            <ui-input type="number" value="0" oninput="updateNumberProp('min', this.value)" size="md" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;">\r
+          </div>\r
+          <div class="control-group">\r
+            <label>Max</label>\r
+            <ui-input type="number" value="100" oninput="updateNumberProp('max', this.value)" size="md" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;">\r
+          </div>\r
+          <div class="control-group">\r
+            <label>Step</label>\r
+            <ui-input type="number" value="1" oninput="updateNumberProp('step', this.value)" size="md" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;">\r
+          </div>\r
+          <div class="control-group">\r
+            <label>Precision</label>\r
+            <ui-input type="number" value="-1" oninput="updateNumberProp('precision', this.value)" size="md" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;">\r
+          </div>\r
+          <div class="control-group">\r
+            <label>Prefix</label>\r
+            <ui-input type="text" placeholder="e.g. $" oninput="updateNumberProp('prefix-text', this.value)" size="md" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;">\r
+          </div>\r
+          <div class="control-group">\r
+             <label>Suffix</label>\r
+             <ui-input type="text" placeholder="e.g. kg" oninput="updateNumberProp('suffix-text', this.value)" size="md" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;">\r
+          </div>\r
+          <div class="control-group" style="grid-column: span 2; display: flex; gap: 16px; margin-top: 10px; flex-wrap: wrap;">\r
+            <ui-checkbox checked label="Default Icon" onCheckboxChange="updateNumberProp('show-type-icon', event.detail.checked)" size="md"></ui-checkbox>\r
+            <ui-checkbox label="Disabled" onCheckboxChange="updateNumberProp('disabled', event.detail.checked)" size="md"></ui-checkbox>\r
+            <ui-checkbox label="Readonly" onCheckboxChange="updateNumberProp('readonly', event.detail.checked)" size="md"></ui-checkbox>\r
+            <ui-checkbox label="Full Width" onCheckboxChange="updateNumberProp('full-width', event.detail.checked)" size="md"></ui-checkbox>\r
+            <ui-checkbox label="Floating Label" onCheckboxChange="updateNumberProp('floating-label', event.detail.checked)" size="md"></ui-checkbox>\r
+          </div>\r
+        </div>\r
+      </div>\r
+    </div>`}],"workspace-manager":[{title:`🏗️ Workspace Manager`,description:``,html:`<div class="zenith-playground-header" style="margin-bottom: 24px; padding: 20px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 12px; color: white;">\r
+      <h2 style="margin: 0; display: flex; align-items: center; gap: 12px;">\r
+        <span style="font-size: 28px;">🏗️</span> Zenith Workspace Manager\r
+        <span style="font-size: 12px; background: #10b981; padding: 4px 8px; border-radius: 20px; font-weight: normal; margin-left: 10px;">Enterprise Edition</span>\r
+      </h2>\r
+      <p style="margin: 10px 0 0; opacity: 0.8; font-size: 15px;">Advanced multi-region layout engine with dynamic split-testing, persistence, and component-based docking.</p>\r
+    </div>\r
+\r
+    <div class="playground-grid" style="display: grid; grid-template-columns: 280px 1fr; gap: 24px; min-height: 800px;">\r
+      <!-- Sidebar Controls -->\r
+      <div class="controls-column" style="display: flex; flex-direction: column; gap: 20px;">\r
+        \r
+        <!-- Templates Section -->\r
+        <div class="control-card" style="background: white; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">\r
+          <h4 style="margin: 0 0 16px; font-size: 14px; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em; display: flex; align-items: center; gap: 8px;">\r
+            <span style="color: #10b981;">📐</span> Layout Templates\r
+          </h4>\r
+          <div style="display: flex; flex-direction: column; gap: 10px;">\r
+            <ui-button class="template-btn" data-layout="copilot" variant="outline" color="secondary" style="--btn-width: 100%; text-align: left; display: block; border: 1.5px solid var(--border-default); padding: 12px;">\r
+              <strong style="display: block; font-size: 14px; color: var(--text-primary);">GitHub Copilot</strong>\r
+              <span style="font-size: 11px; color: var(--text-secondary);">Editor + AI Assistant (70:30)</span>\r
+            </ui-button>\r
+            <ui-button class="template-btn" data-layout="ide" variant="outline" color="secondary" style="--btn-width: 100%; text-align: left; display: block; border: 1.5px solid var(--border-default); padding: 12px;">\r
+              <strong style="display: block; font-size: 14px; color: var(--text-primary);">IDE Layout</strong>\r
+              <span style="font-size: 11px; color: var(--text-secondary);">Explorer + Editor + Console</span>\r
+            </ui-button>\r
+            <ui-button class="template-btn" data-layout="dashboard" variant="outline" color="secondary" style="--btn-width: 100%; text-align: left; display: block; border: 1.5px solid var(--border-default); padding: 12px;">\r
+              <strong style="display: block; font-size: 14px; color: var(--text-primary);">Grid Dashboard</strong>\r
+              <span style="font-size: 11px; color: var(--text-secondary);">Multi-widget visual layout</span>\r
+            </ui-button>\r
+            <ui-button class="template-btn" data-layout="data-center" variant="outline" color="warning" style="--btn-width: 100%; text-align: left; display: block; border: 1.5px solid #ffedd5; padding: 12px;">\r
+              <strong style="display: block; font-size: 14px; color: #9a3412;">📊 Data Center</strong>\r
+              <span style="font-size: 11px; color: #c2410c;">Rich tables & metrics demo</span>\r
+            </ui-button>\r
+            <ui-button class="template-btn" data-layout="containers" variant="outline" color="secondary" style="--btn-width: 100%; text-align: left; display: block; border: 1.5px solid var(--border-default); padding: 12px;">\r
+              <strong style="display: block; font-size: 14px; color: var(--text-primary);">Container Types</strong>\r
+              <span style="font-size: 11px; color: var(--text-secondary);">Content, Nav, and Header-only</span>\r
+            </ui-button>\r
+          </div>\r
+        </div>\r
+\r
+        <!-- Component Actions -->\r
+        <div class="control-card" style="background: white; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">\r
+          <h4 style="margin: 0 0 16px; font-size: 14px; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em; display: flex; align-items: center; gap: 8px;">\r
+            <span style="color: #10b981;">⚡</span> Quick Actions\r
+          </h4>\r
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">\r
+            <ui-button id="wm-add-panel-btn" variant="outline" color="primary" label="+ Panel"></ui-button>\r
+            <ui-button id="wm-add-region-btn" variant="outline" color="success" label="+ Region"></ui-button>\r
+            <ui-button id="wm-split-h-btn" variant="outline" color="secondary" label="Split H" style="background-color: #8b5cf6;"></ui-button>\r
+            <ui-button id="wm-split-v-btn" variant="outline" color="secondary" label="Split V" style="background-color: #8b5cf6;"></ui-button>\r
+            <ui-button id="wm-merge-btn" variant="outline" color="warning" label="Merge Regions"></ui-button>\r
+            <ui-button id="wm-export-btn" variant="outline" color="secondary" label="Export JSON"></ui-button>\r
+            <ui-button id="wm-reset-btn" variant="outline" color="danger" label="Reset All" style="grid-column: span 2;"></ui-button>\r
+          </div>\r
+        </div>\r
+\r
+        <!-- Status & Stats -->\r
+        <div class="control-card" style="background: #f8fafc; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0;">\r
+          <h4 style="margin: 0 0 12px; font-size: 12px; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em;">Workspace Status</h4>\r
+          <div style="display: flex; flex-direction: column; gap: 12px;">\r
+            <div style="display: flex; justify-content: space-between; align-items: center;">\r
+              <span style="font-size: 13px; color: #64748b;">Active Regions</span>\r
+              <span id="stat-regions" style="font-weight: 700; color: #1e293b; background: white; padding: 2px 8px; border-radius: 4px; border: 1px solid #e2e8f0;">0</span>\r
+            </div>\r
+            <div style="display: flex; justify-content: space-between; align-items: center;">\r
+              <span style="font-size: 13px; color: #64748b;">Total Panels</span>\r
+              <span id="stat-panels" style="font-weight: 700; color: #1e293b; background: white; padding: 2px 8px; border-radius: 4px; border: 1px solid #e2e8f0;">0</span>\r
+            </div>\r
+            <div style="display: flex; justify-content: space-between; align-items: center;">\r
+              <span style="font-size: 13px; color: #64748b;">Persistence</span>\r
+              <span style="font-size: 11px; background: #dcfce7; color: #15803d; padding: 2px 6px; border-radius: 4px; font-weight: bold;">Enabled</span>\r
+            </div>\r
+          </div>\r
+        </div>\r
+\r
+        <div style="padding: 16px; background: #eff6ff; border-radius: 10px; border-left: 4px solid #10b981;">\r
+          <p style="margin: 0; font-size: 12px; color: #1e40af; line-height: 1.5;">\r
+            <strong>Pro Tip:</strong> Layouts are persisted to localStorage using the <code>state-key</code> property. Splitters are bidirectionally resizable.\r
+          </p>\r
+        </div>\r
+      </div>\r
+\r
+      <!-- Main Canvas Area -->\r
+      <div class="canvas-column" style="display: flex; flex-direction: column; gap: 20px;">\r
+        <div style="background: white; border-radius: 16px; border: 1px solid #e2e8f0; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); height: 750px; position: relative;">\r
+          <ui-workspace-manager \r
+            id="zenith-wm-playground" \r
+            save-state="true" \r
+            state-key="zenith-playground-v1" \r
+            direction="horizontal"\r
+          ></ui-workspace-manager>\r
+        </div>\r
+\r
+        <!-- Data Output -->\r
+        <div id="wm-json-output" style="display: none;">\r
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">\r
+            <h4 style="margin: 0; font-size: 14px; color: #64748b; text-transform: uppercase;">Exported Layout JSON</h4>\r
+            <ui-button onclick="this.closest('#wm-json-output').style.display='none'" variant="ghost" color="danger" label="Close ×"></ui-button>\r
+          </div>\r
+          <pre id="wm-json-display" style="background: #0f172a; color: #38bdf8; padding: 20px; border-radius: 12px; font-family: 'Fira Code', monospace; font-size: 12px; overflow-x: auto; max-height: 400px; box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);"></pre>\r
+        </div>\r
+      </div>\r
+    </div>`}]},n={};function r(t){if(n[t])return n[t];let r=e.components.find(e=>e.tag===t);if(!r)return[];let i=r.props.map(e=>{let t=`string`,n,r=e.type.trim();r===`boolean`?t=`boolean`:r===`number`?t=`number`:r.includes(`|`)||e.values&&e.values.length>1&&e.values.every(e=>e.value!==void 0)?(t=`select`,n=e.values&&e.values.length>0&&e.values.every(e=>e.value!==void 0)?e.values.map(e=>e.value):r.split(`|`).map(e=>e.trim().replace(/^['"]|['"]$/g,``)).filter(e=>e!==`undefined`&&e!==`null`)):(r.includes(`[]`)||r===`any`||r.includes(`Record<`)||r.includes(`Array<`))&&(t=`json`);let i;if(e.default!==void 0){let n=e.default.trim();if(t===`boolean`)i=n===`true`;else if(t===`number`)i=Number(n),isNaN(i)&&(i=0);else if(t===`select`||t===`string`)i=n.replace(/^['"`]|['"`]$/g,``);else if(t===`json`)try{i=JSON.parse(n)}catch{i=void 0}}let a=e.name.replace(/([A-Z])/g,` $1`).trim().replace(/^\w/,e=>e.toUpperCase());return{name:e.name,type:t,label:a,defaultValue:i,options:n,description:e.docs||`${a} property`}});return n[t]=i,i}function i(t,n){let r=e.components.find(e=>e.tag===t);return r&&(r.docs||r.readme?.split(`
 `)[2]?.trim())||n}function a(e){return t[e]||[]}export{i as n,r,a as t};
