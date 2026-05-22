@@ -1,0 +1,803 @@
+
+Running 200 tests using 1 worker
+
+  Γ£ÿ    1 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:36:3 ΓÇ║ Accordion Component ΓÇ║ renders on the page (1ms)
+  -    2 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:40:3 ΓÇ║ Accordion Component ΓÇ║ items attribute is stored
+  -    3 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:46:3 ΓÇ║ Accordion Component ΓÇ║ clicking an accordion header fires uiToggle or click event
+  -    4 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:77:3 ΓÇ║ Accordion Component ΓÇ║ multiple attribute is accepted
+  -    5 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:83:3 ΓÇ║ Accordion Component ΓÇ║ enable-search attribute is accepted
+  -    6 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:90:5 ΓÇ║ Accordion Component ΓÇ║ accepts variant="default"
+  -    7 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:90:5 ΓÇ║ Accordion Component ΓÇ║ accepts variant="bordered"
+  -    8 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:90:5 ΓÇ║ Accordion Component ΓÇ║ accepts variant="splitted"
+  -    9 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:90:5 ΓÇ║ Accordion Component ΓÇ║ accepts variant="light"
+  -   10 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:90:5 ΓÇ║ Accordion Component ΓÇ║ accepts variant="shadow"
+  -   11 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:90:5 ΓÇ║ Accordion Component ΓÇ║ accepts variant="card"
+  -   12 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:90:5 ΓÇ║ Accordion Component ΓÇ║ accepts variant="headline"
+  -   13 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:98:5 ΓÇ║ Accordion Component ΓÇ║ accepts size="sm"
+  -   14 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:98:5 ΓÇ║ Accordion Component ΓÇ║ accepts size="md"
+  -   15 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:98:5 ΓÇ║ Accordion Component ΓÇ║ accepts size="lg"
+  -   16 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:106:5 ΓÇ║ Accordion Component ΓÇ║ accepts theme="default"
+  -   17 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:106:5 ΓÇ║ Accordion Component ΓÇ║ accepts theme="glass"
+  -   18 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:106:5 ΓÇ║ Accordion Component ΓÇ║ accepts theme="radiant"
+  Γ£ÿ   19 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:36:3 ΓÇ║ Accordion Component ΓÇ║ renders on the page (retry #1) (2ms)
+  -   20 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:40:3 ΓÇ║ Accordion Component ΓÇ║ items attribute is stored (retry #1)
+  -   21 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:46:3 ΓÇ║ Accordion Component ΓÇ║ clicking an accordion header fires uiToggle or click event (retry #1)
+  -   22 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:77:3 ΓÇ║ Accordion Component ΓÇ║ multiple attribute is accepted (retry #1)
+  -   23 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:83:3 ΓÇ║ Accordion Component ΓÇ║ enable-search attribute is accepted (retry #1)
+  -   24 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:90:5 ΓÇ║ Accordion Component ΓÇ║ accepts variant="default" (retry #1)
+  -   25 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:90:5 ΓÇ║ Accordion Component ΓÇ║ accepts variant="bordered" (retry #1)
+  -   26 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:90:5 ΓÇ║ Accordion Component ΓÇ║ accepts variant="splitted" (retry #1)
+  -   27 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:90:5 ΓÇ║ Accordion Component ΓÇ║ accepts variant="light" (retry #1)
+  -   28 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:90:5 ΓÇ║ Accordion Component ΓÇ║ accepts variant="shadow" (retry #1)
+  -   29 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:90:5 ΓÇ║ Accordion Component ΓÇ║ accepts variant="card" (retry #1)
+  -   30 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:90:5 ΓÇ║ Accordion Component ΓÇ║ accepts variant="headline" (retry #1)
+  -   31 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:98:5 ΓÇ║ Accordion Component ΓÇ║ accepts size="sm" (retry #1)
+  -   32 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:98:5 ΓÇ║ Accordion Component ΓÇ║ accepts size="md" (retry #1)
+  -   33 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:98:5 ΓÇ║ Accordion Component ΓÇ║ accepts size="lg" (retry #1)
+  -   34 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:106:5 ΓÇ║ Accordion Component ΓÇ║ accepts theme="default" (retry #1)
+  -   35 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:106:5 ΓÇ║ Accordion Component ΓÇ║ accepts theme="glass" (retry #1)
+  -   36 [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:106:5 ΓÇ║ Accordion Component ΓÇ║ accepts theme="radiant" (retry #1)
+  Γ£ÿ   37 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:24:3 ΓÇ║ Avatar Component ΓÇ║ renders on the page (2ms)
+  -   38 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:28:3 ΓÇ║ Avatar Component ΓÇ║ name attribute generates initials
+  -   39 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:34:5 ΓÇ║ Avatar Component ΓÇ║ accepts size="xs"
+  -   40 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:34:5 ΓÇ║ Avatar Component ΓÇ║ accepts size="sm"
+  -   41 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:34:5 ΓÇ║ Avatar Component ΓÇ║ accepts size="md"
+  -   42 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:34:5 ΓÇ║ Avatar Component ΓÇ║ accepts size="lg"
+  -   43 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:34:5 ΓÇ║ Avatar Component ΓÇ║ accepts size="xl"
+  -   44 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:41:5 ΓÇ║ Avatar Component ΓÇ║ accepts shape="circle"
+  -   45 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:41:5 ΓÇ║ Avatar Component ΓÇ║ accepts shape="square"
+  -   46 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:41:5 ΓÇ║ Avatar Component ΓÇ║ accepts shape="rounded"
+  -   47 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:41:5 ΓÇ║ Avatar Component ΓÇ║ accepts shape="hexagon"
+  -   48 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:41:5 ΓÇ║ Avatar Component ΓÇ║ accepts shape="squircle"
+  -   49 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:48:5 ΓÇ║ Avatar Component ΓÇ║ accepts variant="default"
+  -   50 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:48:5 ΓÇ║ Avatar Component ΓÇ║ accepts variant="outlined"
+  -   51 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:48:5 ΓÇ║ Avatar Component ΓÇ║ accepts variant="ghost"
+  -   52 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:48:5 ΓÇ║ Avatar Component ΓÇ║ accepts variant="glass"
+  -   53 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:54:3 ΓÇ║ Avatar Component ΓÇ║ shows status indicator when show-status and status are set
+  -   54 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:61:3 ΓÇ║ Avatar Component ΓÇ║ auto-color attribute is accepted
+  Γ£ÿ   55 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:24:3 ΓÇ║ Avatar Component ΓÇ║ renders on the page (retry #1) (1ms)
+  -   56 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:28:3 ΓÇ║ Avatar Component ΓÇ║ name attribute generates initials (retry #1)
+  -   57 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:34:5 ΓÇ║ Avatar Component ΓÇ║ accepts size="xs" (retry #1)
+  -   58 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:34:5 ΓÇ║ Avatar Component ΓÇ║ accepts size="sm" (retry #1)
+  -   59 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:34:5 ΓÇ║ Avatar Component ΓÇ║ accepts size="md" (retry #1)
+  -   60 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:34:5 ΓÇ║ Avatar Component ΓÇ║ accepts size="lg" (retry #1)
+  -   61 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:34:5 ΓÇ║ Avatar Component ΓÇ║ accepts size="xl" (retry #1)
+  -   62 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:41:5 ΓÇ║ Avatar Component ΓÇ║ accepts shape="circle" (retry #1)
+  -   63 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:41:5 ΓÇ║ Avatar Component ΓÇ║ accepts shape="square" (retry #1)
+  -   64 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:41:5 ΓÇ║ Avatar Component ΓÇ║ accepts shape="rounded" (retry #1)
+  -   65 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:41:5 ΓÇ║ Avatar Component ΓÇ║ accepts shape="hexagon" (retry #1)
+  -   66 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:41:5 ΓÇ║ Avatar Component ΓÇ║ accepts shape="squircle" (retry #1)
+  -   67 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:48:5 ΓÇ║ Avatar Component ΓÇ║ accepts variant="default" (retry #1)
+  -   68 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:48:5 ΓÇ║ Avatar Component ΓÇ║ accepts variant="outlined" (retry #1)
+  -   69 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:48:5 ΓÇ║ Avatar Component ΓÇ║ accepts variant="ghost" (retry #1)
+  -   70 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:48:5 ΓÇ║ Avatar Component ΓÇ║ accepts variant="glass" (retry #1)
+  -   71 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:54:3 ΓÇ║ Avatar Component ΓÇ║ shows status indicator when show-status and status are set (retry #1)
+  -   72 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:61:3 ΓÇ║ Avatar Component ΓÇ║ auto-color attribute is accepted (retry #1)
+  Γ£ÿ   73 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:81:3 ΓÇ║ Badge Component ΓÇ║ renders on the page (1ms)
+  -   74 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:85:3 ΓÇ║ Badge Component ΓÇ║ value attribute is reflected
+  -   75 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:91:5 ΓÇ║ Badge Component ΓÇ║ accepts color="primary"
+  -   76 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:91:5 ΓÇ║ Badge Component ΓÇ║ accepts color="success"
+  -   77 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:91:5 ΓÇ║ Badge Component ΓÇ║ accepts color="warning"
+  -   78 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:91:5 ΓÇ║ Badge Component ΓÇ║ accepts color="danger"
+  -   79 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:91:5 ΓÇ║ Badge Component ΓÇ║ accepts color="info"
+  -   80 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:98:5 ΓÇ║ Badge Component ΓÇ║ accepts variant="standard"
+  -   81 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:98:5 ΓÇ║ Badge Component ΓÇ║ accepts variant="outlined"
+  -   82 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:98:5 ΓÇ║ Badge Component ΓÇ║ accepts variant="ghost"
+  -   83 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:104:3 ΓÇ║ Badge Component ΓÇ║ dot mode attribute is accepted
+  -   84 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:110:5 ΓÇ║ Badge Component ΓÇ║ accepts animation="none"
+  -   85 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:110:5 ΓÇ║ Badge Component ΓÇ║ accepts animation="pulse"
+  -   86 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:110:5 ΓÇ║ Badge Component ΓÇ║ accepts animation="bounce"
+  -   87 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:110:5 ΓÇ║ Badge Component ΓÇ║ accepts animation="ping"
+  -   88 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:116:3 ΓÇ║ Badge Component ΓÇ║ max attribute limits displayed value
+  Γ£ÿ   89 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:81:3 ΓÇ║ Badge Component ΓÇ║ renders on the page (retry #1) (1ms)
+  -   90 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:85:3 ΓÇ║ Badge Component ΓÇ║ value attribute is reflected (retry #1)
+  -   91 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:91:5 ΓÇ║ Badge Component ΓÇ║ accepts color="primary" (retry #1)
+  -   92 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:91:5 ΓÇ║ Badge Component ΓÇ║ accepts color="success" (retry #1)
+  -   93 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:91:5 ΓÇ║ Badge Component ΓÇ║ accepts color="warning" (retry #1)
+  -   94 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:91:5 ΓÇ║ Badge Component ΓÇ║ accepts color="danger" (retry #1)
+  -   95 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:91:5 ΓÇ║ Badge Component ΓÇ║ accepts color="info" (retry #1)
+  -   96 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:98:5 ΓÇ║ Badge Component ΓÇ║ accepts variant="standard" (retry #1)
+  -   97 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:98:5 ΓÇ║ Badge Component ΓÇ║ accepts variant="outlined" (retry #1)
+  -   98 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:98:5 ΓÇ║ Badge Component ΓÇ║ accepts variant="ghost" (retry #1)
+  -   99 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:104:3 ΓÇ║ Badge Component ΓÇ║ dot mode attribute is accepted (retry #1)
+  -  100 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:110:5 ΓÇ║ Badge Component ΓÇ║ accepts animation="none" (retry #1)
+  -  101 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:110:5 ΓÇ║ Badge Component ΓÇ║ accepts animation="pulse" (retry #1)
+  -  102 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:110:5 ΓÇ║ Badge Component ΓÇ║ accepts animation="bounce" (retry #1)
+  -  103 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:110:5 ΓÇ║ Badge Component ΓÇ║ accepts animation="ping" (retry #1)
+  -  104 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:116:3 ΓÇ║ Badge Component ΓÇ║ max attribute limits displayed value (retry #1)
+  Γ£ÿ  105 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:136:3 ΓÇ║ Progress Component ΓÇ║ renders on the page (1ms)
+  -  106 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:140:3 ΓÇ║ Progress Component ΓÇ║ value attribute is reflected
+  -  107 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:145:3 ΓÇ║ Progress Component ΓÇ║ accepts value=0 (empty)
+  -  108 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:150:3 ΓÇ║ Progress Component ΓÇ║ accepts value=100 (full)
+  -  109 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:155:3 ΓÇ║ Progress Component ΓÇ║ indeterminate attribute is accepted
+  Γ£ÿ  110 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:136:3 ΓÇ║ Progress Component ΓÇ║ renders on the page (retry #1) (3ms)
+  -  111 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:140:3 ΓÇ║ Progress Component ΓÇ║ value attribute is reflected (retry #1)
+  -  112 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:145:3 ΓÇ║ Progress Component ΓÇ║ accepts value=0 (empty) (retry #1)
+  -  113 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:150:3 ΓÇ║ Progress Component ΓÇ║ accepts value=100 (full) (retry #1)
+  -  114 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:155:3 ΓÇ║ Progress Component ΓÇ║ indeterminate attribute is accepted (retry #1)
+  Γ£ÿ  115 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:175:3 ΓÇ║ Icon Component ΓÇ║ renders on the page (1ms)
+  -  116 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:179:3 ΓÇ║ Icon Component ΓÇ║ name attribute is reflected
+  -  117 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:184:3 ΓÇ║ Icon Component ΓÇ║ size attribute is accepted
+  -  118 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:189:3 ΓÇ║ Icon Component ΓÇ║ color attribute is accepted
+  Γ£ÿ  119 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:175:3 ΓÇ║ Icon Component ΓÇ║ renders on the page (retry #1) (1ms)
+  -  120 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:179:3 ΓÇ║ Icon Component ΓÇ║ name attribute is reflected (retry #1)
+  -  121 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:184:3 ΓÇ║ Icon Component ΓÇ║ size attribute is accepted (retry #1)
+  -  122 [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:189:3 ΓÇ║ Icon Component ΓÇ║ color attribute is accepted (retry #1)
+  Γ£ÿ  123 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:24:3 ΓÇ║ ButtonToggle Component ΓÇ║ renders on the page (2ms)
+  -  124 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:29:3 ΓÇ║ ButtonToggle Component ΓÇ║ fires click event when clicked
+  -  125 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:40:3 ΓÇ║ ButtonToggle Component ΓÇ║ selected attribute is reflected
+  -  126 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:46:3 ΓÇ║ ButtonToggle Component ΓÇ║ disabled attribute is reflected
+  -  127 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:53:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts variant="classic"
+  -  128 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:53:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts variant="filled"
+  -  129 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:53:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts variant="outlined"
+  -  130 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:53:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts variant="soft"
+  -  131 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:53:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts variant="solid"
+  -  132 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:53:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts variant="surface"
+  -  133 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:53:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts variant="text"
+  -  134 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:61:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts color="primary"
+  -  135 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:61:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts color="secondary"
+  -  136 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:61:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts color="success"
+  -  137 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:61:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts color="warning"
+  -  138 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:61:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts color="danger"
+  -  139 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:69:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts size="small"
+  -  140 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:69:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts size="medium"
+  -  141 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:69:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts size="large"
+  -  142 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:77:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts shape="circle"
+  -  143 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:77:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts shape="pill"
+  -  144 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:77:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts shape="rectangle"
+  -  145 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:77:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts shape="round"
+  -  146 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:77:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts shape="square"
+  -  147 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:84:3 ΓÇ║ ButtonToggle Component ΓÇ║ icon attribute is accepted
+  Γ£ÿ  148 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:24:3 ΓÇ║ ButtonToggle Component ΓÇ║ renders on the page (retry #1) (1ms)
+  -  149 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:29:3 ΓÇ║ ButtonToggle Component ΓÇ║ fires click event when clicked (retry #1)
+  -  150 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:40:3 ΓÇ║ ButtonToggle Component ΓÇ║ selected attribute is reflected (retry #1)
+  -  151 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:46:3 ΓÇ║ ButtonToggle Component ΓÇ║ disabled attribute is reflected (retry #1)
+  -  152 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:53:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts variant="classic" (retry #1)
+  -  153 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:53:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts variant="filled" (retry #1)
+  -  154 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:53:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts variant="outlined" (retry #1)
+  -  155 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:53:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts variant="soft" (retry #1)
+  -  156 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:53:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts variant="solid" (retry #1)
+  -  157 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:53:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts variant="surface" (retry #1)
+  -  158 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:53:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts variant="text" (retry #1)
+  -  159 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:61:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts color="primary" (retry #1)
+  -  160 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:61:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts color="secondary" (retry #1)
+  -  161 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:61:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts color="success" (retry #1)
+  -  162 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:61:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts color="warning" (retry #1)
+  -  163 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:61:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts color="danger" (retry #1)
+  -  164 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:69:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts size="small" (retry #1)
+  -  165 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:69:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts size="medium" (retry #1)
+  -  166 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:69:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts size="large" (retry #1)
+  -  167 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:77:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts shape="circle" (retry #1)
+  -  168 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:77:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts shape="pill" (retry #1)
+  -  169 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:77:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts shape="rectangle" (retry #1)
+  -  170 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:77:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts shape="round" (retry #1)
+  -  171 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:77:5 ΓÇ║ ButtonToggle Component ΓÇ║ accepts shape="square" (retry #1)
+  -  172 [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:84:3 ΓÇ║ ButtonToggle Component ΓÇ║ icon attribute is accepted (retry #1)
+  Γ£ÿ  173 [chromium] ΓÇ║ tests\e2e\button.spec.ts:23:3 ΓÇ║ Button Component ΓÇ║ renders the preview button (2ms)
+  -  174 [chromium] ΓÇ║ tests\e2e\button.spec.ts:28:3 ΓÇ║ Button Component ΓÇ║ has a non-empty label
+  -  175 [chromium] ΓÇ║ tests\e2e\button.spec.ts:35:3 ΓÇ║ Button Component ΓÇ║ fires click event when clicked
+  -  176 [chromium] ΓÇ║ tests\e2e\button.spec.ts:46:3 ΓÇ║ Button Component ΓÇ║ disabled attribute is reflected on the host element
+  -  177 [chromium] ΓÇ║ tests\e2e\button.spec.ts:55:3 ΓÇ║ Button Component ΓÇ║ loading attribute is reflected on the host element
+  -  178 [chromium] ΓÇ║ tests\e2e\button.spec.ts:63:5 ΓÇ║ Button Component ΓÇ║ accepts variant="primary"
+  -  179 [chromium] ΓÇ║ tests\e2e\button.spec.ts:63:5 ΓÇ║ Button Component ΓÇ║ accepts variant="secondary"
+  -  180 [chromium] ΓÇ║ tests\e2e\button.spec.ts:63:5 ΓÇ║ Button Component ΓÇ║ accepts variant="outline"
+  -  181 [chromium] ΓÇ║ tests\e2e\button.spec.ts:63:5 ΓÇ║ Button Component ΓÇ║ accepts variant="ghost"
+  -  182 [chromium] ΓÇ║ tests\e2e\button.spec.ts:63:5 ΓÇ║ Button Component ΓÇ║ accepts variant="danger"
+  -  183 [chromium] ΓÇ║ tests\e2e\button.spec.ts:63:5 ΓÇ║ Button Component ΓÇ║ accepts variant="success"
+  -  184 [chromium] ΓÇ║ tests\e2e\button.spec.ts:63:5 ΓÇ║ Button Component ΓÇ║ accepts variant="warning"
+  -  185 [chromium] ΓÇ║ tests\e2e\button.spec.ts:72:5 ΓÇ║ Button Component ΓÇ║ accepts size="xs"
+  -  186 [chromium] ΓÇ║ tests\e2e\button.spec.ts:72:5 ΓÇ║ Button Component ΓÇ║ accepts size="sm"
+  -  187 [chromium] ΓÇ║ tests\e2e\button.spec.ts:72:5 ΓÇ║ Button Component ΓÇ║ accepts size="md"
+  -  188 [chromium] ΓÇ║ tests\e2e\button.spec.ts:72:5 ΓÇ║ Button Component ΓÇ║ accepts size="lg"
+  -  189 [chromium] ΓÇ║ tests\e2e\button.spec.ts:72:5 ΓÇ║ Button Component ΓÇ║ accepts size="xl"
+  -  190 [chromium] ΓÇ║ tests\e2e\button.spec.ts:72:5 ΓÇ║ Button Component ΓÇ║ accepts size="xxl"
+  -  191 [chromium] ΓÇ║ tests\e2e\button.spec.ts:81:5 ΓÇ║ Button Component ΓÇ║ accepts shape="rounded"
+  -  192 [chromium] ΓÇ║ tests\e2e\button.spec.ts:81:5 ΓÇ║ Button Component ΓÇ║ accepts shape="pill"
+  -  193 [chromium] ΓÇ║ tests\e2e\button.spec.ts:81:5 ΓÇ║ Button Component ΓÇ║ accepts shape="circle"
+  -  194 [chromium] ΓÇ║ tests\e2e\button.spec.ts:81:5 ΓÇ║ Button Component ΓÇ║ accepts shape="square"
+  -  195 [chromium] ΓÇ║ tests\e2e\button.spec.ts:89:3 ΓÇ║ Button Component ΓÇ║ accepts an icon attribute
+  -  196 [chromium] ΓÇ║ tests\e2e\button.spec.ts:96:3 ΓÇ║ Button Component ΓÇ║ full-width attribute is accepted
+  Γ£ÿ  197 [chromium] ΓÇ║ tests\e2e\button.spec.ts:23:3 ΓÇ║ Button Component ΓÇ║ renders the preview button (retry #1) (1ms)
+  -  198 [chromium] ΓÇ║ tests\e2e\button.spec.ts:28:3 ΓÇ║ Button Component ΓÇ║ has a non-empty label (retry #1)
+  -  199 [chromium] ΓÇ║ tests\e2e\button.spec.ts:35:3 ΓÇ║ Button Component ΓÇ║ fires click event when clicked (retry #1)
+  -  200 [chromium] ΓÇ║ tests\e2e\button.spec.ts:46:3 ΓÇ║ Button Component ΓÇ║ disabled attribute is reflected on the host element (retry #1)
+  -  201 [chromium] ΓÇ║ tests\e2e\button.spec.ts:55:3 ΓÇ║ Button Component ΓÇ║ loading attribute is reflected on the host element (retry #1)
+  -  202 [chromium] ΓÇ║ tests\e2e\button.spec.ts:63:5 ΓÇ║ Button Component ΓÇ║ accepts variant="primary" (retry #1)
+  -  203 [chromium] ΓÇ║ tests\e2e\button.spec.ts:63:5 ΓÇ║ Button Component ΓÇ║ accepts variant="secondary" (retry #1)
+  -  204 [chromium] ΓÇ║ tests\e2e\button.spec.ts:63:5 ΓÇ║ Button Component ΓÇ║ accepts variant="outline" (retry #1)
+  -  205 [chromium] ΓÇ║ tests\e2e\button.spec.ts:63:5 ΓÇ║ Button Component ΓÇ║ accepts variant="ghost" (retry #1)
+  -  206 [chromium] ΓÇ║ tests\e2e\button.spec.ts:63:5 ΓÇ║ Button Component ΓÇ║ accepts variant="danger" (retry #1)
+  -  207 [chromium] ΓÇ║ tests\e2e\button.spec.ts:63:5 ΓÇ║ Button Component ΓÇ║ accepts variant="success" (retry #1)
+  -  208 [chromium] ΓÇ║ tests\e2e\button.spec.ts:63:5 ΓÇ║ Button Component ΓÇ║ accepts variant="warning" (retry #1)
+  -  209 [chromium] ΓÇ║ tests\e2e\button.spec.ts:72:5 ΓÇ║ Button Component ΓÇ║ accepts size="xs" (retry #1)
+  -  210 [chromium] ΓÇ║ tests\e2e\button.spec.ts:72:5 ΓÇ║ Button Component ΓÇ║ accepts size="sm" (retry #1)
+  -  211 [chromium] ΓÇ║ tests\e2e\button.spec.ts:72:5 ΓÇ║ Button Component ΓÇ║ accepts size="md" (retry #1)
+  -  212 [chromium] ΓÇ║ tests\e2e\button.spec.ts:72:5 ΓÇ║ Button Component ΓÇ║ accepts size="lg" (retry #1)
+  -  213 [chromium] ΓÇ║ tests\e2e\button.spec.ts:72:5 ΓÇ║ Button Component ΓÇ║ accepts size="xl" (retry #1)
+  -  214 [chromium] ΓÇ║ tests\e2e\button.spec.ts:72:5 ΓÇ║ Button Component ΓÇ║ accepts size="xxl" (retry #1)
+  -  215 [chromium] ΓÇ║ tests\e2e\button.spec.ts:81:5 ΓÇ║ Button Component ΓÇ║ accepts shape="rounded" (retry #1)
+  -  216 [chromium] ΓÇ║ tests\e2e\button.spec.ts:81:5 ΓÇ║ Button Component ΓÇ║ accepts shape="pill" (retry #1)
+  -  217 [chromium] ΓÇ║ tests\e2e\button.spec.ts:81:5 ΓÇ║ Button Component ΓÇ║ accepts shape="circle" (retry #1)
+  -  218 [chromium] ΓÇ║ tests\e2e\button.spec.ts:81:5 ΓÇ║ Button Component ΓÇ║ accepts shape="square" (retry #1)
+  -  219 [chromium] ΓÇ║ tests\e2e\button.spec.ts:89:3 ΓÇ║ Button Component ΓÇ║ accepts an icon attribute (retry #1)
+  -  220 [chromium] ΓÇ║ tests\e2e\button.spec.ts:96:3 ΓÇ║ Button Component ΓÇ║ full-width attribute is accepted (retry #1)
+  Γ£ÿ  221 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:24:3 ΓÇ║ Checkbox Component ΓÇ║ renders on the page (1ms)
+  -  222 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:28:3 ΓÇ║ Checkbox Component ΓÇ║ has a label attribute
+  -  223 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:34:3 ΓÇ║ Checkbox Component ΓÇ║ fires uiChange event when clicked
+  -  224 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:45:3 ΓÇ║ Checkbox Component ΓÇ║ checked attribute can be set programmatically
+  -  225 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:52:3 ΓÇ║ Checkbox Component ΓÇ║ indeterminate attribute is accepted
+  -  226 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:59:3 ΓÇ║ Checkbox Component ΓÇ║ disabled attribute is reflected
+  -  227 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:67:5 ΓÇ║ Checkbox Component ΓÇ║ accepts size="xs"
+  -  228 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:67:5 ΓÇ║ Checkbox Component ΓÇ║ accepts size="sm"
+  -  229 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:67:5 ΓÇ║ Checkbox Component ΓÇ║ accepts size="md"
+  -  230 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:67:5 ΓÇ║ Checkbox Component ΓÇ║ accepts size="lg"
+  -  231 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:67:5 ΓÇ║ Checkbox Component ΓÇ║ accepts size="xl"
+  -  232 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:75:5 ΓÇ║ Checkbox Component ΓÇ║ accepts color="primary"
+  -  233 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:75:5 ΓÇ║ Checkbox Component ΓÇ║ accepts color="success"
+  -  234 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:75:5 ΓÇ║ Checkbox Component ΓÇ║ accepts color="warning"
+  -  235 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:75:5 ΓÇ║ Checkbox Component ΓÇ║ accepts color="danger"
+  -  236 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:82:3 ΓÇ║ Checkbox Component ΓÇ║ required attribute is accepted
+  -  237 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:87:3 ΓÇ║ Checkbox Component ΓÇ║ invalid attribute shows error-message
+  -  238 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:96:5 ΓÇ║ Checkbox Component ΓÇ║ accepts variant="default"
+  -  239 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:96:5 ΓÇ║ Checkbox Component ΓÇ║ accepts variant="filled"
+  -  240 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:96:5 ΓÇ║ Checkbox Component ΓÇ║ accepts variant="outlined"
+  -  241 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:96:5 ΓÇ║ Checkbox Component ΓÇ║ accepts variant="minimal"
+  Γ£ÿ  242 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:24:3 ΓÇ║ Checkbox Component ΓÇ║ renders on the page (retry #1) (1ms)
+  -  243 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:28:3 ΓÇ║ Checkbox Component ΓÇ║ has a label attribute (retry #1)
+  -  244 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:34:3 ΓÇ║ Checkbox Component ΓÇ║ fires uiChange event when clicked (retry #1)
+  -  245 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:45:3 ΓÇ║ Checkbox Component ΓÇ║ checked attribute can be set programmatically (retry #1)
+  -  246 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:52:3 ΓÇ║ Checkbox Component ΓÇ║ indeterminate attribute is accepted (retry #1)
+  -  247 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:59:3 ΓÇ║ Checkbox Component ΓÇ║ disabled attribute is reflected (retry #1)
+  -  248 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:67:5 ΓÇ║ Checkbox Component ΓÇ║ accepts size="xs" (retry #1)
+  -  249 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:67:5 ΓÇ║ Checkbox Component ΓÇ║ accepts size="sm" (retry #1)
+  -  250 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:67:5 ΓÇ║ Checkbox Component ΓÇ║ accepts size="md" (retry #1)
+  -  251 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:67:5 ΓÇ║ Checkbox Component ΓÇ║ accepts size="lg" (retry #1)
+  -  252 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:67:5 ΓÇ║ Checkbox Component ΓÇ║ accepts size="xl" (retry #1)
+  -  253 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:75:5 ΓÇ║ Checkbox Component ΓÇ║ accepts color="primary" (retry #1)
+  -  254 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:75:5 ΓÇ║ Checkbox Component ΓÇ║ accepts color="success" (retry #1)
+  -  255 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:75:5 ΓÇ║ Checkbox Component ΓÇ║ accepts color="warning" (retry #1)
+  -  256 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:75:5 ΓÇ║ Checkbox Component ΓÇ║ accepts color="danger" (retry #1)
+  -  257 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:82:3 ΓÇ║ Checkbox Component ΓÇ║ required attribute is accepted (retry #1)
+  -  258 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:87:3 ΓÇ║ Checkbox Component ΓÇ║ invalid attribute shows error-message (retry #1)
+  -  259 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:96:5 ΓÇ║ Checkbox Component ΓÇ║ accepts variant="default" (retry #1)
+  -  260 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:96:5 ΓÇ║ Checkbox Component ΓÇ║ accepts variant="filled" (retry #1)
+  -  261 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:96:5 ΓÇ║ Checkbox Component ΓÇ║ accepts variant="outlined" (retry #1)
+  -  262 [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:96:5 ΓÇ║ Checkbox Component ΓÇ║ accepts variant="minimal" (retry #1)
+  Γ£ÿ  263 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:24:3 ΓÇ║ Dropdown Component ΓÇ║ renders on the page (7ms)
+  -  264 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:28:3 ΓÇ║ Dropdown Component ΓÇ║ has a placeholder attribute
+  -  265 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:34:3 ΓÇ║ Dropdown Component ΓÇ║ opens when clicked and fires uiOpen event
+  -  266 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:46:3 ΓÇ║ Dropdown Component ΓÇ║ options attribute is accepted (JSON array)
+  -  267 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:57:3 ΓÇ║ Dropdown Component ΓÇ║ disabled attribute is reflected
+  -  268 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:63:3 ΓÇ║ Dropdown Component ΓÇ║ searchable attribute is accepted
+  -  269 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:69:3 ΓÇ║ Dropdown Component ΓÇ║ multi-select attribute is accepted
+  -  270 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:75:3 ΓÇ║ Dropdown Component ΓÇ║ clearable attribute is accepted
+  -  271 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:82:5 ΓÇ║ Dropdown Component ΓÇ║ accepts size="sm"
+  -  272 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:82:5 ΓÇ║ Dropdown Component ΓÇ║ accepts size="md"
+  -  273 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:82:5 ΓÇ║ Dropdown Component ΓÇ║ accepts size="lg"
+  -  274 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:90:5 ΓÇ║ Dropdown Component ΓÇ║ accepts appearance="dropdown"
+  -  275 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:90:5 ΓÇ║ Dropdown Component ΓÇ║ accepts appearance="button"
+  -  276 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:97:3 ΓÇ║ Dropdown Component ΓÇ║ selecting an option fires uiChange event
+  Γ£ÿ  277 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:24:3 ΓÇ║ Dropdown Component ΓÇ║ renders on the page (retry #1) (1ms)
+  -  278 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:28:3 ΓÇ║ Dropdown Component ΓÇ║ has a placeholder attribute (retry #1)
+  -  279 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:34:3 ΓÇ║ Dropdown Component ΓÇ║ opens when clicked and fires uiOpen event (retry #1)
+  -  280 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:46:3 ΓÇ║ Dropdown Component ΓÇ║ options attribute is accepted (JSON array) (retry #1)
+  -  281 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:57:3 ΓÇ║ Dropdown Component ΓÇ║ disabled attribute is reflected (retry #1)
+  -  282 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:63:3 ΓÇ║ Dropdown Component ΓÇ║ searchable attribute is accepted (retry #1)
+  -  283 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:69:3 ΓÇ║ Dropdown Component ΓÇ║ multi-select attribute is accepted (retry #1)
+  -  284 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:75:3 ΓÇ║ Dropdown Component ΓÇ║ clearable attribute is accepted (retry #1)
+  -  285 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:82:5 ΓÇ║ Dropdown Component ΓÇ║ accepts size="sm" (retry #1)
+  -  286 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:82:5 ΓÇ║ Dropdown Component ΓÇ║ accepts size="md" (retry #1)
+  -  287 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:82:5 ΓÇ║ Dropdown Component ΓÇ║ accepts size="lg" (retry #1)
+  -  288 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:90:5 ΓÇ║ Dropdown Component ΓÇ║ accepts appearance="dropdown" (retry #1)
+  -  289 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:90:5 ΓÇ║ Dropdown Component ΓÇ║ accepts appearance="button" (retry #1)
+  -  290 [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:97:3 ΓÇ║ Dropdown Component ΓÇ║ selecting an option fires uiChange event (retry #1)
+  Γ£ÿ  291 [chromium] ΓÇ║ tests\e2e\input.spec.ts:24:3 ΓÇ║ Input Component ΓÇ║ renders on the page (2ms)
+  -  292 [chromium] ΓÇ║ tests\e2e\input.spec.ts:28:3 ΓÇ║ Input Component ΓÇ║ has a label attribute
+  -  293 [chromium] ΓÇ║ tests\e2e\input.spec.ts:33:3 ΓÇ║ Input Component ΓÇ║ has a placeholder attribute
+  -  294 [chromium] ΓÇ║ tests\e2e\input.spec.ts:39:3 ΓÇ║ Input Component ΓÇ║ inner native input accepts typed text and fires uiInput event
+  -  295 [chromium] ΓÇ║ tests\e2e\input.spec.ts:81:3 ΓÇ║ Input Component ΓÇ║ disabled attribute is reflected
+  -  296 [chromium] ΓÇ║ tests\e2e\input.spec.ts:86:3 ΓÇ║ Input Component ΓÇ║ readonly attribute is reflected
+  -  297 [chromium] ΓÇ║ tests\e2e\input.spec.ts:92:3 ΓÇ║ Input Component ΓÇ║ error attribute is reflected
+  -  298 [chromium] ΓÇ║ tests\e2e\input.spec.ts:97:3 ΓÇ║ Input Component ΓÇ║ required attribute is reflected
+  -  299 [chromium] ΓÇ║ tests\e2e\input.spec.ts:103:3 ΓÇ║ Input Component ΓÇ║ clearable attribute is accepted
+  -  300 [chromium] ΓÇ║ tests\e2e\input.spec.ts:110:5 ΓÇ║ Input Component ΓÇ║ accepts type="text"
+  -  301 [chromium] ΓÇ║ tests\e2e\input.spec.ts:110:5 ΓÇ║ Input Component ΓÇ║ accepts type="email"
+  -  302 [chromium] ΓÇ║ tests\e2e\input.spec.ts:110:5 ΓÇ║ Input Component ΓÇ║ accepts type="password"
+  -  303 [chromium] ΓÇ║ tests\e2e\input.spec.ts:110:5 ΓÇ║ Input Component ΓÇ║ accepts type="number"
+  -  304 [chromium] ΓÇ║ tests\e2e\input.spec.ts:110:5 ΓÇ║ Input Component ΓÇ║ accepts type="search"
+  -  305 [chromium] ΓÇ║ tests\e2e\input.spec.ts:110:5 ΓÇ║ Input Component ΓÇ║ accepts type="url"
+  -  306 [chromium] ΓÇ║ tests\e2e\input.spec.ts:118:5 ΓÇ║ Input Component ΓÇ║ accepts size="sm"
+  -  307 [chromium] ΓÇ║ tests\e2e\input.spec.ts:118:5 ΓÇ║ Input Component ΓÇ║ accepts size="md"
+  -  308 [chromium] ΓÇ║ tests\e2e\input.spec.ts:118:5 ΓÇ║ Input Component ΓÇ║ accepts size="lg"
+  -  309 [chromium] ΓÇ║ tests\e2e\input.spec.ts:126:5 ΓÇ║ Input Component ΓÇ║ accepts variant="default"
+  -  310 [chromium] ΓÇ║ tests\e2e\input.spec.ts:126:5 ΓÇ║ Input Component ΓÇ║ accepts variant="filled"
+  -  311 [chromium] ΓÇ║ tests\e2e\input.spec.ts:126:5 ΓÇ║ Input Component ΓÇ║ accepts variant="underlined"
+  -  312 [chromium] ΓÇ║ tests\e2e\input.spec.ts:133:3 ΓÇ║ Input Component ΓÇ║ prefix-icon attribute is accepted
+  Γ£ÿ  313 [chromium] ΓÇ║ tests\e2e\input.spec.ts:24:3 ΓÇ║ Input Component ΓÇ║ renders on the page (retry #1) (2ms)
+  -  314 [chromium] ΓÇ║ tests\e2e\input.spec.ts:28:3 ΓÇ║ Input Component ΓÇ║ has a label attribute (retry #1)
+  -  315 [chromium] ΓÇ║ tests\e2e\input.spec.ts:33:3 ΓÇ║ Input Component ΓÇ║ has a placeholder attribute (retry #1)
+  -  316 [chromium] ΓÇ║ tests\e2e\input.spec.ts:39:3 ΓÇ║ Input Component ΓÇ║ inner native input accepts typed text and fires uiInput event (retry #1)
+  -  317 [chromium] ΓÇ║ tests\e2e\input.spec.ts:81:3 ΓÇ║ Input Component ΓÇ║ disabled attribute is reflected (retry #1)
+  -  318 [chromium] ΓÇ║ tests\e2e\input.spec.ts:86:3 ΓÇ║ Input Component ΓÇ║ readonly attribute is reflected (retry #1)
+  -  319 [chromium] ΓÇ║ tests\e2e\input.spec.ts:92:3 ΓÇ║ Input Component ΓÇ║ error attribute is reflected (retry #1)
+  -  320 [chromium] ΓÇ║ tests\e2e\input.spec.ts:97:3 ΓÇ║ Input Component ΓÇ║ required attribute is reflected (retry #1)
+  -  321 [chromium] ΓÇ║ tests\e2e\input.spec.ts:103:3 ΓÇ║ Input Component ΓÇ║ clearable attribute is accepted (retry #1)
+  -  322 [chromium] ΓÇ║ tests\e2e\input.spec.ts:110:5 ΓÇ║ Input Component ΓÇ║ accepts type="text" (retry #1)
+  -  323 [chromium] ΓÇ║ tests\e2e\input.spec.ts:110:5 ΓÇ║ Input Component ΓÇ║ accepts type="email" (retry #1)
+  -  324 [chromium] ΓÇ║ tests\e2e\input.spec.ts:110:5 ΓÇ║ Input Component ΓÇ║ accepts type="password" (retry #1)
+  -  325 [chromium] ΓÇ║ tests\e2e\input.spec.ts:110:5 ΓÇ║ Input Component ΓÇ║ accepts type="number" (retry #1)
+  -  326 [chromium] ΓÇ║ tests\e2e\input.spec.ts:110:5 ΓÇ║ Input Component ΓÇ║ accepts type="search" (retry #1)
+  -  327 [chromium] ΓÇ║ tests\e2e\input.spec.ts:110:5 ΓÇ║ Input Component ΓÇ║ accepts type="url" (retry #1)
+  -  328 [chromium] ΓÇ║ tests\e2e\input.spec.ts:118:5 ΓÇ║ Input Component ΓÇ║ accepts size="sm" (retry #1)
+  -  329 [chromium] ΓÇ║ tests\e2e\input.spec.ts:118:5 ΓÇ║ Input Component ΓÇ║ accepts size="md" (retry #1)
+  -  330 [chromium] ΓÇ║ tests\e2e\input.spec.ts:118:5 ΓÇ║ Input Component ΓÇ║ accepts size="lg" (retry #1)
+  -  331 [chromium] ΓÇ║ tests\e2e\input.spec.ts:126:5 ΓÇ║ Input Component ΓÇ║ accepts variant="default" (retry #1)
+  -  332 [chromium] ΓÇ║ tests\e2e\input.spec.ts:126:5 ΓÇ║ Input Component ΓÇ║ accepts variant="filled" (retry #1)
+  -  333 [chromium] ΓÇ║ tests\e2e\input.spec.ts:126:5 ΓÇ║ Input Component ΓÇ║ accepts variant="underlined" (retry #1)
+  -  334 [chromium] ΓÇ║ tests\e2e\input.spec.ts:133:3 ΓÇ║ Input Component ΓÇ║ prefix-icon attribute is accepted (retry #1)
+  Γ£ÿ  335 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:24:3 ΓÇ║ Radio Component ΓÇ║ renders on the page (1ms)
+  -  336 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:29:3 ΓÇ║ Radio Component ΓÇ║ fires uiChange event when clicked
+  -  337 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:40:3 ΓÇ║ Radio Component ΓÇ║ checked attribute is accepted
+  -  338 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:45:3 ΓÇ║ Radio Component ΓÇ║ disabled attribute is reflected
+  -  339 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:50:3 ΓÇ║ Radio Component ΓÇ║ readonly attribute is accepted
+  -  340 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:55:3 ΓÇ║ Radio Component ΓÇ║ required attribute is accepted
+  -  341 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:60:3 ΓÇ║ Radio Component ΓÇ║ error attribute is accepted
+  -  342 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:67:5 ΓÇ║ Radio Component ΓÇ║ accepts size="sm"
+  -  343 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:67:5 ΓÇ║ Radio Component ΓÇ║ accepts size="md"
+  -  344 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:67:5 ΓÇ║ Radio Component ΓÇ║ accepts size="lg"
+  -  345 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:75:5 ΓÇ║ Radio Component ΓÇ║ accepts color="primary"
+  -  346 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:75:5 ΓÇ║ Radio Component ΓÇ║ accepts color="success"
+  -  347 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:75:5 ΓÇ║ Radio Component ΓÇ║ accepts color="warning"
+  -  348 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:75:5 ΓÇ║ Radio Component ΓÇ║ accepts color="danger"
+  -  349 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:83:5 ΓÇ║ Radio Component ΓÇ║ accepts variant="default"
+  -  350 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:83:5 ΓÇ║ Radio Component ΓÇ║ accepts variant="outline"
+  -  351 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:83:5 ΓÇ║ Radio Component ΓÇ║ accepts variant="filled"
+  -  352 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:83:5 ΓÇ║ Radio Component ΓÇ║ accepts variant="card"
+  -  353 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:90:3 ΓÇ║ Radio Component ΓÇ║ name and value attributes are reflected
+  Γ£ÿ  354 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:24:3 ΓÇ║ Radio Component ΓÇ║ renders on the page (retry #1) (2ms)
+  -  355 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:29:3 ΓÇ║ Radio Component ΓÇ║ fires uiChange event when clicked (retry #1)
+  -  356 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:40:3 ΓÇ║ Radio Component ΓÇ║ checked attribute is accepted (retry #1)
+  -  357 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:45:3 ΓÇ║ Radio Component ΓÇ║ disabled attribute is reflected (retry #1)
+  -  358 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:50:3 ΓÇ║ Radio Component ΓÇ║ readonly attribute is accepted (retry #1)
+  -  359 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:55:3 ΓÇ║ Radio Component ΓÇ║ required attribute is accepted (retry #1)
+  -  360 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:60:3 ΓÇ║ Radio Component ΓÇ║ error attribute is accepted (retry #1)
+  -  361 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:67:5 ΓÇ║ Radio Component ΓÇ║ accepts size="sm" (retry #1)
+  -  362 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:67:5 ΓÇ║ Radio Component ΓÇ║ accepts size="md" (retry #1)
+  -  363 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:67:5 ΓÇ║ Radio Component ΓÇ║ accepts size="lg" (retry #1)
+  -  364 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:75:5 ΓÇ║ Radio Component ΓÇ║ accepts color="primary" (retry #1)
+  -  365 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:75:5 ΓÇ║ Radio Component ΓÇ║ accepts color="success" (retry #1)
+  -  366 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:75:5 ΓÇ║ Radio Component ΓÇ║ accepts color="warning" (retry #1)
+  -  367 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:75:5 ΓÇ║ Radio Component ΓÇ║ accepts color="danger" (retry #1)
+  -  368 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:83:5 ΓÇ║ Radio Component ΓÇ║ accepts variant="default" (retry #1)
+  -  369 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:83:5 ΓÇ║ Radio Component ΓÇ║ accepts variant="outline" (retry #1)
+  -  370 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:83:5 ΓÇ║ Radio Component ΓÇ║ accepts variant="filled" (retry #1)
+  -  371 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:83:5 ΓÇ║ Radio Component ΓÇ║ accepts variant="card" (retry #1)
+  -  372 [chromium] ΓÇ║ tests\e2e\radio.spec.ts:90:3 ΓÇ║ Radio Component ΓÇ║ name and value attributes are reflected (retry #1)
+  Γ£ÿ  373 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:24:3 ΓÇ║ Switch Component ΓÇ║ renders on the page (1ms)
+  -  374 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:28:3 ΓÇ║ Switch Component ΓÇ║ has a label attribute
+  -  375 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:34:3 ΓÇ║ Switch Component ΓÇ║ fires uiChange event when toggled
+  -  376 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:45:3 ΓÇ║ Switch Component ΓÇ║ checked attribute can be set
+  -  377 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:51:3 ΓÇ║ Switch Component ΓÇ║ disabled attribute prevents toggle (disabled reflected)
+  -  378 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:58:5 ΓÇ║ Switch Component ΓÇ║ accepts size="sm"
+  -  379 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:58:5 ΓÇ║ Switch Component ΓÇ║ accepts size="md"
+  -  380 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:58:5 ΓÇ║ Switch Component ΓÇ║ accepts size="lg"
+  -  381 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:66:5 ΓÇ║ Switch Component ΓÇ║ accepts color="primary"
+  -  382 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:66:5 ΓÇ║ Switch Component ΓÇ║ accepts color="success"
+  -  383 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:66:5 ΓÇ║ Switch Component ΓÇ║ accepts color="warning"
+  -  384 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:66:5 ΓÇ║ Switch Component ΓÇ║ accepts color="danger"
+  -  385 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:74:5 ΓÇ║ Switch Component ΓÇ║ accepts label-position="left"
+  -  386 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:74:5 ΓÇ║ Switch Component ΓÇ║ accepts label-position="right"
+  Γ£ÿ  387 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:24:3 ΓÇ║ Switch Component ΓÇ║ renders on the page (retry #1) (4ms)
+  -  388 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:28:3 ΓÇ║ Switch Component ΓÇ║ has a label attribute (retry #1)
+  -  389 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:34:3 ΓÇ║ Switch Component ΓÇ║ fires uiChange event when toggled (retry #1)
+  -  390 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:45:3 ΓÇ║ Switch Component ΓÇ║ checked attribute can be set (retry #1)
+  -  391 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:51:3 ΓÇ║ Switch Component ΓÇ║ disabled attribute prevents toggle (disabled reflected) (retry #1)
+  -  392 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:58:5 ΓÇ║ Switch Component ΓÇ║ accepts size="sm" (retry #1)
+  -  393 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:58:5 ΓÇ║ Switch Component ΓÇ║ accepts size="md" (retry #1)
+  -  394 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:58:5 ΓÇ║ Switch Component ΓÇ║ accepts size="lg" (retry #1)
+  -  395 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:66:5 ΓÇ║ Switch Component ΓÇ║ accepts color="primary" (retry #1)
+  -  396 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:66:5 ΓÇ║ Switch Component ΓÇ║ accepts color="success" (retry #1)
+  -  397 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:66:5 ΓÇ║ Switch Component ΓÇ║ accepts color="warning" (retry #1)
+  -  398 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:66:5 ΓÇ║ Switch Component ΓÇ║ accepts color="danger" (retry #1)
+  -  399 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:74:5 ΓÇ║ Switch Component ΓÇ║ accepts label-position="left" (retry #1)
+  -  400 [chromium] ΓÇ║ tests\e2e\switch.spec.ts:74:5 ΓÇ║ Switch Component ΓÇ║ accepts label-position="right" (retry #1)
+
+
+  1) [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:36:3 ΓÇ║ Accordion Component ΓÇ║ renders on the page ΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\accordion-Accordion-Component-renders-on-the-page-chromium\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\accordion-Accordion-Component-renders-on-the-page-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\accordion-Accordion-Component-renders-on-the-page-chromium\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\accordion-Accordion-Component-renders-on-the-page-chromium-retry1\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\accordion-Accordion-Component-renders-on-the-page-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\accordion-Accordion-Component-renders-on-the-page-chromium-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  2) [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:24:3 ΓÇ║ Avatar Component ΓÇ║ renders on the page 
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\avatar-badge-progress-icon-8eb8f-mponent-renders-on-the-page-chromium\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\avatar-badge-progress-icon-8eb8f-mponent-renders-on-the-page-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\avatar-badge-progress-icon-8eb8f-mponent-renders-on-the-page-chromium\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\avatar-badge-progress-icon-8eb8f-mponent-renders-on-the-page-chromium-retry1\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\avatar-badge-progress-icon-8eb8f-mponent-renders-on-the-page-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\avatar-badge-progress-icon-8eb8f-mponent-renders-on-the-page-chromium-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  3) [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:81:3 ΓÇ║ Badge Component ΓÇ║ renders on the page 
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\avatar-badge-progress-icon-fb941-mponent-renders-on-the-page-chromium\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\avatar-badge-progress-icon-fb941-mponent-renders-on-the-page-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\avatar-badge-progress-icon-fb941-mponent-renders-on-the-page-chromium\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\avatar-badge-progress-icon-fb941-mponent-renders-on-the-page-chromium-retry1\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\avatar-badge-progress-icon-fb941-mponent-renders-on-the-page-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\avatar-badge-progress-icon-fb941-mponent-renders-on-the-page-chromium-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  4) [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:136:3 ΓÇ║ Progress Component ΓÇ║ renders on the page 
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\avatar-badge-progress-icon-d1efb-mponent-renders-on-the-page-chromium\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\avatar-badge-progress-icon-d1efb-mponent-renders-on-the-page-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\avatar-badge-progress-icon-d1efb-mponent-renders-on-the-page-chromium\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\avatar-badge-progress-icon-d1efb-mponent-renders-on-the-page-chromium-retry1\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\avatar-badge-progress-icon-d1efb-mponent-renders-on-the-page-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\avatar-badge-progress-icon-d1efb-mponent-renders-on-the-page-chromium-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  5) [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:175:3 ΓÇ║ Icon Component ΓÇ║ renders on the page 
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\avatar-badge-progress-icon-a3e91-mponent-renders-on-the-page-chromium\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\avatar-badge-progress-icon-a3e91-mponent-renders-on-the-page-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\avatar-badge-progress-icon-a3e91-mponent-renders-on-the-page-chromium\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\avatar-badge-progress-icon-a3e91-mponent-renders-on-the-page-chromium-retry1\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\avatar-badge-progress-icon-a3e91-mponent-renders-on-the-page-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\avatar-badge-progress-icon-a3e91-mponent-renders-on-the-page-chromium-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  6) [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:24:3 ΓÇ║ ButtonToggle Component ΓÇ║ renders on the page 
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\button-toggle-ButtonToggle-Component-renders-on-the-page-chromium\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\button-toggle-ButtonToggle-Component-renders-on-the-page-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\button-toggle-ButtonToggle-Component-renders-on-the-page-chromium\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\button-toggle-ButtonToggle-Component-renders-on-the-page-chromium-retry1\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\button-toggle-ButtonToggle-Component-renders-on-the-page-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\button-toggle-ButtonToggle-Component-renders-on-the-page-chromium-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  7) [chromium] ΓÇ║ tests\e2e\button.spec.ts:23:3 ΓÇ║ Button Component ΓÇ║ renders the preview button ΓöÇΓöÇΓöÇΓöÇ
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\button-Button-Component-renders-the-preview-button-chromium\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\button-Button-Component-renders-the-preview-button-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\button-Button-Component-renders-the-preview-button-chromium\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\button-Button-Component-renders-the-preview-button-chromium-retry1\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\button-Button-Component-renders-the-preview-button-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\button-Button-Component-renders-the-preview-button-chromium-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  8) [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:24:3 ΓÇ║ Checkbox Component ΓÇ║ renders on the page ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\checkbox-Checkbox-Component-renders-on-the-page-chromium\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\checkbox-Checkbox-Component-renders-on-the-page-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\checkbox-Checkbox-Component-renders-on-the-page-chromium\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\checkbox-Checkbox-Component-renders-on-the-page-chromium-retry1\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\checkbox-Checkbox-Component-renders-on-the-page-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\checkbox-Checkbox-Component-renders-on-the-page-chromium-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  9) [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:24:3 ΓÇ║ Dropdown Component ΓÇ║ renders on the page ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\dropdown-Dropdown-Component-renders-on-the-page-chromium\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\dropdown-Dropdown-Component-renders-on-the-page-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\dropdown-Dropdown-Component-renders-on-the-page-chromium\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\dropdown-Dropdown-Component-renders-on-the-page-chromium-retry1\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\dropdown-Dropdown-Component-renders-on-the-page-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\dropdown-Dropdown-Component-renders-on-the-page-chromium-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  10) [chromium] ΓÇ║ tests\e2e\input.spec.ts:24:3 ΓÇ║ Input Component ΓÇ║ renders on the page ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\input-Input-Component-renders-on-the-page-chromium\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\input-Input-Component-renders-on-the-page-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\input-Input-Component-renders-on-the-page-chromium\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\input-Input-Component-renders-on-the-page-chromium-retry1\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\input-Input-Component-renders-on-the-page-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\input-Input-Component-renders-on-the-page-chromium-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  11) [chromium] ΓÇ║ tests\e2e\radio.spec.ts:24:3 ΓÇ║ Radio Component ΓÇ║ renders on the page ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\radio-Radio-Component-renders-on-the-page-chromium\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\radio-Radio-Component-renders-on-the-page-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\radio-Radio-Component-renders-on-the-page-chromium\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\radio-Radio-Component-renders-on-the-page-chromium-retry1\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\radio-Radio-Component-renders-on-the-page-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\radio-Radio-Component-renders-on-the-page-chromium-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  12) [chromium] ΓÇ║ tests\e2e\switch.spec.ts:24:3 ΓÇ║ Switch Component ΓÇ║ renders on the page ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\switch-Switch-Component-renders-on-the-page-chromium\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\switch-Switch-Component-renders-on-the-page-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\switch-Switch-Component-renders-on-the-page-chromium\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Retry #1 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+    Error: "context" and "page" fixtures are not supported in "beforeAll" since they are created on a per-test basis.
+    If you would like to reuse a single page between tests, create context manually with browser.newContext(). See https://aka.ms/playwright/reuse-page for details.
+    If you would like to configure your page before each test, do that in beforeEach hook instead.
+
+    Error Context: test-results\switch-Switch-Component-renders-on-the-page-chromium-retry1\error-context.md
+
+    attachment #2: trace (application/zip) ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    test-results\switch-Switch-Component-renders-on-the-page-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\switch-Switch-Component-renders-on-the-page-chromium-retry1\trace.zip
+
+    ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+  12 failed
+    [chromium] ΓÇ║ tests\e2e\accordion.spec.ts:36:3 ΓÇ║ Accordion Component ΓÇ║ renders on the page ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:24:3 ΓÇ║ Avatar Component ΓÇ║ renders on the page 
+    [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:81:3 ΓÇ║ Badge Component ΓÇ║ renders on the page 
+    [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:136:3 ΓÇ║ Progress Component ΓÇ║ renders on the page 
+    [chromium] ΓÇ║ tests\e2e\avatar-badge-progress-icon.spec.ts:175:3 ΓÇ║ Icon Component ΓÇ║ renders on the page 
+    [chromium] ΓÇ║ tests\e2e\button-toggle.spec.ts:24:3 ΓÇ║ ButtonToggle Component ΓÇ║ renders on the page 
+    [chromium] ΓÇ║ tests\e2e\button.spec.ts:23:3 ΓÇ║ Button Component ΓÇ║ renders the preview button ΓöÇΓöÇΓöÇΓöÇΓöÇ
+    [chromium] ΓÇ║ tests\e2e\checkbox.spec.ts:24:3 ΓÇ║ Checkbox Component ΓÇ║ renders on the page ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    [chromium] ΓÇ║ tests\e2e\dropdown.spec.ts:24:3 ΓÇ║ Dropdown Component ΓÇ║ renders on the page ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    [chromium] ΓÇ║ tests\e2e\input.spec.ts:24:3 ΓÇ║ Input Component ΓÇ║ renders on the page ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    [chromium] ΓÇ║ tests\e2e\radio.spec.ts:24:3 ΓÇ║ Radio Component ΓÇ║ renders on the page ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+    [chromium] ΓÇ║ tests\e2e\switch.spec.ts:24:3 ΓÇ║ Switch Component ΓÇ║ renders on the page ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+  188 did not run

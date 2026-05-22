@@ -316,7 +316,7 @@ export function initTreeGlobals() {
 
   function generateStressTestData() {
     let total = 0;
-    function createNodes(depth: number, maxDepth: number) {
+    function createNodes(depth: number, maxDepth: number): any[] {
       if (depth > maxDepth) return [];
       const count = depth < 3 ? 3 : depth < 6 ? 2 : 1;
       const nodes = [];

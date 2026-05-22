@@ -563,22 +563,6 @@ const componentRegistry: Record<string, DynamicMetadata> = {
       <ui-button-toggle value="opt3">Option C</ui-button-toggle>
     `,
   },
-  'checkbox-group': {
-    description: 'A fieldset-style container grouping multiple checkboxes with shared name, value binding, and accessible validation.',
-    props: [
-      { name: 'label', type: 'string', label: 'Group Label', defaultValue: 'Select Features', description: 'Label for the group' },
-      { name: 'helperText', type: 'string', label: 'Helper Text', defaultValue: 'Select at least one', description: 'Hint text below the group' },
-      { name: 'disabled', type: 'boolean', label: 'Disabled', defaultValue: false, description: 'Disables all checkboxes in group' },
-      { name: 'required', type: 'boolean', label: 'Required', defaultValue: false, description: 'Marks the group as required' },
-      { name: 'invalid', type: 'boolean', label: 'Invalid', defaultValue: false, description: 'Shows validation error' },
-      { name: 'errorMessage', type: 'string', label: 'Error Message', defaultValue: 'Please select an option', description: 'Error text shown when invalid' },
-    ],
-    children: `
-      <ui-checkbox value="dark-mode">Dark Mode</ui-checkbox>
-      <ui-checkbox value="notifications">Notifications</ui-checkbox>
-      <ui-checkbox value="analytics">Analytics</ui-checkbox>
-    `,
-  },
   'code-preview': {
     description: 'A multi-language code block viewer with tabs for HTML, CSS, JS, and TypeScript, syntax highlighting, and copy support.',
     props: [
@@ -694,29 +678,6 @@ const componentRegistry: Record<string, DynamicMetadata> = {
       { name: 'spin', type: 'boolean', label: 'Spin', defaultValue: false, description: 'Continuously rotates the icon' },
     ],
   },
-  'image-button': {
-    description: 'A rich image tile button with hover effects, labels, aspect ratio control, and configurable overlay modes.',
-    props: [
-      { name: 'src', type: 'string', label: 'Image URL', defaultValue: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&auto=format&fit=crop', description: 'Image source URL' },
-      { name: 'alt', type: 'string', label: 'Alt Text', defaultValue: 'Mountain Lake', description: 'Accessibility alt text' },
-      { name: 'label', type: 'string', label: 'Label', defaultValue: 'Mountain Lake', description: 'Text label on the button' },
-      { name: 'description', type: 'string', label: 'Description', defaultValue: 'A serene alpine landscape', description: 'Subtitle text' },
-      { name: 'effect', type: 'select', label: 'Hover Effect', defaultValue: 'zoom', options: ['zoom', 'lift', 'brighten', 'none'], description: 'Image hover interaction' },
-      { name: 'ratio', type: 'select', label: 'Aspect Ratio', defaultValue: 'video', options: ['square', 'video', 'portrait', 'auto'], description: 'Image container ratio' },
-      { name: 'labelMode', type: 'select', label: 'Label Mode', defaultValue: 'hover', options: ['always', 'hover'], description: 'When to show the label' },
-      { name: 'size', type: 'select', label: 'Size', defaultValue: 'md', options: ['sm', 'md', 'lg', 'xl'], description: 'Component size' },
-    ],
-  },
-  'input-pair': {
-    description: 'A side-by-side dual input layout with individual labels, values, and placeholder support in a single row.',
-    props: [
-      { name: 'labelLeft', type: 'string', label: 'Left Label', defaultValue: 'First Name', description: 'Label for the left input' },
-      { name: 'labelRight', type: 'string', label: 'Right Label', defaultValue: 'Last Name', description: 'Label for the right input' },
-      { name: 'placeholderLeft', type: 'string', label: 'Left Placeholder', defaultValue: 'Enter first name', description: 'Placeholder for left input' },
-      { name: 'placeholderRight', type: 'string', label: 'Right Placeholder', defaultValue: 'Enter last name', description: 'Placeholder for right input' },
-      { name: 'label', type: 'string', label: 'Group Label', defaultValue: 'Full Name', description: 'Optional group heading label' },
-    ],
-  },
   'list-group': {
     description: 'A structured list group container with headers, item slots, and flexible padding for sidebar menus and content lists.',
     props: [
@@ -739,21 +700,6 @@ const componentRegistry: Record<string, DynamicMetadata> = {
       { name: 'label', type: 'string', label: 'Label', defaultValue: 'Quantity', description: 'Input label' },
       { name: 'prefixIcon', type: 'string', label: 'Prefix Icon', defaultValue: 'package', description: 'Icon shown at left of input' },
     ],
-  },
-  'radio-group': {
-    description: 'An accessible radio button group with shared value binding, validation, orientation, and label support.',
-    props: [
-      { name: 'label', type: 'string', label: 'Group Label', defaultValue: 'Select Plan', description: 'Label for the radio group' },
-      { name: 'value', type: 'string', label: 'Selected Value', defaultValue: 'pro', description: 'Currently selected radio value' },
-      { name: 'disabled', type: 'boolean', label: 'Disabled', defaultValue: false, description: 'Disables all radios in group' },
-      { name: 'invalid', type: 'boolean', label: 'Invalid', defaultValue: false, description: 'Shows validation error state' },
-      { name: 'helperText', type: 'string', label: 'Helper Text', defaultValue: 'Choose a billing plan', description: 'Hint text below the group' },
-    ],
-    children: `
-      <ui-radio value="free">Free</ui-radio>
-      <ui-radio value="pro">Pro</ui-radio>
-      <ui-radio value="enterprise">Enterprise</ui-radio>
-    `,
   },
   'smart-location-dropdown': {
     description: 'An intelligent location-aware dropdown with geolocation support, search filtering, and hierarchical region selection.',

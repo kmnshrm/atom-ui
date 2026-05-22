@@ -129,3 +129,14 @@
   color: #059669;
   background: rgba(5,150,105,0.06);
 }
+
+/* Global demo grid for card and card-like components spacing */
+.demo-renderer-content .demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
