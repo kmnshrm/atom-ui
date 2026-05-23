@@ -7,6 +7,10 @@ import Home from './pages/Home';
 import Overview from './pages/Overview';
 import Documentation from './pages/Documentation';
 import DesignHouse from './pages/DesignHouse';
+import Installation from './pages/Installation';
+import Pricing from './pages/Pricing';
+import ComponentsGuide from './pages/ComponentsGuide';
+import InteractiveDocsPage from './pages/InteractiveDocsPage';
 
 // Component Pages — lazy loaded for performance
 const ButtonPage = lazy(() => import('./pages/components/ButtonPage'));
@@ -76,18 +80,75 @@ function ComponentPlaceholder({ id }: { id: string }) {
   );
 }
 
+const STATIC_PAGES = new Set(['home', 'overview', 'documentation', 'design-house', 'installation', 'components-guide', 'pricing', 'interactive-docs']);
+
+const getPageIdFromHash = (hash: string): string => {
+  const cleaned = hash.replace(/^#\/?/, '');
+  if (!cleaned) return 'home';
+
+  // Interactive Docs format: interactive-docs/{id} or interactive-docs
+  if (cleaned.startsWith('interactive-docs')) return 'interactive-docs';
+
+  // Component tab format: component/{tab}/{id}
+  const compMatch = cleaned.match(/^component\/[^/]+\/(.+)$/);
+  if (compMatch) return compMatch[1];
+
+  // Static / legacy flat format
+  if (cleaned.includes('/')) {
+    const parts = cleaned.split('/');
+    return parts[parts.length - 1] || 'home';
+  }
+  return cleaned;
+};
+
+const getHashFromPageId = (id: string): string => {
+  if (id === 'home') return '#/';
+  if (STATIC_PAGES.has(id)) return `#/${id}`;
+  // Component pages always open on the playground tab
+  return `#/component/playground/${id}`;
+};
+
 export default function App() {
   const navRef = useRef<any>(null);
   const [collapsed, setCollapsed] = useState(true);
-  const [activeItem, setActiveItem] = useState('home');
+  const [activeItem, setActiveItem] = useState(() => {
+    return getPageIdFromHash(window.location.hash);
+  });
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+
+  const navigate = (id: string) => {
+    window.location.hash = getHashFromPageId(id);
+  };
 
   useEffect(() => {
     document.body.classList.remove('theme-light', 'theme-dark');
     document.body.classList.add(`theme-${theme}`);
   }, [theme]);
+
+  // Sync state with hash change
+  useEffect(() => {
+    const handleHashChange = () => {
+      const pageId = getPageIdFromHash(window.location.hash);
+      setActiveItem(pageId);
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  // Listen to custom global navigation event
+  useEffect(() => {
+    const handleGlobalNav = (e: Event) => {
+      const id = (e as CustomEvent).detail?.id;
+      if (id) {
+        navigate(id);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+    window.addEventListener('appNavigate', handleGlobalNav);
+    return () => window.removeEventListener('appNavigate', handleGlobalNav);
+  }, []);
 
   useEffect(() => {
     if (navRef.current) {
@@ -99,7 +160,7 @@ export default function App() {
 
       const handleNavClick = (e: any) => {
         const id = e.detail?.id;
-        if (id) setActiveItem(id);
+        if (id) navigate(id);
       };
 
       const handleNavToggle = (e: any) => {
@@ -121,10 +182,14 @@ export default function App() {
   const renderContent = () => {
     // Static pages
     switch (activeItem) {
-      case 'home': return <Home />;
+      case 'home': return <Home onNavigate={navigate} />;
       case 'overview': return <Overview />;
       case 'documentation': return <Documentation />;
       case 'design-house': return <DesignHouse />;
+      case 'installation': return <Installation />;
+      case 'pricing': return <Pricing />;
+      case 'components-guide': return <ComponentsGuide onNavigate={navigate} />;
+      case 'interactive-docs': return <InteractiveDocsPage />;
     }
 
     // Component playground pages
@@ -138,7 +203,7 @@ export default function App() {
     }
 
     // Fallback to Dynamic Design Studio for all other library components
-    const isStatic = ['home', 'overview', 'documentation', 'design-house', 'installation', 'components-guide'].includes(activeItem);
+    const isStatic = STATIC_PAGES.has(activeItem);
     if (!isStatic) {
       return (
         <Suspense fallback={<PageLoader />}>
@@ -152,8 +217,9 @@ export default function App() {
   };
 
   const isHome = activeItem === 'home';
-  const isStaticPage = ['home', 'overview', 'documentation', 'design-house', 'installation', 'components-guide'].includes(activeItem);
-  const isComponentPage = !isStaticPage;
+  const isStaticPage = STATIC_PAGES.has(activeItem);
+  const isInteractiveDocs = activeItem === 'interactive-docs';
+  const isComponentPage = !isStaticPage || isInteractiveDocs;
 
   return (
     <div className={`app-container layout-sidebar ${collapsed ? 'sidebar-collapsed' : ''} theme-${theme}`}>
@@ -169,7 +235,7 @@ export default function App() {
         max-items="100"
         company-name="AetherUI"
       >
-        <div slot="header" className="nav-brand-header cursor-pointer" onClick={() => setActiveItem('home')}>
+        <div slot="header" className="nav-brand-header cursor-pointer" onClick={() => navigate('home')}>
           <div className="nav-brand-logo bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white font-bold">
             A
           </div>
@@ -213,7 +279,7 @@ export default function App() {
         )}
 
         {/* Thin top-bar for component pages */}
-        {isComponentPage && (
+        {isComponentPage && !isInteractiveDocs && (
           <div className="cp-topbar">
             <div className="cp-topbar-breadcrumb">
               <ui-button
@@ -223,7 +289,7 @@ export default function App() {
                 variant="ghost"
                 size="sm"
                 class="cp-topbar-home"
-                onClick={() => setActiveItem('home')}
+                onClick={() => navigate('home')}
               />
               <ui-icon name="chevron-right" size="12" />
               <span className="cp-topbar-category">Components</span>
@@ -249,7 +315,7 @@ export default function App() {
             <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-900/10 blur-[100px] rounded-full" />
             <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-green-900/10 blur-[100px] rounded-full" />
           </div>
-          <div className={`relative z-10 ${isComponentPage ? 'cp-wrapper' : isHome ? '' : 'max-w-6xl mx-auto p-8'}`}>
+          <div className={`relative z-10 ${isComponentPage ? 'cp-wrapper' : (isHome || activeItem === 'components-guide') ? 'w-full' : 'max-w-6xl mx-auto p-8'}`}>
             {renderContent()}
           </div>
         </div>

@@ -81,9 +81,9 @@ export default function Home({ onNavigate }: { onNavigate?: (id: string) => void
             <span className="font-bold text-xl tracking-tight">AetherUI</span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
-            <span className="hover:text-white cursor-pointer transition-colors" onClick={() => onNavigate?.('layout')}>Components</span>
+            <span className="hover:text-white cursor-pointer transition-colors" onClick={() => onNavigate?.('components-guide')}>Components</span>
             <span className="hover:text-white cursor-pointer transition-colors" onClick={() => onNavigate?.('documentation')}>Docs</span>
-            <span className="hover:text-white cursor-pointer transition-colors">Pricing</span>
+            <span className="hover:text-white cursor-pointer transition-colors" onClick={() => onNavigate?.('pricing')}>Pricing</span>
           </div>
         </div>
         <div className="flex items-center gap-6">
@@ -137,8 +137,8 @@ export default function Home({ onNavigate }: { onNavigate?: (id: string) => void
             </div>
 
             <div className="flex gap-4">
-              <ui-button variant="primary" size="lg" class="bg-blue-600 hover:bg-blue-500 text-white px-8">Explore Gallery</ui-button>
-              <ui-button variant="outline" size="lg" class="border-white/10 text-white px-8">View Docs</ui-button>
+              <ui-button variant="primary" size="lg" class="bg-blue-600 hover:bg-blue-500 text-white px-8" onClick={() => onNavigate?.('components-guide')}>Explore Gallery</ui-button>
+              <ui-button variant="outline" size="lg" class="border-white/10 text-white px-8" onClick={() => onNavigate?.('documentation')}>View Docs</ui-button>
             </div>
           </div>
 
@@ -218,7 +218,7 @@ export default function Home({ onNavigate }: { onNavigate?: (id: string) => void
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{cat.label}</h3>
                 <p className="text-gray-400 text-sm leading-relaxed mb-8">{cat.desc}</p>
-                <div className="flex items-center gap-2 text-cyan-400 text-sm font-bold cursor-pointer group-hover:gap-4 transition-all">
+                <div className="flex items-center gap-2 text-cyan-400 text-sm font-bold cursor-pointer group-hover:gap-4 transition-all" onClick={() => onNavigate?.('components-guide')}>
                   Explore Gallery <ui-icon name="chevron-right" size="16"></ui-icon>
                 </div>
               </div>

@@ -816,8 +816,10 @@ const componentRegistry: Record<string, DynamicMetadata> = {
   },
 };
 
-export default function DynamicComponentPage({ id }: { id: string }) {
-  const resolvedId = id === 'dock-overlay' ? 'dock' : id === 'tree-list' ? 'tree' : id;
+export default function DynamicComponentPage({ id, interactiveDocs, onExamplesLoaded }: { id: string; interactiveDocs?: boolean; onExamplesLoaded?: (examples: ExampleConfig[]) => void }) {
+  // Strip category prefix from slash-containing IDs (e.g. 'charts/area-chart' → 'area-chart')
+  const baseId = id.includes('/') ? id.split('/').pop()! : id;
+  const resolvedId = baseId === 'dock-overlay' ? 'dock' : baseId === 'tree-list' ? 'tree' : baseId;
   const tagName = tagNameMap[id] || `ui-${resolvedId}`;
   const componentName = resolvedId
     .split('-')
@@ -951,6 +953,7 @@ export default function DynamicComponentPage({ id }: { id: string }) {
       docs={docs}
       examples={[]}
       demoSections={componentDemos}
+      interactiveDocs={interactiveDocs}
     />
   );
 }

@@ -1,7 +1,36 @@
-// Card Demo Functions
+
+++++++++++++++++++++++++// Card Demo Functions
 export function initCardDemo() {
   const section = document.getElementById('card');
   if (!section) return;
+
+  // Listen for and pretty-print all card component custom events in the console
+  const cardEvents = [
+    'cardClose',
+    'cardFlip',
+    'cardToggle',
+    'expandToggle',
+    'cardClick',
+    'cardSelect',
+    'menuItemClick',
+    'menuActionClick'
+  ];
+  cardEvents.forEach(eventName => {
+    section.addEventListener(eventName, (event) => {
+      console.log(
+        `%c[ui-card Event] %cEmitted: %c"${eventName}"`,
+        'color: #3b82f6; font-weight: bold;',
+        'color: #4b5563;',
+        'color: #10b981; font-weight: bold;',
+        {
+          event: eventName,
+          payload: event.detail,
+          target: event.target,
+          timestamp: new Date().toLocaleTimeString()
+        }
+      );
+    });
+  });
 
   section.innerHTML = `
     <div class="demo-header" style="margin-bottom: 32px;">
@@ -35,16 +64,16 @@ export function initCardDemo() {
       }
       .nav-pill:hover { background: #e5e7eb; color: #111827; }
       .nav-pill.active { background: #10b981; border-color: #10b981; color: white; }
-      .demo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 32px; }
-      .section-title { grid-column: 1 / -1; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #e5e7eb; color: #111827; }
+      .demo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; margin-top: 16px; margin-bottom: 32px; }
+      .section-title { margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #e5e7eb; color: #111827; }
     </style>
 
     <div id="cardDemoContainer"></div>
   `;
 
   const updateActivePill = id => {
-    document.querySelectorAll('.nav-pill').forEach(p => {
-      p.variant = 'soft';
+    document.querySelectorAll('.demo-nav-pills ui-button').forEach(p => {
+      p.variant = 'outline';
       p.color = 'default';
     });
     const el = document.getElementById(id);
@@ -60,16 +89,30 @@ export function initCardDemo() {
     const container = document.getElementById('cardDemoContainer');
     if (!container) return;
     container.innerHTML = `
+      <h3 class="section-title" style="margin-top: 0;">Color Variants</h3>
       <div class="demo-grid">
-        <h3 class="section-title">Color Variants</h3>
         <ui-card variant="default" card-title="Default" extra="Status: Idle"></ui-card>
         <ui-card variant="primary" card-title="Primary" extra="Status: Active"></ui-card>
         <ui-card variant="success" card-title="Success" extra="Status: Complete"></ui-card>
         <ui-card variant="info" card-title="Info" extra="Status: Info"></ui-card>
         <ui-card variant="warning" card-title="Warning" extra="Status: Alert"></ui-card>
         <ui-card variant="danger" card-title="Danger" extra="Status: Error"></ui-card>
-        
-        <h3 class="section-title">Visual Styles</h3>
+      </div>
+      
+      <h3 class="section-title">Status Cards (New Variant)</h3>
+      <p style="color: #64748b; font-size: 14px; margin-top: -8px; margin-bottom: 16px;">
+        Status cards tint the card background and border dynamically based on the <code>color</code> prop.
+      </p>
+      <div class="demo-grid">
+        <ui-card variant="status" color="primary" card-title="Primary Status" description="Status card with a primary themed border and soft primary background tint."></ui-card>
+        <ui-card variant="status" color="success" card-title="Success Status" description="Status card with a success themed border and soft success background tint."></ui-card>
+        <ui-card variant="status" color="info" card-title="Info Status" description="Status card with an info themed border and soft info background tint."></ui-card>
+        <ui-card variant="status" color="warning" card-title="Warning Status" description="Status card with a warning themed border and soft warning background tint."></ui-card>
+        <ui-card variant="status" color="danger" card-title="Danger Status" description="Status card with a danger themed border and soft danger background tint."></ui-card>
+      </div>
+      
+      <h3 class="section-title">Visual Styles</h3>
+      <div class="demo-grid">
         <ui-card variant="elevated" card-title="Elevated" description="Standard elevated style with deep shadow."></ui-card>
         <ui-card variant="outlined" card-title="Outlined" description="Clean outlined style with minimal shadow."></ui-card>
         <ui-card variant="filled" card-title="Filled" description="Solid background color without borders."></ui-card>
@@ -84,35 +127,33 @@ export function initCardDemo() {
     const container = document.getElementById('cardDemoContainer');
     if (!container) return;
     container.innerHTML = `
-      <div class="demo-grid" style="grid-template-columns: 1fr;">
-        <h3 class="section-title">Orientation Layouts</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 24px;">
-           <ui-card layout="vertical" card-title="Vertical Layout" cover="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600" description="The classic vertical card structure."></ui-card>
-           <ui-card layout="horizontal" card-title="Horizontal Layout" cover="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600" description="Perfect for list items and detailed previews."></ui-card>
-        </div>
+      <h3 class="section-title" style="margin-top: 0;">Orientation Layouts</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 24px; margin-bottom: 32px;">
+         <ui-card layout="vertical" card-title="Vertical Layout" cover="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600" description="The classic vertical card structure."></ui-card>
+         <ui-card layout="horizontal" card-title="Horizontal Layout" cover="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600" description="Perfect for list items and detailed previews."></ui-card>
+      </div>
 
-        <h3 class="section-title">Design Patterns</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
-           <ui-card pattern="product" card-title="Wireless Headphones" cover="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" tag="Best Seller" button-text="Add to Cart">
-             <div slot="content">
-               <p style="font-size: 24px; font-weight: bold; margin: 8px 0;">$199.00</p>
-               <p style="color: #6b7280;">High-fidelity sound with noise cancellation.</p>
-             </div>
-           </ui-card>
+      <h3 class="section-title">Design Patterns</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; margin-bottom: 32px;">
+         <ui-card pattern="product" card-title="Wireless Headphones" cover="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" tag="Best Seller" button-text="Add to Cart">
+           <div slot="content">
+             <p style="font-size: 24px; font-weight: bold; margin: 8px 0;">$199.00</p>
+             <p style="color: #6b7280;">High-fidelity sound with noise cancellation.</p>
+           </div>
+         </ui-card>
 
-           <ui-card pattern="shortcut" card-title="Security Settings" avatar-icon="fas fa-shield-alt" description="Manage your password, 2FA, and connected devices."></ui-card>
-           
-           <ui-card pattern="shortcut" card-title="User Profile" avatar="https://i.pravatar.cc/150?u=a" description="Update your personal information and profile picture."></ui-card>
-         </div>
+         <ui-card pattern="shortcut" card-title="Security Settings" avatar-icon="fas fa-shield-alt" description="Manage your password, 2FA, and connected devices."></ui-card>
+         
+         <ui-card pattern="shortcut" card-title="User Profile" avatar="https://i.pravatar.cc/150?u=a" description="Update your personal information and profile picture."></ui-card>
+      </div>
 
-         <h3 class="section-title">Card Types (Nesting)</h3>
-         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
-            <ui-card card-title="Outer Card" description="Standard container card.">
-               <div style="margin-top: 16px;">
-                  <ui-card type="inner" card-title="Nested Inner Card" description="Subtly grey background to distinguish from its parent."></ui-card>
-               </div>
-            </ui-card>
-         </div>
+      <h3 class="section-title">Card Types (Nesting)</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
+         <ui-card card-title="Outer Card" description="Standard container card.">
+            <div style="margin-top: 16px;">
+               <ui-card type="inner" card-title="Nested Inner Card" description="Subtly grey background to distinguish from its parent."></ui-card>
+            </div>
+         </ui-card>
       </div>
     `;
   };
@@ -123,12 +164,11 @@ export function initCardDemo() {
     const container = document.getElementById('cardDemoContainer');
     if (!container) return;
     container.innerHTML = `
+      <h3 class="section-title" style="margin-top: 0;">Physical Interaction Engine</h3>
+      <p style="color: #64748b; font-size: 14px; margin-top: -8px; margin-bottom: 16px;">
+        The component now supports 3D Tilt and Magnetic Attraction for high-end web experiences.
+      </p>
       <div class="demo-grid">
-        <h3 class="section-title">Physical Interaction Engine</h3>
-        <p style="grid-column: 1 / -1; color: #64748b; font-size: 14px; margin-top: -12px; margin-bottom: 20px;">
-          The component now supports 3D Tilt and Magnetic Attraction for high-end web experiences.
-        </p>
-        
         <ui-card tilt="true" variant="primary" importance="emphasized" card-title="3D Tilt Mode" description="Hover over this card to see it tilt in 3D space based on your mouse position."></ui-card>
         <ui-card magnetic="true" variant="success" card-title="Magnetic Attraction" description="This card follows your mouse cursor with a subtle organic movement."></ui-card>
         <ui-card tilt="true" magnetic="true" glass="true" card-title="Total Physicality" ribbon="Elite" cover="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500" description="Combining 3D tilt, magnetic attraction, and glassmorphism."></ui-card>
@@ -142,13 +182,15 @@ export function initCardDemo() {
     const container = document.getElementById('cardDemoContainer');
     if (!container) return;
     container.innerHTML = `
+      <h3 class="section-title" style="margin-top: 0;">Glassmorphism & Ribbons</h3>
       <div class="demo-grid">
-        <h3 class="section-title">Glassmorphism & Ribbons</h3>
         <ui-card glass="true" card-title="Glass Design" ribbon="Premium" ribbon-color="#8b5cf6" cover="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?w=500" description="Elegant translucent backdrop effect."></ui-card>
         <ui-card variant="primary" card-title="Left Ribbon" ribbon="New" ribbon-position="top-left" ribbon-color="#10b981" description="Ribbons can be placed on the left side too."></ui-card>
         <ui-card variant="elevated" card-title="Custom Radius" border-radius="32px" border="2px dashed #10b981" description="Fully customizable borders and radius."></ui-card>
+      </div>
 
-        <h3 class="section-title">Headers & Content</h3>
+      <h3 class="section-title">Headers & Content</h3>
+      <div class="demo-grid">
         <ui-card avatar="https://i.pravatar.cc/150?u=jane" card-title="Jane Cooper" extra="Active" description="Card with image avatar in header."></ui-card>
         <ui-card avatar-icon="fas fa-rocket" card-title="Mission Alpha" extra="T-Minus 10s" description="Card with icon avatar in header."></ui-card>
         <ui-card card-title="Full Features" tag="V1.0" actions="Details, Docs, GitHub" button-text="Launch" description="Combining tags, quick actions, and buttons."></ui-card>
@@ -156,14 +198,14 @@ export function initCardDemo() {
     `;
   };
 
-  // --- 4. Interactions ---
+  // --- 5. Interactions ---
   window.showInteractions = () => {
     updateActivePill('pill-interactions');
     const container = document.getElementById('cardDemoContainer');
     if (!container) return;
     container.innerHTML = `
+      <h3 class="section-title" style="margin-top: 0;">Flip Interaction</h3>
       <div class="demo-grid">
-        <h3 class="section-title">Flip Interaction</h3>
         <ui-card flippable="true" card-title="Click to Flip" description="Discover what is on the other side.">
           <div slot="back">
             <h3 style="color: white;">Secret Content!</h3>
@@ -177,20 +219,24 @@ export function initCardDemo() {
             <p>Perfect for quick-reveal information.</p>
           </div>
         </ui-card>
+      </div>
 
-        <h3 class="section-title">Stateful Cards</h3>
+      <h3 class="section-title">Stateful Cards</h3>
+      <div class="demo-grid">
         <ui-card collapsible="true" card-title="Collapsible Card" description="Toggle the body visibility using the header arrow."></ui-card>
         <ui-card closable="true" card-title="Closable Card" description="Perfect for notifications or dismissible content."></ui-card>
         <ui-card selectable="true" card-title="Selectable Mode" description="Click to select this card. Supports shared selection groups."></ui-card>
-        
-        <h3 class="section-title">Navigation</h3>
+      </div>
+      
+      <h3 class="section-title">Navigation</h3>
+      <div class="demo-grid">
         <ui-card clickable="true" href="https://google.com" target="_blank" card-title="External Link Card" description="The entire card acts as a link to an external site."></ui-card>
         <ui-card hoverable="true" card-title="Hover Effect" description="Subtle Lift and Shadow increase on hover."></ui-card>
       </div>
     `;
   };
 
-  // --- 5. Menus & Actions ---
+  // --- 6. Menus & Actions ---
   window.showMenuActions = () => {
     updateActivePill('pill-actions');
     const container = document.getElementById('cardDemoContainer');
@@ -203,28 +249,30 @@ export function initCardDemo() {
     ]);
 
     container.innerHTML = `
+      <h3 class="section-title" style="margin-top: 0;">Contextual Menus</h3>
       <div class="demo-grid">
-        <h3 class="section-title">Contextual Menus</h3>
         <ui-card show-menu="true" menu-items='${menuItems}' card-title="JSON Defined Menu" icon-library="lucide" description="Define menu items via complex JSON objects."></ui-card>
         <ui-card menu-actions="Share, Export, Report" card-title="Action String Menu" description="Quickly define menu actions via a simple comma-separated string."></ui-card>
+      </div>
 
-        <h3 class="section-title">Footer Actions</h3>
+      <h3 class="section-title">Footer Actions</h3>
+      <div class="demo-grid">
         <ui-card button-text="Primary Action" actions="Secondary, Tertiary" card-title="Footer Showcase" description="Mix standard primary buttons with quick link actions."></ui-card>
       </div>
     `;
   };
 
-  // --- 6. Loading States ---
+  // --- 7. Loading States ---
   window.showLoadingStates = () => {
     updateActivePill('pill-loading');
     const container = document.getElementById('cardDemoContainer');
     if (!container) return;
     container.innerHTML = `
+      <h3 class="section-title" style="margin-top: 0;">Skeleton Loading</h3>
+      <div style="margin-bottom: 20px;">
+        <ui-button onclick="document.querySelectorAll('ui-card').forEach(c => c.loading = !c.loading)" variant="outline" color="primary">Toggle Loading All</ui-button>
+      </div>
       <div class="demo-grid">
-        <h3 class="section-title">Skeleton Loading</h3>
-        <div style="grid-column: 1 / -1; margin-bottom: 20px;">
-          <ui-button onclick="document.querySelectorAll('ui-card').forEach(c => c.loading = !c.loading)" variant="outline" color="primary">Toggle Loading All</ui-button>
-        </div>
         <ui-card loading="true" card-title="Skeleton 1"></ui-card>
         <ui-card loading="true" variant="primary" card-title="Skeleton 2"></ui-card>
         <ui-card loading="true" layout="horizontal" card-title="Horizontal Skeleton"></ui-card>
@@ -394,8 +442,8 @@ export function initCardDemo() {
 
         <div style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
            ${[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-             .map(
-               i => `
+        .map(
+          i => `
               <ui-card 
                 card-title="List Card #${i}" 
                 collapsible="true" 
@@ -411,8 +459,8 @@ export function initCardDemo() {
                 </div>
               </ui-card>
             `,
-             )
-             .join('')}
+        )
+        .join('')}
         </div>
       </div>
     `;

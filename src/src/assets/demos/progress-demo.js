@@ -16,20 +16,29 @@ export function initProgressDemo() {
     </p>
 
     <div class="demo-controls" style="margin: 20px 0; display: flex; gap: 10px; flex-wrap: wrap;">
-      <ui-button onclick="showProgressPlayground()" variant="outline">🎮 Playground</ui-button>
-      <ui-button onclick="showProgressBasics()" variant="outline">Line Progress</ui-button>
-      <ui-button onclick="showProgressCircular()" variant="outline">Circular & Dashboard</ui-button>
-      <ui-button onclick="showProgressPremium()" variant="outline">✨ Premium Effects</ui-button>
-      <ui-button onclick="showProgressAdvanced()" variant="outline">Advanced Features</ui-button>
-      <ui-button onclick="showProgressIndustrial()" variant="outline">🛡️ Industrial Monitoring</ui-button>
-      <ui-button onclick="showProgressInteractive()" variant="outline">🕹️ Control Suite</ui-button>
-      <ui-button onclick="showProgressVertical()" variant="outline">↕️ Vertical Racks</ui-button>
+      <ui-button onclick="showProgressPlayground()" data-demo="playground" variant="outline">🎮 Playground</ui-button>
+      <ui-button onclick="showProgressLifecycles()" data-demo="lifecycles" variant="outline">🔄 Lifecycle Statuses</ui-button>
+      <ui-button onclick="showProgressScanning()" data-demo="scanning" variant="outline">🔍 Device Scanner</ui-button>
+      <ui-button onclick="showProgressBasics()" data-demo="basics" variant="outline">Line Progress</ui-button>
+      <ui-button onclick="showProgressCircular()" data-demo="circular" variant="outline">Circular & Dashboard</ui-button>
+      <ui-button onclick="showProgressPremium()" data-demo="premium" variant="outline">✨ Premium Effects</ui-button>
+      <ui-button onclick="showProgressAdvanced()" data-demo="advanced" variant="outline">Advanced Features</ui-button>
+      <ui-button onclick="showProgressIndustrial()" data-demo="industrial" variant="outline">🛡️ Industrial Monitoring</ui-button>
+      <ui-button onclick="showProgressInteractive()" data-demo="interactive" variant="outline">🕹️ Control Suite</ui-button>
+      <ui-button onclick="showProgressVertical()" data-demo="vertical" variant="outline">↕️ Vertical Racks</ui-button>
     </div>
 
     <div id="progressDemoContainer" style="margin-top: 40px; min-height: 400px; padding: 24px; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0;"></div>
   `;
 
+  const updateProgressActiveBtn = demoName => {
+    section.querySelectorAll('.demo-controls ui-button').forEach(btn => {
+      btn.selected = btn.getAttribute('data-demo') === demoName;
+    });
+  };
+
   window.showProgressPlayground = function () {
+    updateProgressActiveBtn('playground');
     const container = document.getElementById('progressDemoContainer');
     container.innerHTML = `
       <div class="demo-block">
@@ -61,6 +70,10 @@ export function initProgressDemo() {
                 <option value="exception">Exception (Red)</option>
                 <option value="warning">Warning (Yellow)</option>
                 <option value="danger">Danger (Vibrating)</option>
+                <option value="empty">Empty</option>
+                <option value="running">Running (Spinner)</option>
+                <option value="completed">Completed (Check)</option>
+                <option value="interrupted">Interrupted (Alert)</option>
               </ui-dropdown>
             </label>
 
@@ -133,7 +146,136 @@ export function initProgressDemo() {
     code.innerText = `<ui-progress ${props}></ui-progress>`;
   };
 
+  window.showProgressLifecycles = function () {
+    updateProgressActiveBtn('lifecycles');
+    const container = document.getElementById('progressDemoContainer');
+    container.innerHTML = `
+      <div class="demo-block">
+        <h3 style="margin-bottom: 8px;">🔄 Lifecycle Status Monitoring</h3>
+        <p style="font-size: 14px; color: #64748b; margin-bottom: 24px;">
+          Track system processes end-to-end using native status lifecycles: <code>empty</code>, <code>running</code>, <code>completed</code>, and <code>interrupted</code>.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 40px;">
+          
+          <!-- Empty State -->
+          <div style="background: white; border-radius: 12px; border: 1px solid #e2e8f0; padding: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">
+            <h4 style="margin: 0 0 16px; font-size: 13px; color: #64748b; display: flex; align-items: center; justify-content: space-between;">
+              <span>Empty State</span>
+              <span style="font-size: 10px; font-weight: bold; background: #f1f5f9; color: #64748b; padding: 2px 8px; border-radius: 10px; text-transform: uppercase;">Awaiting</span>
+            </h4>
+            <ui-progress percent="0" status="empty" stroke-width="12"></ui-progress>
+            <p style="font-size: 12px; color: #94a3b8; margin-top: 12px; margin-bottom: 0;">Task queued, awaiting resource allocation.</p>
+          </div>
+
+          <!-- Running State -->
+          <div style="background: white; border-radius: 12px; border: 1px solid #e2e8f0; padding: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">
+            <h4 style="margin: 0 0 16px; font-size: 13px; color: #1890ff; display: flex; align-items: center; justify-content: space-between;">
+              <span>Running State</span>
+              <span style="font-size: 10px; font-weight: bold; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 10px; text-transform: uppercase;">Active</span>
+            </h4>
+            <ui-progress percent="45" status="running" stroke-width="12"></ui-progress>
+            <p style="font-size: 12px; color: #94a3b8; margin-top: 12px; margin-bottom: 0;">Actively processing records. Wave pulse enabled.</p>
+          </div>
+
+          <!-- Completed State -->
+          <div style="background: white; border-radius: 12px; border: 1px solid #e2e8f0; padding: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">
+            <h4 style="margin: 0 0 16px; font-size: 13px; color: #52c41a; display: flex; align-items: center; justify-content: space-between;">
+              <span>Completed State</span>
+              <span style="font-size: 10px; font-weight: bold; background: #dcfce7; color: #15803d; padding: 2px 8px; border-radius: 10px; text-transform: uppercase;">Success</span>
+            </h4>
+            <ui-progress percent="100" status="completed" stroke-width="12"></ui-progress>
+            <p style="font-size: 12px; color: #94a3b8; margin-top: 12px; margin-bottom: 0;">Operation finished successfully. Output generated.</p>
+          </div>
+
+          <!-- Interrupted State -->
+          <div style="background: white; border-radius: 12px; border: 1px solid #e2e8f0; padding: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">
+            <h4 style="margin: 0 0 16px; font-size: 13px; color: #ff4d4f; display: flex; align-items: center; justify-content: space-between;">
+              <span>Interrupted State</span>
+              <span style="font-size: 10px; font-weight: bold; background: #fef2f2; color: #b91c1c; padding: 2px 8px; border-radius: 10px; text-transform: uppercase;">Halted</span>
+            </h4>
+            <ui-progress percent="70" status="interrupted" stroke-width="12"></ui-progress>
+            <p style="font-size: 12px; color: #94a3b8; margin-top: 12px; margin-bottom: 0;">Network loss detected. Thread execution suspended.</p>
+          </div>
+
+        </div>
+
+        <!-- Dynamic Process Lifecycle Simulator -->
+        <div style="background: #1e293b; color: white; border-radius: 16px; padding: 32px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+            <h4 style="margin: 0; font-size: 16px; font-weight: 600; letter-spacing: 0.02em;">⚡ Operation Lifecycle Simulator</h4>
+            <span id="lifecycleStateText" style="font-size: 11px; font-weight: bold; background: #475569; color: #f8fafc; padding: 6px 14px; border-radius: 20px; letter-spacing: 0.05em; text-transform: uppercase;">QUEUED</span>
+          </div>
+
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 24px; margin-bottom: 24px;">
+            <ui-progress id="lifecycleProgress" percent="0" status="empty" stroke-width="16" decimal-precision="1"></ui-progress>
+          </div>
+
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <ui-button id="btnLifecycleInit" onclick="handleLifecycleAction('init')" variant="outline" style="--ui-button-border-color: #475569; --ui-button-color: #f8fafc;">🔌 Queue (Empty)</ui-button>
+            <ui-button id="btnLifecycleStart" onclick="handleLifecycleAction('start')" variant="outline" style="--ui-button-border-color: #475569; --ui-button-color: #f8fafc;">🚀 Start (Running)</ui-button>
+            <ui-button id="btnLifecycleInterrupt" onclick="handleLifecycleAction('interrupt')" variant="outline" style="--ui-button-border-color: #475569; --ui-button-color: #f8fafc;">🚫 Halt (Interrupt)</ui-button>
+            <ui-button id="btnLifecycleComplete" onclick="handleLifecycleAction('complete')" variant="outline" style="--ui-button-border-color: #475569; --ui-button-color: #f8fafc;">✨ Force Complete</ui-button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    let simInterval = null;
+
+    window.handleLifecycleAction = function (action) {
+      const pBar = document.getElementById('lifecycleProgress');
+      const stateText = document.getElementById('lifecycleStateText');
+      if (!pBar || !stateText) return;
+
+      if (window.lifecycleInterval) {
+        clearInterval(window.lifecycleInterval);
+        window.lifecycleInterval = null;
+      }
+
+      if (action === 'init') {
+        pBar.percent = 0;
+        pBar.status = 'empty';
+        stateText.innerText = 'QUEUED';
+        stateText.style.background = '#475569';
+      } else if (action === 'start') {
+        pBar.status = 'running';
+        stateText.innerText = 'RUNNING';
+        stateText.style.background = '#1d4ed8';
+        
+        let current = parseFloat(pBar.percent) || 0;
+        if (current >= 100) {
+          current = 0;
+        }
+
+        window.lifecycleInterval = setInterval(() => {
+          current += 1.2;
+          if (current < 100) {
+            pBar.percent = current.toFixed(1);
+          } else {
+            clearInterval(window.lifecycleInterval);
+            window.lifecycleInterval = null;
+            pBar.percent = 100;
+            pBar.status = 'completed';
+            stateText.innerText = 'COMPLETED';
+            stateText.style.background = '#15803d';
+          }
+        }, 100);
+      } else if (action === 'interrupt') {
+        pBar.status = 'interrupted';
+        stateText.innerText = 'INTERRUPTED';
+        stateText.style.background = '#b91c1c';
+      } else if (action === 'complete') {
+        pBar.percent = 100;
+        pBar.status = 'completed';
+        stateText.innerText = 'COMPLETED';
+        stateText.style.background = '#15803d';
+      }
+    };
+  };
+
   window.showProgressBasics = function () {
+    updateProgressActiveBtn('basics');
     const container = document.getElementById('progressDemoContainer');
     container.innerHTML = `
       <div class="demo-block">
@@ -165,6 +307,7 @@ export function initProgressDemo() {
   };
 
   window.showProgressCircular = function () {
+    updateProgressActiveBtn('circular');
     const container = document.getElementById('progressDemoContainer');
     container.innerHTML = `
       <div class="demo-block">
@@ -198,6 +341,7 @@ export function initProgressDemo() {
   };
 
   window.showProgressPremium = function () {
+    updateProgressActiveBtn('premium');
     const container = document.getElementById('progressDemoContainer');
     container.innerHTML = `
       <div class="demo-block">
@@ -234,6 +378,7 @@ export function initProgressDemo() {
   };
 
   window.showProgressAdvanced = function () {
+    updateProgressActiveBtn('advanced');
     const container = document.getElementById('progressDemoContainer');
     container.innerHTML = `
       <div class="demo-block">
@@ -282,6 +427,7 @@ export function initProgressDemo() {
   };
 
   window.showProgressIndustrial = function () {
+    updateProgressActiveBtn('industrial');
     const container = document.getElementById('progressDemoContainer');
     container.innerHTML = `
       <div class="demo-block">
@@ -387,6 +533,7 @@ export function initProgressDemo() {
   };
 
   window.showProgressInteractive = function () {
+    updateProgressActiveBtn('interactive');
     const container = document.getElementById('progressDemoContainer');
     container.innerHTML = `
       <div class="demo-block">
@@ -444,6 +591,7 @@ export function initProgressDemo() {
   };
 
   window.showProgressVertical = function () {
+    updateProgressActiveBtn('vertical');
     const container = document.getElementById('progressDemoContainer');
     container.innerHTML = `
       <div class="demo-block">
@@ -456,6 +604,256 @@ export function initProgressDemo() {
         </div>
       </div>
     `;
+  };
+
+  window.showProgressScanning = function () {
+    updateProgressActiveBtn('scanning');
+    const container = document.getElementById('progressDemoContainer');
+    container.innerHTML = `
+      <div class="demo-block" style="font-family: inherit;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+          <div>
+            <h3 style="margin: 0; font-size: 20px; font-weight: 700; color: #0f172a;">🔍 Cybernetic Device Scanner</h3>
+            <p style="margin: 4px 0 0; font-size: 14px; color: #64748b;">Automated sector, memory, and threat scanning telemetry.</p>
+          </div>
+          <span id="scanStatusBadge" style="font-size: 11px; font-weight: 700; background: #f1f5f9; color: #64748b; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em;">AWAITING COMMAND</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 280px 1fr; gap: 32px; margin-bottom: 32px;">
+          <!-- Left Panel: Dial & Actions -->
+          <div style="background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; align-items: center; gap: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">
+            <div style="position: relative; width: 160px; height: 160px; display: flex; align-items: center; justify-content: center;">
+              <ui-progress 
+                id="scanCircularProgress" 
+                type="dashboard" 
+                percent="0" 
+                stroke-width="12" 
+                stroke-color='{"from": "#3b82f6", "to": "#10b981"}'
+                gap-position="bottom"
+                width="160"
+                glow="true"
+                liquid="true"
+                status="empty"
+              ></ui-progress>
+            </div>
+
+            <!-- Scanning Controls -->
+            <div style="display: flex; flex-direction: column; width: 100%; gap: 10px; margin-top: 10px;">
+              <ui-button id="btnStartScan" onclick="handleScanAction('start')" variant="primary" style="width: 100%;">⚡ Start Full Scan</ui-button>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                <ui-button id="btnPauseScan" onclick="handleScanAction('pause')" variant="outline" style="font-size: 12px;">⏸️ Pause</ui-button>
+                <ui-button id="btnHaltScan" onclick="handleScanAction('halt')" variant="outline" style="font-size: 12px; --ui-button-color: #ef4444; --ui-button-border-color: #fecaca;">🚫 Abort</ui-button>
+              </div>
+              <ui-button id="btnResetScan" onclick="handleScanAction('reset')" variant="ghost" style="width: 100%; font-size: 12px;">🔄 Reset Console</ui-button>
+            </div>
+          </div>
+
+          <!-- Right Panel: Live Logs & Telemetry -->
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <!-- Telemetry Cards -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+              <div style="background: white; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; text-align: center;">
+                <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; font-weight: 600;">Sectors Checked</span>
+                <h4 id="sectorsCount" style="margin: 8px 0 0; font-size: 24px; font-weight: 800; color: #0f172a;">0</h4>
+              </div>
+              <div style="background: white; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; text-align: center;">
+                <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; font-weight: 600;">Threats Detected</span>
+                <h4 id="threatsCount" style="margin: 8px 0 0; font-size: 24px; font-weight: 800; color: #0f172a;">0</h4>
+              </div>
+              <div style="background: white; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; text-align: center;">
+                <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; font-weight: 600;">Scan Time</span>
+                <h4 id="elapsedScanTime" style="margin: 8px 0 0; font-size: 24px; font-weight: 800; color: #0f172a;">0.0s</h4>
+              </div>
+            </div>
+
+            <!-- Terminal Console Logs -->
+            <div style="background: #0f172a; color: #38bdf8; border-radius: 16px; padding: 20px; font-family: 'Courier New', Courier, monospace; font-size: 12px; height: 180px; overflow-y: auto; border: 1px solid #1e293b; box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);" id="scanTerminalConsole">
+              <div style="color: #64748b;">[SCAN ENGINE v4.2.1] INITIALIZED...</div>
+              <div style="color: #64748b;">[CONSOLE] READY FOR HARDWARE RAMP...</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Linear Sub-System Feed -->
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">
+          <h4 style="margin: 0 0 16px; font-size: 13px; text-transform: uppercase; color: #64748b; font-weight: 700; letter-spacing: 0.05em;">Memory Buffer Allocation Check</h4>
+          <ui-progress id="scanLinearBuffer" percent="0" status="empty" stroke-width="16" vitality="true"></ui-progress>
+        </div>
+      </div>
+    `;
+
+    // Active scan memory variables
+    if (window.scanInterval) {
+      clearInterval(window.scanInterval);
+      window.scanInterval = null;
+    }
+    window.scanTimeElapsed = 0;
+    window.scanSectors = 0;
+    window.scanThreats = 0;
+
+    const mockSectors = [
+      '/dev/disk0s1/System/Library/Kernels/kernel',
+      '/dev/disk0s1/System/Library/Extensions/AppleACPIPlatform.kext',
+      '/dev/disk0s1/System/Library/Extensions/AppleSMBIOS.kext',
+      '/dev/disk0s1/System/Library/Fonts/SF-Pro.ttf',
+      '/dev/disk0s1/usr/sbin/cron',
+      '/dev/disk0s1/usr/bin/security',
+      '/dev/disk0s1/private/var/log/system.log',
+      '/dev/disk0s1/Applications/CyberneticScanner.app',
+      '/Memory/Alloc/RAM_BLOCK_0x00FF34D',
+      '/Memory/Alloc/RAM_BLOCK_0x01AA87D',
+      '/Ports/TCP/Port-80-Listener',
+      '/Ports/TCP/Port-443-SecureGateway',
+      '/Ports/TCP/Port-8080-AltServer',
+    ];
+
+    window.handleScanAction = function (action) {
+      const circ = document.getElementById('scanCircularProgress');
+      const line = document.getElementById('scanLinearBuffer');
+      const statusBadge = document.getElementById('scanStatusBadge');
+      const term = document.getElementById('scanTerminalConsole');
+      const secCount = document.getElementById('sectorsCount');
+      const thCount = document.getElementById('threatsCount');
+      const timeCount = document.getElementById('elapsedScanTime');
+
+      if (!circ || !line || !statusBadge || !term) return;
+
+      const log = (msg, color = '#38bdf8') => {
+        const div = document.createElement('div');
+        div.style.color = color;
+        div.innerText = `[${new Date().toLocaleTimeString()}] ${msg}`;
+        term.appendChild(div);
+        term.scrollTop = term.scrollHeight;
+      };
+
+      if (action === 'start') {
+        if (window.scanInterval) return;
+
+        circ.status = 'running';
+        line.status = 'running';
+        statusBadge.innerText = 'RUNNING';
+        statusBadge.style.background = '#e0f2fe';
+        statusBadge.style.color = '#0369a1';
+        log('INITIATING FULL HARDWARE DEVICE SCAN...', '#10b981');
+
+        window.scanTimeStart = Date.now() - window.scanTimeElapsed;
+
+        window.scanInterval = setInterval(() => {
+          let current = parseFloat(circ.percent) || 0;
+          if (current < 100) {
+            current += 1.6;
+            if (current > 100) current = 100;
+            
+            circ.percent = current.toFixed(1);
+            line.percent = current.toFixed(1);
+
+            // Update timer
+            window.scanTimeElapsed = Date.now() - window.scanTimeStart;
+            timeCount.innerText = (window.scanTimeElapsed / 1000).toFixed(1) + 's';
+
+            // Check mock sector files
+            window.scanSectors += Math.floor(Math.random() * 8) + 3;
+            secCount.innerText = window.scanSectors;
+
+            const randomFile = mockSectors[Math.floor(Math.random() * mockSectors.length)];
+            log(`CHECKING: ${randomFile}`);
+
+            // Mock threats detection at 40% and 80%
+            if (current >= 40 && window.scanThreats === 0) {
+              window.scanThreats = 1;
+              thCount.innerText = '1';
+              thCount.style.color = '#f59e0b';
+              circ.status = 'warning';
+              line.status = 'warning';
+              statusBadge.innerText = 'WARNING';
+              statusBadge.style.background = '#fef3c7';
+              statusBadge.style.color = '#b45309';
+              log('⚠️ SYSTEM WARNING: UNVERIFIED BUFFER DETECTED AT SECTOR 4!', '#f59e0b');
+            }
+
+            if (current >= 80 && window.scanThreats === 1) {
+              window.scanThreats = 2;
+              thCount.innerText = '2';
+              thCount.style.color = '#ef4444';
+              circ.status = 'interrupted';
+              line.status = 'interrupted';
+              statusBadge.innerText = 'SUSPECTED THREAT';
+              statusBadge.style.background = '#fef2f2';
+              statusBadge.style.color = '#b91c1c';
+              log('🚨 CRITICAL ALERT: CORRUPTED MALICIOUS THREAD IN RAM BLOCK!', '#ef4444');
+            }
+
+          } else {
+            clearInterval(window.scanInterval);
+            window.scanInterval = null;
+            circ.percent = 100;
+            line.percent = 100;
+            
+            if (window.scanThreats > 0) {
+              circ.status = 'interrupted';
+              line.status = 'interrupted';
+              statusBadge.innerText = 'THREAT FOUND';
+              statusBadge.style.background = '#fef2f2';
+              statusBadge.style.color = '#b91c1c';
+              log('❌ SCAN COMPLETE: 2 CRITICAL THREATS SECURED. IMMEDIATE ACTION REQUIRED.', '#ef4444');
+            } else {
+              circ.status = 'completed';
+              line.status = 'completed';
+              statusBadge.innerText = 'COMPLETED';
+              statusBadge.style.background = '#dcfce7';
+              statusBadge.style.color = '#15803d';
+              log('✨ SCAN COMPLETE: DEVICE SECURE. ZERO THREATS DETECTED.', '#10b981');
+            }
+          }
+        }, 120);
+      } else if (action === 'pause') {
+        if (!window.scanInterval) return;
+        clearInterval(window.scanInterval);
+        window.scanInterval = null;
+        
+        statusBadge.innerText = 'PAUSED';
+        statusBadge.style.background = '#f1f5f9';
+        statusBadge.style.color = '#475569';
+        log('SCAN SUSPENDED BY OPERATOR.', '#faad14');
+      } else if (action === 'halt') {
+        if (window.scanInterval) {
+          clearInterval(window.scanInterval);
+          window.scanInterval = null;
+        }
+        circ.status = 'interrupted';
+        line.status = 'interrupted';
+        statusBadge.innerText = 'ABORTED';
+        statusBadge.style.background = '#fef2f2';
+        statusBadge.style.color = '#b91c1c';
+        log('❌ CRITICAL: HARDWARE SCAN ABORTED IMMEDIATELY!', '#ef4444');
+      } else if (action === 'reset') {
+        if (window.scanInterval) {
+          clearInterval(window.scanInterval);
+          window.scanInterval = null;
+        }
+        circ.percent = 0;
+        circ.status = 'empty';
+        line.percent = 0;
+        line.status = 'empty';
+        window.scanTimeElapsed = 0;
+        window.scanSectors = 0;
+        window.scanThreats = 0;
+
+        secCount.innerText = '0';
+        thCount.innerText = '0';
+        thCount.style.color = '';
+        timeCount.innerText = '0.0s';
+        statusBadge.innerText = 'AWAITING COMMAND';
+        statusBadge.style.background = '';
+        statusBadge.style.color = '';
+        
+        term.innerHTML = `
+          <div style="color: #64748b;">[SCAN ENGINE v4.2.1] INITIALIZED...</div>
+          <div style="color: #64748b;">[CONSOLE] READY FOR HARDWARE RAMP...</div>
+        `;
+        log('SCAN TELEMETRY CLEARED AND RESET.', '#64748b');
+      }
+    };
   };
 
   showProgressPlayground();

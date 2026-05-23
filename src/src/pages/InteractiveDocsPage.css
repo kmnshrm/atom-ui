@@ -1,0 +1,234 @@
+/* ============================================================
+   InteractiveDocsPage.css
+   Full-screen 3-column docs experience
+   ============================================================ */
+
+/* Inline content wrapper — used by InteractiveDocsContent when
+   embedded inside InteractiveDocsPage (no own scroll, no flex tricks) */
+.id-docs-content {
+  padding: 2rem 2.5rem 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ─── Page Shell ───────────────────────────────────────────── */
+.id-page {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  color: #f1f5f9;
+}
+
+/* ─── Left Sidebar ─────────────────────────────────────────── */
+.id-left-sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(16px);
+  overflow: hidden;
+}
+
+.id-sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1rem 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.id-sidebar-count {
+  margin-left: auto;
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 999px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 0.1rem 0.5rem;
+}
+
+/* ─── Center Content ───────────────────────────────────────── */
+.id-center {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: auto;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.id-center::-webkit-scrollbar { width: 8px; }
+.id-center::-webkit-scrollbar-track { background: transparent; }
+.id-center::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 99px; }
+.id-center::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.25); }
+
+/* ─── Right TOC ────────────────────────────────────────────── */
+.id-right-toc {
+  width: 200px;
+  flex-shrink: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 0.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: auto;
+}
+
+/* ─── Loading State ────────────────────────────────────────── */
+.id-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 60vh;
+  color: rgba(255,255,255,0.35);
+  font-size: 0.85rem;
+}
+
+/* ─── Welcome / Empty State ────────────────────────────────── */
+.id-welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.id-welcome-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 28px;
+  background: rgba(16, 185, 129, 0.06);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(16, 185, 129, 0.6);
+  margin-bottom: 1.75rem;
+  box-shadow: 0 0 60px rgba(16, 185, 129, 0.04);
+}
+
+.id-welcome-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.55) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 0.875rem 0;
+}
+
+.id-welcome-desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.75;
+  max-width: 44ch;
+  margin: 0 0 2.5rem 0;
+}
+
+.id-welcome-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.id-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.id-stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #10b981;
+  line-height: 1;
+}
+
+.id-stat-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ─── Light Theme ──────────────────────────────────────────── */
+.theme-light .id-page {
+  color: #1e293b;
+}
+
+.theme-light .id-left-sidebar {
+  border-right-color: rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.theme-light .id-sidebar-header {
+  border-bottom-color: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.theme-light .id-sidebar-count {
+  background: rgba(5, 150, 105, 0.08);
+  color: #059669;
+  border-color: rgba(5, 150, 105, 0.15);
+}
+
+.theme-light .id-right-toc {
+  border-left-color: rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.theme-light .id-center {
+  scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+}
+
+.theme-light .id-center::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.theme-light .id-welcome-icon {
+  background: rgba(5, 150, 105, 0.05);
+  border-color: rgba(5, 150, 105, 0.12);
+  color: rgba(5, 150, 105, 0.5);
+}
+
+.theme-light .id-welcome-title {
+  background: linear-gradient(135deg, #0f172a 0%, #475569 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.theme-light .id-welcome-desc {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.theme-light .id-stat-value {
+  color: #059669;
+}
+
+.theme-light .id-stat-label {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.theme-light .id-loading {
+  color: rgba(0, 0, 0, 0.35);
+}

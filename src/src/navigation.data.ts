@@ -42,9 +42,22 @@ export const topNavItems: NavItem[] = [
     iconLibrary: "lucide",
   },
   {
+    id: "interactive-docs",
+    label: "Interactive Docs",
+    icon: "layout-panel-left",
+    iconLibrary: "lucide",
+    badge: "✨",
+  },
+  {
     id: "design-house",
     label: "Design House",
     icon: "palette",
+    iconLibrary: "lucide",
+  },
+  {
+    id: "pricing",
+    label: "Pricing",
+    icon: "badge-dollar-sign",
     iconLibrary: "lucide",
   },
 ];

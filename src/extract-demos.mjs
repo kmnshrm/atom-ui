@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 
-const DEMOS_DIR = 'P:\\Repository\\stenciljs\\atomicUILibrary\\library\\src\\assets\\js\\demos';
-const OUTPUT_FILE = 'p:\\Repository\\Reactjs\\src\\src\\demos.json';
+const DEMOS_DIR = '../../atomicUILibrary/library/src/assets/js/demos';
+const OUTPUT_FILE = './src/demos.json';
 
 // Mapping from file names to navigation ids
 const COMPONENT_ID_MAP = {
@@ -96,8 +96,8 @@ function extractDemos() {
       const funcName = match[1] || match[2] || match[3];
       if (!funcName) continue;
 
-      // Skip the main initialization function of the demo (e.g. initButtonDemo)
-      if (funcName.startsWith('init')) continue;
+      // Skip helper functions that do not start with 'show'
+      if (!funcName.startsWith('show')) continue;
 
       // Find matching closing brace for this function
       const bodyStartIndex = match.index + match[0].length - 1; // index of '{'
