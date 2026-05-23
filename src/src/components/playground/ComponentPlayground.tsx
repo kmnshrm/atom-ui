@@ -32,6 +32,18 @@ export interface DocSection {
   content: string;
 }
 
+export interface EventConfig {
+  event: string;
+  detail: string;
+  docs: string;
+}
+
+export interface MethodConfig {
+  name: string;
+  signature: string;
+  docs: string;
+}
+
 export interface ComponentPlaygroundProps {
   componentName: string;
   tagName: string;
@@ -45,14 +57,15 @@ export interface ComponentPlaygroundProps {
   demoSections?: DemoSection[];
   /** When true, skips the tab UI and renders just the scrollable single-page content */
   interactiveDocs?: boolean;
+  events?: EventConfig[];
+  methods?: MethodConfig[];
 }
 
 // ─── TOC Sections for Interactive Docs ────────────────────────────────────────
 const TOC_SECTIONS = [
   { id: 'section-overview', label: 'Overview', icon: 'info' },
-  { id: 'section-playground', label: 'Design Studio', icon: 'sliders-horizontal' },
-  { id: 'section-props', label: 'Props Reference', icon: 'list' },
   { id: 'section-examples', label: 'Examples', icon: 'code-2' },
+  { id: 'section-props', label: 'Props Reference', icon: 'list' },
 ] as const;
 
 // ─── Left Sidebar for Interactive Docs (reserved for future use) ─────────────────
@@ -69,35 +82,19 @@ function InteractiveDocsContent({
   tagName,
   description,
   propConfigs,
-  renderPreview,
-  buildCode,
   docs,
   examples,
   demoSections,
   onSectionChange,
   noScrollWrapper = false,
+  events = [],
+  methods = []
 }: ComponentPlaygroundProps & {
   propConfigs: PropConfig[];
   onSectionChange: (id: string) => void;
   noScrollWrapper?: boolean;
 }) {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [propValues, setPropValues] = useState<Record<string, any>>(() => {
-    const defaults: Record<string, any> = {};
-    propConfigs.forEach(p => { defaults[p.name] = p.defaultValue; });
-    return defaults;
-  });
-  const [copiedCode, setCopiedCode] = useState(false);
-
-  const handlePropChange = (name: string, value: any) => {
-    setPropValues(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleCopyCode = () => {
-    navigator.clipboard.writeText(buildCode(propValues));
-    setCopiedCode(true);
-    setTimeout(() => setCopiedCode(false), 2000);
-  };
 
   // Scroll spy
   useEffect(() => {
@@ -163,101 +160,6 @@ function InteractiveDocsContent({
         )}
       </div>
 
-      {/* ── DESIGN STUDIO ── */}
-      <div className="cp-dual-section" id="section-playground">
-        <div className="cp-section-badge">INTERACTIVE</div>
-        <h2 className="cp-dual-section-title">
-          <ui-icon name="sliders-horizontal" size="18" />
-          Design Studio
-        </h2>
-
-        <div className="cp-consolidated-playground-stage">
-          {/* Live Preview */}
-          <div className="cp-preview-stage" style={{ minHeight: 240 }}>
-            <div className="cp-preview-grid-bg" />
-            <div className="cp-preview-content">
-              {renderPreview(propValues)}
-            </div>
-          </div>
-
-          {/* Code snippet */}
-          <div className="cp-consolidated-code-block">
-            <div className="cp-code-block-header">
-              <span>Generated Code</span>
-              <ui-button
-                variant={copiedCode ? 'success' : 'ghost'}
-                size="sm"
-                icon={copiedCode ? 'check' : 'copy'}
-                onClick={handleCopyCode}
-              >
-                {copiedCode ? 'Copied!' : 'Copy'}
-              </ui-button>
-            </div>
-            <CodePreview code={buildCode(propValues)} language="html" />
-          </div>
-
-          {/* Props Editor */}
-          <div className="cp-consolidated-editor-card">
-            <div className="cp-editor-card-header">
-              <ui-icon name="settings-2" size="14" />
-              Property Controls
-            </div>
-            <div className="cp-editor-card-body">
-              <PropEditor
-                propConfigs={propConfigs}
-                values={propValues}
-                onChange={handlePropChange}
-              />
-              <ui-button
-                variant="ghost"
-                icon="rotate-ccw"
-                full-width
-                class="cp-reset-btn"
-                style={{ marginTop: '1rem' }}
-                onClick={() => {
-                  const defaults: Record<string, any> = {};
-                  propConfigs.forEach(p => { defaults[p.name] = p.defaultValue; });
-                  setPropValues(defaults);
-                }}
-              >
-                Reset to Defaults
-              </ui-button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ── PROPS REFERENCE ── */}
-      <div className="cp-dual-section" id="section-props">
-        <div className="cp-section-badge">API</div>
-        <h2 className="cp-dual-section-title">
-          <ui-icon name="list" size="18" />
-          Props Reference
-        </h2>
-        <div className="cp-props-table-wrapper">
-          <table className="cp-props-table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Default</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              {propConfigs.map(prop => (
-                <tr key={prop.name}>
-                  <td><code className="cp-code-inline">{prop.name}</code></td>
-                  <td><span className="cp-type-badge">{prop.type === 'select' ? prop.options?.join(' | ') : prop.type}</span></td>
-                  <td><code className="cp-code-inline">{String(prop.defaultValue)}</code></td>
-                  <td className="cp-prop-desc">{prop.description || '—'}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
       {/* ── EXAMPLES & DEMOS ── */}
       <div className="cp-dual-section" id="section-examples">
         <div className="cp-section-badge">EXAMPLES</div>
@@ -290,6 +192,97 @@ function InteractiveDocsContent({
             </div>
           )}
         </div>
+      </div>
+
+      {/* ── PROPS REFERENCE ── */}
+      <div className="cp-dual-section" id="section-props">
+        <div className="cp-section-badge">API</div>
+        <h2 className="cp-dual-section-title">
+          <ui-icon name="list" size="18" />
+          Props Reference
+        </h2>
+        <div className="cp-props-table-wrapper">
+          <table className="cp-props-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              {propConfigs.map(prop => (
+                <tr key={prop.name}>
+                  <td><code className="cp-code-inline">{prop.name}</code></td>
+                  <td><span className="cp-type-badge">{prop.type === 'select' ? prop.options?.join(' | ') : prop.type}</span></td>
+                  <td><code className="cp-code-inline">{String(prop.defaultValue)}</code></td>
+                  <td className="cp-prop-desc">{prop.description || '—'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* ── EVENTS REFERENCE ── */}
+        {events && events.length > 0 && (
+          <div style={{ marginTop: '2rem' }}>
+            <h3 className="cp-doc-subsection-title" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1rem', fontWeight: 600, color: '#fff', marginBottom: '1rem' }}>
+              <ui-icon name="zap" size="16" />
+              Events Emitted
+            </h3>
+            <div className="cp-props-table-wrapper">
+              <table className="cp-props-table">
+                <thead>
+                  <tr>
+                    <th>Event Name</th>
+                    <th>Detail Payload</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {events.map(ev => (
+                    <tr key={ev.event}>
+                      <td><code className="cp-code-inline">{ev.event}</code></td>
+                      <td><code className="cp-code-inline">{ev.detail}</code></td>
+                      <td className="cp-prop-desc">{ev.docs || '—'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
+        {/* ── METHODS REFERENCE ── */}
+        {methods && methods.length > 0 && (
+          <div style={{ marginTop: '2rem' }}>
+            <h3 className="cp-doc-subsection-title" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1rem', fontWeight: 600, color: '#fff', marginBottom: '1rem' }}>
+              <ui-icon name="terminal" size="16" />
+              Public Methods
+            </h3>
+            <div className="cp-props-table-wrapper">
+              <table className="cp-props-table">
+                <thead>
+                  <tr>
+                    <th>Method Name</th>
+                    <th>Signature</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {methods.map(m => (
+                    <tr key={m.name}>
+                      <td><code className="cp-code-inline">{m.name}</code></td>
+                      <td><code className="cp-code-inline">{m.signature}</code></td>
+                      <td className="cp-prop-desc">{m.docs || '—'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -326,7 +319,9 @@ export default function ComponentPlayground({
   docs,
   examples,
   demoSections,
-  interactiveDocs = false
+  interactiveDocs = false,
+  events = [],
+  methods = []
 }: ComponentPlaygroundProps) {
   const [activeTab, setActiveTabState] = useState<'playground' | 'docs' | 'examples'>(
     () => (getTabFromHash() as any) || 'playground'
@@ -354,59 +349,35 @@ export default function ComponentPlayground({
   };
 
   const tabs = interactiveDocs
-    ? [
+    ? ([
       { id: 'docs', label: 'Documentation', icon: 'book-open' },
       { id: 'examples', label: 'Examples & Demos', icon: 'code-2' },
-    ]
-    : [
+    ] as const)
+    : ([
       { id: 'playground', label: 'Design Studio', icon: 'sliders-horizontal' },
       { id: 'docs', label: 'Documentation', icon: 'book-open' },
       { id: 'examples', label: 'Examples & Demos', icon: 'code-2' },
-    ] as const;
+    ] as const);
 
   // ── Interactive Docs mode: skip tab shell, render scrollable content directly ──
   if (interactiveDocs) {
     return (
-      <div className="cp-interactive-docs-wrapper" style={{ display: 'flex', position: 'relative' }}>
-        <InteractiveDocsContent
-          componentName={componentName}
-          tagName={tagName}
-          description={description}
-          propConfigs={propConfigs}
-          renderPreview={renderPreview}
-          buildCode={buildCode}
-          docs={docs}
-          examples={examples}
-          demoSections={demoSections}
-          onSectionChange={() => {}}
-          noScrollWrapper={true}
-        />
-        {/* Right side navigation for examples and demos */}
-                <div className="cp-right-nav" style={{ position: 'absolute', top: '20%', right: '1rem' }}>
-          <h3 className="cp-on-this-page" style={{ marginBottom: '0.5rem', color: '#fff' }}>On this page</h3>
-          <ui-anchor
-            scroll-container=".id-docs-content"
-            sticky="true"
-            scroll-offset="40"
-            smooth-scroll="true"
-            theme="dark"
-            size="sm"
-            active-color="#10b981"
-            items={JSON.stringify([
-  ...examples.map((ex, i) => ({
-    id: `link-ex-${i}`,
-    label: ex.title,
-    target: `example-heading-${i}`
-  })),
-  ...(demoSections || []).map((demo, i) => ({
-    id: `link-demo-${i}`,
-    label: demo.title,
-    target: `demo-heading-${i}`
-  }))
-])}
-          />
-        </div>
-      </div>
+      <InteractiveDocsContent
+        componentName={componentName}
+        tagName={tagName}
+        description={description}
+        props={propConfigs}
+        propConfigs={propConfigs}
+        renderPreview={renderPreview}
+        buildCode={buildCode}
+        docs={docs}
+        examples={examples}
+        demoSections={demoSections}
+        onSectionChange={() => {}}
+        noScrollWrapper={true}
+        events={events}
+        methods={methods}
+      />
     );
   }
 
@@ -532,6 +503,66 @@ export default function ComponentPlayground({
                   </div>
                 </section>
 
+                {/* Events Table */}
+                {events && events.length > 0 && (
+                  <section className="cp-docs-section">
+                    <h2 className="cp-docs-section-title">
+                      <ui-icon name="zap" size="18" />
+                      Events Emitted
+                    </h2>
+                    <div className="cp-props-table-wrapper">
+                      <table className="cp-props-table">
+                        <thead>
+                          <tr>
+                            <th>Event Name</th>
+                            <th>Detail Payload</th>
+                            <th>Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {events.map(ev => (
+                            <tr key={ev.event}>
+                              <td><code className="cp-code-inline">{ev.event}</code></td>
+                              <td><code className="cp-code-inline">{ev.detail}</code></td>
+                              <td className="cp-prop-desc">{ev.docs || '—'}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </section>
+                )}
+
+                {/* Methods Table */}
+                {methods && methods.length > 0 && (
+                  <section className="cp-docs-section">
+                    <h2 className="cp-docs-section-title">
+                      <ui-icon name="terminal" size="18" />
+                      Public Methods
+                    </h2>
+                    <div className="cp-props-table-wrapper">
+                      <table className="cp-props-table">
+                        <thead>
+                          <tr>
+                            <th>Method Name</th>
+                            <th>Signature</th>
+                            <th>Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {methods.map(m => (
+                            <tr key={m.name}>
+                              <td><code className="cp-code-inline">{m.name}</code></td>
+                              <td><code className="cp-code-inline">{m.signature}</code></td>
+                              <td className="cp-prop-desc">{m.docs || '—'}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </section>
+                )}
+
                 {/* Doc Sections */}
                 {docs.map((section, i) => (
                   <section key={i} className="cp-docs-section">
@@ -580,7 +611,7 @@ export default function ComponentPlayground({
                   <ExampleCard key={`ex-${i}`} example={example} index={i} />
                 ))}
 
-                {demoSections.length > 0 && (
+                {demoSections && demoSections.length > 0 && (
                   <>
                     <div className="cp-demos-intro" style={{ marginTop: '1rem' }}>
                       <ui-icon name="play-circle" size="18" />

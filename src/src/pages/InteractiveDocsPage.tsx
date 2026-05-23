@@ -1,7 +1,6 @@
 import { useState, useEffect, Suspense, lazy } from 'react';
 import { categoryNavItems } from '../navigation.data';
 import type { NavItem } from '../navigation.data';
-import type { ExampleConfig } from '../components/playground/ComponentPlayground';
 import '../components/playground/ComponentPlayground.css';
 import './InteractiveDocsPage.css';
 
@@ -10,9 +9,8 @@ const DynamicComponentPage = lazy(() => import('./components/DynamicComponentPag
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 const TOC_SECTIONS = [
   { id: 'section-overview', label: 'Overview', icon: 'info' },
-  { id: 'section-playground', label: 'Design Studio', icon: 'sliders-horizontal' },
-  { id: 'section-props', label: 'Props Reference', icon: 'list' },
   { id: 'section-examples', label: 'Examples', icon: 'code-2' },
+  { id: 'section-props', label: 'Props Reference', icon: 'list' },
 ];
 
 function getIdFromHash() {
@@ -162,7 +160,7 @@ function LeftSidebar({
 }
 
 // ─── Right TOC ────────────────────────────────────────────────────────────────
-function RightToc({ activeSection, onScrollTo, examples }: { activeSection: string; onScrollTo: (id: string) => void; examples: ExampleConfig[]; }) {
+function RightToc({ activeSection, onScrollTo, examples }: { activeSection: string; onScrollTo: (id: string) => void; examples: { title: string; id: string }[]; }) {
   return (
     <aside className="id-right-toc">
       <div className="cp-toc-header">
@@ -171,29 +169,35 @@ function RightToc({ activeSection, onScrollTo, examples }: { activeSection: stri
       </div>
       <div className="cp-toc-list">
         {TOC_SECTIONS.map(sec => (
-          <button
-            key={sec.id}
-            className={`cp-toc-item ${activeSection === sec.id ? 'cp-toc-item--active' : ''}`}
-            onClick={() => onScrollTo(sec.id)}
-          >
-            <ui-icon name={sec.icon} size="12" />
-            {sec.label}
-          </button>
-        ))}
-        {examples.length > 0 && (
-          <div className="cp-toc-sublist">
-            {examples.map((ex, i) => (
-              <button
-                key={i}
-                className={`cp-toc-item ${activeSection === `example-heading-${i}` ? 'cp-toc-item--active' : ''}`}
-                onClick={() => onScrollTo(`example-heading-${i}`)}
-              >
-                <ui-icon name="code-2" size="10" />
-                {ex.title}
-              </button>
-            ))}
+          <div key={sec.id}>
+            <button
+              className={`cp-toc-item ${
+                activeSection === sec.id || 
+                (sec.id === 'section-examples' && examples.some(ex => activeSection === ex.id)) 
+                  ? 'cp-toc-item--active' 
+                  : ''
+              }`}
+              onClick={() => onScrollTo(sec.id)}
+            >
+              <ui-icon name={sec.icon} size="12" />
+              {sec.label}
+            </button>
+            {sec.id === 'section-examples' && examples.length > 0 && (
+              <div className="cp-toc-sublist">
+                {examples.map((ex, i) => (
+                  <button
+                    key={i}
+                    className={`cp-toc-item ${activeSection === ex.id ? 'cp-toc-item--active' : ''}`}
+                    onClick={() => onScrollTo(ex.id)}
+                  >
+                    <ui-icon name="code-2" size="10" />
+                    {ex.title}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
-        )}
+        ))}
       </div>
     </aside>
   );
@@ -231,7 +235,7 @@ function WelcomeState() {
 export default function InteractiveDocsPage() {
   const [selectedId, setSelectedId] = useState(() => getIdFromHash());
   const [activeSection, setActiveSection] = useState('section-overview');
-  const [examples, setExamples] = useState<ExampleConfig[]>([]);
+  const [examples, setExamples] = useState<{ title: string; id: string }[]>([]);
 
   // Sync URL → state when user navigates back/forward
   useEffect(() => {
@@ -263,7 +267,12 @@ export default function InteractiveDocsPage() {
     const container = document.getElementById('id-center-scroll');
     if (!container) return;
     const handler = () => {
-      const ids = TOC_SECTIONS.map(s => s.id);
+      const ids = [
+        'section-overview',
+        'section-examples',
+        ...examples.map(ex => ex.id),
+        'section-props'
+      ];
       for (const id of [...ids].reverse()) {
         const el = container.querySelector(`#${id}`) as HTMLElement | null;
         if (el && el.offsetTop <= container.scrollTop + 140) {
@@ -275,7 +284,7 @@ export default function InteractiveDocsPage() {
     };
     container.addEventListener('scroll', handler, { passive: true });
     return () => container.removeEventListener('scroll', handler);
-  }, [selectedId]);
+  }, [selectedId, examples]);
 
   return (
     <div className="id-page">

@@ -10,14 +10,18 @@
     "grep": {},
     "grepInvert": null,
     "maxFailures": 0,
-    "metadata": {},
+    "metadata": {
+      "actualWorkers": 1
+    },
     "preserveOutput": "always",
     "projects": [
       {
         "outputDir": "C:/Praveen/Personal-repo/kmn/atom-ui/src/test-results",
         "repeatEach": 1,
         "retries": 1,
-        "metadata": {},
+        "metadata": {
+          "actualWorkers": 1
+        },
         "id": "chromium",
         "name": "chromium",
         "testDir": "C:/Praveen/Personal-repo/kmn/atom-ui/src/tests/e2e",
@@ -65,103 +69,642 @@
       "timeout": 120000
     }
   },
-  "suites": [],
-  "errors": [
+  "suites": [
     {
-      "message": "TypeError: test.each is not a function",
-      "stack": "TypeError: test.each is not a function\n    at C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\accordion.spec.ts:84:8\n    at C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\accordion.spec.ts:20:6",
-      "location": {
-        "file": "C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\accordion.spec.ts",
-        "column": 8,
-        "line": 84
-      },
-      "snippet": "\u001b[90m   at \u001b[39maccordion.spec.ts:84\n\n\u001b[0m \u001b[90m 82 |\u001b[39m\n \u001b[90m 83 |\u001b[39m   \u001b[90m// ── Variants ─────────────────────────────────────────────────────────────\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 84 |\u001b[39m   test\u001b[33m.\u001b[39meach([[\u001b[32m'default'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'bordered'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'splitted'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'light'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'shadow'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'card'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'headline'\u001b[39m]])(\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 85 |\u001b[39m     \u001b[32m'accepts variant=\"%s\"'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 86 |\u001b[39m     \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m [variant]) \u001b[33m=>\u001b[39m {\n \u001b[90m 87 |\u001b[39m       \u001b[36mawait\u001b[39m setPreviewAttr(page\u001b[33m,\u001b[39m \u001b[33mTAG\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'variant'\u001b[39m\u001b[33m,\u001b[39m variant)\u001b[33m;\u001b[39m\u001b[0m"
-    },
-    {
-      "message": "TypeError: test.each is not a function",
-      "stack": "TypeError: test.each is not a function\n    at C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\avatar-badge-progress-icon.spec.ts:32:8\n    at C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\avatar-badge-progress-icon.spec.ts:13:6",
-      "location": {
-        "file": "C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\avatar-badge-progress-icon.spec.ts",
-        "column": 8,
-        "line": 32
-      },
-      "snippet": "\u001b[90m   at \u001b[39mavatar-badge-progress-icon.spec.ts:32\n\n\u001b[0m \u001b[90m 30 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m   test\u001b[33m.\u001b[39meach([[\u001b[32m'xs'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'sm'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'md'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'lg'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'xl'\u001b[39m]])(\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m     \u001b[32m'accepts size=\"%s\"'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m [size]) \u001b[33m=>\u001b[39m {\n \u001b[90m 34 |\u001b[39m       \u001b[36mawait\u001b[39m setPreviewAttr(page\u001b[33m,\u001b[39m \u001b[33mTAG\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'size'\u001b[39m\u001b[33m,\u001b[39m size)\u001b[33m;\u001b[39m\n \u001b[90m 35 |\u001b[39m       expect(\u001b[36mawait\u001b[39m getPreviewAttr(page\u001b[33m,\u001b[39m \u001b[33mTAG\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'size'\u001b[39m))\u001b[33m.\u001b[39mtoBe(size)\u001b[33m;\u001b[39m\u001b[0m"
-    },
-    {
-      "message": "TypeError: test.each is not a function",
-      "stack": "TypeError: test.each is not a function\n    at C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\button-toggle.spec.ts:50:8\n    at C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\button-toggle.spec.ts:14:6",
-      "location": {
-        "file": "C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\button-toggle.spec.ts",
-        "column": 8,
-        "line": 50
-      },
-      "snippet": "\u001b[90m   at \u001b[39mbutton-toggle.spec.ts:50\n\n\u001b[0m \u001b[90m 48 |\u001b[39m\n \u001b[90m 49 |\u001b[39m   \u001b[90m// ── Variant ──────────────────────────────────────────────────────────────\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 50 |\u001b[39m   test\u001b[33m.\u001b[39meach([[\u001b[32m'classic'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'filled'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'outlined'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'soft'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'solid'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'surface'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'text'\u001b[39m]])(\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 51 |\u001b[39m     \u001b[32m'accepts variant=\"%s\"'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 52 |\u001b[39m     \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m [variant]) \u001b[33m=>\u001b[39m {\n \u001b[90m 53 |\u001b[39m       \u001b[36mawait\u001b[39m setPreviewAttr(page\u001b[33m,\u001b[39m \u001b[33mTAG\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'variant'\u001b[39m\u001b[33m,\u001b[39m variant)\u001b[33m;\u001b[39m\u001b[0m"
-    },
-    {
-      "message": "TypeError: test.each is not a function",
-      "stack": "TypeError: test.each is not a function\n    at C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\button.spec.ts:60:8\n    at C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\button.spec.ts:13:6",
-      "location": {
-        "file": "C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\button.spec.ts",
-        "column": 8,
-        "line": 60
-      },
-      "snippet": "\u001b[90m   at \u001b[39mbutton.spec.ts:60\n\n\u001b[0m \u001b[90m 58 |\u001b[39m\n \u001b[90m 59 |\u001b[39m   \u001b[90m// ── Variants ──────────────────────────────────────────────────────────────\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 60 |\u001b[39m   test\u001b[33m.\u001b[39meach([[\u001b[32m'primary'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'secondary'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'outline'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'ghost'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'danger'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'success'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'warning'\u001b[39m]])(\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 61 |\u001b[39m     \u001b[32m'accepts variant=\"%s\"'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 62 |\u001b[39m     \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m [variant]) \u001b[33m=>\u001b[39m {\n \u001b[90m 63 |\u001b[39m       \u001b[36mawait\u001b[39m setPreviewAttr(page\u001b[33m,\u001b[39m \u001b[32m'ui-button'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'variant'\u001b[39m\u001b[33m,\u001b[39m variant)\u001b[33m;\u001b[39m\u001b[0m"
-    },
-    {
-      "message": "TypeError: test.each is not a function",
-      "stack": "TypeError: test.each is not a function\n    at C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\checkbox.spec.ts:64:8\n    at C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\checkbox.spec.ts:14:6",
-      "location": {
-        "file": "C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\checkbox.spec.ts",
-        "column": 8,
-        "line": 64
-      },
-      "snippet": "\u001b[90m   at \u001b[39mcheckbox.spec.ts:64\n\n\u001b[0m \u001b[90m 62 |\u001b[39m\n \u001b[90m 63 |\u001b[39m   \u001b[90m// ── Sizes ─────────────────────────────────────────────────────────────────\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 64 |\u001b[39m   test\u001b[33m.\u001b[39meach([[\u001b[32m'xs'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'sm'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'md'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'lg'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'xl'\u001b[39m]])(\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 65 |\u001b[39m     \u001b[32m'accepts size=\"%s\"'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 66 |\u001b[39m     \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m [size]) \u001b[33m=>\u001b[39m {\n \u001b[90m 67 |\u001b[39m       \u001b[36mawait\u001b[39m setPreviewAttr(page\u001b[33m,\u001b[39m \u001b[33mTAG\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'size'\u001b[39m\u001b[33m,\u001b[39m size)\u001b[33m;\u001b[39m\u001b[0m"
-    },
-    {
-      "message": "TypeError: test.each is not a function",
-      "stack": "TypeError: test.each is not a function\n    at C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\dropdown.spec.ts:79:8\n    at C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\dropdown.spec.ts:14:6",
-      "location": {
-        "file": "C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\dropdown.spec.ts",
-        "column": 8,
-        "line": 79
-      },
-      "snippet": "\u001b[90m   at \u001b[39mdropdown.spec.ts:79\n\n\u001b[0m \u001b[90m 77 |\u001b[39m\n \u001b[90m 78 |\u001b[39m   \u001b[90m// ── Sizes ─────────────────────────────────────────────────────────────────\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 79 |\u001b[39m   test\u001b[33m.\u001b[39meach([[\u001b[32m'sm'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'md'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'lg'\u001b[39m]])(\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 80 |\u001b[39m     \u001b[32m'accepts size=\"%s\"'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 81 |\u001b[39m     \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m [size]) \u001b[33m=>\u001b[39m {\n \u001b[90m 82 |\u001b[39m       \u001b[36mawait\u001b[39m setPreviewAttr(page\u001b[33m,\u001b[39m \u001b[33mTAG\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'size'\u001b[39m\u001b[33m,\u001b[39m size)\u001b[33m;\u001b[39m\u001b[0m"
-    },
-    {
-      "message": "TypeError: test.each is not a function",
-      "stack": "TypeError: test.each is not a function\n    at C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\input.spec.ts:107:8\n    at C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\input.spec.ts:14:6",
-      "location": {
-        "file": "C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\input.spec.ts",
-        "column": 8,
-        "line": 107
-      },
-      "snippet": "\u001b[90m   at \u001b[39minput.spec.ts:107\n\n\u001b[0m \u001b[90m 105 |\u001b[39m\n \u001b[90m 106 |\u001b[39m   \u001b[90m// ── Types ─────────────────────────────────────────────────────────────────\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 107 |\u001b[39m   test\u001b[33m.\u001b[39meach([[\u001b[32m'text'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'email'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'password'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'number'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'search'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'url'\u001b[39m]])(\n \u001b[90m     |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 108 |\u001b[39m     \u001b[32m'accepts type=\"%s\"'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 109 |\u001b[39m     \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m [type]) \u001b[33m=>\u001b[39m {\n \u001b[90m 110 |\u001b[39m       \u001b[36mawait\u001b[39m setPreviewAttr(page\u001b[33m,\u001b[39m \u001b[33mTAG\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'type'\u001b[39m\u001b[33m,\u001b[39m type)\u001b[33m;\u001b[39m\u001b[0m"
-    },
-    {
-      "message": "TypeError: test.each is not a function",
-      "stack": "TypeError: test.each is not a function\n    at C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\radio.spec.ts:64:8\n    at C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\radio.spec.ts:14:6",
-      "location": {
-        "file": "C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\radio.spec.ts",
-        "column": 8,
-        "line": 64
-      },
-      "snippet": "\u001b[90m   at \u001b[39mradio.spec.ts:64\n\n\u001b[0m \u001b[90m 62 |\u001b[39m\n \u001b[90m 63 |\u001b[39m   \u001b[90m// ── Sizes ─────────────────────────────────────────────────────────────────\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 64 |\u001b[39m   test\u001b[33m.\u001b[39meach([[\u001b[32m'sm'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'md'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'lg'\u001b[39m]])(\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 65 |\u001b[39m     \u001b[32m'accepts size=\"%s\"'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 66 |\u001b[39m     \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m [size]) \u001b[33m=>\u001b[39m {\n \u001b[90m 67 |\u001b[39m       \u001b[36mawait\u001b[39m setPreviewAttr(page\u001b[33m,\u001b[39m \u001b[33mTAG\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'size'\u001b[39m\u001b[33m,\u001b[39m size)\u001b[33m;\u001b[39m\u001b[0m"
-    },
-    {
-      "message": "TypeError: test.each is not a function",
-      "stack": "TypeError: test.each is not a function\n    at C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\switch.spec.ts:55:8\n    at C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\switch.spec.ts:14:6",
-      "location": {
-        "file": "C:\\Praveen\\Personal-repo\\kmn\\atom-ui\\src\\tests\\e2e\\switch.spec.ts",
-        "column": 8,
-        "line": 55
-      },
-      "snippet": "\u001b[90m   at \u001b[39mswitch.spec.ts:55\n\n\u001b[0m \u001b[90m 53 |\u001b[39m\n \u001b[90m 54 |\u001b[39m   \u001b[90m// ── Sizes ─────────────────────────────────────────────────────────────────\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 55 |\u001b[39m   test\u001b[33m.\u001b[39meach([[\u001b[32m'sm'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'md'\u001b[39m]\u001b[33m,\u001b[39m [\u001b[32m'lg'\u001b[39m]])(\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 56 |\u001b[39m     \u001b[32m'accepts size=\"%s\"'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 57 |\u001b[39m     \u001b[36masync\u001b[39m ({ page }\u001b[33m,\u001b[39m [size]) \u001b[33m=>\u001b[39m {\n \u001b[90m 58 |\u001b[39m       \u001b[36mawait\u001b[39m setPreviewAttr(page\u001b[33m,\u001b[39m \u001b[33mTAG\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'size'\u001b[39m\u001b[33m,\u001b[39m size)\u001b[33m;\u001b[39m\u001b[0m"
+      "title": "accordion.spec.ts",
+      "file": "accordion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Accordion Component",
+          "file": "accordion.spec.ts",
+          "line": 19,
+          "column": 6,
+          "specs": [
+            {
+              "title": "renders on the page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 93,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-23T14:41:14.252Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06e7421ca3e0998d2f0d-ee248817a21b22e0398b",
+              "file": "accordion.spec.ts",
+              "line": 40,
+              "column": 3
+            },
+            {
+              "title": "items attribute is stored",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 74,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-23T14:41:21.218Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06e7421ca3e0998d2f0d-9e76541cb5256c9ddb02",
+              "file": "accordion.spec.ts",
+              "line": 44,
+              "column": 3
+            },
+            {
+              "title": "clicking an accordion header fires uiToggle or click event",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3188,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-23T14:41:21.328Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06e7421ca3e0998d2f0d-2c54cc088b77dded236e",
+              "file": "accordion.spec.ts",
+              "line": 50,
+              "column": 3
+            },
+            {
+              "title": "multiple attribute is accepted",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 132,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-23T14:41:24.555Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06e7421ca3e0998d2f0d-f30a071fa85f8a9fa3d5",
+              "file": "accordion.spec.ts",
+              "line": 81,
+              "column": 3
+            },
+            {
+              "title": "enable-search attribute is accepted",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 218,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-23T14:41:24.719Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06e7421ca3e0998d2f0d-2131121e2c1b6ef83269",
+              "file": "accordion.spec.ts",
+              "line": 87,
+              "column": 3
+            },
+            {
+              "title": "accepts variant=\"default\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 196,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-23T14:41:24.970Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06e7421ca3e0998d2f0d-70946f8395f8218d073a",
+              "file": "accordion.spec.ts",
+              "line": 94,
+              "column": 5
+            },
+            {
+              "title": "accepts variant=\"bordered\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 193,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-23T14:41:25.207Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06e7421ca3e0998d2f0d-55c290989f9081f1705f",
+              "file": "accordion.spec.ts",
+              "line": 94,
+              "column": 5
+            },
+            {
+              "title": "accepts variant=\"splitted\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 197,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-23T14:41:25.432Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06e7421ca3e0998d2f0d-66d9990c62f96c6daba1",
+              "file": "accordion.spec.ts",
+              "line": 94,
+              "column": 5
+            },
+            {
+              "title": "accepts variant=\"light\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 185,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-23T14:41:25.663Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06e7421ca3e0998d2f0d-81b2ace5b410c96ce145",
+              "file": "accordion.spec.ts",
+              "line": 94,
+              "column": 5
+            },
+            {
+              "title": "accepts variant=\"shadow\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 183,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-23T14:41:25.883Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06e7421ca3e0998d2f0d-5b0d61b03b473aa9dac6",
+              "file": "accordion.spec.ts",
+              "line": 94,
+              "column": 5
+            },
+            {
+              "title": "accepts variant=\"card\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 197,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-23T14:41:26.101Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06e7421ca3e0998d2f0d-fcafcc35493cc2d40b22",
+              "file": "accordion.spec.ts",
+              "line": 94,
+              "column": 5
+            },
+            {
+              "title": "accepts variant=\"headline\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 173,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-23T14:41:26.335Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06e7421ca3e0998d2f0d-6e5eb9bda7d75d7d3896",
+              "file": "accordion.spec.ts",
+              "line": 94,
+              "column": 5
+            },
+            {
+              "title": "accepts size=\"sm\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 173,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-23T14:41:26.544Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06e7421ca3e0998d2f0d-51f3387a3b5ed6378269",
+              "file": "accordion.spec.ts",
+              "line": 102,
+              "column": 5
+            },
+            {
+              "title": "accepts size=\"md\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 136,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-23T14:41:26.751Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06e7421ca3e0998d2f0d-b1e21e12bf8a35acafdb",
+              "file": "accordion.spec.ts",
+              "line": 102,
+              "column": 5
+            },
+            {
+              "title": "accepts size=\"lg\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 131,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-23T14:41:26.920Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06e7421ca3e0998d2f0d-cec3764423fcd70d630e",
+              "file": "accordion.spec.ts",
+              "line": 102,
+              "column": 5
+            },
+            {
+              "title": "accepts theme=\"default\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 128,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-23T14:41:27.081Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06e7421ca3e0998d2f0d-f5ad1c59c1af3342d6c7",
+              "file": "accordion.spec.ts",
+              "line": 110,
+              "column": 5
+            },
+            {
+              "title": "accepts theme=\"glass\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 145,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-23T14:41:27.238Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06e7421ca3e0998d2f0d-fae218fb0a95513cb18d",
+              "file": "accordion.spec.ts",
+              "line": 110,
+              "column": 5
+            },
+            {
+              "title": "accepts theme=\"radiant\"",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 137,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-23T14:41:27.415Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "06e7421ca3e0998d2f0d-5f2ce8deadc0da12c1ca",
+              "file": "accordion.spec.ts",
+              "line": 110,
+              "column": 5
+            }
+          ]
+        }
+      ]
     }
   ],
+  "errors": [],
   "stats": {
-    "startTime": "2026-05-20T12:01:11.236Z",
-    "duration": 723.3789999999999,
-    "expected": 0,
+    "startTime": "2026-05-23T14:41:12.941Z",
+    "duration": 17069.135000000002,
+    "expected": 18,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

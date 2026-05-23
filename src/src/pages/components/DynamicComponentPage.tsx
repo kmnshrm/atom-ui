@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getPropsForComponent, getDescriptionForComponent, getDemosForComponent } from '../../utils/componentMetadata';
+import { getPropsForComponent, getDescriptionForComponent, getDemosForComponent, getEventsForComponent, getMethodsForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
 import type { PropConfig, DocSection } from '../../components/playground/ComponentPlayground';
 
@@ -816,7 +816,7 @@ const componentRegistry: Record<string, DynamicMetadata> = {
   },
 };
 
-export default function DynamicComponentPage({ id, interactiveDocs, onExamplesLoaded }: { id: string; interactiveDocs?: boolean; onExamplesLoaded?: (examples: ExampleConfig[]) => void }) {
+export default function DynamicComponentPage({ id, interactiveDocs, onExamplesLoaded }: { id: string; interactiveDocs?: boolean; onExamplesLoaded?: (examples: { title: string; id: string }[]) => void }) {
   // Strip category prefix from slash-containing IDs (e.g. 'charts/area-chart' → 'area-chart')
   const baseId = id.includes('/') ? id.split('/').pop()! : id;
   const resolvedId = baseId === 'dock-overlay' ? 'dock' : baseId === 'tree-list' ? 'tree' : baseId;
@@ -856,6 +856,16 @@ export default function DynamicComponentPage({ id, interactiveDocs, onExamplesLo
   // Resolve dynamic description and live demos
   const componentDescription = getDescriptionForComponent(tagName, meta.description);
   const componentDemos = getDemosForComponent(resolvedId);
+
+  useEffect(() => {
+    if (onExamplesLoaded) {
+      const formatted = componentDemos.map((demo, idx) => ({
+        title: demo.title,
+        id: `demo-heading-${idx}`
+      }));
+      onExamplesLoaded(formatted);
+    }
+  }, [id, componentDemos, onExamplesLoaded]);
 
   const buildCode = (p: Record<string, any>) => {
     const attrs: string[] = [];
@@ -942,6 +952,9 @@ export default function DynamicComponentPage({ id, interactiveDocs, onExamplesLo
     },
   ];
 
+  const dynamicEvents = getEventsForComponent(tagName);
+  const dynamicMethods = getMethodsForComponent(tagName);
+
   return (
     <ComponentPlayground
       componentName={componentName}
@@ -954,6 +967,8 @@ export default function DynamicComponentPage({ id, interactiveDocs, onExamplesLo
       examples={[]}
       demoSections={componentDemos}
       interactiveDocs={interactiveDocs}
+      events={dynamicEvents}
+      methods={dynamicMethods}
     />
   );
 }

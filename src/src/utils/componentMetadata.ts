@@ -1,6 +1,6 @@
 import docsData from '../docs.json';
 import demosData from '../demos.json';
-import type { PropConfig, DemoSection } from '../components/playground/ComponentPlayground';
+import type { PropConfig, DemoSection, EventConfig, MethodConfig } from '../components/playground/ComponentPlayground';
 
 interface StencilProp {
   name: string;
@@ -113,4 +113,30 @@ export function getDescriptionForComponent(tagName: string, fallback: string): s
 export function getDemosForComponent(componentId: string): DemoSection[] {
   const demos = (demosData as Record<string, DemoSection[]>)[componentId];
   return demos || [];
+}
+
+/**
+ * Returns compiled events emitted by a given component (e.g. 'ui-accordion')
+ */
+export function getEventsForComponent(tagName: string): EventConfig[] {
+  const component = docsData.components.find((c: any) => c.tag === tagName);
+  if (!component || !component.events) return [];
+  return component.events.map((e: any) => ({
+    event: e.event,
+    detail: e.detail,
+    docs: e.docs
+  }));
+}
+
+/**
+ * Returns compiled public methods exposed by a given component (e.g. 'ui-accordion')
+ */
+export function getMethodsForComponent(tagName: string): MethodConfig[] {
+  const component = docsData.components.find((c: any) => c.tag === tagName);
+  if (!component || !component.methods) return [];
+  return component.methods.map((m: any) => ({
+    name: m.name,
+    signature: m.signature,
+    docs: m.docs
+  }));
 }
