@@ -385,8 +385,8 @@ export default function Pricing() {
             <ui-icon name="credit-card" size="13" />
             Transparent Licensing
           </div>
-          <h1 className="text-4xl md:text-6xl font-black tracking-tight bg-gradient-to-r from-white via-gray-100 to-gray-400 bg-clip-text text-transparent leading-tight">
-            Simple, Predictable<br />
+          <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight">
+            <span className="text-white drop-shadow-sm">Simple, Predictable</span><br />
             <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">Pricing</span>
           </h1>
           <p className="text-gray-400 text-lg leading-relaxed max-w-xl mx-auto">
