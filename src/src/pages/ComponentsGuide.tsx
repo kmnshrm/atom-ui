@@ -16,6 +16,8 @@ interface ComponentEntry {
 
 interface Props {
   onNavigate?: (id: string) => void;
+  theme: 'light' | 'dark';
+  toggleTheme: () => void;
 }
 
 // ─── Category colour palette ──────────────────────────────────────────────────
@@ -243,7 +245,7 @@ function CategorySection({
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
-export default function ComponentsGuide({ onNavigate }: Props) {
+export default function ComponentsGuide({ onNavigate, theme, toggleTheme }: Props) {
   const [search, setSearch] = useState('');
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [viewMode, setViewMode] = useState<ViewMode>('card');
@@ -296,7 +298,7 @@ export default function ComponentsGuide({ onNavigate }: Props) {
   ];
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white">
+    <div className="min-h-screen bg-[var(--background)] text-[var(--text-primary)]">
 
       {/* ── Hero ─────────────────────────────────────────────────────────────── */}
       <div className="relative overflow-hidden pt-16 pb-12 px-8">
@@ -353,7 +355,7 @@ export default function ComponentsGuide({ onNavigate }: Props) {
       </div>
 
       {/* ── Sticky Toolbar ────────────────────────────────────────────────────── */}
-      <div className="sticky top-0 z-40 bg-[#050505]/90 backdrop-blur-xl border-b border-white/[0.05] px-8 py-4">
+      <div className="sticky top-0 z-40 bg-[var(--background)]/90 backdrop-blur-xl border-b border-[var(--border)] px-8 py-4">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row gap-4 items-start sm:items-center">
 
           {/* Search */}
@@ -367,7 +369,7 @@ export default function ComponentsGuide({ onNavigate }: Props) {
               value={search}
               onChange={e => setSearch(e.target.value)}
               placeholder="Search components… (⌘K)"
-              className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl pl-9 pr-9 py-2.5 text-sm text-white placeholder-white/25 outline-none focus:border-emerald-500/40 focus:bg-white/[0.07] transition-all"
+              className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl pl-9 pr-9 py-2.5 text-sm text-[var(--text-primary)] placeholder-white/25 outline-none focus:border-emerald-500/40 focus:bg-white/[0.07] transition-all"
             />
             {search && (
               <button
@@ -386,7 +388,7 @@ export default function ComponentsGuide({ onNavigate }: Props) {
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-150 ${
                 activeCategory === 'all'
                   ? 'bg-emerald-500 text-black'
-                  : 'bg-white/[0.04] text-white/50 hover:bg-white/[0.08] hover:text-white/80 border border-white/[0.06]'
+                  : 'bg-white/[0.04] text-[var(--text-secondary)]/70 hover:bg-white/[0.08] hover:text-[var(--text-primary)] border border-white/[0.06]'
               }`}
             >
               All
@@ -401,7 +403,7 @@ export default function ComponentsGuide({ onNavigate }: Props) {
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-150 ${
                     isActive
                       ? `bg-gradient-to-r ${color.accent} text-white`
-                      : `bg-white/[0.04] border border-white/[0.06] text-white/50 hover:bg-white/[0.08] hover:text-white/80`
+                      : `bg-white/[0.04] border border-white/[0.06] text-[var(--text-secondary)]/70 hover:bg-white/[0.08] hover:text-[var(--text-primary)]`
                   }`}
                 >
                   <ui-icon name={cat.icon ?? 'box'} size="11" />
@@ -413,15 +415,24 @@ export default function ComponentsGuide({ onNavigate }: Props) {
 
           {/* View toggle + Result count */}
           <div className="flex items-center gap-3 ml-auto flex-shrink-0">
-            <span className="text-xs text-white/30">{filteredCount} / {totalCount}</span>
+            <span className="text-xs text-[var(--text-secondary)]/50">{filteredCount} / {totalCount}</span>
+            <ui-button
+              icon={theme === 'dark' ? 'sun' : 'moon'}
+              icon-only
+              shape="circle"
+              variant="ghost"
+              size="sm"
+              onClick={toggleTheme}
+              title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            />
             <div className="flex items-center bg-white/[0.04] border border-white/[0.08] rounded-lg p-0.5 gap-0.5">
               <button
                 onClick={() => setViewMode('card')}
                 title="Card view"
                 className={`flex items-center justify-center w-7 h-7 rounded-md transition-all duration-150 ${
                   viewMode === 'card'
-                    ? 'bg-white/[0.12] text-white'
-                    : 'text-white/30 hover:text-white/60'
+                    ? 'bg-white/[0.12] text-[var(--text-primary)]'
+                    : 'text-[var(--text-secondary)]/40 hover:text-[var(--text-primary)]'
                 }`}
               >
                 <ui-icon name="layout-grid" size="13" />
@@ -431,8 +442,8 @@ export default function ComponentsGuide({ onNavigate }: Props) {
                 title="List view"
                 className={`flex items-center justify-center w-7 h-7 rounded-md transition-all duration-150 ${
                   viewMode === 'list'
-                    ? 'bg-white/[0.12] text-white'
-                    : 'text-white/30 hover:text-white/60'
+                    ? 'bg-white/[0.12] text-[var(--text-primary)]'
+                    : 'text-[var(--text-secondary)]/40 hover:text-[var(--text-primary)]'
                 }`}
               >
                 <ui-icon name="list" size="13" />

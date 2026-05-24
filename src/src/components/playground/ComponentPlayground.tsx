@@ -141,10 +141,32 @@ function InteractiveDocsContent({
           {componentName}
         </h2>
         <div className="cp-consolidated-overview-box">
-          <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', marginBottom: '0.75rem' }}>
-            <ui-tag label={`<${tagName}>`} color="success" />
+          <div className="cp-overview-main-info">
+            <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', marginBottom: '1rem' }}>
+              <ui-tag label={`<${tagName}>`} color="success" />
+              <ui-tag label="Web Component" color="info" />
+              <ui-tag label="Stable" color="primary" />
+            </div>
+            <p className="cp-overview-desc">{description}</p>
           </div>
-          <p style={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, fontSize: '0.9rem', margin: 0 }}>{description}</p>
+          <div className="cp-overview-metadata-grid">
+            <div className="cp-metadata-item">
+              <span className="cp-metadata-label">HTML Tag</span>
+              <code className="cp-metadata-value">&lt;{tagName}&gt;</code>
+            </div>
+            <div className="cp-metadata-item">
+              <span className="cp-metadata-label">DOM Class</span>
+              <code className="cp-metadata-value">HTML{componentName.replace(/\s+/g, '')}Element</code>
+            </div>
+            <div className="cp-metadata-item">
+              <span className="cp-metadata-label">Scope</span>
+              <code className="cp-metadata-value">Shadow DOM</code>
+            </div>
+            <div className="cp-metadata-item">
+              <span className="cp-metadata-label">Export Name</span>
+              <code className="cp-metadata-value">{componentName.replace(/\s+/g, '')}</code>
+            </div>
+          </div>
         </div>
 
         {/* Documentation narrative */}
@@ -201,7 +223,7 @@ function InteractiveDocsContent({
           <ui-icon name="list" size="18" />
           Props Reference
         </h2>
-        <div className="cp-props-table-wrapper">
+        <div className="cp-props-table-wrapper" id="sub-props">
           <table className="cp-props-table">
             <thead>
               <tr>
@@ -226,7 +248,7 @@ function InteractiveDocsContent({
 
         {/* ── EVENTS REFERENCE ── */}
         {events && events.length > 0 && (
-          <div style={{ marginTop: '2rem' }}>
+          <div style={{ marginTop: '2rem' }} id="sub-events">
             <h3 className="cp-doc-subsection-title" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1rem', fontWeight: 600, color: '#fff', marginBottom: '1rem' }}>
               <ui-icon name="zap" size="16" />
               Events Emitted
@@ -256,7 +278,7 @@ function InteractiveDocsContent({
 
         {/* ── METHODS REFERENCE ── */}
         {methods && methods.length > 0 && (
-          <div style={{ marginTop: '2rem' }}>
+          <div style={{ marginTop: '2rem' }} id="sub-methods">
             <h3 className="cp-doc-subsection-title" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1rem', fontWeight: 600, color: '#fff', marginBottom: '1rem' }}>
               <ui-icon name="terminal" size="16" />
               Public Methods
@@ -283,6 +305,21 @@ function InteractiveDocsContent({
             </div>
           </div>
         )}
+
+        {/* ── NOTES REFERENCE ── */}
+        <div style={{ marginTop: '2rem' }} id="sub-notes">
+          <h3 className="cp-doc-subsection-title" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1.05rem', fontWeight: 600, marginBottom: '1rem' }}>
+            <ui-icon name="file-text" size="16" />
+            Notes &amp; Guidelines
+          </h3>
+          <div className="cp-consolidated-notes-box">
+            <ul className="cp-consolidated-notes-list">
+              <li><strong>Stencil Integration:</strong> This component is built as a standard web component. In React, use camelCase for properties and standard event listeners for custom events.</li>
+              <li><strong>Ref Reflection:</strong> For public methods, obtain a DOM reference using React <code>useRef</code> or <code>document.querySelector</code> and invoke the methods directly on the element.</li>
+              <li><strong>Styling Customization:</strong> Most components support dynamic theme injection. Custom CSS properties can be set via global stylesheets or custom element style attributes.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -413,59 +450,73 @@ export default function ComponentPlayground({
           {/* Playground Tab */}
           {activeTab === 'playground' && (
             <div className="cp-playground-layout">
-              {/* Preview Panel */}
-              <div className="cp-preview-panel">
-                <div className="cp-preview-label">
-                  <span>Live Preview</span>
-                  <div className="cp-preview-actions">
-                    <ui-button
-                      variant={copiedCode ? 'success' : 'outline'}
-                      size="sm"
-                      icon={copiedCode ? 'check' : 'copy'}
-                      onClick={handleCopyCode}
-                      title="Copy code"
-                    >
-                      {copiedCode ? 'Copied!' : 'Copy Code'}
-                    </ui-button>
+              <ui-resizable-panel
+                direction="horizontal"
+                panels='[
+                  {"minSize":20, "maxSize":50, "defaultSize":30},
+                  {"minSize":50, "maxSize":80, "defaultSize":70}
+                ]'
+                handle-size={6}
+                handle-color="rgba(255,255,255,0.08)"
+                handle-hover-color="rgba(99,102,241,0.6)"
+                animated
+                show-handle-icon
+                style={{ flex: 1, minHeight: 0, overflow: 'hidden' }}
+              >
+                {/* Controls Panel — left */}
+                <div className="cp-controls-panel">
+                  <div className="cp-controls-header">
+                    <ui-icon name="settings-2" size="16" />
+                    <span>Properties</span>
                   </div>
+                  <PropEditor
+                    propConfigs={propConfigs}
+                    values={propValues}
+                    onChange={handlePropChange}
+                  />
+                  <ui-button
+                    variant="ghost"
+                    icon="rotate-ccw"
+                    full-width
+                    class="cp-reset-btn"
+                    onClick={() => {
+                      const defaults: Record<string, any> = {};
+                      propConfigs.forEach(p => { defaults[p.name] = p.defaultValue; });
+                      setPropValues(defaults);
+                    }}
+                  >
+                    Reset to Defaults
+                  </ui-button>
                 </div>
-                <div className="cp-preview-stage">
-                  <div className="cp-preview-grid-bg" />
-                  <div className="cp-preview-content">
-                    {renderPreview(propValues)}
-                  </div>
-                </div>
-                {/* Code Preview */}
-                <div className="cp-code-section">
-                  <CodePreview code={buildCode(propValues)} language="html" />
-                </div>
-              </div>
 
-              {/* Controls Panel */}
-              <div className="cp-controls-panel">
-                <div className="cp-controls-header">
-                  <ui-icon name="settings-2" size="16" />
-                  <span>Properties</span>
+                {/* Preview Panel — right */}
+                <div className="cp-preview-panel">
+                  <div className="cp-preview-label">
+                    <span>Live Preview</span>
+                    <div className="cp-preview-actions">
+                      <ui-button
+                        variant={copiedCode ? 'success' : 'outline'}
+                        size="sm"
+                        icon={copiedCode ? 'check' : 'copy'}
+                        onClick={handleCopyCode}
+                        title="Copy code"
+                      >
+                        {copiedCode ? 'Copied!' : 'Copy Code'}
+                      </ui-button>
+                    </div>
+                  </div>
+                  <div className="cp-preview-stage">
+                    <div className="cp-preview-grid-bg" />
+                    <div className="cp-preview-content">
+                      {renderPreview(propValues)}
+                    </div>
+                  </div>
+                  {/* Code Preview */}
+                  <div className="cp-code-section">
+                    <CodePreview code={buildCode(propValues)} language="html" />
+                  </div>
                 </div>
-                <PropEditor
-                  propConfigs={propConfigs}
-                  values={propValues}
-                  onChange={handlePropChange}
-                />
-                <ui-button
-                  variant="ghost"
-                  icon="rotate-ccw"
-                  full-width
-                  class="cp-reset-btn"
-                  onClick={() => {
-                    const defaults: Record<string, any> = {};
-                    propConfigs.forEach(p => { defaults[p.name] = p.defaultValue; });
-                    setPropValues(defaults);
-                  }}
-                >
-                  Reset to Defaults
-                </ui-button>
-              </div>
+              </ui-resizable-panel>
             </div>
           )}
 

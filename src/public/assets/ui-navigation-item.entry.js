@@ -78,7 +78,7 @@ const NavigationItemComponent = class {
         const isDirectlyActive = this.active || this.item.id === this.activeId;
         const isParentOfActive = this.hasActiveChild();
         const isPopoverMode = this.forcePopover || this.item.id === 'user-profile';
-        return (h("li", { key: 'b344aa6c6a2034b11c7bfb861ef51d24fb1ddc21', class: {
+        return (h("li", { key: '9345250f187b57fec472da66335620d747dfc207', class: {
                 'nav-item': true,
                 'active': isDirectlyActive,
                 'active-parent': isParentOfActive,
@@ -91,10 +91,10 @@ const NavigationItemComponent = class {
                 'is-user-profile': this.item.id === 'user-profile',
                 'placement-top': this.popoverPlacement === 'top',
                 'placement-bottom': this.popoverPlacement === 'bottom'
-            }, tabindex: this.item.disabled ? -1 : 0, "aria-disabled": this.item.disabled ? 'true' : 'false', "aria-expanded": (this.open && !isPopoverMode) ? 'true' : 'false', onMouseEnter: this.handleMouseEnter, onMouseLeave: this.handleMouseLeave }, h("div", { key: 'f511c50817c20785b2ea46afe2df07a7f5508818', class: "item-content", onClick: this.handleClick, onKeyDown: e => {
+            }, tabindex: this.item.disabled ? -1 : 0, "aria-disabled": this.item.disabled ? 'true' : 'false', "aria-expanded": (this.open && !isPopoverMode) ? 'true' : 'false', onMouseEnter: this.handleMouseEnter, onMouseLeave: this.handleMouseLeave }, h("div", { key: 'fed1eb168a5e1340b971dd12ecabcc3a6bb0d831', class: "item-content", onClick: this.handleClick, onKeyDown: e => {
                 if (e.key === 'Enter')
                     this.handleClick();
-            } }, this.item.icon && (h("span", { key: '20bf50d7db7d55522e8bc9c1433bbeaf71639fa5', class: "nav-icon" }, h("ui-icon", { key: 'b1316aec36a00d9bd44b3a89072fa6a39b282490', name: this.item.icon, library: this.item.iconLibrary || this.iconLibrary, size: "1.25rem" }))), (!this.collapsed || this.forcePopover) && h("span", { key: 'c2d027a25fa696b59231c99283761b03f637f603', class: "nav-label" }, this.item.label), this.item.badge && (!this.collapsed || this.forcePopover) && h("span", { key: '0e89b2789f06b330f445588316008d6d0d2418f6', class: "nav-badge" }, this.item.badge), hasChildren && !isPopoverMode && (h("span", { key: '4d124c918ab7092a639d1026ec1ca964511da10c', class: "nav-arrow" }, h("ui-icon", { key: '9cc46d50a9a8b76d439def8e56774fc5b9855dfd', name: "chevron-right", library: "lucide", size: "12px" }))), hasChildren && isPopoverMode && (h("span", { key: 'e47643bc3dcf1a1b5b872d1114730f3c03e5bf80', class: "nav-arrow cascading" }, h("ui-icon", { key: '7de0a36cdbc167332010d3191199d6c16d4f66a0', name: "chevron-right", library: "lucide", size: "12px" })))), !hasChildren && this.collapsed && this.isHovering && (h("div", { key: 'b187ecbdadc6d7fb3d1be290ae2f62c5fb9b0458', class: "nav-tooltip" }, this.item.label))));
+            } }, this.item.icon && (h("span", { key: 'd84f8938d5cd2aed187bcf9e1391d02028f11563', class: "nav-icon" }, h("ui-icon", { key: '425c866305be4793ba69e1220227da3676b3fcb0', name: this.item.icon, library: this.item.iconLibrary || this.iconLibrary, size: "1.25rem" }))), (!this.collapsed || this.forcePopover) && h("span", { key: '2bdd778f72907794ca3d2b71aae3b95f44d01a41', class: "nav-label" }, this.item.label), this.item.badge && (!this.collapsed || this.forcePopover) && h("span", { key: '1941e1c4aeeef16d23835d3ebd88effc538fff95', class: "nav-badge" }, this.item.badge), hasChildren && !isPopoverMode && (h("span", { key: 'fa5be41879778fd799630738887a3cc04ebaa522', class: "nav-arrow" }, h("ui-icon", { key: 'ac63423d3f91457328483262c851e3bd94e62c63', name: "chevron-right", library: "lucide", size: "12px" }))), hasChildren && isPopoverMode && (h("span", { key: '9edca162c739fe418329716440525e9c3384273e', class: "nav-arrow cascading" }, h("ui-icon", { key: '1c3d47c485761f9f159512b2dfb549d2f1509b44', name: "chevron-right", library: "lucide", size: "12px" })))), !hasChildren && this.collapsed && this.isHovering && (h("div", { key: '0ad95cb5783779519408eb16c09faac91e79aaf6', class: "nav-tooltip" }, this.item.label))));
     }
 };
 NavigationItemComponent.style = navigationItemCss();

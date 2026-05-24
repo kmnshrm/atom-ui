@@ -482,6 +482,12 @@ export const categoryNavItems: NavItem[] = [
         iconLibrary: "lucide",
       },
       {
+        id: "loader",
+        label: "Loader",
+        icon: "loader",
+        iconLibrary: "lucide",
+      },
+      {
         id: "skeleton",
         label: "Skeleton",
         icon: "loader-circle",

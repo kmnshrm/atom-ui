@@ -25,6 +25,7 @@ const RadioPage = lazy(() => import('./pages/components/RadioPage'));
 const AccordionPage = lazy(() => import('./pages/components/AccordionPage'));
 const ButtonTogglePage = lazy(() => import('./pages/components/ButtonTogglePage'));
 const DropdownPage = lazy(() => import('./pages/components/DropdownPage'));
+const LoaderPage = lazy(() => import('./pages/components/LoaderPage'));
 const DynamicComponentPage = lazy(() => import('./pages/components/DynamicComponentPage'));
 
 // Map nav IDs → component pages
@@ -42,6 +43,7 @@ const COMPONENT_PAGES: Record<string, React.ComponentType> = {
   accordian: AccordionPage,
   'button-toggle': ButtonTogglePage,
   dropdown: DropdownPage,
+  loader: LoaderPage,
 };
 
 // All nav IDs that are component pages
@@ -182,14 +184,14 @@ export default function App() {
   const renderContent = () => {
     // Static pages
     switch (activeItem) {
-      case 'home': return <Home onNavigate={navigate} />;
+      case 'home': return <Home onNavigate={navigate} theme={theme} toggleTheme={toggleTheme} />;
       case 'overview': return <Overview />;
       case 'documentation': return <Documentation />;
       case 'design-house': return <DesignHouse />;
       case 'installation': return <Installation />;
       case 'pricing': return <Pricing />;
-      case 'components-guide': return <ComponentsGuide onNavigate={navigate} />;
-      case 'interactive-docs': return <InteractiveDocsPage />;
+      case 'components-guide': return <ComponentsGuide onNavigate={navigate} theme={theme} toggleTheme={toggleTheme} />;
+      case 'interactive-docs': return <InteractiveDocsPage theme={theme} toggleTheme={toggleTheme} />;
     }
 
     // Component playground pages
@@ -320,6 +322,18 @@ export default function App() {
           </div>
         </div>
       </main>
+
+      {/* Scroll to top button for main scrollable layout */}
+      {!isInteractiveDocs && (
+        <ui-scroll-top
+          target=".main-content"
+          threshold="300"
+          position="bottom-right"
+          color="primary"
+          show-progress="true"
+          glassy="true"
+        />
+      )}
     </div>
   );
 }

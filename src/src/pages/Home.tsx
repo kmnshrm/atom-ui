@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export default function Home({ onNavigate }: { onNavigate?: (id: string) => void }) {
+export default function Home({ onNavigate, theme, toggleTheme }: { onNavigate?: (id: string) => void; theme: 'light' | 'dark'; toggleTheme: () => void }) {
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -72,30 +72,38 @@ export default function Home({ onNavigate }: { onNavigate?: (id: string) => void
   ];
 
   return (
-    <div className="min-h-screen text-white overflow-x-hidden relative bg-[#050505]">
+    <div className="min-h-screen text-[var(--text-primary)] overflow-x-hidden relative bg-[var(--background)]">
       {/* Top Navigation */}
-      <nav className="sticky top-0 h-20 border-b border-white/5 bg-black/50 backdrop-blur-xl z-50 px-8 flex items-center justify-between w-full">
+      <nav className="sticky top-0 h-20 border-b border-[var(--border)] bg-[var(--background)]/80 backdrop-blur-xl z-50 px-8 flex items-center justify-between w-full">
         <div className="flex items-center gap-12">
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => onNavigate?.('home')}>
-            <div className="w-8 h-8 rounded bg-white flex items-center justify-center text-black font-black">A</div>
-            <span className="font-bold text-xl tracking-tight">AetherUI</span>
+            <div className="w-8 h-8 rounded bg-[var(--text-primary)] flex items-center justify-center text-[var(--background)] font-black">A</div>
+            <span className="font-bold text-xl tracking-tight gradient-text">AetherUI</span>
           </div>
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
-            <span className="hover:text-white cursor-pointer transition-colors" onClick={() => onNavigate?.('components-guide')}>Components</span>
-            <span className="hover:text-white cursor-pointer transition-colors" onClick={() => onNavigate?.('documentation')}>Docs</span>
-            <span className="hover:text-white cursor-pointer transition-colors" onClick={() => onNavigate?.('pricing')}>Pricing</span>
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[var(--text-secondary)]">
+            <span className="hover:text-[var(--text-primary)] cursor-pointer transition-colors" onClick={() => onNavigate?.('components-guide')}>Components</span>
+            <span className="hover:text-[var(--text-primary)] cursor-pointer transition-colors" onClick={() => onNavigate?.('documentation')}>Docs</span>
+            <span className="hover:text-[var(--text-primary)] cursor-pointer transition-colors" onClick={() => onNavigate?.('pricing')}>Pricing</span>
           </div>
         </div>
         <div className="flex items-center gap-6">
           <div className="relative hidden lg:block">
-            <ui-icon name="search" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size="16"></ui-icon>
+            <ui-icon name="search" class="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-secondary)]" size="16"></ui-icon>
             <input 
               type="text" 
               placeholder="Search components..." 
-              className="bg-white/5 border border-white/10 rounded-full py-2 pl-10 pr-4 text-xs focus:outline-none focus:border-white/20 w-48"
+              className="bg-[var(--surface-hover)] border border-[var(--border)] rounded-full py-2 pl-10 pr-4 text-xs text-[var(--text-primary)] placeholder-[var(--text-secondary)]/60 focus:outline-none focus:border-[var(--border)]/80 w-48"
             />
           </div>
-          <ui-button variant="primary" class="bg-white text-black hover:bg-gray-200 px-6 py-2 rounded-full text-sm font-bold">
+          <ui-button
+            icon={theme === 'dark' ? 'sun' : 'moon'}
+            icon-only
+            shape="circle"
+            variant="ghost"
+            onClick={toggleTheme}
+            title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+          />
+          <ui-button variant="primary" class="bg-[var(--primary)] text-[var(--background)] hover:opacity-90 px-6 py-2 rounded-full text-sm font-bold">
             Get Started
           </ui-button>
         </div>
@@ -105,7 +113,7 @@ export default function Home({ onNavigate }: { onNavigate?: (id: string) => void
       <section className="relative pt-32 pb-20 px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-10">
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-blue-400">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="inline-block px-4 py-1.5 rounded-full bg-[var(--surface)] border border-[var(--border)] text-xs font-bold text-blue-400">
               AETHER 1.1 IS HERE
             </motion.div>
             <motion.h1 {...fadeInUp} className="text-6xl md:text-7xl font-black leading-[1.1] tracking-tight">
@@ -114,7 +122,7 @@ export default function Home({ onNavigate }: { onNavigate?: (id: string) => void
                 UI Component Hub
               </span>
             </motion.h1>
-            <motion.p {...fadeInUp} transition={{ delay: 0.1 }} className="text-gray-400 text-xl leading-relaxed max-w-lg">
+            <motion.p {...fadeInUp} transition={{ delay: 0.1 }} className="text-[var(--text-secondary)] text-xl leading-relaxed max-w-lg">
               A premium collection of framework-agnostic UI components designed for building professional, high-performance web applications with ease.
             </motion.p>
             
@@ -124,12 +132,12 @@ export default function Home({ onNavigate }: { onNavigate?: (id: string) => void
                   <div className="flip-card-inner">
                     <div className="flip-card-front glass-panel">
                       <div className="text-2xl font-black mb-1">{stat.num}</div>
-                      <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">{stat.label}</div>
+                      <div className="text-[10px] font-bold text-[var(--text-secondary)] uppercase tracking-widest">{stat.label}</div>
                       <div className="absolute bottom-2 text-[8px] opacity-40 font-bold uppercase tracking-tighter">Flip</div>
                     </div>
                     <div className={`flip-card-back glass-panel border-${stat.color}-500/50`}>
                       <div className={`text-[10px] font-black text-${stat.color}-400 mb-2 uppercase`}>{stat.backTitle}</div>
-                      <p className="text-[10px] text-gray-400 leading-tight">{stat.backText}</p>
+                      <p className="text-[10px] text-[var(--text-secondary)] leading-tight">{stat.backText}</p>
                     </div>
                   </div>
                 </div>
@@ -137,8 +145,8 @@ export default function Home({ onNavigate }: { onNavigate?: (id: string) => void
             </div>
 
             <div className="flex gap-4">
-              <ui-button variant="primary" size="lg" class="bg-blue-600 hover:bg-blue-500 text-white px-8" onClick={() => onNavigate?.('components-guide')}>Explore Gallery</ui-button>
-              <ui-button variant="outline" size="lg" class="border-white/10 text-white px-8" onClick={() => onNavigate?.('documentation')}>View Docs</ui-button>
+              <ui-button variant="primary" size="lg" class="px-8" onClick={() => onNavigate?.('components-guide')}>Explore Gallery</ui-button>
+              <ui-button variant="outline" size="lg" class="px-8" onClick={() => onNavigate?.('documentation')}>View Docs</ui-button>
             </div>
           </div>
 
@@ -152,7 +160,7 @@ export default function Home({ onNavigate }: { onNavigate?: (id: string) => void
                 style={{ top: i * 40, left: i * 40, zIndex: 10 - i }}
                 className="absolute w-72 glass-panel rounded-2xl overflow-hidden shadow-2xl hover:z-20 hover:-translate-y-4 transition-all duration-500 cursor-pointer"
               >
-                <div className="px-4 py-3 bg-[#111] border-b border-white/5 text-[10px] font-black uppercase text-gray-400">
+                <div className="px-4 py-3 bg-[var(--surface)] border-b border-[var(--border)] text-[10px] font-black uppercase text-[var(--text-secondary)]">
                   {['Login UI', 'Dashboard', 'UI Stack', 'Settings', 'Data Grid', 'Analytics'][i-1]}
                 </div>
                 <img src={`assets/images/${['login-ui', 'dashboard-ui', 'ui-stack', 'settings-ui', 'data-grid-ui', 'analytics-ui'][i-1]}.png`} alt="UI" className="w-full opacity-80" />
@@ -167,7 +175,7 @@ export default function Home({ onNavigate }: { onNavigate?: (id: string) => void
         <div className="text-center mb-20 space-y-4">
           <div className="text-blue-500 text-sm font-black uppercase tracking-widest">Featured Elements</div>
           <h2 className="text-5xl font-black">Elite UI Components</h2>
-          <p className="text-gray-400 text-xl">A glimpse into our high-performance component collection</p>
+          <p className="text-[var(--text-secondary)] text-xl">A glimpse into our high-performance component collection</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -175,7 +183,7 @@ export default function Home({ onNavigate }: { onNavigate?: (id: string) => void
             <motion.div 
               key={i}
               whileHover={{ y: -10 }}
-              className="cover-card relative aspect-[3/4] rounded-3xl overflow-hidden border border-white/5 group cursor-pointer shadow-xl"
+              className="cover-card relative aspect-[3/4] rounded-3xl overflow-hidden border border-[var(--border)] group cursor-pointer shadow-xl"
             >
               <div className="absolute inset-0 bg-black/60 z-10 transition-colors group-hover:bg-black/80" />
               <img src={comp.img} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={comp.label} />
@@ -188,8 +196,8 @@ export default function Home({ onNavigate }: { onNavigate?: (id: string) => void
                   <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-4 border border-white/10">
                     <ui-icon name={comp.icon} size="20"></ui-icon>
                   </div>
-                  <h3 className="text-xl font-black mb-2">{comp.label}</h3>
-                  <p className="text-xs text-gray-400 line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{comp.description}</p>
+                  <h3 className="text-xl font-black mb-2 text-white">{comp.label}</h3>
+                  <p className="text-xs text-gray-300 line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{comp.description}</p>
                 </div>
               </div>
               <div className="absolute inset-0 border-2 border-transparent group-hover:border-blue-500/50 rounded-3xl transition-colors z-30 pointer-events-none" />
@@ -199,25 +207,25 @@ export default function Home({ onNavigate }: { onNavigate?: (id: string) => void
       </section>
 
       {/* Powerful Categories */}
-      <section className="py-32 bg-[#080808] border-y border-white/5 px-8">
+      <section className="py-32 bg-[var(--surface)]/30 border-y border-[var(--border)] px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20 space-y-4">
             <div className="text-cyan-400 text-sm font-black uppercase tracking-widest">System Architecture</div>
             <h2 className="text-5xl font-black">Powerful Categories</h2>
-            <p className="text-gray-400 text-xl">Expertly organized elements to accelerate your design-to-code workflow</p>
+            <p className="text-[var(--text-secondary)] text-xl">Expertly organized elements to accelerate your design-to-code workflow</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categories.map((cat, i) => (
-              <div key={i} className="glass-panel p-8 rounded-[2.5rem] border border-white/5 hover:bg-white/5 transition-all group">
+              <div key={i} className="glass-panel p-8 rounded-[2.5rem] border border-[var(--border)] hover:bg-[var(--surface-hover)] transition-all group">
                 <div className="flex justify-between items-start mb-8">
                   <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20 group-hover:scale-110 transition-transform">
                     <ui-icon name={cat.icon} size="28"></ui-icon>
                   </div>
-                  <span className="text-2xl font-black text-gray-700">{cat.count}</span>
+                  <span className="text-2xl font-black text-[var(--text-secondary)]/50">{cat.count}</span>
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{cat.label}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-8">{cat.desc}</p>
+                <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-8">{cat.desc}</p>
                 <div className="flex items-center gap-2 text-cyan-400 text-sm font-bold cursor-pointer group-hover:gap-4 transition-all" onClick={() => onNavigate?.('components-guide')}>
                   Explore Gallery <ui-icon name="chevron-right" size="16"></ui-icon>
                 </div>
@@ -232,16 +240,16 @@ export default function Home({ onNavigate }: { onNavigate?: (id: string) => void
         <div className="text-center mb-20 space-y-4">
           <div className="text-purple-400 text-sm font-black uppercase tracking-widest">Icon Infrastructure</div>
           <h2 className="text-5xl font-black">Premium Icon Support</h2>
-          <p className="text-gray-400 text-xl">Native integration for the world's most popular icon libraries</p>
+          <p className="text-[var(--text-secondary)] text-xl">Native integration for the world's most popular icon libraries</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {iconLibraries.map((lib, i) => (
-            <div key={i} className="glass-panel p-10 rounded-[3rem] border border-white/5 bg-[#0a0a0a]">
+            <div key={i} className="glass-panel p-10 rounded-[3rem] border border-[var(--border)] bg-[var(--surface)]/20">
               <div className="flex justify-between items-center mb-10">
                 <div>
                   <h3 className="text-2xl font-black mb-1">{lib.name}</h3>
-                  <p className="text-xs text-gray-500">{lib.count} Icons Available</p>
+                  <p className="text-xs text-[var(--text-secondary)]">{lib.count} Icons Available</p>
                 </div>
                 <div className={`w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center ${lib.color}`}>
                   <ui-icon name={lib.sampleIcons[0]} library={lib.library} size="24"></ui-icon>
@@ -260,10 +268,10 @@ export default function Home({ onNavigate }: { onNavigate?: (id: string) => void
       </section>
 
       {/* CTA Section */}
-      <section className="py-40 px-8 text-center bg-gradient-to-b from-[#050505] to-blue-900/10">
+      <section className="py-40 px-8 text-center bg-gradient-to-b from-[var(--background)] to-[var(--surface)]">
         <div className="max-w-4xl mx-auto space-y-12">
           <h2 className="text-6xl md:text-7xl font-black leading-tight">Ready to Build <br /> Something Amazing?</h2>
-          <p className="text-gray-400 text-xl">Start exploring our component library and accelerate your development workflow</p>
+          <p className="text-[var(--text-secondary)] text-xl">Start exploring our component library and accelerate your development workflow</p>
           <ui-button variant="primary" size="lg" class="bg-blue-600 hover:bg-blue-500 text-white px-12 py-6 text-xl rounded-full shadow-2xl shadow-blue-500/20">
             Get Started Now <ui-icon name="arrow-right" size="20" class="ml-2"></ui-icon>
           </ui-button>
@@ -271,53 +279,53 @@ export default function Home({ onNavigate }: { onNavigate?: (id: string) => void
       </section>
 
       {/* Footer */}
-      <footer className="py-20 px-8 border-t border-white/5 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+      <footer className="py-20 px-8 border-t border-[var(--border)] max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="space-y-6">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded bg-white" />
+            <div className="w-6 h-6 rounded bg-[var(--text-primary)]" />
             <span className="font-bold text-xl">AetherUI</span>
           </div>
-          <p className="text-gray-500 text-sm max-w-xs leading-relaxed">
+          <p className="text-[var(--text-secondary)] text-sm max-w-xs leading-relaxed">
             Refining the world's most fluid design system for modern engineering teams.
           </p>
         </div>
         
         <div>
-          <h4 className="font-black text-xs uppercase tracking-widest mb-8 text-gray-400">Platform</h4>
-          <ul className="space-y-4 text-gray-500 text-sm font-bold">
-            <li className="hover:text-white transition-colors cursor-pointer">Components</li>
-            <li className="hover:text-white transition-colors cursor-pointer">Theme Builder</li>
-            <li className="hover:text-white transition-colors cursor-pointer">Playground</li>
+          <h4 className="font-black text-xs uppercase tracking-widest mb-8 text-[var(--text-secondary)]">Platform</h4>
+          <ul className="space-y-4 text-[var(--text-secondary)] text-sm font-bold">
+            <li className="hover:text-[var(--text-primary)] transition-colors cursor-pointer">Components</li>
+            <li className="hover:text-[var(--text-primary)] transition-colors cursor-pointer">Theme Builder</li>
+            <li className="hover:text-[var(--text-primary)] transition-colors cursor-pointer">Playground</li>
           </ul>
         </div>
 
         <div>
-          <h4 className="font-black text-xs uppercase tracking-widest mb-8 text-gray-400">Resources</h4>
-          <ul className="space-y-4 text-gray-500 text-sm font-bold">
-            <li className="hover:text-white transition-colors cursor-pointer">Documentation</li>
-            <li className="hover:text-white transition-colors cursor-pointer">Showcase</li>
-            <li className="hover:text-white transition-colors cursor-pointer">API Reference</li>
+          <h4 className="font-black text-xs uppercase tracking-widest mb-8 text-[var(--text-secondary)]">Resources</h4>
+          <ul className="space-y-4 text-[var(--text-secondary)] text-sm font-bold">
+            <li className="hover:text-[var(--text-primary)] transition-colors cursor-pointer">Documentation</li>
+            <li className="hover:text-[var(--text-primary)] transition-colors cursor-pointer">Showcase</li>
+            <li className="hover:text-[var(--text-primary)] transition-colors cursor-pointer">API Reference</li>
           </ul>
         </div>
 
         <div className="space-y-8">
-          <h4 className="font-black text-xs uppercase tracking-widest text-gray-400">Stay Updated</h4>
+          <h4 className="font-black text-xs uppercase tracking-widest text-[var(--text-secondary)]">Stay Updated</h4>
           <div className="relative">
             <input 
               type="email" 
               placeholder="Enter your email" 
-              className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-5 text-sm focus:outline-none focus:border-blue-500 transition-colors"
+              className="w-full bg-[var(--surface-hover)] border border-[var(--border)] rounded-2xl py-4 px-5 text-sm text-[var(--text-primary)] placeholder-[var(--text-secondary)]/60 focus:outline-none focus:border-blue-500 transition-colors"
             />
             <ui-button variant="primary" size="sm" class="absolute right-2 top-2 bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-xl">Join</ui-button>
           </div>
         </div>
 
-        <div className="md:col-span-4 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-gray-600 font-bold uppercase tracking-widest">
+        <div className="md:col-span-4 pt-12 border-t border-[var(--border)] flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-[var(--text-secondary)] font-bold uppercase tracking-widest">
           <p>© 2026 AetherUI. All rights reserved.</p>
           <div className="flex gap-12">
-            <span className="hover:text-white cursor-pointer">Privacy</span>
-            <span className="hover:text-white cursor-pointer">Terms</span>
-            <span className="hover:text-white cursor-pointer">Cookies</span>
+            <span className="hover:text-[var(--text-primary)] cursor-pointer">Privacy</span>
+            <span className="hover:text-[var(--text-primary)] cursor-pointer">Terms</span>
+            <span className="hover:text-[var(--text-primary)] cursor-pointer">Cookies</span>
           </div>
         </div>
       </footer>

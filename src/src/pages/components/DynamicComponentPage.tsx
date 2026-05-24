@@ -816,7 +816,17 @@ const componentRegistry: Record<string, DynamicMetadata> = {
   },
 };
 
-export default function DynamicComponentPage({ id, interactiveDocs, onExamplesLoaded }: { id: string; interactiveDocs?: boolean; onExamplesLoaded?: (examples: { title: string; id: string }[]) => void }) {
+export default function DynamicComponentPage({
+  id,
+  interactiveDocs,
+  onExamplesLoaded,
+  onMetadataLoaded,
+}: {
+  id: string;
+  interactiveDocs?: boolean;
+  onExamplesLoaded?: (examples: { title: string; id: string }[]) => void;
+  onMetadataLoaded?: (meta: { hasEvents: boolean; hasMethods: boolean }) => void;
+}) {
   // Strip category prefix from slash-containing IDs (e.g. 'charts/area-chart' → 'area-chart')
   const baseId = id.includes('/') ? id.split('/').pop()! : id;
   const resolvedId = baseId === 'dock-overlay' ? 'dock' : baseId === 'tree-list' ? 'tree' : baseId;
@@ -834,6 +844,8 @@ export default function DynamicComponentPage({ id, interactiveDocs, onExamplesLo
 
   // Fetch true TypeScript props from docs.json compiled metadata
   const dynamicProps = getPropsForComponent(tagName);
+  const dynamicEvents = getEventsForComponent(tagName);
+  const dynamicMethods = getMethodsForComponent(tagName);
 
   // Merge dynamic props with premium registry props if they match, retaining premium default values & mock datasets
   const registryProps = meta.props || [];
@@ -866,6 +878,15 @@ export default function DynamicComponentPage({ id, interactiveDocs, onExamplesLo
       onExamplesLoaded(formatted);
     }
   }, [id, componentDemos, onExamplesLoaded]);
+
+  useEffect(() => {
+    if (onMetadataLoaded) {
+      onMetadataLoaded({
+        hasEvents: dynamicEvents.length > 0,
+        hasMethods: dynamicMethods.length > 0,
+      });
+    }
+  }, [id, dynamicEvents.length, dynamicMethods.length, onMetadataLoaded]);
 
   const buildCode = (p: Record<string, any>) => {
     const attrs: string[] = [];
@@ -951,9 +972,6 @@ export default function DynamicComponentPage({ id, interactiveDocs, onExamplesLo
       `,
     },
   ];
-
-  const dynamicEvents = getEventsForComponent(tagName);
-  const dynamicMethods = getMethodsForComponent(tagName);
 
   return (
     <ComponentPlayground
