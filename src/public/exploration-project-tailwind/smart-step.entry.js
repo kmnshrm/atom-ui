@@ -33,11 +33,11 @@ const SmartStep = class {
      */
     disabled = false;
     render() {
-        return (h("div", { key: '7912868ea46545c73c98f85bc9d0802886f2ba53', class: "smart-step-wrapper" }, h("div", { key: '2637db22877a82f431cc2d73ed429ef4d71234b5', class: {
+        return (h("div", { key: 'a2c117d2cec46a6f1fdafab7cb152026a1c637be', class: "smart-step-wrapper" }, h("div", { key: '470c34c7b17ad9b6e829ebfb30e1b4c3848d1c09', class: {
                 'step-header': true,
                 'disabled': this.disabled,
                 [`status-${this.status}`]: true
-            } }, h("div", { key: 'fcc0061eec43b8d0e0d7061b0568d6347cb43f6f', class: "step-icon" }, this.icon ? (h("span", { class: "custom-icon" }, h("ui-icon", { name: this.icon, library: this.iconLibrary, size: "1.2rem" }))) : h("span", { class: "step-number" })), h("div", { key: '4ae00fbeddc8142d1363af77403adb66e9a6a80c', class: "step-text" }, h("span", { key: '0a207e9a3e5c9f2bd3287e9ba9b98619002a19f6', class: "step-title" }, this.label), this.description && h("span", { key: '06b8af4ed304fdab44c356c89fbbacf119b96529', class: "step-desc" }, this.description))), h("div", { key: 'f73bc6bee24a8f0073cb965f85495bbaa7bbd904', class: "stepper-content" }, h("slot", { key: '834d661b9f7ec0a8263def69738de7b64f6e545d' }))));
+            } }, h("div", { key: '6a6cbddfd46581cbdb2e22ba9dfddad491faf93b', class: "step-icon" }, this.icon ? (h("span", { class: "custom-icon" }, h("ui-icon", { name: this.icon, library: this.iconLibrary, size: "1.2rem" }))) : h("span", { class: "step-number" })), h("div", { key: '2d11b3d888e9cc500723d0be29a8c6fc580372b7', class: "step-text" }, h("span", { key: '8a13c5542cc413516b7a083e26330a34f7a43990', class: "step-title" }, this.label), this.description && h("span", { key: '1ad7e4e299a6d6faa338445a926279ec3d04c7b3', class: "step-desc" }, this.description))), h("div", { key: 'df61b0cb3ba51afbba28d4075c8e7a128616b74a', class: "stepper-content" }, h("slot", { key: '277c02deb6d5ee2c2ac992e3ea3da964cf8dd9e2' }))));
     }
 };
 SmartStep.style = smartStepCss();

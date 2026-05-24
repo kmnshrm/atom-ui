@@ -1,5 +1,5 @@
 import { r as registerInstance, c as createEvent, a as getElement, h } from './index-DUsoYu9r.js';
-import { s as sanitizeHTML } from './security-D2WzX6vR.js';
+import { s as sanitizeHTML } from './security-Dyu3Nplq.js';
 import { F as FocusTrap } from './focus-trap-BSQ8klD4.js';
 import { a as autoUpdate, c as calculateUniversalPlacement } from './dom-BMFah5q3.js';
 

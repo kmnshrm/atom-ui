@@ -29,7 +29,7 @@ const FabItem = class {
     //   }
     // }
     render() {
-        return (h(Host, { key: '90ef99b98ff4ad2482a4e788bd29266655ccdff7', class: { 'is-disabled': this.disabled, 'is-loading': this.loading } }, this.label && h("div", { key: 'b814405698a29b37bff8f3c1346879b3874451a8', class: "fab-item-label", "aria-hidden": "true" }, this.label), h("ui-button", { key: 'a16effbb8a01f731cf544276a0823aba10b73e70', variant: "primary", shape: "circle", class: "fab-item-trigger", disabled: this.disabled || this.loading, loading: this.loading, onClick: this.handleClick, ariaLabel: this.tooltip || this.label || this.icon, title: this.tooltip, icon: this.icon, iconOnly: true, size: "sm" }, !this.icon && h("slot", { key: 'ca833a5516dc634456bab3f0a8095688dc55e43c', name: "icon" }))));
+        return (h(Host, { key: '7551f6761b90f6ead01bdd37d5f07f6277c867cc', class: { 'is-disabled': this.disabled, 'is-loading': this.loading } }, this.label && h("div", { key: 'fe90271cf5bb4443b54c01b82274c6e60686766a', class: "fab-item-label", "aria-hidden": "true" }, this.label), h("ui-button", { key: 'da7aef396488d1c527dce3ec6559e36b78df0505', variant: "primary", shape: "circle", class: "fab-item-trigger", disabled: this.disabled || this.loading, loading: this.loading, onClick: this.handleClick, ariaLabel: this.tooltip || this.label || this.icon, title: this.tooltip, icon: this.icon, iconOnly: true, size: "sm" }, !this.icon && h("slot", { key: 'a59d4c4a925bcb81ab54d305c7310095a24160a2', name: "icon" }))));
     }
 };
 FabItem.style = fabItemCss();

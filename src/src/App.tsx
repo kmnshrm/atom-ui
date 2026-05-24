@@ -112,7 +112,7 @@ const getHashFromPageId = (id: string): string => {
 
 export default function App() {
   const navRef = useRef<any>(null);
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
   const [activeItem, setActiveItem] = useState(() => {
     return getPageIdFromHash(window.location.hash);
   });

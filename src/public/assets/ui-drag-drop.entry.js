@@ -157,7 +157,7 @@ const UIDragDrop = class {
         const styles = {
             gap: this.gap,
         };
-        return (h("div", { key: '51ed908447ec8729df4df557816c7e08b2db4620', class: containerClasses, style: styles, role: "list" }, this.internalItems.map((item, index) => this.renderItem(item, index))));
+        return (h("div", { key: '8610eaa90602aa5ddeebce5afe2437eec3aebc97', class: containerClasses, style: styles, role: "list" }, this.internalItems.map((item, index) => this.renderItem(item, index))));
     }
     static get watchers() { return {
         "items": [{

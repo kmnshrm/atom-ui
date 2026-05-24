@@ -19,7 +19,7 @@ const TimelineItem = class {
      */
     itemDate;
     render() {
-        return (h("div", { key: '54a294a4b0f3ba13841d3c8de125694e81f2141c', class: "timeline-item-container" }, h("div", { key: '0ccb68f5384a8ac2bba5cebb5d75b96fb1dccc16', class: "timeline-item-content" }, h("h2", { key: '75c5b1f55e06a1345105dd12b924e41a3bada993' }, this.itemTitle), h("p", { key: '7ae3c4cf655c6831943b8d53db977e3348907471' }, this.itemDescription), h("span", { key: '23175d4215f96f76a580dece414fe379446a23da' }, this.itemDate))));
+        return (h("div", { key: '0004428a7a312050db13c20a0b01ccfa1bbefec8', class: "timeline-item-container" }, h("div", { key: '706c054af22b45409c3eec9c3cae7bf13b016c88', class: "timeline-item-content" }, h("h2", { key: '176eb8c8b42d7658f001acaa2a94d01abcbc2060' }, this.itemTitle), h("p", { key: 'a0b6b862951518676293156a8dba54fbb2608d65' }, this.itemDescription), h("span", { key: 'e753aaeffb2c672b2c6b243f96e270e7a6b10c6e' }, this.itemDate))));
     }
 };
 TimelineItem.style = timelineItemCss();

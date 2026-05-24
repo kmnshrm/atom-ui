@@ -606,7 +606,7 @@ const LayoutManager = class {
         document.removeEventListener('mouseup', this.onGlobalMouseUp);
     };
     render() {
-        return (h("div", { key: 'f569e28b4534614afdb516bf769ad888c11b103f', class: "lm-root" }, h("lm-container", { key: 'fd8a5616176a28a3da539012d2e683f5216209fb', node: this.layout.root }), this.dropIndicator && h("div", { key: '27e38072647723cba399914c9f1684dc9ea62de5', class: `lm-drop-indicator ${this.dropIndicator.zone}`, style: this.getIndicatorStyle() }), h("div", { key: 'dfc23cda195b1b5ef6096c2fb76f52a0fd57cd3f', class: "lm-floating" }, this.layout.floating.map(f => (h("lm-floating-window", { "panel-id": f.id }))))));
+        return (h("div", { key: 'a7d960702919a492c0f69534926d1a3eb3be72dd', class: "lm-root" }, h("lm-container", { key: '065dad724b014066c553e9eedc8f43f893d7d573', node: this.layout.root }), this.dropIndicator && h("div", { key: '8ed57f7562cdaf20c5d65f79cc16c638d8450b95', class: `lm-drop-indicator ${this.dropIndicator.zone}`, style: this.getIndicatorStyle() }), h("div", { key: '001e3f78b7e233858cad4ff5035849091dca554e', class: "lm-floating" }, this.layout.floating.map(f => (h("lm-floating-window", { "panel-id": f.id }))))));
     }
 };
 LayoutManager.style = layoutManagerCss();

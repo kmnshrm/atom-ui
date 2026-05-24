@@ -317,8 +317,8 @@ const UISwitch = class {
         return (h("div", { class: "switch-confirm-overlay", onClick: this.handleCancel }, h("div", { class: "switch-confirm-dialog", onClick: e => e.stopPropagation() }, h("div", { class: "confirm-message" }, this.confirmationMessage), h("div", { class: "confirm-actions" }, h("ui-button", { variant: "ghost", size: "sm", onClick: this.handleCancel, label: "Cancel" }), h("ui-button", { variant: "primary", size: "sm", onClick: this.handleConfirm, label: "Confirm" })))));
     }
     render() {
-        const labelElement = this.label && (h("span", { key: 'aaea5d41fe17902800129034edee86b1ba98d9e9', class: "switch-label" }, this.label, this.required && h("span", { key: '93e398287cfb42f1d43052d6f0492dc1cc1b7133', class: "switch-required" }, "*"), this.description && this.descriptionPosition === 'bottom' && (h("span", { key: '91cc70cec284734e944886bbf28deeafb161eec0', class: "switch-description-bottom" }, this.description))));
-        const sideDescription = this.description && this.descriptionPosition === 'side' && (h("span", { key: '5c6b858c2d9e135407a82a394f1472475bca1222', class: "switch-description-side" }, this.description));
+        const labelElement = this.label && (h("span", { key: '7ebf67ab54d6402ea0df0c4de0970d6cc2e43824', class: "switch-label" }, this.label, this.required && h("span", { key: '7044082ec79f25bd865e823bf0b4f8387dc18e11', class: "switch-required" }, "*"), this.description && this.descriptionPosition === 'bottom' && (h("span", { key: 'efe44feacd88bb77a6a8c128811610e7c9e45f16', class: "switch-description-bottom" }, this.description))));
+        const sideDescription = this.description && this.descriptionPosition === 'side' && (h("span", { key: '3fd19deb053caafb0b8482378067b1e0e7c6e93f', class: "switch-description-side" }, this.description));
         const trackStyle = {};
         if (this.gradient && this.gradientColors) {
             try {
@@ -333,7 +333,7 @@ const UISwitch = class {
         if (this.width) {
             hostStyle['--switch-track-width'] = this.width;
         }
-        return (h(Host, { key: '41e4d34b8c2aa2ee57e25823ffc67ac5316ec3e6', style: hostStyle, class: {
+        return (h(Host, { key: '2452fea25ee064d76b1255e099143b7c0c9b22da', style: hostStyle, class: {
                 'switch-host': true,
                 'switch-disabled': this.disabled || this.loading,
                 'switch-readonly': this.readonly,
@@ -350,7 +350,7 @@ const UISwitch = class {
                 [`switch-elevation-${this.elevation}`]: this.elevation > 0,
                 [`switch-color-${this.color}`]: true,
                 [`switch-${this.variant}`]: true,
-            }, onMouseEnter: this.handleMouseEnter, onMouseLeave: this.handleMouseLeave }, h("div", { key: '6684aba1b0aa8ebb37558a0c7aee00c0be7cb1e9', part: "container", class: {
+            }, onMouseEnter: this.handleMouseEnter, onMouseLeave: this.handleMouseLeave }, h("div", { key: 'fbf20bb14cc99bd32eb4a52df4eefa60480804c4', part: "container", class: {
                 'switch-container-outer': true,
                 [`switch-${this.size}`]: true,
                 [`switch-color-${this.color}`]: true,
@@ -369,7 +369,7 @@ const UISwitch = class {
                 'switch-shaking': this.isShaking,
                 'switch-animate': this.enableAnimation,
                 'switch-indeterminate': this.indeterminate,
-            } }, h("label", { key: 'd8092db9b999f61d13ed28de07b51f0756b90203', part: "label", class: {
+            } }, h("label", { key: 'e089fc07a8a05b88b7281756e8720f42e4e39dee', part: "label", class: {
                 'switch-container': true,
                 [`switch-${this.size}`]: true,
                 [`switch-color-${this.color}`]: true,
@@ -378,19 +378,19 @@ const UISwitch = class {
                 [`thumb-${this.thumbShape}`]: true,
                 'switch-label-left': this.labelPosition === 'left',
                 'switch-label-right': this.labelPosition === 'right' || !this.labelPosition,
-            } }, this.labelPosition === 'left' && labelElement, h("div", { key: '45e4aebf40ca6590d98871188c95fc0cb7167820', part: "wrapper", class: "switch-wrapper" }, h("input", { key: '2f4f3b4641e4f2f8e53debbabc06ddedb57118a7', type: "checkbox", class: "switch-input", checked: this.checked, disabled: this.disabled || this.loading, readonly: this.readonly, name: this.name, value: this.value, required: this.required, tabindex: this.switchTabIndex, onChange: this.handleChange, onFocus: this.handleFocus, onBlur: this.handleBlur, onKeyDown: this.handleKeyDown, "aria-label": this.ariaLabel || this.label, "aria-checked": this.indeterminate ? 'mixed' : (this.checked ? 'true' : 'false'), "aria-disabled": (this.disabled || this.loading).toString(), "aria-invalid": this.invalid.toString(), ref: el => {
+            } }, this.labelPosition === 'left' && labelElement, h("div", { key: '3e1ca73f5839376c5effc92ad13686465dfe1c69', part: "wrapper", class: "switch-wrapper" }, h("input", { key: '620498359d8a26fdc9413e936b423ebc92e9e921', type: "checkbox", class: "switch-input", checked: this.checked, disabled: this.disabled || this.loading, readonly: this.readonly, name: this.name, value: this.value, required: this.required, tabindex: this.switchTabIndex, onChange: this.handleChange, onFocus: this.handleFocus, onBlur: this.handleBlur, onKeyDown: this.handleKeyDown, "aria-label": this.ariaLabel || this.label, "aria-checked": this.indeterminate ? 'mixed' : (this.checked ? 'true' : 'false'), "aria-disabled": (this.disabled || this.loading).toString(), "aria-invalid": this.invalid.toString(), ref: el => {
                 if (el && this.indeterminate)
                     el.indeterminate = true;
-            } }), h("div", { key: 'affc51e292c88c6eca57e14ea23ef57c88ef1719', part: "track", class: {
+            } }), h("div", { key: 'ed2db623b8d85ec19ec08b04d49f32ccbd22c2ca', part: "track", class: {
                 'switch-track': true,
                 'switch-track-checked': this.checked,
                 'switch-track-disabled': this.disabled || this.loading,
                 'switch-gradient': this.gradient,
-            }, style: trackStyle }, this.renderTrackText(), h("div", { key: 'be816a97508c3ec53b08a9436079e7475017c503', part: "thumb", class: {
+            }, style: trackStyle }, this.renderTrackText(), h("div", { key: 'f1fb7ac21b764239756664271a156a484d90ae71', part: "thumb", class: {
                 'switch-thumb': true,
                 'switch-thumb-checked': this.checked,
                 'switch-thumb-loading': this.loading,
-            } }, this.getIcon()), this.showRipple && h("div", { key: 'abc8476dd3e164ac6397443dfe46f89c244a8bdb', class: "switch-ripple" }), this.loading && h("div", { key: '049d77febd86e72fb513f4c8ba9012c31b0c55a9', class: "switch-loading-overlay" }))), this.labelPosition === 'right' && labelElement, sideDescription, this.renderSuccessFeedback()), this.renderHelperText(), this.renderTooltip()), this.renderConfirmDialog()));
+            } }, this.getIcon()), this.showRipple && h("div", { key: '12e603dc7715a81be1b49e10f3ff08ecd95d5a25', class: "switch-ripple" }), this.loading && h("div", { key: 'c09738abdd1ee94b9fd7ccb69569ab8b432425ed', class: "switch-loading-overlay" }))), this.labelPosition === 'right' && labelElement, sideDescription, this.renderSuccessFeedback()), this.renderHelperText(), this.renderTooltip()), this.renderConfirmDialog()));
     }
     static get watchers() { return {
         "checked": [{

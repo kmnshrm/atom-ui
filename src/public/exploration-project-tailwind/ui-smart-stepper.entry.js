@@ -127,7 +127,7 @@ const SmartStepper = class {
             `stepper-${this.orientation}`,
             `stepper-${this.size}`
         ].join(' ');
-        return (h("div", { key: '055f2373e201924afcb4c2038ff1bd6c0d096111', class: containerClasses }, h("div", { key: 'f0f5dbbb155ba61648a4633bff44548cd4cb28e3', class: "stepper-header", onClick: this.handleStepClick }, h("slot", { key: 'fa4ef01b0c1b248dd5ac90b8ab9bc7689b943caa' })), h("div", { key: '592f2c79d4916c14c1e7a5a3ffaad77a257a01a3', class: "stepper-content-area" }, h("slot", { key: '958a6697b165c1b0499ac1433476a8cccf14bf9f', name: "content" }))));
+        return (h("div", { key: '5243803a66e8bfae497796c6bf73d4f006fa35e4', class: containerClasses }, h("div", { key: '6a7b4c7d81107e2f42ededb0e598c18ad0c8966a', class: "stepper-header", onClick: this.handleStepClick }, h("slot", { key: 'dcec321fde59e2b21f49344fd1d105a822d2d9c4' })), h("div", { key: 'd9fff061e8c196a8eef547c036ba9c9a384d59d8', class: "stepper-content-area" }, h("slot", { key: 'a89db3104943e20880b5633732e801dfdcd70dff', name: "content" }))));
     }
 };
 SmartStepper.style = smartStepperCss();

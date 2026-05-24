@@ -20,7 +20,7 @@ const Step = class {
     /** optional custom renderer - parent will call if present */
     renderContent;
     render() {
-        return (h("div", { key: '439655eeb3c34f1fb7a09232397787d8bb2edf9e', class: "ui-step-container", role: "presentation" }, h("div", { key: 'b9237abc63d6676e3e388c60bc189542eebc768e', class: "ui-step-slots-hidden", style: { display: 'none' } }, h("slot", { key: '84f2032dbf5c05170c1219e0ef81c40701460967', name: "icon" }), h("slot", { key: 'a7c22833c64c592f755bd31e8690d7d96e6da3d8', name: "title" }), h("slot", { key: 'fdb8aae3e821578d0cfc199247577c5c435445f5', name: "description" })), h("slot", { key: '09ffd6d687bf76e5692b20c9fa8238e460c09c9c' })));
+        return (h("div", { key: '34d10339a1b9505e53b2adb8059cfeee2bbb0841', class: "ui-step-container", role: "presentation" }, h("div", { key: 'adfe6db495ad914bb066963d5d01f89ec4c8b500', class: "ui-step-slots-hidden", style: { display: 'none' } }, h("slot", { key: 'f00c0378d9cb2233b917e714ff9c3b73687fb43c', name: "icon" }), h("slot", { key: 'c8fe113292f4181096a2254012cef1c5f2ce9239', name: "title" }), h("slot", { key: '933b9f3adda9b05fa55fad607db3838329c540ed', name: "description" })), h("slot", { key: '16fa7b618483d991cfab40c55bb6e3f42cf431c0' })));
     }
 };
 Step.style = stepCss();

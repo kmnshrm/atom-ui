@@ -97,7 +97,7 @@ const UiDockHost = class {
     }
     render() {
         const isFloating = this.dock === 'float';
-        return (h(Host, { key: 'eb4278c32044099287ccc523dfeb357eac020471', class: {
+        return (h(Host, { key: 'ae3a9906a747c4ae3d2f504e230b6438261bc699', class: {
                 'ui-dock-host-layout': true,
                 'is-floating': isFloating,
                 [`is-docked-${this.dock}`]: !isFloating,
@@ -111,14 +111,14 @@ const UiDockHost = class {
                 top: '0',
                 left: '0',
                 pointerEvents: isFloating ? 'none' : 'auto' // Allow clicking through layout when only a floating window exists
-            } }, h("div", { key: '94e7a5c14e43b2148185a6cf1f82584e81b9d7fc', class: "dock-main-area", style: { flex: '1', overflow: 'auto', pointerEvents: 'auto' } }, h("slot", { key: 'd596984ab3af3b15b7ce804efa11d0c9deac4afb', name: "main" })), h("div", { key: '75305e8a892eaef65f9aad0b6616f51c420051ab', class: {
+            } }, h("div", { key: '9c64f35a9e8225b8ab4a4ca7b1ff516676a1b2aa', class: "dock-main-area", style: { flex: '1', overflow: 'auto', pointerEvents: 'auto' } }, h("slot", { key: '73fa260f89788adb5d6f04fc985052aa31fc1e5d', name: "main" })), h("div", { key: 'a2ec976d0c2268a1022fbf043936671a2932985f', class: {
                 'dock-panel': true,
                 'floating': isFloating,
                 [this.dock]: !isFloating
             }, style: {
                 ...this.getDockStyle(),
                 pointerEvents: 'auto'
-            } }, h("div", { key: '870aeb69f442ff5999d497fac1b24c3df06789d6', class: "dock-header", onMouseDown: this.onHeaderMouseDown }, h("span", { key: 'd805d6048ad33ba4b1985b697d6f385a4cf7542d', class: "dock-header-content" }, h("slot", { key: '773b00910c742b27390f6603dd4b953873c4d4b2', name: "header" }, "Dock Host")), h("ui-button", { key: 'f04e79da811c43f783126e42bbdbb30fe5bde7d5', variant: "ghost", onClick: this.toggleFloat, title: isFloating ? 'Dock' : 'Float', size: "sm", icon: isFloating ? 'layout' : 'maximize', iconLibrary: "lucide", label: isFloating ? 'Dock' : 'Float' })), h("div", { key: '4f9d5d7a1970a66fe5166de61835aaa6b37cb7ab', class: "dock-content" }, h("slot", { key: 'fa29815f9621d44f3e18506b57c899088502f7dc' })), isFloating && (h("div", { key: '1f62fef99c359ff8d4d15e959b70c584f50a979a', class: "dock-resize-handle", onMouseDown: this.onResizeMouseDown, style: { position: 'absolute', right: '0', bottom: '0', width: '16px', height: '16px', cursor: 'nwse-resize', zIndex: '10' } })))));
+            } }, h("div", { key: '12ae10fc29ce6cdb243964765cd5e6ea4d01742c', class: "dock-header", onMouseDown: this.onHeaderMouseDown }, h("span", { key: 'c0d6ef086badd0b21ab9c2d66fbf0a226d7be995', class: "dock-header-content" }, h("slot", { key: '09ac92cfe25a30b2213e2aefb26e71b5401dbfd0', name: "header" }, "Dock Host")), h("ui-button", { key: 'bf3971544a8e4ae3de4a311e8fcc71d679b8d9b7', variant: "ghost", onClick: this.toggleFloat, title: isFloating ? 'Dock' : 'Float', size: "sm", icon: isFloating ? 'layout' : 'maximize', iconLibrary: "lucide", label: isFloating ? 'Dock' : 'Float' })), h("div", { key: 'c7bc3b6668e730f5e466c977e625890ad820cb06', class: "dock-content" }, h("slot", { key: '50e0ce9c5beff1b054732c28bdcad6a01f2bd1ef' })), isFloating && (h("div", { key: 'd827c4c190fcd6a1fdf258d9524b7646e1d05619', class: "dock-resize-handle", onMouseDown: this.onResizeMouseDown, style: { position: 'absolute', right: '0', bottom: '0', width: '16px', height: '16px', cursor: 'nwse-resize', zIndex: '10' } })))));
     }
 };
 UiDockHost.style = uiDockHostCss();

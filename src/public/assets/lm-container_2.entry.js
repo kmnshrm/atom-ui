@@ -68,7 +68,7 @@ const LmFloatingWindow = class {
     x = 100;
     y = 100;
     render() {
-        return (h("div", { key: '987212734ff21ee0d02c5ae2f0fe144e901d8206', class: "lm-float", style: { left: `${this.x}px`, top: `${this.y}px` }, "data-panel-id": this.panelId }, h("div", { key: '8b922866c1955c167c6a2e5ea5d30c3c5a6bd57c', class: "lm-float-header" }, "Floating - ", this.panelId), h("div", { key: 'a0e3f8cd66090fc879b10b7ce0d7005ea6e76381', class: "lm-float-body" }, h("slot", { key: '0362df47eeafe69e15151e443b72c62e97ca3300' }))));
+        return (h("div", { key: '127457de3888abc6cc985f0eb63c093c06d71734', class: "lm-float", style: { left: `${this.x}px`, top: `${this.y}px` }, "data-panel-id": this.panelId }, h("div", { key: '1413e834a512629ce51325aeb9a303d74fb9e39d', class: "lm-float-header" }, "Floating - ", this.panelId), h("div", { key: '4fe4b7599ade9297207575f36f3135bab34f012b', class: "lm-float-body" }, h("slot", { key: 'db60539be3bbe32fe8f3bd1900a6f43761be57ff' }))));
     }
 };
 LmFloatingWindow.style = lmFloatingWindowCss();

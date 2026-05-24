@@ -449,7 +449,7 @@ const AppResizablePanel = class {
             'resizable-dragging': this.isDragging,
             'resizable-animated': this.animated && !this.isDragging,
         };
-        return (h(Host, { key: '222dabdb3f919a430a8dc35008607dd9ad21f670' }, h("div", { key: '6fab04ac24283a3dc1be30ca97488639021e0c13', class: containerClasses, ref: el => this.containerRef = el }, this.internalPanels.map((panel, index) => (h("div", { key: panel.id, class: "panel-wrapper", style: {
+        return (h(Host, { key: 'e95db5c4b7d28becf543e44ab2d80a1fb5a34f5a' }, h("div", { key: 'c8c49f4e023ba66b1535447b567eebe685e9f464', class: containerClasses, ref: el => this.containerRef = el }, this.internalPanels.map((panel, index) => (h("div", { key: panel.id, class: "panel-wrapper", style: {
                 [this.direction === 'horizontal' ? 'width' : 'height']: panel.collapsed ? `${this.handleSize}px` : `${panel.size}%`,
             } }, h("div", { class: {
                 'resizable-panel': true,
