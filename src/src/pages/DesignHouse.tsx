@@ -309,8 +309,8 @@ export default function DesignHouse() {
               <ui-icon name="palette" size="12" class="text-emerald-400" />
               Atom UI — Design House
             </div>
-            <h1 className="text-5xl md:text-6xl font-black leading-tight mb-5">
-              <span className="bg-gradient-to-r from-[var(--text-primary)] via-[var(--text-primary)]/90 to-[var(--text-secondary)]/50 bg-clip-text text-transparent">Design &amp;</span>
+            <h1 className="text-5xl md:text-6xl font-black leading-tight mb-5" style={{ color: 'var(--text-primary)' }}>
+              Design &amp;
               <br />
               <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Theme System</span>
             </h1>

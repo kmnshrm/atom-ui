@@ -320,10 +320,8 @@ export default function ComponentsGuide({ onNavigate, theme, toggleTheme }: Prop
             Atom UI — Component Library
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-4">
-            <span className="bg-gradient-to-r from-white via-white/90 to-white/50 bg-clip-text text-transparent">
-              All Components
-            </span>
+          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-4" style={{ color: 'var(--text-primary)' }}>
+            All <span style={{ color: '#10b981' }}>Components</span>
           </h1>
 
           <p className="text-lg text-white/40 max-w-2xl leading-relaxed mb-8">

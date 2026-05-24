@@ -91,8 +91,8 @@ body {
             <ui-icon name="rocket" size="14" />
             Quick Start Guide
           </div>
-          <h1 className="text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-r from-white via-gray-100 to-gray-400 bg-clip-text text-transparent">
-            Installation & Integration
+          <h1 className="text-4xl md:text-5xl font-black tracking-tight" style={{ color: 'var(--text-primary)' }}>
+            Installation <span style={{ color: '#10b981' }}>&</span> Integration
           </h1>
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-2xl">
             Get up and running with <span className="text-green-400 font-bold">Atom UI</span> in seconds. Build elite, performant, and visual-rich Web Components in your React, Angular, or Vue application.

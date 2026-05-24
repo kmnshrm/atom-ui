@@ -34,13 +34,114 @@
   color: rgba(255,255,255,0.4);
   font-size: 0.72rem;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: inherit;
+  position: relative;
+  overflow: hidden;
 }
 
 .code-preview-copy:hover {
   background: rgba(255,255,255,0.06);
   color: rgba(255,255,255,0.8);
+}
+
+/* ── Copy button animation wrapper ─────────────────────────────────────────── */
+.copy-btn-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.copy-btn-wrapper.copied ui-button,
+.copy-btn-wrapper.copied .code-preview-copy {
+  animation: copyBounce 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Success glow ring behind the button */
+.copy-btn-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 10px;
+  background: rgba(16, 185, 129, 0);
+  opacity: 0;
+  transition: opacity 0.3s ease, background 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.copy-btn-wrapper.copied::after {
+  animation: copyGlow 2s ease-out forwards;
+}
+
+/* Checkmark pop animation */
+@keyframes copyBounce {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(0.92);
+  }
+  60% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Glow pulse behind button */
+@keyframes copyGlow {
+  0% {
+    opacity: 0;
+    background: rgba(16, 185, 129, 0);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+  15% {
+    opacity: 1;
+    background: rgba(16, 185, 129, 0.12);
+    box-shadow: 0 0 16px 4px rgba(16, 185, 129, 0.25);
+  }
+  60% {
+    opacity: 0.6;
+    background: rgba(16, 185, 129, 0.06);
+    box-shadow: 0 0 8px 2px rgba(16, 185, 129, 0.12);
+  }
+  100% {
+    opacity: 0;
+    background: rgba(16, 185, 129, 0);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* Ripple effect on click */
+.copy-btn-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.3);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.copy-btn-ripple.active {
+  animation: copyRipple 0.6s ease-out forwards;
+}
+
+@keyframes copyRipple {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.6;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
 }
 
 .code-preview-pre {

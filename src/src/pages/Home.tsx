@@ -103,7 +103,7 @@ export default function Home({ onNavigate, theme, toggleTheme }: { onNavigate?: 
             onClick={toggleTheme}
             title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
           />
-          <ui-button variant="primary" class="bg-[var(--primary)] text-[var(--background)] hover:opacity-90 px-6 py-2 rounded-full text-sm font-bold">
+          <ui-button variant="primary" shape="pill">
             Get Started
           </ui-button>
         </div>
@@ -145,8 +145,8 @@ export default function Home({ onNavigate, theme, toggleTheme }: { onNavigate?: 
             </div>
 
             <div className="flex gap-4">
-              <ui-button variant="primary" size="lg" class="px-8" onClick={() => onNavigate?.('components-guide')}>Explore Gallery</ui-button>
-              <ui-button variant="outline" size="lg" class="px-8" onClick={() => onNavigate?.('documentation')}>View Docs</ui-button>
+              <ui-button variant="primary" size="lg" onClick={() => onNavigate?.('components-guide')}>Explore Gallery</ui-button>
+              <ui-button variant="outline" size="lg" onClick={() => onNavigate?.('documentation')}>View Docs</ui-button>
             </div>
           </div>
 
@@ -156,14 +156,17 @@ export default function Home({ onNavigate, theme, toggleTheme }: { onNavigate?: 
                 key={i}
                 initial={{ x: 100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
+                whileHover={{ x: -34, y: -34, scale: 1.08, rotate: 7, transition: { type: 'spring', stiffness: 260, damping: 18 } }}
                 transition={{ delay: 0.3 + i * 0.1 }}
                 style={{ top: i * 40, left: i * 40, zIndex: 10 - i }}
-                className="absolute w-72 glass-panel rounded-2xl overflow-hidden shadow-2xl hover:z-20 hover:-translate-y-4 transition-all duration-500 cursor-pointer"
+                className="home-stack-card absolute w-72 glass-panel rounded-2xl overflow-visible shadow-2xl cursor-pointer"
               >
-                <div className="px-4 py-3 bg-[var(--surface)] border-b border-[var(--border)] text-[10px] font-black uppercase text-[var(--text-secondary)]">
-                  {['Login UI', 'Dashboard', 'UI Stack', 'Settings', 'Data Grid', 'Analytics'][i-1]}
+                <div className="home-stack-card-shell rounded-2xl overflow-hidden">
+                  <div className="px-4 py-3 bg-[var(--surface)] border-b border-[var(--border)] text-[10px] font-black uppercase text-[var(--text-secondary)]">
+                    {['Login UI', 'Dashboard', 'UI Stack', 'Settings', 'Data Grid', 'Analytics'][i-1]}
+                  </div>
+                  <img src={`assets/images/${['login-ui', 'dashboard-ui', 'ui-stack', 'settings-ui', 'data-grid-ui', 'analytics-ui'][i-1]}.png`} alt="UI" className="w-full opacity-80" />
                 </div>
-                <img src={`assets/images/${['login-ui', 'dashboard-ui', 'ui-stack', 'settings-ui', 'data-grid-ui', 'analytics-ui'][i-1]}.png`} alt="UI" className="w-full opacity-80" />
               </motion.div>
             ))}
           </div>
@@ -272,8 +275,8 @@ export default function Home({ onNavigate, theme, toggleTheme }: { onNavigate?: 
         <div className="max-w-4xl mx-auto space-y-12">
           <h2 className="text-6xl md:text-7xl font-black leading-tight">Ready to Build <br /> Something Amazing?</h2>
           <p className="text-[var(--text-secondary)] text-xl">Start exploring our component library and accelerate your development workflow</p>
-          <ui-button variant="primary" size="lg" class="bg-blue-600 hover:bg-blue-500 text-white px-12 py-6 text-xl rounded-full shadow-2xl shadow-blue-500/20">
-            Get Started Now <ui-icon name="arrow-right" size="20" class="ml-2"></ui-icon>
+          <ui-button variant="primary" size="lg" shape="pill" icon="arrow-right" icon-position="right">
+            Get Started Now
           </ui-button>
         </div>
       </section>
@@ -316,7 +319,7 @@ export default function Home({ onNavigate, theme, toggleTheme }: { onNavigate?: 
               placeholder="Enter your email" 
               className="w-full bg-[var(--surface-hover)] border border-[var(--border)] rounded-2xl py-4 px-5 text-sm text-[var(--text-primary)] placeholder-[var(--text-secondary)]/60 focus:outline-none focus:border-blue-500 transition-colors"
             />
-            <ui-button variant="primary" size="sm" class="absolute right-2 top-2 bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-xl">Join</ui-button>
+            <ui-button variant="primary" size="sm" class="absolute right-2 top-2">Join</ui-button>
           </div>
         </div>
 
