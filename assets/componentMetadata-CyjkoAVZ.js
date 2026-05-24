@@ -949,11 +949,6 @@ Schema: { left?: ToolbarItem[], center?: ToolbarItem[], right?: ToolbarItem[] }`
       }\r
     }, 50);
 })();
-<\/script>`},{title:`log Event`,description:``,html:`<strong>\${new Date().toLocaleTimeString()}</strong>: <span style="color: #10b981;">\${eventName}</span> - Item: \${detail.itemId}
-<script>
-(function() {
-  eventLog.prepend(entry);
-})();
 <\/script>`},{title:`🎮 Controlled Mode`,description:`Control the state of the accordion from outside (Parent controls children).`,html:`<div class="demo-block">\r
         <h3>🎮 Controlled Mode</h3>\r
         <p style="color: #6b7280; margin-bottom: 16px;">Control the state of the accordion from outside (Parent controls children).</p>\r
@@ -2137,6 +2132,187 @@ Schema: { left?: ToolbarItem[], center?: ToolbarItem[], right?: ToolbarItem[] }`
         ];\r
         accordion.defaultOpen = ['item1'];\r
       }\r
+    }, 50);
+})();
+<\/script>`},{title:`Boxed / Card Style`,description:`High-fidelity accordion presets designed to elevate user interfaces.`,html:`<div class="demo-block" style="padding: 0;">\r
+        <div style="margin-bottom: 32px; border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 20px;">\r
+          <h2 style="margin: 0; font-size: 24px; font-weight: 800; color: #0f172a;">🎨 Premium Visual Styles</h2>\r
+          <p style="color: #64748b; margin: 6px 0 0 0; font-size: 14px;">High-fidelity accordion presets designed to elevate user interfaces.</p>\r
+        </div>\r
+\r
+        <div style="display: flex; flex-direction: column; gap: 48px;">\r
+          \r
+          <!-- Boxed Style Showcase (Image 1) -->\r
+          <div style="padding: 24px; background: radial-gradient(circle at top left, #2d3032, #18191a); border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.05);">\r
+            <div style="margin-bottom: 20px;">\r
+              <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: #ebff00; text-transform: uppercase;">Variant 1 &bull; Dark Mode</span>\r
+              <h3 style="margin: 4px 0 0 0; font-size: 18px; font-weight: 700; color: #ffffff;">Boxed / Card Style</h3>\r
+              <p style="color: #94a3b8; font-size: 13px; margin: 4px 0 0 0;">Stand-alone glassmorphic panels featuring neon-yellow glowing action chevrons.</p>\r
+            </div>\r
+            <ui-accordion id="premiumBoxed" variant="boxed" icon-library="lucide"></ui-accordion>\r
+          </div>\r
+\r
+          <!-- Minimal Style Showcase (Image 2) -->\r
+          <div style="padding: 24px; background: #ffffff; border-radius: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid #e2e8f0;">\r
+            <div style="margin-bottom: 20px;">\r
+              <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: #10b981; text-transform: uppercase;">Variant 2 &bull; Typography First</span>\r
+              <h3 style="margin: 4px 0 0 0; font-size: 18px; font-weight: 700; color: #0f172a;">Minimal FAQ Style</h3>\r
+              <p style="color: #64748b; font-size: 13px; margin: 4px 0 0 0;">Ultra-clean typography with discrete lower-borders and high padding breathability.</p>\r
+            </div>\r
+            <ui-accordion id="premiumMinimal" variant="minimal" icon-library="lucide"></ui-accordion>\r
+          </div>\r
+\r
+          <!-- Left-Toggle FAQ Style Showcase (Image 3) -->\r
+          <div style="padding: 24px; background: #ffffff; border-radius: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid #e2e8f0;">\r
+            <div style="margin-bottom: 20px;">\r
+              <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: #0f172a; text-transform: uppercase;">Variant 3 &bull; Plus/Minus Navigation</span>\r
+              <h3 style="margin: 4px 0 0 0; font-size: 18px; font-weight: 700; color: #0f172a;">Left-Toggle Plus/Minus FAQ</h3>\r
+              <p style="color: #64748b; font-size: 13px; margin: 4px 0 0 0;">Flat minimal items featuring solid circular dark plus/minus toggle buttons on the left.</p>\r
+            </div>\r
+            <ui-accordion id="premiumLeftToggle" variant="left-toggle" toggle-style="plus-minus" icon-position="start" icon-library="lucide"></ui-accordion>\r
+          </div>\r
+\r
+          <!-- Iconic & Rich Media Style Showcase (Image 4) -->\r
+          <div style="padding: 24px; background: #ffffff; border-radius: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid #e2e8f0;">\r
+            <div style="margin-bottom: 20px;">\r
+              <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: #6366f1; text-transform: uppercase;">Variant 4 &bull; Rich Experience</span>\r
+              <h3 style="margin: 4px 0 0 0; font-size: 18px; font-weight: 700; color: #0f172a;">Iconic & Rich Media Style</h3>\r
+              <p style="color: #64748b; font-size: 13px; margin: 4px 0 0 0;">Large prominent left-aligned brand/feature icons, clean toggles, and rich columns layout inside.</p>\r
+            </div>\r
+            <ui-accordion id="premiumIconic" variant="iconic" toggle-style="plus-minus" icon-library="lucide"></ui-accordion>\r
+          </div>\r
+\r
+        </div>\r
+      </div>\r
+    
+<script>
+(function() {
+  setTimeout(() => {\r
+      // 1. Boxed Setup\r
+      const boxedAcc = document.getElementById('premiumBoxed');\r
+      if (boxedAcc) {\r
+        boxedAcc.items = [\r
+          {\r
+            id: 'bx1',\r
+            title: 'Accordion',\r
+            content: 'This is a so-called "accordion" that enables you to expand and collapse its contents.',\r
+          }\r
+        ];\r
+        boxedAcc.defaultOpen = ['bx1'];\r
+      }\r
+\r
+      // 2. Minimal Setup\r
+      const minimalAcc = document.getElementById('premiumMinimal');\r
+      if (minimalAcc) {\r
+        minimalAcc.items = [\r
+          {\r
+            id: 'min1',\r
+            title: 'What is an accordion format?',\r
+            content: 'An accordion format is a stacked list of headers that users can click to reveal or hide associated content.'\r
+          },\r
+          {\r
+            id: 'min2',\r
+            title: 'What are accordions?',\r
+            content: 'It is a vertically stacked list of headers that, when clicked, reveals or hides the content associated within them. Instead of overwhelming consumers with longform content, accordions are employed in designs to deliver content to users in a more progressive manner.'\r
+          },\r
+          {\r
+            id: 'min3',\r
+            title: 'When are accordions used in designs?',\r
+            content: 'Accordions are useful when users need a high-level overview of the content hierarchy before diving into specific details.'\r
+          },\r
+          {\r
+            id: 'min4',\r
+            title: 'Does accordions improve user experience?',\r
+            content: 'Yes! By chunking content and revealing it progressively, accordions significantly reduce cognitive load and simplify complex page navigation.'\r
+          }\r
+        ];\r
+        minimalAcc.defaultOpen = ['min2'];\r
+      }\r
+\r
+      // 3. Left-Toggle Setup\r
+      const leftAcc = document.getElementById('premiumLeftToggle');\r
+      if (leftAcc) {\r
+        leftAcc.items = [\r
+          {\r
+            id: 'lt1',\r
+            title: 'When and how it should be used?',\r
+            content: 'Use accordions when users only need select pieces of information, helping keep the page compact and readable.'\r
+          },\r
+          {\r
+            id: 'lt2',\r
+            title: 'What\\'s an accordion?',\r
+            content: \`\r
+              <div style="margin-bottom:4px;">\r
+                <h4 style="margin: 0 0 4px 0; font-size: 13px; font-weight: 700; color: #1e293b;">Show/Hide operation</h4>\r
+                <p style="margin:0 0 16px 0; font-size: 13px; color: #475569;">An accordion always contains the category title, an expanded and a collapsed state, an icon indicating expansion, and the spacing between them.</p>\r
+                <h4 style="margin: 0 0 4px 0; font-size: 13px; font-weight: 700; color: #1e293b;">Tabbed interface</h4>\r
+                <p style="margin:0 0 16px 0; font-size: 13px; color: #475569;">A list of items where exactly one item is expanded into a panel.</p>\r
+                <button style="padding: 6px 12px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; transition: all 0.2s ease;">Read more</button>\r
+              </div>\r
+            \`\r
+          },\r
+          {\r
+            id: 'lt3',\r
+            title: 'What if the user clicks on a collapsed card while another card is open?',\r
+            content: 'Depending on the multi-expand configuration, it either collapses the previously open card or keeps both open simultaneously.'\r
+          },\r
+          {\r
+            id: 'lt4',\r
+            title: 'How to choose an icon to indicate expansion?',\r
+            content: 'Chevron symbols are most common, but plus/minus symbols are highly effective for direct FAQs or tab-like action cards.'\r
+          }\r
+        ];\r
+        leftAcc.defaultOpen = ['lt2'];\r
+      }\r
+\r
+      // 4. Iconic & Rich Media Setup\r
+      const iconicAcc = document.getElementById('premiumIconic');\r
+      if (iconicAcc) {\r
+        iconicAcc.items = [\r
+          {\r
+            id: 'ic1',\r
+            title: 'Views',\r
+            subtitle: 'Save time by creating and saving filtered views',\r
+            content: 'Create dynamic, custom views that let you filter and organize your log data instantly based on severity, tags, or components.',\r
+            icon: 'eye'\r
+          },\r
+          {\r
+            id: 'ic2',\r
+            title: 'Alerts',\r
+            subtitle: 'Save information about your system\\'s activity',\r
+            content: \`\r
+              <div style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">\r
+                <div style="flex: 1; min-width: 250px;">\r
+                  <p style="margin: 0 0 16px 0; color: #475569; font-size: 14px; line-height: 1.6;">\r
+                    Whether it's a system outage or an increase in activity, you need to know! Leverage LogDNA's alert feature to be informed on your system's activity. LogDNA integrates with many 3rd party solutions, so you can receive alerts with other applications like pagerDuty, slack, or another API.\r
+                  </p>\r
+                </div>\r
+                <div style="width: 240px; height: 135px; border-radius: 12px; background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15); flex-shrink: 0;">\r
+                  <div style="position: absolute; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.2); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">&#9658;</div>\r
+                  <div style="color: rgba(255,255,255,0.4); font-size: 11px; margin-top: 60px; font-weight: 500;">Live Video Stream</div>\r
+                </div>\r
+              </div>\r
+            \`,\r
+            icon: 'bell'\r
+          },\r
+          {\r
+            id: 'ic3',\r
+            title: 'Boards & Graphs',\r
+            subtitle: 'Identify trends in your system\\'s activity',\r
+            content: 'Visualize real-time trends, query metrics, and configure charts to quickly pinpoint anomalies in performance.',\r
+            icon: 'bar-chart-2'\r
+          },\r
+          {\r
+            id: 'ic4',\r
+            title: 'Screen',\r
+            subtitle: 'Display daily log activity from all your systems',\r
+            content: 'Centralize log management streams across cloud containers, virtual instances, and local microservices in one clean telemetry board.',\r
+            icon: 'monitor'\r
+          }\r
+        ];\r
+        iconicAcc.defaultOpen = ['ic2'];\r
+      }\r
+\r
     }, 50);
 })();
 <\/script>`}],"advanced-data-table":[{title:`✨ Master-Tier: Enterprise Material Archetypes`,description:`High-fidelity substrates for cinematic data density.`,html:`<div class="demo-block">\r
@@ -19621,1101 +19797,6 @@ setTimeout(() => {\r
       }\r
     }, 100);
 })();
-<\/script>`},{title:`log Event`,description:``,html:`<strong>[\${timestamp}]</strong> <span style="color: \${color};">\${eventName}</span>: \${JSON.stringify(detail, null, 2)}
-<script>
-(function() {
-  const sampleData = [\r
-    {\r
-      id: 1,\r
-      name: 'John Doe',\r
-      email: 'john@example.com',\r
-      website: 'https://johndoe.com',\r
-      phone: '+1-555-0123',\r
-      department: 'Engineering',\r
-      role: 'Senior Developer',\r
-      salary: 95000,\r
-      status: 'Active',\r
-      rating: 4,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2022-01-15',\r
-      location: 'New York',\r
-      manager: 'Sarah Connor',\r
-      project: 'Phoenix',\r
-      skillset: 'React, Node.js',\r
-      experience: '8 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=1',\r
-    },\r
-    {\r
-      id: 2,\r
-      name: 'Jane Smith',\r
-      email: 'jane@example.com',\r
-      website: 'https://janesmith.io',\r
-      phone: '+1-555-0124',\r
-      department: 'Marketing',\r
-      role: 'Marketing Manager',\r
-      salary: 85000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: false,\r
-      startDate: '2021-06-10',\r
-      location: 'Los Angeles',\r
-      manager: 'Mike Ross',\r
-      project: 'Alpha',\r
-      skillset: 'SEO, Analytics',\r
-      experience: '6 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=5',\r
-    },\r
-    {\r
-      id: 3,\r
-      name: 'Bob Johnson',\r
-      email: 'bob@example.com',\r
-      website: 'https://bobjohnson.dev',\r
-      phone: '+1-555-0125',\r
-      department: 'Engineering',\r
-      role: 'Team Lead',\r
-      salary: 105000,\r
-      status: 'Active',\r
-      rating: 3,\r
-      active: false,\r
-      verified: true,\r
-      startDate: '2020-03-22',\r
-      location: 'San Francisco',\r
-      manager: 'Sarah Connor',\r
-      project: 'Phoenix',\r
-      skillset: 'Python, AWS',\r
-      experience: '10 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=8',\r
-    },\r
-    {\r
-      id: 4,\r
-      name: 'Alice Williams',\r
-      email: 'alice@example.com',\r
-      website: 'https://alice.dev',\r
-      phone: '+1-555-0126',\r
-      department: 'Sales',\r
-      role: 'Sales Representative',\r
-      salary: 70000,\r
-      status: 'On Leave',\r
-      rating: 4,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2021-09-05',\r
-      location: 'Chicago',\r
-      manager: 'Tom Hardy',\r
-      project: 'Beta',\r
-      skillset: 'CRM, Negotiation',\r
-      experience: '4 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=9',\r
-    },\r
-    {\r
-      id: 5,\r
-      name: 'Charlie Brown',\r
-      email: 'charlie@example.com',\r
-      website: 'https://charlieb.com',\r
-      phone: '+1-555-0127',\r
-      department: 'Engineering',\r
-      role: 'Junior Developer',\r
-      salary: 65000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: false,\r
-      startDate: '2023-02-14',\r
-      location: 'Austin',\r
-      manager: 'Sarah Connor',\r
-      project: 'Gamma',\r
-      skillset: 'JavaScript, CSS',\r
-      experience: '2 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=12',\r
-    },\r
-    {\r
-      id: 6,\r
-      name: 'Diana Prince',\r
-      email: 'diana@example.com',\r
-      website: 'https://diana.io',\r
-      phone: '+1-555-0128',\r
-      department: 'HR',\r
-      role: 'HR Manager',\r
-      salary: 80000,\r
-      status: 'Inactive',\r
-      rating: 4,\r
-      active: false,\r
-      verified: true,\r
-      startDate: '2019-11-20',\r
-      location: 'Boston',\r
-      manager: 'Bruce Wayne',\r
-      project: 'Delta',\r
-      skillset: 'Recruitment, Policy',\r
-      experience: '7 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=20',\r
-    },\r
-    {\r
-      id: 7,\r
-      name: 'Ethan Hunt',\r
-      email: 'ethan@example.com',\r
-      website: 'https://ethanhunt.com',\r
-      phone: '+1-555-0129',\r
-      department: 'Marketing',\r
-      role: 'Content Strategist',\r
-      salary: 72000,\r
-      status: 'Active',\r
-      rating: 3,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2022-07-08',\r
-      location: 'Seattle',\r
-      manager: 'Mike Ross',\r
-      project: 'Alpha',\r
-      skillset: 'Content, Copywriting',\r
-      experience: '5 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=13',\r
-    },\r
-    {\r
-      id: 8,\r
-      name: 'Fiona Apple',\r
-      email: 'fiona@example.com',\r
-      website: 'https://fiona.dev',\r
-      phone: '+1-555-0130',\r
-      department: 'Sales',\r
-      role: 'Account Executive',\r
-      salary: 78000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: false,\r
-      startDate: '2021-12-01',\r
-      location: 'Miami',\r
-      manager: 'Tom Hardy',\r
-      project: 'Beta',\r
-      skillset: 'B2B Sales, Closing',\r
-      experience: '6 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=23',\r
-    },\r
-    {\r
-      id: 9,\r
-      name: 'George Lucas',\r
-      email: 'george@example.com',\r
-      website: 'https://george.com',\r
-      phone: '+1-555-0131',\r
-      department: 'Engineering',\r
-      role: 'Senior Developer',\r
-      salary: 98000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2021-01-20',\r
-      location: 'Portland',\r
-      manager: 'Sarah Connor',\r
-      project: 'Phoenix',\r
-      skillset: 'Java, Spring',\r
-      experience: '9 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=14',\r
-    },\r
-    {\r
-      id: 10,\r
-      name: 'Hannah Montana',\r
-      email: 'hannah@example.com',\r
-      website: 'https://hannah.io',\r
-      phone: '+1-555-0132',\r
-      department: 'Design',\r
-      role: 'UX Designer',\r
-      salary: 82000,\r
-      status: 'Active',\r
-      rating: 4,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2022-03-15',\r
-      location: 'Denver',\r
-      manager: 'Clark Kent',\r
-      project: 'Omega',\r
-      skillset: 'Figma, User Research',\r
-      experience: '5 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=25',\r
-    },\r
-    {\r
-      id: 11,\r
-      name: 'Ian McKellen',\r
-      email: 'ian@example.com',\r
-      website: 'https://ian.dev',\r
-      phone: '+1-555-0133',\r
-      department: 'Engineering',\r
-      role: 'DevOps Engineer',\r
-      salary: 92000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2020-08-10',\r
-      location: 'Phoenix',\r
-      manager: 'Sarah Connor',\r
-      project: 'Gamma',\r
-      skillset: 'Docker, Kubernetes',\r
-      experience: '7 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=15',\r
-    },\r
-    {\r
-      id: 12,\r
-      name: 'Julia Roberts',\r
-      email: 'julia@example.com',\r
-      website: 'https://julia.com',\r
-      phone: '+1-555-0134',\r
-      department: 'Marketing',\r
-      role: 'Social Media Manager',\r
-      salary: 68000,\r
-      status: 'Active',\r
-      rating: 4,\r
-      active: true,\r
-      verified: false,\r
-      startDate: '2022-11-05',\r
-      location: 'Nashville',\r
-      manager: 'Mike Ross',\r
-      project: 'Alpha',\r
-      skillset: 'Social Media, Ads',\r
-      experience: '4 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=26',\r
-    },\r
-    {\r
-      id: 13,\r
-      name: 'Kevin Hart',\r
-      email: 'kevin@example.com',\r
-      website: 'https://kevin.io',\r
-      phone: '+1-555-0135',\r
-      department: 'Sales',\r
-      role: 'Sales Manager',\r
-      salary: 88000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2019-05-12',\r
-      location: 'Dallas',\r
-      manager: 'Tom Hardy',\r
-      project: 'Beta',\r
-      skillset: 'Leadership, Strategy',\r
-      experience: '10 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=16',\r
-    },\r
-    {\r
-      id: 14,\r
-      name: 'Laura Croft',\r
-      email: 'laura@example.com',\r
-      website: 'https://laura.dev',\r
-      phone: '+1-555-0136',\r
-      department: 'Engineering',\r
-      role: 'QA Engineer',\r
-      salary: 75000,\r
-      status: 'Active',\r
-      rating: 4,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2021-07-18',\r
-      location: 'Atlanta',\r
-      manager: 'Sarah Connor',\r
-      project: 'Phoenix',\r
-      skillset: 'Testing, Automation',\r
-      experience: '5 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=27',\r
-    },\r
-    {\r
-      id: 15,\r
-      name: 'Michael Scott',\r
-      email: 'michael@example.com',\r
-      website: 'https://michael.com',\r
-      phone: '+1-555-0137',\r
-      department: 'Sales',\r
-      role: 'Regional Manager',\r
-      salary: 95000,\r
-      status: 'Active',\r
-      rating: 3,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2018-02-01',\r
-      location: 'Scranton',\r
-      manager: 'David Wallace',\r
-      project: 'Beta',\r
-      skillset: 'Management, Sales',\r
-      experience: '12 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=17',\r
-    },\r
-    {\r
-      id: 16,\r
-      name: 'Nancy Drew',\r
-      email: 'nancy@example.com',\r
-      website: 'https://nancy.io',\r
-      phone: '+1-555-0138',\r
-      department: 'HR',\r
-      role: 'Recruiter',\r
-      salary: 65000,\r
-      status: 'Active',\r
-      rating: 4,\r
-      active: true,\r
-      verified: false,\r
-      startDate: '2023-01-10',\r
-      location: 'Minneapolis',\r
-      manager: 'Bruce Wayne',\r
-      project: 'Delta',\r
-      skillset: 'Sourcing, Interviews',\r
-      experience: '3 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=28',\r
-    },\r
-    {\r
-      id: 17,\r
-      name: 'Oscar Martinez',\r
-      email: 'oscar@example.com',\r
-      website: 'https://oscar.dev',\r
-      phone: '+1-555-0139',\r
-      department: 'Finance',\r
-      role: 'Accountant',\r
-      salary: 72000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2020-06-22',\r
-      location: 'Philadelphia',\r
-      manager: 'Angela Martin',\r
-      project: 'Sigma',\r
-      skillset: 'Accounting, Excel',\r
-      experience: '8 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=18',\r
-    },\r
-    {\r
-      id: 18,\r
-      name: 'Pam Beesly',\r
-      email: 'pam@example.com',\r
-      website: 'https://pam.com',\r
-      phone: '+1-555-0140',\r
-      department: 'Design',\r
-      role: 'Graphic Designer',\r
-      salary: 70000,\r
-      status: 'Active',\r
-      rating: 4,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2021-04-15',\r
-      location: 'Scranton',\r
-      manager: 'Clark Kent',\r
-      project: 'Omega',\r
-      skillset: 'Photoshop, Illustrator',\r
-      experience: '6 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=29',\r
-    },\r
-    {\r
-      id: 19,\r
-      name: 'Quentin Tarantino',\r
-      email: 'quentin@example.com',\r
-      website: 'https://quentin.io',\r
-      phone: '+1-555-0141',\r
-      department: 'Engineering',\r
-      role: 'Full Stack Developer',\r
-      salary: 94000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2020-09-08',\r
-      location: 'San Diego',\r
-      manager: 'Sarah Connor',\r
-      project: 'Phoenix',\r
-      skillset: 'MERN, GraphQL',\r
-      experience: '7 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=19',\r
-    },\r
-    {\r
-      id: 20,\r
-      name: 'Rachel Green',\r
-      email: 'rachel@example.com',\r
-      website: 'https://rachel.dev',\r
-      phone: '+1-555-0142',\r
-      department: 'Marketing',\r
-      role: 'Brand Manager',\r
-      salary: 79000,\r
-      status: 'Active',\r
-      rating: 4,\r
-      active: true,\r
-      verified: false,\r
-      startDate: '2022-02-20',\r
-      location: 'New York',\r
-      manager: 'Mike Ross',\r
-      project: 'Alpha',\r
-      skillset: 'Branding, Strategy',\r
-      experience: '5 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=30',\r
-    },\r
-    {\r
-      id: 21,\r
-      name: 'Steve Rogers',\r
-      email: 'steve@example.com',\r
-      website: 'https://steve.com',\r
-      phone: '+1-555-0143',\r
-      department: 'Engineering',\r
-      role: 'Security Engineer',\r
-      salary: 102000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2019-12-01',\r
-      location: 'Washington DC',\r
-      manager: 'Sarah Connor',\r
-      project: 'Gamma',\r
-      skillset: 'Security, Pentesting',\r
-      experience: '9 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=21',\r
-    },\r
-    {\r
-      id: 22,\r
-      name: 'Tony Stark',\r
-      email: 'tony@example.com',\r
-      website: 'https://tony.io',\r
-      phone: '+1-555-0144',\r
-      department: 'Engineering',\r
-      role: 'Tech Lead',\r
-      salary: 115000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2018-05-15',\r
-      location: 'Malibu',\r
-      manager: 'Pepper Potts',\r
-      project: 'Phoenix',\r
-      skillset: 'AI, ML, IoT',\r
-      experience: '15 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=22',\r
-    },\r
-    {\r
-      id: 23,\r
-      name: 'Uma Thurman',\r
-      email: 'uma@example.com',\r
-      website: 'https://uma.dev',\r
-      phone: '+1-555-0145',\r
-      department: 'Sales',\r
-      role: 'Enterprise Sales',\r
-      salary: 86000,\r
-      status: 'Active',\r
-      rating: 4,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2021-10-12',\r
-      location: 'Las Vegas',\r
-      manager: 'Tom Hardy',\r
-      project: 'Beta',\r
-      skillset: 'Enterprise, Contracts',\r
-      experience: '7 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=31',\r
-    },\r
-    {\r
-      id: 24,\r
-      name: 'Victor Hugo',\r
-      email: 'victor@example.com',\r
-      website: 'https://victor.com',\r
-      phone: '+1-555-0146',\r
-      department: 'Design',\r
-      role: 'UI Designer',\r
-      salary: 76000,\r
-      status: 'Active',\r
-      rating: 4,\r
-      active: true,\r
-      verified: false,\r
-      startDate: '2022-08-25',\r
-      location: 'Portland',\r
-      manager: 'Clark Kent',\r
-      project: 'Omega',\r
-      skillset: 'UI Design, Prototyping',\r
-      experience: '4 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=32',\r
-    },\r
-    {\r
-      id: 25,\r
-      name: 'Wanda Vision',\r
-      email: 'wanda@example.com',\r
-      website: 'https://wanda.io',\r
-      phone: '+1-555-0147',\r
-      department: 'Engineering',\r
-      role: 'Mobile Developer',\r
-      salary: 89000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2020-11-30',\r
-      location: 'Westview',\r
-      manager: 'Sarah Connor',\r
-      project: 'Gamma',\r
-      skillset: 'React Native, Swift',\r
-      experience: '6 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=33',\r
-    },\r
-    {\r
-      id: 26,\r
-      name: 'Xavier Charles',\r
-      email: 'xavier@example.com',\r
-      website: 'https://xavier.dev',\r
-      phone: '+1-555-0148',\r
-      department: 'HR',\r
-      role: 'Training Manager',\r
-      salary: 73000,\r
-      status: 'Active',\r
-      rating: 4,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2021-05-20',\r
-      location: 'Salem',\r
-      manager: 'Bruce Wayne',\r
-      project: 'Delta',\r
-      skillset: 'Training, L&D',\r
-      experience: '5 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=34',\r
-    },\r
-    {\r
-      id: 27,\r
-      name: 'Yvonne Strahovski',\r
-      email: 'yvonne@example.com',\r
-      website: 'https://yvonne.com',\r
-      phone: '+1-555-0149',\r
-      department: 'Marketing',\r
-      role: 'Email Marketing',\r
-      salary: 64000,\r
-      status: 'Active',\r
-      rating: 4,\r
-      active: true,\r
-      verified: false,\r
-      startDate: '2023-03-08',\r
-      location: 'Tampa',\r
-      manager: 'Mike Ross',\r
-      project: 'Alpha',\r
-      skillset: 'Mailchimp, Automation',\r
-      experience: '3 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=35',\r
-    },\r
-    {\r
-      id: 28,\r
-      name: 'Zachary Levi',\r
-      email: 'zachary@example.com',\r
-      website: 'https://zachary.io',\r
-      phone: '+1-555-0150',\r
-      department: 'Engineering',\r
-      role: 'Backend Developer',\r
-      salary: 91000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2020-07-14',\r
-      location: 'Baltimore',\r
-      manager: 'Sarah Connor',\r
-      project: 'Phoenix',\r
-      skillset: 'Node.js, MongoDB',\r
-      experience: '7 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=36',\r
-    },\r
-    {\r
-      id: 29,\r
-      name: 'Amy Adams',\r
-      email: 'amy@example.com',\r
-      website: 'https://amy.dev',\r
-      phone: '+1-555-0151',\r
-      department: 'Sales',\r
-      role: 'Sales Operations',\r
-      salary: 71000,\r
-      status: 'On Leave',\r
-      rating: 4,\r
-      active: false,\r
-      verified: true,\r
-      startDate: '2022-04-18',\r
-      location: 'Detroit',\r
-      manager: 'Tom Hardy',\r
-      project: 'Beta',\r
-      skillset: 'Salesforce, Analytics',\r
-      experience: '4 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=37',\r
-    },\r
-    {\r
-      id: 30,\r
-      name: 'Ben Affleck',\r
-      email: 'ben@example.com',\r
-      website: 'https://ben.com',\r
-      phone: '+1-555-0152',\r
-      department: 'Finance',\r
-      role: 'Financial Analyst',\r
-      salary: 77000,\r
-      status: 'Active',\r
-      rating: 4,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2021-09-22',\r
-      location: 'Boston',\r
-      manager: 'Angela Martin',\r
-      project: 'Sigma',\r
-      skillset: 'Finance, Modeling',\r
-      experience: '6 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=38',\r
-    },\r
-    {\r
-      id: 31,\r
-      name: 'Cate Blanchett',\r
-      email: 'cate@example.com',\r
-      website: 'https://cate.io',\r
-      phone: '+1-555-0153',\r
-      department: 'Design',\r
-      role: 'Creative Director',\r
-      salary: 96000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2019-08-05',\r
-      location: 'Los Angeles',\r
-      manager: 'Clark Kent',\r
-      project: 'Omega',\r
-      skillset: 'Creative Strategy, Art',\r
-      experience: '11 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=39',\r
-    },\r
-    {\r
-      id: 32,\r
-      name: 'Daniel Craig',\r
-      email: 'daniel@example.com',\r
-      website: 'https://daniel.dev',\r
-      phone: '+1-555-0154',\r
-      department: 'Engineering',\r
-      role: 'Cloud Architect',\r
-      salary: 108000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2019-03-12',\r
-      location: 'London',\r
-      manager: 'Sarah Connor',\r
-      project: 'Phoenix',\r
-      skillset: 'AWS, Azure, GCP',\r
-      experience: '12 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=40',\r
-    },\r
-    {\r
-      id: 33,\r
-      name: 'Emma Stone',\r
-      email: 'emma@example.com',\r
-      website: 'https://emma.com',\r
-      phone: '+1-555-0155',\r
-      department: 'Marketing',\r
-      role: 'PR Manager',\r
-      salary: 81000,\r
-      status: 'Active',\r
-      rating: 4,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2021-11-18',\r
-      location: 'New York',\r
-      manager: 'Mike Ross',\r
-      project: 'Alpha',\r
-      skillset: 'PR, Media Relations',\r
-      experience: '6 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=41',\r
-    },\r
-    {\r
-      id: 34,\r
-      name: 'Frank Sinatra',\r
-      email: 'frank@example.com',\r
-      website: 'https://frank.io',\r
-      phone: '+1-555-0156',\r
-      department: 'Sales',\r
-      role: 'Channel Sales',\r
-      salary: 74000,\r
-      status: 'Active',\r
-      rating: 4,\r
-      active: true,\r
-      verified: false,\r
-      startDate: '2022-06-10',\r
-      location: 'Las Vegas',\r
-      manager: 'Tom Hardy',\r
-      project: 'Beta',\r
-      skillset: 'Partnerships, B2B',\r
-      experience: '5 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=42',\r
-    },\r
-    {\r
-      id: 35,\r
-      name: 'Grace Kelly',\r
-      email: 'grace@example.com',\r
-      website: 'https://grace.dev',\r
-      phone: '+1-555-0157',\r
-      department: 'HR',\r
-      role: 'HR Specialist',\r
-      salary: 67000,\r
-      status: 'Active',\r
-      rating: 4,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2022-12-01',\r
-      location: 'Monaco',\r
-      manager: 'Bruce Wayne',\r
-      project: 'Delta',\r
-      skillset: 'HR Operations, Benefits',\r
-      experience: '4 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=43',\r
-    },\r
-    {\r
-      id: 36,\r
-      name: 'Henry Cavill',\r
-      email: 'henry@example.com',\r
-      website: 'https://henry.com',\r
-      phone: '+1-555-0158',\r
-      department: 'Engineering',\r
-      role: 'Data Engineer',\r
-      salary: 97000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2020-10-08',\r
-      location: 'London',\r
-      manager: 'Sarah Connor',\r
-      project: 'Gamma',\r
-      skillset: 'ETL, Spark, SQL',\r
-      experience: '8 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=44',\r
-    },\r
-    {\r
-      id: 37,\r
-      name: 'Isla Fisher',\r
-      email: 'isla@example.com',\r
-      website: 'https://isla.io',\r
-      phone: '+1-555-0159',\r
-      department: 'Design',\r
-      role: 'Product Designer',\r
-      salary: 84000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2021-02-14',\r
-      location: 'Sydney',\r
-      manager: 'Clark Kent',\r
-      project: 'Omega',\r
-      skillset: 'Product Design, UX',\r
-      experience: '7 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=45',\r
-    },\r
-    {\r
-      id: 38,\r
-      name: 'Jake Gyllenhaal',\r
-      email: 'jake@example.com',\r
-      website: 'https://jake.dev',\r
-      phone: '+1-555-0160',\r
-      department: 'Engineering',\r
-      role: 'Frontend Developer',\r
-      salary: 87000,\r
-      status: 'Active',\r
-      rating: 4,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2021-08-20',\r
-      location: 'San Francisco',\r
-      manager: 'Sarah Connor',\r
-      project: 'Phoenix',\r
-      skillset: 'Vue.js, TypeScript',\r
-      experience: '6 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=46',\r
-    },\r
-    {\r
-      id: 39,\r
-      name: 'Kate Winslet',\r
-      email: 'kate@example.com',\r
-      website: 'https://kate.com',\r
-      phone: '+1-555-0161',\r
-      department: 'Marketing',\r
-      role: 'Marketing Analyst',\r
-      salary: 69000,\r
-      status: 'Active',\r
-      rating: 4,\r
-      active: true,\r
-      verified: false,\r
-      startDate: '2022-09-15',\r
-      location: 'London',\r
-      manager: 'Mike Ross',\r
-      project: 'Alpha',\r
-      skillset: 'Analytics, Reporting',\r
-      experience: '5 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=47',\r
-    },\r
-    {\r
-      id: 40,\r
-      name: 'Leo DiCaprio',\r
-      email: 'leo@example.com',\r
-      website: 'https://leo.io',\r
-      phone: '+1-555-0162',\r
-      department: 'Sales',\r
-      role: 'Business Development',\r
-      salary: 83000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2020-12-10',\r
-      location: 'Hollywood',\r
-      manager: 'Tom Hardy',\r
-      project: 'Beta',\r
-      skillset: 'BD, Partnerships',\r
-      experience: '8 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=48',\r
-    },\r
-    {\r
-      id: 41,\r
-      name: 'Morgan Freeman',\r
-      email: 'morgan@example.com',\r
-      website: 'https://morgan.dev',\r
-      phone: '+1-555-0163',\r
-      department: 'Engineering',\r
-      role: 'Solutions Architect',\r
-      salary: 112000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2018-07-01',\r
-      location: 'Memphis',\r
-      manager: 'Sarah Connor',\r
-      project: 'Phoenix',\r
-      skillset: 'Architecture, Design',\r
-      experience: '14 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=49',\r
-    },\r
-    {\r
-      id: 42,\r
-      name: 'Natalie Portman',\r
-      email: 'natalie@example.com',\r
-      website: 'https://natalie.com',\r
-      phone: '+1-555-0164',\r
-      department: 'Design',\r
-      role: 'Design Lead',\r
-      salary: 93000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2020-04-22',\r
-      location: 'Jerusalem',\r
-      manager: 'Clark Kent',\r
-      project: 'Omega',\r
-      skillset: 'Leadership, Design',\r
-      experience: '9 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=50',\r
-    },\r
-    {\r
-      id: 43,\r
-      name: 'Owen Wilson',\r
-      email: 'owen@example.com',\r
-      website: 'https://owen.io',\r
-      phone: '+1-555-0165',\r
-      department: 'Sales',\r
-      role: 'Inside Sales Rep',\r
-      salary: 66000,\r
-      status: 'Active',\r
-      rating: 3,\r
-      active: true,\r
-      verified: false,\r
-      startDate: '2023-04-05',\r
-      location: 'Dallas',\r
-      manager: 'Tom Hardy',\r
-      project: 'Beta',\r
-      skillset: 'Cold Calling, Demos',\r
-      experience: '2 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=51',\r
-    },\r
-    {\r
-      id: 44,\r
-      name: 'Penelope Cruz',\r
-      email: 'penelope@example.com',\r
-      website: 'https://penelope.dev',\r
-      phone: '+1-555-0166',\r
-      department: 'Marketing',\r
-      role: 'Event Manager',\r
-      salary: 75000,\r
-      status: 'Active',\r
-      rating: 4,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2021-12-20',\r
-      location: 'Madrid',\r
-      manager: 'Mike Ross',\r
-      project: 'Alpha',\r
-      skillset: 'Events, Coordination',\r
-      experience: '6 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=52',\r
-    },\r
-    {\r
-      id: 45,\r
-      name: 'Quinn Fabray',\r
-      email: 'quinn@example.com',\r
-      website: 'https://quinn.com',\r
-      phone: '+1-555-0167',\r
-      department: 'HR',\r
-      role: 'Benefits Coordinator',\r
-      salary: 63000,\r
-      status: 'Active',\r
-      rating: 4,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2022-10-12',\r
-      location: 'Columbus',\r
-      manager: 'Bruce Wayne',\r
-      project: 'Delta',\r
-      skillset: 'Benefits, Payroll',\r
-      experience: '3 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=53',\r
-    },\r
-    {\r
-      id: 46,\r
-      name: 'Ryan Gosling',\r
-      email: 'ryan@example.com',\r
-      website: 'https://ryan.io',\r
-      phone: '+1-555-0168',\r
-      department: 'Engineering',\r
-      role: 'ML Engineer',\r
-      salary: 104000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2019-09-18',\r
-      location: 'Toronto',\r
-      manager: 'Sarah Connor',\r
-      project: 'Gamma',\r
-      skillset: 'ML, TensorFlow, PyTorch',\r
-      experience: '10 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=54',\r
-    },\r
-    {\r
-      id: 47,\r
-      name: 'Scarlett Johansson',\r
-      email: 'scarlett@example.com',\r
-      website: 'https://scarlett.dev',\r
-      phone: '+1-555-0169',\r
-      department: 'Design',\r
-      role: 'Interaction Designer',\r
-      salary: 80000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2021-06-25',\r
-      location: 'New York',\r
-      manager: 'Clark Kent',\r
-      project: 'Omega',\r
-      skillset: 'Interaction, Motion',\r
-      experience: '7 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=55',\r
-    },\r
-    {\r
-      id: 48,\r
-      name: 'Tom Hanks',\r
-      email: 'tom@example.com',\r
-      website: 'https://tom.com',\r
-      phone: '+1-555-0170',\r
-      department: 'Sales',\r
-      role: 'Key Account Manager',\r
-      salary: 90000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2019-11-08',\r
-      location: 'Oakland',\r
-      manager: 'Tom Hardy',\r
-      project: 'Beta',\r
-      skillset: 'Account Management',\r
-      experience: '11 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=56',\r
-    },\r
-    {\r
-      id: 49,\r
-      name: 'Viola Davis',\r
-      email: 'viola@example.com',\r
-      website: 'https://viola.io',\r
-      phone: '+1-555-0171',\r
-      department: 'Finance',\r
-      role: 'Controller',\r
-      salary: 99000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2018-10-15',\r
-      location: 'Providence',\r
-      manager: 'Angela Martin',\r
-      project: 'Sigma',\r
-      skillset: 'Finance, Compliance',\r
-      experience: '13 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=57',\r
-    },\r
-    {\r
-      id: 50,\r
-      name: 'Will Smith',\r
-      email: 'will@example.com',\r
-      website: 'https://will.dev',\r
-      phone: '+1-555-0172',\r
-      department: 'Engineering',\r
-      role: 'Site Reliability Engineer',\r
-      salary: 101000,\r
-      status: 'Active',\r
-      rating: 5,\r
-      active: true,\r
-      verified: true,\r
-      startDate: '2019-06-30',\r
-      location: 'Philadelphia',\r
-      manager: 'Sarah Connor',\r
-      project: 'Phoenix',\r
-      skillset: 'SRE, Monitoring',\r
-      experience: '9 years',\r
-      avatar: 'https://i.pravatar.cc/150?img=58',\r
-    },\r
-  ];\r
-\r
-  const columns = [\r
-    { id: 'id', field: 'id', label: 'ID', sortable: true, width: '60px' },\r
-    { id: 'name', field: 'name', label: 'Name', sortable: true, width: '150px' },\r
-    { id: 'email', field: 'email', label: 'Email', sortable: true, width: '200px' },\r
-    { id: 'phone', field: 'phone', label: 'Phone', sortable: true, width: '130px' },\r
-    { id: 'department', field: 'department', label: 'Department', sortable: true, filterable: true, width: '120px' },\r
-    { id: 'role', field: 'role', label: 'Role', sortable: true, width: '180px' },\r
-    {\r
-      id: 'salary',\r
-      field: 'salary',\r
-      label: 'Salary',\r
-      sortable: true,\r
-      width: '110px',\r
-      format: function (value) {\r
-        return '$' + value.toLocaleString();\r
-      },\r
-    },\r
-    { id: 'status', field: 'status', label: 'Status', sortable: true, filterable: true, width: '100px' },\r
-    { id: 'location', field: 'location', label: 'Location', sortable: true, width: '150px' },\r
-    { id: 'manager', field: 'manager', label: 'Manager', sortable: true, width: '140px' },\r
-    { id: 'project', field: 'project', label: 'Project', sortable: true, filterable: true, width: '120px' },\r
-    { id: 'skillset', field: 'skillset', label: 'Skills', sortable: false, width: '180px' },\r
-    { id: 'experience', field: 'experience', label: 'Experience', sortable: true, width: '120px' },\r
-    { id: 'startDate', field: 'startDate', label: 'Start Date', sortable: true, width: '120px' },\r
-    {\r
-      id: 'verified',\r
-      field: 'verified',\r
-      label: 'Verified',\r
-      sortable: true,\r
-      width: '90px',\r
-      format: function (value) {\r
-        return value ? '✓' : '✗';\r
-      },\r
-    },\r
-  ];
-
-eventLog.insertBefore(entry, eventLog.firstChild);\r
-          }
-})();
 <\/script>`},{title:`🎛️ Filter & Column Panels`,description:`Advanced UI panels for filtering and column management`,html:`<div class="demo-block">\r
           <h3>🎛️ Filter & Column Panels</h3>\r
           <p style="color: #6b7280; margin-bottom: 12px;">Advanced UI panels for filtering and column management</p>\r
@@ -35811,7 +34892,7 @@ const printCurrentTable = function () {\r
           <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 24px; border-radius: 16px;">\r
             <h4 style="margin-top:0;">🤖 Industrial Control</h4>\r
             <div style="display: flex; flex-direction: column; gap: 10px;">\r
-              <ui-button id="btnTogglePrimary" variant="outline" color="success" label="👑 Toggle Primary Panel"></ui-button>\r
+              <ui-button id="btnTogglePrimary" variant="outline" color="success" label="⚡ Toggle Primary Panel"></ui-button>\r
               <ui-button id="btnToggleMini" variant="outline" color="primary" label="🤏 Toggle Mini State"></ui-button>\r
               <ui-button id="btnInitVoice" variant="outline" color="success" label="🎙️ Audio Commands: ENABLE" style="font-family: monospace;"></ui-button>\r
             </div>\r
@@ -35976,107 +35057,99 @@ const printCurrentTable = function () {\r
       document.getElementById('btnStopLoading')?.addEventListener('click', stopAsideLoading);\r
     }, 50);
 })();
-<\/script>`},{title:`Non-Full Layouts (Floating)`,description:`Floating panels that don't span the full height or width. Perfect for feedback widgets or quick toolbars.`,html:`<div class="demo-block">
-  <h3 style="display: flex; align-items: center; gap: 8px;">Non-Full Layouts (Floating)</h3>
-  <p style="opacity: 0.7; margin-bottom: 24px;">Floating panels that don't span the full height or width. Perfect for feedback widgets or quick toolbars.</p>
-  
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 32px;">
-    <div style="background: var(--bg-secondary); border: 1px solid var(--border-default); padding: 24px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
-      <h4 style="margin-top:0; color: var(--text-primary);">Feedback Widget</h4>
-      <p style="font-size:13px; color: var(--text-secondary);">Bottom-aligned floating panel matching industrial survey layouts.</p>
-      <ui-button id="btnOpenFeedback" variant="outline" color="success" label="Open Feedback Panel" style="width: 100%"></ui-button>
-    </div>
-    <div style="background: var(--bg-secondary); border: 1px solid var(--border-default); padding: 24px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
-      <h4 style="margin-top:0; color: var(--text-primary);">Centered Flyout</h4>
-      <p style="font-size:13px; color: var(--text-secondary);">Vertically centered panel on the screen edge.</p>
-      <ui-button id="btnOpenCentered" variant="outline" color="success" label="Open Centered Flyout" style="width: 100%"></ui-button>
-    </div>
-  </div>
-
-  <ui-aside-panel 
-    id="feedbackPanel" 
-    direction="right" 
-    variant="floating" 
-    floating-align="end" 
-    floating-offset="30px"
-    size="450px" 
-    secondary-size="650px"
-  >
-    <div slot="header">
-       <div style="display: flex; align-items: center; gap: 10px;">
-          <img src="https://www.se.com/favicon.ico" style="width: 24px; height: 24px;">
-          <h3 style="margin:0;">Schneider Electric Feedback</h3>
-       </div>
-    </div>
-    <div slot="content">
-       <p style="font-weight: bold; margin-bottom: 12px;">How satisfied are you today? *</p>
-       <div style="display: flex; justify-content: space-between; gap: 4px; margin-bottom: 24px;">
-          <ui-button variant="outline" color="secondary" label="0" size="md" style="flex: 1"></ui-button>
-          <ui-button variant="outline" color="secondary" label="1" size="md" style="flex: 1"></ui-button>
-          <ui-button variant="outline" color="secondary" label="2" size="md" style="flex: 1"></ui-button>
-          <ui-button variant="outline" color="secondary" label="3" size="md" style="flex: 1"></ui-button>
-          <ui-button variant="outline" color="secondary" label="4" size="md" style="flex: 1"></ui-button>
-          <ui-button variant="outline" color="secondary" label="5" size="md" style="flex: 1"></ui-button>
-          <ui-button variant="outline" color="secondary" label="6" size="md" style="flex: 1"></ui-button>
-          <ui-button variant="outline" color="secondary" label="7" size="md" style="flex: 1"></ui-button>
-          <ui-button variant="outline" color="secondary" label="8" size="md" style="flex: 1"></ui-button>
-          <ui-button variant="outline" color="secondary" label="9" size="md" style="flex: 1"></ui-button>
-          <ui-button variant="outline" color="secondary" label="10" size="md" style="flex: 1"></ui-button>
-       </div>
-       
-       <div style="display: grid; gap: 16px; margin-bottom: 24px;">
-           <ui-input multiline="true" rows="3" label="Could you please describe your recent experience with us?" placeholder="Your thoughts..."></ui-input>
-           <ui-input multiline="true" rows="3" label="What suggestions would you recommend?" placeholder="Enhancements..."></ui-input>
-       </div>
-     
-     <div style="display: flex; gap: 10px;">
-        <ui-button id="btnCloseFeedback" variant="outline" color="secondary" label="Close" style="flex: 1"></ui-button>
-        <ui-button id="btnSubmitFeedback" variant="outline" color="success" label="Submit" style="flex: 1"></ui-button>
-     </div>
-     
-     <p style="text-align: center; font-size: 11px; color: #94a3b8; margin-top: 24px;">Powered by <b>Medallia</b></p>
-    </div>
-  </ui-aside-panel>
-
-  <ui-aside-panel 
-    id="centerFloatPanel" 
-    direction="right" 
-    variant="floating" 
-    floating-align="center" 
-    floating-offset="20px"
-    size="350px" 
-    secondary-size="400px"
-    backdrop-blur="4px"
-  >
-    <div slot="header">
-       <div style="display: flex; align-items: center; gap: 8px;">
-          <ui-icon name="target" library="lucide" size="18px"></ui-icon>
-          <h3 style="margin:0;">Centered Flyout</h3>
-       </div>
-    </div>
-    <div slot="content">
-       <p style="color: #64748b; font-size: 14px; line-height: 1.6;">This panel is vertically centered on the screen edge using <code>floating-align="center"</code>.</p>
-       <div style="margin-top: 20px; padding: 16px; background: #f1f5f9; border-radius: 12px; font-size: 13px;">
-          Perfect for quick tool selections or contextual utilities.
-       </div>
-    </div>
-  </ui-aside-panel>
-</div>
-
+<\/script>`},{title:`🛸 Non-Full Layouts (Floating)`,description:`Floating panels that don't span the full height or width. Perfect for feedback widgets or quick toolbars.`,html:`<div class="demo-block">\r
+        <h3 style="display: flex; align-items: center; gap: 8px;">🛸 Non-Full Layouts (Floating)</h3>\r
+        <p style="opacity: 0.7; margin-bottom: 24px;">Floating panels that don't span the full height or width. Perfect for feedback widgets or quick toolbars.</p>\r
+        \r
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 32px;">\r
+          <div style="background: var(--bg-secondary); border: 1px solid var(--border-default); padding: 24px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">\r
+            <h4 style="margin-top:0; color: var(--text-primary);">💬 Feedback Widget</h4>\r
+            <p style="font-size:13px; color: var(--text-secondary);">Bottom-aligned floating panel matching industrial survey layouts.</p>\r
+            <ui-button id="btnOpenFeedback" variant="outline" color="success" label="Open Feedback Panel" style="width: 100%"></ui-button>\r
+          </div>\r
+          <div style="background: var(--bg-secondary); border: 1px solid var(--border-default); padding: 24px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">\r
+            <h4 style="margin-top:0; color: var(--text-primary);">🎯 Centered Flyout</h4>\r
+            <p style="font-size:13px; color: var(--text-secondary);">Vertically centered panel on the screen edge.</p>\r
+            <ui-button id="btnOpenCentered" variant="outline" color="success" label="Open Centered Flyout" style="width: 100%"></ui-button>\r
+          </div>\r
+        </div>\r
+\r
+        <ui-aside-panel \r
+          id="feedbackPanel" \r
+          direction="right" \r
+          variant="floating" \r
+          floating-align="end" \r
+          floating-offset="30px"\r
+          size="450px" \r
+          secondary-size="650px"\r
+        >\r
+          <div slot="header">\r
+             <div style="display: flex; align-items: center; gap: 10px;">\r
+                <img src="https://www.se.com/favicon.ico" style="width: 24px; height: 24px;">\r
+                <h3 style="margin:0;">Schneider Electric Feedback</h3>\r
+             </div>\r
+          </div>\r
+          <div slot="content">\r
+             <p style="font-weight: bold; margin-bottom: 12px;">How satisfied are you today? *</p>\r
+             <div style="display: flex; justify-content: space-between; gap: 4px; margin-bottom: 24px;">\r
+                \${[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => 
 <script>
 (function() {
-  setTimeout(() => {
-    document.getElementById('btnOpenFeedback')?.addEventListener('click', () => document.getElementById('feedbackPanel')?.show());
-    document.getElementById('btnCloseFeedback')?.addEventListener('click', () => document.getElementById('feedbackPanel')?.hide());
-    document.getElementById('btnSubmitFeedback')?.addEventListener('click', () => {
-      alert('Feedback Submitted!');
-      document.getElementById('feedbackPanel')?.hide();
-    });
-    document.getElementById('btnOpenCentered')?.addEventListener('click', () => document.getElementById('centerFloatPanel')?.show());
-  }, 100);
+  <ui-button variant="outline" color="secondary" label="\${n}" size="md"yle="flex: 1"></ui-button>\`).join('')}\r
+             </div>\r
+             \r
+             <div style="display: grid; gap: 16px; margin-bottom: 24px;">\r
+                 <ui-input multiline="true" rows="3" label="Could you please describe your recent experience with us?" placeholder="Your thoughts..."></ui-input>\r
+                 <ui-input multiline="true" rows="3" label="What suggestions would you recommend?" placeholder="Enhancements..."></ui-input>\r
+             </div>\r
+           \r
+           <div style="display: flex; gap: 10px;">\r
+              <ui-button id="btnCloseFeedback" variant="outline" color="secondary" label="Close" style="flex: 1"></ui-button>\r
+              <ui-button id="btnSubmitFeedback" variant="outline" color="success" label="Submit" style="flex: 1"></ui-button>\r
+           </div>\r
+           \r
+           <p style="text-align: center; font-size: 11px; color: #94a3b8; margin-top: 24px;">Powered by <b>Medallia</b></p>\r
+        </div>\r
+      </ui-aside-panel>\r
+\r
+      <ui-aside-panel \r
+        id="centerFloatPanel" \r
+        direction="right" \r
+        variant="floating" \r
+        floating-align="center" \r
+        floating-offset="20px"\r
+        size="350px" \r
+        secondary-size="400px"\r
+        backdrop-blur="4px"\r
+      >\r
+        <div slot="header">\r
+           <div style="display: flex; align-items: center; gap: 8px;">\r
+              <ui-icon name="target" library="lucide" size="18px"></ui-icon>\r
+              <h3 style="margin:0;">Centered Flyout</h3>\r
+           </div>\r
+        </div>\r
+        <div slot="content">\r
+           <p style="color: #64748b; font-size: 14px; line-height: 1.6;">This panel is vertically centered on the screen edge using <code>floating-align="center"</code>.</p>\r
+           <div style="margin-top: 20px; padding: 16px; background: #f1f5f9; border-radius: 12px; font-size: 13px;">\r
+              Perfect for quick tool selections or contextual utilities.\r
+           </div>\r
+        </div>\r
+      </ui-aside-panel>\r
+    </div>\r
+  \`;\r
+\r
+    setTimeout(() => {\r
+      document.getElementById('btnOpenFeedback')?.addEventListener('click', () => document.getElementById('feedbackPanel')?.show());\r
+      document.getElementById('btnCloseFeedback')?.addEventListener('click', () => document.getElementById('feedbackPanel')?.hide());\r
+      document.getElementById('btnSubmitFeedback')?.addEventListener('click', () => {\r
+        alert('Feedback Submitted!');\r
+        document.getElementById('feedbackPanel')?.hide();\r
+      });\r
+      document.getElementById('btnOpenCentered')?.addEventListener('click', () => document.getElementById('centerFloatPanel')?.show());\r
+    }, 50);
 })();
-<\/script>`},{title:`🎛️ Symmetrical Flyouts Mastery`,description:`A showcase of floating panels sliding from every axis. Each is centered along its respective edge with ultra-smooth transitions.`,html:`<div class="demo-block">\r
-      <h3 style="display: flex; align-items: center; gap: 8px;">🎛️ Symmetrical Flyouts Mastery</h3>\r
+<\/script>`},{title:`🛸 Symmetrical Flyouts Mastery`,description:`A showcase of floating panels sliding from every axis. Each is centered along its respective edge with ultra-smooth transitions.`,html:`<div class="demo-block">\r
+      <h3 style="display: flex; align-items: center; gap: 8px;">🛸 Symmetrical Flyouts Mastery</h3>\r
       <p style="opacity: 0.7; margin-bottom: 24px;">A showcase of floating panels sliding from every axis. Each is centered along its respective edge with ultra-smooth transitions.</p>\r
       \r
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 40px; background: var(--bg-secondary); padding: 20px; border-radius: 12px; border: 1px dashed var(--border-default);">\r
@@ -36140,32 +35213,6 @@ const printCurrentTable = function () {\r
       document.getElementById('btnFlyBottom')?.addEventListener('click', () => document.getElementById('flyBottom')?.show());\r
     }, 50);
 })();
-<\/script>`},{title:`📚 Multilayer Stack Orchestration`,description:`Using stack-offset to layer multiple concurrent panels.`,html:`<div class="demo-block">\r
-        <h3>📚 Multilayer Stack Orchestration</h3>\r
-        <p>Using <code>stack-offset</code> to layer multiple concurrent panels.</p>\r
-        <div style="display: flex; gap: 10px;">\r
-          <ui-button id="btnStack1" variant="outline" color="success" label="Layer 1"></ui-button>\r
-          <ui-button id="btnStack2" variant="outline" color="primary" label="Layer 2 (Offset)"></ui-button>\r
-        </div>\r
-\r
-        <ui-aside-panel id="stack1" direction="right" size="400px" theme="radiant">\r
-           <div slot="header"><h3>Level 1</h3></div>\r
-           <div slot="content"><p>Primary diagnostic layer.</p></div>\r
-        </ui-aside-panel>\r
-\r
-        <ui-aside-panel id="stack2" direction="right" size="350px" stack-offset="40" theme="glass">\r
-           <div slot="header"><h3>Level 2</h3></div>\r
-           <div slot="content"><p>Secondary contextual layer with 40px offset.</p></div>\r
-        </ui-aside-panel>\r
-      </div>\r
-    
-<script>
-(function() {
-  setTimeout(() => {\r
-      document.getElementById('btnStack1')?.addEventListener('click', () => document.getElementById('stack1')?.show());\r
-      document.getElementById('btnStack2')?.addEventListener('click', () => document.getElementById('stack2')?.show());\r
-    }, 100);
-})();
 <\/script>`},{title:`📄 Technical Documentation Reader`,description:`The Sovereign Aside Panel is a high-fidelity workspace component designed for technical orchestration.`,html:`<div class="demo-block">\r
         <h3>📄 Technical Documentation Reader</h3>\r
         <ui-button id="btnOpenManual" variant="outline" color="success" label="OPEN MANUAL" size="large"></ui-button>\r
@@ -36201,15 +35248,15 @@ const printCurrentTable = function () {\r
       document.getElementById('btnOpenManual')?.addEventListener('click', () => document.getElementById('docAside')?.show());\r
     }, 100);
 })();
-<\/script>`},{title:`🌐 (RTL) Right-to-Left Layout (RTL)`,description:`Globalized interface support for Right-to-Left languages.`,html:`<div class="demo-block" dir="rtl">\r
-        <h3>🌐 (RTL) Right-to-Left Layout (RTL)</h3>\r
+<\/script>`},{title:`🌍 (RTL) מצב מימין לשמאל`,description:`Globalized interface support for Right-to-Left languages.`,html:`<div class="demo-block" dir="rtl">\r
+        <h3>🌍 (RTL) מצב מימין לשמאל</h3>\r
         <p>Globalized interface support for Right-to-Left languages.</p>\r
         <ui-button id="btnOpenRtl" variant="outline" color="warning" label="פתח פנל (Open RTL)" size="large"></ui-button>\r
 \r
         <ui-aside-panel id="rtlAside" rtl="true" direction="right" size="400px">\r
            <div slot="header"><h3>שורת כותרת</h3></div>\r
            <div slot="content">\r
-              <p>תוכן הפאנל מוצג מימין לשמאל באופן אוטומטי..</p>\r
+              <p>תוכן הפאנל מוצג מימין לשמאל באופן אוטומטי.</p>\r
               <ul style="padding-right: 20px;">\r
                 <li>פריט ראשון</li>\r
                 <li>פריט שני</li>\r
@@ -36222,6 +35269,44 @@ const printCurrentTable = function () {\r
 (function() {
   setTimeout(() => {\r
       document.getElementById('btnOpenRtl')?.addEventListener('click', () => document.getElementById('rtlAside')?.show());\r
+    }, 100);
+})();
+<\/script>`},{title:"🎭 Kinetic Engine: ${type.toUpperCase()}",description:"Current kinetics: ${type}",html:`<div class="demo-block">\r
+        <h3>🎭 Kinetic Engine: \${type.toUpperCase()}</h3>\r
+        <ui-button id="btnTestKinetics" variant="outline" color="secondary" label="TEST KINETICS" size="large"></ui-button>\r
+\r
+        <ui-aside-panel id="animAside" direction="right" size="400px" animation-type="\${type}" theme="radiant">\r
+           <div slot="header"><h3>Motion Engine</h3></div>\r
+           <div slot="content">\r
+              <p>Current kinetics: <b>\${type}</b></p>\r
+              <p style="font-size: 13px; color: #64748b;">The transition engine scales the opacity and transform based on this mode.</p>\r
+           </div>\r
+        </ui-aside-panel>\r
+      </div>\r
+    
+<script>
+(function() {
+  setTimeout(() => {\r
+      document.getElementById('btnTestKinetics')?.addEventListener('click', () => document.getElementById('animAside')?.show());\r
+    }, 100);
+})();
+<\/script>`},{title:"⚡ Speed/Duration: ${speed}",description:"Current timing: ${speed}",html:`<div class="demo-block">\r
+        <h3>⚡ Speed/Duration: \${speed}</h3>\r
+        <ui-button id="btnTestSpeed" variant="outline" color="success" label="TEST DURATION: \${speed}" size="large"></ui-button>\r
+\r
+        <ui-aside-panel id="speedAside" direction="right" size="400px" transition-duration="\${speed}" theme="radiant">\r
+           <div slot="header"><h3>Transition Timing</h3></div>\r
+           <div slot="content">\r
+              <p>Current timing: <b>\${speed}</b></p>\r
+              <p style="font-size: 13px; color: #64748b;">Adjust the industrial speed of the Kinetic engine.</p>\r
+           </div>\r
+        </ui-aside-panel>\r
+      </div>\r
+    
+<script>
+(function() {
+  setTimeout(() => {\r
+      document.getElementById('btnTestSpeed')?.addEventListener('click', () => document.getElementById('speedAside')?.show());\r
     }, 100);
 })();
 <\/script>`},{title:`🚀 Non-Blocking Utility (Modeless)`,description:`Configured with show-overlay="false". The background page remains interactive while the panel is open.`,html:`<div class="demo-block">\r
@@ -36262,8 +35347,8 @@ const printCurrentTable = function () {\r
       document.getElementById('modelessAside')?.show();\r
     }, 100);
 })();
-<\/script>`},{title:`🪟 Zero-Frame Mode (Transparent)`,description:`Configured with variant="none". Only your slotted content is rendered, with no industrial frame, background, or shadows.`,html:`<div class="demo-block">\r
-        <h3 style="display: flex; align-items: center; gap: 8px;">🪟 Zero-Frame Mode (Transparent)</h3>\r
+<\/script>`},{title:`🧊 Zero-Frame Mode (Transparent)`,description:`Configured with variant="none". Only your slotted content is rendered, with no industrial frame, background, or shadows.`,html:`<div class="demo-block">\r
+        <h3 style="display: flex; align-items: center; gap: 8px;">🧊 Zero-Frame Mode (Transparent)</h3>\r
         <p style="opacity: 0.7; margin-bottom: 24px;">Configured with <code>variant="none"</code>. Only your slotted content is rendered, with no industrial frame, background, or shadows.</p>\r
         \r
         <ui-button id="btnOpenRaw" variant="outline" color="success" label="✨ SUMMON RAW CONTENT" size="large"></ui-button>\r
@@ -36464,7 +35549,7 @@ const printCurrentTable = function () {\r
                       <ui-color-picker id="asideBgColor" value="#ffffff"></ui-color-picker>\r
                    </div>\r
                    <div style="display: flex; gap: 15px;">\r
-                      <ui-checkbox label="Indicator 🚨" id="asideShowIndicator" checked></ui-checkbox>\r
+                      <ui-checkbox label="Indicator 🚥" id="asideShowIndicator" checked></ui-checkbox>\r
                       <ui-checkbox label="Shimmer ⏳" id="asideLoading"></ui-checkbox>\r
                    </div>\r
                 </div>\r
@@ -36476,7 +35561,7 @@ const printCurrentTable = function () {\r
                 <div style="display: flex; flex-direction: column; gap: 12px;">\r
                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">\r
                       <ui-checkbox label="Haptics 🔊" id="asideHaptic"></ui-checkbox>\r
-                      <ui-checkbox label="3D Tilt 🪟" id="asideParallax"></ui-checkbox>\r
+                      <ui-checkbox label="3D Tilt 🧊" id="asideParallax"></ui-checkbox>\r
                       <ui-checkbox label="Voice 🎙️" id="asideVoice"></ui-checkbox>\r
                       <ui-checkbox label="Actions ⋮" id="asideShowActions"></ui-checkbox>\r
                    </div>\r
@@ -37346,7 +36431,7 @@ const printCurrentTable = function () {\r
 &lt;/ui-badge&gt;\r
           </code>\r
         </div>\r
-      </div>`}],breadcrumb:[{title:`update Interactive Breadcrumb`,description:"Invalid JSON: ${error.message}",html:'<p style="color: #ef4444;">Invalid JSON: ${error.message}</p>'},{title:`🎮 Interactive Playground`,description:``,html:`<div class="demo-block">\r
+      </div>`}],breadcrumb:[{title:`🎮 Interactive Playground`,description:``,html:`<div class="demo-block">\r
         <h3>🎮 Interactive Playground</h3>\r
         <div class="playground-settings" style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 20px;">\r
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 20px;">\r
@@ -39257,205 +38342,123 @@ const printCurrentTable = function () {\r
 \r
     updateInteractiveToggle();
 })();
-<\/script>`}],"callout-banner":[{title:`Visual Color Variants`,description:`Vibrant, high-depth semantic color styles for warnings, processes, readiness, and alerts.`,html:`<div class="demo-block">
-  <h3>Visual Color Variants</h3>
-  <p style="color:#6b7280; margin-bottom:16px;">Vibrant, high-depth semantic color styles for warnings, processes, readiness, and alerts.</p>
-  <div style="display:flex; flex-direction:column; gap:16px; width:100%;">
-    <ui-callout-banner variant="info" heading="System Readiness" message="All primary subsystems are nominal. Execution environment ready."></ui-callout-banner>
-    <ui-callout-banner variant="success" heading="Process Optimized" message="Refactoring complete. Latency reduced by 14.2ms across all nodes."></ui-callout-banner>
-    <ui-callout-banner variant="warning" heading="Kernel Exception" message="Detected unusual memory allocation patterns in Sector 4."></ui-callout-banner>
-    <ui-callout-banner variant="danger" heading="IO_TIMEOUT_ERROR" message="Connectivity lost with Database Cluster C. Retrying..."></ui-callout-banner>
-    <ui-callout-banner variant="neutral" heading="Internal Notice" message="Workspace maintenance scheduled for Wednesday at 03:00."></ui-callout-banner>
-  </div>
-</div>`},{title:`Visual Sizing Scales`,description:`Banners support multiple sizes: sm, md (default), and lg sizes to fit into sidebars, tables, or splash headers.`,html:`<div class="demo-block">
-  <h3>Visual Sizing Scales</h3>
-  <p style="color:#6b7280; margin-bottom:16px;">Banners support multiple sizes to fit into sidebars, tables, or splash headers.</p>
-  <div style="display:flex; flex-direction:column; gap:16px; width:100%;">
-    <ui-callout-banner size="sm" variant="info" heading="Small Scale" message="Optimized for compact sidebar widgets and high density layouts."></ui-callout-banner>
-    <ui-callout-banner size="md" variant="info" heading="Medium Scale (Default)" message="Standard industrial UI spacing and comfortable read."></ui-callout-banner>
-    <ui-callout-banner size="lg" variant="info" heading="Large Scale" message="High visibility hero notification for dashboard splash views."></ui-callout-banner>
-  </div>
-</div>`},{title:`Compact Density Mode`,description:`Compact modifier strips away padding for maximum density context.`,html:`<div class="demo-block">
-  <h3>Compact Density Mode</h3>
-  <p style="color:#6b7280; margin-bottom:16px;">Compact modifier strips away padding for maximum density context.</p>
-  <div style="display:flex; flex-direction:column; gap:12px; width:100%;">
-    <ui-callout-banner compact variant="info" heading="Compact Node" message="v4.2.1 active"></ui-callout-banner>
-    <ui-callout-banner compact variant="success" heading="Synced" message="14,204 records updated."></ui-callout-banner>
-    <ui-callout-banner compact outlined variant="danger" heading="Locked" message="Account suspended."></ui-callout-banner>
-  </div>
-</div>`},{title:`Site-wide Banner Mode`,description:`Stretches the callout banner full-width to display notices at the top/bottom of screen bounds with slot action triggers.`,html:`<div class="demo-block">
-  <h3>Site-wide Banner Mode</h3>
-  <p style="color:#6b7280; margin-bottom:16px;">Stretches the callout banner full-width to display notices with action buttons.</p>
-  <div style="display:flex; flex-direction:column; gap:16px; width:100%;">
-    <ui-callout-banner banner variant="info" heading="Site-Wide Maintenance" message="Facility systems will be offline for 2 hours for security patches.">
-      <ui-button slot="actions" variant="outline" color="primary" label="View Schedule" size="md"></ui-button>
-    </ui-callout-banner>
-    <ui-callout-banner banner variant="success" heading="Enterprise Mode Active" message="Dedicated cloud environment initialized. All security protocols enforced." closable="false"></ui-callout-banner>
-  </div>
-</div>`},{title:`Premium Modifiers & Animations`,description:`Toggle pulse glows, active loading state widgets, and solid backgrounds.`,html:`<div class="demo-block">
-  <h3>Premium Modifiers & Animations</h3>
-  <p style="color:#6b7280; margin-bottom:16px;">Toggle pulse glows, active loading state widgets, and solid backgrounds.</p>
-  <div style="display:flex; flex-direction:column; gap:16px; width:100%;">
-    <ui-callout-banner loading variant="info" heading="Initializing Resources" message="Provisioning remote compute containers..."></ui-callout-banner>
-    <ui-callout-banner pulse variant="danger" heading="ALARM: BREACH" message="Atmospheric seal compromise in Deck 4. Evacuate immediately."></ui-callout-banner>
-    <ui-callout-banner solid variant="info" heading="Solid Primary Background" message="High-contrast solid treatment optimized for industrial telemetry dashboards."></ui-callout-banner>
-    <ui-callout-banner accent-bar variant="warning" heading="Accent Bar Style" message="Visual alignment with modern IDE environments and developer tools."></ui-callout-banner>
-  </div>
-</div>`},{title:`📍 Coordinate-Aware Map Annotations`,description:`Banners function beautifully as pointer-anchored overlay tags on interactive visual canvas boards.`,html:`<div class="demo-block">
-  <h3>📍 Coordinate-Aware Map Annotations</h3>
-  <p style="color:#6b7280; margin-bottom:16px;">Banners function beautifully as pointer-anchored overlay tags on interactive visual canvas boards.</p>
-  <div style="width:100%; height:350px; background:#0f172a; border-radius:12px; position:relative; overflow:hidden; border:1px solid rgba(255,255,255,0.05);">
-    <div style="width: 10px; height: 10px; border-radius: 50%; position: absolute; top: 20%; left: 30%; background: #ef4444; box-shadow: 0 0 10px #ef4444; animation: pt-pulse 1.5s infinite;"></div>
-    <ui-callout-banner variant="danger" placement="bottom" heading="PUMP_FAIL" pulse="true" size="md" style="position: absolute; top: 25%; left: 30%; transform: translateX(-50%); width: 180px;">Check valve 7.</ui-callout-banner>
-
-    <div style="width: 10px; height: 10px; border-radius: 50%; position: absolute; top: 70%; left: 75%; background: #22c55e; box-shadow: 0 0 10px #22c55e;"></div>
-    <ui-callout-banner variant="success" placement="top" heading="BOILER_OK" size="md" style="position: absolute; top: 62%; left: 75%; transform: translateX(-50%); width: 140px;">Efficiency: 98%.</ui-callout-banner>
-
-    <div style="width: 10px; height: 10px; border-radius: 50%; position: absolute; top: 50%; left: 10%; background: #10b981; box-shadow: 0 0 10px #10b981;"></div>
-    <ui-callout-banner variant="info" placement="right" heading="SENSOR_HUB" size="md" style="position: absolute; top: 50%; left: 14%; transform: translateY(-50%); width: 160px;">Link active.</ui-callout-banner>
-  </div>
-</div>`},{title:`📈 Real-time Marquee Stock Tickers`,description:`Announce high-speed data feeds with custom scroll speed and automatic pause-on-hover logic.`,html:`<div class="demo-block">
-  <h3>📈 Real-time Marquee Stock Tickers</h3>
-  <p style="color:#6b7280; margin-bottom:16px;">Announce high-speed data feeds with custom scroll speed and automatic pause-on-hover logic.</p>
-  
-  <div style="display:flex; flex-direction:column; gap:16px; width:100%;">
-    <ui-callout-banner banner="true" marquee="true" marquee-speed="15" variant="neutral" no-icon="true" size="md" pause-on-hover="true" style="background:#000; color:#fff; font-family:monospace; border-bottom:1px solid #333;">
-      AAPL <span style="color:#22c55e">▲ 184.22 (+1.4%)</span> &bull; 
-      MSFT <span style="color:#ef4444">▼ 328.79 (-0.8%)</span> &bull; 
-      GOOGL <span style="color:#22c55e">▲ 138.21 (+0.5%)</span> &bull; 
-      TSLA <span style="color:#ef4444">▼ 214.50 (-3.2%)</span> &bull; 
-      NVDA <span style="color:#22c55e">▲ 485.42 (+4.1%)</span> &bull; 
-      AMZN <span style="color:#22c55e">▲ 145.22 (+1.1%)</span> &bull;
-      META <span style="color:#ef4444">▼ 312.44 (-0.2%)</span> &bull;
-    </ui-callout-banner>
-
-    <ui-callout-banner marquee="true" marquee-speed="12" variant="info" no-icon="true" size="md">
-      EUR/USD 1.0854 &plusmn;0.0002 &bull; GBP/USD 1.2642 +0.0014 &bull; USD/JPY 149.22 -0.15 &bull; AUD/USD 0.6542 -0.0022 &bull; USD/CAD 1.3482 +0.0011 &bull;
-    </ui-callout-banner>
-  </div>
-</div>`},{title:`💾 Persistent Local Dismissal`,description:`Banners store their dismissal state inside localStorage so they remember to stay closed even after page refresh.`,html:`<div class="demo-block">
-  <h3>💾 Persistent Local Dismissal</h3>
-  <p style="color:#6b7280; margin-bottom:16px;">Banners store their dismissal state inside localStorage so they remember to stay closed even after page refresh.</p>
-  
-  <div style="display:flex; flex-direction:column; gap:16px; width:100%;">
-    <ui-callout-banner persist-key="demo-banner-1" variant="info" heading="Terms Update" message="We've updated our service protocols. Dismiss this to never see it again on this device."></ui-callout-banner>
-    <ui-callout-banner persist-key="demo-banner-2" variant="success" heading="Tip: Key Shortcuts" message="Press [CTRL+K] to open the global command palette."></ui-callout-banner>
-
-    <div style="margin-top:20px; padding:15px; background:var(--bg-secondary); border:1px solid var(--border-default); border-radius:8px;">
-      <h4 style="margin:0 0 8px 0; font-size:14px; color:var(--text-primary);">Developer Debug</h4>
-      <ui-button id="btnClearPersistence" variant="outline" color="danger" label="Clear Storage & Reload" size="md"></ui-button>
-      <p style="margin:8px 0 0 0; font-size:11px; color:var(--text-secondary); opacity:0.8;">Clearing storage will reset the dismissal state for all banners in this demo.</p>
-    </div>
-  </div>
-</div>
-<script>
-(function() {
-  const btn = document.getElementById('btnClearPersistence');
-  if (btn) {
-    btn.addEventListener('click', () => {
-      localStorage.clear();
-      window.location.reload();
-    });
-  }
-})();
-<\/script>`}],card:[{title:`Color Variants`,description:``,html:`<div class="demo-grid">\r
-        <h3 class="section-title">Color Variants</h3>\r
+<\/script>`}],card:[{title:`Color Variants`,description:`Status cards tint the card background and border dynamically based on the color prop.`,html:`<h3 class="section-title" style="margin-top: 0;">Color Variants</h3>\r
+      <div class="demo-grid">\r
         <ui-card variant="default" card-title="Default" extra="Status: Idle"></ui-card>\r
         <ui-card variant="primary" card-title="Primary" extra="Status: Active"></ui-card>\r
         <ui-card variant="success" card-title="Success" extra="Status: Complete"></ui-card>\r
         <ui-card variant="info" card-title="Info" extra="Status: Info"></ui-card>\r
         <ui-card variant="warning" card-title="Warning" extra="Status: Alert"></ui-card>\r
         <ui-card variant="danger" card-title="Danger" extra="Status: Error"></ui-card>\r
-        \r
-        <h3 class="section-title">Visual Styles</h3>\r
+      </div>\r
+      \r
+      <h3 class="section-title">Status Cards (New Variant)</h3>\r
+      <p style="color: #64748b; font-size: 14px; margin-top: -8px; margin-bottom: 16px;">\r
+        Status cards tint the card background and border dynamically based on the <code>color</code> prop.\r
+      </p>\r
+      <div class="demo-grid">\r
+        <ui-card variant="status" color="primary" card-title="Primary Status" description="Status card with a primary themed border and soft primary background tint."></ui-card>\r
+        <ui-card variant="status" color="success" card-title="Success Status" description="Status card with a success themed border and soft success background tint."></ui-card>\r
+        <ui-card variant="status" color="info" card-title="Info Status" description="Status card with an info themed border and soft info background tint."></ui-card>\r
+        <ui-card variant="status" color="warning" card-title="Warning Status" description="Status card with a warning themed border and soft warning background tint."></ui-card>\r
+        <ui-card variant="status" color="danger" card-title="Danger Status" description="Status card with a danger themed border and soft danger background tint."></ui-card>\r
+      </div>\r
+      \r
+      <h3 class="section-title">Visual Styles</h3>\r
+      <div class="demo-grid">\r
         <ui-card variant="elevated" card-title="Elevated" description="Standard elevated style with deep shadow."></ui-card>\r
         <ui-card variant="outlined" card-title="Outlined" description="Clean outlined style with minimal shadow."></ui-card>\r
         <ui-card variant="filled" card-title="Filled" description="Solid background color without borders."></ui-card>\r
         <ui-card importance="emphasized" card-title="Emphasized (Premium)" description="Premium dark gradient background for high priority content."></ui-card>\r
-      </div>`},{title:`Orientation Layouts`,description:`$199.00`,html:`<div class="demo-grid" style="grid-template-columns: 1fr;">\r
-        <h3 class="section-title">Orientation Layouts</h3>\r
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 24px;">\r
-           <ui-card layout="vertical" card-title="Vertical Layout" cover="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600" description="The classic vertical card structure."></ui-card>\r
-           <ui-card layout="horizontal" card-title="Horizontal Layout" cover="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600" description="Perfect for list items and detailed previews."></ui-card>\r
-        </div>\r
+      </div>`},{title:`Orientation Layouts`,description:`$199.00`,html:`<h3 class="section-title" style="margin-top: 0;">Orientation Layouts</h3>\r
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 24px; margin-bottom: 32px;">\r
+         <ui-card layout="vertical" card-title="Vertical Layout" cover="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600" description="The classic vertical card structure."></ui-card>\r
+         <ui-card layout="horizontal" card-title="Horizontal Layout" cover="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600" description="Perfect for list items and detailed previews."></ui-card>\r
+      </div>\r
 \r
-        <h3 class="section-title">Design Patterns</h3>\r
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">\r
-           <ui-card pattern="product" card-title="Wireless Headphones" cover="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" tag="Best Seller" button-text="Add to Cart">\r
-             <div slot="content">\r
-               <p style="font-size: 24px; font-weight: bold; margin: 8px 0;">$199.00</p>\r
-               <p style="color: #6b7280;">High-fidelity sound with noise cancellation.</p>\r
-             </div>\r
-           </ui-card>\r
+      <h3 class="section-title">Design Patterns</h3>\r
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; margin-bottom: 32px;">\r
+         <ui-card pattern="product" card-title="Wireless Headphones" cover="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" tag="Best Seller" button-text="Add to Cart">\r
+           <div slot="content">\r
+             <p style="font-size: 24px; font-weight: bold; margin: 8px 0;">$199.00</p>\r
+             <p style="color: #6b7280;">High-fidelity sound with noise cancellation.</p>\r
+           </div>\r
+         </ui-card>\r
 \r
-           <ui-card pattern="shortcut" card-title="Security Settings" avatar-icon="fas fa-shield-alt" description="Manage your password, 2FA, and connected devices."></ui-card>\r
-           \r
-           <ui-card pattern="shortcut" card-title="User Profile" avatar="https://i.pravatar.cc/150?u=a" description="Update your personal information and profile picture."></ui-card>\r
-         </div>\r
+         <ui-card pattern="shortcut" card-title="Security Settings" avatar-icon="fas fa-shield-alt" description="Manage your password, 2FA, and connected devices."></ui-card>\r
+         \r
+         <ui-card pattern="shortcut" card-title="User Profile" avatar="https://i.pravatar.cc/150?u=a" description="Update your personal information and profile picture."></ui-card>\r
+      </div>\r
 \r
-         <h3 class="section-title">Card Types (Nesting)</h3>\r
-         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">\r
-            <ui-card card-title="Outer Card" description="Standard container card.">\r
-               <div style="margin-top: 16px;">\r
-                  <ui-card type="inner" card-title="Nested Inner Card" description="Subtly grey background to distinguish from its parent."></ui-card>\r
-               </div>\r
-            </ui-card>\r
-         </div>\r
-      </div>`},{title:`Physical Interaction Engine`,description:`The component now supports 3D Tilt and Magnetic Attraction for high-end web experiences.`,html:`<div class="demo-grid">\r
-        <h3 class="section-title">Physical Interaction Engine</h3>\r
-        <p style="grid-column: 1 / -1; color: #64748b; font-size: 14px; margin-top: -12px; margin-bottom: 20px;">\r
-          The component now supports 3D Tilt and Magnetic Attraction for high-end web experiences.\r
-        </p>\r
-        \r
+      <h3 class="section-title">Card Types (Nesting)</h3>\r
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">\r
+         <ui-card card-title="Outer Card" description="Standard container card.">\r
+            <div style="margin-top: 16px;">\r
+               <ui-card type="inner" card-title="Nested Inner Card" description="Subtly grey background to distinguish from its parent."></ui-card>\r
+            </div>\r
+         </ui-card>\r
+      </div>`},{title:`Physical Interaction Engine`,description:`The component now supports 3D Tilt and Magnetic Attraction for high-end web experiences.`,html:`<h3 class="section-title" style="margin-top: 0;">Physical Interaction Engine</h3>\r
+      <p style="color: #64748b; font-size: 14px; margin-top: -8px; margin-bottom: 16px;">\r
+        The component now supports 3D Tilt and Magnetic Attraction for high-end web experiences.\r
+      </p>\r
+      <div class="demo-grid">\r
         <ui-card tilt="true" variant="primary" importance="emphasized" card-title="3D Tilt Mode" description="Hover over this card to see it tilt in 3D space based on your mouse position."></ui-card>\r
         <ui-card magnetic="true" variant="success" card-title="Magnetic Attraction" description="This card follows your mouse cursor with a subtle organic movement."></ui-card>\r
         <ui-card tilt="true" magnetic="true" glass="true" card-title="Total Physicality" ribbon="Elite" cover="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500" description="Combining 3D tilt, magnetic attraction, and glassmorphism."></ui-card>\r
-      </div>`},{title:`Glassmorphism & Ribbons`,description:``,html:`<div class="demo-grid">\r
-        <h3 class="section-title">Glassmorphism & Ribbons</h3>\r
+      </div>`},{title:`Glassmorphism & Ribbons`,description:``,html:`<h3 class="section-title" style="margin-top: 0;">Glassmorphism & Ribbons</h3>\r
+      <div class="demo-grid">\r
         <ui-card glass="true" card-title="Glass Design" ribbon="Premium" ribbon-color="#8b5cf6" cover="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?w=500" description="Elegant translucent backdrop effect."></ui-card>\r
         <ui-card variant="primary" card-title="Left Ribbon" ribbon="New" ribbon-position="top-left" ribbon-color="#10b981" description="Ribbons can be placed on the left side too."></ui-card>\r
         <ui-card variant="elevated" card-title="Custom Radius" border-radius="32px" border="2px dashed #10b981" description="Fully customizable borders and radius."></ui-card>\r
+      </div>\r
 \r
-        <h3 class="section-title">Headers & Content</h3>\r
+      <h3 class="section-title">Headers & Content</h3>\r
+      <div class="demo-grid">\r
         <ui-card avatar="https://i.pravatar.cc/150?u=jane" card-title="Jane Cooper" extra="Active" description="Card with image avatar in header."></ui-card>\r
         <ui-card avatar-icon="fas fa-rocket" card-title="Mission Alpha" extra="T-Minus 10s" description="Card with icon avatar in header."></ui-card>\r
         <ui-card card-title="Full Features" tag="V1.0" actions="Details, Docs, GitHub" button-text="Launch" description="Combining tags, quick actions, and buttons."></ui-card>\r
-      </div>`},{title:`Flip Interaction`,description:`This is the back side of a flippable card.`,html:`<div class="demo-grid">\r
-        <h3 class="section-title">Flip Interaction</h3>\r
-        <ui-card flippable="true" card-title="Click to Flip" description="Discover what is on the other side.">\r
-          <div slot="back">\r
-            <h3 style="color: white;">Secret Content!</h3>\r
-            <p style="color: rgba(255,255,255,0.8);">This is the back side of a flippable card.</p>\r
+      </div>`},{title:`Flip Interaction`,description:`This is the back side of a flippable card, fully customizable using slots.`,html:`<h3 class="section-title" style="margin-top: 0;">Flip Interaction</h3>\r
+      <div class="demo-grid">\r
+        <ui-card flippable="true" height="280px" card-title="Click to Flip" description="Discover what is on the other side.">\r
+          <div slot="back" style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; height: 100%; padding: 24px; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; box-sizing: border-box;">\r
+            <h3 style="margin: 0 0 8px; font-size: 20px; font-weight: 700; color: white;">Secret Content!</h3>\r
+            <p style="margin: 0; opacity: 0.9; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.9);">This is the back side of a flippable card, fully customizable using slots.</p>\r
           </div>\r
         </ui-card>\r
         \r
-        <ui-card flippable="true" flip-trigger="hover" card-title="Hover to Flip" description="Simply hover to see the back.">\r
-          <div slot="back" style="background: #10b981; color: white; height: 100%; padding: 20px; border-radius: 8px;">\r
-            <h3>Instant Preview</h3>\r
-            <p>Perfect for quick-reveal information.</p>\r
+        <ui-card flippable="true" flip-trigger="hover" height="280px" card-title="Hover to Flip" description="Simply hover to see the back.">\r
+          <div slot="back" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%); color: white; height: 100%; padding: 24px; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; box-sizing: border-box;">\r
+            <h3 style="margin: 0 0 8px; font-size: 20px; font-weight: 700; color: white;">Instant Preview</h3>\r
+            <p style="margin: 0; opacity: 0.9; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.9);">Perfect for quick-reveal information, triggered on hover.</p>\r
           </div>\r
         </ui-card>\r
+      </div>\r
 \r
-        <h3 class="section-title">Stateful Cards</h3>\r
+      <h3 class="section-title">Stateful Cards</h3>\r
+      <div class="demo-grid">\r
         <ui-card collapsible="true" card-title="Collapsible Card" description="Toggle the body visibility using the header arrow."></ui-card>\r
         <ui-card closable="true" card-title="Closable Card" description="Perfect for notifications or dismissible content."></ui-card>\r
         <ui-card selectable="true" card-title="Selectable Mode" description="Click to select this card. Supports shared selection groups."></ui-card>\r
-        \r
-        <h3 class="section-title">Navigation</h3>\r
+      </div>\r
+      \r
+      <h3 class="section-title">Navigation</h3>\r
+      <div class="demo-grid">\r
         <ui-card clickable="true" href="https://google.com" target="_blank" card-title="External Link Card" description="The entire card acts as a link to an external site."></ui-card>\r
         <ui-card hoverable="true" card-title="Hover Effect" description="Subtle Lift and Shadow increase on hover."></ui-card>\r
-      </div>`},{title:`Contextual Menus`,description:``,html:`<div class="demo-grid">\r
-        <h3 class="section-title">Contextual Menus</h3>\r
+      </div>`},{title:`Contextual Menus`,description:``,html:`<h3 class="section-title" style="margin-top: 0;">Contextual Menus</h3>\r
+      <div class="demo-grid">\r
         <ui-card show-menu="true" menu-items='\${menuItems}' card-title="JSON Defined Menu" icon-library="lucide" description="Define menu items via complex JSON objects."></ui-card>\r
         <ui-card menu-actions="Share, Export, Report" card-title="Action String Menu" description="Quickly define menu actions via a simple comma-separated string."></ui-card>\r
+      </div>\r
 \r
-        <h3 class="section-title">Footer Actions</h3>\r
+      <h3 class="section-title">Footer Actions</h3>\r
+      <div class="demo-grid">\r
         <ui-card button-text="Primary Action" actions="Secondary, Tertiary" card-title="Footer Showcase" description="Mix standard primary buttons with quick link actions."></ui-card>\r
-      </div>`},{title:`Skeleton Loading`,description:``,html:`<div class="demo-grid">\r
-        <h3 class="section-title">Skeleton Loading</h3>\r
-        <div style="grid-column: 1 / -1; margin-bottom: 20px;">\r
-          <ui-button onclick="document.querySelectorAll('ui-card').forEach(c => c.loading = !c.loading)" variant="outline" color="primary">Toggle Loading All</ui-button>\r
-        </div>\r
+      </div>`},{title:`Skeleton Loading`,description:``,html:`<h3 class="section-title" style="margin-top: 0;">Skeleton Loading</h3>\r
+      <div style="margin-bottom: 20px;">\r
+        <ui-button onclick="document.querySelectorAll('ui-card').forEach(c => c.loading = !c.loading)" variant="outline" color="primary">Toggle Loading All</ui-button>\r
+      </div>\r
+      <div class="demo-grid">\r
         <ui-card loading="true" card-title="Skeleton 1"></ui-card>\r
         <ui-card loading="true" variant="primary" card-title="Skeleton 2"></ui-card>\r
         <ui-card loading="true" layout="horizontal" card-title="Horizontal Skeleton"></ui-card>\r
@@ -39702,35 +38705,6 @@ const printCurrentTable = function () {\r
 \r
       updateInteractiveCheckbox();\r
     }, 100);
-})();
-<\/script>`},{title:`update Interactive Checkbox`,description:``,html:`<ui-checkbox \r
-        label="\${label}" \r
-        description="\${desc}"\r
-        size="\${size}" \r
-        color="\${color}" \r
-        variant="\${variant}"\r
-        custom-check-icon="\${icon}"\r
-        custom-image="\${image}"\r
-        \${confetti ? 'confetti' : ''}\r
-        \${glow ? 'glow' : ''}\r
-        \${haptic ? 'haptic' : ''}\r
-        \${rtl ? 'rtl' : ''}\r
-      ></ui-checkbox>\r
-    
-<script>
-(function() {
-  const codePreview = document.getElementById('checkboxCodePreview');\r
-    if (codePreview) {\r
-      let code = \`<ui-checkbox\\n  label="\${label}"\\n  description="\${desc}"\\n  size="\${size}"\\n  color="\${color}"\\n  variant="\${variant}"\`;\r
-      if (icon) code += \`\\n  custom-check-icon="\${icon}"\`;\r
-      if (image) code += \`\\n  custom-image="\${image}"\`;\r
-      if (confetti) code += \`\\n  confetti\`;\r
-      if (glow) code += \`\\n  glow\`;\r
-      if (haptic) code += \`\\n  haptic\`;\r
-      if (rtl) code += \`\\n  rtl\`;\r
-      code += \`\\n></ui-checkbox>\`;\r
-      codePreview.setAttribute('html-code', code);\r
-    }
 })();
 <\/script>`},{title:`🏆 Supreme Interaction Archetypes`,description:`High-end orchestration of state, search, and emotional feedback.`,html:`<div class="demo-block reveal-fade-in">\r
         <h3 class="specimen-title" style="background: linear-gradient(to right, #8b5cf6, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">🏆 Supreme Interaction Archetypes</h3>\r
@@ -40045,7 +39019,7 @@ const printCurrentTable = function () {\r
         }\r
       }, 100);
 })();
-<\/script>`},{title:`log Action`,description:``,html:'<div style="color: #1e40af;"><strong>${action}</strong> clicked at ${new Date().toLocaleTimeString()}</div>'},{title:`Nested Submenus`,description:`Multi-level cascading menu`,html:`<div style="max-width: 600px; margin: 0 auto;">\r
+<\/script>`},{title:`Nested Submenus`,description:`Multi-level cascading menu`,html:`<div style="max-width: 600px; margin: 0 auto;">\r
         <h4>Nested Submenus</h4>\r
         <p style="color: #6b7280; font-size: 13px;">Multi-level cascading menu</p>\r
         <div id="nestedTarget" style="min-height: 200px; border: 2px dashed #cbd5e1; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: #f9fafb; cursor: context-menu; margin: 20px 0;">\r
@@ -40261,15 +39235,6 @@ const printCurrentTable = function () {\r
           }, 0);\r
         }\r
       }, 100);
-})();
-<\/script>`},{title:`add Log`,description:``,html:`<strong>[\${time}]</strong> \${message}
-<script>
-(function() {
-  entry.innerHTML = \`<strong>[\${time}]</strong> \${message}\`;\r
-          logContent.insertBefore(entry, logContent.firstChild);\r
-          if (logContent.children.length > 10) {\r
-            logContent.removeChild(logContent.lastChild);\r
-          }
 })();
 <\/script>`},{title:`Context Menu with Disabled Items`,description:`Some menu items are disabled and cannot be clicked`,html:`<div style="max-width: 600px; margin: 0 auto;">\r
         <h4>Context Menu with Disabled Items</h4>\r
@@ -41238,41 +40203,53 @@ const printCurrentTable = function () {\r
       document.body.removeChild(dialog);\r
     });
 })();
-<\/script>`},{title:`Nested Dialogs Stack`,description:`Nesting dialogs stacked perfectly above each other with appropriate backing overlay constraints.`,html:`<div class="demo-block">
-  <h3>Nested Dialogs Stack</h3>
-  <p style="color: #6b7280; margin-bottom: 16px;">Open a dialog that contains a button to open another nested dialog on top.</p>
-  <ui-button id="btnOpenParentDialog" variant="filled" color="primary" label="Open Parent Dialog"></ui-button>
-  
-  <ui-dialog id="parentDialog" title="Parent Dialog (Level 1)" width="500px" icon-library="lucide">
-    <div style="padding: 16px;">
-      <p style="margin-bottom: 20px;">This is the first level dialog. Click below to open a second dialog on top of this one.</p>
-      <div style="display: flex; gap: 12px;">
-        <ui-button id="btnOpenChildDialog" variant="filled" color="success" label="Open Child Dialog"></ui-button>
-        <ui-button id="btnCloseParentDialog" variant="outline" color="secondary" label="Cancel"></ui-button>
-      </div>
-    </div>
-  </ui-dialog>
-
-  <ui-dialog id="childDialog" title="Child Dialog (Level 2)" width="380px" icon-library="lucide" is-nested="true">
-    <div style="padding: 16px;">
-      <p style="margin-bottom: 20px;">This is a nested dialog (Level 2) that stacks perfectly above the first dialog.</p>
-      <ui-button id="btnCloseChildDialog" variant="filled" color="primary" label="Got It"></ui-button>
-    </div>
-  </ui-dialog>
-</div>
-
+<\/script>`},{title:`Nested Dialogs`,description:"Stack Level: ${level}",html:`<div style="padding: 10px;">\r
+                <p><strong>Stack Level: \${level}</strong></p>\r
+                <p>This dialog should appear above Level \${level - 1}.</p>\r
+                <div style="display: flex; gap: 10px; margin-top: 15px;">\r
+                    <ui-button class="btn-next-level" size="md" variant="outline" color="secondary" label="Open Level \${level + 1} ➕" style="flex: 1; --btn-bg: #ec4899;"></ui-button>\r
+                    <ui-button class="btn-close-dialog" size="md" variant="outline" color="secondary" label="Close" style="--btn-bg: #6b7280;"></ui-button>\r
+                </div>\r
+            </div>\r
+        
 <script>
 (function() {
-  setTimeout(() => {
-    const parentDialog = document.getElementById('parentDialog');
-    const childDialog = document.getElementById('childDialog');
-    
-    document.getElementById('btnOpenParentDialog')?.addEventListener('click', () => parentDialog?.show());
-    document.getElementById('btnCloseParentDialog')?.addEventListener('click', () => parentDialog?.hide());
-    
-    document.getElementById('btnOpenChildDialog')?.addEventListener('click', () => childDialog?.show());
-    document.getElementById('btnCloseChildDialog')?.addEventListener('click', () => childDialog?.hide());
-  }, 100);
+  );\r
+      d.setAttribute('width', '350px');\r
+      d.setAttribute('icon-library', 'lucide');\r
+      d.setAttribute('status', level % 2 === 0 ? 'info' : 'default'); // Alternate styles\r
+\r
+      // NEW: Enable high-fidelity nesting visuals for Level 2+\r
+      if (level > 1) {\r
+        d.setAttribute('is-nested', 'true');\r
+      }\r
+\r
+      d.innerHTML = \`\r
+            <div style="padding: 10px;">\r
+                <p><strong>Stack Level: \${level}</strong></p>\r
+                <p>This dialog should appear above Level \${level - 1}.</p>\r
+                <div style="display: flex; gap: 10px; margin-top: 15px;">\r
+                    <ui-button class="btn-next-level" size="md" variant="outline" color="secondary" label="Open Level \${level + 1} ➕" style="flex: 1; --btn-bg: #ec4899;"></ui-button>\r
+                    <ui-button class="btn-close-dialog" size="md" variant="outline" color="secondary" label="Close" style="--btn-bg: #6b7280;"></ui-button>\r
+                </div>\r
+            </div>\r
+        \`;\r
+      document.body.appendChild(d);\r
+\r
+      setTimeout(() => {\r
+        d.show();\r
+        const btnNext = d.querySelector('.btn-next-level');\r
+        if (btnNext) {\r
+          btnNext.onclick = () => openLevel(level + 1);\r
+        }\r
+        const btnClose = d.querySelector('.btn-close-dialog');\r
+        if (btnClose) {\r
+          btnClose.onclick = () => d.hide();\r
+        }\r
+      }, 50);\r
+    };\r
+\r
+    openLevel(1);
 })();
 <\/script>`},{title:`🎮 Custom Dialog Builder`,description:``,html:`<div class="demo-block">\r
         <h3 style="margin-bottom: 24px; font-weight: 800; letter-spacing: -0.02em;">🎮 Custom Dialog Builder</h3>\r
@@ -41485,7 +40462,7 @@ const printCurrentTable = function () {\r
         <p style="color: #6b7280; margin-bottom: 20px;">Experience the absolute pinnacle of UI with Physical Shadows, Global Blurring, and Integrated Wizard Steppers.</p>\r
         \r
         <div style="display: flex; gap: 15px; flex-wrap: wrap;">\r
-           <ui-button id="btnLaunchWizard" size="md" variant="outline" color="primary" label="🧙 Launch Setup Wizard" style="--btn-bg: linear-gradient(to right, #7c3aed, #db2777);"></ui-button>\r
+           <ui-button id="btnLaunchWizard" size="md" variant="outline" color="primary" label="🧛 Launch Setup Wizard" style="--btn-bg: linear-gradient(to right, #7c3aed, #db2777);"></ui-button>\r
            <ui-button id="btnLaunchGlobalBlur" size="md" variant="outline" color="secondary" label="☁️ Global Backdrop Blur" style="--btn-bg: #111827;"></ui-button>\r
         </div>\r
 \r
@@ -41554,8 +40531,8 @@ const printCurrentTable = function () {\r
       }\r
     }, 100);
 })();
-<\/script>`},{title:`👑 Sovereign Tier: Operating System Simulation`,description:`The absolute zenith of component engineering. Truly multi-window orchestration with dock, detached pop-outs, and intelligent guards.`,html:`<div class="demo-block">\r
-        <h3>👑 Sovereign Tier: Operating System Simulation</h3>\r
+<\/script>`},{title:`⚡ Sovereign Tier: Operating System Simulation`,description:`The absolute zenith of component engineering. Truly multi-window orchestration with dock, detached pop-outs, and intelligent guards.`,html:`<div class="demo-block">\r
+        <h3>⚡ Sovereign Tier: Operating System Simulation</h3>\r
         <p style="color: #6b7280; margin-bottom: 20px;">The absolute zenith of component engineering. Truly multi-window orchestration with dock, detached pop-outs, and intelligent guards.</p>\r
         \r
         <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 30px;">\r
@@ -41663,7 +40640,7 @@ const printCurrentTable = function () {\r
         <ui-dialog-box id="dFullHeader" width="500px" ok-text="Save" cancel-text="Close">\r
            <div slot="header" style="background: linear-gradient(90deg, #ec4899, #8b5cf6); padding: 15px 20px; color: white; display: flex; justify-content: space-between; align-items:center;">\r
               <div style="font-weight: bold; font-size: 1.2rem;">✨ MAGICAL HEADER SLOT</div>\r
-              <ui-button onclick="closeDialog('dFullHeader')" variant="ghost" color="secondary" label="├ù" style="--btn-text: white; font-size: 20px;"></ui-button>\r
+              <ui-button onclick="closeDialog('dFullHeader')" variant="ghost" color="secondary" label="×" style="--btn-text: white; font-size: 20px;"></ui-button>\r
            </div>\r
            <div style="padding: 40px; text-align: center;">\r
               <h3>Framework Hijacked!</h3>\r
@@ -41853,7 +40830,7 @@ const printCurrentTable = function () {\r
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; margin-top: 24px;">\r
           <!-- Case 4: Avatar Header -->\r
           <div style="background: white; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 16px;">\r
-            <h4 style="margin: 0;">👥 Profile/Avatar Headers</h4>\r
+            <h4 style="margin: 0;">👤 Profile/Avatar Headers</h4>\r
             <p style="font-size: 13px; color: #64748b;">Direct support for user avatars and custom icons without manual slots.</p>\r
             <ui-button onclick="openDialog('dAvatarHeader')" size="md" variant="outline" color="success" label="Open Profile Dialog" style="margin-top:auto;"></ui-button>\r
           </div>\r
@@ -41896,12 +40873,12 @@ const printCurrentTable = function () {\r
         <ui-dialog-box id="dStatusError" status="error" dialog-title="Security Alert" ok-text="Acknowledge">\r
            <div style="padding: 24px;"><h4>Connection Refused</h4></div>\r
         </ui-dialog-box>\r
-      </div>`},{title:`🖱️ Smooth Drag — No Jump on Click`,description:`Draggable dialogs now anchor position on first move (>5 px threshold), so clicking the header\r
+      </div>`},{title:`🖱 Smooth Drag — No Jump on Click`,description:`Draggable dialogs now anchor position on first move (>5 px threshold), so clicking the header\r
             no longer snaps the dialog to the cursor.`,html:`<div class="demo-block" style="display:flex;flex-direction:column;gap:40px;">\r
 \r
         <!-- ① Smooth Drag (no jump on click) -->\r
         <div>\r
-          <h3 style="margin:0 0 6px;">🖱️ Smooth Drag — No Jump on Click</h3>\r
+          <h3 style="margin:0 0 6px;">🖱 Smooth Drag — No Jump on Click</h3>\r
           <p style="font-size:13px;color:#64748b;margin:0 0 12px;">\r
             Draggable dialogs now anchor position on first move (>5 px threshold), so clicking the header\r
             no longer snaps the dialog to the cursor.\r
@@ -41919,7 +40896,7 @@ const printCurrentTable = function () {\r
 \r
         <!-- ② Nested z-index auto-stacking -->\r
         <div>\r
-          <h3 style="margin:0 0 6px;">📥 Auto Z-Index Stacking</h3>\r
+          <h3 style="margin:0 0 6px;">🗂 Auto Z-Index Stacking</h3>\r
           <p style="font-size:13px;color:#64748b;margin:0 0 12px;">\r
             Every newly opened dialog automatically rises above all existing open dialogs — no manual\r
             z-index required.\r
@@ -41941,7 +40918,7 @@ const printCurrentTable = function () {\r
 \r
         <!-- NEW: Programmatic Control Demo -->\r
         <div>\r
-          <h3 style="margin:0 0 6px;">👑 Programmatic API Control</h3>\r
+          <h3 style="margin:0 0 6px;">⚡ Programmatic API Control</h3>\r
           <p style="font-size:13px;color:#64748b;margin:0 0 12px;">\r
             Trigger window states directly from your app logic using <code>.minimize()</code> and <code>.maximize()</code>.\r
           </p>\r
@@ -41983,14 +40960,14 @@ const printCurrentTable = function () {\r
 \r
         <!-- ④ Action Menu (menuItems + menuIcon + menuTitle) -->\r
         <div>\r
-          <h3 style="margin:0 0 6px;">⚙️ Action Menu — menuItems + menuIcon + menuTitle</h3>\r
+          <h3 style="margin:0 0 6px;">⚙ Action Menu — menuItems + menuIcon + menuTitle</h3>\r
           <p style="font-size:13px;color:#64748b;margin:0 0 12px;">\r
             Set <code>menu-items</code> JSON on a dialog to auto-show a header menu button.\r
             Customise the icon with <code>menu-icon</code> and tooltip with <code>menu-title</code>.\r
           </p>\r
           <div style="display:flex;gap:10px;flex-wrap:wrap;">\r
             <ui-button onclick="openDialog('wfMenuDialog1')" size="md" variant="outline" color="secondary" label="Default Menu (⋯)" style="--btn-bg: #f59e0b;"></ui-button>\r
-            <ui-button onclick="openDialog('wfMenuDialog2')" size="md" variant="outline" color="secondary" label="Settings Menu (⚙️)" style="--btn-bg: #ef4444;"></ui-button>\r
+            <ui-button onclick="openDialog('wfMenuDialog2')" size="md" variant="outline" color="secondary" label="Settings Menu (⚙)" style="--btn-bg: #ef4444;"></ui-button>\r
             <ui-button onclick="openDialog('wfMenuDialog3')" size="md" variant="outline" color="secondary" label="Filter Menu (sliders)" style="--btn-bg: #8b5cf6;"></ui-button>\r
           </div>\r
  \r
@@ -42016,7 +40993,7 @@ const printCurrentTable = function () {\r
           <!-- Sliders / filter icon -->\r
           <ui-dialog-box id="wfMenuDialog3" icon-library="lucide" dialog-title="Filter Menu" ok-text="Apply Filters" cancel-text="Close"\r
             menu-icon="sliders-horizontal" menu-title="Filters"\r
-            menu-items='[{"label":"Sort A ➡️ Z","icon":"arrow-up-az"},{"label":"Sort Z ➡️ A","icon":"arrow-down-az"},{"divider":true},{"label":"Date Range","icon":"calendar"},{"label":"Clear Filters","icon":"x-circle","danger":true}]'>\r
+            menu-items='[{"label":"Sort A → Z","icon":"arrow-up-az"},{"label":"Sort Z → A","icon":"arrow-down-az"},{"divider":true},{"label":"Date Range","icon":"calendar"},{"label":"Clear Filters","icon":"x-circle","danger":true}]'>\r
             <div style="padding:8px 0;font-size:14px;color:#475569;">\r
               <code>menu-icon="sliders-horizontal"</code> and\r
               <code>menu-title="Filters"</code> for a data-table style filter menu.\r
@@ -42085,7 +41062,7 @@ const printCurrentTable = function () {\r
            <div style="padding: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px;">\r
               <ui-button label="🚀 Deploy" size="md" variant="outline" color="secondary" style="height: 80px; --btn-bg: #f3f4f6; --btn-text: #1e293b; border: 1px solid #e5e7eb;"></ui-button>\r
               <ui-button label="🧪 Test" size="md" variant="outline" color="secondary" style="height: 80px; --btn-bg: #f3f4f6; --btn-text: #1e293b; border: 1px solid #e5e7eb;"></ui-button>\r
-              <ui-button label="⚠️ Delete" size="md" variant="outline" color="danger" style="height: 80px; --btn-bg: #fef2f2; border: 1px solid #fee2e2;"></ui-button>\r
+              <ui-button label="🗑️ Delete" size="md" variant="outline" color="danger" style="height: 80px; --btn-bg: #fef2f2; border: 1px solid #fee2e2;"></ui-button>\r
            </div>\r
         </ui-dialog-box>\r
       </div>`},{title:`🖥️ Fullscreen Interaction`,description:`The fullscreen type occupies the entire viewport, providing an immersive experience for complex editors or wizards.`,html:`<div class="demo-block">\r
@@ -42248,8 +41225,8 @@ const printCurrentTable = function () {\r
            <p style="margin: 0; font-weight: 600; font-size: 18px;">Deployment Successful</p>\r
            <p style="color: #64748b; margin-top: 8px;">All assets have been optimized and synchronized with the production cluster in <b>us-east-1</b>.</p>\r
         </div>\r
-      </ui-dialog-box>`},{title:`⚠️ High-Stakes Confirmation`,description:`Specialized "confirm" type for destructive actions. Features custom confirmation text that must be acknowledged before proceeding.`,html:`<div class="demo-block" style="padding: 24px; background: #fef2f2; border-radius: 12px; border: 1px solid #fee2e2;">\r
-        <h3 style="margin-top: 0; color: #991b1b;">⚠️ High-Stakes Confirmation</h3>\r
+      </ui-dialog-box>`},{title:`🗑️ High-Stakes Confirmation`,description:`Specialized "confirm" type for destructive actions. Features custom confirmation text that must be acknowledged before proceeding.`,html:`<div class="demo-block" style="padding: 24px; background: #fef2f2; border-radius: 12px; border: 1px solid #fee2e2;">\r
+        <h3 style="margin-top: 0; color: #991b1b;">🗑️ High-Stakes Confirmation</h3>\r
         <p style="color: #b91c1c; font-size: 14px; line-height: 1.6;">\r
           Specialized "confirm" type for destructive actions. Features custom confirmation text that must be acknowledged before proceeding.\r
         </p>\r
@@ -42268,8 +41245,8 @@ const printCurrentTable = function () {\r
         <div style="padding: 24px;">\r
            <p style="margin: 0;">You are attempting to delete the <b>Zenith_Sales_2024</b> database. This will affect 45 related services and cannot be reversed.</p>\r
         </div>\r
-      </ui-dialog-box>`},{title:`✓ Alert Input (Prompt)`,description:`Built-in input field for collecting user input with full async result support.`,html:`<div class="demo-block" style="padding: 20px; background: #f3f4f6; border-radius: 12px; border: 1px dashed #d1d5db;">\r
-        <h3 style="margin-top: 0;">✓ Alert Input (Prompt)</h3>\r
+      </ui-dialog-box>`},{title:`✍️ Alert Input (Prompt)`,description:`Built-in input field for collecting user input with full async result support.`,html:`<div class="demo-block" style="padding: 20px; background: #f3f4f6; border-radius: 12px; border: 1px dashed #d1d5db;">\r
+        <h3 style="margin-top: 0;">✍️ Alert Input (Prompt)</h3>\r
         <p style="color: #6b7280; font-size: 14px;">Built-in input field for collecting user input with full async result support.</p>\r
         <ui-button id="promptBtn" size="md" variant="outline" color="secondary" label="Launch Prompt" style="--btn-bg: #0891b2;"></ui-button>\r
         <div id="promptResult" style="margin-top: 16px; min-height: 40px; padding: 12px; background: white; border-radius: 6px; border: 1px solid #e5e7eb; display: flex; align-items: center;">\r
@@ -42289,7 +41266,7 @@ const printCurrentTable = function () {\r
         resultDisplay.innerHTML = '<span style="color: #10b981;">Waiting for input...</span>';\r
         const result = await dialog.showWithResult();\r
         if (result.canceled) {\r
-          resultDisplay.innerHTML = '<span style="color: #ef4444; font-weight: bold;">❌ Creation Canceled</span>';\r
+          resultDisplay.innerHTML = '<span style="color: #ef4444; font-weight: bold;">✕ Creation Canceled</span>';\r
         } else {\r
           resultDisplay.innerHTML = \`<div style="display: flex; flex-direction: column;"><span style="color: #10b981; font-weight: bold;">✓ Project Initialized Successfully</span><span style="font-size: 12px; color: #6b7280;">Returned Value: \${result.data}</span></div>\`;\r
         }\r
@@ -42340,8 +41317,8 @@ const printCurrentTable = function () {\r
       }\r
     });
 })();
-<\/script>`},{title:`📥 Global Tray & Peek System`,description:`Modern enterprise application taskbar. Minimized windows move to a centered dock with scrollable tabs and status indicators.`,html:`<div class="demo-block">\r
-        <h3>📥 Global Tray & Peek System</h3>\r
+<\/script>`},{title:`🗂 Global Tray & Peek System`,description:`Modern enterprise application taskbar. Minimized windows move to a centered dock with scrollable tabs and status indicators.`,html:`<div class="demo-block">\r
+        <h3>🗂 Global Tray & Peek System</h3>\r
         <p style="margin-bottom: 20px; color: #6b7280;">Modern enterprise application taskbar. Minimized windows move to a centered dock with scrollable tabs and status indicators.</p>\r
         \r
         <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 30px;">\r
@@ -42427,7 +41404,7 @@ const printCurrentTable = function () {\r
            \r
            <!-- Minimal Primary -->\r
            <div style="background: rgba(244, 114, 182, 0.1); border: 1px solid rgba(244, 114, 182, 0.2); padding: 24px; border-radius: 16px;">\r
-              <h4 style="margin-top:0; color: #db2777;">📐 Minimal Variant</h4>\r
+              <h4 style="margin-top:0; color: #db2777;">📏 Minimal Variant</h4>\r
               <p style="font-size: 13px; color: #9d174d;">Clean, floating look without a background color on the header. Modern and lightweight.</p>\r
               <ui-button onclick="openDialog('showroomMinimal')" size="md" variant="outline" color="secondary" label="Open Minimal" style="--btn-bg: #db2777;"></ui-button>\r
            </div>\r
@@ -42483,7 +41460,7 @@ const printCurrentTable = function () {\r
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">\r
            <!-- Recursive Nesting -->\r
            <div style="background: white; border: 1px solid #e2e8f0; padding: 24px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">\r
-              <h4 style="margin: 0 0 10px 0; color: #7c3aed;">🌲 Triple Nesting</h4>\r
+              <h4 style="margin: 0 0 10px 0; color: #7c3aed;">🌳 Triple Nesting</h4>\r
               <p style="font-size: 13px; color: #6b7280; line-height: 1.5; margin-bottom: 20px;">\r
                 Demonstrates automatic backdrop dimming, focus trapping, and recursive z-index management across three levels of depth.\r
               </p>\r
@@ -42895,517 +41872,7 @@ const printCurrentTable = function () {\r
 \r
       updateDividerPlayground();\r
     }, 100);\r
-    updateDividerPlayground();\r
-\r
-  function updateDividerPlayground() {\r
-    const preview = document.getElementById('dividerPreview');\r
-    if (!preview) return;\r
-\r
-    const props = {\r
-      text: document.getElementById('divText').value,\r
-      subtitle: document.getElementById('divSubtitle').value,\r
-      icon: document.getElementById('divIcon').value,\r
-      orientation: document.getElementById('divOrientation').value,\r
-      color: document.getElementById('divColor').value,\r
-      variant: document.getElementById('divVariant').value,\r
-      spacing: document.getElementById('divSpacing').value,\r
-      verticalAlign: document.getElementById('divVerticalAlign').value,\r
-      inset: document.getElementById('divInset').value,\r
-      linecap: document.getElementById('divLinecap').value,\r
-      shape: document.getElementById('divShape').value,\r
-      thickness: document.getElementById('divThickness').value,\r
-      opacity: document.getElementById('divOpacity').value,\r
-      steps: parseInt(document.getElementById('divSteps').value) || 0,\r
-      currentStep: parseInt(document.getElementById('divCurrStep').value) || 0,\r
-      percent: parseInt(document.getElementById('divPercent').value) || 0,\r
-      aura: document.getElementById('divAura').checked,\r
-      glass: document.getElementById('divGlass').checked,\r
-      kinetic: document.getElementById('divKinetic').checked,\r
-      heatmap: document.getElementById('divHeatmap').checked,\r
-      ripple: document.getElementById('divRipple').checked,\r
-      parallax: document.getElementById('divParallax').checked,\r
-      shadow: document.getElementById('divShadow').checked,\r
-      glow: document.getElementById('divGlow').checked,\r
-      loading: document.getElementById('divLoading').checked,\r
-      clickable: document.getElementById('divClickable').checked,\r
-      upright: document.getElementById('divUpright').checked,\r
-    };\r
-\r
-    const containerStyle = props.orientation === 'vertical' ? 'height: 150px;' : 'width: 100%;';\r
-\r
-    preview.innerHTML = \`<ui-divider id="playgroundComponent" style="\${containerStyle}"></ui-divider>\`;\r
-    const el = document.getElementById('playgroundComponent');\r
-\r
-    Object.assign(el, props);\r
-\r
-    el.addEventListener('dividerClick', () => {\r
-      const log = document.getElementById('pg-log-content');\r
-      if (log) {\r
-        const div = document.createElement('div');\r
-        div.textContent = \`[dividerClick] \${new Date().toLocaleTimeString()}\`;\r
-        log.prepend(div);\r
-      }\r
-    });\r
-\r
-    // Generate code block\r
-    const codeBlock = document.getElementById('dividerCodeBlock');\r
-    if (codeBlock) {\r
-      let code = '<ui-divider';\r
-      if (props.text) code += \`\\n  text="\${props.text}"\`;\r
-      if (props.subtitle) code += \`\\n  subtitle="\${props.subtitle}"\`;\r
-      if (props.icon) code += \`\\n  icon="\${props.icon}"\`;\r
-      if (props.orientation !== 'horizontal') code += \`\\n  orientation="\${props.orientation}"\`;\r
-      if (props.color) code += \`\\n  color="\${props.color}"\`;\r
-      if (props.variant !== 'solid') code += \`\\n  variant="\${props.variant}"\`;\r
-      if (props.spacing !== 'none') code += \`\\n  spacing="\${props.spacing}"\`;\r
-      if (props.verticalAlign !== 'center') code += \`\\n  vertical-align="\${props.verticalAlign}"\`;\r
-      if (props.inset !== 'none') code += \`\\n  inset="\${props.inset}"\`;\r
-      if (props.linecap !== 'butt') code += \`\\n  linecap="\${props.linecap}"\`;\r
-      if (props.shape !== 'none') code += \`\\n  shape="\${props.shape}"\`;\r
-      if (props.thickness) code += \`\\n  thickness="\${props.thickness}"\`;\r
-      if (props.steps > 0) code += \`\\n  steps="\${props.steps}"\\n  current-step="\${props.currentStep}"\`;\r
-      if (props.heatmap) code += \`\\n  heatmap="true"\\n  percent="\${props.percent}"\`;\r
-      if (props.iconAnimation !== 'none') code += \`\\n  icon-animation="\${props.iconAnimation}"\`;\r
-      if (props.opacity !== '1') code += \`\\n  opacity="\${props.opacity}"\`;\r
-      if (props.aura) code += '\\n  aura="true"';\r
-      if (props.glass) code += '\\n  glass="true"';\r
-      if (props.kinetic) code += '\\n  kinetic="true"';\r
-      if (props.heatmap) code += '\\n  heatmap="true"';\r
-      if (props.ripple) code += '\\n  ripple="true"';\r
-      if (props.parallax) code += '\\n  parallax="true"';\r
-      if (props.shadow) code += '\\n  shadow="true"';\r
-      if (props.glow) code += '\\n  glow="true"';\r
-      if (props.loading) code += '\\n  loading="true"';\r
-      if (props.clickable) code += '\\n  clickable="true"';\r
-      if (props.upright) code += '\\n  upright="true"';\r
-      code += '\\n></ui-divider>';\r
-      codeBlock.innerText = code;\r
-    }\r
-  }\r
-\r
-  function copyDividerCode() {\r
-    const code = document.getElementById('dividerCodeBlock').innerText;\r
-    const btn = document.getElementById('copyDividerBtn');\r
-    navigator.clipboard.writeText(code).then(() => {\r
-      const originalText = btn.innerText;\r
-      btn.innerText = 'Copied!';\r
-      btn.style.background = '#10b981';\r
-      setTimeout(() => {\r
-        btn.innerText = originalText;\r
-        btn.style.background = 'rgba(255,255,255,0.1)';\r
-      }, 2000);\r
-    });\r
-  }\r
-\r
-  function showDividerResponsive() {\r
-    const container = document.getElementById('dividerDemoContainer');\r
-    if (!container) return;\r
-    container.innerHTML = \`\r
-      <div class="demo-block">\r
-        <h3>📱 Responsive Divider</h3>\r
-        <p style="opacity: 0.7; margin-bottom: 20px;">Component automatically switches orientation based on screen size (breakpoints: sm, md, lg).</p>\r
-        \r
-        <div style="display: flex; flex-direction: column; gap: 30px;">\r
-          <div>\r
-            <h4 style="margin-bottom: 12px;">Responsive (md)</h4>\r
-            <p style="font-size: 13px; color: #6b7280; margin-bottom: 12px;">Horizontal on desktop, switches to Vertical on tablet/mobile.</p>\r
-            <div style="display: flex; align-items: center; border: 1px solid #e5e7eb; padding: 20px; border-radius: 8px; min-height: 60px;">\r
-              <span>Left Content</span>\r
-              <ui-divider responsive="md" text="OR" color="primary"></ui-divider>\r
-              <span>Right Content</span>\r
-            </div>\r
-          </div>\r
-\r
-          <div>\r
-            <h4 style="margin-bottom: 12px;">Responsive (sm)</h4>\r
-            <p style="font-size: 13px; color: #6b7280; margin-bottom: 12px;">Only switches on very small screens.</p>\r
-            <div style="display: flex; align-items: center; border: 1px solid #e5e7eb; padding: 20px; border-radius: 8px; min-height: 60px;">\r
-              <span>Feature A</span>\r
-              <ui-divider responsive="sm" icon="⚡" color="success"></ui-divider>\r
-              <span>Feature B</span>\r
-            </div>\r
-          </div>\r
-        </div>\r
-      </div>\r
-    \`;\r
-  }\r
-\r
-  // Basic Dividers Demo\r
-  function showDividerBasic() {\r
-    const container = document.getElementById('dividerDemoContainer');\r
-    if (!container) return;\r
-    container.innerHTML = \`\r
-      <div class="demo-block">\r
-        <h3>📐 Basic Dividers</h3>\r
-        <p style="opacity: 0.7; margin-bottom: 20px;">Simple dividers without text - perfect for separating content.</p>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Default Divider</h4>\r
-        <p>Content above</p>\r
-        <ui-divider></ui-divider>\r
-        <p>Content below</p>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Different Variants</h4>\r
-        <ui-divider variant="outline"></ui-divider>\r
-        <ui-divider variant="dashed"></ui-divider>\r
-        <ui-divider variant="dotted"></ui-divider>\r
-        <ui-divider variant="gradient"></ui-divider>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Different Sizes</h4>\r
-        <ui-divider size="md"></ui-divider>\r
-        <ui-divider size="md"></ui-divider>\r
-        <ui-divider size="lg"></ui-divider>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">With Colors</h4>\r
-        <ui-divider color="primary"></ui-divider>\r
-        <ui-divider color="success"></ui-divider>\r
-        <ui-divider color="danger"></ui-divider>\r
-        <ui-divider color="warning"></ui-divider>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">With Text</h4>\r
-        <ui-divider text="Section 1"></ui-divider>\r
-        <p>Some content here</p>\r
-        <ui-divider text="Section 2"></ui-divider>\r
-        <p>More content here</p>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Text Alignment</h4>\r
-        <ui-divider text="Left Aligned" text-align="left"></ui-divider>\r
-        <ui-divider text="Center Aligned" text-align="center"></ui-divider>\r
-        <ui-divider text="Right Aligned" text-align="right"></ui-divider>\r
-      </div>\r
-    \`;\r
-  }\r
-\r
-  // Slots Demo\r
-  function showDividerSlots() {\r
-    const container = document.getElementById('dividerDemoContainer');\r
-    if (!container) return;\r
-    container.innerHTML = \`\r
-      <div class="demo-block">\r
-        <h3>🎯 Divider Slots</h3>\r
-        <p style="opacity: 0.7; margin-bottom: 20px;">Use slots to add custom content to dividers.</p>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Start Slot (Icon/Badge)</h4>\r
-        <ui-divider text="New Messages">\r
-          <span slot="start" style="font-size: 20px;">📧</span>\r
-        </ui-divider>\r
-        \r
-        <ui-divider text="Notifications">\r
-          <span slot="start" style="font-size: 20px;">🔔</span>\r
-        </ui-divider>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">End Slot (Badge/Button)</h4>\r
-        <ui-divider text="Pending Tasks">\r
-          <ui-badge slot="end" value="5" color="danger"></ui-badge>\r
-        </ui-divider>\r
-        \r
-        <ui-divider text="Updates Available">\r
-          <ui-badge slot="end" value="12" color="primary"></ui-badge>\r
-        </ui-divider>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Default Slot (Center Content)</h4>\r
-        <ui-divider>\r
-          <ui-chip label="Featured Section" color="primary"></ui-chip>\r
-        </ui-divider>\r
-        \r
-        <ui-divider>\r
-          <div style="display: flex; align-items: center; gap: 8px; padding: 4px 12px; background: #f3f4f6; border-radius: 6px;">\r
-            <span>⭐</span>\r
-            <span style="font-weight: 600;">Premium Content</span>\r
-            <span>⭐</span>\r
-          </div>\r
-        </ui-divider>\r
-      </div>\r
-    \`;\r
-  }\r
-\r
-  // Animations Demo\r
-  function showDividerAnimations() {\r
-    const container = document.getElementById('dividerDemoContainer');\r
-    if (!container) return;\r
-    container.innerHTML = \`\r
-      <div class="demo-block">\r
-        <h3>✨ Divider Animations</h3>\r
-        <p style="opacity: 0.7; margin-bottom: 20px;">Smooth entrance animations for better UX.</p>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Fade Animation</h4>\r
-        <ui-divider text="Fade In" animation="fade" color="primary"></ui-divider>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Slide Animation</h4>\r
-        <ui-divider text="Slide In" animation="slide" color="success"></ui-divider>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Expand Animation</h4>\r
-        <ui-divider text="Expand" animation="expand" color="warning"></ui-divider>\r
-      </div>\r
-    \`;\r
-  }\r
-\r
-  // Patterns Demo\r
-  function showDividerPatterns() {\r
-    const container = document.getElementById('dividerDemoContainer');\r
-    if (!container) return;\r
-    container.innerHTML = \`\r
-      <div class="demo-block">\r
-        <h3>🎨 Divider Patterns</h3>\r
-        <p style="opacity: 0.7; margin-bottom: 20px;">Creative pattern styles for visual interest.</p>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Dots Pattern</h4>\r
-        <ui-divider text="Dotted Pattern" pattern="dots" color="primary"></ui-divider>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Stripes Pattern</h4>\r
-        <ui-divider text="Striped Pattern" pattern="stripes" color="success"></ui-divider>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Wavy Pattern</h4>\r
-        <ui-divider text="Wavy Pattern" pattern="wavy" color="info"></ui-divider>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Zigzag Pattern</h4>\r
-        <ui-divider text="Zigzag Pattern" pattern="zigzag" color="warning"></ui-divider>\r
-      </div>\r
-    \`;\r
-  }\r
-\r
-  // Interactive Demo\r
-  function showDividerInteractive() {\r
-    const container = document.getElementById('dividerDemoContainer');\r
-    if (!container) return;\r
-    container.innerHTML = \`\r
-      <div class="demo-block">\r
-        <h3>👆 Interactive Dividers</h3>\r
-        <p style="opacity: 0.7; margin-bottom: 20px;">Clickable dividers with events. Try clicking them!</p>\r
-        \r
-        <ui-divider id="interactive1" text="Click Me!" clickable="true" color="primary"></ui-divider>\r
-        <ui-divider id="interactive2" text="Expandable Section" icon="▼" clickable="true" color="success"></ui-divider>\r
-        <ui-divider id="interactive3" text="Toggle Content" clickable="true" variant="dashed" color="warning"></ui-divider>\r
-        \r
-        <div id="interactiveLog" style="margin-top: 16px; padding: 12px; background: #f3f4f6; border-radius: 6px; font-size: 13px;"></div>\r
-      </div>\r
-    \`;\r
-\r
-    setTimeout(() => {\r
-      const log = document.getElementById('interactiveLog');\r
-      ['interactive1', 'interactive2', 'interactive3'].forEach(id => {\r
-        const divider = document.getElementById(id);\r
-        divider?.addEventListener('dividerClick', () => {\r
-          log.innerHTML = \`<strong>\${id} clicked!</strong> Interactive dividers emit click events.\`;\r
-        });\r
-      });\r
-    }, 100);\r
-  }\r
-\r
-  // Effects Demo\r
-  function showDividerEffects() {\r
-    const container = document.getElementById('dividerDemoContainer');\r
-    if (!container) return;\r
-    container.innerHTML = \`\r
-      <div class="demo-block">\r
-        <h3>💫 Visual Effects</h3>\r
-        <p style="opacity: 0.7; margin-bottom: 20px;">Shadow, glow, and opacity effects.</p>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Shadow Effect</h4>\r
-        <ui-divider text="With Shadow" shadow="true" color="primary"></ui-divider>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Glow Effect</h4>\r
-        <ui-divider text="Glowing Divider" glow="true" color="success"></ui-divider>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Opacity Control</h4>\r
-        <ui-divider text="50% Opacity" opacity="0.5" color="warning"></ui-divider>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Combined Effects</h4>\r
-        <ui-divider text="Shadow + Glow" shadow="true" glow="true" color="danger"></ui-divider>\r
-      </div>\r
-    \`;\r
-  }\r
-\r
-  // Spacing Demo\r
-  function showDividerSpacing() {\r
-    const container = document.getElementById('dividerDemoContainer');\r
-    if (!container) return;\r
-    container.innerHTML = \`\r
-      <div class="demo-block">\r
-        <h3>📏 Spacing & Layout</h3>\r
-        <p style="opacity: 0.7; margin-bottom: 20px;">Spacing presets and inset options.</p>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Spacing Presets</h4>\r
-        <div style="background: #f9fafb; padding: 20px; border-radius: 8px;">\r
-          <p>Content before compact divider</p>\r
-          <ui-divider text="Compact" spacing="compact" color="primary"></ui-divider>\r
-          <p>Content after compact divider</p>\r
-          \r
-          <ui-divider text="Comfortable" spacing="comfortable" color="success"></ui-divider>\r
-          <p>Content with comfortable spacing</p>\r
-          \r
-          <ui-divider text="Spacious" spacing="spacious" color="warning"></ui-divider>\r
-          <p>Content with spacious spacing</p>\r
-        </div>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Inset Dividers</h4>\r
-        <ui-divider text="Inset Start" inset="start" color="info"></ui-divider>\r
-        <ui-divider text="Inset End" inset="end" color="danger"></ui-divider>\r
-        <ui-divider text="Inset Both" inset="both" color="primary"></ui-divider>\r
-      </div>\r
-    \`;\r
-  }\r
-\r
-  // Shapes & Lines Demo\r
-  function showDividerShapesLines() {\r
-    const container = document.getElementById('dividerDemoContainer');\r
-    if (!container) return;\r
-    container.innerHTML = \`\r
-      <div class="demo-block">\r
-        <h3>🔺 Shapes & Advanced Lines</h3>\r
-        <p style="opacity: 0.7; margin-bottom: 20px;">Use SVG shapes for section breaks and advanced line controls.</p>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Shape Dividers</h4>\r
-        <div style="background: #f3f4f6; padding: 20px; border-radius: 8px; margin-bottom: 20px;">\r
-            <p><strong>Wave Shape</strong></p>\r
-            <ui-divider shape="wave" color="primary"></ui-divider>\r
-            \r
-            <p><strong>Triangle Shape</strong></p>\r
-            <ui-divider shape="triangle" color="success"></ui-divider>\r
-            \r
-            <p><strong>Tilt Shape</strong></p>\r
-            <ui-divider shape="tilt" color="warning"></ui-divider>\r
-\r
-            <p><strong>Curve Shape</strong></p>\r
-            <ui-divider shape="curve" color="danger"></ui-divider>\r
-\r
-            <p><strong>Zigzag Shape</strong></p>\r
-            <ui-divider shape="zigzag" color="info"></ui-divider>\r
-        </div>\r
-\r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Line Visibility</h4>\r
-        <ui-divider text="Left Text (Start Line Only)" text-align="left" lines="start" color="primary"></ui-divider>\r
-        <ui-divider text="Right Text (End Line Only)" text-align="right" lines="end" color="success"></ui-divider>\r
-        <ui-divider text="Text Only (No Lines)" lines="none" color="secondary"></ui-divider>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Round Line Caps</h4>\r
-        <ui-divider text="Rounded Edges" linecap="round" size="lg" color="primary"></ui-divider>\r
-        <ui-divider text="Dashed & Rounded" variant="dashed" linecap="round" size="md" color="success"></ui-divider>\r
-      </div>\r
-    \`;\r
-  }\r
-\r
-  // Badges Demo\r
-  function showDividerBadges() {\r
-    const container = document.getElementById('dividerDemoContainer');\r
-    if (!container) return;\r
-    container.innerHTML = \`\r
-      <div class="demo-block">\r
-        <h3>🔢 Dividers with Badges</h3>\r
-        <p style="opacity: 0.7; margin-bottom: 20px;">Add counters and badges to dividers.</p>\r
-        \r
-        <ui-divider text="New Messages" badge="5" color="primary"></ui-divider>\r
-        <ui-divider text="Pending Tasks" badge="12" color="warning"></ui-divider>\r
-        <ui-divider text="Notifications" badge="99+" color="danger"></ui-divider>\r
-        <ui-divider text="Updates Available" icon="🔔" badge="3" color="info"></ui-divider>\r
-      </div>\r
-    \`;\r
-  }\r
-\r
-  // Vertical Divider Demo\r
-  function showDividerVertical() {\r
-    const container = document.getElementById('dividerDemoContainer');\r
-    if (!container) return;\r
-    container.innerHTML = \`\r
-      <div class="demo-block">\r
-        <h3>I Vertical Dividers</h3>\r
-        <p style="opacity: 0.7; margin-bottom: 20px;">Vertical dividers for separating content in flex containers.</p>\r
-        \r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Basic Vertical Divider</h4>\r
-        <div style="display: flex; align-items: center; height: 50px; border: 1px solid #e5e7eb; padding: 0 16px; border-radius: 6px;">\r
-          <span>Item 1</span>\r
-          <ui-divider orientation="vertical"></ui-divider>\r
-          <span>Item 2</span>\r
-          <ui-divider orientation="vertical"></ui-divider>\r
-          <span>Item 3</span>\r
-        </div>\r
-\r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Vertical with Text</h4>\r
-        <div style="display: flex; align-items: center; height: 100px; border: 1px solid #e5e7eb; padding: 0 16px; border-radius: 6px;">\r
-          <div style="flex: 1; text-align: center;">Left Content</div>\r
-          <ui-divider orientation="vertical" text="OR" color="primary"></ui-divider>\r
-          <div style="flex: 1; text-align: center;">Right Content</div>\r
-        </div>\r
-\r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Vertical with Custom Height</h4>\r
-        <div style="display: flex; align-items: center; border: 1px solid #e5e7eb; padding: 16px; border-radius: 6px;">\r
-          <span>Auto Height (Parent)</span>\r
-          <ui-divider orientation="vertical" style="height: 40px; margin: 0 16px;"></ui-divider>\r
-          <span>Explicit Prop Height</span>\r
-          <ui-divider orientation="vertical" height="60px" color="success"></ui-divider>\r
-        </div>\r
-\r
-        <h4 style="margin-top: 24px; margin-bottom: 12px;">Typographic Modes</h4>\r
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; min-height: 200px;">\r
-           <div style="text-align: center;">\r
-              <p style="font-size: 11px; opacity: 0.6;">ROTATED (DEFAULT)</p>\r
-              <div style="height: 150px; display: flex; justify-content: center;">\r
-                 <ui-divider orientation="vertical" text="ROTATED" color="primary"></ui-divider>\r
-              </div>\r
-           </div>\r
-           <div style="text-align: center;">\r
-              <p style="font-size: 11px; opacity: 0.6;">UPRIGHT (STACKED)</p>\r
-              <div style="height: 150px; display: flex; justify-content: center;">\r
-                 <ui-divider orientation="vertical" text="UPRIGHT" upright="true" color="success"></ui-divider>\r
-              </div>\r
-           </div>\r
-        </div>\r
-      </div>\r
-    \`;\r
-  }\r
-\r
-  // Default view\r
-  showDividerLegendary();
-})();
-<\/script>`},{title:`update Divider Playground`,description:``,html:`<ui-divider id="playgroundComponent" style="\${containerStyle}"></ui-divider>
-<script>
-(function() {
-  const el = document.getElementById('playgroundComponent');\r
-\r
-    Object.assign(el, props);\r
-\r
-    el.addEventListener('dividerClick', () => {\r
-      const log = document.getElementById('pg-log-content');\r
-      if (log) {\r
-        const div = document.createElement('div');\r
-        div.textContent = \`[dividerClick] \${new Date().toLocaleTimeString()}\`;\r
-        log.prepend(div);\r
-      }\r
-    });\r
-\r
-    // Generate code block\r
-    const codeBlock = document.getElementById('dividerCodeBlock');\r
-    if (codeBlock) {\r
-      let code = '<ui-divider';\r
-      if (props.text) code += \`\\n  text="\${props.text}"\`;\r
-      if (props.subtitle) code += \`\\n  subtitle="\${props.subtitle}"\`;\r
-      if (props.icon) code += \`\\n  icon="\${props.icon}"\`;\r
-      if (props.orientation !== 'horizontal') code += \`\\n  orientation="\${props.orientation}"\`;\r
-      if (props.color) code += \`\\n  color="\${props.color}"\`;\r
-      if (props.variant !== 'solid') code += \`\\n  variant="\${props.variant}"\`;\r
-      if (props.spacing !== 'none') code += \`\\n  spacing="\${props.spacing}"\`;\r
-      if (props.verticalAlign !== 'center') code += \`\\n  vertical-align="\${props.verticalAlign}"\`;\r
-      if (props.inset !== 'none') code += \`\\n  inset="\${props.inset}"\`;\r
-      if (props.linecap !== 'butt') code += \`\\n  linecap="\${props.linecap}"\`;\r
-      if (props.shape !== 'none') code += \`\\n  shape="\${props.shape}"\`;\r
-      if (props.thickness) code += \`\\n  thickness="\${props.thickness}"\`;\r
-      if (props.steps > 0) code += \`\\n  steps="\${props.steps}"\\n  current-step="\${props.currentStep}"\`;\r
-      if (props.heatmap) code += \`\\n  heatmap="true"\\n  percent="\${props.percent}"\`;\r
-      if (props.iconAnimation !== 'none') code += \`\\n  icon-animation="\${props.iconAnimation}"\`;\r
-      if (props.opacity !== '1') code += \`\\n  opacity="\${props.opacity}"\`;\r
-      if (props.aura) code += '\\n  aura="true"';\r
-      if (props.glass) code += '\\n  glass="true"';\r
-      if (props.kinetic) code += '\\n  kinetic="true"';\r
-      if (props.heatmap) code += '\\n  heatmap="true"';\r
-      if (props.ripple) code += '\\n  ripple="true"';\r
-      if (props.parallax) code += '\\n  parallax="true"';\r
-      if (props.shadow) code += '\\n  shadow="true"';\r
-      if (props.glow) code += '\\n  glow="true"';\r
-      if (props.loading) code += '\\n  loading="true"';\r
-      if (props.clickable) code += '\\n  clickable="true"';\r
-      if (props.upright) code += '\\n  upright="true"';\r
-      code += '\\n></ui-divider>';\r
-      codeBlock.innerText = code;\r
-    }
+    updateDividerPlayground();
 })();
 <\/script>`},{title:`📱 Responsive Divider`,description:`Component automatically switches orientation based on screen size (breakpoints: sm, md, lg).`,html:`<div class="demo-block">\r
         <h3>📱 Responsive Divider</h3>\r
@@ -44048,51 +42515,6 @@ const printCurrentTable = function () {\r
       document.getElementById('btnCopyDockCode')?.addEventListener('click', () => window.copyDockCode());\r
     }, 100);\r
     updateDockPlayground();
-})();
-<\/script>`},{title:`update Dock Playground`,description:``,html:`<ui-dock \r
-          id="playgroundDock"\r
-          items='\${items}'\r
-          position="\${position}"\r
-          size="\${size}"\r
-          magnify="\${magnify}"\r
-          blur-effect="\${blur}"\r
-          show-labels="\${showLabels}"\r
-          icon-library="lucide">\r
-        </ui-dock>\r
-      
-<script>
-(function() {
-  setTimeout(() => {\r
-        const dock = document.getElementById('playgroundDock');\r
-        if (dock) {\r
-          dock.addEventListener('dockItemClick', e => {\r
-            const logContent = document.getElementById('dockLogContent');\r
-            const timestamp = new Date().toLocaleTimeString();\r
-            const newLog = \`[\${timestamp}] Clicked: \${e.detail.item.label} (ID: \${e.detail.itemId})\`;\r
-            logContent.innerHTML = newLog + '<br>' + logContent.innerHTML;\r
-          });\r
-        }\r
-      }, 100);\r
-\r
-      // Generate code block\r
-      const codeBlock = document.getElementById('dockCodeBlock');\r
-      if (codeBlock) {\r
-        let code = '<ui-dock';\r
-        if (position !== 'bottom') code += \`\\n  position="\${position}"\`;\r
-        if (size !== 'md') code += \`\\n  size="\${size}"\`;\r
-        if (magnify !== 'true') code += \`\\n  magnify="\${magnify}"\`;\r
-        if (blur !== 'true') code += \`\\n  blur-effect="\${blur}"\`;\r
-        code += \`\\n  show-labels="\${showLabels}"\`;\r
-        code += \`\\n  items='\${items}'\`;\r
-        code += \`\\n  icon-library="lucide"\`;\r
-        code += '\\n></ui-dock>';\r
-        codeBlock.innerText = code;\r
-      }
-})();
-<\/script>`}],"drag-drop":[{title:`log Entry`,description:``,html:`<strong style="color: #0b5fff; font-size: 11px;">\${new Date().toLocaleTimeString()}</strong>: \${message}
-<script>
-(function() {
-  logArea.prepend(entry);
 })();
 <\/script>`}],dropdown:[{title:`Single Select Dropdown`,description:`Standard dropdown with single selection and optional icons.`,html:`<div class="demo-block">\r
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">\r
@@ -44981,11 +43403,6 @@ const printCurrentTable = function () {\r
       document.getElementById('eventLogContainer').innerHTML = '<div style="color: #64748b;">> Log cleared.</div>';\r
     });\r
   }, 100);
-})();
-<\/script>`},{title:`add Log`,description:``,html:`<span style="color: #94a3b8;">[\${time}]</span> <span style="color: #10b981;">\${type}</span>: \${JSON.stringify(detail)}
-<script>
-(function() {
-  log.prepend(entry);
 })();
 <\/script>`},{title:`💎 Rich Dropdown Items`,description:`Enhance items with subtitles, descriptions, right-side tags, and secondary icons.`,html:`<div class="demo-block">\r
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">\r
@@ -45946,35 +44363,7 @@ const printCurrentTable = function () {\r
       if (loadCheck) loadCheck.addEventListener('checkboxChange', e => updateFabPlayground('loading', e.detail.checked));\r
     }, 100);
 })();
-<\/script>`}],"file-upload":[{title:`add Log`,description:``,html:`<span style="color: \${colors[type]}; font-weight: 700;">[\${type.toUpperCase()}]</span> \${msg}
-<script>
-(function() {
-  log.prepend(entry);
-})();
-<\/script>`}],home:[{title:`Default Card`,description:`Versatile container`,html:`<ui-card width="100%" variant="default" style="max-width: 250px;">\r
-            <div slot="header"><h4 style="margin: 0; font-size: 14px;">Default Card</h4></div>\r
-            <div slot="content"><p style="margin: 0; color: #6b7280; font-size: 12px;">Versatile container</p></div>\r
-          </ui-card>
-<script>
-(function() {
-  break;\r
-      case 'elevated':\r
-        container.innerHTML = \`\r
-          <ui-card width="100%" variant="elevated" style="max-width: 250px;">\r
-            <div slot="header"><h4 style="margin: 0; font-size: 14px;">Elevated Card</h4></div>\r
-            <div slot="content"><p style="margin: 0; color: #6b7280; font-size: 12px;">Enhanced shadow</p></div>\r
-          </ui-card>\`;\r
-        break;\r
-      case 'outlined':\r
-        container.innerHTML = \`\r
-          <ui-card width="100%" variant="outlined" style="max-width: 250px;">\r
-            <div slot="header"><h4 style="margin: 0; font-size: 14px;">Outlined Card</h4></div>\r
-            <div slot="content"><p style="margin: 0; color: #6b7280; font-size: 12px;">Border only style</p></div>\r
-          </ui-card>\`;\r
-        break;\r
-    }
-})();
-<\/script>`},{title:`Demo Dialog`,description:`This is a demo dialog box. Click outside or the X button to close.`,html:`<h3 slot="header" style="margin: 0;">Demo Dialog</h3>\r
+<\/script>`}],home:[{title:`Demo Dialog`,description:`This is a demo dialog box. Click outside or the X button to close.`,html:`<h3 slot="header" style="margin: 0;">Demo Dialog</h3>\r
       <div slot="body">\r
         <p style="margin: 0;">This is a demo dialog box. Click outside or the X button to close.</p>\r
       </div>\r
@@ -45988,10 +44377,7 @@ const printCurrentTable = function () {\r
     dialog.show();\r
     dialog.addEventListener('dialogClosed', () => dialog.remove());
 })();
-<\/script>`},{title:`update Divider Demo`,description:`Content Above`,html:`<p style="margin: 0 0 8px; color: #1f2937; font-size: 12px;">Content Above</p>\r
-      <Divider variant="\${variant}" text="\${config.text}"></Divider>\r
-      <p style="margin: 8px 0 0; color: #1f2937; font-size: 12px;">Content Below</p>\r
-      <small style="display: block; margin-top: 6px; color: #9ca3af; font-style: italic; font-size: 10px;">\${config.label}</small>`},{title:`Aside Panel`,description:`This is an aside panel for additional content.`,html:`<div slot="header">\r
+<\/script>`},{title:`Aside Panel`,description:`This is an aside panel for additional content.`,html:`<div slot="header">\r
         <h3 style="margin: 0;">Aside Panel</h3>\r
       </div>\r
       <div slot="content">\r
@@ -46150,19 +44536,6 @@ const printCurrentTable = function () {\r
 <script>
 (function() {
   updateInteractiveNav();
-})();
-<\/script>`},{title:`update Interactive Nav`,description:"Invalid JSON: ${error.message}",html:`<p style="color: #ef4444;">Invalid JSON: \${error.message}</p>
-<script>
-(function() {
-  if (size && size !== 'md') props += \` size="\${size}"\`;\r
-          if (align && align !== 'start') props += \` align="\${align}"\`;\r
-          if (displayAs && displayAs !== 'buttons') props += \` display-as="\${displayAs}"\`;\r
-\r
-          codeBlock.innerText = \`<ui-horizontal-nav\${props}></ui-horizontal-nav>\\n<script>\\n  const nav = document.querySelector('ui-horizontal-nav');\\n  nav.items = \${itemsText};\\n<\/script>\`;\r
-        }\r
-      } catch (error) {\r
-        container.innerHTML = \`<p style="color: #ef4444;">Invalid JSON: \${error.message}</p>\`;\r
-      }
 })();
 <\/script>`}],input:[{title:`Grouped Channel Inputs`,description:`Numeric input fields grouped in a single row, with per-channel validation. This pattern is ideal for RGB, RGBA, HSL, HSLA, or similar multi-part values.\r
           Each field validates its own range and highlights errors inline.`,html:`<div class="demo-block">\r
@@ -46692,12 +45065,6 @@ const printCurrentTable = function () {\r
 \r
       updateInteractiveInput();\r
     }, 200);
-})();
-<\/script>`},{title:`log Action`,description:``,html:`<span style="color: #10b981; font-weight: 700;">\${type.toUpperCase()}</span>: <span style="color: #1e293b;">\${JSON.stringify(detail) || 'N/A'}</span> <span style="float: right; opacity: 0.5;">\${new Date().toLocaleTimeString()}</span>
-<script>
-(function() {
-  log.appendChild(entry);\r
-    if (log.children.length > 20) log.removeChild(log.firstChild);
 })();
 <\/script>`},{title:`Input Variants & Automatic Icons`,description:`Variants for different design systems and automatic context-aware icons.`,html:`<div class="demo-block">\r
         <h3>Input Variants & Automatic Icons</h3>\r
@@ -47663,7 +46030,7 @@ const printCurrentTable = function () {\r
       });\r
     }
 })();
-<\/script>`},{title:`log Event`,description:``,html:'<span style="color:${color}; font-weight:700;">✓ [${ts}]</span> ${msg}'}],knob:[{title:`Custom Center Content`,description:`Use keyboard arrow keys to control the knobs.`,html:`<div class="demo-block">\r
+<\/script>`}],knob:[{title:`Custom Center Content`,description:`Use keyboard arrow keys to control the knobs.`,html:`<div class="demo-block">\r
                 <h3>Custom Center Content</h3>\r
                 <p>Use keyboard arrow keys to control the knobs.</p>\r
                 <div style="display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; padding: 20px;">\r
@@ -48789,341 +47156,1333 @@ await manager.loadLayout(saved);</code></pre>\r
 }</code></pre>\r
         </div>\r
       </div>\r
-    </div>`}],list:[{title:`Simple List`,description:`Basic list with programmatic items using lucide icons.`,html:`<div style="padding: 20px; max-width: 400px;">
-  <h3 style="margin-top:0;">Simple List</h3>
-  <ui-list id="listBasic"></ui-list>
-</div>
+    </div>`}],list:[{title:`Simple List`,description:`Small`,html:`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">\r
+\r
+      <!-- Simple slotted -->\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;color:#374151;">Simple List</h3>\r
+        <ui-list id="basicList1">\r
+          <ui-list-item label="Home"         icon="fas fa-home"    value="home"></ui-list-item>\r
+          <ui-list-item label="Profile"      icon="fas fa-user"    value="profile"></ui-list-item>\r
+          <ui-list-item label="Settings"     icon="fas fa-cog"     value="settings"></ui-list-item>\r
+          <ui-list-item label="Notifications"icon="fas fa-bell"    value="notif"></ui-list-item>\r
+          <ui-list-item label="Logout"       icon="fas fa-sign-out-alt" value="logout"></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <!-- With dividers -->\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;color:#374151;">With Dividers</h3>\r
+        <ui-list dividers>\r
+          <ui-list-item label="Inbox"         icon="fas fa-inbox"  value="inbox"  counter="12"></ui-list-item>\r
+          <ui-list-item label="Sent"          icon="fas fa-paper-plane" value="sent"></ui-list-item>\r
+          <ui-list-item label="Drafts"        icon="fas fa-file-alt" value="drafts" counter="3"></ui-list-item>\r
+          <ui-list-item label="Spam"          icon="fas fa-ban"    value="spam"   badge="New" badge-color="danger"></ui-list-item>\r
+          <ui-list-item label="Trash"         icon="fas fa-trash"  value="trash"  disabled></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <!-- Multi-select -->\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;color:#374151;">Multi-Select</h3>\r
+        <ui-list multi-select id="multiSelectList">\r
+          <ui-list-item label="JavaScript" icon="fab fa-js"     value="js"></ui-list-item>\r
+          <ui-list-item label="TypeScript" icon="fab fa-js-square" value="ts"></ui-list-item>\r
+          <ui-list-item label="React"      icon="fab fa-react"  value="react"></ui-list-item>\r
+          <ui-list-item label="Vue"        icon="fab fa-vuejs"  value="vue"></ui-list-item>\r
+          <ui-list-item label="Angular"    icon="fab fa-angular" value="angular"></ui-list-item>\r
+        </ui-list>\r
+        <div id="multiSelectOutput" style="margin-top:12px;padding:8px;background:#f3f4f6;border-radius:6px;font-size:13px;color:#374151;">Selected: none</div>\r
+      </div>\r
+\r
+      <!-- Dense / compact -->\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;color:#374151;">Dense Mode</h3>\r
+        <ui-list dense dividers>\r
+          <ui-list-item label="Option A" value="a"></ui-list-item>\r
+          <ui-list-item label="Option B" value="b"></ui-list-item>\r
+          <ui-list-item label="Option C" value="c"></ui-list-item>\r
+          <ui-list-item label="Option D" value="d"></ui-list-item>\r
+          <ui-list-item label="Option E" value="e"></ui-list-item>\r
+          <ui-list-item label="Option F" value="f"></ui-list-item>\r
+          <ui-list-item label="Option G" value="g"></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <!-- Numbered -->\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;color:#374151;">Numbered List</h3>\r
+        <ui-list numbered id="numberedList" dividers>\r
+          <ui-list-item label="Buy groceries"   value="t1"></ui-list-item>\r
+          <ui-list-item label="Call dentist"     value="t2"></ui-list-item>\r
+          <ui-list-item label="Submit report"    value="t3"></ui-list-item>\r
+          <ui-list-item label="Team standup"     value="t4"></ui-list-item>\r
+          <ui-list-item label="Review PRs"       value="t5"></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <!-- Size variants -->\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;color:#374151;">Sizes</h3>\r
+        <p style="font-size:12px;color:#9ca3af;margin-bottom:8px;">Small</p>\r
+        <ui-list size="md"\r
+          <ui-list-item label="Small item A" value="sa" size="md"ui-list-item>\r
+          <ui-list-item label="Small item B" value="sb" size="md"ui-list-item>\r
+        </ui-list>\r
+        <p style="font-size:12px;color:#9ca3af;margin:12px 0 8px;">Large</p>\r
+        <ui-list size="large">\r
+          <ui-list-item label="Large item A" value="la" size="large" icon="fas fa-star"></ui-list-item>\r
+          <ui-list-item label="Large item B" value="lb" size="large" icon="fas fa-heart"></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+    </div>\r
+  
 <script>
 (function() {
-  setTimeout(function() {
-    var el = document.getElementById('listBasic');
-    if (el) el.items = [
-      { value: 'home', label: 'Home', icon: 'home' },
-      { value: 'profile', label: 'Profile', icon: 'user' },
-      { value: 'settings', label: 'Settings', icon: 'settings' },
-      { value: 'notifications', label: 'Notifications', icon: 'bell', badge: '3', badgeColor: 'danger' },
-      { value: 'logout', label: 'Logout', icon: 'log-out' }
-    ];
-  }, 50);
+  // Multi-select event\r
+  setTimeout(() => {\r
+    const ml = document.getElementById('multiSelectList');\r
+    if (ml) {\r
+      ml.addEventListener('listChange', e => {\r
+        const out = document.getElementById('multiSelectOutput');\r
+        if (out) out.textContent = 'Selected: ' + (e.detail.values.join(', ') || 'none');\r
+      });\r
+    }\r
+  }, 200);
 })();
-<\/script>`},{title:`Variants`,description:`Text, outlined, filled, and soft visual variants.`,html:`<div style="padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
-  <div>
-    <h4 style="margin-top:0;">Text (default)</h4>
-    <ui-list id="listV1" variant="text"></ui-list>
-  </div>
-  <div>
-    <h4 style="margin-top:0;">Outlined</h4>
-    <ui-list id="listV2" variant="outlined"></ui-list>
-  </div>
-  <div>
-    <h4 style="margin-top:0;">Soft</h4>
-    <ui-list id="listV3" variant="soft"></ui-list>
-  </div>
-</div>
+<\/script>`},{title:`variant="text" (default)`,description:``,html:`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;">\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">variant="text" (default)</h3>\r
+        <ui-list variant="text">\r
+          <ui-list-item label="Text Item 1" value="1" variant="text" color="primary"></ui-list-item>\r
+          <ui-list-item label="Text Item 2" value="2" variant="text" color="primary"></ui-list-item>\r
+          <ui-list-item label="Text Item 3" value="3" variant="text" color="primary"></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">variant="filled"</h3>\r
+        <ui-list variant="filled">\r
+          <ui-list-item label="Filled Item 1" value="1" variant="filled" color="primary"></ui-list-item>\r
+          <ui-list-item label="Filled Item 2" value="2" variant="filled" color="success"></ui-list-item>\r
+          <ui-list-item label="Filled Item 3" value="3" variant="filled" color="danger"></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">variant="outlined"</h3>\r
+        <ui-list variant="outlined" rounded>\r
+          <ui-list-item label="Outlined Item 1" value="1" variant="outlined" color="primary"></ui-list-item>\r
+          <ui-list-item label="Outlined Item 2" value="2" variant="outlined" color="warning"></ui-list-item>\r
+          <ui-list-item label="Outlined Item 3" value="3" variant="outlined" color="info"></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">variant="outline"</h3>\r
+        <ui-list variant="outline">\r
+          <ui-list-item label="Soft Primary"   value="1" variant="outline" color="primary"></ui-list-item>\r
+          <ui-list-item label="Soft Success"   value="2" variant="outline" color="success"></ui-list-item>\r
+          <ui-list-item label="Soft Warning"   value="3" variant="outline" color="warning"></ui-list-item>\r
+          <ui-list-item label="Soft Danger"    value="4" variant="outline" color="danger"></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">Elevated + Rounded</h3>\r
+        <ui-list elevated rounded>\r
+          <ui-list-item label="Cloud Storage" icon="fas fa-cloud" value="cloud" sublabel="12.4 GB used"></ui-list-item>\r
+          <ui-list-item label="Backup"         icon="fas fa-database" value="backup" sublabel="Last: 2h ago"></ui-list-item>\r
+          <ui-list-item label="Sync"           icon="fas fa-sync"  value="sync" sublabel="Up to date"></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">Flush (no padding)</h3>\r
+        <ui-list flush dividers>\r
+          <ui-list-item label="Flush Item 1" value="1" icon="fas fa-circle"></ui-list-item>\r
+          <ui-list-item label="Flush Item 2" value="2" icon="fas fa-circle"></ui-list-item>\r
+          <ui-list-item label="Flush Item 3" value="3" icon="fas fa-circle"></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+    </div>`},{title:`Icons + Badges + Counters`,description:``,html:`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">Icons + Badges + Counters</h3>\r
+        <ui-list dividers>\r
+          <ui-list-item label="Inbox"      icon="fas fa-inbox"  value="inbox"   badge="12" badge-color="primary"  counter="12"></ui-list-item>\r
+          <ui-list-item label="Promotions" icon="fas fa-tag"    value="promo"   badge="New" badge-color="success"></ui-list-item>\r
+          <ui-list-item label="Updates"    icon="fas fa-refresh" value="updates" counter="3"></ui-list-item>\r
+          <ui-list-item label="Forums"     icon="fas fa-comments" value="forums"></ui-list-item>\r
+          <ui-list-item label="Spam"       icon="fas fa-ban"    value="spam"    badge="99+" badge-color="danger" counter="99"></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">Sub-labels (Multiline)</h3>\r
+        <ui-list dividers>\r
+          <ui-list-item\r
+            label="John Smith"\r
+            sublabel="Last seen 2 mins ago"\r
+            icon="fas fa-user-circle"\r
+            value="john"\r
+            multiline>\r
+          </ui-list-item>\r
+          <ui-list-item\r
+            label="Sarah Connor"\r
+            sublabel="Available"\r
+            icon="fas fa-user-circle"\r
+            value="sarah"\r
+            multiline>\r
+          </ui-list-item>\r
+          <ui-list-item\r
+            label="Bruce Wayne"\r
+            sublabel="In a meeting"\r
+            icon="fas fa-user-secret"\r
+            value="bruce"\r
+            multiline>\r
+          </ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">Pills per Item</h3>\r
+        <ui-list dividers>\r
+          <ui-list-item\r
+            label="Fix authentication bug"\r
+            value="t1"\r
+            icon="fas fa-bug"\r
+            pills='[{"label":"P1","color":"danger"},{"label":"Bug","color":"warning"},{"label":"Backend","color":"info"}]'>\r
+          </ui-list-item>\r
+          <ui-list-item\r
+            label="Design new dashboard"\r
+            value="t2"\r
+            icon="fas fa-paint-brush"\r
+            pills='[{"label":"Design","color":"primary"},{"label":"UI/UX","color":"secondary"}]'>\r
+          </ui-list-item>\r
+          <ui-list-item\r
+            label="Write unit tests"\r
+            value="t3"\r
+            icon="fas fa-vial"\r
+            pills='[{"label":"Testing","color":"success"},{"label":"P2","color":"info"}]'>\r
+          </ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">Tags per Item</h3>\r
+        <ui-list dividers>\r
+          <ui-list-item\r
+            label="React"\r
+            value="react"\r
+            icon="fab fa-react"\r
+            tags='["Frontend","JavaScript","Popular"]'>\r
+          </ui-list-item>\r
+          <ui-list-item\r
+            label="Node.js"\r
+            value="node"\r
+            icon="fab fa-node-js"\r
+            tags='["Backend","JavaScript","Runtime"]'>\r
+          </ui-list-item>\r
+          <ui-list-item\r
+            label="Python"\r
+            value="python"\r
+            icon="fab fa-python"\r
+            tags='["ML","Backend","Scripting"]'>\r
+          </ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">Action Icons</h3>\r
+        <ui-list dividers>\r
+          <ui-list-item label="Edit Profile"    icon="fas fa-user"     value="edit"   action-icon="fas fa-pencil-alt"></ui-list-item>\r
+          <ui-list-item label="Download"        icon="fas fa-file"     value="dl"     action-icon="fas fa-download"></ui-list-item>\r
+          <ui-list-item label="Share"           icon="fas fa-link"     value="share"  action-icon="fas fa-share-alt"></ui-list-item>\r
+          <ui-list-item label="Delete"          icon="fas fa-trash"    value="del"    action-icon="fas fa-times" color="danger"></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">Checkbox Selection</h3>\r
+        <ui-list dividers id="checkboxList">\r
+          <ui-list-item label="Send email notification"  value="email"   show-checkbox></ui-list-item>\r
+          <ui-list-item label="Enable 2FA"               value="2fa"     show-checkbox checked></ui-list-item>\r
+          <ui-list-item label="Auto-save drafts"          value="save"    show-checkbox></ui-list-item>\r
+          <ui-list-item label="Dark mode"                value="dark"    show-checkbox checked></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+    </div>`},{title:`Collapsible Tree`,description:``,html:`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">Collapsible Tree</h3>\r
+        <ui-list dividers>\r
+          <ui-list-item label="Documents" icon="fas fa-folder" value="docs" collapsible expanded>\r
+            <ui-list-item slot="children" label="Resume.pdf"    icon="fas fa-file-pdf"  value="resume" level="1"></ui-list-item>\r
+            <ui-list-item slot="children" label="Cover.docx"    icon="fas fa-file-word" value="cover"  level="1"></ui-list-item>\r
+            <ui-list-item slot="children" label="Portfolio"     icon="fas fa-folder"    value="port"   level="1" collapsible>\r
+              <ui-list-item slot="children" label="project1.zip" icon="fas fa-file-archive" value="p1" level="2"></ui-list-item>\r
+              <ui-list-item slot="children" label="project2.zip" icon="fas fa-file-archive" value="p2" level="2"></ui-list-item>\r
+            </ui-list-item>\r
+          </ui-list-item>\r
+          <ui-list-item label="Pictures"  icon="fas fa-images" value="pics" collapsible>\r
+            <ui-list-item slot="children" label="Vacation 2024" icon="fas fa-camera" value="vac" level="1"></ui-list-item>\r
+            <ui-list-item slot="children" label="Family"        icon="fas fa-camera" value="fam" level="1"></ui-list-item>\r
+          </ui-list-item>\r
+          <ui-list-item label="Downloads" icon="fas fa-download" value="dl" collapsible>\r
+            <ui-list-item slot="children" label="Installers" icon="fas fa-folder" value="inst" level="1"></ui-list-item>\r
+          </ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">Accordion-style Nav</h3>\r
+        <ui-list dividers rounded>\r
+          <ui-list-item label="Dashboard"  icon="fas fa-th-large" value="dash"></ui-list-item>\r
+          <ui-list-item label="Analytics"  icon="fas fa-chart-line" value="analytics" collapsible>\r
+            <ui-list-item slot="children" label="Traffic"     value="traffic"  level="1"></ui-list-item>\r
+            <ui-list-item slot="children" label="Conversions" value="conv"     level="1"></ui-list-item>\r
+            <ui-list-item slot="children" label="Reports"     value="reports"  level="1"></ui-list-item>\r
+          </ui-list-item>\r
+          <ui-list-item label="Users"      icon="fas fa-users"    value="users" collapsible>\r
+            <ui-list-item slot="children" label="All Users"   value="all"    level="1"></ui-list-item>\r
+            <ui-list-item slot="children" label="Admins"      value="admins" level="1"></ui-list-item>\r
+            <ui-list-item slot="children" label="Guests"      value="guests" level="1"></ui-list-item>\r
+          </ui-list-item>\r
+          <ui-list-item label="Settings"   icon="fas fa-cog"      value="settings"></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">Context Menu Items</h3>\r
+        <ui-list dividers>\r
+          <ui-list-item label="Right-click me!" icon="fas fa-file-alt" value="file1" context-menu context-menu-trigger="rightClick">\r
+            <ui-list-item slot="children" label="Open"     icon="fas fa-folder-open" value="open"></ui-list-item>\r
+            <ui-list-item slot="children" label="Copy"     icon="fas fa-copy"        value="copy"></ui-list-item>\r
+            <ui-list-item slot="children" label="Rename"   icon="fas fa-edit"        value="rename"></ui-list-item>\r
+            <ui-list-item slot="children" label="Delete"   icon="fas fa-trash"       value="delete" color="danger"></ui-list-item>\r
+          </ui-list-item>\r
+          <ui-list-item label="Click ▶ for menu" icon="fas fa-file-code" value="file2" context-menu context-menu-trigger="click">\r
+            <ui-list-item slot="children" label="Edit"    icon="fas fa-edit"   value="edit"></ui-list-item>\r
+            <ui-list-item slot="children" label="Preview" icon="fas fa-eye"    value="prev"></ui-list-item>\r
+            <ui-list-item slot="children" label="Export"  icon="fas fa-upload" value="exp"></ui-list-item>\r
+          </ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+    </div>`},{title:`🔍 Searchable List (programmatic items)`,description:``,html:`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">🔍 Searchable List (programmatic items)</h3>\r
+        <ui-list searchable search-placeholder="Search fruits..." id="searchList" max-height="350px"></ui-list>\r
+        <div id="searchOutput" style="margin-top:12px;font-size:13px;color:#6b7280;">Selected: none</div>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">Search + Multi-Select</h3>\r
+        <ui-list searchable multi-select search-placeholder="Type to filter..." id="searchMultiList" max-height="350px" dividers></ui-list>\r
+        <div id="searchMultiOutput" style="margin-top:12px;font-size:13px;color:#6b7280;">Selected: none</div>\r
+      </div>\r
+    </div>\r
+  
 <script>
 (function() {
-  var items = [
-    { value: '1', label: 'Item Alpha', icon: 'circle' },
-    { value: '2', label: 'Item Beta', icon: 'circle' },
-    { value: '3', label: 'Item Gamma', icon: 'circle' }
-  ];
-  setTimeout(function() {
-    ['listV1','listV2','listV3'].forEach(function(id) {
-      var el = document.getElementById(id);
-      if (el) el.items = items;
-    });
-  }, 50);
+  setTimeout(() => {\r
+    const sl = document.getElementById('searchList');\r
+    const ml = document.getElementById('searchMultiList');\r
+    if (sl) {\r
+      sl.items = fruits;\r
+      sl.addEventListener('listItemSelect', e => {\r
+        document.getElementById('searchOutput').textContent = 'Selected: ' + e.detail.value;\r
+      });\r
+    }\r
+    if (ml) {\r
+      ml.items = fruits;\r
+      ml.addEventListener('listChange', e => {\r
+        document.getElementById('searchMultiOutput').textContent = 'Selected: ' + (e.detail.values.join(', ') || 'none');\r
+      });\r
+    }\r
+  }, 200);
 })();
-<\/script>`},{title:`Icons & Badges`,description:`List items with icons, badge counts, and descriptions.`,html:`<div style="padding: 20px; max-width: 420px;">
-  <h3 style="margin-top:0;">Notifications</h3>
-  <ui-list id="listBadges" dividers="true"></ui-list>
-</div>
+<\/script>`},{title:`Grouped with Subheaders`,description:``,html:`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">Grouped with Subheaders</h3>\r
+        <ui-list id="groupedList1" max-height="450px" dividers></ui-list>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">Collapsible Groups</h3>\r
+        <ui-list id="groupedList2" max-height="450px"></ui-list>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">Group + Search</h3>\r
+        <ui-list id="groupedList3" searchable max-height="400px" dividers></ui-list>\r
+      </div>\r
+    </div>\r
+  
 <script>
 (function() {
-  setTimeout(function() {
-    var el = document.getElementById('listBadges');
-    if (el) el.items = [
-      { value: 'inbox', label: 'Inbox', description: '12 unread messages', icon: 'inbox', counter: 12 },
-      { value: 'sent', label: 'Sent', description: 'Last sent 2h ago', icon: 'send' },
-      { value: 'drafts', label: 'Drafts', description: '3 drafts saved', icon: 'file-text', counter: 3 },
-      { value: 'spam', label: 'Spam', description: 'Move to trash', icon: 'alert-triangle', badge: 'New', badgeColor: 'danger' },
-      { value: 'trash', label: 'Trash', description: 'Items older than 30d', icon: 'trash-2', disabled: true }
-    ];
-  }, 50);
+  setTimeout(() => {\r
+    const teamItems = [\r
+      { id: '1', label: 'Alice Johnson', value: 'alice', group: 'Engineering', icon: 'fas fa-user-circle', sublabel: 'Senior Dev' },\r
+      { id: '2', label: 'Bob Smith', value: 'bob', group: 'Engineering', icon: 'fas fa-user-circle', sublabel: 'Junior Dev' },\r
+      { id: '3', label: 'Carol White', value: 'carol', group: 'Design', icon: 'fas fa-user-circle', sublabel: 'UX Lead' },\r
+      { id: '4', label: 'Dave Lee', value: 'dave', group: 'Design', icon: 'fas fa-user-circle', sublabel: 'Visual Designer' },\r
+      { id: '5', label: 'Eve Martin', value: 'eve', group: 'Marketing', icon: 'fas fa-user-circle', sublabel: 'Growth Lead' },\r
+      { id: '6', label: 'Frank Brown', value: 'frank', group: 'Marketing', icon: 'fas fa-user-circle', sublabel: 'Content Writer' },\r
+      { id: '7', label: 'Grace Kim', value: 'grace', group: 'Engineering', icon: 'fas fa-user-circle', sublabel: 'QA Engineer' },\r
+    ];\r
+\r
+    ['groupedList1', 'groupedList2', 'groupedList3'].forEach(id => {\r
+      const el = document.getElementById(id);\r
+      if (el) {\r
+        el.items = teamItems;\r
+        el.grouped = true;\r
+        el.groupBy = 'group';\r
+      }\r
+    });\r
+  }, 200);
 })();
-<\/script>`},{title:`Searchable List`,description:`Filter list items in real-time with a built-in search bar.`,html:`<div style="padding: 20px; max-width: 420px;">
-  <h3 style="margin-top:0;">Searchable Country List</h3>
-  <ui-list id="listSearch" searchable="true" search-placeholder="Search countries..."></ui-list>
-</div>
+<\/script>`},{title:`↕️ Drag to Reorder`,description:`Drag the ≡ handle to reorder`,html:`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">↕️ Drag to Reorder</h3>\r
+        <p style="font-size:13px;color:#9ca3af;margin-bottom:12px;">Drag the ≡ handle to reorder</p>\r
+        <ui-list id="draggableList" dividers max-height="360px"></ui-list>\r
+        <div id="reorderOutput" style="margin-top:12px;padding:8px;background:#f3f4f6;border-radius:6px;font-size:12px;color:#374151;">Reorder events will show here</div>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">↕️ Task Priority List</h3>\r
+        <p style="font-size:13px;color:#9ca3af;margin-bottom:12px;">Drag to re-prioritize tasks</p>\r
+        <ui-list id="taskList" dividers max-height="360px"></ui-list>\r
+      </div>\r
+    </div>\r
+  
 <script>
 (function() {
-  setTimeout(function() {
-    var el = document.getElementById('listSearch');
-    if (el) el.items = [
-      { value: 'us', label: 'United States', description: 'North America', icon: 'map-pin' },
-      { value: 'gb', label: 'United Kingdom', description: 'Europe', icon: 'map-pin' },
-      { value: 'de', label: 'Germany', description: 'Europe', icon: 'map-pin' },
-      { value: 'fr', label: 'France', description: 'Europe', icon: 'map-pin' },
-      { value: 'jp', label: 'Japan', description: 'Asia', icon: 'map-pin' },
-      { value: 'au', label: 'Australia', description: 'Oceania', icon: 'map-pin' },
-      { value: 'ca', label: 'Canada', description: 'North America', icon: 'map-pin' },
-      { value: 'br', label: 'Brazil', description: 'South America', icon: 'map-pin' }
-    ];
-  }, 50);
+  setTimeout(() => {\r
+    const dl = document.getElementById('draggableList');\r
+    if (dl) {\r
+      dl.isDraggable = true;\r
+      dl.items = [\r
+        { id: '1', label: 'Step 1: Initialize project', value: 's1' },\r
+        { id: '2', label: 'Step 2: Install dependencies', value: 's2' },\r
+        { id: '3', label: 'Step 3: Configure environment', value: 's3' },\r
+        { id: '4', label: 'Step 4: Write components', value: 's4' },\r
+        { id: '5', label: 'Step 5: Add tests', value: 's5' },\r
+        { id: '6', label: 'Step 6: Build & deploy', value: 's6' },\r
+      ];\r
+      dl.addEventListener('itemsReorder', e => {\r
+        const out = document.getElementById('reorderOutput');\r
+        if (out) out.textContent = 'Order: ' + e.detail.items.map(i => i.label.split(':')[0]).join(' → ');\r
+      });\r
+    }\r
+\r
+    const tl = document.getElementById('taskList');\r
+    if (tl) {\r
+      tl.isDraggable = true;\r
+      tl.numbered = true;\r
+      tl.items = [\r
+        { id: '1', label: 'Fix critical login bug', value: 't1' },\r
+        { id: '2', label: 'Update user dashboard', value: 't2' },\r
+        { id: '3', label: 'Write API docs', value: 't3' },\r
+        { id: '4', label: 'Code review PRs', value: 't4' },\r
+        { id: '5', label: 'Sprint planning meeting', value: 't5' },\r
+      ];\r
+    }\r
+  }, 200);
 })();
-<\/script>`},{title:`Multi-Select`,description:`Select multiple items; selected values logged below.`,html:`<div style="padding: 20px; max-width: 420px;">
-  <h3 style="margin-top:0;">Choose Technologies</h3>
-  <ui-list id="listMulti" multi-select="true"></ui-list>
-  <div id="multiOut" style="margin-top:12px;padding:8px;background:#f3f4f6;border-radius:6px;font-size:13px;">Selected: none</div>
-</div>
+<\/script>`},{title:`📑 Paginated (5 per page)`,description:``,html:`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;">\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">📑 Paginated (5 per page)</h3>\r
+        <ui-list id="paginatedList5" paginated items-per-page="5" dividers></ui-list>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">📑 Search + Paginated</h3>\r
+        <ui-list id="paginatedSearchList" paginated searchable items-per-page="4" dividers></ui-list>\r
+      </div>\r
+    </div>\r
+  
 <script>
 (function() {
-  setTimeout(function() {
-    var el = document.getElementById('listMulti');
-    var out = document.getElementById('multiOut');
-    if (el) {
-      el.items = [
-        { value: 'js', label: 'JavaScript' },
-        { value: 'ts', label: 'TypeScript' },
-        { value: 'react', label: 'React' },
-        { value: 'vue', label: 'Vue.js' },
-        { value: 'angular', label: 'Angular' }
-      ];
-      el.addEventListener('listSelectionChange', function(e) {
-        if (out) out.textContent = 'Selected: ' + (e.detail.selectedValues || []).join(', ') || 'none';
-      });
-    }
-  }, 50);
+  setTimeout(() => {\r
+    const countries = Array.from({ length: 30 }, (_, i) => ({\r
+      id: String(i + 1),\r
+      label: [\r
+        'Argentina',\r
+        'Australia',\r
+        'Brazil',\r
+        'Canada',\r
+        'China',\r
+        'Denmark',\r
+        'Egypt',\r
+        'France',\r
+        'Germany',\r
+        'Greece',\r
+        'Hungary',\r
+        'India',\r
+        'Indonesia',\r
+        'Italy',\r
+        'Japan',\r
+        'Kenya',\r
+        'Mexico',\r
+        'Netherlands',\r
+        'Nigeria',\r
+        'Norway',\r
+        'Pakistan',\r
+        'Peru',\r
+        'Philippines',\r
+        'Poland',\r
+        'Portugal',\r
+        'Russia',\r
+        'Spain',\r
+        'Sweden',\r
+        'Thailand',\r
+        'Turkey',\r
+      ][i],\r
+      value: \`country-\${i + 1}\`,\r
+    }));\r
+\r
+    const pl = document.getElementById('paginatedList5');\r
+    if (pl) pl.items = countries;\r
+\r
+    const sl = document.getElementById('paginatedSearchList');\r
+    if (sl) sl.items = countries;\r
+  }, 200);
 })();
-<\/script>`},{title:`Grouped with Subheaders`,description:`Organize items into named groups with subheader dividers.`,html:`<div style="padding: 20px; max-width: 420px;">
-  <h3 style="margin-top:0;">File Explorer</h3>
-  <ui-list id="listGrouped"></ui-list>
-</div>
+<\/script>`},{title:`⚡ Virtual Scroll (10,000 items)`,description:`Only visible rows are rendered in the DOM`,html:`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;">\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">⚡ Virtual Scroll (10,000 items)</h3>\r
+        <p style="font-size:13px;color:#9ca3af;margin-bottom:12px;">Only visible rows are rendered in the DOM</p>\r
+        <ui-list id="virtualList" virtual item-height="48" max-height="400px"></ui-list>\r
+        <div id="virtualOutput" style="margin-top:8px;font-size:12px;color:#6b7280;">Selected: none</div>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">⚡ Virtual + Search</h3>\r
+        <ui-list id="virtualSearchList" virtual searchable item-height="48" max-height="400px" search-placeholder="Search 5000 users..."></ui-list>\r
+      </div>\r
+    </div>\r
+  
 <script>
 (function() {
-  setTimeout(function() {
-    var el = document.getElementById('listGrouped');
-    if (el) el.items = [
-      { value: 'g1', label: 'Documents', type: 'group' },
-      { value: 'doc1', label: 'Project Plan.docx', description: 'Modified 2h ago', icon: 'file-text', group: 'g1' },
-      { value: 'doc2', label: 'Budget.xlsx', description: 'Modified 1d ago', icon: 'file-text', group: 'g1' },
-      { value: 'g2', label: 'Images', type: 'group' },
-      { value: 'img1', label: 'Banner.png', description: '2.4 MB', icon: 'image', group: 'g2' },
-      { value: 'img2', label: 'Logo.svg', description: '14 KB', icon: 'image', group: 'g2' },
-      { value: 'g3', label: 'Videos', type: 'group' },
-      { value: 'vid1', label: 'Demo.mp4', description: '120 MB', icon: 'video', group: 'g3' }
-    ];
-  }, 50);
+  setTimeout(() => {\r
+    const vl = document.getElementById('virtualList');\r
+    if (vl) {\r
+      vl.items = Array.from({ length: 10000 }, (_, i) => ({\r
+        id: String(i),\r
+        label: \`Item #\${i + 1} — Row content here\`,\r
+        value: \`v\${i}\`,\r
+      }));\r
+      vl.addEventListener('listItemSelect', e => {\r
+        document.getElementById('virtualOutput').textContent = 'Selected: ' + e.detail.value;\r
+      });\r
+    }\r
+\r
+    const vsl = document.getElementById('virtualSearchList');\r
+    if (vsl) {\r
+      vsl.items = Array.from({ length: 5000 }, (_, i) => ({\r
+        id: String(i),\r
+        label: \`User \${i + 1} — user\${i + 1}@example.com\`,\r
+        value: \`user-\${i}\`,\r
+      }));\r
+    }\r
+  }, 200);
 })();
-<\/script>`},{title:`Drag to Reorder`,description:`Drag list items to change their order.`,html:`<div style="padding: 20px; max-width: 420px;">
-  <h3 style="margin-top:0;">Priority Tasks (drag to reorder)</h3>
-  <ui-list id="listDrag" is-draggable="true"></ui-list>
-  <div id="dragLog" style="margin-top:10px;font-size:13px;color:#6b7280;"></div>
-</div>
+<\/script>`},{title:`Selection & Hover Colors`,description:`Items change color on hover or when selected`,html:`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;">\r
+      \r
+      <!-- Custom Hover & Selection -->\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">Selection & Hover Colors</h3>\r
+        <p style="font-size:12px;color:#9ca3af;margin-bottom:12px;">Items change color on hover or when selected</p>\r
+        <ui-list dividers>\r
+          <ui-list-item \r
+            label="Hover Primary" \r
+            sublabel="Soft green highlight"\r
+            hover-color="primary"\r
+            selection-color="primary"\r
+          ></ui-list-item>\r
+          <ui-list-item \r
+            label="Select Success" \r
+            sublabel="Rich green on select"\r
+            selection-color="success"\r
+            selected\r
+          ></ui-list-item>\r
+                  <div class="s-row"><kbd>Shift</kbd> + <kbd>J/K</kbd> <span>Select Range</span></div>\r
+                  <div class="s-row"><kbd>Alt</kbd> <span>(Hold) Ghost Data Layer</span></div>\r
+                  <div class="s-row"><kbd>X</kbd> <span>Toggle Selection</span></div>\r
+          <ui-list-item \r
+            label="Danger Zone" \r
+            sublabel="Red hover and selection"\r
+            hover-color="danger"\r
+            selection-color="danger"\r
+          ></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <!-- Right-side Avatars -->\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">Right-side Media</h3>\r
+        <p style="font-size:12px;color:#9ca3af;margin-bottom:12px;">Avatars and images on the right</p>\r
+        <ui-list dividers>\r
+          <ui-list-item \r
+            label="Chat Message" \r
+            sublabel="Sent from London Office"\r
+            user-avatar="https://i.pravatar.cc/150?u=a1"\r
+            avatar-position="right"\r
+          ></ui-list-item>\r
+          <ui-list-item \r
+            label="Product Status" \r
+            sublabel="Stock updated 5m ago"\r
+            image="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=100&h=100&fit=crop"\r
+            avatar-position="right"\r
+            counter="ACTIVE"\r
+          ></ui-list-item>\r
+          <ui-list-item \r
+            label="System Alert" \r
+            sublabel="CPU usage is high"\r
+            icon="fas fa-exclamation-triangle"\r
+            avatar-position="right"\r
+            color="warning"\r
+          ></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <!-- Combined Pro features -->\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">Advanced Interaction</h3>\r
+        <ui-list items-per-page="3">\r
+          <ui-list-item \r
+            label="Alex Smith" \r
+            sublabel="Full Stack Engineer"\r
+            user-avatar="https://i.pravatar.cc/150?u=alex2"\r
+            avatar-position="right"\r
+            hover-color="info"\r
+            selection-color="info"\r
+            badge="Owner"\r
+            badge-color="primary"\r
+          ></ui-list-item>\r
+          <ui-list-item \r
+            label="Project Delta" \r
+            sublabel="Milestone 4 reached"\r
+            avatar-position="right"\r
+            image="https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=100&h=100&fit=crop"\r
+            selection-color="warning"\r
+            action-icon="fas fa-external-link-alt"\r
+          ></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+      <!-- Advanced Status & Actions -->\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">Pro Features (Lock & Menu)</h3>\r
+        <p style="font-size:12px;color:#9ca3af;margin-bottom:12px;">Locked items and 3-dot action menus</p>\r
+        <ui-list dividers>\r
+          <ui-list-item \r
+            label="System Configuration" \r
+            sublabel="Standard settings (read-only)"\r
+            icon="fas fa-cog"\r
+            locked\r
+          ></ui-list-item>\r
+          <ui-list-item \r
+            label="Cloud Deployment" \r
+            sublabel="AWS Environment — Production"\r
+            icon="fas fa-cloud"\r
+            show-menu\r
+            context-menu\r
+          >\r
+            <ui-list-item slot="children" label="Restart" icon="fas fa-sync" value="restart"></ui-list-item>\r
+            <ui-list-item slot="children" label="Scale" icon="fas fa-rocket" value="scale"></ui-list-item>\r
+            <ui-list-item slot="children" label="Terminate" icon="fas fa-power-off" value="term" color="danger"></ui-list-item>\r
+          </ui-list-item>\r
+          <ui-list-item \r
+            label="User Accounts" \r
+            sublabel="Manage 24 active members"\r
+            icon="fas fa-users"\r
+            show-menu\r
+            context-menu\r
+          >\r
+             <ui-list-item slot="children" label="View Profile" icon="fas fa-user" value="profile"></ui-list-item>\r
+             <ui-list-item slot="children" label="Suspend" icon="fas fa-user-slash" value="suspend" color="warning"></ui-list-item>\r
+          </ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+    </div>`},{title:`List Masterpiece`,description:`Monitoring active global edge nodes`,html:`<div style="max-width:800px;margin:auto;">\r
+      <div style="background:white;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,0.1);overflow:hidden;">\r
+        <div style="padding:24px;background:linear-gradient(135deg, #1e293b, #334155);color:white;">\r
+          <h2 style="margin:0;font-size:20px;">💎 Ultra-Apex Cluster Control</h2>\r
+          <p style="margin:4px 0 0;font-size:13px;opacity:0.8;">Monitoring active global edge nodes</p>\r
+        </div>\r
+        \r
+        <ui-list \r
+          id="masterpieceList"\r
+          grouped\r
+          group-by="group"\r
+          sticky-headers\r
+          multi-select\r
+          show-bulk-header\r
+          infinite\r
+          syncing\r
+          show-group-footer\r
+          group-footer-label="Nodes"\r
+          floating-fab\r
+          density="comfortable"\r
+          show-minimap\r
+          command-k\r
+          ekg-active\r
+          group-mini-dashboard\r
+          aura-mode\r
+          view-tabs='[{"label":"Inventory","filter":""}, {"label":"Active Nodes","filter":"online"}, {"label":"Critical","filter":"danger"}]'\r
+        ></ui-list>\r
+      </div>\r
+      \r
+      <div style="margin-top:20px;padding:16px;background:rgba(0,0,0,0.05);border-radius:12px;font-family:monospace;font-size:12px;" id="masterpieceLogger">\r
+        > Ultra-Apex System Initialized. Try "J/K" keys for rapid navigation.\r
+      </div>\r
+    </div>\r
+  
 <script>
 (function() {
-  setTimeout(function() {
-    var el = document.getElementById('listDrag');
-    var log = document.getElementById('dragLog');
-    if (el) {
-      el.items = [
-        { value: 't1', label: '1. Fix critical bug', icon: 'alert-circle' },
-        { value: 't2', label: '2. Write unit tests', icon: 'check-square' },
-        { value: 't3', label: '3. Code review', icon: 'git-branch' },
-        { value: 't4', label: '4. Update docs', icon: 'book-open' },
-        { value: 't5', label: '5. Deploy to staging', icon: 'upload-cloud' }
-      ];
-      el.addEventListener('listReorder', function(e) {
-        if (log) log.textContent = 'Reordered: item moved to position ' + (e.detail.newIndex + 1);
-      });
-    }
-  }, 50);
+  const list = document.getElementById('masterpieceList');\r
+  const logger = document.getElementById('masterpieceLogger');\r
+\r
+  list.items = initialItems;\r
+  list.filterChips = filterChips;\r
+  list.bulkActions = [\r
+    { icon: 'fas fa-play', label: 'Start All', action: 'start' },\r
+    { icon: 'fas fa-stop', label: 'Stop All', action: 'stop' },\r
+    { icon: 'fas fa-trash', label: 'Purge', action: 'delete' },\r
+  ];\r
+\r
+  list.addEventListener('loadMore', () => {\r
+    if (list.items.length > 50) return;\r
+    const newItems = [\r
+      { label: 'Instance #' + (list.items.length + 1), sublabel: 'Initializing...', icon: 'fas fa-server', group: 'Network' },\r
+      { label: 'Node #' + (list.items.length + 2), sublabel: 'Provisioning...', icon: 'fas fa-cube', group: 'System' },\r
+    ];\r
+    setTimeout(() => {\r
+      list.items = [...list.items, ...newItems];\r
+      logger.innerText = \`> Loaded 2 more units. Total: \${list.items.length}\`;\r
+    }, 800);\r
+  });\r
+\r
+  list.addEventListener('bulkAction', e => {\r
+    logger.innerText = \`> Bulk Action: \${e.detail.action.toUpperCase()} on items: \${e.detail.values.join(', ')}\`;\r
+    if (e.detail.action === 'delete') {\r
+      list.items = list.items.filter(item => !e.detail.values.includes(item.label));\r
+    }\r
+  });
 })();
-<\/script>`},{title:`Paginated List`,description:`Large datasets split across pages with built-in pagination.`,html:`<div style="padding: 20px; max-width: 420px;">
-  <h3 style="margin-top:0;">Paginated Items (5 per page)</h3>
-  <ui-list id="listPaged" paginated="true" items-per-page="5"></ui-list>
-</div>
+<\/script>`},{title:`List Grid`,description:``,html:`<div style="padding:24px;">\r
+      <h2 style="margin-bottom:24px;text-align:center;">Project Portfolio Grid</h2>\r
+      <ui-list grid id="gridList" grid-cols="3"></ui-list>\r
+    </div>\r
+  
 <script>
 (function() {
-  setTimeout(function() {
-    var el = document.getElementById('listPaged');
-    if (el) {
-      var items = [];
-      for (var i = 1; i <= 25; i++) {
-        items.push({ value: 'item' + i, label: 'Item ' + i, description: 'Entry number ' + i, icon: 'list' });
-      }
-      el.items = items;
-    }
-  }, 50);
+  document.getElementById('gridList').items = projects;
 })();
-<\/script>`},{title:`Virtual Scroll`,description:`10,000 items rendered efficiently with virtual scrolling.`,html:`<div style="padding: 20px; max-width: 420px;">
-  <h3 style="margin-top:0;">Virtual Scroll — 10,000 Items</h3>
-  <ui-list id="listVirtual" virtual="true" max-height="350px" item-height="48"></ui-list>
-</div>
-<script>
-(function() {
-  setTimeout(function() {
-    var el = document.getElementById('listVirtual');
-    if (el) {
-      var items = [];
-      for (var i = 1; i <= 10000; i++) {
-        items.push({ value: 'v' + i, label: 'Virtual Item ' + i, description: 'Row #' + i });
-      }
-      el.items = items;
-    }
-  }, 50);
-})();
-<\/script>`},{title:`Selection & Colors`,description:`Selectable list with highlighted active item.`,html:`<div style="padding: 20px; max-width: 420px;">
-  <h3 style="margin-top:0;">Team Members</h3>
-  <ui-list id="listSelect" selectable="true" selection-header-color="primary"></ui-list>
-  <div id="selectLog" style="margin-top:10px;font-size:13px;color:#6b7280;">Click an item to select</div>
-</div>
-<script>
-(function() {
-  setTimeout(function() {
-    var el = document.getElementById('listSelect');
-    var log = document.getElementById('selectLog');
-    if (el) {
-      el.items = [
-        { value: 'alice', label: 'Alice Johnson', description: 'Frontend Lead', icon: 'user' },
-        { value: 'bob', label: 'Bob Chen', description: 'Backend Engineer', icon: 'user' },
-        { value: 'carol', label: 'Carol Davis', description: 'UX Designer', icon: 'user' },
-        { value: 'dan', label: 'Dan Martinez', description: 'DevOps', icon: 'user' }
-      ];
-      el.addEventListener('listSelectionChange', function(e) {
-        var sel = e.detail.selectedItem;
-        if (log && sel) log.textContent = 'Selected: ' + sel.label;
-      });
-    }
-  }, 50);
-})();
-<\/script>`},{title:`Loading State`,description:`Skeleton placeholder while data is being fetched.`,html:`<div style="padding: 20px; max-width: 420px;">
-  <h3 style="margin-top:0;">Loading State</h3>
-  <ui-list id="listLoading" loading="true">
-  </ui-list>
-  <div style="margin-top:12px;">
-    <ui-button id="loadBtn" size="sm" variant="outline">Load Data</ui-button>
-  </div>
-</div>
-<script>
-(function() {
-  setTimeout(function() {
-    var list = document.getElementById('listLoading');
-    var btn = document.getElementById('loadBtn');
-    if (btn && list) {
-      btn.addEventListener('click', function() {
-        list.loading = true;
-        setTimeout(function() {
-          list.items = [
-            { value: '1', label: 'Loaded Item 1', icon: 'check' },
-            { value: '2', label: 'Loaded Item 2', icon: 'check' },
-            { value: '3', label: 'Loaded Item 3', icon: 'check' }
-          ];
-          list.loading = false;
-        }, 1200);
-      });
-    }
-  }, 100);
-})();
-<\/script>`}],loader:[{title:`Animation Types`,description:`Explore our library of 34 high-fidelity, high-performance animation patterns.`,html:`<div class="demo-block">\r
-        <h3>Animation Types</h3>\r
-        <p style="font-size: 13px; color: #64748b; margin-bottom: 24px;">Explore our library of 34 high-fidelity, high-performance animation patterns.</p>\r
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; text-align: center; padding: 20px;">\r
-          \${[\r
-            'spinner',\r
-            'dots',\r
-            'bar',\r
-            'pulse',\r
-            'ring',\r
-            'bounce',\r
-            'grid',\r
-            'wave',\r
-            'dual-ring',\r
-            'heartbeat',\r
-            'clock',\r
-            'raining-letters',\r
-            'ripple',\r
-            'infinite',\r
-            'wifi',\r
-            'rainbow',\r
-            'square-shuffle',\r
-            'dna-helix',\r
-            'atom-sphere',\r
-            'staircase',\r
-            'radar',\r
-            'liquid-drop',\r
-            'neon-path',\r
-            'neuro-pulse',\r
-            'vortex-ring',\r
-            'cube-fold',\r
-            'breathing',\r
-            'glitch-text',\r
-            'plc-module',\r
-            'm580-signal',\r
-            'circuit-board',\r
-            'callout-rotate',\r
-            'infinite-roller',\r
-            'image',\r
-          ]\r
-            .map(\r
-              type => 
-<script>
-(function() {
-  <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">\r
-                <ui-loader type="\${type}" color="primary" size="xl"></ui-loader>\r
-                <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">\${type.replace('-', ' ')}</p>\r
-              </div>\r
-            \`,\r
-            )\r
-            .join('')}\r
+<\/script>`},{title:`Source Explorer`,description:``,html:`<div style="padding:40px;max-width:600px;margin:auto;">\r
+      <div style="background:white;border-radius:12px;padding:24px;box-shadow:0 10px 25px rgba(0,0,0,0.1);">\r
+        <h3 style="margin-top:0;">Source Explorer</h3>\r
+        <ui-list>\r
+          <ui-list-item label="src" icon="fas fa-folder-open" collapsible expanded>\r
+             <ui-list-item slot="children" label="assets" icon="fas fa-folder" collapsible level="1" tree-lines>\r
+                <ui-list-item slot="children" label="styles" icon="fas fa-folder" collapsible level="2" tree-lines>\r
+                   <ui-list-item slot="children" label="main.scss" icon="fab fa-sass" level="3" tree-lines color="info"></ui-list-item>\r
+                   <ui-list-item slot="children" label="theme.scss" icon="fab fa-sass" level="3" tree-lines color="info"></ui-list-item>\r
+                </ui-list-item>\r
+             </ui-list-item>\r
+             <ui-list-item slot="children" label="components" icon="fas fa-folder" collapsible level="1" tree-lines>\r
+                <ui-list-item slot="children" label="list.tsx" icon="fas fa-code" level="2" tree-lines color="success"></ui-list-item>\r
+                <ui-list-item slot="children" label="icon.tsx" icon="fas fa-image" level="2" tree-lines color="warning"></ui-list-item>\r
+             </ui-list-item>\r
+             <ui-list-item slot="children" label="package.json" icon="fas fa-file-invoice" level="1" tree-lines></ui-list-item>\r
+          </ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+    </div>`},{title:"📦 Large Dataset (${count} items)",description:`This list renders all 150 items directly in the DOM. This is useful for testing scrolling smoothness, keyboard navigation latency, and initial data binding performance.`,html:`<div style="max-width:800px; margin:0 auto;">\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.1);">\r
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">\r
+          <h3 style="margin:0;font-size:18px;color:#1e293b;">📦 Large Dataset (\${count} items)</h3>\r
+          <span style="background:#f1f5f9; padding:4px 10px; border-radius:20px; font-size:12px; font-weight:600; color:#475569;">Non-Virtual</span>\r
+        </div>\r
+        <p style="font-size:14px; color:#64748b; margin-bottom:20px;">\r
+          This list renders all 150 items directly in the DOM. This is useful for testing scrolling smoothness, keyboard navigation latency, and initial data binding performance.\r
+        </p>\r
+        <ui-list id="largeList" max-height="600px" dividers searchable search-placeholder="Filter 150 items..."></ui-list>\r
+        <div id="largeListOutput" style="margin-top:16px; padding:12px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; font-size:13px; color:#1e293b;">\r
+          Selected: <span style="font-weight:600; color:#2563eb;">none</span>\r
         </div>\r
       </div>\r
-    \`;
-})();
-<\/script>`},{title:`Size Variants`,description:`From micro-indicators (3XS) to massive full-screen attention grabbers (Jumbo).`,html:`<div class="demo-block">\r
-        <h3>Size Variants</h3>\r
-        <p style="font-size: 13px; color: #64748b; margin-bottom: 24px;">From micro-indicators (3XS) to massive full-screen attention grabbers (Jumbo).</p>\r
-        <div style="display: flex; gap: 30px; align-items: center; justify-content: center; flex-wrap: wrap; padding: 40px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">\r
-          \${['3xs', 'xs', 'small', 'md', 'large', 'xl', '3xl', 'jumbo']\r
-            .map(\r
-              size => 
+    </div>\r
+  
 <script>
 (function() {
-  <div style="text-align: center;">\r
-                <ui-loader size="\${size}" color="primary" type="spinner"></ui-loader>\r
-                <p style="margin-top: 10px; font-size: 10px; font-weight: bold; opacity: 0.6; text-transform: uppercase;">\${size}</p>\r
-              </div>\r
-            \`,\r
-            )\r
-            .join('')}\r
+  ,\r
+    sublabel: \`Testing scroll and rendering with 100+ items (Index: \${i})\`,\r
+    icon: i % 2 === 0 ? 'fas fa-server' : 'fas fa-database',\r
+    value: \`item-\${i + 1}\`,\r
+    counter: i % 10 === 0 ? 'NEW' : null,\r
+    color: i % 5 === 0 ? 'primary' : 'default',\r
+  }));\r
+\r
+  c.innerHTML = \`\r
+    <div style="max-width:800px; margin:0 auto;">\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.1);">\r
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">\r
+          <h3 style="margin:0;font-size:18px;color:#1e293b;">📦 Large Dataset (\${count} items)</h3>\r
+          <span style="background:#f1f5f9; padding:4px 10px; border-radius:20px; font-size:12px; font-weight:600; color:#475569;">Non-Virtual</span>\r
+        </div>\r
+        <p style="font-size:14px; color:#64748b; margin-bottom:20px;">\r
+          This list renders all 150 items directly in the DOM. This is useful for testing scrolling smoothness, keyboard navigation latency, and initial data binding performance.\r
+        </p>\r
+        <ui-list id="largeList" max-height="600px" dividers searchable search-placeholder="Filter 150 items..."></ui-list>\r
+        <div id="largeListOutput" style="margin-top:16px; padding:12px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; font-size:13px; color:#1e293b;">\r
+          Selected: <span style="font-weight:600; color:#2563eb;">none</span>\r
         </div>\r
       </div>\r
-    \`;
+    </div>\r
+  \`;\r
+\r
+  setTimeout(() => {\r
+    const el = document.getElementById('largeList');\r
+    if (el) {\r
+      el.items = items;\r
+      el.addEventListener('listItemSelect', e => {\r
+        const out = document.getElementById('largeListOutput');\r
+        if (out) out.innerHTML = \`Selected: <span style="font-weight:600; color:#2563eb;">\${e.detail.value}</span>\`;\r
+      });\r
+    }\r
+  }, 200);
 })();
-<\/script>`},{title:`Color Palette Showcase`,description:`Built-in variants and any custom HEX / Gradients.`,html:`<div class="demo-block">\r
-        <h3>Color Palette Showcase</h3>\r
-        <p style="font-size: 13px; color: #64748b; margin-bottom: 24px;">Built-in variants and any custom HEX / Gradients.</p>\r
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 20px;">\r
-          \${['primary', 'secondary', 'success', 'danger', 'info', '#ff00ff', 'linear-gradient(90deg, #4facfe 0%, #00f2fe 100%)']\r
-            .map(\r
-              color => 
+<\/script>`},{title:`⏳ Loading State`,description:``,html:`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">⏳ Loading State</h3>\r
+        <ui-list loading loading-text="Fetching items..." id="loadingList"></ui-list>\r
+        <ui-button onclick="window.toggleListLoading()" style="margin-top:12px;padding:8px 16px;background:#10b981;color:white;border:none;border-radius:6px;cursor:pointer;font-size:13px;">\r
+          Toggle Loading\r
+        </ui-button>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">📭 Empty State</h3>\r
+        <ui-list id="emptyList" empty-text="No results found. Try a different search." show-empty></ui-list>\r
+        <ui-button onclick="window.loadEmptyList()" style="margin-top:12px;padding:8px 16px;background:#10b981;color:white;border:none;border-radius:6px;cursor:pointer;font-size:13px;">\r
+          Load Items\r
+        </ui-button>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">🔗 Link Items</h3>\r
+        <ui-list dividers>\r
+          <ui-list-item label="GitHub"    icon="fab fa-github"     value="gh"     href="https://github.com" target="_blank"></ui-list-item>\r
+          <ui-list-item label="LinkedIn"  icon="fab fa-linkedin"   value="li"     href="https://linkedin.com" target="_blank"></ui-list-item>\r
+          <ui-list-item label="Twitter"   icon="fab fa-twitter"    value="tw"     href="https://twitter.com" target="_blank"></ui-list-item>\r
+          <ui-list-item label="YouTube"   icon="fab fa-youtube"    value="yt"     href="https://youtube.com" target="_blank"></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">↔️ Horizontal List</h3>\r
+        <ui-list horizontal>\r
+          <ui-list-item label="Home"     icon="fas fa-home"    value="h"></ui-list-item>\r
+          <ui-list-item label="Search"   icon="fas fa-search"  value="s"></ui-list-item>\r
+          <ui-list-item label="Library"  icon="fas fa-book"    value="l"></ui-list-item>\r
+          <ui-list-item label="Profile"  icon="fas fa-user"    value="p"></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">🎛️ Playground</h3>\r
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px;">\r
+          <ui-checkbox id="pgDividers" label="Dividers" oncheckboxchange="updateListPlayground()"></ui-checkbox>\r
+          <ui-checkbox id="pgDense" label="Dense" oncheckboxchange="updateListPlayground()"></ui-checkbox>\r
+          <ui-checkbox id="pgRounded" label="Rounded" oncheckboxchange="updateListPlayground()"></ui-checkbox>\r
+          <ui-checkbox id="pgElevated" label="Elevated" oncheckboxchange="updateListPlayground()"></ui-checkbox>\r
+          <ui-checkbox id="pgNumbered" label="Numbered" oncheckboxchange="updateListPlayground()"></ui-checkbox>\r
+          <label style="font-size:13px;display:flex;align-items:center;gap:6px;">\r
+            Variant:\r
+            <ui-dropdown id="pgVariant" onchange="updateListPlayground()" style="padding:4px 8px;border-radius:4px;border:1px solid #d1d5db;">\r
+              <option>text</option><option>filled</option><option>outlined</option><option>soft</option>\r
+            </ui-dropdown>\r
+          </label>\r
+        </div>\r
+        <ui-list id="playgroundList" dividers>\r
+          <ui-list-item label="Item Alpha"   icon="fas fa-circle" value="a"></ui-list-item>\r
+          <ui-list-item label="Item Beta"    icon="fas fa-circle" value="b"></ui-list-item>\r
+          <ui-list-item label="Item Gamma"   icon="fas fa-circle" value="c"></ui-list-item>\r
+          <ui-list-item label="Item Delta"   icon="fas fa-circle" value="d"></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <div class="demo-block" style="background:white;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">\r
+        <h3 style="margin-top:0;font-size:15px;">📋 Events Log</h3>\r
+        <ui-list id="eventList" dividers multi-select>\r
+          <ui-list-item label="Click me!" icon="fas fa-hand-pointer" value="v1"></ui-list-item>\r
+          <ui-list-item label="And me!"   icon="fas fa-hand-pointer" value="v2"></ui-list-item>\r
+          <ui-list-item label="Also me!"  icon="fas fa-hand-pointer" value="v3"></ui-list-item>\r
+        </ui-list>\r
+        <div id="eventLog" style="margin-top:12px;background:#1e293b;border-radius:8px;padding:12px;height:120px;overflow-y:auto;font-family:monospace;font-size:11px;color:#94a3b8;"></div>\r
+      </div>\r
+    </div>\r
+  
 <script>
 (function() {
-  <div style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; gap: 12px;">\r
-                <div style="display: flex; gap: 16px;">\r
-                  <ui-loader color="\${color}" size="md" type="\${color.includes('gradient') ? 'dots' : 'spinner'}"></ui-loader>\r
-                  <ui-loader color="\${color}" size="md" type="\${color.includes('gradient') ? 'bar' : 'dots'}"></ui-loader>\r
-                </div>\r
-                <p style="font-family: monospace; font-size: 11px; color: #64748b; margin: 0;">\${color}</p>\r
-              </div>\r
-            \`,\r
-            )\r
-            .join('')}\r
-        </div>\r
-      </div>\r
-    \`;
+  // Loading state toggle\r
+  window.toggleListLoading = () => {\r
+    const ll = document.getElementById('loadingList');\r
+    if (ll) ll.loading = !ll.loading;\r
+  };\r
+\r
+  // Empty state demo\r
+  window.loadEmptyList = () => {\r
+    const el = document.getElementById('emptyList');\r
+    if (el) {\r
+      el.items = [\r
+        { id: '1', label: 'Loaded Item A', value: 'a' },\r
+        { id: '2', label: 'Loaded Item B', value: 'b' },\r
+        { id: '3', label: 'Loaded Item C', value: 'c' },\r
+      ];\r
+    }\r
+  };\r
+\r
+  // Playground update\r
+  window.updateListPlayground = () => {\r
+    const pl = document.getElementById('playgroundList');\r
+    if (!pl) return;\r
+    pl.dividers = document.getElementById('pgDividers').checked;\r
+    pl.dense = document.getElementById('pgDense').checked;\r
+    pl.rounded = document.getElementById('pgRounded').checked;\r
+    pl.elevated = document.getElementById('pgElevated').checked;\r
+    pl.numbered = document.getElementById('pgNumbered').checked;\r
+    pl.variant = document.getElementById('pgVariant').value;\r
+    // update items' variant too\r
+    pl.querySelectorAll('ui-list-item').forEach(item => {\r
+      item.variant = pl.variant;\r
+    });\r
+  };\r
+\r
+  // Events log\r
+  setTimeout(() => {\r
+    const el = document.getElementById('eventList');\r
+    const log = document.getElementById('eventLog');\r
+    if (el && log) {\r
+      const addLog = msg => {\r
+        const line = document.createElement('div');\r
+        line.textContent = \`[\${new Date().toLocaleTimeString()}] \${msg}\`;\r
+        log.insertBefore(line, log.firstChild);\r
+        if (log.children.length > 20) log.removeChild(log.lastChild);\r
+      };\r
+      el.addEventListener('listItemSelect', e => addLog(\`listItemSelect → value="\${e.detail.value}"\`));\r
+      el.addEventListener('listChange', e => addLog(\`listChange → values=[\${e.detail.values.join(',')}]\`));\r
+    }\r
+  }, 200);
 })();
-<\/script>`},{title:`🗣️ Intelligent Message Rotation`,description:`Enhance perceived performance by rotating through status updates. Perfect for long processes.`,html:`<div style="display: flex; flex-direction: column; gap: 40px;">\r
+<\/script>`},{title:`👥 Smart User Directory`,description:``,html:`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px;">\r
+\r
+      <!-- 1. User Directory (Avatars + Tags) -->\r
+      <div class="demo-block" style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 10px 25px rgba(0,0,0,0.05);">\r
+        <h3 style="margin:0 0 16px;font-size:16px;color:#1e293b;display:flex;align-items:center;gap:8px;">\r
+          <span style="font-size:20px;">👥</span> Smart User Directory\r
+        </h3>\r
+        <ui-list dividers>\r
+          <ui-list-item \r
+            label="Marcus Rodriguez" \r
+            sublabel="Principal Engineer — London"\r
+            user-avatar="https://i.pravatar.cc/150?u=marcus"\r
+            badge="Admin"\r
+            badge-color="primary"\r
+            tags='[{"label":"AI","color":"indigo","variant":"soft"},{"label":"React","color":"info","variant":"soft"}]'\r
+            multiline\r
+          ></ui-list-item>\r
+          <ui-list-item \r
+            label="Sasha Silver" \r
+            sublabel="Product Designer — Berlin"\r
+            user-avatar="https://i.pravatar.cc/150?u=sasha"\r
+            badge="Pro"\r
+            badge-color="success"\r
+            tags='[{"label":"Figma","color":"warning","variant":"soft"},{"label":"UX","color":"danger","variant":"soft"}]'\r
+            multiline\r
+          ></ui-list-item>\r
+          <ui-list-item \r
+            label="Priya Sharma" \r
+            sublabel="Growth Lead — Mumbai"\r
+            user-avatar="https://i.pravatar.cc/150?u=priya"\r
+            tags='[{"label":"Marketing","color":"success","variant":"soft"}]'\r
+            multiline\r
+          ></ui-list-item>\r
+          <ui-list-item \r
+            label="Alex Chen" \r
+            sublabel="DevOps Engineer — Remote"\r
+            user-avatar="https://i.pravatar.cc/150?u=alex"\r
+            badge="External"\r
+            badge-color="secondary"\r
+            multiline\r
+          ></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <!-- 2. Product Catalog (Images + Counters) -->\r
+      <div class="demo-block" style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 10px 25px rgba(0,0,0,0.05);">\r
+        <h3 style="margin:0 0 16px;font-size:16px;color:#1e293b;display:flex;align-items:center;gap:8px;">\r
+          <span style="font-size:20px;">🛒</span> Store Inventory\r
+        </h3>\r
+        <ui-list dividers variant="outline">\r
+          <ui-list-item \r
+            label="Premium Headphones" \r
+            sublabel="Noise Cancelling — Bluetooth 5.0"\r
+            image="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200&h=200&fit=crop"\r
+            counter="$299"\r
+            badge="Sale"\r
+            badge-color="danger"\r
+            multiline\r
+          ></ui-list-item>\r
+          <ui-list-item \r
+            label="Smart Watch G2" \r
+            sublabel="Oxygen Sensor — OLED"\r
+            image="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200&h=200&fit=crop"\r
+            counter="$349"\r
+            multiline\r
+          ></ui-list-item>\r
+          <ui-list-item \r
+            label="Mechanical Keyboard" \r
+            sublabel="Cherry MX Blue — RGB"\r
+            image="https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=200&h=200&fit=crop"\r
+            counter="$189"\r
+            badge="-15%"\r
+            badge-color="success"\r
+            multiline\r
+          ></ui-list-item>\r
+        </ui-list>\r
+      </div>\r
+\r
+      <div id="apexDemoContainer2" class="demo-block" style="grid-column: 1 / -1; display:grid; grid-template-columns:repeat(auto-fit,minmax(400px,1fr)); gap:24px;"></div>\r
+    </div>\r
+  
+<script>
+(function() {
+  const c2 = document.getElementById('apexDemoContainer2');\r
+  if (!c2) return;\r
+\r
+  c2.innerHTML = \`\r
+    <!-- 3. Skeleton Loading Flow -->\r
+    <div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 10px 25px rgba(0,0,0,0.05); position:relative;">\r
+      <h3 style="margin:0 0 16px;font-size:16px;color:#1e293b;display:flex;align-items:center;gap:8px;">\r
+        <span style="font-size:20px;">🪄</span> Loading Experience (Skeletons)\r
+      </h3>\r
+      <ui-list id="skeletonDemoList" dividers></ui-list>\r
+      <ui-button \r
+        onclick="window.toggleApexSkeleton()"\r
+        style="margin-top:20px; width:100%; padding:12px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; font-weight:600; cursor:pointer; color:#64748b; transition:all 0.2s;"\r
+        onmouseover="this.style.background='#f1f5f9'"\r
+        onmouseout="this.style.background='#f8fafc'"\r
+      >\r
+        🪄 Toggle Skeleton State\r
+      </ui-button>\r
+    </div>\r
+\r
+    <!-- 4. Real-time Discovery (Highlighting) -->\r
+    <div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 10px 25px rgba(0,0,0,0.05);">\r
+      <h3 style="margin:0 0 16px;font-size:16px;color:#1e293b;display:flex;align-items:center;gap:8px;">\r
+        <span style="font-size:20px;">🔦</span> Live Discovery (Search Highlighting)\r
+      </h3>\r
+      <ui-list \r
+        id="highlightDemoList" \r
+        searchable \r
+        search-query="node"\r
+        search-placeholder="Try searching for 'javascript' or 'python'..." \r
+        density="cozy"\r
+        view-tabs='[{"label":"Inventory","filter":""}, {"label":"Active Nodes","filter":"online"}, {"label":"Critical","filter":"danger"}]'\r
+        max-height="600px"\r
+        dividers\r
+      ></ui-list>\r
+    </div>\r
+  \`;\r
+\r
+  // Populate Skeleton Demo\r
+  const skList = document.getElementById('skeletonDemoList');\r
+  if (skList) {\r
+    skList.skeleton = true; // Start as skeleton\r
+    skList.items = [\r
+      { label: 'Loading User...', sublabel: 'Fetching metadata...', avatar: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' },\r
+      { label: 'Loading User...', sublabel: 'Fetching metadata...', avatar: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' },\r
+      { label: 'Loading User...', sublabel: 'Fetching metadata...', avatar: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' },\r
+    ];\r
+  }\r
+\r
+  // Populate Highlight Demo\r
+  const hList = document.getElementById('highlightDemoList');\r
+  if (hList) {\r
+    hList.items = [\r
+      { label: 'JavaScript Frameworks', sublabel: 'React, Vue, Angular, Node.js', icon: 'fab fa-js' },\r
+      { label: 'Node.js Runtime', sublabel: 'Built on Chrome V8 engine', icon: 'fab fa-node-js' },\r
+      { label: 'Python Scripting', sublabel: 'Data analysis and backend', icon: 'fab fa-python' },\r
+      { label: 'React Native', sublabel: 'Mobile apps with JS', icon: 'fab fa-react' },\r
+      { label: 'TypeScript', sublabel: 'Typed JavaScript variant', icon: 'fab fa-js-square' },\r
+    ];\r
+  }\r
+\r
+  window.toggleApexSkeleton = () => {\r
+    const el = document.getElementById('skeletonDemoList');\r
+    if (el) {\r
+      el.skeleton = !el.skeleton;\r
+      // When not skeleton, load actual data\r
+      if (!el.skeleton) {\r
+        el.items = [\r
+          { label: 'Thomas Anderson', sublabel: 'The One — Core Systems', userAvatar: 'https://i.pravatar.cc/150?u=neo', tags: '["Hero","Matrix"]' },\r
+          { label: 'Trinity Moss', sublabel: 'Tactical Lead', userAvatar: 'https://i.pravatar.cc/150?u=trinity', tags: '["Pilot","Combat"]' },\r
+          { label: 'Morpheus Dream', sublabel: 'Captain — Nebuchadnezzar', userAvatar: 'https://i.pravatar.cc/150?u=morpheus', tags: '["Leader","Captain"]' },\r
+        ];\r
+      } else {\r
+        el.items = [\r
+          { label: 'Loading User...', sublabel: 'Fetching metadata...', avatar: '' },\r
+          { label: 'Loading User...', sublabel: 'Fetching metadata...', avatar: '' },\r
+          { label: 'Loading User...', sublabel: 'Fetching metadata...', avatar: '' },\r
+        ];\r
+      }\r
+    }\r
+  };
+})();
+<\/script>`}],loader:[{title:`Animation Types`,description:`Explore our library of 34 high-fidelity, high-performance animation patterns.`,html:`<div class="demo-block">
+        <h3>Animation Types</h3>
+        <p style="font-size: 13px; color: #64748b; margin-bottom: 24px;">Explore our library of 34 high-fidelity, high-performance animation patterns.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; text-align: center; padding: 20px;">
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="spinner" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">spinner</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="dots" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">dots</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="bar" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">bar</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="pulse" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">pulse</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="ring" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">ring</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="bounce" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">bounce</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="grid" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">grid</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="wave" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">wave</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="dual-ring" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">dual ring</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="heartbeat" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">heartbeat</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="clock" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">clock</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="raining-letters" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">raining letters</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="ripple" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">ripple</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="infinite" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">infinite</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="wifi" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">wifi</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="rainbow" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">rainbow</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="square-shuffle" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">square shuffle</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="dna-helix" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">dna helix</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="atom-sphere" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">atom sphere</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="staircase" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">staircase</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="radar" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">radar</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="liquid-drop" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">liquid drop</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="neon-path" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">neon path</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="neuro-pulse" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">neuro pulse</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="vortex-ring" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">vortex ring</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="cube-fold" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">cube fold</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="breathing" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">breathing</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="glitch-text" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">glitch text</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="plc-module" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">plc module</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="m580-signal" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">m580 signal</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="circuit-board" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">circuit board</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="callout-rotate" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">callout rotate</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="infinite-roller" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">infinite roller</p>
+          </div>
+          <div style="padding: 25px; border: 1px solid #e2e8f0; border-radius: 12px; background: white; transition: transform 0.2s, box-shadow 0.2s; cursor: default;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none';">
+            <ui-loader type="image" color="primary" size="xl"></ui-loader>
+            <p style="margin-top: 15px; font-size: 11px; font-weight: 800; text-transform: uppercase; color: #1e293b; letter-spacing: 0.05em;">image</p>
+          </div>
+        </div>
+      </div>`},{title:`Size Variants`,description:`From micro-indicators (3XS) to massive full-screen attention grabbers (Jumbo).`,html:`<div class="demo-block">
+        <h3>Size Variants</h3>
+        <p style="font-size: 13px; color: #64748b; margin-bottom: 24px;">From micro-indicators (3XS) to massive full-screen attention grabbers (Jumbo).</p>
+        <div style="display: flex; gap: 30px; align-items: center; justify-content: center; flex-wrap: wrap; padding: 40px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+          <div style="text-align: center;">
+            <ui-loader size="3xs" color="primary" type="spinner"></ui-loader>
+            <p style="margin-top: 10px; font-size: 10px; font-weight: bold; opacity: 0.6; text-transform: uppercase;">3xs</p>
+          </div>
+          <div style="text-align: center;">
+            <ui-loader size="xs" color="primary" type="spinner"></ui-loader>
+            <p style="margin-top: 10px; font-size: 10px; font-weight: bold; opacity: 0.6; text-transform: uppercase;">xs</p>
+          </div>
+          <div style="text-align: center;">
+            <ui-loader size="small" color="primary" type="spinner"></ui-loader>
+            <p style="margin-top: 10px; font-size: 10px; font-weight: bold; opacity: 0.6; text-transform: uppercase;">small</p>
+          </div>
+          <div style="text-align: center;">
+            <ui-loader size="md" color="primary" type="spinner"></ui-loader>
+            <p style="margin-top: 10px; font-size: 10px; font-weight: bold; opacity: 0.6; text-transform: uppercase;">md</p>
+          </div>
+          <div style="text-align: center;">
+            <ui-loader size="large" color="primary" type="spinner"></ui-loader>
+            <p style="margin-top: 10px; font-size: 10px; font-weight: bold; opacity: 0.6; text-transform: uppercase;">large</p>
+          </div>
+          <div style="text-align: center;">
+            <ui-loader size="xl" color="primary" type="spinner"></ui-loader>
+            <p style="margin-top: 10px; font-size: 10px; font-weight: bold; opacity: 0.6; text-transform: uppercase;">xl</p>
+          </div>
+          <div style="text-align: center;">
+            <ui-loader size="3xl" color="primary" type="spinner"></ui-loader>
+            <p style="margin-top: 10px; font-size: 10px; font-weight: bold; opacity: 0.6; text-transform: uppercase;">3xl</p>
+          </div>
+          <div style="text-align: center;">
+            <ui-loader size="jumbo" color="primary" type="spinner"></ui-loader>
+            <p style="margin-top: 10px; font-size: 10px; font-weight: bold; opacity: 0.6; text-transform: uppercase;">jumbo</p>
+          </div>
+        </div>
+      </div>`},{title:`Color Palette Showcase`,description:`Built-in variants and any custom HEX / Gradients.`,html:`<div class="demo-block">
+        <h3>Color Palette Showcase</h3>
+        <p style="font-size: 13px; color: #64748b; margin-bottom: 24px;">Built-in variants and any custom HEX / Gradients.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 20px;">
+          <div style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+            <div style="display: flex; gap: 16px;">
+              <ui-loader color="primary" size="md" type="spinner"></ui-loader>
+              <ui-loader color="primary" size="md" type="dots"></ui-loader>
+            </div>
+            <p style="font-family: monospace; font-size: 11px; color: #64748b; margin: 0;">primary</p>
+          </div>
+          <div style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+            <div style="display: flex; gap: 16px;">
+              <ui-loader color="secondary" size="md" type="spinner"></ui-loader>
+              <ui-loader color="secondary" size="md" type="dots"></ui-loader>
+            </div>
+            <p style="font-family: monospace; font-size: 11px; color: #64748b; margin: 0;">secondary</p>
+          </div>
+          <div style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+            <div style="display: flex; gap: 16px;">
+              <ui-loader color="success" size="md" type="spinner"></ui-loader>
+              <ui-loader color="success" size="md" type="dots"></ui-loader>
+            </div>
+            <p style="font-family: monospace; font-size: 11px; color: #64748b; margin: 0;">success</p>
+          </div>
+          <div style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+            <div style="display: flex; gap: 16px;">
+              <ui-loader color="danger" size="md" type="spinner"></ui-loader>
+              <ui-loader color="danger" size="md" type="dots"></ui-loader>
+            </div>
+            <p style="font-family: monospace; font-size: 11px; color: #64748b; margin: 0;">danger</p>
+          </div>
+          <div style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+            <div style="display: flex; gap: 16px;">
+              <ui-loader color="info" size="md" type="spinner"></ui-loader>
+              <ui-loader color="info" size="md" type="dots"></ui-loader>
+            </div>
+            <p style="font-family: monospace; font-size: 11px; color: #64748b; margin: 0;">info</p>
+          </div>
+          <div style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+            <div style="display: flex; gap: 16px;">
+              <ui-loader color="#ff00ff" size="md" type="spinner"></ui-loader>
+              <ui-loader color="#ff00ff" size="md" type="dots"></ui-loader>
+            </div>
+            <p style="font-family: monospace; font-size: 11px; color: #64748b; margin: 0;">#ff00ff</p>
+          </div>
+          <div style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+            <div style="display: flex; gap: 16px;">
+              <ui-loader color="linear-gradient(90deg, #4facfe 0%, #00f2fe 100%)" size="md" type="dots"></ui-loader>
+              <ui-loader color="linear-gradient(90deg, #4facfe 0%, #00f2fe 100%)" size="md" type="bar"></ui-loader>
+            </div>
+            <p style="font-family: monospace; font-size: 11px; color: #64748b; margin: 0;">linear-gradient(90deg, #4facfe 0%, #00f2fe 100%)</p>
+          </div>
+        </div>
+      </div>`},{title:`🗣️ Intelligent Message Rotation`,description:`Enhance perceived performance by rotating through status updates. Perfect for long processes.`,html:`<div style="display: flex; flex-direction: column; gap: 40px;">\r
         <!-- Status Messages Rotation -->\r
         <div class="demo-block" style="padding: 30px; border: 1px solid #e2e8f0; border-radius: 12px; background: white;">\r
           <h4 style="margin: 0 0 10px 0; color: #8b5cf6;">🗣️ Intelligent Message Rotation</h4>\r
@@ -49241,7 +48600,7 @@ await manager.loadLayout(saved);</code></pre>\r
                 </div>\r
                 <div>\r
                   <label style="display: block; font-size: 12px; font-weight: 600; margin-bottom: 4px;">Color / Gradient</label>\r
-                  <ui-input type="text" id="pColor" value="primary" placeholder="primary, hex, or gradient" >\r
+                  <ui-input type="text" id="pColor" value="primary" placeholder="primary, hex, or gradient"></ui-input>\r
                 </div>\r
               </div>\r
             </section>\r
@@ -49251,11 +48610,11 @@ await manager.loadLayout(saved);</code></pre>\r
               <div style="display: grid; gap: 12px;">\r
                 <div>\r
                   <label style="display: block; font-size: 12px; font-weight: 600; margin-bottom: 4px;">Main Label</label>\r
-                  <ui-input type="text" id="pLabel" value="Loading..." >\r
+                  <ui-input type="text" id="pLabel" value="Loading..."></ui-input>\r
                 </div>\r
                 <div>\r
                   <label style="display: block; font-size: 12px; font-weight: 600; margin-bottom: 4px;">Description</label>\r
-                  <ui-input type="text" id="pDesc" value="" placeholder="Optional sub-text" >\r
+                  <ui-input type="text" id="pDesc" value="" placeholder="Optional sub-text"></ui-input>\r
                 </div>\r
                 <div>\r
                   <label style="display: block; font-size: 12px; font-weight: 600; margin-bottom: 4px;">Position</label>\r
@@ -49277,11 +48636,11 @@ await manager.loadLayout(saved);</code></pre>\r
                 </div>\r
                 <div>\r
                   <label style="display: block; font-size: 12px; font-weight: 600; margin-bottom: 4px;">Progress Value (0-100)</label>\r
-                  <ui-input type="number" id="pValue" min="0" max="100" placeholder="Determinate state" >\r
+                  <ui-input type="number" id="pValue" min="0" max="100" placeholder="Determinate state"></ui-input>\r
                 </div>\r
                 <div>\r
                   <label style="display: block; font-size: 12px; font-weight: 600; margin-bottom: 4px;">Thickness (px)</label>\r
-                  <ui-input type="number" id="pThick" value="3" >\r
+                  <ui-input type="number" id="pThick" value="3"></ui-input>\r
                 </div>\r
               </div>\r
             </section>\r
@@ -49305,11 +48664,11 @@ await manager.loadLayout(saved);</code></pre>\r
                 </div>\r
                 <div>\r
                   <label style="display: block; font-size: 12px; font-weight: 600; margin-bottom: 4px;">Overlay Background</label>\r
-                  <ui-input type="text" id="pOverlayBg" value="" placeholder="Custom color or gradient" >\r
+                  <ui-input type="text" id="pOverlayBg" value="" placeholder="Custom color or gradient"></ui-input>\r
                 </div>\r
                 <div>\r
                   <label style="display: block; font-size: 12px; font-weight: 600; margin-bottom: 4px;">Status Image URL</label>\r
-                  <ui-input type="text" id="pImage" value="https://cdn-icons-png.flaticon.com/512/9333/9333991.png" >\r
+                  <ui-input type="text" id="pImage" value="https://cdn-icons-png.flaticon.com/512/9333/9333991.png"></ui-input>\r
                 </div>\r
                 <div id="rainOptionsWrap" style="display:none;">\r
                   <label style="display: block; font-size: 12px; font-weight: 600; margin-bottom: 4px;">Rain Text (characters pool)</label>\r
@@ -49429,272 +48788,338 @@ await manager.loadLayout(saved);</code></pre>\r
             <code style="font-size: 10px; color: #94a3b8;">rain-columns="3"</code>\r
           </div>\r
         </div>\r
-      </div>`}],masonry:[{title:`🖼️
-        Fluid Masonry Gallery`,description:`Smooth cascading multi-column layout with fluid heights and instant image loading.`,html:`<div class="demo-block" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);">
-      <h3 style="margin-top: 0; display: flex; align-items: center; gap: 10px;">
-        <span style="font-size: 24px;">🖼️</span>
-        Fluid Masonry Gallery
-      </h3>
-      <p style="color: #6b7280;">Smooth cascading multi-column layout with fluid heights and instant image loading.</p>
-      
-      <div style="margin-top: 30px;">
-        <ui-masonry id="basicMasonry" columns="3" gap="20" layout-type="masonry"></ui-masonry>
-      </div>
-    </div>
+      </div>`}],masonry:[{title:`🖼️\r
+        Fluid Masonry Gallery`,description:`Smooth cascading multi-column layout with fluid heights and instant image loading.`,html:`<div class="demo-block" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);">\r
+      <h3 style="margin-top: 0; display: flex; align-items: center; gap: 10px;">\r
+        <span style="font-size: 24px;">🖼️</span>\r
+        Fluid Masonry Gallery\r
+      </h3>\r
+      <p style="color: #6b7280;">Smooth cascading multi-column layout with fluid heights and instant image loading.</p>\r
+      \r
+      <div style="margin-top: 30px;">\r
+        <ui-masonry id="basicMasonry" columns="3" gap="20" layout-type="masonry"></ui-masonry>\r
+      </div>\r
+    </div>\r
   
 <script>
 (function() {
-  setTimeout(() => {
-    const masonry = document.getElementById('basicMasonry');
-    if (masonry) {
-      const items = [
-        { id: 1, title: 'Mountain Wilderness', category: 'nature', image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop' },
-        { id: 2, title: 'Downtown Rush', category: 'urban', image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&auto=format&fit=crop' },
-        { id: 3, title: 'Misty Evergreen Forest', category: 'nature', image: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=600&auto=format&fit=crop' },
-        { id: 4, title: 'Cyberpunk Streets', category: 'urban', image: 'https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=600&auto=format&fit=crop' },
-        { id: 5, title: 'Sleepy Red Fox', category: 'animals', image: 'https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=600&auto=format&fit=crop' },
-        { id: 6, title: 'Playful Kitten', category: 'animals', image: 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600&auto=format&fit=crop' }
-      ];
-      masonry.items = JSON.stringify(items);
-    }
+  setTimeout(() => {\r
+    const masonry = document.getElementById('basicMasonry');\r
+    if (masonry) {\r
+      const items = [\r
+        { id: 1, title: 'Mountain Wilderness', category: 'nature', image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop' },\r
+        { id: 2, title: 'Downtown Rush', category: 'urban', image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&auto=format&fit=crop' },\r
+        { id: 3, title: 'Misty Evergreen Forest', category: 'nature', image: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=600&auto=format&fit=crop' },\r
+        { id: 4, title: 'Cyberpunk Streets', category: 'urban', image: 'https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=600&auto=format&fit=crop' },\r
+        { id: 5, title: 'Sleepy Red Fox', category: 'animals', image: 'https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=600&auto=format&fit=crop' },\r
+        { id: 6, title: 'Playful Kitten', category: 'animals', image: 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600&auto=format&fit=crop' }\r
+      ];\r
+      masonry.items = JSON.stringify(items);\r
+    }\r
   }, 200);
 })();
-<\/script>`},{title:`Categorized & Searchable Grid`,description:`Filter items dynamically by category tabs or run real-time search queries across fields.`,html:`<div class="demo-block" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);">
-      <h3 style="margin-top: 0; display: flex; align-items: center; gap: 10px;">
-        <ui-icon name="filter" library="lucide" size="24px"></ui-icon>
-        Categorized & Searchable Grid
-      </h3>
-      <p style="color: #6b7280;">Filter items dynamically by category tabs or run real-time search queries across fields.</p>
-      
-      <div style="margin-top: 30px;">
-        <ui-masonry id="filteredMasonry" columns="3" gap="16" show-filters="true" layout-type="masonry"></ui-masonry>
-      </div>
-    </div>
+<\/script>`},{title:`Categorized & Searchable Grid`,description:`Filter items dynamically by category tabs or run real-time search queries across fields.`,html:`<div class="demo-block" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);">\r
+      <h3 style="margin-top: 0; display: flex; align-items: center; gap: 10px;">\r
+        <ui-icon name="filter" library="lucide" size="24px"></ui-icon>\r
+        Categorized & Searchable Grid\r
+      </h3>\r
+      <p style="color: #6b7280;">Filter items dynamically by category tabs or run real-time search queries across fields.</p>\r
+      \r
+      <div style="margin-top: 30px;">\r
+        <ui-masonry id="filteredMasonry" columns="3" gap="16" show-filters="true" layout-type="masonry"></ui-masonry>\r
+      </div>\r
+    </div>\r
   
 <script>
 (function() {
-  setTimeout(() => {
-    const masonry = document.getElementById('filteredMasonry');
-    if (masonry) {
-      const filterOptions = [
-        { key: 'all', label: '🌟 All' },
-        { key: 'nature', label: '🌲 Nature' },
-        { key: 'urban', label: '🏙️ Urban' },
-        { key: 'animals', label: '🦊 Animals' }
-      ];
-      const items = [
-        { id: 1, title: 'Mountain Wilderness', category: 'nature', image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop' },
-        { id: 2, title: 'Downtown Rush', category: 'urban', image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&auto=format&fit=crop' },
-        { id: 3, title: 'Misty Evergreen Forest', category: 'nature', image: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=600&auto=format&fit=crop' },
-        { id: 4, title: 'Cyberpunk Streets', category: 'urban', image: 'https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=600&auto=format&fit=crop' },
-        { id: 5, title: 'Sleepy Red Fox', category: 'animals', image: 'https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=600&auto=format&fit=crop' },
-        { id: 6, title: 'Playful Kitten', category: 'animals', image: 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600&auto=format&fit=crop' }
-      ];
-      masonry.filterOptions = JSON.stringify(filterOptions);
-      masonry.items = JSON.stringify(items);
-    }
+  setTimeout(() => {\r
+    const masonry = document.getElementById('filteredMasonry');\r
+    if (masonry) {\r
+      const filterOptions = [\r
+        { key: 'all', label: '🌟 All' },\r
+        { key: 'nature', label: '🌲 Nature' },\r
+        { key: 'urban', label: '🏙️ Urban' },\r
+        { key: 'animals', label: '🦊 Animals' }\r
+      ];\r
+      const items = [\r
+        { id: 1, title: 'Mountain Wilderness', category: 'nature', image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop' },\r
+        { id: 2, title: 'Downtown Rush', category: 'urban', image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&auto=format&fit=crop' },\r
+        { id: 3, title: 'Misty Evergreen Forest', category: 'nature', image: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=600&auto=format&fit=crop' },\r
+        { id: 4, title: 'Cyberpunk Streets', category: 'urban', image: 'https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=600&auto=format&fit=crop' },\r
+        { id: 5, title: 'Sleepy Red Fox', category: 'animals', image: 'https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=600&auto=format&fit=crop' },\r
+        { id: 6, title: 'Playful Kitten', category: 'animals', image: 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=600&auto=format&fit=crop' }\r
+      ];\r
+      masonry.filterOptions = JSON.stringify(filterOptions);\r
+      masonry.items = JSON.stringify(items);\r
+    }\r
   }, 200);
 })();
-<\/script>`},{title:`Interactive Selection & Batch Control`,description:`Check checkboxes on hover, select all using hotkeys, or use batch deletions.`,html:`<div class="demo-block" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);">
-      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
-        <div>
-          <h3 style="margin-top: 0; display: flex; align-items: center; gap: 10px;">
-            <ui-icon name="check-square" library="lucide" size="24px"></ui-icon>
-            Interactive Selection & Batch Control
-          </h3>
-          <p style="color: #6b7280; margin: 0;">Check checkboxes on hover, select all using hotkeys, or use batch deletions.</p>
-        </div>
-        <div id="selectionStatusBadge" style="background: #10b98115; border: 1px solid #10b98144; padding: 6px 12px; border-radius: 20px; font-size: 13px; color: #059669; font-weight: 600;">
-          0 items selected
-        </div>
-      </div>
-      
-      <div style="margin-top: 30px;">
-        <ui-masonry id="selectableMasonry" columns="3" gap="16" selectable="true" show-batch-actions="true" layout-type="masonry"></ui-masonry>
-      </div>
-    </div>
+<\/script>`},{title:`Interactive Selection & Batch Control`,description:`Check checkboxes on hover, select all using hotkeys, or use batch deletions.`,html:`<div class="demo-block" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);">\r
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">\r
+        <div>\r
+          <h3 style="margin-top: 0; display: flex; align-items: center; gap: 10px;">\r
+            <ui-icon name="check-square" library="lucide" size="24px"></ui-icon>\r
+            Interactive Selection & Batch Control\r
+          </h3>\r
+          <p style="color: #6b7280; margin: 0;">Check checkboxes on hover, select all using hotkeys, or use batch deletions.</p>\r
+        </div>\r
+        <div id="selectionStatusBadge" style="background: #10b98115; border: 1px solid #10b98144; padding: 6px 12px; border-radius: 20px; font-size: 13px; color: #059669; font-weight: 600;">\r
+          0 items selected\r
+        </div>\r
+      </div>\r
+      \r
+      <div style="margin-top: 30px;">\r
+        <ui-masonry id="selectableMasonry" columns="3" gap="16" selectable="true" show-batch-actions="true" layout-type="masonry"></ui-masonry>\r
+      </div>\r
+    </div>\r
   
 <script>
 (function() {
-  setTimeout(() => {
-    const masonry = document.getElementById('selectableMasonry');
-    const badge = document.getElementById('selectionStatusBadge');
-    if (masonry) {
-      const items = [
-        { id: 1, title: 'Mountain Wilderness', category: 'nature', image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop' },
-        { id: 2, title: 'Downtown Rush', category: 'urban', image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&auto=format&fit=crop' },
-        { id: 3, title: 'Misty Evergreen Forest', category: 'nature', image: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=600&auto=format&fit=crop' },
-        { id: 4, title: 'Cyberpunk Streets', category: 'urban', image: 'https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=600&auto=format&fit=crop' }
-      ];
-      masonry.items = JSON.stringify(items);
-
-      masonry.addEventListener('itemSelectionChange', (e) => {
-        const count = e.detail?.selectedItems?.length || 0;
-        badge.innerText = \`\${count} \${count === 1 ? 'item' : 'items'} selected\`;
+  setTimeout(() => {\r
+    const masonry = document.getElementById('selectableMasonry');\r
+    const badge = document.getElementById('selectionStatusBadge');\r
+    if (masonry) {\r
+      const items = [\r
+        { id: 1, title: 'Mountain Wilderness', category: 'nature', image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop' },\r
+        { id: 2, title: 'Downtown Rush', category: 'urban', image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&auto=format&fit=crop' },\r
+        { id: 3, title: 'Misty Evergreen Forest', category: 'nature', image: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=600&auto=format&fit=crop' },\r
+        { id: 4, title: 'Cyberpunk Streets', category: 'urban', image: 'https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=600&auto=format&fit=crop' }\r
+      ];\r
+      masonry.items = JSON.stringify(items);\r
+\r
+      masonry.addEventListener('itemSelectionChange', (e) => {\r
+        const count = e.detail?.selectedItems?.length || 0;\r
+        badge.innerText = \`\${count} \${count === 1 ? 'item' : 'items'} selected\`;\r
+      });\r
+\r
+      masonry.addEventListener('batchDelete', (e) => {\r
+        alert(\`Deleted items: \${e.detail.items.map(i => i.title).join(', ')}\`);\r
+        badge.innerText = '0 items selected';\r
+      });\r
+    }\r
+  }, 200);
+})();
+<\/script>`}],"meter-group":[{title:`Storage Usage`,description:``,html:`<div style="margin-bottom: 30px;">\r
+        <h4>Storage Usage</h4>\r
+        <ui-meter-group id="basicMeter" show-legend="true"></ui-meter-group>\r
+      </div>\r
+    
+<script>
+(function() {
+  requestAnimationFrame(() => {\r
+        setTimeout(() => {\r
+          const meter = document.getElementById('basicMeter');\r
+          if (meter) meter.values = values;\r
+        }, 50);\r
       });
-
-      masonry.addEventListener('batchDelete', (e) => {
-        alert(\`Deleted items: \${e.detail.items.map(i => i.title).join(', ')}\`);
-        badge.innerText = '0 items selected';
+})();
+<\/script>`},{title:`Vertical Meter`,description:`System Resources (Vertical)`,html:`<div style="display: flex; gap: 30px; align-items: center;">\r
+        <ui-meter-group id="verticalMeter" orientation="vertical" show-legend="true"></ui-meter-group>\r
+        <p style="color: #6b7280;">System Resources (Vertical)</p>\r
+      </div>\r
+    
+<script>
+(function() {
+  requestAnimationFrame(() => {\r
+        setTimeout(() => {\r
+          const meter = document.getElementById('verticalMeter');\r
+          if (meter) meter.values = values;\r
+        }, 50);\r
       });
-    }
-  }, 200);
 })();
-<\/script>`}],"meter-group":[{title:`Storage Usage`,description:`Basic horizontal meter showing used vs free storage.`,html:`<div style="padding: 20px; max-width: 600px;">
-  <h4 style="margin-top:0;">Storage Usage</h4>
-  <ui-meter-group id="mgBasic" show-legend="true"></ui-meter-group>
-</div>
+<\/script>`},{title:`Small`,description:``,html:`<div style="display: flex; flex-direction: column; gap: 20px;">\r
+        <div>\r
+          <h4>Small</h4>\r
+          <ui-meter-group id="meterSm" size="md"></ui-meter-group>\r
+        </div>\r
+        <div>\r
+          <h4>md</h4>\r
+          <ui-meter-group id="meterMd" size="md"></ui-meter-group>\r
+        </div>\r
+        <div>\r
+          <h4>Large</h4>\r
+          <ui-meter-group id="meterLg" size="lg"></ui-meter-group>\r
+        </div>\r
+      </div>\r
+    
 <script>
 (function() {
-  setTimeout(function() {
-    var el = document.getElementById('mgBasic');
-    if (el) el.values = [
-      { label: 'Used', value: 65, color: '#ef4444' },
-      { label: 'Free', value: 35, color: '#10b981' }
-    ];
-  }, 50);
+  requestAnimationFrame(() => {\r
+        setTimeout(() => {\r
+          ['meterSm', 'meterMd', 'meterLg'].forEach(id => {\r
+            const meter = document.getElementById(id);\r
+            if (meter) meter.values = values;\r
+          });\r
+        }, 50);\r
+      });
 })();
-<\/script>`},{title:`Vertical Orientation`,description:`System resources displayed as a vertical meter.`,html:`<div style="padding: 20px; display: flex; gap: 30px; align-items: flex-start;">
-  <div>
-    <h4 style="margin-top:0;">System Resources</h4>
-    <ui-meter-group id="mgVertical" orientation="vertical" show-legend="true" size="lg"></ui-meter-group>
-  </div>
-</div>
+<\/script>`},{title:`File Storage Breakdown`,description:``,html:`<div>\r
+        <h4>File Storage Breakdown</h4>\r
+        <ui-meter-group id="meterLegend" show-legend="true" show-values="true"></ui-meter-group>\r
+      </div>\r
+    
 <script>
 (function() {
-  setTimeout(function() {
-    var el = document.getElementById('mgVertical');
-    if (el) el.values = [
-      { label: 'CPU', value: 45, color: '#10b981' },
-      { label: 'Memory', value: 30, color: '#3b82f6' },
-      { label: 'Disk', value: 25, color: '#f59e0b' }
-    ];
-  }, 50);
+  requestAnimationFrame(() => {\r
+        setTimeout(() => {\r
+          const meter = document.getElementById('meterLegend');\r
+          if (meter) meter.values = values;\r
+        }, 50);\r
+      });
 })();
-<\/script>`},{title:`Circle Shape`,description:`Circular/donut meter for project progress and usage stats.`,html:`<div style="padding: 20px; display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
-  <div style="text-align: center;">
-    <h4 style="margin-top:0;">Storage</h4>
-    <ui-meter-group id="mgCircle1" shape="circle" show-legend="true"></ui-meter-group>
-  </div>
-  <div style="text-align: center;">
-    <h4 style="margin-top:0;">Project Progress</h4>
-    <ui-meter-group id="mgCircle2" shape="circle" show-legend="true" size="lg"></ui-meter-group>
-  </div>
-</div>
+<\/script>`},{title:`📀 Disk Usage (450GB / 1TB)`,description:``,html:`<div style="display: flex; flex-direction: column; gap: 30px;">\r
+        <div>\r
+          <h4>📀 Disk Usage (450GB / 1TB)</h4>\r
+          <ui-meter-group id="diskMeter" show-legend="true" max="1000"></ui-meter-group>\r
+        </div>\r
+        <div>\r
+          <h4>✅ Project Progress</h4>\r
+          <ui-meter-group id="taskMeter" show-legend="true"></ui-meter-group>\r
+        </div>\r
+      </div>\r
+    
 <script>
 (function() {
-  setTimeout(function() {
-    var el1 = document.getElementById('mgCircle1');
-    var el2 = document.getElementById('mgCircle2');
-    if (el1) el1.values = [
-      { label: 'Used', value: 65, color: '#ef4444' },
-      { label: 'Cache', value: 20, color: '#f59e0b' },
-      { label: 'Free', value: 15, color: '#10b981' }
-    ];
-    if (el2) el2.values = [
-      { label: 'Completed', value: 75, color: '#10b981' },
-      { label: 'In Progress', value: 15, color: '#f59e0b' },
-      { label: 'Pending', value: 10, color: '#6b7280' }
-    ];
-  }, 50);
+  requestAnimationFrame(() => {\r
+        setTimeout(() => {\r
+          const diskMeter = document.getElementById('diskMeter');\r
+          const taskMeter = document.getElementById('taskMeter');\r
+          if (diskMeter) diskMeter.values = diskValues;\r
+          if (taskMeter) taskMeter.values = taskValues;\r
+        }, 50);\r
+      });
 })();
-<\/script>`},{title:`Sizes`,description:`Meter group in sm, md, and lg sizes.`,html:`<div style="padding: 20px; display: flex; flex-direction: column; gap: 20px; max-width: 600px;">
-  <div>
-    <h4 style="margin:0 0 8px;">Small (sm)</h4>
-    <ui-meter-group id="mgSm" size="sm"></ui-meter-group>
-  </div>
-  <div>
-    <h4 style="margin:0 0 8px;">Medium (md)</h4>
-    <ui-meter-group id="mgMd" size="md"></ui-meter-group>
-  </div>
-  <div>
-    <h4 style="margin:0 0 8px;">Large (lg)</h4>
-    <ui-meter-group id="mgLg" size="lg"></ui-meter-group>
-  </div>
-</div>
+<\/script>`},{title:`✨ Linear Flow Gradients`,description:``,html:`<div style="display: flex; flex-direction: column; gap: 40px; padding: 24px;">\r
+          <div>\r
+            <h4>✨ Linear Flow Gradients</h4>\r
+            <ui-meter-group id="gradMeter1" show-legend="true" show-values="true" size="lg"></ui-meter-group>\r
+          </div>\r
+          <div style="display: flex; gap: 60px; align-items: flex-start; flex-wrap: wrap;">\r
+            <div style="text-align: center;">\r
+              <h4>Circular Gradient Shell</h4>\r
+              <ui-meter-group id="gradMeter2" shape="circle" size="lg" show-legend="true"></ui-meter-group>\r
+            </div>\r
+            <div style="text-align: center;">\r
+               <h4>High-Density Racks</h4>\r
+               <ui-meter-group id="gradMeter3" orientation="vertical" show-legend="true"></ui-meter-group>\r
+            </div>\r
+          </div>\r
+        </div>\r
+      
 <script>
 (function() {
-  var values = [
-    { label: 'Used', value: 70, color: '#10b981' },
-    { label: 'Free', value: 30, color: '#e5e7eb' }
-  ];
-  setTimeout(function() {
-    ['mgSm','mgMd','mgLg'].forEach(function(id) {
-      var el = document.getElementById(id);
-      if (el) el.values = values;
-    });
-  }, 50);
+  requestAnimationFrame(() => {\r
+        setTimeout(() => {\r
+          const m1 = document.getElementById('gradMeter1');\r
+          const m2 = document.getElementById('gradMeter2');\r
+          const m3 = document.getElementById('gradMeter3');\r
+          if (m1) m1.values = values;\r
+          if (m2) m2.values = values;\r
+          if (m3) m3.values = values;\r
+        }, 50);\r
+      });
 })();
-<\/script>`},{title:`With Legend`,description:`Disk usage breakdown with full legend.`,html:`<div style="padding: 20px; max-width: 600px;">
-  <h4 style="margin-top:0;">Disk Usage Breakdown</h4>
-  <ui-meter-group id="mgLegend" show-legend="true" show-values="true"></ui-meter-group>
-</div>
+<\/script>`},{title:`Budget Allocation (%)`,description:``,html:`<div style="margin-bottom: 30px;">\r
+        <h4>Budget Allocation (%)</h4>\r
+        <ui-meter-group id="multiMeter" show-legend="true" show-values="true"></ui-meter-group>\r
+      </div>\r
+    
 <script>
 (function() {
-  setTimeout(function() {
-    var el = document.getElementById('mgLegend');
-    if (el) el.values = [
-      { label: 'Images', value: 35, color: '#8b5cf6' },
-      { label: 'Videos', value: 28, color: '#10b981' },
-      { label: 'Documents', value: 22, color: '#3b82f6' },
-      { label: 'Other', value: 15, color: '#f59e0b' }
-    ];
-  }, 50);
+  requestAnimationFrame(() => {\r
+        setTimeout(() => {\r
+          const meter = document.getElementById('multiMeter');\r
+          if (meter) meter.values = values;\r
+        }, 50);\r
+      });
 })();
-<\/script>`},{title:`Multi-Value with Labels`,description:`Server load distribution across multiple regions.`,html:`<div style="padding: 20px; max-width: 600px;">
-  <h4 style="margin-top:0;">Server Load Distribution</h4>
-  <ui-meter-group id="mgMulti" show-labels="true" show-values="true" show-legend="true"></ui-meter-group>
-</div>
+<\/script>`},{title:`🎮 Interactive Playground`,description:``,html:`<div style="background-color: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">\r
+        <div style="display: flex; gap: 30px; flex-wrap: wrap;">\r
+          <div style="flex: 1; min-width: 300px;">\r
+            <h3>🎮 Interactive Playground</h3>\r
+            <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">\r
+              <div>\r
+                <label style="display: block; margin-bottom: 5px; font-weight: 500;">Orientation:</label>\r
+                <ui-dropdown id="meterOrientation" onchange="updateInteractiveMeter()" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 4px; cursor: pointer;">\r
+                  <option value="horizontal" selected>Horizontal</option>\r
+                  <option value="vertical">Vertical</option>\r
+                </ui-dropdown>\r
+              </div>\r
+              \r
+              <div>\r
+                <label style="display: block; margin-bottom: 5px; font-weight: 500;">Shape:</label>\r
+                <ui-dropdown id="meterShape" onchange="updateInteractiveMeter()" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 4px; cursor: pointer;">\r
+                  <option value="line" selected>Line</option>\r
+                  <option value="circle">Circle</option>\r
+                </ui-dropdown>\r
+              </div>\r
+              \r
+              <div>\r
+                <label style="display: block; margin-bottom: 5px; font-weight: 500;">Size:</label>\r
+                <ui-dropdown id="meterSize" onchange="updateInteractiveMeter()" style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 4px; cursor: pointer;">\r
+                  <option value="sm">Small</option>\r
+                  <option value="md" selected>md</option>\r
+                  <option value="lg">Large</option>\r
+                </ui-dropdown>\r
+              </div>\r
+              \r
+              <ui-checkbox id="meterShowLabels" checked label="Show Labels" oncheckboxchange="updateInteractiveMeter()"></ui-checkbox>\r
+              \r
+              <ui-checkbox id="meterShowValues" checked label="Show Values" oncheckboxchange="updateInteractiveMeter()"></ui-checkbox>\r
+              \r
+              <ui-checkbox id="meterShowLegend" checked label="Show Legend" oncheckboxchange="updateInteractiveMeter()"></ui-checkbox>\r
+\r
+              <ui-checkbox id="meterInteractive" label="Interactive (Clickable)" oncheckboxchange="updateInteractiveMeter()"></ui-checkbox>\r
+              \r
+              <div>\r
+                <label style="display: block; margin-bottom: 5px; font-weight: 500;">Min Value:</label>\r
+                <ui-input type="number" id="meterMin" value="0" onchange="updateInteractiveMeter()"\r
+                  style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 4px;">\r
+              </div>\r
+              \r
+              <div>\r
+                <label style="display: block; margin-bottom: 5px; font-weight: 500;">Max Value:</label>\r
+                <ui-input type="number" id="meterMax" value="100" onchange="updateInteractiveMeter()"\r
+                  style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 4px;">\r
+              </div>\r
+              \r
+              <div>\r
+                <label style="display: block; margin-bottom: 5px; font-weight: 500;">Values (JSON):</label>\r
+                <textarea id="meterValues" onchange="updateInteractiveMeter()" \r
+                  style="width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 4px; font-family: monospace; font-size: 12px; min-height: 180px;">[\r
+  {"label": "Used", "value": 65, "color": "#ef4444", "icon": "💾"},\r
+  {"label": "Cache", "value": 20, "color": "#f59e0b", "icon": "⚡"},\r
+  {"label": "Free", "value": 15, "color": "#10b981", "icon": "🆓"}\r
+]</textarea>\r
+              </div>\r
+              \r
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">\r
+                <ui-button onclick="loadMeterPreset('storage')" style="padding: 6px 12px; background-color: #10b981; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">💾 Storage</ui-button>\r
+                <ui-button onclick="loadMeterPreset('resources')" style="padding: 6px 12px; background-color: #10b981; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">🖥️ Resources</ui-button>\r
+                <ui-button onclick="loadMeterPreset('progress')" style="padding: 6px 12px; background-color: #f59e0b; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">📊 Progress</ui-button>\r
+                <ui-button onclick="loadMeterPreset('budget')" style="padding: 6px 12px; background-color: #8b5cf6; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">💰 Budget</ui-button>\r
+              </div>\r
+            </div>\r
+          </div>\r
+          \r
+          <div style="flex: 1; min-width: 300px; background-color: #f9fafb; padding: 20px; border-radius: 8px; border: 1px solid #e5e7eb; min-height: 500px;">\r
+            <h4 style="margin-top: 0;">Preview:</h4>\r
+            <div id="interactiveMeterContainer" style="margin-top: 20px;"></div>\r
+            <div id="meterOutput" style="margin-top: 20px; padding: 10px; background-color: white; border-radius: 4px; font-family: monospace; font-size: 12px; color: #6b7280;"></div>\r
+            \r
+            <div style="margin-top: 20px; background: #1e293b; padding: 16px; border-radius: 8px; position: relative;">\r
+              <ui-button onclick="copyMeterCode()" id="copyMeterBtn" style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.1); color: white; border: none; padding: 4px 10px; border-radius: 4px; font-size: 11px; cursor: pointer; transition: all 0.2s;">Copy</ui-button>\r
+              <code id="meterCodeBlock" style="color: #e2e8f0; font-family: monospace; font-size: 13px; display: block; overflow-x: auto; padding-right: 50px; white-space: pre-wrap;">\r
+                <ui-meter-group ...></ui-meter-group>\r
+              </code>\r
+            </div>\r
+          </div>\r
+        </div>\r
+      </div>\r
+    
 <script>
 (function() {
-  setTimeout(function() {
-    var el = document.getElementById('mgMulti');
-    if (el) el.values = [
-      { label: 'US East', value: 38, color: '#3b82f6' },
-      { label: 'US West', value: 24, color: '#10b981' },
-      { label: 'EU', value: 22, color: '#8b5cf6' },
-      { label: 'APAC', value: 16, color: '#f59e0b' }
-    ];
-  }, 50);
-})();
-<\/script>`},{title:`Interactive`,description:`Meter group with interactive hover tooltips.`,html:`<div style="padding: 20px; max-width: 600px;">
-  <h4 style="margin-top:0;">Budget Allocation (hover for details)</h4>
-  <ui-meter-group id="mgInteractive" interactive="true" show-legend="true" show-values="true"></ui-meter-group>
-</div>
-<script>
-(function() {
-  setTimeout(function() {
-    var el = document.getElementById('mgInteractive');
-    if (el) el.values = [
-      { label: 'Engineering', value: 45, color: '#3b82f6' },
-      { label: 'Marketing', value: 25, color: '#ec4899' },
-      { label: 'Operations', value: 20, color: '#10b981' },
-      { label: 'HR', value: 10, color: '#f59e0b' }
-    ];
-  }, 50);
-})();
-<\/script>`},{title:`Animated on Mount`,description:`Meter fills with animation when inserted into the DOM.`,html:`<div style="padding: 20px; max-width: 600px;">
-  <h4 style="margin-top:0;">Monthly Sales Target</h4>
-  <ui-meter-group id="mgAnim" animated="true" show-legend="true"></ui-meter-group>
-  <div style="margin-top:16px;">
-    <ui-button id="replayBtn" variant="outline" size="sm">Replay Animation</ui-button>
-  </div>
-</div>
-<script>
-(function() {
-  var values = [
-    { label: 'Achieved', value: 72, color: '#10b981' },
-    { label: 'Remaining', value: 28, color: '#e5e7eb' }
-  ];
-  function load() {
-    var el = document.getElementById('mgAnim');
-    if (!el) return;
-    el.values = [];
-    setTimeout(function() { el.values = values; }, 50);
-  }
-  setTimeout(load, 50);
-  var btn = document.getElementById('replayBtn');
-  if (btn) btn.addEventListener('click', load);
+  updateInteractiveMeter();
 })();
 <\/script>`}],"multi-level-context-menu":[{title:`Basic Multi-Level Menu`,description:`Simple cascading menu with multiple levels`,html:`<div style="max-width: 600px; margin: 0 auto;">\r
         <h4>Basic Multi-Level Menu</h4>\r
@@ -50478,97 +49903,821 @@ await manager.loadLayout(saved);</code></pre>\r
 (function() {
   updateInteractiveMultiLevelMenu();
 })();
-<\/script>`}],pagination:[{title:`Basic Pagination`,description:`Standard numbered pagination with first/last and prev/next controls.`,html:`<div class="demo-block" style="padding: 20px;">
-  <h3>Basic Pagination</h3>
-  <div style="display: flex; justify-content: center;">
-    <ui-pagination id="pgBasic" total-items="100" items-per-page="10" current-page="1"></ui-pagination>
-  </div>
-  <div id="pgBasicLog" style="margin-top:12px;text-align:center;font-size:13px;color:#6b7280;">Page: 1 of 10</div>
-</div>
+<\/script>`}],pagination:[{title:`Basic Pagination`,description:``,html:`<div class="demo-block">\r
+          <h3>Basic Pagination</h3>\r
+          <div style="display: flex; justify-content: center;">\r
+            <ui-pagination id="basicPagination" total-items="100" items-per-page="10" current-page="1"></ui-pagination>\r
+          </div>\r
+        </div>\r
+      
 <script>
 (function() {
-  setTimeout(function() {
-    var el = document.getElementById('pgBasic');
-    var log = document.getElementById('pgBasicLog');
-    if (el) el.addEventListener('pageChange', function(e) {
-      if (log) log.textContent = 'Page: ' + e.detail.currentPage + ' of ' + Math.ceil(100 / 10);
-    });
-  }, 100);
+  setupPaginationEvents();
 })();
-<\/script>`},{title:`Compact Style`,description:`Minimal compact pagination for space-constrained layouts.`,html:`<div class="demo-block" style="padding: 20px;">
-  <h3>Compact Style</h3>
-  <div style="display: flex; justify-content: center;">
-    <ui-pagination type="compact" total-items="50" items-per-page="5" current-page="3"></ui-pagination>
-  </div>
-</div>`},{title:`Detailed Pagination`,description:`Full-featured with page size selector, total count, and jump-to-page.`,html:`<div class="demo-block" style="padding: 20px;">
-  <h3>Detailed Pagination</h3>
-  <h4 style="margin-top:24px; margin-bottom:12px;">With Page Size &amp; Total</h4>
-  <div style="display: flex; justify-content: center; margin-bottom: 24px;">
-    <ui-pagination type="detailed" total-items="200" items-per-page="20" show-page-size="true" show-total="true" current-page="3"></ui-pagination>
-  </div>
-  <h4 style="margin-top:24px; margin-bottom:12px;">With Jump To Page</h4>
-  <div style="display: flex; justify-content: center;">
-    <ui-pagination type="detailed" total-items="500" items-per-page="25" show-jump-to="true" show-total="true" current-page="5"></ui-pagination>
-  </div>
-</div>`},{title:`Input Pagination`,description:`Direct page number input for fast navigation.`,html:`<div class="demo-block" style="padding: 20px;">
-  <h3>Input Pagination</h3>
-  <div style="display: flex; justify-content: center;">
-    <ui-pagination type="input" total-items="300" items-per-page="15" current-page="5" show-total="true"></ui-pagination>
-  </div>
-</div>`},{title:`Dropdown Pagination`,description:`Select current page via a dropdown menu.`,html:`<div class="demo-block" style="padding: 20px;">
-  <h3>Dropdown Pagination</h3>
-  <div style="display: flex; justify-content: center;">
-    <ui-pagination type="dropdown" total-items="100" items-per-page="10" current-page="2"></ui-pagination>
-  </div>
-</div>`},{title:`Different Sizes`,description:`Small, medium, and large pagination controls.`,html:`<div class="demo-block" style="padding: 20px;">
-  <h3>Different Sizes</h3>
-  <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
-    <div style="width:100%;text-align:center;"><strong style="font-size:12px;text-transform:uppercase;color:#6b7280;">Small</strong><br><ui-pagination size="sm" total-items="100" items-per-page="10" current-page="3"></ui-pagination></div>
-    <div style="width:100%;text-align:center;"><strong style="font-size:12px;text-transform:uppercase;color:#6b7280;">Medium</strong><br><ui-pagination size="md" total-items="100" items-per-page="10" current-page="3"></ui-pagination></div>
-    <div style="width:100%;text-align:center;"><strong style="font-size:12px;text-transform:uppercase;color:#6b7280;">Large</strong><br><ui-pagination size="lg" total-items="100" items-per-page="10" current-page="3"></ui-pagination></div>
-  </div>
-</div>`},{title:`Button Shapes`,description:`Default, rounded, circle, pill, and square button shapes.`,html:`<div class="demo-block" style="padding: 20px;">
-  <h3>Button Shapes</h3>
-  <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
-    <div><small style="color:#6b7280;">Default</small><br><ui-pagination shape="default" total-items="80" items-per-page="8" current-page="3"></ui-pagination></div>
-    <div><small style="color:#6b7280;">Rounded</small><br><ui-pagination shape="rounded" total-items="80" items-per-page="8" current-page="3"></ui-pagination></div>
-    <div><small style="color:#6b7280;">Circle</small><br><ui-pagination shape="circle" total-items="80" items-per-page="8" current-page="3"></ui-pagination></div>
-    <div><small style="color:#6b7280;">Pill</small><br><ui-pagination shape="pill" total-items="80" items-per-page="8" current-page="3"></ui-pagination></div>
-  </div>
-</div>`},{title:`Color Themes`,description:`Pagination styled with different color themes.`,html:`<div class="demo-block" style="padding: 20px;">
-  <h3>Color Themes</h3>
-  <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
-    <div><small style="color:#6b7280;">Primary</small><br><ui-pagination theme="primary" total-items="60" items-per-page="6" current-page="4"></ui-pagination></div>
-    <div><small style="color:#6b7280;">Success</small><br><ui-pagination theme="success" total-items="60" items-per-page="6" current-page="4"></ui-pagination></div>
-    <div><small style="color:#6b7280;">Warning</small><br><ui-pagination theme="warning" total-items="60" items-per-page="6" current-page="4"></ui-pagination></div>
-    <div><small style="color:#6b7280;">Danger</small><br><ui-pagination theme="danger" total-items="60" items-per-page="6" current-page="4"></ui-pagination></div>
-  </div>
-</div>`},{title:`Visual Variants`,description:`Soft, filled, outlined, glass, modern, and premium variants.`,html:`<div class="demo-block" style="padding: 20px;">
-  <h3>Visual Variants</h3>
-  <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
-    <div><small style="color:#6b7280;">Default</small><br><ui-pagination variant="default" total-items="60" items-per-page="6" current-page="3"></ui-pagination></div>
-    <div><small style="color:#6b7280;">Soft</small><br><ui-pagination variant="soft" total-items="60" items-per-page="6" current-page="3"></ui-pagination></div>
-    <div><small style="color:#6b7280;">Filled</small><br><ui-pagination variant="filled" total-items="60" items-per-page="6" current-page="3"></ui-pagination></div>
-    <div><small style="color:#6b7280;">Outlined</small><br><ui-pagination variant="outlined" total-items="60" items-per-page="6" current-page="3"></ui-pagination></div>
-    <div><small style="color:#6b7280;">Modern</small><br><ui-pagination variant="modern" total-items="60" items-per-page="6" current-page="3"></ui-pagination></div>
-    <div><small style="color:#6b7280;">Premium</small><br><ui-pagination variant="premium" total-items="60" items-per-page="6" current-page="3"></ui-pagination></div>
-  </div>
-</div>`},{title:`With Progress Indicator`,description:`Shows a progress bar reflecting the current page position.`,html:`<div class="demo-block" style="padding: 20px;">
-  <h3>With Progress Bar</h3>
-  <div style="display: flex; justify-content: center;">
-    <ui-pagination show-progress="true" total-items="100" items-per-page="10" current-page="4"></ui-pagination>
-  </div>
-</div>`},{title:`Quick Jump Buttons`,description:`Jump forward/back N pages at a time.`,html:`<div class="demo-block" style="padding: 20px;">
-  <h3>Quick Jump (+5 pages)</h3>
-  <div style="display: flex; justify-content: center;">
-    <ui-pagination quick-jump="true" quick-jump-step="5" total-items="200" items-per-page="10" current-page="10"></ui-pagination>
-  </div>
-</div>`},{title:`Indicator Type`,description:`Visual page indicator bar instead of numbered buttons.`,html:`<div class="demo-block" style="padding: 20px;">
-  <h3>Indicator Pagination</h3>
-  <div style="display: flex; justify-content: center;">
-    <ui-pagination type="indicator" total-items="50" items-per-page="5" current-page="2"></ui-pagination>
-  </div>
-</div>`}],panel:[{title:`📄 Basic Panel`,description:`Simple panel with title, content, and footer`,html:`<div class="demo-block">\r
+<\/script>`},{title:`Compact Style`,description:``,html:`<div class="demo-block">\r
+          <h3>Compact Style</h3>\r
+          <div style="display: flex; justify-content: center;">\r
+            <ui-pagination type="compact" total-items="50" items-per-page="5" current-page="3"></ui-pagination>\r
+          </div>\r
+        </div>\r
+      
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`},{title:`Detailed Pagination`,description:`Full-featured pagination with page size selector, total count, and jump to page`,html:`<div class="demo-block">\r
+          <h3>Detailed Pagination</h3>\r
+          <p style="color: #6b7280; margin-bottom: 16px;">Full-featured pagination with page size selector, total count, and jump to page</p>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">With Page Size Selector & Total</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination type="detailed" total-items="200" items-per-page="20" show-page-size="true" show-total="true" current-page="3"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">With Jump To Page</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination type="detailed" total-items="500" items-per-page="25" show-jump-to="true" show-total="true" current-page="5"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">All Features Combined</h4>\r
+          <div style="display: flex; justify-content: center;">\r
+            <ui-pagination type="detailed" total-items="1000" items-per-page="50" show-page-size="true" show-total="true" show-jump-to="true" current-page="10"></ui-pagination>\r
+          </div>\r
+        </div>\r
+      
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`},{title:`Minimal Pagination`,description:`Compact input-based navigation with prev/next buttons`,html:`<div class="demo-block">\r
+          <h3>Minimal Pagination</h3>\r
+          <p style="color: #6b7280; margin-bottom: 16px;">Compact input-based navigation with prev/next buttons</p>\r
+          \r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination type="minimal" total-items="100" items-per-page="10" current-page="5"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Different Sizes</h4>\r
+          <div style="display: flex; flex-direction: column; gap: 16px; align-items: center;">\r
+            <div>\r
+              <p style="text-align: center; margin-bottom: 8px; color: #6b7280;">Small</p>\r
+              <ui-pagination type="minimal" size="md" total-items="80" items-per-page="10" current-page="3"></ui-pagination>\r
+            </div>\r
+            <div>\r
+              <p style="text-align: center; margin-bottom: 8px; color: #6b7280;">md</p>\r
+              <ui-pagination type="minimal" size="md" total-items="80" items-per-page="10" current-page="3"></ui-pagination>\r
+            </div>\r
+            <div>\r
+              <p style="text-align: center; margin-bottom: 8px; color: #6b7280;">Large</p>\r
+              <ui-pagination type="minimal" size="lg" total-items="80" items-per-page="10" current-page="3"></ui-pagination>\r
+            </div>\r
+          </div>\r
+        </div>\r
+      
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`},{title:`Indicator Pagination`,description:`Dot-based navigation perfect for carousels and slideshows`,html:`<div class="demo-block">\r
+          <h3>Indicator Pagination</h3>\r
+          <p style="color: #6b7280; margin-bottom: 16px;">Dot-based navigation perfect for carousels and slideshows</p>\r
+          \r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination type="indicator" total-items="50" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Without Navigation Buttons</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination type="indicator" total-items="50" items-per-page="10" show-prev-next="false" current-page="2"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">With Theme Colors</h4>\r
+          <div style="display: flex; flex-direction: column; gap: 16px; align-items: center;">\r
+            <ui-pagination type="indicator" theme="primary" total-items="60" items-per-page="10" current-page="2"></ui-pagination>\r
+            <ui-pagination type="indicator" theme="success" total-items="60" items-per-page="10" current-page="3"></ui-pagination>\r
+            <ui-pagination type="indicator" theme="danger" total-items="60" items-per-page="10" current-page="4"></ui-pagination>\r
+          </div>\r
+        </div>\r
+      
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`},{title:`With Page Size Selector & Total Count`,description:``,html:`<div class="demo-block">\r
+          <h3>With Page Size Selector & Total Count</h3>\r
+          <div style="display: flex; justify-content: center;">\r
+            <ui-pagination total-items="200" items-per-page="20" show-page-size="true" show-total="true"></ui-pagination>\r
+          </div>\r
+        </div>\r
+        <div class="demo-block">\r
+          <h3>With Jump To Page</h3>\r
+          <div style="display: flex; justify-content: center;">\r
+            <ui-pagination total-items="500" items-per-page="25" show-jump-to="true" show-total="true"></ui-pagination>\r
+          </div>\r
+        </div>\r
+      
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`},{title:`Dropdown Pagination`,description:`Select page from dropdown menu with Previous/Next navigation`,html:`<div class="demo-block">\r
+          <h3>Dropdown Pagination</h3>\r
+          <p style="color: #6b7280; margin-bottom: 16px;">Select page from dropdown menu with Previous/Next navigation</p>\r
+          \r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination type="dropdown" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px;">Compact Dropdown (Minimal)</h4>\r
+          <p style="color: #6b7280; margin-bottom: 8px; font-size: 14px;">Only dropdown selector, no navigation buttons</p>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination type="dropdown" compact="true" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px;">With Total Count</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination type="dropdown" total-items="250" items-per-page="25" show-total="true" current-page="5"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px;">Icon-Only Dropdown</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination type="dropdown" icon-only="true" total-items="150" items-per-page="15" current-page="2"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px;">With Items Per Page (Modern Bar)</h4>\r
+          <p style="color: #6b7280; margin-bottom: 8px; font-size: 14px;">Unified action bar with page selector and items-per-page dropdown</p>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination type="dropdown" total-items="500" items-per-page="50" show-page-size="true" show-total="true" current-page="2"></ui-pagination>\r
+          </div>\r
+\r
+          <h4 style="margin-top: 24px;">Different Sizes</h4>\r
+          <div style="display: flex; flex-direction: column; gap: 16px; align-items: center;">\r
+            <div>\r
+              <p style="text-align: center; margin-bottom: 8px; color: #6b7280;">Small</p>\r
+              <ui-pagination type="dropdown" size="md" total-items="80" items-per-page="10" current-page="3"></ui-pagination>\r
+            </div>\r
+            <div>\r
+              <p style="text-align: center; margin-bottom: 8px; color: #6b7280;">md</p>\r
+              <ui-pagination type="dropdown" size="md" total-items="80" items-per-page="10" current-page="3"></ui-pagination>\r
+            </div>\r
+            <div>\r
+              <p style="text-align: center; margin-bottom: 8px; color: #6b7280;">Large</p>\r
+              <ui-pagination type="dropdown" size="lg" total-items="80" items-per-page="10" current-page="3"></ui-pagination>\r
+            </div>\r
+          </div>\r
+          \r
+          <div style="margin-top: 20px; padding: 12px; background-color: #f0fdf4; border-radius: 6px;">\r
+            <p style="margin: 0; color: #166534; font-size: 14px;">\r
+              💡 Dropdown pagination is ideal when you need quick access to any page. Use <strong>compact</strong> mode for minimal space usage.\r
+            </p>\r
+          </div>\r
+        </div>\r
+      
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`},{title:`Input Pagination`,description:`Type page number directly or use navigation buttons`,html:`<div class="demo-block">\r
+          <h3>Input Pagination</h3>\r
+          <p style="color: #6b7280; margin-bottom: 16px;">Type page number directly or use navigation buttons</p>\r
+          \r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination type="input" total-items="100" items-per-page="10" current-page="5"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px;">Compact Input (Minimal)</h4>\r
+          <p style="color: #6b7280; margin-bottom: 8px; font-size: 14px;">Only input field and Go button, with validation</p>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination type="input" compact="true" total-items="100" items-per-page="10" current-page="5"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px;">With Total Count</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination type="input" total-items="500" items-per-page="20" show-total="true" current-page="10"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px;">Icon-Only Input</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination type="input" icon-only="true" total-items="200" items-per-page="25" current-page="3"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px;">Unified Action Bar (Input)</h4>\r
+          <p style="color: #6b7280; margin-bottom: 8px; font-size: 14px;">Premium layout with page input and items-per-page selector</p>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination type="input" total-items="1000" items-per-page="100" show-page-size="true" show-total="true" current-page="5"></ui-pagination>\r
+          </div>\r
+\r
+          <h4 style="margin-top: 24px;">Different Sizes</h4>\r
+          <div style="display: flex; flex-direction: column; gap: 16px; align-items: center;">\r
+            <div>\r
+              <p style="text-align: center; margin-bottom: 8px; color: #6b7280;">Small</p>\r
+              <ui-pagination type="input" size="md" total-items="120" items-per-page="10" current-page="4"></ui-pagination>\r
+            </div>\r
+            <div>\r
+              <p style="text-align: center; margin-bottom: 8px; color: #6b7280;">md</p>\r
+              <ui-pagination type="input" size="md" total-items="120" items-per-page="10" current-page="4"></ui-pagination>\r
+            </div>\r
+            <div>\r
+              <p style="text-align: center; margin-bottom: 8px; color: #6b7280;">Large</p>\r
+              <ui-pagination type="input" size="lg" total-items="120" items-per-page="10" current-page="4"></ui-pagination>\r
+            </div>\r
+          </div>\r
+          \r
+          <div style="margin-top: 20px; padding: 12px; background-color: #eff6ff; border-radius: 6px;">\r
+            <p style="margin: 0; color: #1e40af; font-size: 14px;">\r
+              💡 Input pagination validates your entry - try entering invalid values (text, negative numbers, or numbers beyond range) to see error messages. Press Enter or click Go to navigate.\r
+            </p>\r
+          </div>\r
+        </div>\r
+      
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`},{title:`Different Sizes`,description:`Small`,html:`<div class="demo-block">\r
+          <h3>Different Sizes</h3>\r
+          <div style="display: flex; flex-direction: column; gap: 16px; align-items: center;">\r
+            <div>\r
+              <p style="text-align: center; margin-bottom: 8px; color: #6b7280;">Small</p>\r
+              <ui-pagination size="md" total-items="50" items-per-page="10"></ui-pagination>\r
+            </div>\r
+            <div>\r
+              <p style="text-align: center; margin-bottom: 8px; color: #6b7280;">md</p>\r
+              <ui-pagination size="md" total-items="50" items-per-page="10"></ui-pagination>\r
+            </div>\r
+            <div>\r
+              <p style="text-align: center; margin-bottom: 8px; color: #6b7280;">Large</p>\r
+              <ui-pagination size="lg" total-items="50" items-per-page="10"></ui-pagination>\r
+            </div>\r
+          </div>\r
+        </div>\r
+        <div class="demo-block">\r
+          <h3>Outlined Variant</h3>\r
+          <div style="display: flex; justify-content: center;">\r
+            <ui-pagination variant="outlined" total-items="80" items-per-page="10" current-page="2"></ui-pagination>\r
+          </div>\r
+        </div>\r
+      
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`},{title:`Icon-Only Pagination`,description:`Navigation buttons with icons only (no text labels)`,html:`<div class="demo-block">\r
+          <h3>Icon-Only Pagination</h3>\r
+          <p style="color: #6b7280; margin-bottom: 16px;">Navigation buttons with icons only (no text labels)</p>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 20px;">\r
+            <ui-pagination icon-only="true" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px;">With Dropdown Page Size Selector</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 20px;">\r
+            <ui-pagination icon-only="true" total-items="150" items-per-page="15" show-page-size="true" current-page="2"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px;">With Page Input Jump</h4>\r
+          <div style="display: flex; justify-content: center;">\r
+            <ui-pagination icon-only="true" total-items="200" items-per-page="20" show-jump-to="true" show-total="true" current-page="5"></ui-pagination>\r
+          </div>\r
+          \r
+          <div style="margin-top: 20px; padding: 12px; background-color: #f0f9ff; border-radius: 6px;">\r
+            <p style="margin: 0; color: #1e40af; font-size: 14px;">\r
+              💡 Icon-only mode is perfect for compact layouts where space is limited.\r
+            </p>\r
+          </div>\r
+        </div>\r
+      
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`},{title:`🎮 Interactive Playground`,description:`Customize the pagination properties and see changes in real-time!`,html:`<div class="demo-block">\r
+          <h3>🎮 Interactive Playground</h3>\r
+          <p style="color: #6b7280; margin-bottom: 20px;">Customize the pagination properties and see changes in real-time!</p>\r
+          \r
+          <div style="background-color: white; padding: 24px; border-radius: 12px; margin-bottom: 24px; border: 1px solid #e5e7eb; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);">\r
+            <h4 style="margin: 0 0 20px; color: #111827; font-size: 1.1rem; border-bottom: 1px solid #f3f4f6; padding-bottom: 12px;">Settings</h4>\r
+            \r
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">\r
+              <!-- Numeric Inputs -->\r
+              <div style="display: flex; flex-direction: column; gap: 16px;">\r
+                <ui-input id="paginationTotalItems" label="Total Items" type="number" value="100" min="1" variant="outline"></ui-input>\r
+                <ui-input id="paginationItemsPerPage" label="Items Per Page" type="number" value="10" min="1" variant="outline"></ui-input>\r
+                <ui-input id="paginationMaxVisible" label="Max Visible Pages" type="number" value="5" min="1" max="10" variant="outline"></ui-input>\r
+              </div>\r
+\r
+              <!-- Selects -->\r
+              <div style="display: flex; flex-direction: column; gap: 16px;">\r
+                <ui-dropdown id="paginationType" label="Type" variant="outline" value="basic" options='[\r
+                  {"label": "Basic", "value": "basic"},\r
+                  {"label": "Compact", "value": "compact"},\r
+                  {"label": "Detailed", "value": "detailed"},\r
+                  {"label": "Minimal", "value": "minimal"},\r
+                  {"label": "Indicator", "value": "indicator"},\r
+                  {"label": "Dropdown", "value": "dropdown"},\r
+                  {"label": "Input", "value": "input"}\r
+                ]'></ui-dropdown>\r
+                \r
+                <ui-dropdown id="paginationSize" label="Size" variant="outline" value="md" options='[\r
+                  {"label": "Small (sm)", "value": "sm"},\r
+                  {"label": "Medium (md)", "value": "md"},\r
+                  {"label": "Large (lg)", "value": "lg"}\r
+                ]'></ui-dropdown>\r
+                \r
+                <ui-dropdown id="paginationVariant" label="Variant" variant="outline" value="default" options='[\r
+                  {"label": "Default", "value": "default"},\r
+                  {"label": "Outlined", "value": "outlined"},\r
+                  {"label": "Filled", "value": "filled"},\r
+                  {"label": "Floating", "value": "floating"},\r
+                  {"label": "Glass", "value": "glass"},\r
+                  {"label": "Soft", "value": "soft"},\r
+                  {"label": "Modern", "value": "modern"},\r
+                  {"label": "Minimalist", "value": "minimalist"},\r
+                  {"label": "Premium", "value": "premium"},\r
+                  {"label": "Underline", "value": "underline"}\r
+                ]'></ui-dropdown>\r
+\r
+                <ui-dropdown id="paginationTheme" label="Theme" variant="outline" value="default" options='[\r
+                  {"label": "Default", "value": "default"},\r
+                  {"label": "Primary", "value": "primary"},\r
+                  {"label": "Success", "value": "success"},\r
+                  {"label": "Danger", "value": "danger"},\r
+                  {"label": "Warning", "value": "warning"},\r
+                  {"label": "Info", "value": "info"}\r
+                ]'></ui-dropdown>\r
+\r
+                <ui-dropdown id="paginationShape" label="Shape" variant="outline" value="default" options='[\r
+                  {"label": "Default", "value": "default"},\r
+                  {"label": "Rounded", "value": "rounded"},\r
+                  {"label": "Pill", "value": "pill"},\r
+                  {"label": "Circle", "value": "circle"}\r
+                ]'></ui-dropdown>\r
+              </div>\r
+              \r
+              <!-- Checkboxes -->\r
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: start;">\r
+                <ui-checkbox id="paginationKeyboardNav" label="Keyboard Nav" checked></ui-checkbox>\r
+                <ui-checkbox id="paginationResponsive" label="Responsive" checked></ui-checkbox>\r
+                <ui-checkbox id="paginationRTL" label="RTL Mode"></ui-checkbox>\r
+                <ui-checkbox id="paginationShowFirstLast" label="Show First/Last" checked></ui-checkbox>\r
+                <ui-checkbox id="paginationShowPageSize" label="Show Page Size"></ui-checkbox>\r
+                <ui-checkbox id="paginationShowTotal" label="Show Total"></ui-checkbox>\r
+                <ui-checkbox id="paginationShowJumpTo" label="Show Jump To"></ui-checkbox>\r
+                <ui-checkbox id="paginationIconOnly" label="Icon Only"></ui-checkbox>\r
+              </div>\r
+            </div>\r
+            \r
+            <div id="interactivePaginationContainer" style="margin: 40px 0; padding: 40px; background: #fafafa; border-radius: 12px; border: 1px dashed #e2e8f0; display: flex; justify-content: center; align-items: center; min-height: 120px;">\r
+               <!-- Pagination will be injected here -->\r
+            </div>\r
+\r
+            <div style="margin-top: 24px;">\r
+               <h4 style="margin: 0 0 12px; color: #374151;">Component Code:</h4>\r
+               <div style="flex: 1; min-width: 300px; background: #1e293b; padding: 20px; border-radius: 12px; position: relative; box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);">\r
+                  <ui-button label="Copy Code" id="copyPaginationBtn" variant="outline" color="secondary" size="md"click="copyPaginationCode()" style="position: absolute; top: 12px; right: 12px;"></ui-button>\r
+                  <code id="paginationCodeBlock" style="color: #cbd5e1; font-family: 'Fira Code', monospace; font-size: 13px; display: block; overflow-x: auto; white-space: pre-wrap; line-height: 1.5;">\r
+                    &lt;ui-pagination ...&gt;&lt;/ui-pagination&gt;\r
+                  </code>\r
+               </div>\r
+            </div>\r
+          </div>\r
+        </div>\r
+      
+<script>
+(function() {
+  // Wire up events\r
+      if (!window.paginationWired) {\r
+        window.paginationWired = true;\r
+        const inputs = ['paginationTotalItems', 'paginationItemsPerPage', 'paginationMaxVisible'];\r
+        const dropdowns = ['paginationType', 'paginationSize', 'paginationVariant', 'paginationTheme', 'paginationShape'];\r
+        const checkboxes = [\r
+          'paginationKeyboardNav',\r
+          'paginationResponsive',\r
+          'paginationRTL',\r
+          'paginationShowFirstLast',\r
+          'paginationShowPageSize',\r
+          'paginationShowTotal',\r
+          'paginationShowJumpTo',\r
+          'paginationIconOnly',\r
+        ];\r
+\r
+        setTimeout(() => {\r
+          inputs.forEach(id => document.getElementById(id)?.addEventListener('inputChange', () => updateInteractivePagination()));\r
+          dropdowns.forEach(id => document.getElementById(id)?.addEventListener('dropdownChange', () => updateInteractivePagination()));\r
+          checkboxes.forEach(id => document.getElementById(id)?.addEventListener('checkboxChange', () => updateInteractivePagination()));\r
+          updateInteractivePagination();\r
+        }, 100);\r
+      } else {\r
+        setTimeout(() => updateInteractivePagination(), 100);\r
+      }
+})();
+<\/script>`},{title:`🎨 Color Themes`,description:`Choose from 6 color themes to match your design`,html:`<div class="demo-block">\r
+          <h3>🎨 Color Themes</h3>\r
+          <p style="color: #6b7280; margin-bottom: 20px;">Choose from 6 color themes to match your design</p>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Primary Theme</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination theme="primary" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Success Theme</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination theme="success" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Danger Theme</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination theme="danger" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Warning Theme</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination theme="warning" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Info Theme</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination theme="info" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+        </div>\r
+      
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`},{title:`⭕ Button Shapes`,description:`Different button shape styles`,html:`<div class="demo-block">\r
+          <h3>⭕ Button Shapes</h3>\r
+          <p style="color: #6b7280; margin-bottom: 20px;">Different button shape styles</p>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Default Shape</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination shape="default" theme="primary" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Rounded Shape</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination shape="rounded" theme="success" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Pill Shape</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination shape="pill" theme="warning" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+\r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Circle Shape</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination shape="circle" theme="danger" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+        </div>\r
+      
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`},{title:`⌨️ Keyboard Navigation`,description:`Navigate using keyboard shortcuts`,html:`<div class="demo-block">\r
+          <h3>⌨️ Keyboard Navigation</h3>\r
+          <p style="color: #6b7280; margin-bottom: 20px;">Navigate using keyboard shortcuts</p>\r
+          \r
+          <div style="background-color: #eff6ff; padding: 20px; border-radius: 8px; margin-bottom: 24px;">\r
+            <h4 style="margin-top: 0;">Keyboard Shortcuts:</h4>\r
+            <ul style="margin: 0; padding-left: 20px;">\r
+              <li><kbd style="background: white; padding: 2px 6px; border: 1px solid #d1d5db; border-radius: 3px;">←</kbd> Arrow Left - Previous page</li>\r
+              <li><kbd style="background: white; padding: 2px 6px; border: 1px solid #d1d5db; border-radius: 3px;">→</kbd> Arrow Right - Next page</li>\r
+              <li><kbd style="background: white; padding: 2px 6px; border: 1px solid #d1d5db; border-radius: 3px;">Home</kbd> - First page</li>\r
+              <li><kbd style="background: white; padding: 2px 6px; border: 1px solid #d1d5db; border-radius: 3px;">End</kbd> - Last page</li>\r
+            </ul>\r
+          </div>\r
+          \r
+          <p style="color: #10b981; font-weight: 500; margin-bottom: 12px;">Try it! Click on the pagination below and use keyboard shortcuts:</p>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination keyboard-nav="true" theme="primary" total-items="100" items-per-page="10" current-page="5"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Keyboard Navigation Disabled</h4>\r
+          <div style="display: flex; justify-content: center;">\r
+            <ui-pagination keyboard-nav="false" total-items="100" items-per-page="10" current-page="5"></ui-pagination>\r
+          </div>\r
+        </div>\r
+      
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`},{title:`📱 Responsive Pagination`,description:`Auto-adapts to mobile screens`,html:`<div class="demo-block">\r
+          <h3>📱 Responsive Pagination</h3>\r
+          <p style="color: #6b7280; margin-bottom: 20px;">Auto-adapts to mobile screens</p>\r
+          \r
+          <div style="background-color: #fef3c7; padding: 16px; border-radius: 8px; margin-bottom: 24px;">\r
+            <p style="margin: 0; color: #92400e;">\r
+              💡 <strong>Tip:</strong> Resize your browser window to see the pagination automatically switch to compact mode on mobile!\r
+            </p>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Responsive Mode (Auto-adapts)</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination responsive-mode="true" theme="primary" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Fixed Mode (No auto-adapt)</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination responsive-mode="false" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Custom Mobile Breakpoint (1024px)</h4>\r
+          <div style="display: flex; justify-content: center;">\r
+            <ui-pagination responsive-mode="true" mobile-breakpoint="1024" theme="success" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+        </div>\r
+      
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`},{title:`Button Shapes`,description:`Different button shape styles - notice the border radius!`,html:`<div class="demo-block">\r
+          <h3> Button Shapes</h3>\r
+          <p style="color: #6b7280; margin-bottom: 20px;">Different button shape styles - notice the border radius!</p>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Default Shape (4px radius)</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination shape="default" theme="primary" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Rounded Shape (12px radius)</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination shape="rounded" theme="success" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Pill Shape (24px radius + padding)</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination shape="pill" theme="warning" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+\r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Circle Shape (50% radius — equal width &amp; height)</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination shape="circle" theme="danger" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+        </div>\r
+      
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`},{title:`Responsive Pagination`,description:`Auto-adapts to mobile screens`,html:`<div class="demo-block">\r
+          <h3> Responsive Pagination</h3>\r
+          <p style="color: #6b7280; margin-bottom: 20px;">Auto-adapts to mobile screens</p>\r
+          \r
+          <div style="background-color: #fef3c7; padding: 16px; border-radius: 8px; margin-bottom: 24px;">\r
+            <p style="margin: 0; color: #92400e;">\r
+               <strong>Tip:</strong> Resize your browser window below 768px to see automatic compact mode!\r
+            </p>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Responsive Mode Enabled</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination responsive-mode="true" theme="primary" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+        </div>\r
+      
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`},{title:`Quick Jump Buttons`,description:`Jump multiple pages at once with +5/-5 buttons`,html:`<div class="demo-block">\r
+          <h3> Quick Jump Buttons</h3>\r
+          <p style="color: #6b7280; margin-bottom: 20px;">Jump multiple pages at once with +5/-5 buttons</p>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Quick Jump Enabled (Step: 5)</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination quick-jump="true" quick-jump-step="5" total-items="500" items-per-page="10" current-page="15"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Custom Step Size (Step: 10)</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination quick-jump="true" quick-jump-step="10" total-items="1000" items-per-page="10" current-page="25"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">With Theme</h4>\r
+          <div style="display: flex; justify-content: center;">\r
+            <ui-pagination quick-jump="true" quick-jump-step="5" theme="primary" total-items="300" items-per-page="10" current-page="12"></ui-pagination>\r
+          </div>\r
+        </div>\r
+      
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`},{title:`Progress Indicator`,description:`Visual progress bar showing pagination progress`,html:`<div class="demo-block">\r
+          <h3> Progress Indicator</h3>\r
+          <p style="color: #6b7280; margin-bottom: 20px;">Visual progress bar showing pagination progress</p>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">With Progress Bar</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination show-progress="true" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Progress with Different Themes</h4>\r
+          <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">\r
+            <ui-pagination show-progress="true" theme="primary" total-items="100" items-per-page="10" current-page="5"></ui-pagination>\r
+            <ui-pagination show-progress="true" theme="success" total-items="100" items-per-page="10" current-page="7"></ui-pagination>\r
+            <ui-pagination show-progress="true" theme="danger" total-items="100" items-per-page="10" current-page="9"></ui-pagination>\r
+          </div>\r
+        </div>\r
+      
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`},{title:`Sticky Positioning`,description:`Pagination stays fixed while scrolling`,html:`<div class="demo-block">\r
+          <h3> Sticky Positioning</h3>\r
+          <p style="color: #6b7280; margin-bottom: 20px;">Pagination stays fixed while scrolling</p>\r
+          \r
+          <div style="background-color: #fef3c7; padding: 16px; border-radius: 8px; margin-bottom: 24px;">\r
+            <p style="margin: 0; color: #92400e;">\r
+               <strong>Note:</strong> Sticky positioning works best in scrollable containers. Try scrolling to see the effect!\r
+            </p>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Sticky Bottom (Default)</h4>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination sticky="true" sticky-position="bottom" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Sticky Top</h4>\r
+          <div style="display: flex; justify-content: center;">\r
+            <ui-pagination sticky="true" sticky-position="top" total-items="100" items-per-page="10" current-page="5"></ui-pagination>\r
+          </div>\r
+        </div>\r
+      
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`},{title:`Smart Features`,description:`Auto-hide, Smart Compact, URL Sync, and LocalStorage`,html:`<div class="demo-block">\r
+          <h3> Smart Features</h3>\r
+          <p style="color: #6b7280; margin-bottom: 20px;">Auto-hide, Smart Compact, URL Sync, and LocalStorage</p>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Auto-Hide (Single Page)</h4>\r
+          <p style="color: #6b7280; font-size: 14px; margin-bottom: 12px;">Pagination hides when there's only 1 page</p>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px; min-height: 60px; background: #f9fafb; border-radius: 8px; align-items: center;">\r
+            <ui-pagination auto-hide="true" total-items="5" items-per-page="10" current-page="1"></ui-pagination>\r
+            <p style="color: #9ca3af; font-style: italic;"> Pagination is hidden (only 1 page)</p>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">Smart Compact Mode</h4>\r
+          <p style="color: #6b7280; font-size: 14px; margin-bottom: 12px;">Auto-switches to compact when pages exceed threshold (20)</p>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination smart-compact="true" smart-compact-threshold="20" total-items="500" items-per-page="10" current-page="15"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">URL Sync</h4>\r
+          <p style="color: #6b7280; font-size: 14px; margin-bottom: 12px;">Current page syncs with browser URL (check URL bar!)</p>\r
+          <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+            <ui-pagination url-sync="true" url-param="page" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+          </div>\r
+          \r
+          <h4 style="margin-top: 24px; margin-bottom: 12px;">LocalStorage Persistence</h4>\r
+          <p style="color: #6b7280; font-size: 14px; margin-bottom: 12px;">Page persists across page reloads</p>\r
+          <div style="display: flex; justify-content: center;">\r
+            <ui-pagination persist-page="true" storage-key="demo-page" total-items="100" items-per-page="10" current-page="1"></ui-pagination>\r
+          </div>\r
+        </div>\r
+      
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`},{title:`✨ Visual Variants`,description:`All available visual styles for the pagination component`,html:`<div class="demo-block">\r
+      <h3>✨ Visual Variants</h3>\r
+      <p style="color: #6b7280; margin-bottom: 20px;">All available visual styles for the pagination component</p>\r
+\r
+      <h4 style="margin-top: 24px; margin-bottom: 12px;">Default</h4>\r
+      <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+        <ui-pagination variant="default" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+      </div>\r
+\r
+      <h4 style="margin-top: 24px; margin-bottom: 12px;">Outlined</h4>\r
+      <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+        <ui-pagination variant="outlined" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+      </div>\r
+\r
+      <h4 style="margin-top: 24px; margin-bottom: 12px;">Filled</h4>\r
+      <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+        <ui-pagination variant="filled" theme="primary" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+      </div>\r
+\r
+      <h4 style="margin-top: 24px; margin-bottom: 12px;">Soft</h4>\r
+      <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+        <ui-pagination variant="outline" theme="primary" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+      </div>\r
+\r
+      <h4 style="margin-top: 24px; margin-bottom: 12px;">Minimalist</h4>\r
+      <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+        <ui-pagination variant="minimalist" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+      </div>\r
+\r
+      <h4 style="margin-top: 24px; margin-bottom: 12px;">Underline</h4>\r
+      <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+        <ui-pagination variant="underline" theme="primary" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+      </div>\r
+\r
+      <h4 style="margin-top: 24px; margin-bottom: 12px;">Floating</h4>\r
+      <p style="color: #6b7280; font-size: 14px; margin-bottom: 12px;">Elevated card-like appearance with shadow</p>\r
+      <div style="display: flex; justify-content: center; margin-bottom: 24px; padding: 24px; background: #f1f5f9; border-radius: 12px;">\r
+        <ui-pagination variant="floating" theme="primary" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+      </div>\r
+\r
+      <h4 style="margin-top: 24px; margin-bottom: 12px;">Glass</h4>\r
+      <p style="color: #6b7280; font-size: 14px; margin-bottom: 12px;">Frosted-glass effect — best on coloured backgrounds</p>\r
+      <div style="display: flex; justify-content: center; margin-bottom: 24px; padding: 24px; background: linear-gradient(135deg, #6366f1, #06b6d4); border-radius: 12px;">\r
+        <ui-pagination variant="glass" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+      </div>\r
+\r
+      <h4 style="margin-top: 24px; margin-bottom: 12px;">Modern</h4>\r
+      <p style="color: #6b7280; font-size: 14px; margin-bottom: 12px;">Clean dark-elevated style with subtle shadow</p>\r
+      <div style="display: flex; justify-content: center; margin-bottom: 24px; padding: 24px; background: #0f172a; border-radius: 12px;">\r
+        <ui-pagination variant="modern" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+      </div>\r
+\r
+      <h4 style="margin-top: 24px; margin-bottom: 12px;">Premium</h4>\r
+      <p style="color: #6b7280; font-size: 14px; margin-bottom: 12px;">High-contrast premium look with deep shadow</p>\r
+      <div style="display: flex; justify-content: center; margin-bottom: 24px; padding: 24px; background: #0f172a; border-radius: 12px;">\r
+        <ui-pagination variant="premium" theme="primary" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+      </div>\r
+\r
+      <h4 style="margin-top: 24px; margin-bottom: 12px;">Segmented</h4>\r
+      <p style="color: #6b7280; font-size: 14px; margin-bottom: 12px;">Joined button group with shared border</p>\r
+      <div style="display: flex; justify-content: center; margin-bottom: 24px;">\r
+        <ui-pagination segmented="true" theme="primary" total-items="100" items-per-page="10" current-page="3"></ui-pagination>\r
+      </div>\r
+\r
+      <div style="margin-top: 20px; padding: 12px; background-color: #f0fdf4; border-radius: 6px;">\r
+        <p style="margin: 0; color: #166534; font-size: 14px;">\r
+          💡 <strong>Tip:</strong> Glass, Modern, and Premium variants look best on dark or coloured backgrounds.\r
+          Use <code>theme</code> to change the active-page colour across all variants.\r
+        </p>\r
+      </div>\r
+    </div>\r
+  
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`},{title:`⚡ Modern Action Bars`,description:`Premium pill-shaped containers that group totals, page selection, and page size into a single unified component.`,html:`<div class="demo-block">\r
+      <h3>⚡ Modern Action Bars</h3>\r
+      <p style="color: #6b7280; margin-bottom: 24px;">Premium pill-shaped containers that group totals, page selection, and page size into a single unified component.</p>\r
+      \r
+      <h4 style="margin-bottom: 16px;">Premium Action Bar (Dropdown)</h4>\r
+      <div style="display: flex; justify-content: center; margin-bottom: 40px; padding: 24px; background: #0f172a; border-radius: 16px;">\r
+        <ui-pagination \r
+          type="dropdown" \r
+          variant="premium" \r
+          theme="primary" \r
+          total-items="1000" \r
+          items-per-page="100" \r
+          show-page-size="true" \r
+          show-total="true" \r
+          current-page="5">\r
+        </ui-pagination>\r
+      </div>\r
+      \r
+      <h4 style="margin-bottom: 16px;">Modern Action Bar (Input)</h4>\r
+      <div style="display: flex; justify-content: center; margin-bottom: 40px; padding: 24px; background: #f8fafc; border-radius: 16px; border: 1px solid #e2e8f0;">\r
+        <ui-pagination \r
+          type="input" \r
+          variant="modern" \r
+          theme="primary" \r
+          total-items="500" \r
+          items-per-page="50" \r
+          show-page-size="true" \r
+          show-total="true" \r
+          current-page="3">\r
+        </ui-pagination>\r
+      </div>\r
+\r
+      <h4 style="margin-bottom: 16px;">Glass Action Bar (Floating)</h4>\r
+      <div style="display: flex; justify-content: center; margin-bottom: 40px; padding: 48px; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); border-radius: 16px;">\r
+        <ui-pagination \r
+          type="dropdown" \r
+          variant="glass" \r
+          total-items="250" \r
+          items-per-page="25" \r
+          show-page-size="true" \r
+          show-total="true" \r
+          current-page="4">\r
+        </ui-pagination>\r
+      </div>\r
+      \r
+      <div style="margin-top: 20px; padding: 16px; background-color: #f0f9ff; border-radius: 12px; border: 1px solid #d0e7ff;">\r
+        <p style="margin: 0; color: #1e40af; font-size: 14px; line-height: 1.6;">\r
+          <strong>Design Note:</strong> These "Action Bar" styles are automatically applied when using <code>type="dropdown"</code> or <code>type="input"</code> combined with modern variants like <code>premium</code>, <code>modern</code>, or <code>glass</code>. The items-per-page dropdown is now fully integrated into these pill designs for a clean, professional workspace.\r
+        </p>\r
+      </div>\r
+    </div>\r
+  
+<script>
+(function() {
+  setupPaginationEvents();
+})();
+<\/script>`}],panel:[{title:`📄 Basic Panel`,description:`Simple panel with title, content, and footer`,html:`<div class="demo-block">\r
         <h3>📄 Basic Panel</h3>\r
         <p style="color: #6b7280; margin-bottom: 16px;">Simple panel with title, content, and footer</p>\r
         \r
@@ -50820,18 +50969,6 @@ await manager.loadLayout(saved);</code></pre>\r
       container.appendChild(panel);\r
       panel.addEventListener('panelClose', () => panel.remove());\r
     };
-})();
-<\/script>`},{title:`open Custom Pos`,description:`This panel was opened at:`,html:`<div slot="content">\r
-          <p>This panel was opened at:</p>\r
-          <code>X: \${x}</code><br/>\r
-          <code>Y: \${y}</code>\r
-          <p style="margin-top: 10px; font-size: 13px; color: #666;">It uses fixed positioning relative to the viewport.</p>\r
-        </div>\r
-      
-<script>
-(function() {
-  container.appendChild(panel);\r
-      panel.addEventListener('panelClose', () => panel.remove());
 })();
 <\/script>`},{title:`✨ Visuals`,description:`Premium ui-panel component`,html:`<div class="demo-block playground-block" style="padding: 0; overflow: hidden; border-radius: 12px; background: #0f172a; border: 1px solid #334155; display: grid; grid-template-columns: 320px 1fr; height: 700px;">\r
         <!-- Controls -->\r
@@ -51205,89 +51342,6 @@ await manager.loadLayout(saved);</code></pre>\r
       if (container) container.innerHTML = '';\r
     };
 })();
-<\/script>`},{title:`Apex Security Protocol`,description:`Apex Security Protocol\r
-                This panel is correctly centered in the viewport using the updated Apex Positioning Engine.`,html:`<div slot="content" style="text-align: center; padding: 20px;">\r
-                <div style="background: #eff6ff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">\r
-                    <svg viewBox="0 0 24 24" fill="none" class="icon" stroke="#10b981" stroke-width="2" style="width: 32px; height: 32px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>\r
-                </div>\r
-                <h4 style="margin: 0 0 8px; color: #1f2937; font-weight: 800;">Apex Security Protocol</h4>\r
-                <p style="margin: 0; color: #6b7280; font-size: 14px;">This panel is correctly centered in the viewport using the updated Apex Positioning Engine.</p>\r
-            </div>\r
-            <div slot="footer" style="padding: 16px; justify-content: center; gap: 12px; display: flex;">\r
-                <ui-button onclick="closeDynamicPanel()" variant="outline" color="success" label="Authorize" size="md"yle="width: 120px;"></ui-button>\r
-                <ui-button onclick="closeDynamicPanel()" variant="outline" color="secondary" label="Decline" size="md"yle="width: 120px;"></ui-button>\r
-            </div>\r
-        
-<script>
-(function() {
-  container.appendChild(panel);\r
-\r
-      panel.addEventListener('panelSettings', e => {\r
-        alert('Settings for Panel: ' + e.detail.panelId + '\\nRedirecting to strategic dashboard...');\r
-      });\r
-\r
-      panel.addEventListener('panelClose', () => {\r
-        container.innerHTML = '';\r
-      });
-})();
-<\/script>`},{title:`open Side Panel`,description:`Account`,html:`<div slot="content" style="padding: 0;">\r
-                <div style="padding: 16px; border-bottom: 1px solid #e5e7eb;">\r
-                    <p style="margin: 0; font-size: 13px; color: #6b7280; text-transform: uppercase; font-weight: 600;">Account</p>\r
-                </div>\r
-                \${menuItems\r
-                  .map(\r
-                    item => 
-<script>
-(function() {
-  <div style="padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f9fafb'" onmouseout="this.style.backgroundColor='transparent'">\r
-                        <span style="display: flex; align-items: center; gap: 12px; color: #374151; font-weight: 500;">\r
-                            <span>\${item.icon}</span> \${item.label}\r
-                        </span>\r
-                        \${item.badge ? \`<span style="background: #ef4444; color: white; font-size: 11px; padding: 2px 6px; border-radius: 10px; font-weight: 600;">\${item.badge}</span>\` : '<span style="color: #9ca3af;">›</span>'}\r
-                    </div>\r
-                \`,\r
-                  )\r
-                  .join('')}\r
-                <div style="padding: 16px; border-top: 1px solid var(--border-default); margin-top: 16px;">\r
-                    <ui-button variant="outline" color="danger" label="Sign Out" style="width: 100%"></ui-button>\r
-                </div>\r
-            </div>\r
-        \`;\r
-\r
-      container.appendChild(panel);\r
-      panel.addEventListener('panelClose', () => {\r
-        container.innerHTML = '';\r
-      });
-})();
-<\/script>`},{title:`open Glass Panel`,description:`Blur the lines between content and background. This panel uses backdrop-filter to create a frosted glass effect.`,html:`<div slot="content" style="\${glassStyle} padding: 30px 20px;">\r
-                <h2 style="margin: 0 0 10px; font-size: 24px; font-weight: 700;">Glassmorphism</h2>\r
-                <p style="margin: 0 0 24px; opacity: 0.9; line-height: 1.6;">\r
-                    Blur the lines between content and background. This panel uses <code style="background: rgba(255,255,255,0.2); padding: 2px 6px; border-radius: 4px;">backdrop-filter</code> to create a frosted glass effect.\r
-                </p>\r
-                <div style="display: flex; gap: 16px; justify-content: center;">\r
-                    <ui-button onclick="closeDynamicPanel()" variant="outline" color="secondary" label="Explore" style="border-radius: 30px"></ui-button>\r
-                </div>\r
-            </div>\r
-        
-<script>
-(function() {
-  panel.innerHTML = \`\r
-            <div slot="content" style="\${glassStyle} padding: 30px 20px;">\r
-                <h2 style="margin: 0 0 10px; font-size: 24px; font-weight: 700;">Glassmorphism</h2>\r
-                <p style="margin: 0 0 24px; opacity: 0.9; line-height: 1.6;">\r
-                    Blur the lines between content and background. This panel uses <code style="background: rgba(255,255,255,0.2); padding: 2px 6px; border-radius: 4px;">backdrop-filter</code> to create a frosted glass effect.\r
-                </p>\r
-                <div style="display: flex; gap: 16px; justify-content: center;">\r
-                    <ui-button onclick="closeDynamicPanel()" variant="outline" color="secondary" label="Explore" style="border-radius: 30px"></ui-button>\r
-                </div>\r
-            </div>\r
-        \`;\r
-\r
-      container.appendChild(panel);\r
-      panel.addEventListener('panelClose', () => {\r
-        container.innerHTML = '';\r
-      });
-})();
 <\/script>`},{title:`🚀 All Features Combined`,description:`A panel with all features enabled`,html:`<div class="demo-block">\r
         <h3>🚀 All Features Combined</h3>\r
         <p style="color: #6b7280; margin-bottom: 16px;">A panel with all features enabled</p>\r
@@ -51500,26 +51554,26 @@ await manager.loadLayout(saved);</code></pre>\r
       <h4 style="margin-top:32px;">Click trigger (default)</h4>\r
       <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:16px;">\r
         <ui-popover trigger="click" placement="top" heading="Information" content="<p>This is a <strong>popover</strong> with HTML content. Click outside to close.</p>">\r
-          <ui-button label="Top" color="success" variant="outline"></ui-button>\r
+          \${btn('Top')}\r
         </ui-popover>\r
         <ui-popover trigger="click" placement="bottom" heading="Notes" content="<p>Bottom placement — flips to top when near edge.</p>">\r
-          <ui-button label="Bottom" color="success" variant="outline"></ui-button>\r
+          \${btn('Bottom', '#10b981')}\r
         </ui-popover>\r
         <ui-popover trigger="click" placement="left" content="<p>Left placement</p>">\r
-          <ui-button label="Left" color="warning" variant="outline"></ui-button>\r
+          \${btn('Left', '#f59e0b')}\r
         </ui-popover>\r
         <ui-popover trigger="click" placement="right" content="<p>Right placement</p>">\r
-          <ui-button label="Right" color="secondary" variant="outline"></ui-button>\r
+          \${btn('Right', '#8b5cf6')}\r
         </ui-popover>\r
       </div>\r
 \r
       <h4 style="margin-top:40px;">No arrow / No heading</h4>\r
       <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:16px;">\r
         <ui-popover trigger="click" placement="bottom" show-arrow="false" content="<p>Arrow-free popover — great for menus and dropdowns.</p>">\r
-          <ui-button label="No Arrow" color="primary" variant="outline"></ui-button>\r
+          \${btn('No Arrow', '#6366f1')}\r
         </ui-popover>\r
         <ui-popover trigger="click" placement="bottom" content="<p>No heading, just body content.</p>">\r
-          <ui-button label="No Heading" color="error" variant="outline"></ui-button>\r
+          \${btn('No Heading', '#ec4899')}\r
         </ui-popover>\r
       </div>\r
 \r
@@ -51527,7 +51581,7 @@ await manager.loadLayout(saved);</code></pre>\r
       <p style="color:#6b7280;font-size:13px;">Set <code>max-height</code> to enable internal scrolling for long content.</p>\r
       <ui-popover trigger="click" placement="bottom" heading="Long List" max-height="200px"\r
         content="<ul style='margin:0;padding-left:18px;line-height:2;'><li>Item 1</li><li>Item 2</li><li>Item 3</li><li>Item 4</li><li>Item 5</li><li>Item 6</li><li>Item 7</li><li>Item 8</li><li>Item 9</li><li>Item 10</li></ul>">\r
-        <ui-button label="Scrollable Content" color="info" variant="outline"></ui-button>\r
+        \${btn('Scrollable Content', '#0891b2')}\r
       </ui-popover>\r
     </div>`},{title:`Trigger Modes`,description:`Toggle on click, close on outside click or Esc.`,html:`<div class="demo-block">\r
       <h3>Trigger Modes</h3>\r
@@ -51538,7 +51592,7 @@ await manager.loadLayout(saved);</code></pre>\r
           <h4 style="margin:0 0 8px;">click</h4>\r
           <p style="font-size:13px;color:#6b7280;margin-bottom:16px;">Toggle on click, close on outside click or Esc.</p>\r
           <ui-popover trigger="click" placement="bottom" heading="Click Trigger" content="<p>Opened by clicking the button.</p>">\r
-            <ui-button label="Click Me" color="success" variant="outline"></ui-button>\r
+            \${btn('Click Me', '#10b981')}\r
           </ui-popover>\r
         </div>\r
 \r
@@ -51546,7 +51600,7 @@ await manager.loadLayout(saved);</code></pre>\r
           <h4 style="margin:0 0 8px;">hover</h4>\r
           <p style="font-size:13px;color:#6b7280;margin-bottom:16px;">Opens on mouse enter, closes after <code>hide-delay</code> ms. Move cursor into popover body — it stays open (<code>interactive</code>).</p>\r
           <ui-popover trigger="hover" placement="bottom" show-delay="200" hide-delay="400" heading="Hover Trigger" content="<p>Hover into this area — it stays open!</p>">\r
-            <ui-button label="Hover Me" color="success" variant="outline"></ui-button>\r
+            \${btn('Hover Me', '#10b981')}\r
           </ui-popover>\r
         </div>\r
 \r
@@ -51575,7 +51629,7 @@ await manager.loadLayout(saved);</code></pre>\r
           <h4 style="margin:0 0 8px;">interactive: false</h4>\r
           <p style="font-size:13px;color:#6b7280;margin-bottom:16px;">In hover mode with <code>interactive="false"</code> — popover closes immediately when cursor leaves trigger (pure tooltip).</p>\r
           <ui-popover trigger="hover" interactive="false" placement="bottom" hide-delay="0" content="<p>I close instantly when you leave me.</p>">\r
-            <ui-button label="Hover (non-interactive)" color="warning" variant="outline"></ui-button>\r
+            \${btn('Hover (non-interactive)', '#ea580c')}\r
           </ui-popover>\r
         </div>\r
 \r
@@ -51583,7 +51637,7 @@ await manager.loadLayout(saved);</code></pre>\r
           <h4 style="margin:0 0 8px;">closeOnScroll</h4>\r
           <p style="font-size:13px;color:#6b7280;margin-bottom:16px;">Popover closes automatically when the page is scrolled — ideal for popovers inside scrollable lists.</p>\r
           <ui-popover trigger="click" close-on-scroll="true" placement="bottom" content="<p>Scroll the page — I'll close automatically.</p>">\r
-            <ui-button label="Open + Scroll closes" color="success" variant="outline"></ui-button>\r
+            \${btn('Open + Scroll closes', '#16a34a')}\r
           </ui-popover>\r
         </div>\r
 \r
@@ -51595,32 +51649,32 @@ await manager.loadLayout(saved);</code></pre>\r
       <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:28px;">\r
         <ui-popover trigger="click" variant="light" placement="bottom" heading="Light (default)"\r
           content="<p>Default clean white popover.</p>">\r
-          <ui-button label="Light" color="secondary" variant="outline"></ui-button>\r
+          \${btn('Light', '#374151')}\r
         </ui-popover>\r
 \r
         <ui-popover trigger="click" variant="dark" placement="bottom" heading="Dark Mode"\r
           content="<p>Sleek dark variant for dark-theme UIs.</p>">\r
-          <ui-button label="Dark" color="secondary" variant="outline"></ui-button>\r
+          \${btn('Dark', '#1f2937')}\r
         </ui-popover>\r
 \r
         <ui-popover trigger="click" variant="success" placement="bottom" heading="All systems go"\r
           content="<p>Deployment completed successfully in 2.3s.</p>">\r
-          <ui-button label="Success" color="success" variant="outline"></ui-button>\r
+          \${btn('Success', '#16a34a')}\r
         </ui-popover>\r
 \r
         <ui-popover trigger="click" variant="warning" placement="bottom" heading="Heads up"\r
           content="<p>Your API quota is at 85%. Consider upgrading.</p>">\r
-          <ui-button label="Warning" color="warning" variant="outline"></ui-button>\r
+          \${btn('Warning', '#d97706')}\r
         </ui-popover>\r
 \r
         <ui-popover trigger="click" variant="error" placement="bottom" heading="Action failed"\r
           content="<p>Could not save changes. Please try again.</p>" show-close-button="true">\r
-          <ui-button label="Error" color="error" variant="outline"></ui-button>\r
+          \${btn('Error', '#dc2626')}\r
         </ui-popover>\r
 \r
         <ui-popover trigger="click" variant="info" placement="bottom" heading="Did you know?"\r
           content="<p>You can use the <code>footer</code> slot for action buttons.</p>">\r
-          <ui-button label="Info" color="primary" variant="outline"></ui-button>\r
+          \${btn('Info', '#2563eb')}\r
         </ui-popover>\r
       </div>\r
 \r
@@ -51629,7 +51683,7 @@ await manager.loadLayout(saved);</code></pre>\r
 \r
       <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:16px;">\r
         <ui-popover id="footerPop1" trigger="click" variant="error" placement="bottom" heading="Delete Project?" show-close-button="true">\r
-          <ui-button label="Delete…" color="error" variant="outline"></ui-button>\r
+          \${btn('Delete…', '#dc2626')}\r
           <div slot="content"><p>This action is permanent and cannot be undone. All project files, history, and collaborators will be removed.</p></div>\r
           <div slot="footer" style="display:flex;justify-content:flex-end;gap:8px;">\r
             <ui-button label="Cancel" variant="outline" color="secondary" size="md"click="document.getElementById('footerPop1').hide()"></ui-button>\r
@@ -51638,14 +51692,14 @@ await manager.loadLayout(saved);</code></pre>\r
         </ui-popover>\r
 \r
         <ui-popover id="footerPop2" trigger="click" variant="info" placement="bottom" heading="Keyboard Shortcuts">\r
-          <ui-button label="Shortcuts" color="primary" variant="outline"></ui-button>\r
+          \${btn('Shortcuts', '#2563eb')}\r
           <div slot="content" style="font-size:13px;">\r
             <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #bfdbfe;"><span>Save</span><kbd style="background:#dbeafe;padding:2px 6px;border-radius:4px;">Ctrl+S</kbd></div>\r
             <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #bfdbfe;"><span>Undo</span><kbd style="background:#dbeafe;padding:2px 6px;border-radius:4px;">Ctrl+Z</kbd></div>\r
             <div style="display:flex;justify-content:space-between;padding:6px 0;"><span>Search</span><kbd style="background:#dbeafe;padding:2px 6px;border-radius:4px;">Ctrl+K</kbd></div>\r
           </div>\r
           <div slot="footer" style="text-align:center;font-size:12px;color:#1e40af;">\r
-            <a href="#" style="color:#2563eb;">View all shortcuts ➡️</a>\r
+            <a href="#" style="color:#2563eb;">View all shortcuts →</a>\r
           </div>\r
         </ui-popover>\r
       </div>\r
@@ -51657,13 +51711,13 @@ await manager.loadLayout(saved);</code></pre>\r
         <div>\r
           <h4>User Profile Card</h4>\r
           <ui-popover trigger="click" placement="bottom-start" width="300px">\r
-            <ui-button label="View Profile" color="secondary" variant="outline"></ui-button>\r
+            \${btn('View Profile', '#8b5cf6')}\r
             <div slot="content" style="padding:4px;">\r
               <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">\r
                 <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px;">JD</div>\r
                 <div>\r
                   <div style="font-weight:700;color:#1f2937;">Jane Doe</div>\r
-                  <div style="font-size:12px;color:#6b7280;">Senior Engineer ┬╖ San Francisco</div>\r
+                  <div style="font-size:12px;color:#6b7280;">Senior Engineer · San Francisco</div>\r
                 </div>\r
               </div>\r
               <p style="font-size:13px;color:#4b5563;margin:0 0 12px;">Building resilient distributed systems at scale.</p>\r
@@ -51701,7 +51755,7 @@ await manager.loadLayout(saved);</code></pre>\r
                 .join('')}\r
             </div>\r
             <div slot="footer" style="text-align:center;">\r
-              <a href="#" style="font-size:13px;color:#10b981;text-decoration:none;font-weight:600;">View all notifications ➡️</a>\r
+              <a href="#" style="font-size:13px;color:#10b981;text-decoration:none;font-weight:600;">View all notifications →</a>\r
             </div>\r
           </ui-popover>\r
         </div>\r
@@ -51710,7 +51764,7 @@ await manager.loadLayout(saved);</code></pre>\r
       <div style="margin-top:40px;">\r
         <h4>Colour Picker</h4>\r
         <ui-popover trigger="click" placement="bottom" width="240px" heading="Pick a colour">\r
-          <ui-button label="🎨 Choose Colour" color="error" variant="outline"></ui-button>\r
+          \${btn('🎨 Choose Colour', '#ec4899')}\r
           <div slot="content">\r
             <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px;padding:4px;">\r
               \${['#ef4444', '#f97316', '#eab308', '#22c55e', '#10b981', '#8b5cf6', '#ec4899', '#0ea5e9', '#14b8a6', '#6b7280', '#1f2937', '#ffffff']\r
@@ -51785,7 +51839,7 @@ await manager.loadLayout(saved);</code></pre>\r
             <div style="padding:8px 12px;font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:.05em;">Notifications</div>\r
             <div style="padding:10px 12px;font-size:13px;border-radius:6px;background:#eff6ff;margin:4px;">\r
               <div style="font-weight:600;color:#1e40af;">Build passed ✓</div>\r
-              <div style="color:#10b981;font-size:12px;">pipeline #247 ┬╖ 1m ago</div>\r
+              <div style="color:#10b981;font-size:12px;">pipeline #247 · 1m ago</div>\r
             </div>\r
           </div>\r
         </ui-popover>\r
@@ -51822,10 +51876,10 @@ await manager.loadLayout(saved);</code></pre>\r
 \r
       <h4 style="margin-top:24px;">Animations</h4>\r
       <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:16px;">\r
-        <ui-popover trigger="hover" placement="top" animation="scale" content="<p>Scale animation (default).</p>"><ui-button label="Scale" color="secondary" variant="outline"></ui-button></ui-popover>\r
-        <ui-popover trigger="hover" placement="top" animation="slide" content="<p>Slides in from below.</p>"><ui-button label="Slide" color="primary" variant="outline"></ui-button></ui-popover>\r
-        <ui-popover trigger="hover" placement="top" animation="fade"  content="<p>Simple opacity fade.</p>"><ui-button label="Fade" color="error" variant="outline"></ui-button></ui-popover>\r
-        <ui-popover trigger="hover" placement="top" animation="none"  content="<p>No animation — instant show.</p>"><ui-button label="None" color="secondary" variant="outline"></ui-button></ui-popover>\r
+        <ui-popover trigger="hover" placement="top" animation="scale" content="<p>Scale animation (default).</p>">\${btn('Scale', '#8b5cf6')}</ui-popover>\r
+        <ui-popover trigger="hover" placement="top" animation="slide" content="<p>Slides in from below.</p>">\${btn('Slide', '#6366f1')}</ui-popover>\r
+        <ui-popover trigger="hover" placement="top" animation="fade"  content="<p>Simple opacity fade.</p>">\${btn('Fade', '#ec4899')}</ui-popover>\r
+        <ui-popover trigger="hover" placement="top" animation="none"  content="<p>No animation — instant show.</p>">\${btn('None', '#374151')}</ui-popover>\r
       </div>\r
 \r
       <h4 style="margin-top:40px;">Backdrop (modal behaviour)</h4>\r
@@ -51833,7 +51887,7 @@ await manager.loadLayout(saved);</code></pre>\r
       <ui-popover id="backdropPop" trigger="click" placement="bottom" backdrop="true" width="320px"\r
         heading="Important Action" show-close-button="true" variant="error"\r
         content="<p>This popover acts like a lightweight modal. Click the backdrop or press Esc to close.</p>">\r
-        <ui-button label="Show with Backdrop" color="error" variant="outline"></ui-button>\r
+        \${btn('Show with Backdrop', '#ef4444')}\r
         <div slot="footer" style="display:flex;justify-content:flex-end;gap:8px;">\r
           <ui-button label="Cancel" variant="outline" color="secondary" size="md"click="document.getElementById('backdropPop').hide()"></ui-button>\r
           <ui-button label="Confirm" variant="outline" color="error" size="md"click="document.getElementById('backdropPop').hide()"></ui-button>\r
@@ -51844,7 +51898,7 @@ await manager.loadLayout(saved);</code></pre>\r
       <p style="color:#6b7280;font-size:13px;">Listen to <code>uiBeforeOpen</code> / <code>uiBeforeClose</code> and call <code>event.preventDefault()</code> to cancel.</p>\r
       <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;">\r
         <ui-popover id="cancelShowPop" trigger="click" placement="bottom" heading="Before-Show Gated" content="<p>You confirmed you want to open me!</p>">\r
-          <ui-button label="Gated Open" color="success" variant="outline"></ui-button>\r
+          \${btn('Gated Open', '#059669')}\r
         </ui-popover>\r
         <div id="cancelEventLog" style="padding:8px 12px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;font-size:13px;color:#374151;min-width:220px;display:flex;align-items:center;">Waiting for events…</div>\r
       </div>\r
@@ -51855,7 +51909,7 @@ await manager.loadLayout(saved);</code></pre>\r
       </ui-popover>\r
       <h4 style="margin-top:40px;">Skeleton Loading</h4>\r
       <ui-popover trigger="click" placement="bottom" skeleton="true" heading="Loading…" width="260px" content="">\r
-        <ui-button label="Show Skeleton" color="primary" variant="outline"></ui-button>\r
+        \${btn('Show Skeleton', '#6366f1')}\r
       </ui-popover>\r
     </div>`},{title:`Edge Detection &amp; Auto-Positioning`,description:`Four buttons are pinned to the actual viewport edges using\r
         position:fixed. Each prefers a placement that would clip off-screen\r
@@ -51925,8 +51979,8 @@ await manager.loadLayout(saved);</code></pre>\r
       <div style="margin-top:24px;background:#eff6ff;border-radius:10px;padding:20px;border:1px solid #bfdbfe;">\r
         <h4 style="margin:0 0 10px;color:#1e40af;">💡 Positioning engine features</h4>\r
         <ul style="margin:0;color:#1e40af;line-height:2;font-size:13px;">\r
-          <li><strong>Top ↔️ Bottom flip</strong> — triggered when vertical overflow is detected</li>\r
-          <li><strong>Left ↔️ Right flip</strong> — triggered when horizontal overflow is detected</li>\r
+          <li><strong>Top ↔ Bottom flip</strong> — triggered when vertical overflow is detected</li>\r
+          <li><strong>Left ↔ Right flip</strong> — triggered when horizontal overflow is detected</li>\r
           <li><strong>Horizontal clamping</strong> — guarantees no pixel bleeds off-screen left or right</li>\r
           <li><strong>Vertical clamping</strong> — applied in both directions for tall content</li>\r
           <li><strong>First-render safe</strong> — falls back to prop width when layout isn't ready yet</li>\r
@@ -51962,7 +52016,7 @@ await manager.loadLayout(saved);</code></pre>\r
       cssText: 'position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:50000;',\r
       placement: 'left',\r
       bg: '#d97706',\r
-      label: '◀ LEFT',\r
+      label: '▶ LEFT',\r
       heading: 'Left Edge — flipped to right',\r
       body: "I preferred to open to the <em>left</em> but there's no room. I flipped to <strong>right</strong>.",\r
     },\r
@@ -52150,6 +52204,10 @@ await manager.loadLayout(saved);</code></pre>\r
                 <option value="exception">Exception (Red)</option>\r
                 <option value="warning">Warning (Yellow)</option>\r
                 <option value="danger">Danger (Vibrating)</option>\r
+                <option value="empty">Empty</option>\r
+                <option value="running">Running (Spinner)</option>\r
+                <option value="completed">Completed (Check)</option>\r
+                <option value="interrupted">Interrupted (Alert)</option>\r
               </ui-dropdown>\r
             </label>\r
 \r
@@ -52193,7 +52251,131 @@ await manager.loadLayout(saved);</code></pre>\r
 (function() {
   updateProgressPlayground();
 })();
-<\/script>`},{title:`update Progress Playground`,description:``,html:'<ui-progress ${props}></ui-progress>\n<script>\n(function() {\n  if (type !== \'line\') props += ` type="${type}"`;\r\n    if (status !== \'default\') props += ` status="${status}"`;\r\n    if (strokeWidth != 10) props += ` stroke-width="${strokeWidth}"`;\r\n    if (decimal > 0) props += ` decimal-precision="${decimal}"`;\r\n    if (indeterminate) props += ` indeterminate="true"`;\r\n    if (glow) props += ` glow="true"`;\r\n    if (vitality) props += ` vitality="true"`;\r\n    if (liquid) props += ` liquid="true"`;\r\n    if (dataLabels) props += ` data-labels="${dataLabels}"`;\r\n\r\n    preview.innerHTML = `<ui-progress ${props}></ui-progress>`;\r\n    code.innerText = `<ui-progress ${props}></ui-progress>`;\n})();\n<\/script>'},{title:`Standard Progress Matrix`,description:`Every state. Every percent. Pure clarity.`,html:`<div class="demo-block">\r
+<\/script>`},{title:`🔄 Lifecycle Status Monitoring`,description:`Track system processes end-to-end using native status lifecycles: empty, running, completed, and interrupted.`,html:`<div class="demo-block">\r
+        <h3 style="margin-bottom: 8px;">🔄 Lifecycle Status Monitoring</h3>\r
+        <p style="font-size: 14px; color: #64748b; margin-bottom: 24px;">\r
+          Track system processes end-to-end using native status lifecycles: <code>empty</code>, <code>running</code>, <code>completed</code>, and <code>interrupted</code>.\r
+        </p>\r
+\r
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 40px;">\r
+          \r
+          <!-- Empty State -->\r
+          <div style="background: white; border-radius: 12px; border: 1px solid #e2e8f0; padding: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">\r
+            <h4 style="margin: 0 0 16px; font-size: 13px; color: #64748b; display: flex; align-items: center; justify-content: space-between;">\r
+              <span>Empty State</span>\r
+              <span style="font-size: 10px; font-weight: bold; background: #f1f5f9; color: #64748b; padding: 2px 8px; border-radius: 10px; text-transform: uppercase;">Awaiting</span>\r
+            </h4>\r
+            <ui-progress percent="0" status="empty" stroke-width="12"></ui-progress>\r
+            <p style="font-size: 12px; color: #94a3b8; margin-top: 12px; margin-bottom: 0;">Task queued, awaiting resource allocation.</p>\r
+          </div>\r
+\r
+          <!-- Running State -->\r
+          <div style="background: white; border-radius: 12px; border: 1px solid #e2e8f0; padding: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">\r
+            <h4 style="margin: 0 0 16px; font-size: 13px; color: #1890ff; display: flex; align-items: center; justify-content: space-between;">\r
+              <span>Running State</span>\r
+              <span style="font-size: 10px; font-weight: bold; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 10px; text-transform: uppercase;">Active</span>\r
+            </h4>\r
+            <ui-progress percent="45" status="running" stroke-width="12"></ui-progress>\r
+            <p style="font-size: 12px; color: #94a3b8; margin-top: 12px; margin-bottom: 0;">Actively processing records. Wave pulse enabled.</p>\r
+          </div>\r
+\r
+          <!-- Completed State -->\r
+          <div style="background: white; border-radius: 12px; border: 1px solid #e2e8f0; padding: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">\r
+            <h4 style="margin: 0 0 16px; font-size: 13px; color: #52c41a; display: flex; align-items: center; justify-content: space-between;">\r
+              <span>Completed State</span>\r
+              <span style="font-size: 10px; font-weight: bold; background: #dcfce7; color: #15803d; padding: 2px 8px; border-radius: 10px; text-transform: uppercase;">Success</span>\r
+            </h4>\r
+            <ui-progress percent="100" status="completed" stroke-width="12"></ui-progress>\r
+            <p style="font-size: 12px; color: #94a3b8; margin-top: 12px; margin-bottom: 0;">Operation finished successfully. Output generated.</p>\r
+          </div>\r
+\r
+          <!-- Interrupted State -->\r
+          <div style="background: white; border-radius: 12px; border: 1px solid #e2e8f0; padding: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">\r
+            <h4 style="margin: 0 0 16px; font-size: 13px; color: #ff4d4f; display: flex; align-items: center; justify-content: space-between;">\r
+              <span>Interrupted State</span>\r
+              <span style="font-size: 10px; font-weight: bold; background: #fef2f2; color: #b91c1c; padding: 2px 8px; border-radius: 10px; text-transform: uppercase;">Halted</span>\r
+            </h4>\r
+            <ui-progress percent="70" status="interrupted" stroke-width="12"></ui-progress>\r
+            <p style="font-size: 12px; color: #94a3b8; margin-top: 12px; margin-bottom: 0;">Network loss detected. Thread execution suspended.</p>\r
+          </div>\r
+\r
+        </div>\r
+\r
+        <!-- Dynamic Process Lifecycle Simulator -->\r
+        <div style="background: #1e293b; color: white; border-radius: 16px; padding: 32px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3);">\r
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">\r
+            <h4 style="margin: 0; font-size: 16px; font-weight: 600; letter-spacing: 0.02em;">⚡ Operation Lifecycle Simulator</h4>\r
+            <span id="lifecycleStateText" style="font-size: 11px; font-weight: bold; background: #475569; color: #f8fafc; padding: 6px 14px; border-radius: 20px; letter-spacing: 0.05em; text-transform: uppercase;">QUEUED</span>\r
+          </div>\r
+\r
+          <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 24px; margin-bottom: 24px;">\r
+            <ui-progress id="lifecycleProgress" percent="0" status="empty" stroke-width="16" decimal-precision="1"></ui-progress>\r
+          </div>\r
+\r
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">\r
+            <ui-button id="btnLifecycleInit" onclick="handleLifecycleAction('init')" variant="outline" style="--ui-button-border-color: #475569; --ui-button-color: #f8fafc;">🔌 Queue (Empty)</ui-button>\r
+            <ui-button id="btnLifecycleStart" onclick="handleLifecycleAction('start')" variant="outline" style="--ui-button-border-color: #475569; --ui-button-color: #f8fafc;">🚀 Start (Running)</ui-button>\r
+            <ui-button id="btnLifecycleInterrupt" onclick="handleLifecycleAction('interrupt')" variant="outline" style="--ui-button-border-color: #475569; --ui-button-color: #f8fafc;">🚫 Halt (Interrupt)</ui-button>\r
+            <ui-button id="btnLifecycleComplete" onclick="handleLifecycleAction('complete')" variant="outline" style="--ui-button-border-color: #475569; --ui-button-color: #f8fafc;">✨ Force Complete</ui-button>\r
+          </div>\r
+        </div>\r
+      </div>\r
+    
+<script>
+(function() {
+  let simInterval = null;\r
+\r
+    window.handleLifecycleAction = function (action) {\r
+      const pBar = document.getElementById('lifecycleProgress');\r
+      const stateText = document.getElementById('lifecycleStateText');\r
+      if (!pBar || !stateText) return;\r
+\r
+      if (window.lifecycleInterval) {\r
+        clearInterval(window.lifecycleInterval);\r
+        window.lifecycleInterval = null;\r
+      }\r
+\r
+      if (action === 'init') {\r
+        pBar.percent = 0;\r
+        pBar.status = 'empty';\r
+        stateText.innerText = 'QUEUED';\r
+        stateText.style.background = '#475569';\r
+      } else if (action === 'start') {\r
+        pBar.status = 'running';\r
+        stateText.innerText = 'RUNNING';\r
+        stateText.style.background = '#1d4ed8';\r
+        \r
+        let current = parseFloat(pBar.percent) || 0;\r
+        if (current >= 100) {\r
+          current = 0;\r
+        }\r
+\r
+        window.lifecycleInterval = setInterval(() => {\r
+          current += 1.2;\r
+          if (current < 100) {\r
+            pBar.percent = current.toFixed(1);\r
+          } else {\r
+            clearInterval(window.lifecycleInterval);\r
+            window.lifecycleInterval = null;\r
+            pBar.percent = 100;\r
+            pBar.status = 'completed';\r
+            stateText.innerText = 'COMPLETED';\r
+            stateText.style.background = '#15803d';\r
+          }\r
+        }, 100);\r
+      } else if (action === 'interrupt') {\r
+        pBar.status = 'interrupted';\r
+        stateText.innerText = 'INTERRUPTED';\r
+        stateText.style.background = '#b91c1c';\r
+      } else if (action === 'complete') {\r
+        pBar.percent = 100;\r
+        pBar.status = 'completed';\r
+        stateText.innerText = 'COMPLETED';\r
+        stateText.style.background = '#15803d';\r
+      }\r
+    };
+})();
+<\/script>`},{title:`Standard Progress Matrix`,description:`Every state. Every percent. Pure clarity.`,html:`<div class="demo-block">\r
         <h3>Standard Progress Matrix</h3>\r
         <p style="font-size: 14px; color: #64748b; margin-bottom: 30px;">Every state. Every percent. Pure clarity.</p>\r
         <div style="display: flex; flex-direction: column; gap: 32px;">\r
@@ -52477,7 +52659,253 @@ await manager.loadLayout(saved);</code></pre>\r
             <ui-progress orientation="vertical" percent="40" height="100%" stroke-width="24" stroke-color="#10b981" type="industrial" data-labels="POWER"></ui-progress>\r
             <ui-progress orientation="vertical" percent="90" height="100%" stroke-width="24" stroke-color="#a855f7" data-labels="PEAK"></ui-progress>\r
         </div>\r
-      </div>`}],radio:[{title:`🎮 Interactive Playground`,description:``,html:`<div class="demo-block reveal-fade-in">\r
+      </div>`},{title:`🔍 Cybernetic Device Scanner`,description:`Automated sector, memory, and threat scanning telemetry.`,html:`<div class="demo-block" style="font-family: inherit;">\r
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">\r
+          <div>\r
+            <h3 style="margin: 0; font-size: 20px; font-weight: 700; color: #0f172a;">🔍 Cybernetic Device Scanner</h3>\r
+            <p style="margin: 4px 0 0; font-size: 14px; color: #64748b;">Automated sector, memory, and threat scanning telemetry.</p>\r
+          </div>\r
+          <span id="scanStatusBadge" style="font-size: 11px; font-weight: 700; background: #f1f5f9; color: #64748b; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em;">AWAITING COMMAND</span>\r
+        </div>\r
+\r
+        <div style="display: grid; grid-template-columns: 280px 1fr; gap: 32px; margin-bottom: 32px;">\r
+          <!-- Left Panel: Dial & Actions -->\r
+          <div style="background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; align-items: center; gap: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">\r
+            <div style="position: relative; width: 160px; height: 160px; display: flex; align-items: center; justify-content: center;">\r
+              <ui-progress \r
+                id="scanCircularProgress" \r
+                type="dashboard" \r
+                percent="0" \r
+                stroke-width="12" \r
+                stroke-color='{"from": "#3b82f6", "to": "#10b981"}'\r
+                gap-position="bottom"\r
+                width="160"\r
+                glow="true"\r
+                liquid="true"\r
+                status="empty"\r
+              ></ui-progress>\r
+            </div>\r
+\r
+            <!-- Scanning Controls -->\r
+            <div style="display: flex; flex-direction: column; width: 100%; gap: 10px; margin-top: 10px;">\r
+              <ui-button id="btnStartScan" onclick="handleScanAction('start')" variant="primary" style="width: 100%;">⚡ Start Full Scan</ui-button>\r
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">\r
+                <ui-button id="btnPauseScan" onclick="handleScanAction('pause')" variant="outline" style="font-size: 12px;">⏸️ Pause</ui-button>\r
+                <ui-button id="btnHaltScan" onclick="handleScanAction('halt')" variant="outline" style="font-size: 12px; --ui-button-color: #ef4444; --ui-button-border-color: #fecaca;">🚫 Abort</ui-button>\r
+              </div>\r
+              <ui-button id="btnResetScan" onclick="handleScanAction('reset')" variant="ghost" style="width: 100%; font-size: 12px;">🔄 Reset Console</ui-button>\r
+            </div>\r
+          </div>\r
+\r
+          <!-- Right Panel: Live Logs & Telemetry -->\r
+          <div style="display: flex; flex-direction: column; gap: 20px;">\r
+            <!-- Telemetry Cards -->\r
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">\r
+              <div style="background: white; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; text-align: center;">\r
+                <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; font-weight: 600;">Sectors Checked</span>\r
+                <h4 id="sectorsCount" style="margin: 8px 0 0; font-size: 24px; font-weight: 800; color: #0f172a;">0</h4>\r
+              </div>\r
+              <div style="background: white; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; text-align: center;">\r
+                <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; font-weight: 600;">Threats Detected</span>\r
+                <h4 id="threatsCount" style="margin: 8px 0 0; font-size: 24px; font-weight: 800; color: #0f172a;">0</h4>\r
+              </div>\r
+              <div style="background: white; border: 1px solid #e2e8f0; padding: 16px; border-radius: 12px; text-align: center;">\r
+                <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; font-weight: 600;">Scan Time</span>\r
+                <h4 id="elapsedScanTime" style="margin: 8px 0 0; font-size: 24px; font-weight: 800; color: #0f172a;">0.0s</h4>\r
+              </div>\r
+            </div>\r
+\r
+            <!-- Terminal Console Logs -->\r
+            <div style="background: #0f172a; color: #38bdf8; border-radius: 16px; padding: 20px; font-family: 'Courier New', Courier, monospace; font-size: 12px; height: 180px; overflow-y: auto; border: 1px solid #1e293b; box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);" id="scanTerminalConsole">\r
+              <div style="color: #64748b;">[SCAN ENGINE v4.2.1] INITIALIZED...</div>\r
+              <div style="color: #64748b;">[CONSOLE] READY FOR HARDWARE RAMP...</div>\r
+            </div>\r
+          </div>\r
+        </div>\r
+\r
+        <!-- Linear Sub-System Feed -->\r
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">\r
+          <h4 style="margin: 0 0 16px; font-size: 13px; text-transform: uppercase; color: #64748b; font-weight: 700; letter-spacing: 0.05em;">Memory Buffer Allocation Check</h4>\r
+          <ui-progress id="scanLinearBuffer" percent="0" status="empty" stroke-width="16" vitality="true"></ui-progress>\r
+        </div>\r
+      </div>\r
+    
+<script>
+(function() {
+  // Active scan memory variables\r
+    if (window.scanInterval) {\r
+      clearInterval(window.scanInterval);\r
+      window.scanInterval = null;\r
+    }\r
+    window.scanTimeElapsed = 0;\r
+    window.scanSectors = 0;\r
+    window.scanThreats = 0;\r
+\r
+    const mockSectors = [\r
+      '/dev/disk0s1/System/Library/Kernels/kernel',\r
+      '/dev/disk0s1/System/Library/Extensions/AppleACPIPlatform.kext',\r
+      '/dev/disk0s1/System/Library/Extensions/AppleSMBIOS.kext',\r
+      '/dev/disk0s1/System/Library/Fonts/SF-Pro.ttf',\r
+      '/dev/disk0s1/usr/sbin/cron',\r
+      '/dev/disk0s1/usr/bin/security',\r
+      '/dev/disk0s1/private/var/log/system.log',\r
+      '/dev/disk0s1/Applications/CyberneticScanner.app',\r
+      '/Memory/Alloc/RAM_BLOCK_0x00FF34D',\r
+      '/Memory/Alloc/RAM_BLOCK_0x01AA87D',\r
+      '/Ports/TCP/Port-80-Listener',\r
+      '/Ports/TCP/Port-443-SecureGateway',\r
+      '/Ports/TCP/Port-8080-AltServer',\r
+    ];\r
+\r
+    window.handleScanAction = function (action) {\r
+      const circ = document.getElementById('scanCircularProgress');\r
+      const line = document.getElementById('scanLinearBuffer');\r
+      const statusBadge = document.getElementById('scanStatusBadge');\r
+      const term = document.getElementById('scanTerminalConsole');\r
+      const secCount = document.getElementById('sectorsCount');\r
+      const thCount = document.getElementById('threatsCount');\r
+      const timeCount = document.getElementById('elapsedScanTime');\r
+\r
+      if (!circ || !line || !statusBadge || !term) return;\r
+\r
+      const log = (msg, color = '#38bdf8') => {\r
+        const div = document.createElement('div');\r
+        div.style.color = color;\r
+        div.innerText = \`[\${new Date().toLocaleTimeString()}] \${msg}\`;\r
+        term.appendChild(div);\r
+        term.scrollTop = term.scrollHeight;\r
+      };\r
+\r
+      if (action === 'start') {\r
+        if (window.scanInterval) return;\r
+\r
+        circ.status = 'running';\r
+        line.status = 'running';\r
+        statusBadge.innerText = 'RUNNING';\r
+        statusBadge.style.background = '#e0f2fe';\r
+        statusBadge.style.color = '#0369a1';\r
+        log('INITIATING FULL HARDWARE DEVICE SCAN...', '#10b981');\r
+\r
+        window.scanTimeStart = Date.now() - window.scanTimeElapsed;\r
+\r
+        window.scanInterval = setInterval(() => {\r
+          let current = parseFloat(circ.percent) || 0;\r
+          if (current < 100) {\r
+            current += 1.6;\r
+            if (current > 100) current = 100;\r
+            \r
+            circ.percent = current.toFixed(1);\r
+            line.percent = current.toFixed(1);\r
+\r
+            // Update timer\r
+            window.scanTimeElapsed = Date.now() - window.scanTimeStart;\r
+            timeCount.innerText = (window.scanTimeElapsed / 1000).toFixed(1) + 's';\r
+\r
+            // Check mock sector files\r
+            window.scanSectors += Math.floor(Math.random() * 8) + 3;\r
+            secCount.innerText = window.scanSectors;\r
+\r
+            const randomFile = mockSectors[Math.floor(Math.random() * mockSectors.length)];\r
+            log(\`CHECKING: \${randomFile}\`);\r
+\r
+            // Mock threats detection at 40% and 80%\r
+            if (current >= 40 && window.scanThreats === 0) {\r
+              window.scanThreats = 1;\r
+              thCount.innerText = '1';\r
+              thCount.style.color = '#f59e0b';\r
+              circ.status = 'warning';\r
+              line.status = 'warning';\r
+              statusBadge.innerText = 'WARNING';\r
+              statusBadge.style.background = '#fef3c7';\r
+              statusBadge.style.color = '#b45309';\r
+              log('⚠️ SYSTEM WARNING: UNVERIFIED BUFFER DETECTED AT SECTOR 4!', '#f59e0b');\r
+            }\r
+\r
+            if (current >= 80 && window.scanThreats === 1) {\r
+              window.scanThreats = 2;\r
+              thCount.innerText = '2';\r
+              thCount.style.color = '#ef4444';\r
+              circ.status = 'interrupted';\r
+              line.status = 'interrupted';\r
+              statusBadge.innerText = 'SUSPECTED THREAT';\r
+              statusBadge.style.background = '#fef2f2';\r
+              statusBadge.style.color = '#b91c1c';\r
+              log('🚨 CRITICAL ALERT: CORRUPTED MALICIOUS THREAD IN RAM BLOCK!', '#ef4444');\r
+            }\r
+\r
+          } else {\r
+            clearInterval(window.scanInterval);\r
+            window.scanInterval = null;\r
+            circ.percent = 100;\r
+            line.percent = 100;\r
+            \r
+            if (window.scanThreats > 0) {\r
+              circ.status = 'interrupted';\r
+              line.status = 'interrupted';\r
+              statusBadge.innerText = 'THREAT FOUND';\r
+              statusBadge.style.background = '#fef2f2';\r
+              statusBadge.style.color = '#b91c1c';\r
+              log('❌ SCAN COMPLETE: 2 CRITICAL THREATS SECURED. IMMEDIATE ACTION REQUIRED.', '#ef4444');\r
+            } else {\r
+              circ.status = 'completed';\r
+              line.status = 'completed';\r
+              statusBadge.innerText = 'COMPLETED';\r
+              statusBadge.style.background = '#dcfce7';\r
+              statusBadge.style.color = '#15803d';\r
+              log('✨ SCAN COMPLETE: DEVICE SECURE. ZERO THREATS DETECTED.', '#10b981');\r
+            }\r
+          }\r
+        }, 120);\r
+      } else if (action === 'pause') {\r
+        if (!window.scanInterval) return;\r
+        clearInterval(window.scanInterval);\r
+        window.scanInterval = null;\r
+        \r
+        statusBadge.innerText = 'PAUSED';\r
+        statusBadge.style.background = '#f1f5f9';\r
+        statusBadge.style.color = '#475569';\r
+        log('SCAN SUSPENDED BY OPERATOR.', '#faad14');\r
+      } else if (action === 'halt') {\r
+        if (window.scanInterval) {\r
+          clearInterval(window.scanInterval);\r
+          window.scanInterval = null;\r
+        }\r
+        circ.status = 'interrupted';\r
+        line.status = 'interrupted';\r
+        statusBadge.innerText = 'ABORTED';\r
+        statusBadge.style.background = '#fef2f2';\r
+        statusBadge.style.color = '#b91c1c';\r
+        log('❌ CRITICAL: HARDWARE SCAN ABORTED IMMEDIATELY!', '#ef4444');\r
+      } else if (action === 'reset') {\r
+        if (window.scanInterval) {\r
+          clearInterval(window.scanInterval);\r
+          window.scanInterval = null;\r
+        }\r
+        circ.percent = 0;\r
+        circ.status = 'empty';\r
+        line.percent = 0;\r
+        line.status = 'empty';\r
+        window.scanTimeElapsed = 0;\r
+        window.scanSectors = 0;\r
+        window.scanThreats = 0;\r
+\r
+        secCount.innerText = '0';\r
+        thCount.innerText = '0';\r
+        thCount.style.color = '';\r
+        timeCount.innerText = '0.0s';\r
+        statusBadge.innerText = 'AWAITING COMMAND';\r
+        statusBadge.style.background = '';\r
+        statusBadge.style.color = '';\r
+        \r
+        term.innerHTML = \`\r
+          <div style="color: #64748b;">[SCAN ENGINE v4.2.1] INITIALIZED...</div>\r
+          <div style="color: #64748b;">[CONSOLE] READY FOR HARDWARE RAMP...</div>\r
+        \`;\r
+        log('SCAN TELEMETRY CLEARED AND RESET.', '#64748b');\r
+      }\r
+    };
+})();
+<\/script>`}],radio:[{title:`🎮 Interactive Playground`,description:``,html:`<div class="demo-block reveal-fade-in">\r
         <h3 class="specimen-title">🎮 Interactive Playground</h3>\r
         <div class="playground-settings" style="background: rgba(var(--primary-rgb, 139, 92, 246), 0.03); padding: 24px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.05); margin-bottom: 24px;">\r
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">\r
@@ -52559,33 +52987,6 @@ await manager.loadLayout(saved);</code></pre>\r
       });\r
       updateInteractiveRadio();\r
     }, 100);
-})();
-<\/script>`},{title:`update Interactive Radio`,description:``,html:`<ui-radio \r
-        label="\${label}" \r
-        description="\${desc}"\r
-        size="\${size}" \r
-        color="\${color}" \r
-        variant="\${variant}"\r
-        custom-icon="\${icon}"\r
-        custom-image="\${image}"\r
-        \${glow ? 'glow' : ''}\r
-        \${haptic ? 'haptic' : ''}\r
-        \${rtl ? 'rtl' : ''}\r
-      ></ui-radio>\r
-    
-<script>
-(function() {
-  const codePreview = document.getElementById('radioCodePreview');\r
-    if (codePreview) {\r
-      let code = \`<ui-radio\\n  label="\${label}"\\n  description="\${desc}"\\n  size="\${size}"\\n  color="\${color}"\\n  variant="\${variant}"\`;\r
-      if (icon) code += \`\\n  custom-icon="\${icon}"\`;\r
-      if (image) code += \`\\n  custom-image="\${image}"\`;\r
-      if (glow) code += \`\\n  glow\`;\r
-      if (haptic) code += \`\\n  haptic\`;\r
-      if (rtl) code += \`\\n  rtl\`;\r
-      code += \`\\n></ui-radio>\`;\r
-      codePreview.setAttribute('html-code', code);\r
-    }
 })();
 <\/script>`},{title:`🏆 Supreme Navigation Archetypes`,description:`High-end filtering for rapid selection in dense data environments.`,html:`<div class="demo-block reveal-fade-in">\r
         <h3 class="specimen-title" style="background: linear-gradient(to right, #8b5cf6, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">🏆 Supreme Navigation Archetypes</h3>\r
@@ -53477,64 +53878,6 @@ await manager.loadLayout(saved);</code></pre>\r
           });\r
         }\r
       }, 50);
-})();
-<\/script>`},{title:`update Interactive Slider`,description:``,html:`Range: <strong>\${startValue} - \${endValue}</strong>
-<script>
-(function() {
-  label="\${label}"\` : ''}\r
-          min="\${min}" \r
-          max="\${max}" \r
-          step="\${step}"\r
-          \${isRange ? \`range="true" start-value="\${startValue}" end-value="\${endValue}"\` : \`value="\${value}"\`}\r
-          size="\${size}"\r
-          \${variant ? \`variant="\${variant}"\` : ''}\r
-          color="\${color}"\r
-          track-color="\${trackColor}"\r
-          \${startIcon ? \`start-icon="\${startIcon}"\` : ''}\r
-          \${endIcon ? \`end-icon="\${endIcon}"\` : ''}\r
-          \${prefixText ? \`prefix-text="\${prefixText}"\` : ''}\r
-          \${suffixText ? \`suffix-text="\${suffixText}"\` : ''}\r
-          \${displayFormat ? \`display-format="\${displayFormat}"\` : ''}\r
-          show-tooltip="\${showTooltip}"\r
-          \${tooltipAlwaysVisible ? 'tooltip-always-visible' : ''}\r
-          show-value="\${showValue}"\r
-          \${showMinMax ? 'show-min-max' : ''}\r
-          \${inputSync ? 'input-sync' : ''}\r
-          \${gradientTrack ? 'gradient-track' : ''}\r
-          \${vertical ? 'vertical="true"' : ''}\r
-          \${showMarks ? 'show-marks="true"' : ''}\r
-          \${disabled ? 'disabled="true"' : ''}\r
-          \${circle ? 'circle' : ''}\r
-          \${rtl ? 'rtl' : ''}\r
-        ></ui-range-slider>\r
-      \`;\r
-        container.innerHTML = html;\r
-\r
-        // Update value display\r
-        if (valueDisplay) {\r
-          if (isRange) {\r
-            valueDisplay.innerHTML = \`Range: <strong>\${startValue} - \${endValue}</strong>\`;\r
-          } else {\r
-            valueDisplay.innerHTML = \`Value: <strong>\${value}</strong>\`;\r
-          }\r
-        }\r
-\r
-        // Add event listener to track changes\r
-        setTimeout(() => {\r
-          const slider = document.getElementById('interactiveSlider');\r
-          if (slider && valueDisplay) {\r
-            slider.addEventListener('sliderChange', e => {\r
-              if (isRange && e.detail.start !== undefined) {\r
-                valueDisplay.innerHTML = \`Range: <strong>\${e.detail.start} - \${e.detail.end}</strong>\`;\r
-              } else {\r
-                valueDisplay.innerHTML = \`Value: <strong>\${e.detail}</strong>\`;\r
-              }\r
-              window.updateRangeSliderCode();\r
-            });\r
-          }\r
-          window.updateRangeSliderCode();\r
-        }, 100);\r
-      }
 })();
 <\/script>`},{title:`Simple Marks`,description:``,html:`<div style="max-width: 500px; display: flex; flex-direction: column; gap: 30px;">\r
         <div>\r
@@ -54627,69 +54970,6 @@ await manager.loadLayout(saved);</code></pre>\r
       updateInteractiveSkeleton();\r
     }, 50);
 })();
-<\/script>`},{title:`Interactive Playground`,description:`Configure and generate custom skeleton components in real time.`,html:`<div class="demo-block">
-  <h3>Interactive Playground</h3>
-  <p style="color: #6b7280; margin-bottom: 20px;">Toggle props and see the Skeleton in action.</p>
-  
-  <div style="background: var(--bg-secondary); border: 1px solid var(--border-default); padding: 20px; border-radius: 8px; margin-bottom: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px;">
-    <div style="display:flex; flex-direction:column; gap:5px;">
-      <label style="font-weight:600; font-size:12px;">Shape</label>
-      <ui-dropdown id="sk-shape" value="rectangle" options='[{"label":"Rectangle","value":"rectangle"},{"label":"Circle","value":"circle"},{"label":"Text Rows","value":"text"}]'></ui-dropdown>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:5px;">
-      <label style="font-weight:600; font-size:12px;">Animation</label>
-      <ui-dropdown id="sk-anim" value="pulse" options='[{"label":"Pulse","value":"pulse"},{"label":"Shimmer","value":"shimmer"},{"label":"None","value":"none"}]'></ui-dropdown>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:5px;">
-      <label style="font-weight:600; font-size:12px;">Rows (Text mode)</label>
-      <ui-number-input id="sk-rows" value="3" min="1"></ui-number-input>
-    </div>
-    <div style="display:flex; align-items:center; gap:8px; margin-top:20px;">
-      <ui-checkbox id="sk-animated" label="Animated" checked="true"></ui-checkbox>
-    </div>
-  </div>
-
-  <div id="skeletonPlaygroundPreview" style="background: white; padding: 30px; border: 1px dashed #d1d5db; border-radius: 8px; min-height: 120px; display: flex; align-items: center; justify-content: center;">
-    <ui-skeleton id="playground-skeleton" shape="rectangle" width="100%" height="80px" animation-type="pulse" animated="true"></ui-skeleton>
-  </div>
-</div>
-
-<script>
-(function() {
-  const el = document.getElementById('playground-skeleton');
-  if (!el) return;
-
-  window.updateSkeletonPlayground = () => {
-    const shape = document.getElementById('sk-shape').value;
-    const anim = document.getElementById('sk-anim').value;
-    const rows = parseInt(document.getElementById('sk-rows').value) || 3;
-    const animated = document.getElementById('sk-animated').checked;
-
-    el.shape = shape;
-    el.animationType = anim;
-    el.rows = rows;
-    el.animated = animated;
-
-    if (shape === 'circle') {
-      el.width = '80px';
-      el.height = '80px';
-    } else if (shape === 'text') {
-      el.width = '100%';
-      el.height = 'auto';
-    } else {
-      el.width = '100%';
-      el.height = '80px';
-    }
-  };
-
-  setTimeout(() => {
-    document.getElementById('sk-shape')?.addEventListener('dropdownChange', window.updateSkeletonPlayground);
-    document.getElementById('sk-anim')?.addEventListener('dropdownChange', window.updateSkeletonPlayground);
-    document.getElementById('sk-rows')?.addEventListener('inputChange', window.updateSkeletonPlayground);
-    document.getElementById('sk-animated')?.addEventListener('checkboxChange', window.updateSkeletonPlayground);
-    window.updateSkeletonPlayground();
-  }, 100);
-})();
 <\/script>`}],"smart-menu":[{title:`Basic Smart Menu`,description:`Right-click on the area below to open the smart menu`,html:`<div style="max-width: 600px; margin: 0 auto;">\r
           <h4>Basic Smart Menu</h4>\r
           <p style="color: #6b7280; font-size: 13px;">Right-click on the area below to open the smart menu</p>\r
@@ -54742,7 +55022,7 @@ await manager.loadLayout(saved);</code></pre>\r
         }\r
       }, 100);
 })();
-<\/script>`},{title:`log Action`,description:``,html:'<div style="color: #1e40af;"><strong>${action}</strong> clicked at ${new Date().toLocaleTimeString()}</div>'},{title:`Nested Smart Menu`,description:`Multi-level menu with submenus`,html:`<div style="max-width: 600px; margin: 0 auto;">\r
+<\/script>`},{title:`Nested Smart Menu`,description:`Multi-level menu with submenus`,html:`<div style="max-width: 600px; margin: 0 auto;">\r
           <h4>Nested Smart Menu</h4>\r
           <p style="color: #6b7280; font-size: 13px;">Multi-level menu with submenus</p>\r
           <div id="nestedSmartTarget" style="min-height: 200px; border: 2px dashed #cbd5e1; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: #f9fafb; cursor: context-menu; margin: 20px 0;">\r
@@ -54982,260 +55262,725 @@ await manager.loadLayout(saved);</code></pre>\r
     };\r
   }
 })();
-<\/script>`}],snackbar:[{title:`🔔 Basic Notifications`,html:`<div class="demo-block">
-  <h3>Basic Notifications</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">Click each button to trigger different notification types.</p>
-  <ui-snackbar id="snackbar-basic" duration="4000"></ui-snackbar>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;">
-    <ui-button variant="filled" color="success" id="btn-success-basic">Success</ui-button>
-    <ui-button variant="filled" color="danger" id="btn-error-basic">Error</ui-button>
-    <ui-button variant="filled" color="warning" id="btn-warning-basic">Warning</ui-button>
-    <ui-button variant="filled" color="info" id="btn-info-basic">Info</ui-button>
-  </div>
-  <script>
-    (function() {
-      var el = document.getElementById('snackbar-basic');
-      document.getElementById('btn-success-basic').addEventListener('click', function() {
-        el.add({ message: 'Operation completed successfully!', type: 'success' });
-      });
-      document.getElementById('btn-error-basic').addEventListener('click', function() {
-        el.add({ message: 'An error occurred. Please try again.', type: 'error' });
-      });
-      document.getElementById('btn-warning-basic').addEventListener('click', function() {
-        el.add({ message: 'Please review your settings before proceeding.', type: 'warning' });
-      });
-      document.getElementById('btn-info-basic').addEventListener('click', function() {
-        el.add({ message: 'New updates are available.', type: 'info' });
-      });
-    })();
-  <\/script>
-</div>`},{title:`With Titles`,html:`<div class="demo-block">
-  <h3>Notifications with Titles</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">Add a title for richer notification context.</p>
-  <ui-snackbar id="snackbar-titled" duration="5000"></ui-snackbar>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;">
-    <ui-button variant="filled" color="success" id="btn-titled-success">Deploy Done</ui-button>
-    <ui-button variant="filled" color="danger" id="btn-titled-error">Build Failed</ui-button>
-    <ui-button variant="filled" color="info" id="btn-titled-info">New Version</ui-button>
-  </div>
-  <script>
-    (function() {
-      var el = document.getElementById('snackbar-titled');
-      document.getElementById('btn-titled-success').addEventListener('click', function() {
-        el.add({ title: 'Deployment Success', message: 'v2.4.1 deployed to production.', type: 'success' });
-      });
-      document.getElementById('btn-titled-error').addEventListener('click', function() {
-        el.add({ title: 'Build Failed', message: 'TypeScript errors found in module auth.ts', type: 'error' });
-      });
-      document.getElementById('btn-titled-info').addEventListener('click', function() {
-        el.add({ title: 'Update Available', message: 'Atom UI v3.0.0 is ready to install.', type: 'info' });
-      });
-    })();
-  <\/script>
-</div>`},{title:`Custom Duration`,html:`<div class="demo-block">
-  <h3>Custom Duration</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">Control how long each toast remains visible.</p>
-  <ui-snackbar id="snackbar-duration" duration="3000"></ui-snackbar>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;">
-    <ui-button variant="outline" color="info" id="btn-dur-2s">2 Seconds</ui-button>
-    <ui-button variant="outline" color="primary" id="btn-dur-5s">5 Seconds</ui-button>
-    <ui-button variant="outline" color="warning" id="btn-dur-10s">10 Seconds</ui-button>
-    <ui-button variant="outline" color="success" id="btn-dur-persist">Persistent</ui-button>
-  </div>
-  <script>
-    (function() {
-      var el = document.getElementById('snackbar-duration');
-      document.getElementById('btn-dur-2s').addEventListener('click', function() {
-        el.add({ message: 'Dismisses in 2 seconds.', type: 'info', duration: 2000 });
-      });
-      document.getElementById('btn-dur-5s').addEventListener('click', function() {
-        el.add({ message: 'Dismisses in 5 seconds.', type: 'info', duration: 5000 });
-      });
-      document.getElementById('btn-dur-10s').addEventListener('click', function() {
-        el.add({ message: 'Dismisses in 10 seconds.', type: 'warning', duration: 10000 });
-      });
-      document.getElementById('btn-dur-persist').addEventListener('click', function() {
-        el.add({ message: 'This notification persists until manually closed.', type: 'success', duration: 0 });
-      });
-    })();
-  <\/script>
-</div>`},{title:`Open Modes (Entrance Animations)`,html:`<div class="demo-block">
-  <h3>Open Modes — Entrance Animations</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">Each toast can enter with a different animation.</p>
-  <ui-snackbar id="snackbar-modes" duration="4000" open-mode="slide-down"></ui-snackbar>
-  <div style="display:flex;gap:10px;flex-wrap:wrap;">
-    <ui-button variant="outline" color="primary" id="btn-mode-slide-down">Slide Down</ui-button>
-    <ui-button variant="outline" color="secondary" id="btn-mode-slide-up">Slide Up</ui-button>
-    <ui-button variant="outline" color="success" id="btn-mode-fade">Fade</ui-button>
-    <ui-button variant="outline" color="warning" id="btn-mode-scale">Scale</ui-button>
-    <ui-button variant="outline" color="info" id="btn-mode-bounce">Bounce</ui-button>
-  </div>
-  <script>
-    (function() {
-      var el = document.getElementById('snackbar-modes');
-      var modes = {
-        'btn-mode-slide-down': 'slide-down',
-        'btn-mode-slide-up': 'slide-up',
-        'btn-mode-fade': 'fade',
-        'btn-mode-scale': 'scale',
-        'btn-mode-bounce': 'bounce'
-      };
-      Object.keys(modes).forEach(function(id) {
-        document.getElementById(id).addEventListener('click', function() {
-          el.openMode = modes[id];
-          el.add({ message: 'Animation: ' + modes[id], type: 'info', duration: 3000 });
-        });
-      });
-    })();
-  <\/script>
-</div>`},{title:`Max Visible & Stacking`,html:`<div class="demo-block">
-  <h3>Max Visible &amp; Stacking</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">Control how many toasts appear simultaneously.</p>
-  <ui-snackbar id="snackbar-stack" max-visible="3" duration="6000"></ui-snackbar>
-  <div style="display:flex;gap:10px;flex-wrap:wrap;">
-    <ui-button variant="filled" color="primary" id="btn-stack-spam">Spam 5 Toasts</ui-button>
-    <ui-button variant="outline" color="secondary" id="btn-stack-clear">Clear All</ui-button>
-  </div>
-  <script>
-    (function() {
-      var el = document.getElementById('snackbar-stack');
-      var types = ['success', 'error', 'warning', 'info', 'success'];
-      var msgs = [
-        'Task 1 queued', 'Task 2 started', 'Task 3 pending', 'Task 4 running', 'All tasks done!'
-      ];
-      document.getElementById('btn-stack-spam').addEventListener('click', function() {
-        msgs.forEach(function(msg, i) {
-          setTimeout(function() {
-            el.add({ message: msg, type: types[i], duration: 6000 });
-          }, i * 300);
-        });
-      });
-      document.getElementById('btn-stack-clear').addEventListener('click', function() {
-        if (el.clearAll) el.clearAll();
-      });
-    })();
-  <\/script>
-</div>`},{title:`Particles Effect`,html:`<div class="demo-block">
-  <h3>Particles Effect</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">Success notifications can emit celebratory particle effects.</p>
-  <ui-snackbar id="snackbar-particles" particles="true" duration="5000"></ui-snackbar>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;">
-    <ui-button variant="filled" color="success" id="btn-p-on">With Particles</ui-button>
-    <ui-button variant="outline" color="success" id="btn-p-off">Without Particles</ui-button>
-  </div>
-  <script>
-    (function() {
-      var el = document.getElementById('snackbar-particles');
-      document.getElementById('btn-p-on').addEventListener('click', function() {
-        el.particles = true;
-        el.add({ message: 'Woohoo! Deployment complete 🎉', type: 'success' });
-      });
-      document.getElementById('btn-p-off').addEventListener('click', function() {
-        el.particles = false;
-        el.add({ message: 'Done. No particles this time.', type: 'success' });
-      });
-    })();
-  <\/script>
-</div>`},{title:`Card Stack Mode`,html:`<div class="demo-block">
-  <h3>Card Stack Mode</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">Card stack mode layers toasts in a deck — only the topmost is fully visible.</p>
-  <ui-snackbar id="snackbar-cardstack" card-stack="true" max-visible="4" duration="8000"></ui-snackbar>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;">
-    <ui-button variant="filled" color="primary" id="btn-cs-send">Add to Stack</ui-button>
-  </div>
-  <script>
-    (function() {
-      var el = document.getElementById('snackbar-cardstack');
-      var count = 0;
-      var types = ['success', 'info', 'warning', 'error'];
-      document.getElementById('btn-cs-send').addEventListener('click', function() {
-        count++;
-        el.add({ title: 'Notification ' + count, message: 'This is card #' + count + ' in the stack.', type: types[count % 4] });
-      });
-    })();
-  <\/script>
-</div>`},{title:`Pause on Hover`,html:`<div class="demo-block">
-  <h3>Pause on Hover</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">When enabled, the auto-dismiss timer pauses while you hover over the toast.</p>
-  <ui-snackbar id="snackbar-hover" pause-on-hover="true" duration="4000"></ui-snackbar>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;">
-    <ui-button variant="filled" color="warning" id="btn-hover-pause">Start Toast — Hover to Pause</ui-button>
-  </div>
-  <script>
-    (function() {
-      document.getElementById('btn-hover-pause').addEventListener('click', function() {
-        document.getElementById('snackbar-hover').add({
-          title: 'Hover to Pause Timer',
-          message: 'This toast will disappear in 4s unless you hover over it.',
-          type: 'warning'
-        });
-      });
-    })();
-  <\/script>
-</div>`},{title:`Multiple Snackbar Instances`,html:`<div class="demo-block">
-  <h3>Multiple Snackbar Instances</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">You can mount multiple snackbar elements on the same page with different configurations.</p>
-  <ui-snackbar id="snackbar-top" open-mode="slide-down" duration="4000" style="--snackbar-position:top-right;"></ui-snackbar>
-  <ui-snackbar id="snackbar-bottom" open-mode="slide-up" duration="4000" style="--snackbar-position:bottom-left;"></ui-snackbar>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;">
-    <ui-button variant="outline" color="success" id="btn-top-right">Top-Right</ui-button>
-    <ui-button variant="outline" color="primary" id="btn-bottom-left">Bottom-Left</ui-button>
-  </div>
-  <script>
-    (function() {
-      document.getElementById('btn-top-right').addEventListener('click', function() {
-        document.getElementById('snackbar-top').add({ message: 'Notification from top-right!', type: 'success' });
-      });
-      document.getElementById('btn-bottom-left').addEventListener('click', function() {
-        document.getElementById('snackbar-bottom').add({ message: 'Notification from bottom-left!', type: 'info' });
-      });
-    })();
-  <\/script>
-</div>`},{title:`🎮 Interactive Playground`,html:`<div class="demo-block">
-  <h3>🎮 Interactive Playground</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">Configure the snackbar and fire custom notifications.</p>
-  <ui-snackbar id="snackbar-playground" duration="5000" open-mode="slide-down"></ui-snackbar>
-  <div style="background:#1e293b;border-radius:10px;padding:20px;margin-bottom:16px;">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
-      <label style="display:flex;flex-direction:column;gap:6px;color:#94a3b8;font-size:13px;">
-        Message
-        <input id="pg-message" type="text" value="Hello from Atom UI!" style="padding:8px;border:1px solid #374151;border-radius:6px;background:#0f172a;color:#f1f5f9;font-size:13px;" />
-      </label>
-      <label style="display:flex;flex-direction:column;gap:6px;color:#94a3b8;font-size:13px;">
-        Title (optional)
-        <input id="pg-title" type="text" placeholder="Optional title" style="padding:8px;border:1px solid #374151;border-radius:6px;background:#0f172a;color:#f1f5f9;font-size:13px;" />
-      </label>
-      <label style="display:flex;flex-direction:column;gap:6px;color:#94a3b8;font-size:13px;">
-        Type
-        <select id="pg-type" style="padding:8px;border:1px solid #374151;border-radius:6px;background:#0f172a;color:#f1f5f9;font-size:13px;">
-          <option value="success">success</option>
-          <option value="error">error</option>
-          <option value="warning">warning</option>
-          <option value="info">info</option>
-        </select>
-      </label>
-      <label style="display:flex;flex-direction:column;gap:6px;color:#94a3b8;font-size:13px;">
-        Duration (ms)
-        <input id="pg-duration" type="number" value="4000" min="0" step="500" style="padding:8px;border:1px solid #374151;border-radius:6px;background:#0f172a;color:#f1f5f9;font-size:13px;" />
-      </label>
-    </div>
-  </div>
-  <ui-button variant="filled" color="primary" id="btn-pg-fire">Fire Notification</ui-button>
-  <script>
-    (function() {
-      var el = document.getElementById('snackbar-playground');
-      document.getElementById('btn-pg-fire').addEventListener('click', function() {
-        var msg = document.getElementById('pg-message').value || 'Hello!';
-        var title = document.getElementById('pg-title').value;
-        var type = document.getElementById('pg-type').value;
-        var dur = parseInt(document.getElementById('pg-duration').value) || 4000;
-        var payload = { message: msg, type: type, duration: dur };
-        if (title) payload.title = title;
-        el.add(payload);
-      });
-    })();
-  <\/script>
-</div>`}],"speed-dial":[{title:`Basic Speed Dial`,description:`Click the button in the bottom-right corner to see the actions`,html:`<div style="text-align: center; padding: 40px;">\r
+<\/script>`}],snackbar:[{title:`🎮 Interactive Playground`,description:`Configure every property of the Snackbar system in real-time.`,html:`<div class="demo-block">\r
+        <h3>🎮 Interactive Playground</h3>\r
+        <p style="margin-bottom: 20px; color: #64748b; font-size: 14px;">Configure every property of the Snackbar system in real-time.</p>\r
+        \r
+        <div style="background-color: white; padding: 24px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #e5e7eb; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">\r
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;">\r
+            \r
+            <!-- Column 1: Container Props -->\r
+            <div style="display: flex; flex-direction: column; gap: 14px;">\r
+              <h4 style="margin: 0; font-size: 11px; color: #ec4899; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800;">Container Props</h4>\r
+              \r
+              <ui-dropdown label="Position" id="pgPosition" value="bottom-right">\r
+                <option value="bottom-right">Bottom Right</option>\r
+                <option value="bottom-left">Bottom Left</option>\r
+                <option value="bottom-center">Bottom Center</option>\r
+                <option value="top-right">Top Right</option>\r
+                <option value="top-left">Top Left</option>\r
+                <option value="top-center">Top Center</option>\r
+              </ui-dropdown>\r
+\r
+              <ui-dropdown label="Stack Mode" id="pgStackMode" value="stack">\r
+                <option value="stack">Stack (Standard)</option>\r
+                <option value="queue">Queue (FIFO)</option>\r
+                <option value="lifo">LIFO (Stack)</option>\r
+              </ui-dropdown>\r
+\r
+              <ui-dropdown label="Open Animation" id="pgOpenMode" value="slide-down">\r
+                <option value="slide-down">Slide Down</option>\r
+                <option value="slide-up">Slide Up</option>\r
+                <option value="slide-left">Slide Left</option>\r
+                <option value="slide-right">Slide Right</option>\r
+                <option value="fade">Fade</option>\r
+                <option value="scale">Scale</option>\r
+                <option value="bounce">Bounce</option>\r
+                <option value="spring">Spring</option>\r
+              </ui-dropdown>\r
+\r
+              <ui-input type="number" label="Max Visible" id="pgMaxVisible" value="5" min="1" max="20"></ui-input>\r
+\r
+              <ui-input type="number" label="Global Duration (ms)" id="pgGlobalDuration" value="5000" step="500"></ui-input>\r
+\r
+              <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 4px; padding: 10px; background: #fff1f2; border-radius: 8px;">\r
+                <ui-checkbox label="Card Stacking" id="pgCardStack"></ui-checkbox>\r
+                <ui-checkbox label="Smart Grouping" id="pgCoalesce"></ui-checkbox>\r
+                <ui-checkbox label="Pause on Focus Loss" id="pgPauseFocus" checked></ui-checkbox>\r
+                <ui-checkbox label="Pause on Hover" id="pgPauseHover" checked></ui-checkbox>\r
+                <ui-checkbox label="Show Countdown chip" id="pgShowCountdown"></ui-checkbox>\r
+                <ui-checkbox label="Auto Portal" id="pgPortal" checked></ui-checkbox>\r
+              </div>\r
+\r
+              <ui-input type="number" label="Max Duration cap (ms, 0=off)" id="pgMaxDuration" value="0" step="1000"></ui-input>\r
+            </div>\r
+\r
+            <!-- Column 2: Notification Props -->\r
+            <div style="display: flex; flex-direction: column; gap: 14px;">\r
+              <h4 style="margin: 0; font-size: 11px; color: #10b981; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800;">Notification Props</h4>\r
+              \r
+              <ui-dropdown label="Type" id="pgType" value="info">\r
+                <option value="info">Info</option>\r
+                <option value="success">Success</option>\r
+                <option value="warning">Warning</option>\r
+                <option value="error">Error</option>\r
+                <option value="neutral">Neutral</option>\r
+                <option value="loading">Loading</option>\r
+                <option value="sovereign">Sovereign</option>\r
+              </ui-dropdown>\r
+\r
+              <ui-dropdown label="Variant" id="pgVariant" value="filled">\r
+                <option value="filled">Filled</option>\r
+                <option value="soft">Soft</option>\r
+                <option value="outlined">Outlined</option>\r
+                <option value="glass">Glass</option>\r
+              </ui-dropdown>\r
+\r
+              <ui-dropdown label="Size" id="pgSize" value="md">\r
+                <option value="sm">Small</option>\r
+                <option value="md">md</option>\r
+                <option value="lg">Large</option>\r
+              </ui-dropdown>\r
+\r
+              <ui-dropdown label="Priority" id="pgPriority" value="normal">\r
+                <option value="normal">Normal</option>\r
+                <option value="high">High</option>\r
+                <option value="urgent">Urgent</option>\r
+              </ui-dropdown>\r
+\r
+              <ui-dropdown label="Theme Override" id="pgTheme" value="system">\r
+                <option value="system">System Default</option>\r
+                <option value="light">Forced Light</option>\r
+                <option value="dark">Forced Dark</option>\r
+              </ui-dropdown>\r
+\r
+              <ui-dropdown label="Progress Type" id="pgProgress" value="bar">\r
+                <option value="bar">Bar (Bottom)</option>\r
+                <option value="ring">Ring (Icon Area)</option>\r
+                <option value="none">Disabled</option>\r
+              </ui-dropdown>\r
+            </div>\r
+\r
+            <!-- Column 3: Content & Assets -->\r
+            <div style="display: flex; flex-direction: column; gap: 14px;">\r
+              <h4 style="margin: 0; font-size: 11px; color: #10b981; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800;">Content & Assets</h4>\r
+              \r
+              <ui-input label="Title" id="pgTitle" placeholder="Notification Title"></ui-input>\r
+\r
+              <ui-input label="Message" id="pgMessage" multiline="true" style="height: 60px;" value="Synchronizing assets with edge nodes..."></ui-input>\r
+\r
+              <ui-input label="Custom Icon (Lucide)" id="pgIcon" placeholder="e.g. coffee, zap, bell"></ui-input>\r
+\r
+              <ui-input label="Avatar URL" id="pgAvatar" placeholder="https://..."></ui-input>\r
+\r
+              <ui-dropdown label="Sound Engine" id="pgSoundMode" value="none">\r
+                <option value="synth">Adaptive Synth</option>\r
+                <option value="none">Muted</option>\r
+                <option value="custom">Custom URL</option>\r
+              </ui-dropdown>\r
+\r
+              <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 4px; padding: 10px; background: #f0fdf4; border-radius: 8px;">\r
+                <ui-checkbox label="Closable" id="pgClosable" checked></ui-checkbox>\r
+                <ui-checkbox label="Haptic Feedback" id="pgHaptic"></ui-checkbox>\r
+                <ui-checkbox label="Slot Support" id="pgEnableSlots"></ui-checkbox>\r
+              </div>\r
+            </div>\r
+\r
+          </div>\r
+\r
+          <ui-button onclick="firePgNotification()" >Fire Notification 🔥</ui-button>\r
+        </div>\r
+\r
+        <div style="margin-top: 20px; background: #0f172a; padding: 20px; border-radius: 12px; position: relative; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);">\r
+          <div style="color: #94a3b8; font-size: 11px; position: absolute; top: 12px; left: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Usage Code</div>\r
+          <ui-button onclick="copyPgCode()" style="position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 6px; font-size: 11px; cursor: pointer;">Copy</ui-button>\r
+          <code id="snackbarCodeBlock" style="color: #f8fafc; font-family: 'Fira Code', monospace; font-size: 13px; display: block; overflow-x: auto; white-space: pre-wrap; line-height: 1.6; margin-top: 20px;"></code>\r
+        </div>\r
+\r
+        <div id="eventLog" style="margin-top: 24px; padding: 16px; background-color: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;">\r
+          <h4 style="margin: 0 0 12px; font-size: 14px; color: #1e293b; font-weight: 700;">Event Log:</h4>\r
+          <div id="eventLogContent" style="font-family: 'Fira Code', monospace; font-size: 12px; color: #64748b; max-height: 120px; overflow-y: auto;">\r
+            <div style="color: #94a3b8;">Waiting for events...</div>\r
+          </div>\r
+        </div>\r
+      </div>\r
+      \r
+      <style>\r
+        .pg-label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 700; color: #1e293b; }\r
+        .pg-select, .pg-input { padding: 10px 12px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 13px; font-family: inherit; color: #0f172a; outline: none; transition: border-color 0.2s; }\r
+        .pg-select:focus, .pg-input:focus { border-color: #ec4899; }\r
+        .pg-checkbox { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; cursor: pointer; color: #334155; }\r
+        .demo-block h3 { margin-bottom: 8px; font-size: 24px; font-weight: 800; color: #0f172a; }\r
+      </style>\r
+    
+<script>
+(function() {
+  globalSnackbar.removeEventListener('snackbarClosed', window._lastClsHandler);\r
+    window._lastClsHandler = e => logSnackbarEvent(\`snackbarClosed: \${e.detail.id}\`);\r
+    globalSnackbar.addEventListener('snackbarClosed', window._lastClsHandler);\r
+\r
+    // Wire playground controls\r
+    setTimeout(() => {\r
+      const ctrls = [\r
+        { id: 'pgPosition', event: 'dropdownChange' },\r
+        { id: 'pgStackMode', event: 'dropdownChange' },\r
+        { id: 'pgOpenMode', event: 'dropdownChange' },\r
+        { id: 'pgMaxVisible', event: 'inputChange' },\r
+        { id: 'pgGlobalDuration', event: 'inputChange' },\r
+        { id: 'pgCardStack', event: 'checkboxChange' },\r
+        { id: 'pgCoalesce', event: 'checkboxChange' },\r
+        { id: 'pgPauseFocus', event: 'checkboxChange' },\r
+        { id: 'pgPauseHover', event: 'checkboxChange' },\r
+        { id: 'pgShowCountdown', event: 'checkboxChange' },\r
+        { id: 'pgPortal', event: 'checkboxChange' },\r
+        { id: 'pgMaxDuration', event: 'inputChange' },\r
+        { id: 'pgType', event: 'dropdownChange' },\r
+        { id: 'pgVariant', event: 'dropdownChange' },\r
+        { id: 'pgSize', event: 'dropdownChange' },\r
+        { id: 'pgPriority', event: 'dropdownChange' },\r
+        { id: 'pgTheme', event: 'dropdownChange' },\r
+        { id: 'pgProgress', event: 'dropdownChange' },\r
+        { id: 'pgTitle', event: 'inputChange' },\r
+        { id: 'pgMessage', event: 'inputChange' },\r
+        { id: 'pgIcon', event: 'inputChange' },\r
+        { id: 'pgAvatar', event: 'inputChange' },\r
+        { id: 'pgSoundMode', event: 'dropdownChange' },\r
+        { id: 'pgClosable', event: 'checkboxChange' },\r
+        { id: 'pgHaptic', event: 'checkboxChange' },\r
+        { id: 'pgEnableSlots', event: 'checkboxChange' },\r
+      ];\r
+\r
+      ctrls.forEach(ctrl => {\r
+        const el = document.getElementById(ctrl.id);\r
+        if (el) el.addEventListener(ctrl.event, () => updateInteractiveSnackbar());\r
+      });\r
+\r
+      updateInteractiveSnackbar();\r
+    }, 100);
+})();
+<\/script>`},{title:`Standard Types`,description:`All 7 notification types with their default icons and colours.`,html:`<div class="demo-block">\r
+        <h3>Standard Types</h3>\r
+        <p>All 7 notification types with their default icons and colours.</p>\r
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px;">\r
+          <ui-button onclick="globalSnackbar.add({message:'Operation completed successfully', title:'Success', type:'success'})">✅ Success</ui-button>\r
+          <ui-button onclick="globalSnackbar.add({message:'An unexpected error occurred', title:'Error', type:'error'})">❌ Error</ui-button>\r
+          <ui-button onclick="globalSnackbar.add({message:'Disk usage is above 90%', title:'Warning', type:'warning'})">⚠️ Warning</ui-button>\r
+          <ui-button onclick="globalSnackbar.add({message:'3 new updates available', title:'Info', type:'info'})">ℹ️ Info</ui-button>\r
+          <ui-button onclick="globalSnackbar.add({message:'Reminder: meeting at 3pm', type:'neutral', variant:'outlined'})">💬 Neutral</ui-button>\r
+          <ui-button onclick="globalSnackbar.add({message:'Syncing with cloud...', type:'loading', duration:0, progress:'ring'})">⏳ Loading</ui-button>\r
+          <ui-button onclick="testSovereignProtocol()">👑 Sovereign</ui-button>\r
+        </div>\r
+      </div>\r
+\r
+      <div class="demo-block" style="margin-top: 20px;">\r
+        <h3>Visual Variants</h3>\r
+        <p>4 visual styles applied to the same info notification.</p>\r
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px;">\r
+          <ui-button onclick="globalSnackbar.add({type:'info', variant:'filled', title:'Filled', message:'Default filled style'})">Filled</ui-button>\r
+          <ui-button onclick="globalSnackbar.add({type:'info', variant:'soft', title:'Soft', message:'Muted background style'})">Soft</ui-button>\r
+          <ui-button onclick="globalSnackbar.add({type:'info', variant:'outlined', title:'Outlined', message:'Border-only style'})">Outlined</ui-button>\r
+          <ui-button onclick="globalSnackbar.add({type:'info', variant:'glass', title:'Glass', message:'Frosted glass style'})">Glass</ui-button>\r
+        </div>\r
+      </div>\r
+\r
+      <div class="demo-block" style="margin-top: 20px;">\r
+        <h3>Countdown Chip + Progress</h3>\r
+        <p>Enable <code>showCountdown</code> to display a live "Xs" chip; combine with <code>progress</code> for a visual timer.</p>\r
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">\r
+          <ui-button onclick="testCountdownDemo('bar')" >⏱ Bar + Countdown</ui-button>\r
+          <ui-button onclick="testCountdownDemo('ring')" >🔵 Ring + Countdown</ui-button>\r
+        </div>\r
+      </div>\r
+    
+<script>
+(function() {
+  window.testCountdownDemo = progressType => {\r
+      globalSnackbar.showCountdown = true;\r
+      globalSnackbar\r
+        .add({\r
+          title: 'Auto-closing in 8s',\r
+          message: \`Watch the \${progressType} progress and countdown chip.\`,\r
+          type: 'info',\r
+          progress: progressType,\r
+          duration: 8000,\r
+        })\r
+        .then(() => {\r
+          globalSnackbar.showCountdown = false;\r
+        });\r
+    };
+})();
+<\/script>`},{title:`Anchor Positions`,description:`Choose where notifications appear on the screen.`,html:`<div class="demo-block">\r
+        <h3>Anchor Positions</h3>\r
+        <p>Choose where notifications appear on the screen.</p>\r
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px; max-width: 600px;">\r
+          <ui-button onclick="testPosition('top-left')" >Top Left</ui-button>\r
+          <ui-button onclick="testPosition('top-center')" >Top Center</ui-button>\r
+          <ui-button onclick="testPosition('top-right')" >Top Right</ui-button>\r
+          <ui-button onclick="testPosition('bottom-left')" >Bottom Left</ui-button>\r
+          <ui-button onclick="testPosition('bottom-center')" >Bottom Center</ui-button>\r
+          <ui-button onclick="testPosition('bottom-right')" >Bottom Right</ui-button>\r
+        </div>\r
+      </div>\r
+    
+<script>
+(function() {
+  window.testPosition = pos => {\r
+      globalSnackbar.position = pos;\r
+      globalSnackbar.add({ message: \`Switched to \${pos}\`, type: 'info' });\r
+    };
+})();
+<\/script>`},{title:`🎴 Card Stacking Mode`,description:`Visual stacking engine where notifications occupy less space and expand logically. Highly optimized for mobile and clean dashboards.`,html:`<div class="demo-block">\r
+        <h3>🎴 Card Stacking Mode</h3>\r
+        <p>Visual stacking engine where notifications occupy less space and expand logically. Highly optimized for mobile and clean dashboards.</p>\r
+        \r
+        <div style="display: flex; gap: 12px; margin-top: 20px; background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">\r
+          <div style="flex: 1;">\r
+            <h4 style="margin: 0 0 8px; font-weight: 700;">Global Toggle</h4>\r
+            <div style="display: flex; gap: 10px;">\r
+              <ui-button onclick="testCardStack(true)" style="flex: 1;">Enable Stack</ui-button>\r
+              <ui-button onclick="testCardStack(false)" style="flex: 1; ">Disable</ui-button>\r
+            </div>\r
+          </div>\r
+        </div>\r
+\r
+        <div style="margin-top: 30px;">\r
+          <h4 style="margin: 0 0 12px; font-weight: 700;">Orientation Playground</h4>\r
+          <p style="font-size: 13px; color: #64748b; margin-bottom: 16px;">Test how the Material Tray adapts to different screen anchors.</p>\r
+          \r
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: 600px;">\r
+            <ui-button onclick="testStackedPosition('top-left')" >Top Left</ui-button>\r
+            <ui-button onclick="testStackedPosition('top-center')" >Top Center</ui-button>\r
+            <ui-button onclick="testStackedPosition('top-right')" >Top Right</ui-button>\r
+            <ui-button onclick="testStackedPosition('bottom-left')"  >Bottom Left</ui-button>\r
+            <ui-button onclick="testStackedPosition('bottom-center')"  >Bottom Center</ui-button>\r
+            <ui-button onclick="testStackedPosition('bottom-right')"  >Bottom Right</ui-button>\r
+          </div>\r
+        </div>\r
+      </div>\r
+\r
+      \r
+    
+<script>
+(function() {
+  window.testCardStack = enabled => {\r
+      globalSnackbar.cardStack = enabled;\r
+      globalSnackbar.maxVisible = 5;\r
+      globalSnackbar.closeAll();\r
+      if (enabled) {\r
+        setTimeout(() => {\r
+          for (let i = 0; i < 4; i++) {\r
+            globalSnackbar.add({ title: \`Stack Element \${i + 1}\`, message: \`This is a high-fidelity stacked notification layer.\`, type: 'info', duration: 0 });\r
+          }\r
+        }, 300);\r
+      }\r
+    };\r
+\r
+    window.testStackedPosition = pos => {\r
+      globalSnackbar.cardStack = true;\r
+      globalSnackbar.position = pos;\r
+      globalSnackbar.closeAll();\r
+      setTimeout(() => {\r
+        const types = ['success', 'error', 'info', 'warning'];\r
+        const titles = ['System Sync', 'Access Denied', 'Update Ready', 'Limit Warning'];\r
+        for (let i = 0; i < 4; i++) {\r
+          globalSnackbar.add({\r
+            title: titles[i],\r
+            message: \`Positioning engine synchronized at \${pos} edge.\`,\r
+            type: types[i],\r
+            duration: 0,\r
+          });\r
+        }\r
+      }, 300);\r
+    };
+})();
+<\/script>`},{title:`Live Dynamic Updates`,description:`Update existing notifications in real-time (e.g. progress percentages).`,html:`<div class="demo-block">\r
+        <h3>Live Dynamic Updates</h3>\r
+        <p>Update existing notifications in real-time (e.g. progress percentages).</p>\r
+        <ui-button onclick="testLiveUpdater()" >Start Process Demo</ui-button>\r
+      </div>\r
+      <div class="demo-block" style="margin-top: 20px;">\r
+        <h3>Rich Media & Slots</h3>\r
+        <p>Inject complex HTML layouts using the 'enable-slots' property.</p>\r
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px;">\r
+          <ui-button onclick="testSlottedMedia()" >Launch Social Slot</ui-button>\r
+          <ui-button onclick="testLongMessage()" >Long Text Stress Test</ui-button>\r
+        </div>\r
+      </div>\r
+    
+<script>
+(function() {
+  window.testLongMessage = () => {\r
+      globalSnackbar.add({\r
+        title: 'Network Stress Alert',\r
+        message:\r
+          'This_is_an_exceptionally_long_message_without_any_natural_spaces_to_test_the_word_break_logic_and_ensure_it_does_not_overflow_the_screen_width_under_extreme_circumstances_like_continuous_path_descriptors_or_unformatted_log_strings_that_might_be_passed_from_an_active_terminal_output_buffer.',\r
+        type: 'warning',\r
+        duration: 0,\r
+      });\r
+      globalSnackbar.add({\r
+        title: 'Multi-line Paragraph',\r
+        message:\r
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',\r
+        type: 'info',\r
+        duration: 0,\r
+      });\r
+    };
+})();
+<\/script>`},{title:`Intelligent Workflows`,description:`Automatic Loading -> Success/Error state.`,html:`<div class="demo-block">\r
+        <h3>Intelligent Workflows</h3>\r
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 20px;">\r
+          <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">\r
+            <h4 style="margin: 0 0 8px; font-weight: 700;">Async Promise</h4>\r
+            <p style="font-size: 13px; color: #64748b; margin-bottom: 12px;">Automatic Loading -> Success/Error state.</p>\r
+            <ui-button onclick="testSnackbarPromise()" >Run Job</ui-button>\r
+          </div>\r
+          <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">\r
+            <h4 style="margin: 0 0 8px; font-weight: 700;">Undoable Action</h4>\r
+            <p style="font-size: 13px; color: #64748b; margin-bottom: 12px;">Archive or Delete with a 6s rollback window.</p>\r
+            <ui-button onclick="testSnackbarUndoable()" >Delete Item</ui-button>\r
+          </div>\r
+          <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">\r
+            <h4 style="margin: 0 0 8px; font-weight: 700;">Quick Input</h4>\r
+            <p style="font-size: 13px; color: #64748b; margin-bottom: 12px;">Collect data directly within the popup.</p>\r
+            <ui-button onclick="testSnackbarInput()" >Add Tag</ui-button>\r
+          </div>\r
+        </div>\r
+      </div>`},{title:`🧪 Behavior & Business Logic`,description:`Demonstrating how the component handles congestion and delivery intelligence.`,html:`<div class="demo-block">\r
+        <h3>🧪 Behavior & Business Logic</h3>\r
+        <p>Demonstrating how the component handles congestion and delivery intelligence.</p>\r
+        \r
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px;">\r
+          <!-- Smart Coalescing -->\r
+          <div style="background: #fffbeb; padding: 20px; border-radius: 12px; border: 1px solid #fde68a;">\r
+            <h4 style="color: #92400e; margin: 0 0 8px;">Smart Coalescing</h4>\r
+            <p style="font-size: 13px; color: #b45309; margin-bottom: 15px;">Automatically groups identical messages into a single entry with a counter.</p>\r
+            <ui-button onclick="testCoalesce()" ">Spam 10 Messages</ui-button>\r
+          </div>\r
+\r
+          <!-- Priority Reordering -->\r
+          <div style="background: #f0fdf4; padding: 20px; border-radius: 12px; border: 1px solid #bbf7d0;">\r
+            <h4 style="color: #166534; margin: 0 0 8px;">Priority Reordering</h4>\r
+            <p style="font-size: 13px; color: #15803d; margin-bottom: 15px;">Trigger 5 normal messages, then jump the line with a High priority alert.</p>\r
+            <ui-button onclick="testPriorityJam()" ">Priority Jam Demo</ui-button>\r
+          </div>\r
+\r
+          <!-- Animation Lab -->\r
+          <div style="background: #f5f3ff; padding: 20px; border-radius: 12px; border: 1px solid #ddd6fe;">\r
+            <h4 style="color: #5b21b6; margin: 0 0 8px;">Animation Lab</h4>\r
+            <p style="font-size: 13px; color: #6d28d9; margin-bottom: 15px;">Cycle through all entry physics systems sequentially.</p>\r
+            <ui-button onclick="testAnimationLab()" ">Run Animation Cycle</ui-button>\r
+          </div>\r
+        </div>\r
+      </div>\r
+    
+<script>
+(function() {
+  window.testCoalesce = () => {\r
+      globalSnackbar.coalesce = true;\r
+      globalSnackbar.add({ message: 'Coalescing active. Repeating signal...', type: 'warning' });\r
+      let count = 0;\r
+      const t = setInterval(() => {\r
+        globalSnackbar.add({ message: 'Repeating signal...', type: 'warning' });\r
+        if (++count > 8) clearInterval(t);\r
+      }, 200);\r
+    };\r
+\r
+    window.testPriorityJam = () => {\r
+      globalSnackbar.closeAll();\r
+      globalSnackbar.stackMode = 'stack';\r
+      for (let i = 0; i < 3; i++) {\r
+        globalSnackbar.add({ message: \`Normal importance message \${i + 1}\`, type: 'info', duration: 0 });\r
+      }\r
+      setTimeout(() => {\r
+        globalSnackbar.add({\r
+          message: 'CRITICAL OVERRIDE: High priority alert bypassing queue!',\r
+          type: 'error',\r
+          priority: 'urgent',\r
+          duration: 0,\r
+        });\r
+      }, 1000);\r
+    };\r
+\r
+    window.testAnimationLab = async () => {\r
+      const anims = ['slide-up', 'slide-down', 'slide-left', 'slide-right', 'fade', 'scale', 'bounce', 'spring'];\r
+      globalSnackbar.closeAll();\r
+      for (const anim of anims) {\r
+        globalSnackbar.openMode = anim;\r
+        globalSnackbar.add({ message: \`Testing animation: \${anim}\`, type: 'info', duration: 1500 });\r
+        await new Promise(r => setTimeout(r, 800));\r
+      }\r
+    };
+})();
+<\/script>`},{title:`💎 Branding, Themes & Scaling`,description:`Adapt the notification system to your specific UI guidelines.`,html:`<div class="demo-block">\r
+        <h3>💎 Branding, Themes & Scaling</h3>\r
+        <p>Adapt the notification system to your specific UI guidelines.</p>\r
+        \r
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px;">\r
+          <!-- Light Theme -->\r
+          <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">\r
+             <h4 style="margin: 0 0 12px;">Adaptive Themes</h4>\r
+             <ui-button onclick="testTheme('light')" -weight: 600; margin-bottom: 8px;">Force Light Mode</ui-button>\r
+             <ui-button onclick="testTheme('dark')" ">Force Dark Mode</ui-button>\r
+          </div>\r
+\r
+          <!-- Component Sizing -->\r
+          <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">\r
+             <h4 style="margin: 0 0 12px;">Component Scaling</h4>\r
+             <div style="display: flex; gap: 8px;">\r
+                <ui-button onclick="testSize('sm')" >Small</ui-button>\r
+                <ui-button onclick="testSize('md')" >md</ui-button>\r
+                <ui-button onclick="testSize('lg')" >Large</ui-button>\r
+              </div>\r
+              <p style="font-size: 11px; color: #94a3b8; margin-top: 10px;">Dynamically rescales padding, fonts, and icon sizes for global parity.</p>\r
+          </div>\r
+        </div>\r
+      </div>\r
+    
+<script>
+(function() {
+  window.testTheme = t => {\r
+      globalSnackbar.theme = t;\r
+      globalSnackbar.add({ message: \`Forced \${t} theme active\`, type: 'info' });\r
+    };\r
+    window.testSize = s => {\r
+      globalSnackbar.size = s;\r
+      globalSnackbar.add({ message: \`Scaling set to \${s} variant\`, type: 'success' });\r
+    };
+})();
+<\/script>`},{title:`🆕 New Features Showcase`,description:`All 7 newly implemented capabilities in one place.`,html:`<div class="demo-block">\r
+        <h3>🆕 New Features Showcase</h3>\r
+        <p style="color:#64748b; font-size:14px; margin-bottom:24px;">All 7 newly implemented capabilities in one place.</p>\r
+\r
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">\r
+\r
+          <!-- Events -->\r
+          <div style="background:#f0fdf4; padding:20px; border-radius:12px; border:1px solid #bbf7d0;">\r
+            <h4 style="color:#166534; margin:0 0 6px;">📡 snackbarAdded / Updated Events</h4>\r
+            <p style="font-size:13px;color:#15803d;margin-bottom:12px;">Fire a notification — both events are logged in the Playground event log.</p>\r
+            <ui-button onclick="testEventsDemo()" >Fire &amp; Observe Events</ui-button>\r
+          </div>\r
+\r
+          <!-- getAll() -->\r
+          <div style="background:#eff6ff; padding:20px; border-radius:12px; border:1px solid #bfdbfe;">\r
+            <h4 style="color:#1e40af; margin:0 0 6px;">📋 getAll()</h4>\r
+            <p style="font-size:13px;color:#1d4ed8;margin-bottom:12px;">Query all current notifications programmatically.</p>\r
+            <ui-button onclick="testGetAll()" >getAll() Snapshot</ui-button>\r
+            <pre id="getAllOutput" style="margin-top:10px;background:#1e3a5f;color:#93c5fd;padding:10px;border-radius:6px;font-size:11px;max-height:100px;overflow-y:auto;display:none;"></pre>\r
+          </div>\r
+\r
+          <!-- pause() / resume() -->\r
+          <div style="background:#fdf4ff; padding:20px; border-radius:12px; border:1px solid #e9d5ff;">\r
+            <h4 style="color:#6b21a8; margin:0 0 6px;">⏯️ pause(id) / resume(id)</h4>\r
+            <p style="font-size:13px;color:#7e22ce;margin-bottom:12px;">Freeze or thaw individual notification timers.</p>\r
+            <div style="display:flex;gap:8px;">\r
+              <ui-button onclick="testPauseResume('pause')" >⏸ Pause</ui-button>\r
+              <ui-button onclick="testPauseResume('resume')" >▶ Resume</ui-button>\r
+            </div>\r
+          </div>\r
+\r
+          <!-- replace() -->\r
+          <div style="background:#fff7ed; padding:20px; border-radius:12px; border:1px solid #fed7aa;">\r
+            <h4 style="color:#9a3412; margin:0 0 6px;">🔄 replace(id, newItem)</h4>\r
+            <p style="font-size:13px;color:#c2410c;margin-bottom:12px;">Completely swap an existing notification with new content.</p>\r
+            <ui-button onclick="testReplaceDemo()" >Replace in 2s</ui-button>\r
+          </div>\r
+\r
+          <!-- closeNext() fix -->\r
+          <div style="background:#f1f5f9; padding:20px; border-radius:12px; border:1px solid #cbd5e1;">\r
+            <h4 style="color:#0f172a; margin:0 0 6px;">🗂 closeNext() — Fixed FIFO/LIFO</h4>\r
+            <p style="font-size:13px;color:#475569;margin-bottom:12px;">Queue mode closes oldest first; Stack removes newest.</p>\r
+            <div style="display:flex;gap:8px;">\r
+              <ui-button onclick="testCloseNext('queue')" >Queue FIFO</ui-button>\r
+              <ui-button onclick="testCloseNext('stack')" >Stack LIFO</ui-button>\r
+            </div>\r
+          </div>\r
+\r
+          <!-- pauseOnHover -->\r
+          <div style="background:#fefce8; padding:20px; border-radius:12px; border:1px solid #fde68a;">\r
+            <h4 style="color:#854d0e; margin:0 0 6px;">🖱️ pauseOnHover Prop</h4>\r
+            <p style="font-size:13px;color:#92400e;margin-bottom:12px;">Toggle whether hovering pauses auto-dismiss timers.</p>\r
+            <div style="display:flex;gap:8px;">\r
+              <ui-button onclick="setPauseOnHover(true)" >Pause ON</ui-button>\r
+              <ui-button onclick="setPauseOnHover(false)" >Pause OFF</ui-button>\r
+            </div>\r
+          </div>\r
+\r
+          <!-- Stack Count Badge -->\r
+          <div style="background:#f0fdfa; padding:20px; border-radius:12px; border:1px solid #99f6e4;">\r
+            <h4 style="color:#134e4a; margin:0 0 6px;">🔢 Stack Count Badge</h4>\r
+            <p style="font-size:13px;color:#0f766e;margin-bottom:12px;">Collapsed stacks show a pill count badge. Click it to expand.</p>\r
+            <ui-button onclick="testStackBadge()" >Show Stack Badge</ui-button>\r
+          </div>\r
+\r
+        </div>\r
+      </div>\r
+    
+<script>
+(function() {
+  let _pauseResumeId = null;\r
+\r
+    window.testEventsDemo = () => {\r
+      globalSnackbar.add({ title: 'Event Fired', message: 'Check the Playground → Event Log', type: 'info' });\r
+      globalSnackbar.add({ message: 'Second event for update test', type: 'success', duration: 10000 }).then(id => {\r
+        setTimeout(() => globalSnackbar.update(id, { title: 'Updated!', message: 'This fires snackbarUpdated event' }), 1500);\r
+      });\r
+    };\r
+\r
+    window.testGetAll = async () => {\r
+      globalSnackbar.add({ message: 'Snapshot item A', type: 'info', duration: 4000 });\r
+      globalSnackbar.add({ message: 'Snapshot item B', type: 'success', duration: 4000 });\r
+      setTimeout(async () => {\r
+        const all = await globalSnackbar.getAll();\r
+        const output = document.getElementById('getAllOutput');\r
+        if (output) {\r
+          output.style.display = 'block';\r
+          output.textContent = JSON.stringify(\r
+            all.map(i => ({ id: i.id, type: i.type, message: i.message })),\r
+            null,\r
+            2,\r
+          );\r
+        }\r
+      }, 200);\r
+    };\r
+\r
+    window.testPauseResume = async action => {\r
+      if (action === 'pause') {\r
+        const id = await globalSnackbar.add({ title: 'Timer Frozen', message: 'This will not auto-close until resumed', type: 'warning', duration: 6000 });\r
+        _pauseResumeId = id;\r
+        await globalSnackbar.pause(id);\r
+        globalSnackbar.add({ message: 'Timer paused! Click Resume to restart.', type: 'info', duration: 3000 });\r
+      } else if (_pauseResumeId) {\r
+        await globalSnackbar.resume(_pauseResumeId);\r
+        globalSnackbar.add({ message: 'Timer resumed!', type: 'success', duration: 2000 });\r
+        _pauseResumeId = null;\r
+      } else {\r
+        globalSnackbar.add({ message: 'Pause a notification first.', type: 'warning', duration: 2000 });\r
+      }\r
+    };\r
+\r
+    window.testReplaceDemo = async () => {\r
+      const id = await globalSnackbar.add({ title: 'Original Message', message: 'Will be replaced in 2 seconds...', type: 'info', duration: 10000 });\r
+      setTimeout(() => {\r
+        globalSnackbar.replace(id, { title: '✅ Replaced!', message: 'This is the brand new content.', type: 'success', duration: 5000 });\r
+      }, 2000);\r
+    };\r
+\r
+    window.testCloseNext = mode => {\r
+      globalSnackbar.stackMode = mode;\r
+      globalSnackbar.closeAll();\r
+      setTimeout(() => {\r
+        ['First', 'Second', 'Third'].forEach((label, i) => {\r
+          setTimeout(() => globalSnackbar.add({ message: \`\${label} notification (\${mode})\`, type: 'info', duration: 0 }), i * 150);\r
+        });\r
+        setTimeout(() => globalSnackbar.closeNext(), 600);\r
+      }, 200);\r
+    };\r
+\r
+    window.setPauseOnHover = enabled => {\r
+      globalSnackbar.pauseOnHover = enabled;\r
+      globalSnackbar.add({\r
+        message: \`pauseOnHover = \${enabled}. \${enabled ? 'Hover to pause timer.' : 'Hovering will NOT pause timers.'}\`,\r
+        type: enabled ? 'success' : 'warning',\r
+        duration: 5000,\r
+      });\r
+    };\r
+\r
+    window.testStackBadge = () => {\r
+      globalSnackbar.cardStack = true;\r
+      globalSnackbar.position = 'bottom-right';\r
+      globalSnackbar.closeAll();\r
+      setTimeout(() => {\r
+        ['Network Alert', 'Build Complete', 'Deployment Done', 'Sync Finished'].forEach((title, i) => {\r
+          setTimeout(() => globalSnackbar.add({ title, message: 'System event detected.', type: ['error', 'success', 'info', 'warning'][i], duration: 0 }), i * 100);\r
+        });\r
+      }, 300);\r
+    };\r
+\r
+    // maxDuration demo\r
+    window.testMaxDuration = cap => {\r
+      globalSnackbar.maxDuration = cap;\r
+      globalSnackbar.add({\r
+        title: \`maxDuration = \${cap}ms\`,\r
+        message: \`This would last 30s — but it's capped to \${cap / 1000}s.\`,\r
+        type: 'warning',\r
+        duration: 30000,\r
+        progress: 'bar',\r
+      });\r
+      globalSnackbar.add({ message: \`Cap applied: closes in ~\${cap / 1000}s\`, type: 'info', duration: 2000 });\r
+    };\r
+\r
+    // showCountdown demo\r
+    window.testShowCountdown = on => {\r
+      globalSnackbar.showCountdown = on;\r
+      globalSnackbar.add({\r
+        title: on ? 'Countdown ON' : 'Countdown OFF',\r
+        message: on ? 'Watch the Xs chip in the corner.' : 'Chip is hidden.',\r
+        type: 'info',\r
+        duration: 10000,\r
+        progress: 'bar',\r
+      });\r
+    };\r
+\r
+    // RTL demo — only affects this snackbar instance, never the page\r
+    window.testRTL = enable => {\r
+      globalSnackbar.closeAll();\r
+      globalSnackbar.textDirection = enable ? 'rtl' : 'ltr';\r
+      globalSnackbar.position = 'bottom-right';\r
+      setTimeout(\r
+        () =>\r
+          globalSnackbar.add({\r
+            title: enable ? '🌐 RTL Mode Active' : '↩️ Back to LTR',\r
+            message: enable\r
+              ? 'Slide animation, icon, and close button are all mirrored. (مرحبا بكم في الوضع العربي)'\r
+              : 'Direction restored to LTR. Page layout was never affected.',\r
+            type: enable ? 'info' : 'success',\r
+            duration: 7000,\r
+            progress: 'bar',\r
+          }),\r
+        100,\r
+      );\r
+    };\r
+\r
+    // Inject the 3 new cards into the grid (append after existing cards)\r
+    const grid = container.querySelector('[style*="grid-template-columns"]');\r
+    if (grid) {\r
+      grid.insertAdjacentHTML(\r
+        'beforeend',\r
+        \`\r
+        <!-- maxDuration -->\r
+        <div style="background:#fff1f2; padding:20px; border-radius:12px; border:1px solid #fecdd3;">\r
+          <h4 style="color:#9f1239; margin:0 0 6px;">⏱ maxDuration Cap</h4>\r
+          <p style="font-size:13px;color:#be123c;margin-bottom:12px;">Clamps any duration to a ceiling. The notification below would last 30s — but gets cut.</p>\r
+          <div style="display:flex;gap:8px;">\r
+            <ui-button onclick="testMaxDuration(3000)" >Cap 3s</ui-button>\r
+            <ui-button onclick="testMaxDuration(8000)" >Cap 8s</ui-button>\r
+          </div>\r
+        </div>\r
+\r
+        <!-- showCountdown -->\r
+        <div style="background:#f0fdfa; padding:20px; border-radius:12px; border:1px solid #99f6e4;">\r
+          <h4 style="color:#134e4a; margin:0 0 6px;">🔢 showCountdown Chip</h4>\r
+          <p style="font-size:13px;color:#0f766e;margin-bottom:12px;">Displays a live "Xs" countdown inside the notification. Hides on hover (timer paused).</p>\r
+          <div style="display:flex;gap:8px;">\r
+            <ui-button onclick="testShowCountdown(true)" >Enable</ui-button>\r
+            <ui-button onclick="testShowCountdown(false)" >Disable</ui-button>\r
+          </div>\r
+        </div>\r
+\r
+        <!-- RTL -->\r
+        <div style="background:#f5f3ff; padding:20px; border-radius:12px; border:1px solid #ddd6fe;">\r
+          <h4 style="color:#5b21b6; margin:0 0 6px;">🌐 RTL Support</h4>\r
+          <p style="font-size:13px;color:#6d28d9;margin-bottom:12px;">Auto-detected from <code>dir="rtl"</code>. Positions and slide animations are mirrored.</p>\r
+          <div style="display:flex;gap:8px;">\r
+            <ui-button onclick="testRTL(true)" >Enable RTL</ui-button>\r
+            <ui-button onclick="testRTL(false)" >Back to LTR</ui-button>\r
+          </div>\r
+        </div>\r
+      \`,\r
+      );\r
+    }
+})();
+<\/script>`}],"speed-dial":[{title:`Basic Speed Dial`,description:`Click the button in the bottom-right corner to see the actions`,html:`<div style="text-align: center; padding: 40px;">\r
         <h4>Basic Speed Dial</h4>\r
         <p style="color: #6b7280;">Click the button in the bottom-right corner to see the actions</p>\r
       </div>\r
@@ -55838,22 +56583,6 @@ await manager.loadLayout(saved);</code></pre>\r
     window.updatePlayground();\r
   }, 0);
 })();
-<\/script>`},{title:`update Playground`,description:``,html:`<ui-speedometer id="pgSpeedometer"></ui-speedometer>
-<script>
-(function() {
-  const el = document.getElementById('pgSpeedometer');\r
-\r
-  Object.assign(el, props);\r
-\r
-  el.addEventListener('valueChange', e => {\r
-    document.getElementById('playValue').value = e.detail;\r
-    const log = document.getElementById('pg-log-content');\r
-    const entry = document.createElement('div');\r
-    entry.style.marginBottom = '2px';\r
-    entry.textContent = \`> [\${new Date().toLocaleTimeString()}] valueChange: \${e.detail.toFixed(2)}\`;\r
-    log.prepend(entry);\r
-  });
-})();
 <\/script>`},{title:`Target vs Actual Analysis`,description:`Utilize the secondary needle to provide context, such as targets, thresholds, or historical benchmarks.`,html:`<div class="demo-block">\r
       <h3>Target vs Actual Analysis</h3>\r
       <p style="color: #64748b; margin-bottom: 40px;">Utilize the secondary needle to provide context, such as targets, thresholds, or historical benchmarks.</p>\r
@@ -56182,80 +56911,80 @@ await manager.loadLayout(saved);</code></pre>\r
   wire(document.getElementById('spl-git'));\r
     wire(document.getElementById('spl-kb'));
 })();
-<\/script>`}],splitter:[{title:`⚖️
-        Proportional Horizontal Splitter`,description:`Two side-by-side content containers. Grab the vertical bar and drag left or right.`,html:`<div class="demo-block" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);">
-      <h3 style="margin-top: 0; display: flex; align-items: center; gap: 10px;">
-        <span style="font-size: 24px;">⚖️</span>
-        Proportional Horizontal Splitter
-      </h3>
-      <p style="color: #6b7280; margin-bottom: 20px;">Two side-by-side content containers. Grab the vertical bar and drag left or right.</p>
-      
-      <div style="border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; height: 350px; background: #0f172a;">
-        <ui-splitter direction="horizontal" gutter-size="10" gutter-color="#1e293b" gutter-hover-color="#3b82f6" snap-threshold="15">
-          <div slot="panel-0" style="padding: 24px; background: #1e293b; color: white; height: 100%; box-sizing: border-box;">
-            <h4 style="margin-top: 0; color: #3b82f6;">Left Panel</h4>
-            <p style="font-size: 14px; color: #94a3b8; line-height: 1.6;">This is the left zone. Dragging the center splitter handles resizing in real-time using proportional percentage calculation.</p>
-          </div>
-          <div slot="panel-1" style="padding: 24px; background: #0f172a; color: white; height: 100%; box-sizing: border-box;">
-            <h4 style="margin-top: 0; color: #10b981;">Right Panel</h4>
-            <p style="font-size: 14px; color: #94a3b8; line-height: 1.6;">This is the right zone. It automatically shrinks or expands to occupy all remaining width space in the parent component.</p>
-          </div>
-        </ui-splitter>
-      </div>
-    </div>`},{title:`↕️
-        Vertical Stack Splitter`,description:`Top and bottom stacked containers divided by a horizontal gutter. Drag up or down.`,html:`<div class="demo-block" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);">
-      <h3 style="margin-top: 0; display: flex; align-items: center; gap: 10px;">
-        <span style="font-size: 24px;">↕️</span>
-        Vertical Stack Splitter
-      </h3>
-      <p style="color: #6b7280; margin-bottom: 20px;">Top and bottom stacked containers divided by a horizontal gutter. Drag up or down.</p>
-      
-      <div style="border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; height: 350px; background: #0f172a;">
-        <ui-splitter direction="vertical" gutter-size="10" gutter-color="#1e293b" gutter-hover-color="#10b981" snap-threshold="15">
-          <div slot="panel-0" style="padding: 24px; background: #1e293b; color: white; height: 100%; box-sizing: border-box;">
-            <h4 style="margin-top: 0; color: #10b981;">Top Console</h4>
-            <p style="font-size: 14px; color: #94a3b8; line-height: 1.6;">This is the upper console pane. Excellent for code, workspace canvases, or visualization boards.</p>
-          </div>
-          <div slot="panel-1" style="padding: 24px; background: #0f172a; color: white; height: 100%; box-sizing: border-box;">
-            <h4 style="margin-top: 0; color: #f59e0b;">Bottom Terminal Output</h4>
-            <p style="font-size: 14px; color: #94a3b8; line-height: 1.6;">This is the lower output pane. Ideal for terminal interfaces, logs, build stats, and problems lists.</p>
-          </div>
-        </ui-splitter>
-      </div>
-    </div>`},{title:`💠
-        Nested Layout Zones`,description:`Combining horizontal and vertical splitters inside each other to create complete app workspace mockups.`,html:`<div class="demo-block" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);">
-      <h3 style="margin-top: 0; display: flex; align-items: center; gap: 10px;">
-        <span style="font-size: 24px;">💠</span>
-        Nested Layout Zones
-      </h3>
-      <p style="color: #6b7280; margin-bottom: 20px;">Combining horizontal and vertical splitters inside each other to create complete app workspace mockups.</p>
-      
-      <div style="border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; height: 400px; background: #0f172a;">
-        <ui-splitter direction="horizontal" gutter-size="8" gutter-color="#0f172a" gutter-hover-color="#a855f7">
-          <!-- Sidebar -->
-          <div slot="panel-0" style="padding: 20px; background: #1e1b4b; color: white; height: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; align-items: center; border-right: 1px solid #312e81;">
-            <ui-icon name="folder-tree" library="lucide" size="24px"></ui-icon>
-            <h5 style="margin: 10px 0 0; color: #c084fc;">Files</h5>
-            <span style="font-size: 12px; color: #818cf8;">Sidebar Pane</span>
-          </div>
-          
-          <!-- Main Content split vertically -->
-          <div slot="panel-1" style="height: 100%;">
-            <ui-splitter direction="vertical" gutter-size="8" gutter-color="#0f172a" gutter-hover-color="#3b82f6">
-              <div slot="panel-0" style="padding: 24px; background: #1e293b; color: white; height: 100%; box-sizing: border-box;">
-                <h4 style="margin-top: 0; color: #3b82f6;">Code Editor Workspace</h4>
-                <pre style="margin: 10px 0; padding: 12px; background: #0f172a; border-radius: 6px; color: #38bdf8; font-family: monospace; font-size: 13px;">const splitter = document.querySelector('ui-splitter');</pre>
-              </div>
-              <div slot="panel-1" style="padding: 20px; background: #0f172a; color: white; height: 100%; box-sizing: border-box; border-top: 1px solid #1e293b;">
-                <h5 style="margin-top: 0; color: #f43f5e; display: flex; align-items: center; gap: 6px;">
-                  <ui-icon name="terminal" library="lucide" size="14px"></ui-icon> Terminal Console
-                </h5>
-                <span style="font-size: 12px; color: #94a3b8; font-family: monospace;">$ npm run dev --host</span>
-              </div>
-            </ui-splitter>
-          </div>
-        </ui-splitter>
-      </div>
+<\/script>`}],splitter:[{title:`⚖️\r
+        Proportional Horizontal Splitter`,description:`Two side-by-side content containers. Grab the vertical bar and drag left or right.`,html:`<div class="demo-block" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);">\r
+      <h3 style="margin-top: 0; display: flex; align-items: center; gap: 10px;">\r
+        <span style="font-size: 24px;">⚖️</span>\r
+        Proportional Horizontal Splitter\r
+      </h3>\r
+      <p style="color: #6b7280; margin-bottom: 20px;">Two side-by-side content containers. Grab the vertical bar and drag left or right.</p>\r
+      \r
+      <div style="border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; height: 350px; background: #0f172a;">\r
+        <ui-splitter direction="horizontal" gutter-size="10" gutter-color="#1e293b" gutter-hover-color="#3b82f6" snap-threshold="15">\r
+          <div slot="panel-0" style="padding: 24px; background: #1e293b; color: white; height: 100%; box-sizing: border-box;">\r
+            <h4 style="margin-top: 0; color: #3b82f6;">Left Panel</h4>\r
+            <p style="font-size: 14px; color: #94a3b8; line-height: 1.6;">This is the left zone. Dragging the center splitter handles resizing in real-time using proportional percentage calculation.</p>\r
+          </div>\r
+          <div slot="panel-1" style="padding: 24px; background: #0f172a; color: white; height: 100%; box-sizing: border-box;">\r
+            <h4 style="margin-top: 0; color: #10b981;">Right Panel</h4>\r
+            <p style="font-size: 14px; color: #94a3b8; line-height: 1.6;">This is the right zone. It automatically shrinks or expands to occupy all remaining width space in the parent component.</p>\r
+          </div>\r
+        </ui-splitter>\r
+      </div>\r
+    </div>`},{title:`↕️\r
+        Vertical Stack Splitter`,description:`Top and bottom stacked containers divided by a horizontal gutter. Drag up or down.`,html:`<div class="demo-block" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);">\r
+      <h3 style="margin-top: 0; display: flex; align-items: center; gap: 10px;">\r
+        <span style="font-size: 24px;">↕️</span>\r
+        Vertical Stack Splitter\r
+      </h3>\r
+      <p style="color: #6b7280; margin-bottom: 20px;">Top and bottom stacked containers divided by a horizontal gutter. Drag up or down.</p>\r
+      \r
+      <div style="border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; height: 350px; background: #0f172a;">\r
+        <ui-splitter direction="vertical" gutter-size="10" gutter-color="#1e293b" gutter-hover-color="#10b981" snap-threshold="15">\r
+          <div slot="panel-0" style="padding: 24px; background: #1e293b; color: white; height: 100%; box-sizing: border-box;">\r
+            <h4 style="margin-top: 0; color: #10b981;">Top Console</h4>\r
+            <p style="font-size: 14px; color: #94a3b8; line-height: 1.6;">This is the upper console pane. Excellent for code, workspace canvases, or visualization boards.</p>\r
+          </div>\r
+          <div slot="panel-1" style="padding: 24px; background: #0f172a; color: white; height: 100%; box-sizing: border-box;">\r
+            <h4 style="margin-top: 0; color: #f59e0b;">Bottom Terminal Output</h4>\r
+            <p style="font-size: 14px; color: #94a3b8; line-height: 1.6;">This is the lower output pane. Ideal for terminal interfaces, logs, build stats, and problems lists.</p>\r
+          </div>\r
+        </ui-splitter>\r
+      </div>\r
+    </div>`},{title:`💠\r
+        Nested Layout Zones`,description:`Combining horizontal and vertical splitters inside each other to create complete app workspace mockups.`,html:`<div class="demo-block" style="background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);">\r
+      <h3 style="margin-top: 0; display: flex; align-items: center; gap: 10px;">\r
+        <span style="font-size: 24px;">💠</span>\r
+        Nested Layout Zones\r
+      </h3>\r
+      <p style="color: #6b7280; margin-bottom: 20px;">Combining horizontal and vertical splitters inside each other to create complete app workspace mockups.</p>\r
+      \r
+      <div style="border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; height: 400px; background: #0f172a;">\r
+        <ui-splitter direction="horizontal" gutter-size="8" gutter-color="#0f172a" gutter-hover-color="#a855f7">\r
+          <!-- Sidebar -->\r
+          <div slot="panel-0" style="padding: 20px; background: #1e1b4b; color: white; height: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; align-items: center; border-right: 1px solid #312e81;">\r
+            <ui-icon name="folder-tree" library="lucide" size="24px"></ui-icon>\r
+            <h5 style="margin: 10px 0 0; color: #c084fc;">Files</h5>\r
+            <span style="font-size: 12px; color: #818cf8;">Sidebar Pane</span>\r
+          </div>\r
+          \r
+          <!-- Main Content split vertically -->\r
+          <div slot="panel-1" style="height: 100%;">\r
+            <ui-splitter direction="vertical" gutter-size="8" gutter-color="#0f172a" gutter-hover-color="#3b82f6">\r
+              <div slot="panel-0" style="padding: 24px; background: #1e293b; color: white; height: 100%; box-sizing: border-box;">\r
+                <h4 style="margin-top: 0; color: #3b82f6;">Code Editor Workspace</h4>\r
+                <pre style="margin: 10px 0; padding: 12px; background: #0f172a; border-radius: 6px; color: #38bdf8; font-family: monospace; font-size: 13px;">const splitter = document.querySelector('ui-splitter');</pre>\r
+              </div>\r
+              <div slot="panel-1" style="padding: 20px; background: #0f172a; color: white; height: 100%; box-sizing: border-box; border-top: 1px solid #1e293b;">\r
+                <h5 style="margin-top: 0; color: #f43f5e; display: flex; align-items: center; gap: 6px;">\r
+                  <ui-icon name="terminal" library="lucide" size="14px"></ui-icon> Terminal Console\r
+                </h5>\r
+                <span style="font-size: 12px; color: #94a3b8; font-family: monospace;">$ npm run dev --host</span>\r
+              </div>\r
+            </ui-splitter>\r
+          </div>\r
+        </ui-splitter>\r
+      </div>\r
     </div>`}],stack:[{title:`Interactive Playground`,description:``,html:`<div class="demo-block">\r
       <h3>Interactive Playground</h3>\r
       <div style="display: grid; grid-template-columns: 320px 1fr; gap: 32px;">\r
@@ -59349,46 +60078,211 @@ await manager.loadLayout(saved);</code></pre>\r
     if (motion) motion.checked = document.documentElement.classList.contains('reduced-motion');\r
   }, 0);
 })();
-<\/script>`},{title:`update Interactive Theme`,description:``,html:'$ theme: <span style="color: #60a5fa;">"${theme}"</span>; <span style="color: #4ade80;">// applied successfully</span>'},{title:`update Theme Auto Switch`,description:``,html:`$ auto_theme: <span style="color: #60a5fa;">\${enabled}</span>;
+<\/script>`}],timeline:[{title:`Panel Variant`,description:`Use variant="panel" for card-like styling.`,html:`<div class="demo-block">\r
+        <h3>Panel Variant</h3>\r
+        <p style="opacity: 0.7; margin-bottom: 20px;">Use <code>variant="panel"</code> for card-like styling.</p>\r
+        <div class="playground-preview" style="padding: 20px;">\r
+          <ui-timeline align="alternate" variant="panel" events='\${JSON.stringify(panelEvents)}'></ui-timeline>\r
+        </div>\r
+      </div>\r
+\r
+      <div class="demo-block">\r
+        <h3>Markers: Numbers, Images & Icons</h3>\r
+        <p style="opacity: 0.7; margin-bottom: 20px;">\r
+          Use <code>marker="number"</code> for auto-numbering. \r
+          Provide <code>image</code> for avatars or <code>icon</code> for custom symbols.\r
+        </p>\r
+        <div class="playground-preview" style="padding: 20px;">\r
+          <ui-timeline align="left" marker="number" events='\${JSON.stringify(markerEvents)}'></ui-timeline>\r
+        </div>\r
+      </div>`},{title:`🎮 Interactive Playground`,description:``,html:`<div class="demo-block">\r
+        <h3>🎮 Interactive Playground</h3>\r
+        <div class="playground-settings">\r
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 20px;">\r
+              <ui-dropdown id="timelineMode" label="Mode" options='[{"label": "Vertical", "value": "vertical"}, {"label": "Horizontal", "value": "horizontal"}]' value="vertical"></ui-dropdown>\r
+              <ui-dropdown id="timelineAlign" label="Alignment" options='[{"label": "Left", "value": "left"}, {"label": "Right", "value": "right"}, {"label": "Center / Balanced", "value": "center"}, {"label": "Alternate", "value": "alternate"}, {"label": "Top (H)", "value": "top"}, {"label": "Bottom (H)", "value": "bottom"}]' value="left"></ui-dropdown>\r
+              <ui-dropdown id="timelineMultiline" label="Multiline (H)" options='[{"label": "False", "value": "false"}, {"label": "True", "value": "true"}]' value="false"></ui-dropdown>\r
+              <ui-dropdown id="timelineWrap" label="Wrap / Snake" options='[{"label": "False", "value": "false"}, {"label": "True", "value": "true"}]' value="false"></ui-dropdown>\r
+              <ui-dropdown id="timelineVariant" label="Variant" options='[{"label": "Default", "value": "default"}, {"label": "Panel", "value": "panel"}, {"label": "Outlined", "value": "outlined"}, {"label": "Filled", "value": "filled"}, {"label": "Minimal", "value": "minimal"}, {"label": "Dots Only", "value": "dots-only"}]' value="default"></ui-dropdown>\r
+              <ui-dropdown id="timelineMarker" label="Marker" options='[{"label": "Dot", "value": "dot"}, {"label": "Number", "value": "number"}, {"label": "Icon", "value": "icon"}]' value="dot"></ui-dropdown>\r
+              <ui-dropdown id="timelineClickable" label="Clickable" options='[{"label": "False", "value": "false"}, {"label": "True", "value": "true"}]' value="false"></ui-dropdown>\r
+              <ui-dropdown id="timelineReverse" label="Reverse" options='[{"label": "False", "value": "false"}, {"label": "True", "value": "true"}]' value="false"></ui-dropdown>\r
+              <ui-dropdown id="timelinePending" label="Pending" options='[{"label": "False", "value": "false"}, {"label": "True", "value": "true"}]' value="false"></ui-dropdown>\r
+              <ui-dropdown id="timelineSearchable" label="Searchable" options='[{"label": "False", "value": "false"}, {"label": "True", "value": "true"}]' value="false"></ui-dropdown>\r
+          </div>\r
+        </div>\r
+        \r
+        <div id="playgroundPreview" class="playground-preview" style="min-height: 400px; display: flex; align-items: start; justify-content: center; overflow: auto;">\r
+          <!-- Timeline will be injected here -->\r
+        </div>\r
+\r
+        <div id="timelineEventLog" style="margin-top: 10px; padding: 10px; background: #1e293b; color: #38bdf8; border-radius: 6px; font-family: monospace; font-size: 12px; display: none;">\r
+          // Event Log: Click an item to see details\r
+        </div>\r
+\r
+        <div style="margin-top: 20px;">\r
+          <ui-input multiline id="timelineData" label="Event Data (JSON)" style="height: 200px; font-family: monospace;"></ui-input>\r
+        </div>\r
+        \r
+        <div style="margin-top: 20px; background: #1e293b; padding: 16px; border-radius: 8px; position: relative;">\r
+          <ui-button id="copyTimelineBtn" label="Copy" variant="outline" size="xxxs" onclick="copyTimelineCode()" style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.1); --ui-button-text-color: white; border: none;"></ui-button>\r
+          <code id="timelineCodeBlock" style="color: #e2e8f0; font-family: monospace; font-size: 13px; display: block; overflow-x: auto; padding-right: 50px; white-space: pre-wrap;">\r
+            <ui-timeline ...></ui-timeline>\r
+          </code>\r
+        </div>\r
+      </div>\r
+    
 <script>
 (function() {
-  }\r
-\r
-  if (enabled) {\r
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;\r
-    const systemTheme = prefersDark ? 'dark' : 'light';\r
-    const dropdown = document.getElementById('themeSelect');\r
-    if (dropdown) dropdown.value = systemTheme;\r
-    updateInteractiveTheme(systemTheme);\r
-  }
+  document.getElementById('timelineData').value = JSON.stringify(events, null, 2);\r
+    updateInteractiveTimeline();
 })();
-<\/script>`},{title:`update Theme High Contrast`,description:``,html:'$ high_contrast: <span style="color: #60a5fa;">${enabled}</span>;'},{title:`update Theme Reduced Motion`,description:``,html:'$ reduced_motion: <span style="color: #60a5fa;">${enabled}</span>;'}],timeline:[{title:`Default Vertical Timeline`,description:`A clean left-aligned vertical timeline with status dots.`,html:`<div class="demo-block" style="padding: 20px;">
-  <h3>Default Vertical Timeline</h3>
-  <ui-timeline align="left" variant="default" events='[{"label":"Project Kickoff","timestamp":"2024-01-01","description":"Initial meeting with stakeholders","status":"success"},{"label":"Design Phase","timestamp":"2024-02-15","description":"UI/UX mockups & prototyping","status":"success"},{"label":"Development Start","timestamp":"2024-03-20","description":"Setting up repository and pipeline","status":"active"},{"label":"Beta Launch","timestamp":"2024-06-10","description":"Internal testing & feedback","status":"pending"}]'></ui-timeline>
-</div>`},{title:`Alternate Alignment`,description:`Events alternate left and right for a balanced visual layout.`,html:`<div class="demo-block" style="padding: 20px;">
-  <h3>Alternate Alignment</h3>
-  <ui-timeline align="alternate" variant="default" events='[{"label":"Idea","timestamp":"Jan","description":"Concept born","status":"success"},{"label":"Research","timestamp":"Feb","description":"Market analysis","status":"success"},{"label":"Prototype","timestamp":"Mar","description":"MVP built","status":"active"},{"label":"Launch","timestamp":"Apr","description":"Public release","status":"pending"},{"label":"Growth","timestamp":"May","description":"User acquisition","status":"pending"}]'></ui-timeline>
-</div>`},{title:`Panel Variant`,description:`Card-like panel styling with shadow hover effects.`,html:`<div class="demo-block" style="padding: 20px;">
-  <h3>Panel Variant</h3>
-  <p style="opacity: 0.7; margin-bottom: 20px;">Use <code>variant="panel"</code> for card-like styling.</p>
-  <ui-timeline align="alternate" variant="panel" events='[{"label":"Step 1: Planning","description":"Define scope and requirements.","timestamp":"10:00 AM","status":"success"},{"label":"Step 2: Design","description":"Create wireframes and mockups.","timestamp":"11:00 AM","status":"success"},{"label":"Step 3: Build","description":"Develop and integrate features.","timestamp":"12:00 PM","status":"active"},{"label":"Step 4: Test","description":"QA and user acceptance testing.","timestamp":"02:00 PM","status":"pending"}]'></ui-timeline>
-</div>`},{title:`Horizontal Timeline`,description:`Horizontal layout ideal for showing quarter or phase breakdowns.`,html:`<div class="demo-block" style="padding: 20px;">
-  <h3>Horizontal Timeline</h3>
-  <ui-timeline mode="horizontal" align="top" events='[{"label":"Q1","description":"Foundation","status":"success"},{"label":"Q2","description":"Growth","status":"success"},{"label":"Q3","description":"Scale","status":"active"},{"label":"Q4","description":"Optimize","status":"pending"}]'></ui-timeline>
-</div>`},{title:`Markers: Numbers, Images & Icons`,description:`Auto-numbered steps, avatar images, and icon markers.`,html:`<div class="demo-block" style="padding: 20px;">
-  <h3>Markers: Numbers, Images & Icons</h3>
-  <ui-timeline align="left" marker="number" events='[{"label":"First Step","description":"Project initiated successfully.","status":"success"},{"label":"Profile Update","description":"User onboarding completed.","image":"https://i.pravatar.cc/150?img=12","status":"active"},{"label":"Third Step","description":"Integration phase started.","status":"pending"},{"label":"Rocket Launch","description":"Public release deployed.","icon":"🚀","status":"wait"}]'></ui-timeline>
-</div>`},{title:`Minimal Variant`,description:`Compact minimal style for tight spaces like CI/CD pipelines.`,html:`<div class="demo-block" style="padding: 20px;">
-  <h3>Minimal Variant — CI/CD Pipeline</h3>
-  <ui-timeline align="left" variant="minimal" events='[{"label":"Committed","timestamp":"09:00","status":"success"},{"label":"Building","timestamp":"09:15","status":"success"},{"label":"Testing","timestamp":"09:42","status":"active"},{"label":"Deploying","timestamp":"10:00","status":"pending"}]'></ui-timeline>
-</div>`},{title:`Filled Variant`,description:`Filled background cards for strong visual separation.`,html:`<div class="demo-block" style="padding: 20px;">
-  <h3>Filled Variant</h3>
-  <ui-timeline align="left" variant="filled" events='[{"label":"Project Kickoff","timestamp":"2024-01-01","description":"Initial meeting with stakeholders","status":"success"},{"label":"Design Phase","timestamp":"2024-02-15","description":"UI/UX mockups & prototyping","status":"success"},{"label":"Development Start","timestamp":"2024-03-20","description":"Setting up repository and pipeline","status":"active"},{"label":"Beta Launch","timestamp":"2024-06-10","description":"Internal testing & feedback","status":"pending"}]'></ui-timeline>
-</div>`},{title:`Searchable Timeline`,description:`Filter events using the built-in search bar.`,html:`<div class="demo-block" style="padding: 20px;">
-  <h3>Searchable Timeline</h3>
-  <p style="opacity:0.7; margin-bottom:16px;">Try searching "fix" or "feature".</p>
-  <ui-timeline align="left" searchable="true" events='[{"label":"Bug Fix","timestamp":"2024-01-10","description":"Fixed login issue","status":"success","category":"fix"},{"label":"New Feature","timestamp":"2024-01-15","description":"Added dark mode","status":"success","category":"feature"},{"label":"Security Patch","timestamp":"2024-01-20","description":"XSS vulnerability patched","status":"success","category":"fix"},{"label":"API v2","timestamp":"2024-02-01","description":"REST API redesign","status":"active","category":"feature"}]'></ui-timeline>
-</div>`}],timer:[{title:`🎨 Dynamic Color States`,description:`Colors change automatically per step (Warmup: Blue, Work: Red, Rest: Green).`,html:`<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px;">\r
+<\/script>`},{title:`Horizontal Multi-line Grid`,description:`When multiline="true" is set on horizontal mode, items wrap to new lines, creating a responsive grid view.`,html:`<div class="demo-block">\r
+        <h3>Horizontal Multi-line Grid</h3>\r
+        <p style="opacity: 0.7; margin-bottom: 20px;">\r
+          When <code>multiline="true"</code> is set on horizontal mode, items wrap to new lines, creating a responsive grid view.\r
+        </p>\r
+        <div class="playground-preview" style="padding: 20px;">\r
+          <ui-timeline mode="horizontal" multiline="true" events='\${JSON.stringify(manyEvents)}'></ui-timeline>\r
+        </div>\r
+      </div>\r
+    
+<script>
+(function() {
+  ,\r
+      timestamp: \`2024-01-\${String(i + 1).padStart(2, '0')}\`,\r
+      description: \`Description for step \${i + 1}\`,\r
+      status: i % 5 === 0 ? 'active' : 'default',\r
+    }));\r
+\r
+    container.innerHTML = \`\r
+      <div class="demo-block">\r
+        <h3>Horizontal Multi-line Grid</h3>\r
+        <p style="opacity: 0.7; margin-bottom: 20px;">\r
+          When <code>multiline="true"</code> is set on horizontal mode, items wrap to new lines, creating a responsive grid view.\r
+        </p>\r
+        <div class="playground-preview" style="padding: 20px;">\r
+          <ui-timeline mode="horizontal" multiline="true" events='\${JSON.stringify(manyEvents)}'></ui-timeline>\r
+        </div>\r
+      </div>\r
+    \`;
+})();
+<\/script>`},{title:`Vertical Scroll (Constrained Height)`,description:`Timeline inside a fixed-height container with overflow-y: auto.`,html:`<div class="demo-block">\r
+        <h3>Vertical Scroll (Constrained Height)</h3>\r
+        <p style="opacity: 0.7; margin-bottom: 20px;">Timeline inside a fixed-height container with <code>overflow-y: auto</code>.</p>\r
+        <div class="playground-preview" style="height: 400px; overflow-y: auto; padding: 20px; justify-content: flex-start;">\r
+          <ui-timeline align="left" events='\${JSON.stringify(longEvents)}' style="width: 100%;"></ui-timeline>\r
+        </div>\r
+      </div>\r
+\r
+      <div class="demo-block">\r
+        <h3>Horizontal Scroll (Constrained Width)</h3>\r
+        <p style="opacity: 0.7; margin-bottom: 20px;">Timeline inside a container with <code>overflow-x: auto</code>.</p>\r
+        <div class="playground-preview" style="width: 100%; overflow-x: auto; padding: 20px; justify-content: flex-start;">\r
+           <ui-timeline mode="horizontal" align="alternate" events='\${JSON.stringify(longEvents)}' style="min-width: 800px;"></ui-timeline>\r
+        </div>\r
+      </div>\r
+    
+<script>
+(function() {
+  ,\r
+      timestamp: \`2024-0\${(i % 9) + 1}-15\`,\r
+      description: \`This is a detailed description for step \${i + 1} to ensure the content takes up some space.\`,\r
+      status: i % 4 === 0 ? 'active' : i % 3 === 0 ? 'success' : 'default',\r
+      icon: i === 5 ? '🚩' : undefined,\r
+    }));\r
+\r
+    container.innerHTML = \`\r
+      <div class="demo-block">\r
+        <h3>Vertical Scroll (Constrained Height)</h3>\r
+        <p style="opacity: 0.7; margin-bottom: 20px;">Timeline inside a fixed-height container with <code>overflow-y: auto</code>.</p>\r
+        <div class="playground-preview" style="height: 400px; overflow-y: auto; padding: 20px; justify-content: flex-start;">\r
+          <ui-timeline align="left" events='\${JSON.stringify(longEvents)}' style="width: 100%;"></ui-timeline>\r
+        </div>\r
+      </div>\r
+\r
+      <div class="demo-block">\r
+        <h3>Horizontal Scroll (Constrained Width)</h3>\r
+        <p style="opacity: 0.7; margin-bottom: 20px;">Timeline inside a container with <code>overflow-x: auto</code>.</p>\r
+        <div class="playground-preview" style="width: 100%; overflow-x: auto; padding: 20px; justify-content: flex-start;">\r
+           <ui-timeline mode="horizontal" align="alternate" events='\${JSON.stringify(longEvents)}' style="min-width: 800px;"></ui-timeline>\r
+        </div>\r
+      </div>\r
+    \`;
+})();
+<\/script>`},{title:`⚡ Premium Filtering & Actions`,description:`Integrated search and interactive items for large data sets.`,html:`<div class="demo-block">\r
+        <h3 style="color: #f43f5e;">⚡ Premium Filtering & Actions</h3>\r
+        <p style="color: #6b7280; margin-bottom: 24px;">Integrated search and interactive items for large data sets.</p>\r
+\r
+        <ui-timeline \r
+          searchable="true" \r
+          clickable="true" \r
+          events='\${JSON.stringify(manyEvents)}'\r
+          style="width: 100%;"\r
+        ></ui-timeline>\r
+      </div>\r
+    
+<script>
+(function() {
+  : \`Task \${i + 1}\`,\r
+      description: \`Automated description for entry \${i + 1}.\`,\r
+      timestamp: \`2024-01-\${String(i + 1).padStart(2, '0')}\`,\r
+      status: i === 0 ? 'active' : 'default',\r
+    }));\r
+\r
+    container.innerHTML = \`\r
+      <div class="demo-block">\r
+        <h3 style="color: #f43f5e;">⚡ Premium Filtering & Actions</h3>\r
+        <p style="color: #6b7280; margin-bottom: 24px;">Integrated search and interactive items for large data sets.</p>\r
+\r
+        <ui-timeline \r
+          searchable="true" \r
+          clickable="true" \r
+          events='\${JSON.stringify(manyEvents)}'\r
+          style="width: 100%;"\r
+        ></ui-timeline>\r
+      </div>\r
+    \`;
+})();
+<\/script>`},{title:`Vertical: Left (Standard)`,description:`Default alignment with content on the right.`,html:`<div class="demo-block">\r
+        <h3>Vertical: Left (Standard)</h3>\r
+        <p style="color: #6b7280; margin-bottom: 20px;">Default alignment with content on the right.</p>\r
+        <ui-timeline align="left" events='\${JSON.stringify(events)}'></ui-timeline>\r
+      </div>\r
+\r
+      <div class="demo-block">\r
+        <h3>Vertical: Right</h3>\r
+        <p style="color: #6b7280; margin-bottom: 20px;">flipped alignment with content on the left.</p>\r
+        <ui-timeline align="right" events='\${JSON.stringify(events)}'></ui-timeline>\r
+      </div>\r
+\r
+      <div class="demo-block">\r
+        <h3>Vertical: Alternating</h3>\r
+        <p style="color: #6b7280; margin-bottom: 20px;">Events alternate sides for a balanced tree view.</p>\r
+        <ui-timeline align="alternate" events='\${JSON.stringify(events)}'></ui-timeline>\r
+      </div>`},{title:`Horizontal: Bottom (Standard)`,description:`Block Below: Data appears below the timeline.`,html:`<div class="demo-block" style="overflow-x: auto;">\r
+        <h3>Horizontal: Bottom (Standard)</h3>\r
+        <p style="color: #6b7280; margin-bottom: 20px;"><strong>Block Below:</strong> Data appears below the timeline.</p>\r
+        <div style="min-width: 600px;">\r
+          <ui-timeline mode="horizontal" align="bottom" events='\${JSON.stringify(events)}'></ui-timeline>\r
+        </div>\r
+      </div>\r
+\r
+      <div class="demo-block" style="overflow-x: auto;">\r
+        <h3>Horizontal: Top</h3>\r
+        <p style="color: #6b7280; margin-bottom: 20px;"><strong>Block Above:</strong> Data appears above the timeline.</p>\r
+        <div style="min-width: 600px;">\r
+          <ui-timeline mode="horizontal" align="top" events='\${JSON.stringify(events)}'></ui-timeline>\r
+        </div>\r
+      </div>\r
+        \r
+      <div class="demo-block" style="overflow-x: auto;">\r
+        <h3>Horizontal: Alternate (Butterfly)</h3>\r
+        <p style="opacity: 0.7; margin-bottom: 20px;">Content and Time alternate sides for a balanced look.</p>\r
+        <div class="playground-preview" style="height: 250px; min-width: 600px;">\r
+          <ui-timeline mode="horizontal" align="alternate" events='\${JSON.stringify(events)}' style="width: 100%;"></ui-timeline>\r
+        </div>\r
+      </div>`}],timer:[{title:`🎨 Dynamic Color States`,description:`Colors change automatically per step (Warmup: Blue, Work: Red, Rest: Green).`,html:`<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px;">\r
       \r
       <!-- 1. Per-Step Theming -->\r
       <div class="demo-block">\r
@@ -59658,858 +60552,6 @@ await manager.loadLayout(saved);</code></pre>\r
 \r
   updateTimerPlayground();
 })();
-<\/script>`},{title:`update Timer Playground`,description:``,html:`<div style="font-size: 24px; margin-bottom: 2px;">🧘</div>\r
-            <div style="font-size: 12px; font-weight: 600; text-transform: uppercase; color: #6b7280; letter-spacing: 1px;">Focus</div>\r
-        
-<script>
-(function() {
-  timer.appendChild(slotContent);\r
-    }\r
-\r
-    preview.appendChild(timer);\r
-\r
-    const logContent = document.getElementById('timer-log-content');\r
-    const log = (msg) => {\r
-      const entry = document.createElement('div');\r
-      entry.textContent = \`[\${new Date().toLocaleTimeString()}] \${msg}\`;\r
-      logContent.prepend(entry);\r
-    };\r
-\r
-    timer.addEventListener('timerStart', (e) => log(\`Start: Step \${e.detail.stepIndex}\`));\r
-    timer.addEventListener('timerComplete', (e) => log(\`Complete: Step \${e.detail.stepIndex}\`));\r
-    timer.addEventListener('timerAllComplete', () => log(\`All Finished!\`));\r
-\r
-    // Generate code block\r
-    const codeBlock = document.getElementById('timerCodeBlock');\r
-    if (codeBlock) {\r
-      let code = '<ui-timer';\r
-      if (mode !== 'countdown') code += \`\\n  mode="\${mode}"\`;\r
-      if (precision !== 'seconds') code += \`\\n  precision="\${precision}"\`;\r
-      if (progressType !== 'circular') code += \`\\n  progress-type="\${progressType}"\`;\r
-      if (format !== 'default') code += \`\\n  format="\${format}"\`;\r
-      if (persistKey) code += \`\\n  persist="\${persistKey}"\`;\r
-      if (enableSound) code += '\\n  enable-sound="true"';\r
-      if (enableNotifications) code += '\\n  enable-notifications="true"';\r
-      if (loop) code += '\\n  loop="true"';\r
-      if (mode === 'countdown' && targetDate) code += \`\\n  target-date="\${new Date(targetDate).toISOString()}"\`;\r
-      code += \`\\n  steps='\${JSON.stringify(steps)}'\`;\r
-      code += '\\n></ui-timer>';\r
-      codeBlock.innerText = code;\r
-    }
-})();
-<\/script>`}],toolbar:[{title:`serialize`,description:``,html:`\${block(\r
-        'Basic Toolbar',\r
-        'Flat <code>items</code> array with buttons, separators, spacer, search, and avatar.',\r
-        wrap(
-<script>
-(function() {
-  <ui-toolbar\r
-          items="\${serialize(basicItems)}"\r
-          bordered elevation="1"\r
-          rounded\r
-        ></ui-toolbar>\`),\r
-      )}\r
-\r
-      \${block(\r
-        'Toggle Switches (ui-switch)',\r
-        'The <code>toggle</code> and <code>switch</code> types both render a native <code>&lt;ui-switch&gt;</code> component. Control label position with <code>labelPosition</code>.',\r
-        wrap(\`<ui-toolbar bordered rounded\r
-          items="\${serialize([\r
-            { id: 'wrap', type: 'toggle', label: 'Word Wrap', checked: true, labelPosition: 'right' },\r
-            { id: 'sep1', type: 'separator' },\r
-            { id: 'preview', type: 'switch', label: 'Live Preview', labelPosition: 'right' },\r
-            { id: 'sep2', type: 'separator' },\r
-            { id: 'lint', type: 'switch', label: 'Lint', checked: true, labelPosition: 'left' },\r
-            { id: 'sep3', type: 'separator' },\r
-            { id: 'spc', type: 'spacer' },\r
-            { id: 'format', type: 'button', icon: 'wand-2', label: 'Format', variant: 'ghost' },\r
-          ])}"\r
-        ></ui-toolbar>\`),\r
-      )}\r
-\r
-      \${block(\r
-        'Toggle Group (ui-toggle-group)',\r
-        'The <code>toggle-group</code> type renders a <code>&lt;ui-toggle-group&gt;</code>. Use <code>selectionMode</code> for single or multi-select. Combine with other item types freely.',\r
-        wrap(\`<ui-toolbar bordered rounded\r
-          items="\${serialize([\r
-            { id: 'bold', type: 'button', icon: 'bold', variant: 'ghost', iconOnly: true, toggleable: true, tooltip: 'Bold' },\r
-            { id: 'ital', type: 'button', icon: 'italic', variant: 'ghost', iconOnly: true, toggleable: true, tooltip: 'Italic' },\r
-            { id: 'undr', type: 'button', icon: 'underline', variant: 'ghost', iconOnly: true, toggleable: true, tooltip: 'Underline' },\r
-            { id: 'sep1', type: 'separator' },\r
-            {\r
-              id: 'align',\r
-              type: 'toggle-group',\r
-              value: 'left',\r
-              selectionMode: 'single',\r
-              options: [\r
-                { value: 'left', label: 'Left', icon: 'align-left' },\r
-                { value: 'center', label: 'Center', icon: 'align-center' },\r
-                { value: 'right', label: 'Right', icon: 'align-right' },\r
-                { value: 'justify', label: 'Justify', icon: 'align-justify' },\r
-              ],\r
-            },\r
-            { id: 'sep2', type: 'separator' },\r
-            {\r
-              id: 'style',\r
-              type: 'toggle-group',\r
-              value: 'normal',\r
-              selectionMode: 'single',\r
-              variant: 'outline',\r
-              options: [\r
-                { value: 'normal', label: 'Normal' },\r
-                { value: 'heading', label: 'Heading' },\r
-                { value: 'code', label: 'Code' },\r
-              ],\r
-            },\r
-          ])}"\r
-        ></ui-toolbar>\`),\r
-      )}\r
-\r
-      \${block(\r
-        'Toggle Group — Multi-select',\r
-        'Set <code>selectionMode="multiple"</code> to allow multiple active values simultaneously.',\r
-        wrap(\`<ui-toolbar bordered rounded\r
-          items="\${serialize([\r
-            {\r
-              id: 'views',\r
-              type: 'toggle-group',\r
-              value: 'grid',\r
-              selectionMode: 'multiple',\r
-              options: [\r
-                { value: 'grid', label: 'Grid', icon: 'layout-grid' },\r
-                { value: 'list', label: 'List', icon: 'list' },\r
-                { value: 'detail', label: 'Detail', icon: 'layout-list' },\r
-              ],\r
-            },\r
-            { id: 'sep1', type: 'separator' },\r
-            {\r
-              id: 'filter',\r
-              type: 'toggle-group',\r
-              selectionMode: 'multiple',\r
-              color: 'primary',\r
-              shape: 'pill',\r
-              options: [\r
-                { value: 'images', label: 'Images' },\r
-                { value: 'videos', label: 'Videos' },\r
-                { value: 'docs', label: 'Docs' },\r
-                { value: 'audio', label: 'Audio' },\r
-              ],\r
-            },\r
-          ])}"\r
-        ></ui-toolbar>\`),\r
-      )}\r
-\r
-      \${block(\r
-        'With Dropdown + Badge',\r
-        'Dropdown selector and notification badge.',\r
-        wrap(\`<ui-toolbar bordered rounded\r
-          items="\${serialize([\r
-            { id: 'back', type: 'button', icon: 'arrow-left', variant: 'ghost', iconOnly: true },\r
-            { id: 'fwd', type: 'button', icon: 'arrow-right', variant: 'ghost', iconOnly: true },\r
-            { id: 'reload', type: 'button', icon: 'refresh-cw', variant: 'ghost', iconOnly: true },\r
-            { id: 'sep1', type: 'separator' },\r
-            {\r
-              id: 'view',\r
-              type: 'dropdown',\r
-              label: 'View',\r
-              placeholder: 'View mode',\r
-              options: [\r
-                { value: 'grid', label: 'Grid View' },\r
-                { value: 'list', label: 'List View' },\r
-                { value: 'detail', label: 'Detail View' },\r
-              ],\r
-              value: 'grid',\r
-            },\r
-            { id: 'spc', type: 'spacer' },\r
-            { id: 'notif', type: 'button', icon: 'bell', variant: 'ghost', iconOnly: true, badge: 3, badgeColor: 'danger', tooltip: 'Notifications' },\r
-            { id: 'avt', type: 'avatar', src: 'https://i.pravatar.cc/150?img=33', name: 'Bob', size: '28px', clickable: true },\r
-          ])}"\r
-        ></ui-toolbar>\`),\r
-      )}\r
-\r
-      \${block(\r
-        'Rich Text Editor Toolbar',\r
-        'Simulates a document editor toolbar — alignment uses <code>toggle-group</code>, formatting uses <code>ui-button</code> toggles.',\r
-        wrap(\`<ui-toolbar bordered rounded\r
-          items="\${serialize([\r
-            { id: 'undo', type: 'button', icon: 'undo-2', variant: 'ghost', iconOnly: true, tooltip: 'Undo' },\r
-            { id: 'redo', type: 'button', icon: 'redo-2', variant: 'ghost', iconOnly: true, tooltip: 'Redo' },\r
-            { id: 's1', type: 'separator' },\r
-            {\r
-              id: 'font',\r
-              type: 'dropdown',\r
-              placeholder: 'Font',\r
-              options: [\r
-                { value: 'inter', label: 'Inter' },\r
-                { value: 'roboto', label: 'Roboto' },\r
-                { value: 'mono', label: 'Monospace' },\r
-              ],\r
-              value: 'inter',\r
-            },\r
-            {\r
-              id: 'size',\r
-              type: 'dropdown',\r
-              placeholder: 'Size',\r
-              options: [\r
-                { value: '12', label: '12px' },\r
-                { value: '14', label: '14px' },\r
-                { value: '16', label: '16px' },\r
-                { value: '18', label: '18px' },\r
-              ],\r
-              value: '14',\r
-            },\r
-            { id: 's2', type: 'separator' },\r
-            { id: 'bold', type: 'button', icon: 'bold', variant: 'ghost', iconOnly: true, toggleable: true, active: true, tooltip: 'Bold' },\r
-            { id: 'ital', type: 'button', icon: 'italic', variant: 'ghost', iconOnly: true, toggleable: true, tooltip: 'Italic' },\r
-            { id: 'undr', type: 'button', icon: 'underline', variant: 'ghost', iconOnly: true, toggleable: true, tooltip: 'Underline' },\r
-            { id: 's3', type: 'separator' },\r
-            {\r
-              id: 'align',\r
-              type: 'toggle-group',\r
-              value: 'left',\r
-              selectionMode: 'single',\r
-              options: [\r
-                { value: 'left', icon: 'align-left', label: 'Left' },\r
-                { value: 'center', icon: 'align-center', label: 'Center' },\r
-                { value: 'right', icon: 'align-right', label: 'Right' },\r
-                { value: 'justify', icon: 'align-justify', label: 'Justify' },\r
-              ],\r
-            },\r
-            { id: 'spc', type: 'spacer' },\r
-            { id: 'share', type: 'button', icon: 'share-2', label: 'Share', variant: 'primary', priority: 10 },\r
-          ])}"\r
-        ></ui-toolbar>\`),\r
-      )}\r
-    \`;\r
-\r
-    wireEvents();\r
-  }\r
-\r
-  // ─── Variants ─────────────────────────────────────────────────────────────\r
-\r
-  function renderVariants() {\r
-    const basicItems = [\r
-      { id: 'new', type: 'button', icon: 'plus', label: 'New', variant: 'primary', priority: 10 },\r
-      { id: 'save', type: 'button', icon: 'save', label: 'Save', variant: 'ghost' },\r
-      { id: 'sep', type: 'separator' },\r
-      { id: 'del', type: 'button', icon: 'trash-2', label: 'Delete', variant: 'danger' },\r
-      { id: 'spc', type: 'spacer' },\r
-      { id: 'avt', type: 'avatar', src: 'https://i.pravatar.cc/150?img=5', size: '28px' },\r
-    ];\r
-\r
-    const variants = [\r
-      { name: 'default', bg: '#f8fafc', label: 'Default' },\r
-      { name: 'secondary', bg: '#f8fafc', label: 'Secondary' },\r
-      { name: 'outlined', bg: '#f8fafc', label: 'Outlined' },\r
-      { name: 'minimal', bg: '#f8fafc', label: 'Minimal' },\r
-      { name: 'elevated', bg: '#f8fafc', label: 'Elevated' },\r
-      { name: 'primary', bg: '#1e3a6b', label: 'Primary' },\r
-      { name: 'dark', bg: '#0f172a', label: 'Dark' },\r
-      { name: 'glass', bg: 'linear-gradient(135deg,#6366f1,#8b5cf6)', label: 'Glass' },\r
-    ];\r
-\r
-    document.getElementById('toolbarDemoContent').innerHTML = variants\r
-      .map(\r
-        v => \`\r
-      \${block(\r
-        v.label + ' variant',\r
-        null,\r
-        \`\r
-        <div style="padding:20px;border-radius:10px;background:\${v.bg};">\r
-          <ui-toolbar variant="\${v.name}" rounded bordered elevation="2"\r
-            items="\${serialize(basicItems)}">\r
-          </ui-toolbar>\r
-        </div>\r
-      \`,\r
-      )}\r
-    \`,\r
-      )\r
-      .join('');\r
-\r
-    wireEvents();\r
-  }\r
-\r
-  // ─── Zones ────────────────────────────────────────────────────────────────\r
-\r
-  function renderZones() {\r
-    const schema = {\r
-      left: [\r
-        { id: 'logo', type: 'text', content: '⚡ AppUI', bold: true },\r
-        { id: 'sep1', type: 'separator' },\r
-        { id: 'home', type: 'button', icon: 'home', variant: 'ghost', iconOnly: true, tooltip: 'Home' },\r
-        { id: 'docs', type: 'button', label: 'Docs', icon: 'book-open', variant: 'ghost' },\r
-      ],\r
-      center: [{ id: 'search', type: 'search', placeholder: 'Search everything…', minWidth: '260px' }],\r
-      right: [\r
-        { id: 'notif', type: 'button', icon: 'bell', variant: 'ghost', iconOnly: true, badge: 2, badgeColor: 'danger' },\r
-        { id: 'mode', type: 'button', icon: 'moon', variant: 'ghost', iconOnly: true, toggleable: true, tooltip: 'Dark mode' },\r
-        { id: 'sep2', type: 'separator' },\r
-        { id: 'avt', type: 'avatar', src: 'https://i.pravatar.cc/150?img=44', name: 'Clara', size: '28px', clickable: true },\r
-      ],\r
-    };\r
-\r
-    const schema2 = {\r
-      left: [\r
-        { id: 'back', type: 'button', icon: 'arrow-left', variant: 'ghost', iconOnly: true },\r
-        { id: 'fwd', type: 'button', icon: 'arrow-right', variant: 'ghost', iconOnly: true },\r
-        { id: 'sep', type: 'separator' },\r
-        { id: 'bold', type: 'button', icon: 'bold', variant: 'ghost', iconOnly: true, toggleable: true },\r
-        { id: 'ital', type: 'button', icon: 'italic', variant: 'ghost', iconOnly: true, toggleable: true },\r
-        { id: 'undr', type: 'button', icon: 'underline', variant: 'ghost', iconOnly: true, toggleable: true },\r
-      ],\r
-      right: [\r
-        {\r
-          id: 'zoom',\r
-          type: 'dropdown',\r
-          placeholder: '100%',\r
-          options: [\r
-            { value: '75', label: '75%' },\r
-            { value: '100', label: '100%' },\r
-            { value: '125', label: '125%' },\r
-          ],\r
-          value: '100',\r
-        },\r
-        { id: 'share', type: 'button', icon: 'share-2', label: 'Share', variant: 'primary' },\r
-      ],\r
-    };\r
-\r
-    document.getElementById('toolbarDemoContent').innerHTML = \`\r
-      \${block(\r
-        'Schema-driven Zones (left / center / right)',\r
-        'Use the <code>schema</code> prop to define three layout zones. The center zone stretches to fill available space.',\r
-        wrap(\`<ui-toolbar schema="\${serialize(schema)}" bordered rounded zone-dividers></ui-toolbar>\`),\r
-      )}\r
-      \${block(\r
-        'Left + Right zones only',\r
-        'When no center is defined, the right zone is pushed to the far right via <code>margin-left:auto</code> on the zone.',\r
-        wrap(\`<ui-toolbar schema="\${serialize(schema2)}" bordered rounded></ui-toolbar>\`),\r
-      )}\r
-    \`;\r
-\r
-    wireEvents();\r
-  }\r
-\r
-  // ─── Overflow ─────────────────────────────────────────────────────────────\r
-\r
-  function renderOverflow() {\r
-    const items = [\r
-      { id: 'new', type: 'button', label: 'New', icon: 'plus', variant: 'primary', priority: 10 },\r
-      { id: 'open', type: 'button', label: 'Open', icon: 'folder-open', variant: 'ghost', priority: 9 },\r
-      { id: 'save', type: 'button', label: 'Save', icon: 'save', variant: 'ghost', priority: 8 },\r
-      { id: 'save-as', type: 'button', label: 'Save As', icon: 'save', variant: 'ghost', priority: 7 },\r
-      { id: 'print', type: 'button', label: 'Print', icon: 'printer', variant: 'ghost', priority: 6 },\r
-      { id: 'export', type: 'button', label: 'Export', icon: 'download', variant: 'ghost', priority: 5 },\r
-      { id: 'share', type: 'button', label: 'Share', icon: 'share-2', variant: 'ghost', priority: 4 },\r
-      { id: 'collab', type: 'button', label: 'Collabs', icon: 'users', variant: 'ghost', priority: 3 },\r
-      { id: 'history', type: 'button', label: 'History', icon: 'clock', variant: 'ghost', priority: 2 },\r
-      { id: 'settings', type: 'button', label: 'Settings', icon: 'settings', variant: 'ghost', priority: 1, pinToOverflow: true },\r
-    ];\r
-\r
-    document.getElementById('toolbarDemoContent').innerHTML = \`\r
-      \${block(\r
-        'Overflow — Dropdown Strategy',\r
-        'Resize the window or drag the handle to see items collapse into the "More" button. Higher <code>priority</code> items stay visible longest. <code>pinToOverflow</code> items always appear in the overflow menu no matter what.',\r
-        \`<div style="resize:horizontal;overflow:auto;min-width:200px;max-width:100%;padding:16px;background:#f8fafc;border:1px dashed #cbd5e1;border-radius:10px;">\r
-          <ui-toolbar\r
-            items="\${serialize(items)}"\r
-            overflow-strategy="dropdown"\r
-            bordered rounded elevation="1"\r
-            overflow-label="More"\r
-            overflow-icon="more-horizontal"\r
-            style="width:100%;"\r
-          ></ui-toolbar>\r
-          <p style="font-size:12px;color:#9ca3af;margin:8px 0 0;">↔ Drag the right edge to resize</p>\r
-         </div>\`,\r
-      )}\r
-\r
-      \${block(\r
-        'Priority Queue',\r
-        'Items with higher priority survive overflow. Try shrinking the container — <code>New</code> (priority 10) will be last to disappear.',\r
-        wrap(\`<ui-toolbar\r
-            items="\${serialize(items.map((it, i) => ({ ...it, label: it.label + ' (p\${it.priority??0})' })))}"\r
-            bordered rounded\r
-          ></ui-toolbar>\`),\r
-      )}\r
-    \`;\r
-\r
-    wireEvents();\r
-  }\r
-\r
-  // ─── Vertical ─────────────────────────────────────────────────────────────\r
-\r
-  function renderVertical() {\r
-    const items = [\r
-      { id: 'cursor', type: 'button', icon: 'mouse-pointer-2', variant: 'ghost', iconOnly: true, tooltip: 'Select', toggleable: true, active: true },\r
-      { id: 'pencil', type: 'button', icon: 'pencil', variant: 'ghost', iconOnly: true, tooltip: 'Draw', toggleable: true },\r
-      { id: 'eraser', type: 'button', icon: 'eraser', variant: 'ghost', iconOnly: true, tooltip: 'Erase', toggleable: true },\r
-      { id: 'shape', type: 'button', icon: 'shapes', variant: 'ghost', iconOnly: true, tooltip: 'Shapes', toggleable: true },\r
-      { id: 'sep', type: 'separator' },\r
-      { id: 'fill', type: 'button', icon: 'droplets', variant: 'ghost', iconOnly: true, tooltip: 'Fill' },\r
-      { id: 'text', type: 'button', icon: 'type', variant: 'ghost', iconOnly: true, tooltip: 'Text' },\r
-      { id: 'img', type: 'button', icon: 'image', variant: 'ghost', iconOnly: true, tooltip: 'Image' },\r
-      { id: 'spc', type: 'spacer' },\r
-      { id: 'zoom-in', type: 'button', icon: 'zoom-in', variant: 'ghost', iconOnly: true, tooltip: 'Zoom In' },\r
-      { id: 'zoom-out', type: 'button', icon: 'zoom-out', variant: 'ghost', iconOnly: true, tooltip: 'Zoom Out' },\r
-    ];\r
-\r
-    document.getElementById('toolbarDemoContent').innerHTML = \`\r
-      \${block(\r
-        'Vertical Toolbar',\r
-        'Set <code>orientation="vertical"</code>. Icons are centred; separator becomes a horizontal rule.',\r
-        \`<div style="display:flex;gap:24px;align-items:flex-start;padding:20px;background:#f8fafc;border-radius:10px;border:1px solid #e2e8f0;">\r
-          <ui-toolbar orientation="vertical" bordered rounded elevation="1" gap="2px" padding="8px 4px"\r
-            items="\${serialize(items)}" style="height:360px;">\r
-          </ui-toolbar>\r
-          <div style="flex:1;background:#fff;border-radius:8px;border:1px solid #e2e8f0;min-height:360px;display:flex;align-items:center;justify-content:center;color:#9ca3af;font-size:13px;">Canvas area</div>\r
-        </div>\`,\r
-      )}\r
-\r
-      \${block(\r
-        'Vertical Dark Variant',\r
-        null,\r
-        \`<div style="display:flex;gap:24px;align-items:flex-start;padding:20px;background:#0f172a;border-radius:10px;">\r
-          <ui-toolbar orientation="vertical" variant="dark" rounded elevation="1" gap="2px" padding="8px 4px"\r
-            items="\${serialize(items)}" style="height:360px;">\r
-          </ui-toolbar>\r
-          <div style="flex:1;background:#1e293b;border-radius:8px;min-height:360px;display:flex;align-items:center;justify-content:center;color:#475569;font-size:13px;">Canvas area</div>\r
-        </div>\`,\r
-      )}\r
-    \`;\r
-\r
-    wireEvents();\r
-  }\r
-\r
-  // ─── Slots ────────────────────────────────────────────────────────────────\r
-\r
-  function renderSlots() {\r
-    document.getElementById('toolbarDemoContent').innerHTML = \`\r
-      \${block(\r
-        'Slot-based composition',\r
-        'Use named slots <code>left</code>, <code>center</code>, <code>right</code>, <code>before</code>, <code>after</code>, or the default slot to inject any custom HTML / components.',\r
-        wrap(\`<ui-toolbar bordered rounded>\r
-          <div slot="left" style="display:flex;align-items:center;gap:12px;padding:0 4px;">\r
-            <span style="font-weight:700;font-size:15px;color:#2563eb;letter-spacing:-0.01em;">⚡ Studio</span>\r
-          </div>\r
-          <div slot="center" style="display:flex;align-items:center;gap:6px;">\r
-            <ui-input id="slotSearch" placeholder="Search resources…" style="width:240px;"></ui-input>\r
-          </div>\r
-          <div slot="right" style="display:flex;align-items:center;gap:8px;">\r
-            <ui-button icon="bell" icon-only variant="ghost" size="md" tooltip="Notifications"></ui-button>\r
-            <ui-button icon="settings" icon-only variant="ghost" size="md" tooltip="Settings"></ui-button>\r
-            <ui-avatar src="https://i.pravatar.cc/150?img=22" size="32px" shape="circle" status="online" style="margin-left:4px;"></ui-avatar>\r
-          </div>\r
-        </ui-toolbar>\`),\r
-      )}\r
-\r
-      \${block(\r
-        'Default slot passthrough',\r
-        "Any child without a slot attribute lands inside the toolbar body, positioned by the toolbar's flex layout.",\r
-        wrap(\`<ui-toolbar bordered rounded alignment="space-between" padding="8px 12px">\r
-          <ui-button icon="home" label="Dashboard" variant="ghost" size="md"></ui-button>\r
-          <ui-button icon="inbox" label="Inbox" variant="ghost" size="md" badge="5" badge-color="primary"></ui-button>\r
-          <ui-button icon="file-text" label="Assets" variant="ghost" size="md"></ui-button>\r
-          <ui-button icon="users" label="Collaboration" variant="ghost" size="md"></ui-button>\r
-          <ui-button icon="settings" icon-only variant="ghost" size="md"></ui-button>\r
-        </ui-toolbar>\`),\r
-      )}\r
-    \`;\r
-\r
-    setTimeout(() => {\r
-      document.getElementById('slotSearch')?.addEventListener('inputChange', e => {\r
-        console.log('[Toolbar Slot] Search Input:', e.detail);\r
-      });\r
-    }, 100);\r
-    wireEvents();
-})();
-<\/script>`},{title:`render Overview`,description:``,html:`\${block(\r
-        'Basic Toolbar',\r
-        'Flat <code>items</code> array with buttons, separators, spacer, search, and avatar.',\r
-        wrap(
-<script>
-(function() {
-  <ui-toolbar\r
-          items="\${serialize(basicItems)}"\r
-          bordered elevation="1"\r
-          rounded\r
-        ></ui-toolbar>\`),\r
-      )}\r
-\r
-      \${block(\r
-        'Toggle Switches (ui-switch)',\r
-        'The <code>toggle</code> and <code>switch</code> types both render a native <code>&lt;ui-switch&gt;</code> component. Control label position with <code>labelPosition</code>.',\r
-        wrap(\`<ui-toolbar bordered rounded\r
-          items="\${serialize([\r
-            { id: 'wrap', type: 'toggle', label: 'Word Wrap', checked: true, labelPosition: 'right' },\r
-            { id: 'sep1', type: 'separator' },\r
-            { id: 'preview', type: 'switch', label: 'Live Preview', labelPosition: 'right' },\r
-            { id: 'sep2', type: 'separator' },\r
-            { id: 'lint', type: 'switch', label: 'Lint', checked: true, labelPosition: 'left' },\r
-            { id: 'sep3', type: 'separator' },\r
-            { id: 'spc', type: 'spacer' },\r
-            { id: 'format', type: 'button', icon: 'wand-2', label: 'Format', variant: 'ghost' },\r
-          ])}"\r
-        ></ui-toolbar>\`),\r
-      )}\r
-\r
-      \${block(\r
-        'Toggle Group (ui-toggle-group)',\r
-        'The <code>toggle-group</code> type renders a <code>&lt;ui-toggle-group&gt;</code>. Use <code>selectionMode</code> for single or multi-select. Combine with other item types freely.',\r
-        wrap(\`<ui-toolbar bordered rounded\r
-          items="\${serialize([\r
-            { id: 'bold', type: 'button', icon: 'bold', variant: 'ghost', iconOnly: true, toggleable: true, tooltip: 'Bold' },\r
-            { id: 'ital', type: 'button', icon: 'italic', variant: 'ghost', iconOnly: true, toggleable: true, tooltip: 'Italic' },\r
-            { id: 'undr', type: 'button', icon: 'underline', variant: 'ghost', iconOnly: true, toggleable: true, tooltip: 'Underline' },\r
-            { id: 'sep1', type: 'separator' },\r
-            {\r
-              id: 'align',\r
-              type: 'toggle-group',\r
-              value: 'left',\r
-              selectionMode: 'single',\r
-              options: [\r
-                { value: 'left', label: 'Left', icon: 'align-left' },\r
-                { value: 'center', label: 'Center', icon: 'align-center' },\r
-                { value: 'right', label: 'Right', icon: 'align-right' },\r
-                { value: 'justify', label: 'Justify', icon: 'align-justify' },\r
-              ],\r
-            },\r
-            { id: 'sep2', type: 'separator' },\r
-            {\r
-              id: 'style',\r
-              type: 'toggle-group',\r
-              value: 'normal',\r
-              selectionMode: 'single',\r
-              variant: 'outline',\r
-              options: [\r
-                { value: 'normal', label: 'Normal' },\r
-                { value: 'heading', label: 'Heading' },\r
-                { value: 'code', label: 'Code' },\r
-              ],\r
-            },\r
-          ])}"\r
-        ></ui-toolbar>\`),\r
-      )}\r
-\r
-      \${block(\r
-        'Toggle Group — Multi-select',\r
-        'Set <code>selectionMode="multiple"</code> to allow multiple active values simultaneously.',\r
-        wrap(\`<ui-toolbar bordered rounded\r
-          items="\${serialize([\r
-            {\r
-              id: 'views',\r
-              type: 'toggle-group',\r
-              value: 'grid',\r
-              selectionMode: 'multiple',\r
-              options: [\r
-                { value: 'grid', label: 'Grid', icon: 'layout-grid' },\r
-                { value: 'list', label: 'List', icon: 'list' },\r
-                { value: 'detail', label: 'Detail', icon: 'layout-list' },\r
-              ],\r
-            },\r
-            { id: 'sep1', type: 'separator' },\r
-            {\r
-              id: 'filter',\r
-              type: 'toggle-group',\r
-              selectionMode: 'multiple',\r
-              color: 'primary',\r
-              shape: 'pill',\r
-              options: [\r
-                { value: 'images', label: 'Images' },\r
-                { value: 'videos', label: 'Videos' },\r
-                { value: 'docs', label: 'Docs' },\r
-                { value: 'audio', label: 'Audio' },\r
-              ],\r
-            },\r
-          ])}"\r
-        ></ui-toolbar>\`),\r
-      )}\r
-\r
-      \${block(\r
-        'With Dropdown + Badge',\r
-        'Dropdown selector and notification badge.',\r
-        wrap(\`<ui-toolbar bordered rounded\r
-          items="\${serialize([\r
-            { id: 'back', type: 'button', icon: 'arrow-left', variant: 'ghost', iconOnly: true },\r
-            { id: 'fwd', type: 'button', icon: 'arrow-right', variant: 'ghost', iconOnly: true },\r
-            { id: 'reload', type: 'button', icon: 'refresh-cw', variant: 'ghost', iconOnly: true },\r
-            { id: 'sep1', type: 'separator' },\r
-            {\r
-              id: 'view',\r
-              type: 'dropdown',\r
-              label: 'View',\r
-              placeholder: 'View mode',\r
-              options: [\r
-                { value: 'grid', label: 'Grid View' },\r
-                { value: 'list', label: 'List View' },\r
-                { value: 'detail', label: 'Detail View' },\r
-              ],\r
-              value: 'grid',\r
-            },\r
-            { id: 'spc', type: 'spacer' },\r
-            { id: 'notif', type: 'button', icon: 'bell', variant: 'ghost', iconOnly: true, badge: 3, badgeColor: 'danger', tooltip: 'Notifications' },\r
-            { id: 'avt', type: 'avatar', src: 'https://i.pravatar.cc/150?img=33', name: 'Bob', size: '28px', clickable: true },\r
-          ])}"\r
-        ></ui-toolbar>\`),\r
-      )}\r
-\r
-      \${block(\r
-        'Rich Text Editor Toolbar',\r
-        'Simulates a document editor toolbar — alignment uses <code>toggle-group</code>, formatting uses <code>ui-button</code> toggles.',\r
-        wrap(\`<ui-toolbar bordered rounded\r
-          items="\${serialize([\r
-            { id: 'undo', type: 'button', icon: 'undo-2', variant: 'ghost', iconOnly: true, tooltip: 'Undo' },\r
-            { id: 'redo', type: 'button', icon: 'redo-2', variant: 'ghost', iconOnly: true, tooltip: 'Redo' },\r
-            { id: 's1', type: 'separator' },\r
-            {\r
-              id: 'font',\r
-              type: 'dropdown',\r
-              placeholder: 'Font',\r
-              options: [\r
-                { value: 'inter', label: 'Inter' },\r
-                { value: 'roboto', label: 'Roboto' },\r
-                { value: 'mono', label: 'Monospace' },\r
-              ],\r
-              value: 'inter',\r
-            },\r
-            {\r
-              id: 'size',\r
-              type: 'dropdown',\r
-              placeholder: 'Size',\r
-              options: [\r
-                { value: '12', label: '12px' },\r
-                { value: '14', label: '14px' },\r
-                { value: '16', label: '16px' },\r
-                { value: '18', label: '18px' },\r
-              ],\r
-              value: '14',\r
-            },\r
-            { id: 's2', type: 'separator' },\r
-            { id: 'bold', type: 'button', icon: 'bold', variant: 'ghost', iconOnly: true, toggleable: true, active: true, tooltip: 'Bold' },\r
-            { id: 'ital', type: 'button', icon: 'italic', variant: 'ghost', iconOnly: true, toggleable: true, tooltip: 'Italic' },\r
-            { id: 'undr', type: 'button', icon: 'underline', variant: 'ghost', iconOnly: true, toggleable: true, tooltip: 'Underline' },\r
-            { id: 's3', type: 'separator' },\r
-            {\r
-              id: 'align',\r
-              type: 'toggle-group',\r
-              value: 'left',\r
-              selectionMode: 'single',\r
-              options: [\r
-                { value: 'left', icon: 'align-left', label: 'Left' },\r
-                { value: 'center', icon: 'align-center', label: 'Center' },\r
-                { value: 'right', icon: 'align-right', label: 'Right' },\r
-                { value: 'justify', icon: 'align-justify', label: 'Justify' },\r
-              ],\r
-            },\r
-            { id: 'spc', type: 'spacer' },\r
-            { id: 'share', type: 'button', icon: 'share-2', label: 'Share', variant: 'primary', priority: 10 },\r
-          ])}"\r
-        ></ui-toolbar>\`),\r
-      )}\r
-    \`;\r
-\r
-    wireEvents();
-})();
-<\/script>`},{title:`render Zones`,description:``,html:`\${block(\r
-        'Schema-driven Zones (left / center / right)',\r
-        'Use the <code>schema</code> prop to define three layout zones. The center zone stretches to fill available space.',\r
-        wrap(
-<script>
-(function() {
-  <ui-toolbar schema="\${serialize(schema)}" bordered rounded zone-dividers></ui-toolbar>\`),\r
-      )}\r
-      \${block(\r
-        'Left + Right zones only',\r
-        'When no center is defined, the right zone is pushed to the far right via <code>margin-left:auto</code> on the zone.',\r
-        wrap(\`<ui-toolbar schema="\${serialize(schema2)}" bordered rounded></ui-toolbar>\`),\r
-      )}\r
-    \`;\r
-\r
-    wireEvents();
-})();
-<\/script>`},{title:`render Overflow`,description:``,html:`\${block(\r
-        'Overflow — Dropdown Strategy',\r
-        'Resize the window or drag the handle to see items collapse into the "More" button. Higher <code>priority</code> items stay visible longest. <code>pinToOverflow</code> items always appear in the overflow menu no matter what.',\r
-        
-<script>
-(function() {
-  <div style="resize:horizontal;overflow:auto;min-width:200px;max-width:100%;padding:16px;background:#f8fafc;border:1px dashed #cbd5e1;border-radius:10px;">\r
-          <ui-toolbar\r
-            items="\${serialize(items)}"\r
-            overflow-strategy="dropdown"\r
-            bordered rounded elevation="1"\r
-            overflow-label="More"\r
-            overflow-icon="more-horizontal"\r
-            style="width:100%;"\r
-          ></ui-toolbar>\r
-          <p style="font-size:12px;color:#9ca3af;margin:8px 0 0;">↔ Drag the right edge to resize</p>\r
-         </div>\`,\r
-      )}\r
-\r
-      \${block(\r
-        'Priority Queue',\r
-        'Items with higher priority survive overflow. Try shrinking the container — <code>New</code> (priority 10) will be last to disappear.',\r
-        wrap(\`<ui-toolbar\r
-            items="\${serialize(items.map((it, i) => ({ ...it, label: it.label + ' (p\${it.priority??0})' })))}"\r
-            bordered rounded\r
-          ></ui-toolbar>\`),\r
-      )}\r
-    \`;\r
-\r
-    wireEvents();
-})();
-<\/script>`},{title:`render Vertical`,description:``,html:`\${block(\r
-        'Vertical Toolbar',\r
-        'Set <code>orientation="vertical"</code>. Icons are centred; separator becomes a horizontal rule.',\r
-        
-<script>
-(function() {
-  <div style="display:flex;gap:24px;align-items:flex-start;padding:20px;background:#f8fafc;border-radius:10px;border:1px solid #e2e8f0;">\r
-          <ui-toolbar orientation="vertical" bordered rounded elevation="1" gap="2px" padding="8px 4px"\r
-            items="\${serialize(items)}" style="height:360px;">\r
-          </ui-toolbar>\r
-          <div style="flex:1;background:#fff;border-radius:8px;border:1px solid #e2e8f0;min-height:360px;display:flex;align-items:center;justify-content:center;color:#9ca3af;font-size:13px;">Canvas area</div>\r
-        </div>\`,\r
-      )}\r
-\r
-      \${block(\r
-        'Vertical Dark Variant',\r
-        null,\r
-        \`<div style="display:flex;gap:24px;align-items:flex-start;padding:20px;background:#0f172a;border-radius:10px;">\r
-          <ui-toolbar orientation="vertical" variant="dark" rounded elevation="1" gap="2px" padding="8px 4px"\r
-            items="\${serialize(items)}" style="height:360px;">\r
-          </ui-toolbar>\r
-          <div style="flex:1;background:#1e293b;border-radius:8px;min-height:360px;display:flex;align-items:center;justify-content:center;color:#475569;font-size:13px;">Canvas area</div>\r
-        </div>\`,\r
-      )}\r
-    \`;\r
-\r
-    wireEvents();
-})();
-<\/script>`},{title:`render Slots`,description:``,html:`\${block(\r
-        'Slot-based composition',\r
-        'Use named slots <code>left</code>, <code>center</code>, <code>right</code>, <code>before</code>, <code>after</code>, or the default slot to inject any custom HTML / components.',\r
-        wrap(
-<script>
-(function() {
-  <ui-toolbar bordered rounded>\r
-          <div slot="left" style="display:flex;align-items:center;gap:12px;padding:0 4px;">\r
-            <span style="font-weight:700;font-size:15px;color:#2563eb;letter-spacing:-0.01em;">⚡ Studio</span>\r
-          </div>\r
-          <div slot="center" style="display:flex;align-items:center;gap:6px;">\r
-            <ui-input id="slotSearch" placeholder="Search resources…" style="width:240px;"></ui-input>\r
-          </div>\r
-          <div slot="right" style="display:flex;align-items:center;gap:8px;">\r
-            <ui-button icon="bell" icon-only variant="ghost" size="md" tooltip="Notifications"></ui-button>\r
-            <ui-button icon="settings" icon-only variant="ghost" size="md" tooltip="Settings"></ui-button>\r
-            <ui-avatar src="https://i.pravatar.cc/150?img=22" size="32px" shape="circle" status="online" style="margin-left:4px;"></ui-avatar>\r
-          </div>\r
-        </ui-toolbar>\`),\r
-      )}\r
-\r
-      \${block(\r
-        'Default slot passthrough',\r
-        "Any child without a slot attribute lands inside the toolbar body, positioned by the toolbar's flex layout.",\r
-        wrap(\`<ui-toolbar bordered rounded alignment="space-between" padding="8px 12px">\r
-          <ui-button icon="home" label="Dashboard" variant="ghost" size="md"></ui-button>\r
-          <ui-button icon="inbox" label="Inbox" variant="ghost" size="md" badge="5" badge-color="primary"></ui-button>\r
-          <ui-button icon="file-text" label="Assets" variant="ghost" size="md"></ui-button>\r
-          <ui-button icon="users" label="Collaboration" variant="ghost" size="md"></ui-button>\r
-          <ui-button icon="settings" icon-only variant="ghost" size="md"></ui-button>\r
-        </ui-toolbar>\`),\r
-      )}\r
-    \`;\r
-\r
-    setTimeout(() => {\r
-      document.getElementById('slotSearch')?.addEventListener('inputChange', e => {\r
-        console.log('[Toolbar Slot] Search Input:', e.detail);\r
-      });\r
-    }, 100);\r
-    wireEvents();
-})();
-<\/script>`},{title:`Interactive Playground`,description:`Configure the toolbar system in real-time and monitor system events.`,html:`<div class="demo-block">\r
-        <h3>Interactive Playground</h3>\r
-        <p style="color: #64748b; margin-bottom: 24px;">Configure the toolbar system in real-time and monitor system events.</p>\r
-\r
-        <div style="display: flex; flex-direction: column; gap: 24px; background: #f8fafc; padding: 24px; border-radius: 16px; border: 1px solid #e2e8f0; margin-bottom: 32px;">\r
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">\r
-            <ui-dropdown id="pg-variant" label="Visual Variant" value="default"\r
-              data='[{"label": "Default", "value": "default"}, {"label": "Secondary", "value": "secondary"}, {"label": "Minimal", "value": "minimal"}, {"label": "Glass", "value": "glass"}, {"label": "Elevated", "value": "elevated"}, {"label": "Outlined", "value": "outlined"}, {"label": "Primary", "value": "primary"}, {"label": "Dark", "value": "dark"}]'\r
-            ></ui-dropdown>\r
-            \r
-            <ui-dropdown id="pg-size" label="Component Size" value="md"\r
-              data='[{"label": "Small (SM)", "value": "sm"}, {"label": "Medium (MD)", "value": "md"}, {"label": "Large (LG)", "value": "lg"}, {"label": "Extra Large (XL)", "value": "xl"}]'\r
-            ></ui-dropdown>\r
-\r
-            <ui-dropdown id="pg-align" label="Content Alignment" value="start"\r
-              data='[{"label": "Start", "value": "start"}, {"label": "Center", "value": "center"}, {"label": "End", "value": "end"}, {"label": "Space Between", "value": "space-between"}, {"label": "Space Around", "value": "space-around"}, {"label": "Space Evenly", "value": "space-evenly"}]'\r
-            ></ui-dropdown>\r
-          </div>\r
-\r
-          <div style="display: flex; gap: 20px; flex-wrap: wrap; padding: 16px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">\r
-            <ui-checkbox id="pg-rounded" checked label="Rounded Corners"></ui-checkbox>\r
-            <ui-checkbox id="pg-bordered" checked label="Show Border"></ui-checkbox>\r
-            <ui-checkbox id="pg-disabled" label="Disabled State"></ui-checkbox>\r
-            <ui-checkbox id="pg-loading" label="Loading Overlay"></ui-checkbox>\r
-          </div>\r
-        </div>\r
-\r
-        <div id="pg-toolbar-wrap" style="padding:32px; background:white; border:1px solid #e2e8f0; border-radius:16px; margin-bottom: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">\r
-          <ui-toolbar id="pg-toolbar"\r
-            bordered rounded elevation="1"\r
-            items="\${serialize(pg)}"\r
-          ></ui-toolbar>\r
-        </div>\r
-\r
-        <div>\r
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">\r
-            <span style="font-size: 13px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.05em;">Toolbar Event Stream</span>\r
-            <ui-button id="clearPgLog" label="Clear Logs" variant="outline" color="secondary" size="xxs"></ui-button>\r
-          </div>\r
-          <div id="pg-log" style="height: 160px; overflow-y: auto; background: #0f172a; color: #38bdf8; border-radius: 12px; padding: 16px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 13px; border: 1px solid #1e293b; line-height: 1.6;">\r
-             <div style="color: #64748b; border-bottom: 1px solid #1e293b; padding-bottom: 8px; margin-bottom: 8px;">Waiting for interaction...</div>\r
-          </div>\r
-        </div>\r
-      </div>\r
-    
-<script>
-(function() {
-  // Wire playground controls\r
-    setTimeout(() => {\r
-      const toolbar = document.getElementById('pg-toolbar');\r
-      if (!toolbar) return;\r
-\r
-      const log = document.getElementById('pg-log');\r
-      const addLog = msg => {\r
-        if (log.firstChild && log.firstChild.textContent.startsWith('Waiting')) log.innerHTML = '';\r
-        const line = document.createElement('div');\r
-        line.style.marginBottom = '2px';\r
-        line.textContent = \`> [\${new Date().toLocaleTimeString()}] \${msg}\`;\r
-        log.prepend(line);\r
-      };\r
-\r
-      document.getElementById('clearPgLog')?.addEventListener('click', () => {\r
-        log.innerHTML = '<div style="color: #64748b; border-bottom: 1px solid #1e293b; padding-bottom: 8px; margin-bottom: 8px;">Waiting for interaction...</div>';\r
-      });\r
-\r
-      toolbar.addEventListener('toolbarItemClick', e => addLog(\`click: \${e.detail.item.id}\`));\r
-      toolbar.addEventListener('toolbarItemChange', e => addLog(\`change: \${e.detail.item.id} = \${JSON.stringify(e.detail.value)}\`));\r
-      toolbar.addEventListener('toolbarOverflowChange', e => addLog(\`overflow: [\${e.detail.overflowIds.join(', ')}]\`));\r
-\r
-      const update = () => {\r
-        toolbar.variant = document.getElementById('pg-variant').value;\r
-        toolbar.size = document.getElementById('pg-size').value;\r
-        toolbar.rounded = document.getElementById('pg-rounded').checked;\r
-        toolbar.bordered = document.getElementById('pg-bordered').checked;\r
-        toolbar.disabled = document.getElementById('pg-disabled').checked;\r
-        toolbar.loading = document.getElementById('pg-loading').checked;\r
-        toolbar.alignment = document.getElementById('pg-align').value;\r
-      };\r
-\r
-      ['pg-variant', 'pg-size', 'pg-align'].forEach(id => document.getElementById(id)?.addEventListener('dropdownChange', update));\r
-      ['pg-rounded', 'pg-bordered', 'pg-disabled', 'pg-loading'].forEach(id => document.getElementById(id)?.addEventListener('checkboxChange', update));\r
-    }, 100);\r
-\r
-    wireEvents();
-})();
 <\/script>`}],"top-bar":[{title:`Basic Top Bar`,description:`A sticky top bar with company branding and user profile menu.`,html:`<div class="demo-block">\r
           <h3>Basic Top Bar</h3>\r
           <p>A sticky top bar with company branding and user profile menu.</p>\r
@@ -60749,197 +60791,197 @@ await manager.loadLayout(saved);</code></pre>\r
         if (showShadowCheck) showShadowCheck.addEventListener('checkboxChange', updatePlaygroundTopBar);\r
       }, 100);
 })();
-<\/script>`}],"transfer-list":[{title:`Interactive Playground`,description:`Toggle props and see the Transfer List in action.`,html:`<div class="demo-block">
-  <h3>Interactive Playground</h3>
-  <p style="color: #6b7280; margin-bottom: 20px;">Toggle props and see the Transfer List in action.</p>
-  
-  <div class="playground-settings" style="background: var(--bg-secondary); border: 1px solid var(--border-default); padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-    <div class="settings-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-      <div class="setting-item" style="display: flex; flex-direction: column; gap: 5px;">
-        <label style="color: var(--text-primary); font-size: 13px; font-weight: 600;">Mode</label>
-        <ui-dropdown id="pg-mode" value="list" options='[{"label":"List","value":"list"},{"label":"Tree","value":"tree"},{"label":"Table","value":"table"}]'></ui-dropdown>
-      </div>
-      <div class="setting-item" style="display: flex; flex-direction: column; gap: 5px;">
-        <label style="color: var(--text-primary); font-size: 13px; font-weight: 600;">Search Placeholder</label>
-        <ui-input id="pg-searchPlaceholder" value="Search items..."></ui-input>
-      </div>
-      <div class="setting-item" style="display: flex; flex-direction: column; gap: 5px;">
-        <label style="color: var(--text-primary); font-size: 13px; font-weight: 600;">Max Selected Items</label>
-        <ui-number-input id="pg-max" value="10" min="1"></ui-number-input>
-      </div>
-      <div class="setting-item" style="display: flex; flex-direction: column; gap: 5px;">
-         <label style="color: var(--text-primary); font-size: 13px; font-weight: 600;">List Height</label>
-         <ui-input id="pg-height" value="300px"></ui-input>
-      </div>
-    </div>
+<\/script>`}],"transfer-list":[{title:`🎮 Interactive Playground`,description:`Toggle props and see the Transfer List in action.`,html:`<div class="demo-block">\r
+        <h3>🎮 Interactive Playground</h3>\r
+        <p style="color: #6b7280; margin-bottom: 20px;">Toggle props and see the Transfer List in action.</p>\r
+        \r
+        <div class="playground-settings" style="background: var(--bg-secondary); border: 1px solid var(--border-default);">\r
+          <div class="settings-grid">\r
+            <div class="setting-item">\r
+              <label style="color: var(--text-primary);">Mode</label>\r
+              <ui-dropdown id="pg-mode" value="list" options='[{"label":"List","value":"list"},{"label":"Tree","value":"tree"},{"label":"Table","value":"table"}]'></ui-dropdown>\r
+            </div>\r
+            <div class="setting-item">\r
+              <label style="color: var(--text-primary);">Search Placeholder</label>\r
+              <ui-input id="pg-searchPlaceholder" value="Search items..."></ui-input>\r
+            </div>\r
+            <div class="setting-item">\r
+              <label style="color: var(--text-primary);">Max Selected Items</label>\r
+              <ui-number-input id="pg-max" value="10" min="1"></ui-number-input>\r
+            </div>\r
+            <div class="setting-item">\r
+               <label style="color: var(--text-primary);">List Height</label>\r
+               <ui-input id="pg-height" value="300px"></ui-input>\r
+            </div>\r
+          </div>\r
+          \r
+          <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--border-default);">\r
+            <ui-checkbox id="pg-searchable" label="Searchable" checked="true"></ui-checkbox>\r
+            <ui-checkbox id="pg-enableDrag" label="Enable Drag" checked="true"></ui-checkbox>\r
+            <ui-checkbox id="pg-sortable" label="Sortable"></ui-checkbox>\r
+            <ui-checkbox id="pg-allowReorder" label="Allow Reorder" checked="true"></ui-checkbox>\r
+            <ui-checkbox id="pg-oneWay" label="One Way"></ui-checkbox>\r
+            <ui-checkbox id="pg-pagination" label="Pagination"></ui-checkbox>\r
+            <ui-checkbox id="pg-loading" label="Loading"></ui-checkbox>\r
+          </div>\r
+        </div>\r
+\r
+        <div id="playgroundPreview" style="background: white; padding: 20px; border: 1px dashed #d1d5db; border-radius: 8px;">\r
+          <ui-transfer-list id="playground-component" icon-library="lucide"></ui-transfer-list>\r
+        </div>\r
+        \r
+        <div id="pg-events" style="margin-top: 20px; padding: 15px; background: #f8fafc; border-radius: 6px; font-family: monospace; font-size: 12px; max-height: 150px; overflow: auto; border: 1px solid #e2e8f0;">\r
+          <div style="color: #64748b; margin-bottom: 5px;">Events Log:</div>\r
+          <div id="pg-log-content"></div>\r
+        </div>\r
+\r
+        <div style="margin-top: 20px; background: #1e293b; padding: 16px; border-radius: 8px; position: relative;">\r
+          <ui-button onclick="copyTransferCode()" id="copyTransferBtn" variant="outline" color="secondary" label="Copy" size="md"yle="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.1); color: white;"></ui-button>\r
+          <code id="transferCodeBlock" style="color: #e2e8f0; font-family: monospace; font-size: 13px; display: block; overflow-x: auto; padding-right: 50px; white-space: pre-wrap;">\r
+            &lt;ui-transfer-list ...&gt;&lt;/ui-transfer-list&gt;\r
+          </code>\r
+        </div>\r
+      </div>\r
     
-    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--border-default);">
-      <ui-checkbox id="pg-searchable" label="Searchable" checked="true"></ui-checkbox>
-      <ui-checkbox id="pg-enableDrag" label="Enable Drag" checked="true"></ui-checkbox>
-      <ui-checkbox id="pg-sortable" label="Sortable"></ui-checkbox>
-      <ui-checkbox id="pg-allowReorder" label="Allow Reorder" checked="true"></ui-checkbox>
-      <ui-checkbox id="pg-oneWay" label="One Way"></ui-checkbox>
-      <ui-checkbox id="pg-pagination" label="Pagination"></ui-checkbox>
-      <ui-checkbox id="pg-loading" label="Loading"></ui-checkbox>
-    </div>
-  </div>
-
-  <div id="playgroundPreview" style="background: white; padding: 20px; border: 1px dashed #d1d5db; border-radius: 8px;">
-    <ui-transfer-list id="playground-component" icon-library="lucide"></ui-transfer-list>
-  </div>
-  
-  <div id="pg-events" style="margin-top: 20px; padding: 15px; background: #f8fafc; border-radius: 6px; font-family: monospace; font-size: 12px; max-height: 150px; overflow: auto; border: 1px solid #e2e8f0;">
-    <div style="color: #64748b; margin-bottom: 5px;">Events Log:</div>
-    <div id="pg-log-content"></div>
-  </div>
-
-  <div style="margin-top: 20px; background: #1e293b; padding: 16px; border-radius: 8px; position: relative;">
-    <ui-button id="copyTransferBtn" variant="outline" color="secondary" label="Copy" size="md" style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.1); color: white;"></ui-button>
-    <code id="transferCodeBlock" style="color: #e2e8f0; font-family: monospace; font-size: 13px; display: block; overflow-x: auto; padding-right: 50px; white-space: pre-wrap;">&lt;ui-transfer-list ...&gt;&lt;/ui-transfer-list&gt;</code>
-  </div>
-</div>
-
 <script>
 (function() {
-  const el = document.getElementById('playground-component');
-  if (!el) return;
-
-  window.copyTransferCode = () => {
-    const code = document.getElementById('transferCodeBlock').innerText;
-    const btn = document.getElementById('copyTransferBtn');
-
-    navigator.clipboard.writeText(code).then(() => {
-      const originalText = btn.innerText;
-      btn.innerText = 'Copied!';
-      btn.style.background = '#10b981';
-
-      setTimeout(() => {
-        btn.innerText = originalText;
-        btn.style.background = 'rgba(255,255,255,0.1)';
-      }, 2000);
-    });
-  };
-
-  window.updateTransferCode = () => {
-    const el = document.getElementById('playground-component');
-    const codeBlock = document.getElementById('transferCodeBlock');
-    if (!el || !codeBlock) return;
-
-    let props = '';
-    if (el.mode && el.mode !== 'list') props += ' mode="' + el.mode + '"';
-    if (el.searchable) props += ' searchable';
-    if (el.enableDrag) props += ' enable-drag';
-    if (el.sortable) props += ' sortable';
-    if (el.allowReorder) props += ' allow-reorder';
-    if (el.oneWay) props += ' one-way';
-    if (el.pagination) props += ' pagination';
-    if (el.loading) props += ' loading';
-    if (el.searchPlaceholder && el.searchPlaceholder !== 'Search...') props += ' search-placeholder="' + el.searchPlaceholder + '"';
-    if (el.max && el.max !== 999) props += ' max="' + el.max + '"';
-    if (el.height && el.height !== '300px') props += ' height="' + el.height + '"';
-
-    let scriptStr = '';
-    if (el.mode === 'tree' || el.mode === 'table') {
-      scriptStr += '\\n  // Data Setup for ' + el.mode + ' mode\\n  transferList.sourceItems = items;';
-      if (el.mode === 'table') scriptStr += '\\n  transferList.columns = columns;';
-    } else {
-      scriptStr += '\\n  // Items setup\\n  transferList.sourceItems = items;';
+  window.copyTransferCode = () => {\r
+      const code = document.getElementById('transferCodeBlock').innerText;\r
+      const btn = document.getElementById('copyTransferBtn');\r
+\r
+      navigator.clipboard.writeText(code).then(() => {\r
+        const originalText = btn.innerText;\r
+        btn.innerText = 'Copied!';\r
+        btn.style.background = '#10b981';\r
+\r
+        setTimeout(() => {\r
+          btn.innerText = originalText;\r
+          btn.style.background = 'rgba(255,255,255,0.1)';\r
+        }, 2000);\r
+      });\r
+    };\r
+\r
+    window.updateTransferCode = () => {\r
+      const el = document.getElementById('playground-component');\r
+      const codeBlock = document.getElementById('transferCodeBlock');\r
+      if (!el || !codeBlock) return;\r
+\r
+      let props = '';\r
+      if (el.mode && el.mode !== 'list') props += \` mode="\${el.mode}"\`;\r
+      if (el.searchable) props += \` searchable\`;\r
+      if (el.enableDrag) props += \` enable-drag\`;\r
+      if (el.sortable) props += \` sortable\`;\r
+      if (el.allowReorder) props += \` allow-reorder\`;\r
+      if (el.oneWay) props += \` one-way\`;\r
+      if (el.pagination) props += \` pagination\`;\r
+      if (el.loading) props += \` loading\`;\r
+      if (el.searchPlaceholder && el.searchPlaceholder !== 'Search...') props += \` search-placeholder="\${el.searchPlaceholder}"\`;\r
+      if (el.max && el.max !== 999) props += \` max="\${el.max}"\`;\r
+      if (el.height && el.height !== '300px') props += \` height="\${el.height}"\`;\r
+\r
+      let scriptStr = '';\r
+      if (el.mode === 'tree' || el.mode === 'table') {\r
+        scriptStr += \`\\n  // Data Setup for \${el.mode} mode\\n  transferList.sourceItems = items;\`;\r
+        if (el.mode === 'table') scriptStr += \`\\n  transferList.columns = columns;\`;\r
+      } else {\r
+        scriptStr += \`\\n  // Items setup\\n  transferList.sourceItems = items;\`;\r
+      }\r
+\r
+      codeBlock.innerText = \`<ui-transfer-list icon-library="lucide"\${props}></ui-transfer-list>\\n<script>\${scriptStr}\\n<\/script>\`;\r
+    };\r
+\r
+    window.updatePlayground = () => {\r
+      const el = document.getElementById('playground-component');\r
+      if (!el) return;\r
+\r
+      const mode = document.getElementById('pg-mode').value;\r
+      const searchable = document.getElementById('pg-searchable').checked;\r
+      const enableDrag = document.getElementById('pg-enableDrag').checked;\r
+      const sortable = document.getElementById('pg-sortable').checked;\r
+      const allowReorder = document.getElementById('pg-allowReorder').checked;\r
+      const oneWay = document.getElementById('pg-oneWay').checked;\r
+      const pagination = document.getElementById('pg-pagination').checked;\r
+      const loading = document.getElementById('pg-loading').checked;\r
+      const searchPlaceholder = document.getElementById('pg-searchPlaceholder').value;\r
+      const max = parseInt(document.getElementById('pg-max').value) || 999;\r
+      const height = document.getElementById('pg-height').value || '300px';\r
+\r
+      // Set Props\r
+      el.mode = mode;\r
+      el.searchable = searchable;\r
+      el.enableDrag = enableDrag;\r
+      el.sortable = sortable;\r
+      el.allowReorder = allowReorder;\r
+      el.oneWay = oneWay;\r
+      el.pagination = pagination;\r
+      el.loading = loading;\r
+      el.searchPlaceholder = searchPlaceholder;\r
+      el.max = max;\r
+      el.height = height;\r
+\r
+      // Update Sample Data based on mode\r
+      if (mode === 'tree') {\r
+        el.sourceItems = treeItems;\r
+        el.targetItems = [];\r
+      } else if (mode === 'table') {\r
+        el.columns = tableColumns;\r
+        el.sourceItems = sourceItems;\r
+        el.targetItems = [];\r
+      } else {\r
+        el.sourceItems = pagination\r
+          ? Array.from({ length: 30 }, (_, i) => ({\r
+              key: i,\r
+              label: \`Item \${i + 1}\`,\r
+              description: \`Pageable item \${i + 1}\`,\r
+            }))\r
+          : sourceItems;\r
+        el.targetItems = [];\r
+      }\r
+      window.updateTransferCode();\r
+    };\r
+\r
+    const setupListeners = () => {\r
+      const modeDrop = document.getElementById('pg-mode');\r
+      const searchInput = document.getElementById('pg-searchPlaceholder');\r
+      const maxInput = document.getElementById('pg-max');\r
+      const heightInput = document.getElementById('pg-height');\r
+\r
+      const searchableCheck = document.getElementById('pg-searchable');\r
+      const drugCheck = document.getElementById('pg-enableDrag');\r
+      const sortCheck = document.getElementById('pg-sortable');\r
+      const reorderCheck = document.getElementById('pg-allowReorder');\r
+      const onewayCheck = document.getElementById('pg-oneWay');\r
+      const paginationCheck = document.getElementById('pg-pagination');\r
+      const loadingCheck = document.getElementById('pg-loading');\r
+\r
+      if (modeDrop) modeDrop.addEventListener('dropdownChange', updatePlayground);\r
+      if (searchInput) searchInput.addEventListener('inputChange', updatePlayground);\r
+      if (maxInput) maxInput.addEventListener('inputChange', updatePlayground);\r
+      if (heightInput) heightInput.addEventListener('inputChange', updatePlayground);\r
+\r
+      if (searchableCheck) searchableCheck.addEventListener('checkboxChange', updatePlayground);\r
+      if (drugCheck) drugCheck.addEventListener('checkboxChange', updatePlayground);\r
+      if (sortCheck) sortCheck.addEventListener('checkboxChange', updatePlayground);\r
+      if (reorderCheck) reorderCheck.addEventListener('checkboxChange', updatePlayground);\r
+      if (onewayCheck) onewayCheck.addEventListener('checkboxChange', updatePlayground);\r
+      if (paginationCheck) paginationCheck.addEventListener('checkboxChange', updatePlayground);\r
+      if (loadingCheck) loadingCheck.addEventListener('checkboxChange', updatePlayground);\r
+    };\r
+\r
+    setTimeout(setupListeners, 100);\r
+\r
+    const el = document.getElementById('playground-component');\r
+    if (el) {\r
+      el.addEventListener('transferChange', e => {\r
+        const log = document.getElementById('pg-log-content');\r
+        if (log) {\r
+          const div = document.createElement('div');\r
+          div.textContent = \`[TransferChange] Selected: \${e.detail.target.length}\`;\r
+          log.prepend(div);\r
+        }\r
+      });\r
+      updatePlayground();\r
     }
-
-    codeBlock.innerText = '<ui-transfer-list icon-library="lucide"' + props + '></ui-transfer-list>\\n<' + 'script>' + scriptStr + '\\n<' + '/script>';
-  };
-
-  window.updatePlayground = () => {
-    const el = document.getElementById('playground-component');
-    if (!el) return;
-
-    const mode = document.getElementById('pg-mode').value;
-    const searchable = document.getElementById('pg-searchable').checked;
-    const enableDrag = document.getElementById('pg-enableDrag').checked;
-    const sortable = document.getElementById('pg-sortable').checked;
-    const allowReorder = document.getElementById('pg-allowReorder').checked;
-    const oneWay = document.getElementById('pg-oneWay').checked;
-    const pagination = document.getElementById('pg-pagination').checked;
-    const loading = document.getElementById('pg-loading').checked;
-    const searchPlaceholder = document.getElementById('pg-searchPlaceholder').value;
-    const max = parseInt(document.getElementById('pg-max').value) || 999;
-    const height = document.getElementById('pg-height').value || '300px';
-
-    // Set Props
-    el.mode = mode;
-    el.searchable = searchable;
-    el.enableDrag = enableDrag;
-    el.sortable = sortable;
-    el.allowReorder = allowReorder;
-    el.oneWay = oneWay;
-    el.pagination = pagination;
-    el.loading = loading;
-    el.searchPlaceholder = searchPlaceholder;
-    el.max = max;
-    el.height = height;
-
-    // Update Sample Data based on mode
-    if (mode === 'tree') {
-      el.sourceItems = window.treeItems || [];
-      el.targetItems = [];
-    } else if (mode === 'table') {
-      el.columns = window.tableColumns || [];
-      el.sourceItems = window.sourceItems || [];
-      el.targetItems = [];
-    } else {
-      el.sourceItems = pagination
-        ? Array.from({ length: 30 }, (_, i) => ({
-            key: i,
-            label: 'Item ' + (i + 1),
-            description: 'Pageable item ' + (i + 1),
-          }))
-        : (window.sourceItems || []);
-      el.targetItems = [];
-    }
-    window.updateTransferCode();
-  };
-
-  const setupListeners = () => {
-    const modeDrop = document.getElementById('pg-mode');
-    const searchInput = document.getElementById('pg-searchPlaceholder');
-    const maxInput = document.getElementById('pg-max');
-    const heightInput = document.getElementById('pg-height');
-
-    const searchableCheck = document.getElementById('pg-searchable');
-    const drugCheck = document.getElementById('pg-enableDrag');
-    const sortCheck = document.getElementById('pg-sortable');
-    const reorderCheck = document.getElementById('pg-allowReorder');
-    const onewayCheck = document.getElementById('pg-oneWay');
-    const paginationCheck = document.getElementById('pg-pagination');
-    const loadingCheck = document.getElementById('pg-loading');
-
-    if (modeDrop) modeDrop.addEventListener('dropdownChange', window.updatePlayground);
-    if (searchInput) searchInput.addEventListener('inputChange', window.updatePlayground);
-    if (maxInput) maxInput.addEventListener('inputChange', window.updatePlayground);
-    if (heightInput) heightInput.addEventListener('inputChange', window.updatePlayground);
-
-    if (searchableCheck) searchableCheck.addEventListener('checkboxChange', window.updatePlayground);
-    if (drugCheck) drugCheck.addEventListener('checkboxChange', window.updatePlayground);
-    if (sortCheck) sortCheck.addEventListener('checkboxChange', window.updatePlayground);
-    if (reorderCheck) reorderCheck.addEventListener('checkboxChange', window.updatePlayground);
-    if (onewayCheck) onewayCheck.addEventListener('checkboxChange', window.updatePlayground);
-    if (paginationCheck) paginationCheck.addEventListener('checkboxChange', window.updatePlayground);
-    if (loadingCheck) loadingCheck.addEventListener('checkboxChange', window.updatePlayground);
-  };
-
-  setTimeout(setupListeners, 100);
-
-  el.addEventListener('transferChange', e => {
-    const log = document.getElementById('pg-log-content');
-    if (log) {
-      const div = document.createElement('div');
-      div.textContent = '[TransferChange] Selected: ' + e.detail.target.length;
-      log.prepend(div);
-    }
-  });
-
-  document.getElementById('copyTransferBtn').addEventListener('click', window.copyTransferCode);
-  window.updatePlayground();
 })();
 <\/script>`},{title:`Reordering & Constraints`,description:`Manual reordering in target list and max selection limit (Max: 3).`,html:`<div class="demo-block">\r
         <h3>Reordering & Constraints</h3>\r
@@ -61009,23 +61051,27 @@ await manager.loadLayout(saved);</code></pre>\r
       el.sourceItems = sourceItems;\r
     }
 })();
-<\/script>`},{title:`Pagination & Performance`,description:`Pagination logic for large datasets (50 items).`,html:`<div class="demo-block">
-  <h3>Pagination & Performance</h3>
-  <p style="color: #6b7280; margin-bottom: 12px;">Pagination logic for large datasets (50 items).</p>
-  <ui-transfer-list pagination="true" page-size="5" id="pagination-demo-list" icon-library="lucide"></ui-transfer-list>
-</div>
+<\/script>`},{title:`Pagination & Performance`,description:`Pagination logic for large datasets (50 items).`,html:`<div class="demo-block">\r
+        <h3>Pagination & Performance</h3>\r
+        <p style="color: #6b7280; margin-bottom: 12px;">Pagination logic for large datasets (50 items).</p>\r
+        <ui-transfer-list pagination="true" page-size="5" id="pagination-demo-list" icon-library="lucide"></ui-transfer-list>\r
+      </div>\r
+    
 <script>
 (function() {
-  setTimeout(() => {
-    const el = document.getElementById('pagination-demo-list');
-    if (el) {
-      el.sourceItems = Array.from({ length: 50 }, (_, i) => ({
-        key: i,
-        label: 'Item ' + (i + 1),
-        description: 'Description for item ' + (i + 1),
-      }));
-    }
-  }, 50);
+  ,\r
+      description: \`Description for item \${i + 1}\`,\r
+    }));\r
+\r
+    container.innerHTML = \`\r
+      <div class="demo-block">\r
+        <h3>Pagination & Performance</h3>\r
+        <p style="color: #6b7280; margin-bottom: 12px;">Pagination logic for large datasets (50 items).</p>\r
+        <ui-transfer-list pagination="true" page-size="5" id="pagination-demo-list" icon-library="lucide"></ui-transfer-list>\r
+      </div>\r
+    \`;\r
+    const el = document.getElementById('pagination-demo-list');\r
+    if (el) el.sourceItems = manyItems;
 })();
 <\/script>`},{title:`One-Way Mode`,description:`Copy items instead of moving them. 'Source' remains constant.`,html:`<div class="demo-block">\r
         <h3>One-Way Mode</h3>\r
@@ -61409,1170 +61455,5 @@ await manager.loadLayout(saved);</code></pre>\r
     document.getElementById('color-picker').addEventListener('colorChange', e => window.updatePlaygroundTree('connectorColor', e.detail.value));\r
   }, 100);
 })();
-<\/script>`}],tooltip:[{title:`Basic Tooltips`,html:`<div class="demo-block">
-  <h3>Basic Tooltips</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">Hover over each button to trigger a tooltip from any direction.</p>
-  <div style="display:flex;gap:16px;flex-wrap:wrap;padding:8px 0;">
-    <ui-tooltip content="Tooltip on top" position="top">
-      <ui-button slot="target" variant="outline" color="primary">Top</ui-button>
-    </ui-tooltip>
-    <ui-tooltip content="Tooltip on the bottom" position="bottom">
-      <ui-button slot="target" variant="outline" color="secondary">Bottom</ui-button>
-    </ui-tooltip>
-    <ui-tooltip content="Tooltip on the left" position="left">
-      <ui-button slot="target" variant="outline" color="success">Left</ui-button>
-    </ui-tooltip>
-    <ui-tooltip content="Tooltip on the right" position="right">
-      <ui-button slot="target" variant="outline" color="warning">Right</ui-button>
-    </ui-tooltip>
-  </div>
-</div>`},{title:`Tooltip Variants`,html:`<div class="demo-block">
-  <h3>Tooltip Variants</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">Each tooltip uses a different visual color theme.</p>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;padding:8px 0;">
-    <ui-tooltip content="Dark tooltip" variant="dark" position="top">
-      <ui-button slot="target" variant="filled" color="primary">Dark</ui-button>
-    </ui-tooltip>
-    <ui-tooltip content="Success tooltip" variant="success" position="top">
-      <ui-button slot="target" variant="filled" color="success">Success</ui-button>
-    </ui-tooltip>
-    <ui-tooltip content="Warning tooltip" variant="warning" position="top">
-      <ui-button slot="target" variant="filled" color="warning">Warning</ui-button>
-    </ui-tooltip>
-    <ui-tooltip content="Danger tooltip" variant="danger" position="top">
-      <ui-button slot="target" variant="filled" color="danger">Danger</ui-button>
-    </ui-tooltip>
-    <ui-tooltip content="Info tooltip" variant="info" position="top">
-      <ui-button slot="target" variant="filled" color="info">Info</ui-button>
-    </ui-tooltip>
-    <ui-tooltip content="Glass tooltip" variant="glass" position="top">
-      <ui-button slot="target" variant="outline" color="primary">Glass</ui-button>
-    </ui-tooltip>
-  </div>
-</div>`},{title:`Trigger Modes`,html:`<div class="demo-block">
-  <h3>Trigger Modes</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">Tooltips can be triggered by hover, click, or focus.</p>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;padding:8px 0;">
-    <ui-tooltip content="Hover to show" trigger="hover" position="top">
-      <ui-button slot="target" variant="outline" color="primary">Hover</ui-button>
-    </ui-tooltip>
-    <ui-tooltip content="Click to toggle" trigger="click" position="top">
-      <ui-button slot="target" variant="outline" color="secondary">Click</ui-button>
-    </ui-tooltip>
-    <ui-tooltip content="Focus the input to show" trigger="focus" position="bottom">
-      <input slot="target" type="text" placeholder="Focus me" style="padding:8px 12px;border:1px solid #374151;border-radius:6px;background:#1e293b;color:#f8fafc;" />
-    </ui-tooltip>
-  </div>
-</div>`},{title:`Tooltip Sizes`,html:`<div class="demo-block">
-  <h3>Tooltip Sizes</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">Tooltips support sm, md, and lg size variants.</p>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;padding:8px 0;">
-    <ui-tooltip content="Small tooltip" size="sm" position="top">
-      <ui-button slot="target" variant="outline" color="info" size="sm">Small</ui-button>
-    </ui-tooltip>
-    <ui-tooltip content="Medium tooltip — the default size" size="md" position="top">
-      <ui-button slot="target" variant="outline" color="primary" size="md">Medium</ui-button>
-    </ui-tooltip>
-    <ui-tooltip content="Large tooltip with more padding and text" size="lg" position="top">
-      <ui-button slot="target" variant="outline" color="secondary" size="lg">Large</ui-button>
-    </ui-tooltip>
-  </div>
-</div>`},{title:`Shape Variations`,html:`<div class="demo-block">
-  <h3>Shape Variations</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">Control corner rounding with the shape prop.</p>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;padding:8px 0;">
-    <ui-tooltip content="Rounded corners" shape="rounded" position="top">
-      <ui-button slot="target" variant="filled" color="primary">Rounded</ui-button>
-    </ui-tooltip>
-    <ui-tooltip content="Pill shaped tooltip" shape="pill" position="top">
-      <ui-button slot="target" variant="filled" color="secondary">Pill</ui-button>
-    </ui-tooltip>
-    <ui-tooltip content="Square corners" shape="square" position="top">
-      <ui-button slot="target" variant="filled" color="success">Square</ui-button>
-    </ui-tooltip>
-  </div>
-</div>`},{title:`Arrow Toggle`,html:`<div class="demo-block">
-  <h3>Arrow Toggle</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">Tooltips can show or hide the directional arrow pointer.</p>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;padding:8px 0;">
-    <ui-tooltip content="Tooltip with arrow (default)" arrow="true" position="top">
-      <ui-button slot="target" variant="outline" color="primary">With Arrow</ui-button>
-    </ui-tooltip>
-    <ui-tooltip content="Tooltip without arrow" arrow="false" position="top">
-      <ui-button slot="target" variant="outline" color="secondary">No Arrow</ui-button>
-    </ui-tooltip>
-  </div>
-</div>`},{title:`Tooltip on Various Elements`,html:`<div class="demo-block">
-  <h3>Tooltip on Various Elements</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">Tooltips can be attached to any element using slot="target".</p>
-  <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;padding:8px 0;">
-    <ui-tooltip content="Hover over this icon" position="top">
-      <ui-icon slot="target" name="info" library="lucide" style="cursor:pointer;color:#60A5FA;font-size:24px;"></ui-icon>
-    </ui-tooltip>
-    <ui-tooltip content="This badge has a tooltip" position="right">
-      <ui-badge slot="target" label="New" color="success"></ui-badge>
-    </ui-tooltip>
-    <ui-tooltip content="Custom styled text" variant="glass" position="top">
-      <span slot="target" style="text-decoration:underline dotted;cursor:help;color:#a78bfa;">Hover over text</span>
-    </ui-tooltip>
-    <ui-tooltip content="Action button tooltip" variant="info" position="bottom">
-      <ui-button slot="target" variant="filled" color="info" size="sm">Action</ui-button>
-    </ui-tooltip>
-  </div>
-</div>`},{title:`Entrance Animations`,html:`<div class="demo-block">
-  <h3>Entrance Animations</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">Choose how the tooltip animates into view.</p>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;padding:8px 0;">
-    <ui-tooltip content="Fade in" animation="fade-in" position="top">
-      <ui-button slot="target" variant="outline" color="primary">Fade In</ui-button>
-    </ui-tooltip>
-    <ui-tooltip content="Scale pop" animation="scale" position="top">
-      <ui-button slot="target" variant="outline" color="success">Scale</ui-button>
-    </ui-tooltip>
-    <ui-tooltip content="Slide in" animation="slide" position="bottom">
-      <ui-button slot="target" variant="outline" color="warning">Slide</ui-button>
-    </ui-tooltip>
-    <ui-tooltip content="No animation" animation="none" position="top">
-      <ui-button slot="target" variant="outline" color="secondary">None</ui-button>
-    </ui-tooltip>
-  </div>
-</div>`}],"resizable-panel":[{title:`Basic Horizontal Split`,html:`<div class="demo-block">
-  <h3>Basic Horizontal Split</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">Drag the handle to resize panels side by side.</p>
-  <ui-resizable-panel direction="horizontal" style="height:200px;display:block;">
-    <div slot="panel-1" style="height:100%;display:flex;align-items:center;justify-content:center;background:#1e293b;color:#10B981;font-weight:600;font-size:1.1rem;">
-      Panel 1
-    </div>
-    <div slot="panel-2" style="height:100%;display:flex;align-items:center;justify-content:center;background:#0f172a;color:#60A5FA;font-weight:600;font-size:1.1rem;">
-      Panel 2
-    </div>
-  </ui-resizable-panel>
-</div>`},{title:`Vertical Split`,html:`<div class="demo-block">
-  <h3>Vertical Split</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">Panels stacked top-to-bottom with a draggable horizontal handle.</p>
-  <ui-resizable-panel direction="vertical" style="height:280px;display:block;">
-    <div slot="panel-1" style="height:100%;display:flex;align-items:center;justify-content:center;background:#1e293b;color:#a78bfa;font-weight:600;font-size:1.1rem;">
-      Top Panel
-    </div>
-    <div slot="panel-2" style="height:100%;display:flex;align-items:center;justify-content:center;background:#0f172a;color:#f472b6;font-weight:600;font-size:1.1rem;">
-      Bottom Panel
-    </div>
-  </ui-resizable-panel>
-</div>`},{title:`Min & Max Size Constraints`,html:`<div class="demo-block">
-  <h3>Min &amp; Max Size Constraints</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">Set minimum and maximum panel sizes to prevent over-resizing.</p>
-  <ui-resizable-panel direction="horizontal" min-panel-size="20" max-panel-size="80" style="height:200px;display:block;">
-    <div slot="panel-1" style="height:100%;display:flex;align-items:center;justify-content:center;background:#1e293b;color:#fbbf24;font-weight:600;font-size:1rem;padding:16px;text-align:center;">
-      Min 20% / Max 80%<br/>
-      <span style="font-size:0.75rem;color:#6b7280;">Can't shrink below 20%</span>
-    </div>
-    <div slot="panel-2" style="height:100%;display:flex;align-items:center;justify-content:center;background:#0f172a;color:#34d399;font-weight:600;font-size:1rem;padding:16px;text-align:center;">
-      Constrained Partner
-    </div>
-  </ui-resizable-panel>
-</div>`},{title:`Themed Handles`,html:`<div class="demo-block">
-  <h3>Themed Handles</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">Customize handle colors and enable the grip icon indicator.</p>
-  <ui-resizable-panel
-    direction="horizontal"
-    handle-color="#374151"
-    handle-hover-color="#8B5CF6"
-    handle-size="8"
-    show-handle-icon="true"
-    style="height:200px;display:block;">
-    <div slot="panel-1" style="height:100%;display:flex;align-items:center;justify-content:center;background:#1e293b;color:#8B5CF6;font-weight:600;font-size:1.1rem;">
-      Violet Handle Theme
-    </div>
-    <div slot="panel-2" style="height:100%;display:flex;align-items:center;justify-content:center;background:#0f172a;color:#c4b5fd;font-weight:600;font-size:1.1rem;">
-      Drag the handle!
-    </div>
-  </ui-resizable-panel>
-</div>`},{title:`IDE Layout Example`,html:`<div class="demo-block">
-  <h3>IDE Layout Example</h3>
-  <p style="color:#6b7280;margin-bottom:16px;">A realistic code-editor style layout with file tree, editor, and output panels.</p>
-  <ui-resizable-panel direction="horizontal" style="height:300px;display:block;">
-    <div slot="panel-1" style="height:100%;background:#0f172a;padding:12px;overflow:auto;">
-      <p style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin:0 0 8px;">Explorer</p>
-      <div style="color:#94a3b8;font-size:13px;line-height:1.8;">
-        <div>📁 src</div>
-        <div style="padding-left:16px;">📄 App.tsx</div>
-        <div style="padding-left:16px;">📄 main.tsx</div>
-        <div>📁 components</div>
-        <div style="padding-left:16px;">📄 Button.tsx</div>
-      </div>
-    </div>
-    <div slot="panel-2" style="height:100%;background:#1e293b;padding:16px;font-family:monospace;font-size:13px;color:#e2e8f0;overflow:auto;">
-      <span style="color:#7dd3fc;">import</span> <span style="color:#f8fafc;">React</span> <span style="color:#7dd3fc;">from</span> <span style="color:#86efac;">'react'</span>;<br/>
-      <span style="color:#7dd3fc;">export default function</span> <span style="color:#fde68a;">App</span>() {<br/>
-      &nbsp;&nbsp;<span style="color:#7dd3fc;">return</span> &lt;<span style="color:#f87171;">div</span>&gt;Hello World&lt;/<span style="color:#f87171;">div</span>&gt;;<br/>
-      }
-    </div>
-  </ui-resizable-panel>
-</div>`}],"code-preview":[{title:`Multi-language Support`,description:`Perfect for React components where both JS and TS versions are provided.`,html:`<div class="demo-block">\r
-          <h3 style="margin-bottom: 12px; font-weight: 700; color: var(--text-primary);">Multi-language Support</h3>\r
-          <p style="color: var(--text-secondary); margin-bottom: 24px;">Perfect for React components where both JS and TS versions are provided.</p>\r
-          <ui-code-preview \r
-            id="mui-demo"\r
-            label="MUI Autocomplete Demo" \r
-            js-code="\${jsSample.replace(/"/g, '&quot;')}"\r
-            ts-code="\${tsSample.replace(/"/g, '&quot;')}"\r
-            html-code="\${htmlSample.replace(/"/g, '&quot;')}"\r
-            css-code="\${cssSample.replace(/"/g, '&quot;')}"\r
-            expanded="true"\r
-            show-reset="true"\r
-          ></ui-code-preview>\r
-        </div>`},{title:`HTML & CSS Tabs`,description:`Useful for showing markup and styling side-by-side.`,html:`<div class="demo-block">\r
-          <h3 style="margin-bottom: 12px; font-weight: 700; color: var(--text-primary);">HTML & CSS Tabs</h3>\r
-          <p style="color: var(--text-secondary); margin-bottom: 24px;">Useful for showing markup and styling side-by-side.</p>\r
-          <ui-code-preview \r
-            label="Hero Section" \r
-            html-code="\${htmlSample.replace(/"/g, '&quot;')}"\r
-            css-code="\${cssSample.replace(/"/g, '&quot;')}"\r
-            expanded="true"\r
-          ></ui-code-preview>\r
-        </div>`},{title:`Collapsible State`,description:`Default to collapsed to keep documentation clean. Expands with smooth animation.`,html:`<div class="demo-block">\r
-          <h3 style="margin-bottom: 12px; font-weight: 700; color: var(--text-primary);">Collapsible State</h3>\r
-          <p style="color: var(--text-secondary); margin-bottom: 24px;">Default to collapsed to keep documentation clean. Expands with smooth animation.</p>\r
-          <div style="background: var(--bg-secondary); border: 1px solid var(--border-default); border-radius: 12px; padding: 40px; margin-bottom: 16px; display: flex; justify-content: center;">\r
-               <div style="padding: 20px; background: var(--bg-primary); border: 1px solid var(--border-default); border-radius: 8px; box-shadow: var(--shadow-sm); color: var(--text-primary);">\r
-                  Component Preview Area\r
-               </div>\r
-          </div>\r
-          <ui-code-preview \r
-            label="View Source Code" \r
-            html-code="\${htmlSample.replace(/"/g, '&quot;')}"\r
-            expanded="false"\r
-          ></ui-code-preview>\r
-        </div>`},{title:`Dynamic Languages`,description:`Support for arbitrary languages (C#, Python, Java, etc.) via snippets prop.`,html:`<div class="demo-block">\r
-          <h3 style="margin-bottom: 12px; font-weight: 700; color: var(--text-primary);">Dynamic Languages</h3>\r
-          <p style="color: var(--text-secondary); margin-bottom: 24px;">Support for arbitrary languages (C#, Python, Java, etc.) via <code>snippets</code> prop.</p>\r
-          <div id="dynamic-lang-demo"></div>\r
-        </div>`}],icon:[{title:`Icon Library Showcase`,description:``,html:`<div class="demo-header">\r
-      <h1>Icon Component</h1>\r
-      <p>A versatile icon wrapper supporting 8+ major libraries, SVG paths, URLs, and emojis.</p>\r
-    </div>\r
-\r
-    <div class="demo-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 24px;">\r
-      <!-- 1. QuartzDS (Se Icons) -->\r
-      <div class="demo-card">\r
-        <div class="badge" style="float: right; background: #0f172a; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">ENTERPRISE</div>\r
-        <h3>QuartzDS (Se)</h3>\r
-        <p>Enterprise-grade icons from the core library.</p>\r
-        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
-          <ui-icon library="se" name="house" size="2rem" color="#6366f1"></ui-icon>\r
-          <ui-icon library="se" name="gear" size="2rem" color="#94a3b8"></ui-icon>\r
-          <ui-icon library="se" name="user" size="2rem" color="#10b981"></ui-icon>\r
-          <ui-icon library="se" name="bell" size="2rem" color="#f59e0b"></ui-icon>\r
-        </div>\r
-        <pre class="demo-code"><code>&lt;ui-icon library="se" name="house"&gt;&lt;/ui-icon&gt;</code></pre>\r
-      </div>\r
-\r
-      <!-- 2. FontAwesome 6 -->\r
-      <div class="demo-card">\r
-        <div class="badge" style="float: right; background: #10b981; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">POPULAR</div>\r
-        <h3>FontAwesome 6</h3>\r
-        <p>The world's most popular icon set.</p>\r
-        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
-          <ui-icon library="fontawesome" name="fa-solid fa-star" size="2rem" color="#fbbf24"></ui-icon>\r
-          <ui-icon library="fontawesome" name="fa-brands fa-github" size="2rem" color="#333"></ui-icon>\r
-          <ui-icon library="fontawesome" name="fa-solid fa-heart" size="2rem" color="#ef4444"></ui-icon>\r
-          <ui-icon library="fontawesome" name="fa-solid fa-rocket" size="2rem" color="#6366f1"></ui-icon>\r
-        </div>\r
-        <pre class="demo-code"><code>&lt;ui-icon library="fontawesome" name="fa-star"&gt;&lt;/ui-icon&gt;</code></pre>\r
-      </div>\r
-\r
-      <!-- 3. Icons8 (Line Awesome) -->\r
-      <div class="demo-card">\r
-        <div class="badge" style="float: right; background: #10b981; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">MODERN</div>\r
-        <h3>Icons8 (Line Awesome)</h3>\r
-        <p>Beautiful line-style replacements for FA.</p>\r
-        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
-          <ui-icon library="icons8" name="las la-home" size="2.5rem" color="#6366f1"></ui-icon>\r
-          <ui-icon library="icons8" name="lar la-envelope" size="2.5rem" color="#10b981"></ui-icon>\r
-          <ui-icon library="icons8" name="lab la-react" size="2.5rem" color="#61dafb"></ui-icon>\r
-          <ui-icon library="icons8" name="las la-cog" size="2.5rem" color="#94a3b8"></ui-icon>\r
-        </div>\r
-        <pre class="demo-code"><code>&lt;ui-icon library="icons8" name="home"&gt;&lt;/ui-icon&gt;</code></pre>\r
-      </div>\r
-\r
-      <!-- 4. Lucide Icons -->\r
-      <div class="demo-card">\r
-        <div class="badge" style="float: right; background: #6366f1; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">CLEAN</div>\r
-        <h3>Lucide</h3>\r
-        <p>Beautiful & consistent icons (Feather fork).</p>\r
-        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
-          <ui-icon library="lucide" name="flower" size="2rem" color="#10b981"></ui-icon>\r
-          <ui-icon library="lucide" name="activity" size="2rem" color="#f43f5e"></ui-icon>\r
-          <ui-icon library="lucide" name="shopping-cart" size="2rem" color="#6366f1"></ui-icon>\r
-          <ui-icon library="lucide" name="terminal" size="2rem" color="#334155"></ui-icon>\r
-        </div>\r
-        <pre class="demo-code"><code>&lt;ui-icon library="lucide" name="flower"&gt;&lt;/ui-icon&gt;</code></pre>\r
-      </div>\r
-\r
-      <!-- 5. Iconoir -->\r
-      <div class="demo-card">\r
-        <div class="badge" style="float: right; background: #f43f5e; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">MINIMAL</div>\r
-        <h3>Iconoir</h3>\r
-        <p>High-quality minimalist icon library.</p>\r
-        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
-          <ui-icon library="iconoir" name="home" size="2.2rem" color="#6366f1"></ui-icon>\r
-          <ui-icon library="iconoir" name="user" size="2.2rem" color="#ec4899"></ui-icon>\r
-          <ui-icon library="iconoir" name="settings" size="2.2rem" color="#94a3b8"></ui-icon>\r
-          <ui-icon library="iconoir" name="bell" size="2.2rem" color="#f59e0b"></ui-icon>\r
-        </div>\r
-        <pre class="demo-code"><code>&lt;ui-icon library="iconoir" name="home"&gt;&lt;/ui-icon&gt;</code></pre>\r
-      </div>\r
-\r
-      <!-- 6. Ionicons -->\r
-      <div class="demo-card">\r
-        <div class="badge" style="float: right; background: #4e8ef7; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">IONIC</div>\r
-        <h3>Ionicons</h3>\r
-        <p>Open source icons from the Ionic team.</p>\r
-        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
-          <ui-icon library="ionicons" name="heart" size="2rem" color="#ef4444"></ui-icon>\r
-          <ui-icon library="ionicons" name="logo-ionic" size="2rem" color="#4e8ef7"></ui-icon>\r
-          <ui-icon library="ionicons" name="cloud-upload" size="2rem" color="#10b981"></ui-icon>\r
-          <ui-icon library="ionicons" name="help-circle" size="2rem" color="#94a3b8"></ui-icon>\r
-        </div>\r
-        <pre class="demo-code"><code>&lt;ui-icon library="ionicons" name="heart"&gt;&lt;/ui-icon&gt;</code></pre>\r
-      </div>\r
-\r
-      <!-- 7. Bootstrap Icons -->\r
-      <div class="demo-card">\r
-        <div class="badge" style="float: right; background: #7952b3; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">BI</div>\r
-        <h3>Bootstrap Icons</h3>\r
-        <p>Official icons for the Bootstrap framework.</p>\r
-        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
-          <ui-icon library="bootstrap" name="bootstrap-fill" size="2rem" color="#7952b3"></ui-icon>\r
-          <ui-icon library="bootstrap" name="check-circle-fill" size="2rem" color="#198754"></ui-icon>\r
-          <ui-icon library="bootstrap" name="info-circle-fill" size="2rem" color="#0dcaf0"></ui-icon>\r
-          <ui-icon library="bootstrap" name="exclamation-triangle-fill" size="2rem" color="#ffc107"></ui-icon>\r
-        </div>\r
-        <pre class="demo-code"><code>&lt;ui-icon library="bootstrap" name="bootstrap"&gt;&lt;/ui-icon&gt;</code></pre>\r
-      </div>\r
-\r
-      <!-- 8. Google Material Symbols -->\r
-      <div class="demo-card">\r
-        <div class="badge" style="float: right; background: #4285f4; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">GOOGLE</div>\r
-        <h3>Google Material Symbols</h3>\r
-        <p>Variable font-based icons from Google.</p>\r
-        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
-          <ui-icon library="google" name="home" size="2.5rem" color="#4285f4"></ui-icon>\r
-          <ui-icon library="google" name="search" size="2.5rem" color="#34a853"></ui-icon>\r
-          <ui-icon library="google" name="settings" size="2.5rem" color="#fbbc05"></ui-icon>\r
-          <ui-icon library="google" name="favorite" size="2.5rem" color="#ea4335"></ui-icon>\r
-        </div>\r
-        <pre class="demo-code"><code>&lt;ui-icon library="google" name="home"&gt;&lt;/ui-icon&gt;</code></pre>\r
-      </div>\r
-\r
-      <!-- 9. Remix Icon -->\r
-      <div class="demo-card">\r
-        <div class="badge" style="float: right; background: #6366f1; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">REMIX</div>\r
-        <h3>Remix Icon</h3>\r
-        <p>Beautiful, neutral-style open-source icons.</p>\r
-        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
-          <ui-icon library="remixicon" name="ri-home-line" size="2.5rem" color="#6366f1"></ui-icon>\r
-          <ui-icon library="remixicon" name="ri-user-line" size="2.5rem" color="#ec4899"></ui-icon>\r
-          <ui-icon library="remixicon" name="ri-settings-3-line" size="2.5rem" color="#94a3b8"></ui-icon>\r
-          <ui-icon library="remixicon" name="ri-heart-fill" size="2.5rem" color="#ef4444"></ui-icon>\r
-        </div>\r
-        <pre class="demo-code"><code>&lt;ui-icon library="remixicon" name="ri-home-line"&gt;&lt;/ui-icon&gt;</code></pre>\r
-      </div>\r
-\r
-      <!-- 8. SVG Paths -->\r
-      <div class="demo-card">\r
-        <h3>SVG Paths</h3>\r
-        <p>Render custom icons using SVG path data directly.</p>\r
-        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
-          <ui-icon name="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" size="2rem" color="#6366f1"></ui-icon>\r
-          <ui-icon name="M12 2v20m10-10H2" size="2rem" color="#10b981"></ui-icon>\r
-          <ui-icon name="M5 13l4 4L19 7" size="2rem" color="#ef4444"></ui-icon>\r
-        </div>\r
-        <pre class="demo-code"><code>&lt;ui-icon name="M12 2L..."&gt;&lt;/ui-icon&gt;</code></pre>\r
-      </div>\r
-\r
-      <!-- 9. Image/URL Icons -->\r
-      <div class="demo-card">\r
-        <h3>URL & Brands</h3>\r
-        <p>Load external SVGs or brand logos.</p>\r
-        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
-          <ui-icon name="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/react.svg" size="2rem" color="#61dafb"></ui-icon>\r
-          <ui-icon name="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/vuejs.svg" size="2rem" color="#42b883"></ui-icon>\r
-          <ui-icon name="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/chrome.svg" size="2rem"></ui-icon>\r
-        </div>\r
-        <pre class="demo-code"><code>&lt;ui-icon name="https://..."&gt;&lt;/ui-icon&gt;</code></pre>\r
-      </div>\r
-\r
-      <!-- FontAwesome Gallery -->\r
-      <div class="demo-card" style="grid-column: 1 / -1; background: linear-gradient(to bottom right, #ffffff, #f8fafc);">\r
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px;">\r
-          <div>\r
-            <h3>FontAwesome Gallery</h3>\r
-            <p>A comprehensive set of icons categorized by style. Use the <code>library="fontawesome"</code> prop.</p>\r
-          </div>\r
-          <a href="https://fontawesome.com/icons" target="_blank" style="color: #6366f1; font-size: 12px; font-weight: 600; text-decoration: none; border: 1px solid rgba(99, 102, 241, 0.2); padding: 4px 12px; border-radius: 6px;">Browse All Icons →</a>\r
-        </div>\r
-        \r
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">\r
-          <!-- Solid -->\r
-          <div>\r
-            <h4 style="font-size: 12px; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 16px;">Solid Icons</h4>\r
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">\r
-              <div class="icon-box" title="fa-house"><ui-icon library="fontawesome" name="fa-solid fa-house" size="20px"></ui-icon></div>\r
-              <div class="icon-box" title="fa-user"><ui-icon library="fontawesome" name="fa-solid fa-user" size="20px"></ui-icon></div>\r
-              <div class="icon-box" title="fa-check"><ui-icon library="fontawesome" name="fa-solid fa-check" size="20px"></ui-icon></div>\r
-              <div class="icon-box" title="fa-magnifying-glass"><ui-icon library="fontawesome" name="fa-solid fa-magnifying-glass" size="20px"></ui-icon></div>\r
-              <div class="icon-box" title="fa-envelope"><ui-icon library="fontawesome" name="fa-solid fa-envelope" size="20px"></ui-icon></div>\r
-              <div class="icon-box" title="fa-gear"><ui-icon library="fontawesome" name="fa-solid fa-gear" size="20px"></ui-icon></div>\r
-              <div class="icon-box" title="fa-bell"><ui-icon library="fontawesome" name="fa-solid fa-bell" size="20px"></ui-icon></div>\r
-              <div class="icon-box" title="fa-location-dot"><ui-icon library="fontawesome" name="fa-solid fa-location-dot" size="20px"></ui-icon></div>\r
-            </div>\r
-          </div>\r
-\r
-          <!-- Regular / Outline -->\r
-          <div>\r
-            <h4 style="font-size: 12px; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 16px;">Regular (Outline)</h4>\r
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">\r
-              <div class="icon-box" title="fa-face-smile"><ui-icon library="fontawesome" name="fa-regular fa-face-smile" size="20px"></ui-icon></div>\r
-              <div class="icon-box" title="fa-circle-check"><ui-icon library="fontawesome" name="fa-regular fa-circle-check" size="20px"></ui-icon></div>\r
-              <div class="icon-box" title="fa-comment"><ui-icon library="fontawesome" name="fa-regular fa-comment" size="20px"></ui-icon></div>\r
-              <div class="icon-box" title="fa-copy"><ui-icon library="fontawesome" name="fa-regular fa-copy" size="20px"></ui-icon></div>\r
-              <div class="icon-box" title="fa-file-lines"><ui-icon library="fontawesome" name="fa-regular fa-file-lines" size="20px"></ui-icon></div>\r
-              <div class="icon-box" title="fa-image"><ui-icon library="fontawesome" name="fa-regular fa-image" size="20px"></ui-icon></div>\r
-              <div class="icon-box" title="fa-lightbulb"><ui-icon library="fontawesome" name="fa-regular fa-lightbulb" size="20px"></ui-icon></div>\r
-              <div class="icon-box" title="fa-paper-plane"><ui-icon library="fontawesome" name="fa-regular fa-paper-plane" size="20px"></ui-icon></div>\r
-            </div>\r
-          </div>\r
-\r
-          <!-- Brands -->\r
-          <div>\r
-            <h4 style="font-size: 12px; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em; margin-bottom: 16px;">Brand Icons</h4>\r
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">\r
-              <div class="icon-box" style="color: #1877f2;"><ui-icon library="fontawesome" name="fa-brands fa-facebook" size="20px"></ui-icon></div>\r
-              <div class="icon-box" style="color: #4cd964;"><ui-icon library="fontawesome" name="fa-brands fa-whatsapp" size="20px"></ui-icon></div>\r
-              <div class="icon-box" style="color: #1da1f2;"><ui-icon library="fontawesome" name="fa-brands fa-twitter" size="20px"></ui-icon></div>\r
-              <div class="icon-box" style="color: #ff0000;"><ui-icon library="fontawesome" name="fa-brands fa-youtube" size="20px"></ui-icon></div>\r
-              <div class="icon-box" style="color: #0077b5;"><ui-icon library="fontawesome" name="fa-brands fa-linkedin" size="20px"></ui-icon></div>\r
-              <div class="icon-box" style="color: #333;"><ui-icon library="fontawesome" name="fa-brands fa-github" size="20px"></ui-icon></div>\r
-              <div class="icon-box" style="color: #61dafb;"><ui-icon library="fontawesome" name="fa-brands fa-react" size="20px"></ui-icon></div>\r
-              <div class="icon-box" style="color: #ff3e00;"><ui-icon library="fontawesome" name="fa-brands fa-html5" size="20px"></ui-icon></div>\r
-            </div>\r
-          </div>\r
-        </div>\r
-      </div>\r
-\r
-      <!-- SVG Path Icons -->\r
-      <div class="demo-card">\r
-        <h3>SVG Paths</h3>\r
-        <p>Directly render custom vector paths.</p>\r
-        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
-          <ui-icon name="M12 2L2 7l10 5l10-5l-10-5zM2 17l10 5l10-5M2 12l10 5l10-5" size="2rem" color="#6366f1"></ui-icon>\r
-          <ui-icon name="M12 2v20m10-10H2" size="2rem" color="#10b981"></ui-icon>\r
-          <ui-icon name="M5 13l4 4L19 7" size="2rem" color="#ef4444"></ui-icon>\r
-        </div>\r
-        <pre class="demo-code"><code>&lt;ui-icon name="M12 2..."&gt;&lt;/ui-icon&gt;</code></pre>\r
-      </div>\r
-\r
-      <!-- Image/URL Icons -->\r
-      <div class="demo-card">\r
-        <h3>URL & Brands</h3>\r
-        <p>Load external SVGs or brand logos.</p>\r
-        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
-          <ui-icon name="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/react.svg" size="2rem" color="#61dafb"></ui-icon>\r
-          <ui-icon name="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/vuejs.svg" size="2rem" color="#42b883"></ui-icon>\r
-          <ui-icon name="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/chrome.svg" size="2rem"></ui-icon>\r
-        </div>\r
-        <pre class="demo-code"><code>&lt;ui-icon name="https://..."&gt;&lt;/ui-icon&gt;</code></pre>\r
-      </div>\r
-\r
-\r
-      <!-- Emoji -->\r
-      <div class="demo-card">\r
-        <div class="badge" style="float: right; background: #f97316; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">EMOJI</div>\r
-        <h3>Emoji</h3>\r
-        <p>Render any Unicode emoji natively with full color and platform support.</p>\r
-        <div style="display: flex; gap: 16px; align-items: center; margin-top: 16px;">\r
-          <ui-icon library="emoji" name="🚀" size="2.5rem"></ui-icon>\r
-          <ui-icon library="emoji" name="🔥" size="2.5rem"></ui-icon>\r
-          <ui-icon library="emoji" name="🎉" size="2.5rem"></ui-icon>\r
-          <ui-icon library="emoji" name="💡" size="2.5rem"></ui-icon>\r
-          <ui-icon library="emoji" name="⭐" size="2.5rem"></ui-icon>\r
-          <ui-icon library="emoji" name="🎨" size="2.5rem"></ui-icon>\r
-        </div>\r
-        <pre class="demo-code"><code>&lt;ui-icon library="emoji" name="🚀"&gt;&lt;/ui-icon&gt;</code></pre>\r
-      </div>\r
-\r
-      <!-- Playground -->\r
-      <div class="demo-card" style="grid-column: 1 / -1;">\r
-        <h3>Interactive Playground</h3>\r
-        <div style="display: flex; gap: 40px; flex-wrap: wrap;">\r
-          <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 16px;">\r
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">\r
-              <div>\r
-                <label style="display: block; font-weight: 600; margin-bottom: 4px;">Library</label>\r
-                <ui-dropdown id="playgroundLibrary" class="demo-input">\r
-                  <option value="default">Default (SVG/URL/Text)</option>\r
-                  <option value="se">QuartzDS (Se)</option>\r
-                  <option value="fontawesome">FontAwesome</option>\r
-                  <option value="icons8">Icons8 (Line Awesome)</option>\r
-                  <option value="iconoir">Iconoir</option>\r
-                  <option value="ionicons">Ionicons</option>\r
-                  <option value="lucide">Lucide</option>\r
-                  <option value="bootstrap">Bootstrap Icons</option>\r
-                  <option value="google">Google Material Symbols</option>\r
-                  <option value="remixicon">Remix Icon</option>\r
-                  <option value="emoji">Emoji</option>\r
-                </ui-dropdown>\r
-              </div>\r
-              <div>\r
-                <label style="display: block; font-weight: 600; margin-bottom: 4px;">Size</label>\r
-                <ui-input type="text" id="playgroundSize" class="demo-input" value="4rem">\r
-              </div>\r
-            </div>\r
-            <div>\r
-              <label style="display: block; font-weight: 600; margin-bottom: 4px;">Icon Name / Content</label>\r
-              <ui-input type="text" id="playgroundName" class="demo-input" value="🚀">\r
-              <small style="color: #64748b; margin-top: 4px; display: block;">e.g., 'house' (se), 'fa-star' (fa), '🚀' (emoji), or an SVG path</small>\r
-            </div>\r
-            <div>\r
-              <label style="display: block; font-weight: 600; margin-bottom: 4px;">Color</label>\r
-              <ui-input type="color" id="playgroundColor" class="demo-input" value="#6366f1" style="height: 42px; padding: 2px;">\r
-            </div>\r
-          </div>\r
-          <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f8fafc; border-radius: 12px; border: 2px dashed #e2e8f0; padding: 40px;">\r
-            <div id="playgroundPreview">\r
-              <ui-icon name="🚀" size="4rem" color="#6366f1"></ui-icon>\r
-            </div>\r
-            <pre id="playgroundCode" style="margin-top: 24px; width: 100%; background: #1e293b; color: #f8fafc; padding: 12px; border-radius: 8px; font-size: 13px; white-space: pre-wrap;"><code>&lt;ui-icon name="🚀" size="4rem" color="#6366f1"&gt;&lt;/ui-icon&gt;</code></pre>\r
-          </div>\r
-        </div>\r
-      </div>\r
-    </div>\r
-\r
-    <style>\r
-      .demo-header { margin-bottom: 32px; }\r
-      .demo-header h2 { font-size: 1.8rem; font-weight: 800; color: #1e293b; }\r
-      .demo-header p { color: #64748b; font-size: 1.1rem; }\r
-      .demo-card { background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }\r
-      .demo-card h3 { margin: 0 0 8px 0; color: #1e293b; font-size: 1.1rem; font-weight: 700; }\r
-      .demo-card p { margin: 0 0 16px 0; color: #64748b; font-size: 0.9rem; }\r
-      .demo-code { background: #f1f5f9; padding: 12px; border-radius: 8px; font-size: 12px; margin-top: 16px; overflow-x: auto; font-family: 'JetBrains Mono', monospace; }\r
-      .demo-input { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; background: white; }\r
-      .icon-box { display: flex; align-items: center; justify-content: center; background: white; border: 1px solid #f1f5f9; border-radius: 8px; padding: 12px; transition: all 0.2s; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }\r
-      .icon-box:hover { transform: translateY(-2px); box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-color: #6366f1; cursor: pointer; }\r
-    </style>`}],carousel:[{title:`Carousel Showcase`,description:``,html:`<div class="demo-wrapper">\r
-      <div class="demo-header-section" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">\r
-        <h2 class="demo-section-title" style="display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.75rem; color: var(--text-primary);">\r
-          Carousel \r
-          <span style="font-size: 0.4em; vertical-align: middle; background: linear-gradient(135deg, #f59e0b, #ef4444); color: white; padding: 4px 12px; border-radius: 20px; font-weight: 800; letter-spacing: 0.05em; box-shadow: 0 4px 10px rgba(245, 158, 11, 0.25);">APEX SUPREME</span>\r
-        </h2>\r
-      </div>\r
-\r
-      <nav id="carouselNavPills" style="margin-bottom: 24px; display: flex; gap: 8px; flex-wrap: wrap; background: var(--bg-secondary); padding: 10px; border-radius: 12px; border: 1px solid var(--border-default);">\r
-        <ui-button variant="outline" color="warning" label="Core & Scroll" data-tab="core" size="md"ui-button>\r
-        <ui-button variant="outline" color="warning" label="Motion Engine" data-tab="motion" size="md"ui-button>\r
-        <ui-button variant="outline" color="warning" label="Social Engine" data-tab="social" size="md"ui-button>\r
-        <ui-button variant="outline" color="warning" label="Variable Width" data-tab="variable" size="md"ui-button>\r
-        <ui-button variant="outline" color="warning" label="Infinity Lab" data-tab="infinity" size="md"ui-button>\r
-        <ui-button variant="outline" color="warning" label="Legendary lab" data-tab="legendary" size="md"ui-button>\r
-        <ui-button variant="outline" color="warning" label="Ticker Lab (Auto-Moving)" data-tab="ticker" size="md"ui-button>\r
-        <ui-button variant="outline" color="warning" label="Lazy Lab (SEO/Perf)" data-tab="lazy" size="md"ui-button>\r
-        <ui-button variant="outline" color="warning" label="Cinematic Lab (Premium)" data-tab="cinematic" size="md"ui-button>\r
-      </nav>\r
-\r
-      <div id="carouselDemoContainer" style="min-height: 500px;"></div>\r
-    </div>\r
-\r
-    <style>\r
-      /* Legendary Stagger logic */\r
-      [data-active="true"] .slide-badge,\r
-      [data-active="true"] .slide-title,\r
-      [data-active="true"] .slide-desc,\r
-      [data-active="true"] .slide-btn {\r
-         animation: apexSlideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;\r
-         opacity: 0;\r
-      }\r
-      [data-active="true"] .slide-badge { animation-delay: 0.1s; }\r
-      [data-active="true"] .slide-title { animation-delay: 0.25s; }\r
-      [data-active="true"] .slide-desc { animation-delay: 0.4s; }\r
-      [data-active="true"] .slide-btn { animation-delay: 0.55s; }\r
-\r
-      @keyframes apexSlideUp {\r
-        from { transform: translateY(40px); opacity: 0; }\r
-        to { transform: translateY(0); opacity: 1; }\r
-      }\r
-\r
-      .stagger-slide { height: 100%; width: 100%; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 60px; color: white; }\r
-      .stagger-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }\r
-      .stagger-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent 80%); z-index: 1; }\r
-      .slide-badge { background: #f59e0b; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 800; width: fit-content; margin-bottom: 12px; position: relative; z-index: 2; }\r
-      .slide-title { font-size: 2.5rem; font-weight: 800; margin: 0 0 10px; position: relative; z-index: 2; line-height: 1.1; }\r
-      \r
-      .social-preview { background: #000; padding: 50px; border-radius: 40px; display: flex; justify-content: center; }\r
-      .phone-wrap { width: 330px; height: 600px; border: 12px solid #282828; border-radius: 56px; overflow: hidden; position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }\r
-      .card-item { background: var(--bg-primary); border-radius: 12px; border: 1px solid var(--border-default); display: flex; align-items: center; justify-content: center; font-weight: 800; box-shadow: var(--shadow-sm); flex-shrink:0; }\r
-      .ticker-card { padding: 20px; border-radius: 12px; background: var(--bg-primary); border: 1px solid var(--border-default); display: flex; align-items: center; gap: 15px; min-width: 200px; box-shadow: var(--shadow-sm); }\r
-    </style>`}],"animate-on-scroll":[{title:`Animate On Scroll`,description:``,html:`<div class="demo-header">\r
-      <h1>Animate On Scroll</h1>\r
-      <p>A powerful component that triggers animations when elements enter the viewport or based on scroll progress. Supports staggered children and parallax scrubbing.</p>\r
-    </div>\r
-\r
-    <div class="demo-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 24px;">\r
-      \r
-      <!-- 1. Basic Entrances -->\r
-      <div class="demo-card">\r
-        <h3>Entrance Animations</h3>\r
-        <p>Trigger beautiful entrance effects as they scroll into view.</p>\r
-        <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 24px;">\r
-          <ui-animate-on-scroll enter-class="fade-in" duration="800">\r
-            <div class="demo-box" style="background: #10b981;">Fade In</div>\r
-          </ui-animate-on-scroll>\r
-          \r
-          <ui-animate-on-scroll enter-class="slide-in-up" duration="800">\r
-            <div class="demo-box" style="background: #10b981;">Slide In Up</div>\r
-          </ui-animate-on-scroll>\r
-          \r
-          <ui-animate-on-scroll enter-class="blur-reveal" blur-amount="20px" duration="1200">\r
-            <div class="demo-box" style="background: #8b5cf6;">Blur Reveal</div>\r
-          </ui-animate-on-scroll>\r
-        </div>\r
-        <pre class="demo-code"><code>&lt;ui-animate-on-scroll enter-class="blur-reveal"&gt;...&lt;/ui-animate-on-scroll&gt;</code></pre>\r
-      </div>\r
-\r
-      <!-- 2. Professional Flips -->\r
-      <div class="demo-card">\r
-        <h3>3D Flips</h3>\r
-        <p>Utilize the perspective engine for high-end 3D transitions.</p>\r
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px;">\r
-          <ui-animate-on-scroll enter-class="flip-in-x" perspective="800px">\r
-            <div class="demo-box" style="background: #f59e0b; height: 80px;">Flip X</div>\r
-          </ui-animate-on-scroll>\r
-          <ui-animate-on-scroll enter-class="flip-in-y" perspective="800px">\r
-            <div class="demo-box" style="background: #ef4444; height: 80px;">Flip Y</div>\r
-          </ui-animate-on-scroll>\r
-          <ui-animate-on-scroll enter-class="roll-in">\r
-            <div class="demo-box" style="background: #ec4899; height: 80px;">Roll In</div>\r
-          </ui-animate-on-scroll>\r
-          <ui-animate-on-scroll enter-class="zoom-in-up">\r
-            <div class="demo-box" style="background: #06b6d4; height: 80px;">Zoom In Up</div>\r
-          </ui-animate-on-scroll>\r
-        </div>\r
-        <pre class="demo-code"><code>&lt;ui-animate-on-scroll enter-class="flip-in-y" perspective="800px"&gt;...&lt;/ui-animate-on-scroll&gt;</code></pre>\r
-      </div>\r
-\r
-      <!-- 3. Attention Seekers -->\r
-      <div class="demo-card">\r
-        <h3>Attention Seekers</h3>\r
-        <p>Perfect for Call-to-Action buttons or highlighting important updates.</p>\r
-        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px;">\r
-          <ui-animate-on-scroll enter-class="pulse" once="false">\r
-             <ui-button color="primary" variant="outline" label="Pulse" style="padding: 12px 20px;"></ui-button>\r
-          </ui-animate-on-scroll>\r
-          <ui-animate-on-scroll enter-class="tada" once="false">\r
-             <ui-button color="success" variant="outline" label="Tada!" style="padding: 12px 20px;"></ui-button>\r
-          </ui-animate-on-scroll>\r
-          <ui-animate-on-scroll enter-class="rubber-band" once="false">\r
-             <ui-button color="warning" variant="outline" label="Rubber Band" style="padding: 12px 20px;"></ui-button>\r
-          </ui-animate-on-scroll>\r
-          <ui-animate-on-scroll enter-class="jello" once="false">\r
-             <ui-button color="danger" variant="outline" label="Jello" style="padding: 12px 20px;"></ui-button>\r
-          </ui-animate-on-scroll>\r
-        </div>\r
-        <pre class="demo-code"><code>&lt;ui-animate-on-scroll enter-class="tada" once="false"&gt;...&lt;/ui-animate-on-scroll&gt;</code></pre>\r
-      </div>\r
-\r
-      <!-- 4. Staggered Children -->\r
-      <div class="demo-card" style="grid-column: 1 / -1;">\r
-        <h3>Staggered Sequences</h3>\r
-        <p>Automatically create a cascade effect for lists or grids of items.</p>\r
-        <ui-animate-on-scroll enter-class="slide-in-up" stagger="150" duration="600">\r
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; margin-top: 24px;">\r
-            <div class="demo-item">Item One</div>\r
-            <div class="demo-item">Item Two</div>\r
-            <div class="demo-item">Item Three</div>\r
-            <div class="demo-item">Item Four</div>\r
-            <div class="demo-item">Item Five</div>\r
-            <div class="demo-item">Item Six</div>\r
-          </div>\r
-        </ui-animate-on-scroll>\r
-        <pre class="demo-code"><code>&lt;ui-animate-on-scroll stagger="150" enter-class="slide-in-up"&gt;...&lt;/ui-animate-on-scroll&gt;</code></pre>\r
-      </div>\r
-\r
-      <!-- 5. Back Effects (Premium) -->\r
-      <div class="demo-card">\r
-        <div class="badge" style="float: right; background: #6366f1; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">PREMIUM</div>\r
-        <h3>Back Entrance Effects</h3>\r
-        <p>High-end entrance animations with a slight overshoot for a physical feel.</p>\r
-        <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 24px;">\r
-          <ui-animate-on-scroll enter-class="back-in-up">\r
-            <div class="demo-box" style="background: linear-gradient(to right, #6366f1, #a855f7); border-radius: 12px;">Back In Up</div>\r
-          </ui-animate-on-scroll>\r
-          <ui-animate-on-scroll enter-class="back-in-left">\r
-            <div class="demo-box" style="background: linear-gradient(to right, #10b981, #06b6d4); border-radius: 12px;">Back In Left</div>\r
-          </ui-animate-on-scroll>\r
-        </div>\r
-        <pre class="demo-code"><code>&lt;ui-animate-on-scroll enter-class="back-in-up"&gt;...&lt;/ui-animate-on-scroll&gt;</code></pre>\r
-      </div>\r
-\r
-      <!-- 6. Parallax Scrubbing -->\r
-      <div class="demo-card">\r
-        <div class="badge" style="float: right; background: #ec4899; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">SCROLL SYNC</div>\r
-        <h3>Parallax Scrubbing</h3>\r
-        <p>Animation progress is mapped directly to your scroll position. Now features smooth LERP interpolation.</p>\r
-        <div style="background: #f8fafc; border-radius: 12px; padding: 40px; margin-top: 24px; text-align: center; overflow: hidden;">\r
-          <ui-animate-on-scroll scrub="true" enter-class="rotate-in" duration="1000">\r
-            <div style="font-size: 80px;">⚙️</div>\r
-          </ui-animate-on-scroll>\r
-          <p style="margin-top: 16px; font-weight: 600; color: #64748b;">(Scroll the page to rotate me smoothly)</p>\r
-        </div>\r
-        <pre class="demo-code"><code>&lt;ui-animate-on-scroll scrub="true"&gt;...&lt;/ui-animate-on-scroll&gt;</code></pre>\r
-      </div>\r
-\r
-      <!-- 7. Advanced Controls -->\r
-      <div class="demo-card" style="grid-column: 1 / -1;">\r
-        <h3>Advanced Controls</h3>\r
-        <p>Fine-tune your animations with precision props.</p>\r
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 24px;">\r
-          <div class="demo-card-inner">\r
-            <h4>Custom Distance</h4>\r
-            <ui-animate-on-scroll enter-class="slide-in-up" distance="200px" duration="1500" mirror="true">\r
-              <div class="demo-box" style="background: #10b981;">200px Slide Up</div>\r
-            </ui-animate-on-scroll>\r
-          </div>\r
-          \r
-          <div class="demo-card-inner">\r
-            <h4>Mirror Reset</h4>\r
-            <ui-animate-on-scroll enter-class="zoom-in" mirror="true" duration="800">\r
-              <div class="demo-box" style="background: #f59e0b;">Resets on Scroll Up</div>\r
-            </ui-animate-on-scroll>\r
-          </div>\r
-\r
-          <div class="demo-card-inner">\r
-            <h4>Transform Origin</h4>\r
-            <ui-animate-on-scroll enter-class="flip-in-x" transform-origin="top" duration="1000">\r
-              <div class="demo-box" style="background: #ef4444;">Top Hinged Flip</div>\r
-            </ui-animate-on-scroll>\r
-          </div>\r
-        </div>\r
-        <pre class="demo-code"><code>&lt;ui-animate-on-scroll distance="200px" mirror="true" transform-origin="top"&gt;</code></pre>\r
-      </div>\r
-\r
-    </div>\r
-\r
-    <style>\r
-      .demo-box {\r
-        padding: 30px;\r
-        color: white;\r
-        text-align: center;\r
-        font-weight: 700;\r
-        border-radius: 8px;\r
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);\r
-      }\r
-      .demo-item {\r
-        background: white;\r
-        border: 1px solid #e2e8f0;\r
-        padding: 24px;\r
-        border-radius: 12px;\r
-        text-align: center;\r
-        font-weight: 600;\r
-        color: #475569;\r
-        box-shadow: 0 2px 4px rgba(0,0,0,0.02);\r
-      }\r
-    </style>`}],"color-picker":[{title:`Basic Selection`,description:``,html:`<div class="demo-block">\r
-          <h3 style="margin-bottom: 16px; color: var(--text-primary);">Basic Selection</h3>\r
-          <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start;">\r
-            <ui-color-picker label="Primary Color" value="#10b981"></ui-color-picker>\r
-            <ui-color-picker label="Success Color" value="#22c55e"></ui-color-picker>\r
-            <ui-color-picker label="Accent Color" value="#8b5cf6"></ui-color-picker>\r
-          </div>\r
-        </div>`},{title:`Extended Features`,description:``,html:`<div class="demo-block">\r
-          <h3 style="margin-bottom: 16px; color: var(--text-primary);">Extended Features</h3>\r
-          <div style="display: flex; gap: 24px; flex-wrap: wrap;">\r
-            <ui-color-picker label="With Alpha Channel" value="#ef4444" show-alpha="true" format="rgba"></ui-color-picker>\r
-            <ui-color-picker label="No Swatches" value="#06b6d4" show-swatches="false"></ui-color-picker>\r
-            <ui-color-picker label="No Hex Input" value="#f59e0b" show-hex="false"></ui-color-picker>\r
-          </div>\r
-        </div>`},{title:`Multi-Format Input Variant`,description:`The variant="input" Displays all format channels (HEX, RGB, HSL) in a single integrated panel.`,html:`<div class="demo-block">\r
-          <h3 style="margin-bottom: 8px; color: var(--text-primary);">Multi-Format Input Variant</h3>\r
-          <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 20px;">\r
-            The <code>variant="input"</code> Displays all format channels (HEX, RGB, HSL) in a single integrated panel.\r
-          </p>\r
-          <div style="display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start;">\r
-            <ui-color-picker \r
-              label="Interactive Channels"\r
-              variant="input"\r
-              inline="true"\r
-              show-hex="true"\r
-              show-rgb="true"\r
-              show-rgba="true"\r
-              show-hsl="true"\r
-              show-hsla="true"\r
-              show-alpha="true"\r
-              value="#10b981"\r
-            ></ui-color-picker>\r
-            \r
-            <div style="flex: 1; min-width: 280px; padding: 24px; background: var(--bg-secondary); border-radius: 16px; border: 1px solid var(--border-default);">\r
-              <h4 style="margin: 0 0 12px 0; font-size: 12px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.5px;">Technical Details</h4>\r
-              <ul style="font-size: 13px; color: var(--text-secondary); padding-left: 18px; margin: 0; line-height: 1.6;">\r
-                <li>Individual channel validation with real-time feedback.</li>\r
-                <li>Hashless HEX input for cleaner interaction.</li>\r
-                <li>Direct attribute binding for all color spaces.</li>\r
-                <li>Responsive layout handles multi-channel flow.</li>\r
-              </ul>\r
-            </div>\r
-          </div>\r
-        </div>`},{title:`Live Preview Engine`,description:``,html:`<div class="demo-block">\r
-          <h3 style="margin-bottom: 16px; color: var(--text-primary);">Live Preview Engine</h3>\r
-          <div style="display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start;">\r
-            <div>\r
-              <ui-color-picker id="cp-inline" inline="true" value="#10b981"></ui-color-picker>\r
-            </div>\r
-            <div style="width: 240px; padding: 24px; background: var(--bg-secondary); border-radius: 16px; border: 1px solid var(--border-default); display: flex; flex-direction: column; gap: 16px; align-items: center;">\r
-              <div id="cp-preview-box" style="width: 100%; height: 100px; border-radius: 12px; background: #10b981; box-shadow: 0 8px 24px rgba(16, 185, 129, 0.25);"></div>\r
-              <div style="font-family: monospace; font-size: 14px; font-weight: 700; color: var(--text-primary);" id="cp-preview-hex">#10B981</div>\r
-              <div id="cp-preview-text" style="width: 100%; padding: 12px; border-radius: 8px; background: #10b981; color: white; font-weight: 800; text-align: center; font-size: 13px;">SAMPLE TEXT</div>\r
-            </div>\r
-          </div>\r
-        </div>`},{title:`States & Interaction`,description:``,html:`<div class="demo-block">\r
-          <h3 style="margin-bottom: 16px; color: var(--text-primary);">States & Interaction</h3>\r
-          <div style="display: flex; gap: 24px; flex-wrap: wrap;">\r
-            <ui-color-picker label="Disabled State" value="#64748b" disabled="true"></ui-color-picker>\r
-            <ui-color-picker label="Read Only (Value)" value="#3b82f6" disabled="true"></ui-color-picker>\r
-          </div>\r
-        </div>`}],"command-palette":[{title:`Command Palette`,description:``,html:`<div class="demo-wrapper">\r
-      <div class="demo-header-section" style="margin-bottom: 24px;">\r
-        <h2 class="demo-section-title">Command Palette</h2>\r
-        <p class="demo-section-subtitle">Fuzzy-search enabled control center for complex applications.</p>\r
-      </div>\r
-\r
-      <div class="demo-block" style="text-align: center; padding: 60px 40px;">\r
-        <div style="max-width: 600px; margin: 0 auto;">\r
-          <p style="font-size: 16px; color: var(--text-secondary); margin-bottom: 32px;">\r
-            Press <kbd style="background: var(--bg-secondary); border: 1px solid var(--border-default); border-radius: 6px; padding: 4px 10px; font-size: 14px; font-family: inherit; font-weight: 700; color: var(--text-primary);">Ctrl/⌘ + K</kbd>\r
-            to activate the command palette globally.\r
-          </p>\r
-\r
-          <ui-button id="cp-open-btn" variant="outline" color="primary" label="Open Palette (⌘K)" size="large" style="min-width: 240px;"></ui-button>\r
-        </div>\r
-      </div>\r
-\r
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px;">\r
-        <div class="demo-block" style="margin-bottom: 0;">\r
-          <h4 style="margin: 0 0 16px 0; font-size: 14px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.5px;">Premium Features</h4>\r
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">\r
-            \${['🔍 Fuzzy search algorithm', '⌨ Advanced keyboard logic', '📁 Category grouping', '⚡ Shortcut visualization', '🕐 Execution history', '🔲 Focus management'].map(f =>`}],"number-input":[{title:`Number Input Controls`,description:``,html:`<div class="demo-section-header">\r
-      <h2 class="demo-section-title">Number Input</h2>\r
-      <p class="demo-section-subtitle">Precision numerical input with stepper controls, affixes, and validation.</p>\r
-    </div>\r
-\r
-    <div class="demo-grid">\r
-      <!-- Basic Usage -->\r
-      <div class="demo-card">\r
-        <h3 class="demo-card-title">Basic Usage</h3>\r
-        <div class="demo-card-content">\r
-          <ui-number-input \r
-            label="Age" \r
-            value="25" \r
-            min="0" \r
-            max="120" \r
-            helper-text="Enter your age (0-120)">\r
-          </ui-number-input>\r
-          \r
-          <ui-number-input \r
-            label="Quantity" \r
-            value="1" \r
-            step="5" \r
-            min="0"\r
-            helper-text="Steps of 5">\r
-          </ui-number-input>\r
-        </div>\r
-      </div>\r
-\r
-      <!-- Stepper Layouts -->\r
-      <div class="demo-card">\r
-        <h3 class="demo-card-title">Stepper Layouts</h3>\r
-        <div class="demo-card-content" style="display: flex; flex-direction: column; gap: 20px;">\r
-          <ui-number-input \r
-            label="Sides Layout (Default)" \r
-            value="10" \r
-            stepper-layout="sides">\r
-          </ui-number-input>\r
-          \r
-          <ui-number-input \r
-            label="Right Stacked Layout" \r
-            value="10" \r
-            stepper-layout="right">\r
-          </ui-number-input>\r
-\r
-          <ui-number-input \r
-            label="No Steppers" \r
-            value="10" \r
-            stepper-layout="none">\r
-          </ui-number-input>\r
-        </div>\r
-      </div>\r
-\r
-      <!-- Precision & Affixes -->\r
-      <div class="demo-card">\r
-        <h3 class="demo-card-title">Precision & Affixes</h3>\r
-        <div class="demo-card-content">\r
-          <ui-number-input \r
-            label="Currency (USD)" \r
-            value="99.99" \r
-            precision="2" \r
-            step="0.01" \r
-            prefix-text="$">\r
-          </ui-number-input>\r
-          \r
-          <ui-number-input \r
-            label="Weight" \r
-            value="75" \r
-            suffix-text="kg" \r
-            step="0.5">\r
-          </ui-number-input>\r
-\r
-          <ui-number-input \r
-            label="Percentage" \r
-            value="50" \r
-            suffix-text="%" \r
-            min="0" \r
-            max="100">\r
-          </ui-number-input>\r
-        </div>\r
-      </div>\r
-\r
-      <!-- Sizes & States -->\r
-      <div class="demo-card">\r
-        <h3 class="demo-card-title">Sizes & States</h3>\r
-          <ui-number-input label="Small" size="sm" value="10"></ui-number-input>\r
-          <ui-number-input label="Medium" size="md" value="10"></ui-number-input>\r
-          <ui-number-input label="Large" size="lg" value="10"></ui-number-input>\r
-          <ui-number-input label="Disabled" value="10" disabled="true" size="md"></ui-number-input>\r
-          <ui-number-input label="Invalid State" value="-5" error-text="Value cannot be negative" size="md"></ui-number-input>\r
-        </div>\r
-      </div>\r
-\r
-      <!-- Variants -->\r
-      <div class="demo-card">\r
-        <h3 class="demo-card-title">Variants</h3>\r
-        <div class="demo-card-content" style="display: flex; flex-direction: column; gap: 20px;">\r
-          <ui-number-input \r
-            label="Default Variant" \r
-            value="100" \r
-            suffix-text="Units"\r
-            size="md">\r
-          </ui-number-input>\r
-          \r
-          <ui-number-input \r
-            label="Plain Variant" \r
-            variant="plain" \r
-            value="100" \r
-            helper-text="Automatically hides steppers and suffices"\r
-            size="md">\r
-          </ui-number-input>\r
-          \r
-          <div style="padding: 12px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">\r
-             <p style="font-size: 12px; color: #64748b; margin: 0;">The <strong>plain</strong> variant is designed for dense UIs like pagination, where a borderless, icon-free appearance is preferred.</p>\r
-          </div>\r
-        </div>\r
-      </div>\r
-    </div>\r
-\r
-    <!-- Full Width & Global -->\r
-    <div class="demo-card" style="margin-top: 24px;">\r
-      <h3 class="demo-card-title">Full Width & Scroll Wheel</h3>\r
-      <div class="demo-card-content">\r
-        <ui-number-input \r
-          label="Full Width Amount" \r
-          value="1000" \r
-          full-width="true" \r
-          prefix-text="€" \r
-          step="50"\r
-          helper-text="Try using your mouse scroll wheel while focused!"\r
-          size="md">\r
-        </ui-number-input>\r
-      </div>\r
-    </div>\r
-\r
-    <!-- Playground -->\r
-    <div class="demo-playground" style="margin-top: 40px;">\r
-      <h3 class="demo-card-title">Interactive Playground</h3>\r
-      <div class="playground-layout">\r
-        <div class="playground-preview">\r
-          <ui-number-input id="playgroundNumberInput" label="Interactive Control" value="0" size="md"></ui-number-input>\r
-          <div id="numberValueDisplay" style="margin-top: 10px; font-size: 14px; font-weight: 600; color: #6366f1;">\r
-            Current Value: 0\r
-          </div>\r
-        </div>\r
-        <div class="playground-controls" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; width: 100%;">\r
-          <div class="control-group">\r
-            <label>Variant</label>\r
-            <ui-dropdown onchange="updateNumberProp('variant', this.value)" size="md" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;">\r
-              <option value="default" selected>Default</option>\r
-              <option value="plain">Plain</option>\r
-            </ui-dropdown>\r
-          </div>\r
-          <div class="control-group">\r
-            <label>Size</label>\r
-            <ui-dropdown onchange="updateNumberProp('size', this.value)" size="md" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;">\r
-              <option value="sm">Small</option>\r
-              <option value="md" selected>Medium</option>\r
-              <option value="lg">Large</option>\r
-            </ui-dropdown>\r
-          </div>\r
-          <div class="control-group">\r
-            <label>Layout</label>\r
-            <ui-dropdown onchange="updateNumberProp('stepper-layout', this.value)" size="md" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;">\r
-              <option value="sides" selected>Sides</option>\r
-              <option value="right">Right Stacked</option>\r
-              <option value="none">None</option>\r
-            </ui-dropdown>\r
-          </div>\r
-          <div class="control-group">\r
-            <label>Color</label>\r
-            <ui-dropdown onchange="updateNumberProp('color', this.value)" size="md" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;">\r
-              <option value="primary" selected>Primary</option>\r
-              <option value="success">Success</option>\r
-              <option value="danger">Danger</option>\r
-              <option value="warning">Warning</option>\r
-              <option value="info">Info</option>\r
-            </ui-dropdown>\r
-          </div>\r
-          <div class="control-group">\r
-            <label>Min</label>\r
-            <ui-input type="number" value="0" oninput="updateNumberProp('min', this.value)" size="md" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;">\r
-          </div>\r
-          <div class="control-group">\r
-            <label>Max</label>\r
-            <ui-input type="number" value="100" oninput="updateNumberProp('max', this.value)" size="md" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;">\r
-          </div>\r
-          <div class="control-group">\r
-            <label>Step</label>\r
-            <ui-input type="number" value="1" oninput="updateNumberProp('step', this.value)" size="md" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;">\r
-          </div>\r
-          <div class="control-group">\r
-            <label>Precision</label>\r
-            <ui-input type="number" value="-1" oninput="updateNumberProp('precision', this.value)" size="md" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;">\r
-          </div>\r
-          <div class="control-group">\r
-            <label>Prefix</label>\r
-            <ui-input type="text" placeholder="e.g. $" oninput="updateNumberProp('prefix-text', this.value)" size="md" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;">\r
-          </div>\r
-          <div class="control-group">\r
-             <label>Suffix</label>\r
-             <ui-input type="text" placeholder="e.g. kg" oninput="updateNumberProp('suffix-text', this.value)" size="md" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #e2e8f0;">\r
-          </div>\r
-          <div class="control-group" style="grid-column: span 2; display: flex; gap: 16px; margin-top: 10px; flex-wrap: wrap;">\r
-            <ui-checkbox checked label="Default Icon" onCheckboxChange="updateNumberProp('show-type-icon', event.detail.checked)" size="md"></ui-checkbox>\r
-            <ui-checkbox label="Disabled" onCheckboxChange="updateNumberProp('disabled', event.detail.checked)" size="md"></ui-checkbox>\r
-            <ui-checkbox label="Readonly" onCheckboxChange="updateNumberProp('readonly', event.detail.checked)" size="md"></ui-checkbox>\r
-            <ui-checkbox label="Full Width" onCheckboxChange="updateNumberProp('full-width', event.detail.checked)" size="md"></ui-checkbox>\r
-            <ui-checkbox label="Floating Label" onCheckboxChange="updateNumberProp('floating-label', event.detail.checked)" size="md"></ui-checkbox>\r
-          </div>\r
-        </div>\r
-      </div>\r
-    </div>`}],"workspace-manager":[{title:`🏗️ Workspace Manager`,description:``,html:`<div class="zenith-playground-header" style="margin-bottom: 24px; padding: 20px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 12px; color: white;">\r
-      <h2 style="margin: 0; display: flex; align-items: center; gap: 12px;">\r
-        <span style="font-size: 28px;">🏗️</span> Zenith Workspace Manager\r
-        <span style="font-size: 12px; background: #10b981; padding: 4px 8px; border-radius: 20px; font-weight: normal; margin-left: 10px;">Enterprise Edition</span>\r
-      </h2>\r
-      <p style="margin: 10px 0 0; opacity: 0.8; font-size: 15px;">Advanced multi-region layout engine with dynamic split-testing, persistence, and component-based docking.</p>\r
-    </div>\r
-\r
-    <div class="playground-grid" style="display: grid; grid-template-columns: 280px 1fr; gap: 24px; min-height: 800px;">\r
-      <!-- Sidebar Controls -->\r
-      <div class="controls-column" style="display: flex; flex-direction: column; gap: 20px;">\r
-        \r
-        <!-- Templates Section -->\r
-        <div class="control-card" style="background: white; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">\r
-          <h4 style="margin: 0 0 16px; font-size: 14px; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em; display: flex; align-items: center; gap: 8px;">\r
-            <span style="color: #10b981;">📐</span> Layout Templates\r
-          </h4>\r
-          <div style="display: flex; flex-direction: column; gap: 10px;">\r
-            <ui-button class="template-btn" data-layout="copilot" variant="outline" color="secondary" style="--btn-width: 100%; text-align: left; display: block; border: 1.5px solid var(--border-default); padding: 12px;">\r
-              <strong style="display: block; font-size: 14px; color: var(--text-primary);">GitHub Copilot</strong>\r
-              <span style="font-size: 11px; color: var(--text-secondary);">Editor + AI Assistant (70:30)</span>\r
-            </ui-button>\r
-            <ui-button class="template-btn" data-layout="ide" variant="outline" color="secondary" style="--btn-width: 100%; text-align: left; display: block; border: 1.5px solid var(--border-default); padding: 12px;">\r
-              <strong style="display: block; font-size: 14px; color: var(--text-primary);">IDE Layout</strong>\r
-              <span style="font-size: 11px; color: var(--text-secondary);">Explorer + Editor + Console</span>\r
-            </ui-button>\r
-            <ui-button class="template-btn" data-layout="dashboard" variant="outline" color="secondary" style="--btn-width: 100%; text-align: left; display: block; border: 1.5px solid var(--border-default); padding: 12px;">\r
-              <strong style="display: block; font-size: 14px; color: var(--text-primary);">Grid Dashboard</strong>\r
-              <span style="font-size: 11px; color: var(--text-secondary);">Multi-widget visual layout</span>\r
-            </ui-button>\r
-            <ui-button class="template-btn" data-layout="data-center" variant="outline" color="warning" style="--btn-width: 100%; text-align: left; display: block; border: 1.5px solid #ffedd5; padding: 12px;">\r
-              <strong style="display: block; font-size: 14px; color: #9a3412;">📊 Data Center</strong>\r
-              <span style="font-size: 11px; color: #c2410c;">Rich tables & metrics demo</span>\r
-            </ui-button>\r
-            <ui-button class="template-btn" data-layout="containers" variant="outline" color="secondary" style="--btn-width: 100%; text-align: left; display: block; border: 1.5px solid var(--border-default); padding: 12px;">\r
-              <strong style="display: block; font-size: 14px; color: var(--text-primary);">Container Types</strong>\r
-              <span style="font-size: 11px; color: var(--text-secondary);">Content, Nav, and Header-only</span>\r
-            </ui-button>\r
-          </div>\r
-        </div>\r
-\r
-        <!-- Component Actions -->\r
-        <div class="control-card" style="background: white; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">\r
-          <h4 style="margin: 0 0 16px; font-size: 14px; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em; display: flex; align-items: center; gap: 8px;">\r
-            <span style="color: #10b981;">⚡</span> Quick Actions\r
-          </h4>\r
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">\r
-            <ui-button id="wm-add-panel-btn" variant="outline" color="primary" label="+ Panel"></ui-button>\r
-            <ui-button id="wm-add-region-btn" variant="outline" color="success" label="+ Region"></ui-button>\r
-            <ui-button id="wm-split-h-btn" variant="outline" color="secondary" label="Split H" style="background-color: #8b5cf6;"></ui-button>\r
-            <ui-button id="wm-split-v-btn" variant="outline" color="secondary" label="Split V" style="background-color: #8b5cf6;"></ui-button>\r
-            <ui-button id="wm-merge-btn" variant="outline" color="warning" label="Merge Regions"></ui-button>\r
-            <ui-button id="wm-export-btn" variant="outline" color="secondary" label="Export JSON"></ui-button>\r
-            <ui-button id="wm-reset-btn" variant="outline" color="danger" label="Reset All" style="grid-column: span 2;"></ui-button>\r
-          </div>\r
-        </div>\r
-\r
-        <!-- Status & Stats -->\r
-        <div class="control-card" style="background: #f8fafc; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0;">\r
-          <h4 style="margin: 0 0 12px; font-size: 12px; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em;">Workspace Status</h4>\r
-          <div style="display: flex; flex-direction: column; gap: 12px;">\r
-            <div style="display: flex; justify-content: space-between; align-items: center;">\r
-              <span style="font-size: 13px; color: #64748b;">Active Regions</span>\r
-              <span id="stat-regions" style="font-weight: 700; color: #1e293b; background: white; padding: 2px 8px; border-radius: 4px; border: 1px solid #e2e8f0;">0</span>\r
-            </div>\r
-            <div style="display: flex; justify-content: space-between; align-items: center;">\r
-              <span style="font-size: 13px; color: #64748b;">Total Panels</span>\r
-              <span id="stat-panels" style="font-weight: 700; color: #1e293b; background: white; padding: 2px 8px; border-radius: 4px; border: 1px solid #e2e8f0;">0</span>\r
-            </div>\r
-            <div style="display: flex; justify-content: space-between; align-items: center;">\r
-              <span style="font-size: 13px; color: #64748b;">Persistence</span>\r
-              <span style="font-size: 11px; background: #dcfce7; color: #15803d; padding: 2px 6px; border-radius: 4px; font-weight: bold;">Enabled</span>\r
-            </div>\r
-          </div>\r
-        </div>\r
-\r
-        <div style="padding: 16px; background: #eff6ff; border-radius: 10px; border-left: 4px solid #10b981;">\r
-          <p style="margin: 0; font-size: 12px; color: #1e40af; line-height: 1.5;">\r
-            <strong>Pro Tip:</strong> Layouts are persisted to localStorage using the <code>state-key</code> property. Splitters are bidirectionally resizable.\r
-          </p>\r
-        </div>\r
-      </div>\r
-\r
-      <!-- Main Canvas Area -->\r
-      <div class="canvas-column" style="display: flex; flex-direction: column; gap: 20px;">\r
-        <div style="background: white; border-radius: 16px; border: 1px solid #e2e8f0; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); height: 750px; position: relative;">\r
-          <ui-workspace-manager \r
-            id="zenith-wm-playground" \r
-            save-state="true" \r
-            state-key="zenith-playground-v1" \r
-            direction="horizontal"\r
-          ></ui-workspace-manager>\r
-        </div>\r
-\r
-        <!-- Data Output -->\r
-        <div id="wm-json-output" style="display: none;">\r
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">\r
-            <h4 style="margin: 0; font-size: 14px; color: #64748b; text-transform: uppercase;">Exported Layout JSON</h4>\r
-            <ui-button onclick="this.closest('#wm-json-output').style.display='none'" variant="ghost" color="danger" label="Close ×"></ui-button>\r
-          </div>\r
-          <pre id="wm-json-display" style="background: #0f172a; color: #38bdf8; padding: 20px; border-radius: 12px; font-family: 'Fira Code', monospace; font-size: 12px; overflow-x: auto; max-height: 400px; box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);"></pre>\r
-        </div>\r
-      </div>\r
-    </div>`}]},n={};function r(t){if(n[t])return n[t];let r=e.components.find(e=>e.tag===t);if(!r)return[];let i=r.props.map(e=>{let t=`string`,n,r=e.type.trim();r===`boolean`?t=`boolean`:r===`number`?t=`number`:r.includes(`|`)||e.values&&e.values.length>1&&e.values.every(e=>e.value!==void 0)?(t=`select`,n=e.values&&e.values.length>0&&e.values.every(e=>e.value!==void 0)?e.values.map(e=>e.value):r.split(`|`).map(e=>e.trim().replace(/^['"]|['"]$/g,``)).filter(e=>e!==`undefined`&&e!==`null`)):(r.includes(`[]`)||r===`any`||r.includes(`Record<`)||r.includes(`Array<`))&&(t=`json`);let i;if(e.default!==void 0){let n=e.default.trim();if(t===`boolean`)i=n===`true`;else if(t===`number`)i=Number(n),isNaN(i)&&(i=0);else if(t===`select`||t===`string`)i=n.replace(/^['"`]|['"`]$/g,``);else if(t===`json`)try{i=JSON.parse(n)}catch{i=void 0}}let a=e.name.replace(/([A-Z])/g,` $1`).trim().replace(/^\w/,e=>e.toUpperCase());return{name:e.name,type:t,label:a,defaultValue:i,options:n,description:e.docs||`${a} property`}});return n[t]=i,i}function i(t,n){let r=e.components.find(e=>e.tag===t);return r&&(r.docs||r.readme?.split(`
-`)[2]?.trim())||n}function a(e){return t[e]||[]}export{i as n,r,a as t};
+<\/script>`}]},n={};function r(t){if(n[t])return n[t];let r=e.components.find(e=>e.tag===t);if(!r)return[];let i=r.props.map(e=>{let t=`string`,n,r=e.type.trim();r===`boolean`?t=`boolean`:r===`number`?t=`number`:r.includes(`|`)||e.values&&e.values.length>1&&e.values.every(e=>e.value!==void 0)?(t=`select`,n=e.values&&e.values.length>0&&e.values.every(e=>e.value!==void 0)?e.values.map(e=>e.value):r.split(`|`).map(e=>e.trim().replace(/^['"]|['"]$/g,``)).filter(e=>e!==`undefined`&&e!==`null`)):(r.includes(`[]`)||r===`any`||r.includes(`Record<`)||r.includes(`Array<`))&&(t=`json`);let i;if(e.default!==void 0){let n=e.default.trim();if(t===`boolean`)i=n===`true`;else if(t===`number`)i=Number(n),isNaN(i)&&(i=0);else if(t===`select`||t===`string`)i=n.replace(/^['"`]|['"`]$/g,``);else if(t===`json`)try{i=JSON.parse(n)}catch{i=void 0}}let a=e.name.replace(/([A-Z])/g,` $1`).trim().replace(/^\w/,e=>e.toUpperCase());return{name:e.name,type:t,label:a,defaultValue:i,options:n,description:e.docs||`${a} property`}});return n[t]=i,i}function i(t,n){let r=e.components.find(e=>e.tag===t);return r&&(r.docs||r.readme?.split(`
+`)[2]?.trim())||n}function a(e){return t[e]||[]}function o(t){let n=e.components.find(e=>e.tag===t);return!n||!n.events?[]:n.events.map(e=>({event:e.event,detail:e.detail,docs:e.docs}))}function s(t){let n=e.components.find(e=>e.tag===t);return!n||!n.methods?[]:n.methods.map(e=>({name:e.name,signature:e.signature,docs:e.docs}))}export{r as a,s as i,i as n,o as r,a as t};
