@@ -452,7 +452,7 @@ export default function InteractiveDocsPage({ theme, toggleTheme }: { theme: 'li
           <Suspense
             fallback={
               <div className="id-loading">
-                <ui-icon name="loader" size="28" spin />
+                <ui-loader type="spinner" size="md" color="success" />
                 <span>Loading component...</span>
               </div>
             }

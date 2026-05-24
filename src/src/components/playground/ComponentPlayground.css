@@ -1880,4 +1880,45 @@
   color: #059669 !important;
 }
 
+/* ==========================================================================
+   Premium Contrast & Visibility Overrides for Sandbox Previews (Dark Mode)
+   ========================================================================== */
+
+/* Dark Mode Preview Overrides: Gives UI boxes & cards beautiful, high-contrast aesthetics */
+.cp-preview-stage ui-card,
+.cp-example-preview ui-card,
+.cp-demo-section ui-card {
+  --bg-primary: #121217 !important;
+  --ui-card-bg: #121217 !important;
+  --border-default: rgba(255, 255, 255, 0.15) !important;
+  --ui-card-border-color: rgba(255, 255, 255, 0.15) !important;
+  --border-subtle: rgba(255, 255, 255, 0.08) !important;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.45));
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Elevate primary card styles in dark mode to look extra rich and professional */
+.cp-preview-stage ui-card[variant="elevated"],
+.cp-example-preview ui-card[variant="elevated"],
+.cp-demo-section ui-card[variant="elevated"] {
+  --bg-primary: #16161f !important;
+  --ui-card-bg: #16161f !important;
+  --border-default: rgba(255, 255, 255, 0.2) !important;
+  --ui-card-border-color: rgba(255, 255, 255, 0.2) !important;
+  filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.6));
+}
+
+/* Light mode sandbox reverts */
+.theme-light .cp-preview-stage ui-card,
+.theme-light .cp-example-preview ui-card,
+.theme-light .cp-demo-section ui-card {
+  --bg-primary: #ffffff !important;
+  --ui-card-bg: #ffffff !important;
+  --border-default: rgba(0, 0, 0, 0.08) !important;
+  --ui-card-border-color: rgba(0, 0, 0, 0.08) !important;
+  --border-subtle: rgba(0, 0, 0, 0.04) !important;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.03));
+}
+
+
 

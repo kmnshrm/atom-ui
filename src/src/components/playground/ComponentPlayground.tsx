@@ -453,8 +453,8 @@ export default function ComponentPlayground({
               <ui-resizable-panel
                 direction="horizontal"
                 panels='[
-                  {"minSize":20, "maxSize":50, "defaultSize":30},
-                  {"minSize":50, "maxSize":80, "defaultSize":70}
+                  {"id":"panel-1","minSize":20,"maxSize":50,"size":30},
+                  {"id":"panel-2","minSize":50,"maxSize":80,"size":70}
                 ]'
                 handle-size={6}
                 handle-color="rgba(255,255,255,0.08)"
@@ -464,7 +464,7 @@ export default function ComponentPlayground({
                 style={{ flex: 1, minHeight: 0, overflow: 'hidden' }}
               >
                 {/* Controls Panel — left */}
-                <div className="cp-controls-panel">
+                <div className="cp-controls-panel" slot="panel-1">
                   <div className="cp-controls-header">
                     <ui-icon name="settings-2" size="16" />
                     <span>Properties</span>
@@ -490,7 +490,7 @@ export default function ComponentPlayground({
                 </div>
 
                 {/* Preview Panel — right */}
-                <div className="cp-preview-panel">
+                <div className="cp-preview-panel" slot="panel-2">
                   <div className="cp-preview-label">
                     <span>Live Preview</span>
                     <div className="cp-preview-actions">

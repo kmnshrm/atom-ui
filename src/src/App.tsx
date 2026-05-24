@@ -52,7 +52,7 @@ const COMPONENT_IDS = new Set(Object.keys(COMPONENT_PAGES));
 function PageLoader() {
   return (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '50vh', flexDirection: 'column', gap: '1rem' }}>
-      <ui-icon name="loader" size="32" spin />
+      <ui-loader type="spinner" size="xl" color="success" />
       <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.85rem' }}>Loading component...</span>
     </div>
   );
@@ -127,6 +127,7 @@ export default function App() {
   useEffect(() => {
     document.body.classList.remove('theme-light', 'theme-dark');
     document.body.classList.add(`theme-${theme}`);
+    document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
   // Sync state with hash change
