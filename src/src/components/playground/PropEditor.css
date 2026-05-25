@@ -78,6 +78,37 @@
   box-sizing: border-box;
 }
 
+/* Native select — replaces ui-dropdown to avoid overflow clipping */
+.pe-native-select {
+  width: 100%;
+  padding: 0.375rem 1.75rem 0.375rem 0.625rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background-color: #1e1e2e;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.45)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.8rem;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  box-sizing: border-box;
+}
+
+.pe-native-select:focus {
+  border-color: rgba(99,102,241,0.6);
+  box-shadow: 0 0 0 2px rgba(99,102,241,0.18);
+}
+
+.pe-native-select option {
+  background: #1e1e2e;
+  color: rgba(255,255,255,0.85);
+}
+
 .pe-textarea:focus {
   border-color: #34d399;
 }
@@ -337,4 +368,36 @@
 .theme-light .pe-accordion-badge {
   background: rgba(0,0,0,0.06);
   color: #475569;
+}
+
+.pe-root ui-accordion {
+  --accordion-bg: transparent;
+  --accordion-content-bg: transparent;
+  --accordion-border-color: rgba(255, 255, 255, 0.08);
+  --color-text-primary: rgba(255, 255, 255, 0.9);
+  --color-text-muted: rgba(255, 255, 255, 0.5);
+  --selected-header-bg: rgba(255, 255, 255, 0.04);
+  --selected-header-color: #34d399;
+}
+
+.theme-light .pe-root ui-accordion {
+  --accordion-bg: transparent;
+  --accordion-content-bg: transparent;
+  --accordion-border-color: rgba(0, 0, 0, 0.08);
+  --color-text-primary: #1e293b;
+  --color-text-muted: #64748b;
+  --selected-header-bg: rgba(5, 150, 105, 0.06);
+  --selected-header-color: #059669;
+}
+
+.theme-light .pe-native-select {
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(0,0,0,0.45)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  border-color: rgba(0,0,0,0.15);
+  color: #1e293b;
+}
+
+.theme-light .pe-native-select option {
+  background: #fff;
+  color: #1e293b;
 }

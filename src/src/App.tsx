@@ -12,21 +12,41 @@ import Pricing from './pages/Pricing';
 import ComponentsGuide from './pages/ComponentsGuide';
 import InteractiveDocsPage from './pages/InteractiveDocsPage';
 
+// Wraps React.lazy so that a failed chunk fetch (stale browser cache after a new
+// deploy) automatically reloads the page once, loading the fresh bundle.
+function safeLazy<T extends React.ComponentType<any>>(
+  factory: () => Promise<{ default: T }>
+) {
+  return lazy(() =>
+    factory().catch(() => {
+      // Guard against infinite reload loops: only auto-reload once per session.
+      const key = '__chunkReloaded';
+      if (!sessionStorage.getItem(key)) {
+        sessionStorage.setItem(key, '1');
+        window.location.reload();
+      }
+      // Return a promise that never resolves so the Suspense fallback stays
+      // visible while the page is reloading.
+      return new Promise<{ default: T }>(() => {});
+    })
+  );
+}
+
 // Component Pages — lazy loaded for performance
-const ButtonPage = lazy(() => import('./pages/components/ButtonPage'));
-const CheckboxPage = lazy(() => import('./pages/components/CheckboxPage'));
-const InputPage = lazy(() => import('./pages/components/InputPage'));
-const IconPage = lazy(() => import('./pages/components/IconPage'));
-const AvatarPage = lazy(() => import('./pages/components/AvatarPage'));
-const BadgePage = lazy(() => import('./pages/components/BadgePage'));
-const ProgressPage = lazy(() => import('./pages/components/ProgressPage'));
-const SwitchPage = lazy(() => import('./pages/components/SwitchPage'));
-const RadioPage = lazy(() => import('./pages/components/RadioPage'));
-const AccordionPage = lazy(() => import('./pages/components/AccordionPage'));
-const ButtonTogglePage = lazy(() => import('./pages/components/ButtonTogglePage'));
-const DropdownPage = lazy(() => import('./pages/components/DropdownPage'));
-const LoaderPage = lazy(() => import('./pages/components/LoaderPage'));
-const DynamicComponentPage = lazy(() => import('./pages/components/DynamicComponentPage'));
+const ButtonPage = safeLazy(() => import('./pages/components/ButtonPage'));
+const CheckboxPage = safeLazy(() => import('./pages/components/CheckboxPage'));
+const InputPage = safeLazy(() => import('./pages/components/InputPage'));
+const IconPage = safeLazy(() => import('./pages/components/IconPage'));
+const AvatarPage = safeLazy(() => import('./pages/components/AvatarPage'));
+const BadgePage = safeLazy(() => import('./pages/components/BadgePage'));
+const ProgressPage = safeLazy(() => import('./pages/components/ProgressPage'));
+const SwitchPage = safeLazy(() => import('./pages/components/SwitchPage'));
+const RadioPage = safeLazy(() => import('./pages/components/RadioPage'));
+const AccordionPage = safeLazy(() => import('./pages/components/AccordionPage'));
+const ButtonTogglePage = safeLazy(() => import('./pages/components/ButtonTogglePage'));
+const DropdownPage = safeLazy(() => import('./pages/components/DropdownPage'));
+const LoaderPage = safeLazy(() => import('./pages/components/LoaderPage'));
+const DynamicComponentPage = safeLazy(() => import('./pages/components/DynamicComponentPage'));
 
 // Map nav IDs → component pages
 const COMPONENT_PAGES: Record<string, React.ComponentType> = {
@@ -112,7 +132,7 @@ const getHashFromPageId = (id: string): string => {
 
 export default function App() {
   const navRef = useRef<any>(null);
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const [activeItem, setActiveItem] = useState(() => {
     return getPageIdFromHash(window.location.hash);
   });
@@ -159,7 +179,7 @@ export default function App() {
       navRef.current.items = categoryNavItems;
       navRef.current.bottomItems = bottomNavItems;
       navRef.current.bottomItemsSecondary = userProfileNavItems;
-      navRef.current.selectedItem = activeItem;
+      navRef.current.activeId = activeItem;
 
       const handleNavClick = (e: any) => {
         const id = e.detail?.id;

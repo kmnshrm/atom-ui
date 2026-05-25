@@ -28,6 +28,7 @@ export default function PropEditor({ propConfigs, values, onChange }: PropEditor
         multiple="true" 
         default-open={JSON.stringify(items.map(i => i.id))}
         variant="default"
+        background-color="transparent"
       >
         {booleans.length > 0 && (
           <div slot="content-booleans" className="pe-booleans-wrap pe-accordion-body">
@@ -83,7 +84,6 @@ function PropControl({
   // Refs for web components
   const inputRef = useRef<any>(null);
   const switchRef = useRef<any>(null);
-  const dropdownRef = useRef<any>(null);
 
   // ui-input: fires inputChange or inputInput with direct string on every keystroke
   useEffect(() => {
@@ -126,23 +126,7 @@ function PropControl({
     };
   }, [value]);
 
-  // ui-dropdown: listen for valueChange with detail.value
-  useEffect(() => {
-    const el = dropdownRef.current;
-    if (!el) return;
-    const handler = (e: any) => {
-      const val = e.detail && e.detail.value !== undefined ? e.detail.value : e.target.value;
-      onChangeRef.current(val);
-    };
-    el.addEventListener('valueChange', handler);
-    el.addEventListener('uiChange', handler);
-    el.addEventListener('change', handler);
-    return () => {
-      el.removeEventListener('valueChange', handler);
-      el.removeEventListener('uiChange', handler);
-      el.removeEventListener('change', handler);
-    };
-  }, [value]);
+
 
   const handleJsonChange = (text: string) => {
     setJsonText(text);
@@ -171,6 +155,7 @@ function PropControl({
           label={value ? 'true' : 'false'}
           size="sm"
           color="success"
+          theme="dark"
         />
       )}
 
@@ -180,6 +165,7 @@ function PropControl({
           value={value ?? ''}
           placeholder={config.label}
           size="sm"
+          theme="dark"
         />
       )}
 
@@ -189,6 +175,7 @@ function PropControl({
           value={value ?? ''}
           placeholder={config.label}
           size="sm"
+          theme="dark"
         />
       )}
 
@@ -199,6 +186,7 @@ function PropControl({
             type="number"
             value={String(value ?? 0)}
             size="sm"
+            theme="dark"
             class="pe-number-input"
           />
           <input
@@ -231,14 +219,15 @@ function PropControl({
       )}
 
       {config.type === 'select' && (
-        <ui-dropdown
-          ref={dropdownRef}
-          value={value}
-          size="sm"
-          placeholder="Select..."
-          class="pe-dropdown"
-          options={JSON.stringify(config.options?.map(opt => ({ value: opt, label: opt })) || [])}
-        />
+        <select
+          className="pe-native-select"
+          value={value ?? ''}
+          onChange={e => onChange(e.target.value)}
+        >
+          {config.options?.map(opt => (
+            <option key={opt} value={opt}>{opt}</option>
+          ))}
+        </select>
       )}
 
       {config.type === 'json' && (

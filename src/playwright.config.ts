@@ -26,7 +26,7 @@ export default defineConfig({
   ],
 
   use: {
-    baseURL: 'http://localhost:5173/atom-ui/',
+    baseURL: 'http://localhost:5173/atom/',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
@@ -38,7 +38,7 @@ export default defineConfig({
   /* Start the Vite dev server before running tests */
   webServer: {
     command: 'npm run dev',
-    url: 'http://localhost:5173/atom-ui/',
+    url: 'http://localhost:5173/atom/',
     reuseExistingServer: true,   // re-use if already running
     timeout: 120_000,
   },

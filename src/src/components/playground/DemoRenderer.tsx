@@ -44,11 +44,23 @@ export default function DemoRenderer({ html, label }: DemoRendererProps) {
     // Trigger any inline script tags (not auto-executed via innerHTML)
     const scripts = ref.current.querySelectorAll('script');
     scripts.forEach(oldScript => {
+      const scriptText = oldScript.textContent || '';
+
+      // Validate inline scripts to prevent syntax errors from crashing the app
+      if (!oldScript.hasAttribute('src') && scriptText.trim() !== '') {
+        try {
+          new Function(scriptText);
+        } catch (e) {
+          console.warn('Skipping broken inline demo script due to syntax error:', e);
+          return;
+        }
+      }
+
       const newScript = document.createElement('script');
       Array.from(oldScript.attributes).forEach(attr =>
         newScript.setAttribute(attr.name, attr.value)
       );
-      newScript.textContent = oldScript.textContent;
+      newScript.textContent = scriptText;
       oldScript.parentNode?.replaceChild(newScript, oldScript);
     });
   }, [html]);

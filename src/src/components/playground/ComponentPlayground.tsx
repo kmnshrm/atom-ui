@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import PropEditor from './PropEditor';
 import CodePreview from './CodePreview';
 import DemoRenderer from './DemoRenderer';
@@ -369,6 +370,18 @@ export default function ComponentPlayground({
     return defaults;
   });
   const [copiedCode, setCopiedCode] = useState(false);
+  const [appTheme, setAppTheme] = useState<string>(
+    () => document.documentElement.getAttribute('data-theme') || 'light'
+  );
+
+  // Track app theme changes so preview components receive the correct theme
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setAppTheme(document.documentElement.getAttribute('data-theme') || 'light');
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    return () => observer.disconnect();
+  }, []);
 
   const setActiveTab = (tab: 'playground' | 'docs' | 'examples') => {
     setActiveTabState(tab);
@@ -508,7 +521,12 @@ export default function ComponentPlayground({
                   <div className="cp-preview-stage">
                     <div className="cp-preview-grid-bg" />
                     <div className="cp-preview-content">
-                      {renderPreview(propValues)}
+                      {(() => {
+                        const el = renderPreview(propValues);
+                        return React.isValidElement(el)
+                          ? React.cloneElement(el as React.ReactElement<any>, { theme: appTheme })
+                          : el;
+                      })()}
                     </div>
                   </div>
                   {/* Code Preview */}
