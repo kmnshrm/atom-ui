@@ -182,6 +182,25 @@ export const categoryNavItems: NavItem[] = [
         icon: "menu-square",
         iconLibrary: "lucide",
       },
+      {
+        id: "multi-level-context-menu",
+        label: "Multi-Level Context Menu",
+        icon: "layers",
+        iconLibrary: "lucide",
+      },
+      {
+        id: "nav-bar",
+        label: "Nav Bar",
+        icon: "sidebar",
+        iconLibrary: "lucide",
+      },
+      {
+        id: "smart-stepper",
+        label: "Smart Stepper",
+        badge: "✨",
+        icon: "git-commit-horizontal",
+        iconLibrary: "lucide",
+      },
     ],
   },
   {
@@ -436,6 +455,13 @@ export const categoryNavItems: NavItem[] = [
         iconLibrary: "lucide",
       },
       { id: "icon", label: "Icon", icon: "shapes", iconLibrary: "lucide" },
+      { id: "label", label: "Label", icon: "tag", iconLibrary: "lucide" },
+      {
+        id: "theme-selector",
+        label: "Theme Selector",
+        icon: "sun-moon",
+        iconLibrary: "lucide",
+      },
       {
         id: "tag-group",
         label: "Tag Group",
@@ -503,6 +529,13 @@ export const categoryNavItems: NavItem[] = [
         id: "tooltip",
         label: "Tooltip",
         icon: "help-circle",
+        iconLibrary: "lucide",
+      },
+      {
+        id: "smart-dialog",
+        label: "Smart Dialog",
+        badge: "✨",
+        icon: "message-square-plus",
         iconLibrary: "lucide",
       },
     ],
@@ -629,18 +662,18 @@ export const categoryNavItems: NavItem[] = [
       },
     ],
   },
-  {
-    id: "mega-menu",
-    label: "Mega Menu (50 Items)",
-    icon: "layers",
-    iconLibrary: "lucide",
-    children: Array.from({ length: 50 }).map((_, i) => ({
-      id: `mega-item-${i + 1}`,
-      label: `Mega Item ${i + 1}`,
-      icon: "star",
-      iconLibrary: "lucide",
-    })),
-  },
+  // {
+  //   id: "mega-menu",
+  //   label: "Mega Menu (50 Items)",
+  //   icon: "layers",
+  //   iconLibrary: "lucide",
+  //   children: Array.from({ length: 50 }).map((_, i) => ({
+  //     id: `mega-item-${i + 1}`,
+  //     label: `Mega Item ${i + 1}`,
+  //     icon: "star",
+  //     iconLibrary: "lucide",
+  //   })),
+  // },
 ];
 
 export const userProfileNavItems: NavItem[] = [

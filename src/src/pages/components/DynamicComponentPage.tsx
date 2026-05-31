@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getPropsForComponent, getDescriptionForComponent, getDemosForComponent, getEventsForComponent, getMethodsForComponent } from '../../utils/componentMetadata';
+import { getPropsForComponent, getDescriptionForComponent, getDemosForComponent, getEventsForComponent, getMethodsForComponent, getSlotsForComponent, getPartsForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
 import type { PropConfig, DocSection } from '../../components/playground/ComponentPlayground';
 
@@ -825,7 +825,7 @@ export default function DynamicComponentPage({
   id: string;
   interactiveDocs?: boolean;
   onExamplesLoaded?: (examples: { title: string; id: string }[]) => void;
-  onMetadataLoaded?: (meta: { hasEvents: boolean; hasMethods: boolean }) => void;
+  onMetadataLoaded?: (meta: { hasEvents: boolean; hasMethods: boolean; hasSlots: boolean; hasParts: boolean }) => void;
 }) {
   // Strip category prefix from slash-containing IDs (e.g. 'charts/area-chart' → 'area-chart')
   const baseId = id.includes('/') ? id.split('/').pop()! : id;
@@ -846,6 +846,8 @@ export default function DynamicComponentPage({
   const dynamicProps = getPropsForComponent(tagName);
   const dynamicEvents = getEventsForComponent(tagName);
   const dynamicMethods = getMethodsForComponent(tagName);
+  const dynamicSlots = getSlotsForComponent(tagName);
+  const dynamicParts = getPartsForComponent(tagName);
 
   // Merge dynamic props with premium registry props if they match, retaining premium default values & mock datasets
   const registryProps = meta.props || [];
@@ -884,9 +886,11 @@ export default function DynamicComponentPage({
       onMetadataLoaded({
         hasEvents: dynamicEvents.length > 0,
         hasMethods: dynamicMethods.length > 0,
+        hasSlots: dynamicSlots.length > 0,
+        hasParts: dynamicParts.length > 0,
       });
     }
-  }, [id, dynamicEvents.length, dynamicMethods.length, onMetadataLoaded]);
+  }, [id, dynamicEvents.length, dynamicMethods.length, dynamicSlots.length, dynamicParts.length, onMetadataLoaded]);
 
   const buildCode = (p: Record<string, any>) => {
     const attrs: string[] = [];
@@ -987,6 +991,8 @@ export default function DynamicComponentPage({
       interactiveDocs={interactiveDocs}
       events={dynamicEvents}
       methods={dynamicMethods}
+      slots={dynamicSlots}
+      parts={dynamicParts}
     />
   );
 }

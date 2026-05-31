@@ -12,6 +12,12 @@ export interface PropConfig {
   defaultValue: any;
   options?: string[];
   description?: string;
+  /** Raw TypeScript type string from docs.json (e.g. '"primary" | "secondary"') */
+  rawType?: string;
+  /** HTML attribute name (e.g. 'icon-library' for prop 'iconLibrary') */
+  attrName?: string;
+  /** Whether the prop is required */
+  required?: boolean;
 }
 
 export interface ExampleConfig {
@@ -45,6 +51,16 @@ export interface MethodConfig {
   docs: string;
 }
 
+export interface SlotConfig {
+  name: string;
+  docs: string;
+}
+
+export interface PartConfig {
+  name: string;
+  docs: string;
+}
+
 export interface ComponentPlaygroundProps {
   componentName: string;
   tagName: string;
@@ -60,6 +76,8 @@ export interface ComponentPlaygroundProps {
   interactiveDocs?: boolean;
   events?: EventConfig[];
   methods?: MethodConfig[];
+  slots?: SlotConfig[];
+  parts?: PartConfig[];
 }
 
 // ─── TOC Sections for Interactive Docs ────────────────────────────────────────
@@ -68,6 +86,93 @@ const TOC_SECTIONS = [
   { id: 'section-examples', label: 'Examples', icon: 'code-2' },
   { id: 'section-props', label: 'Props Reference', icon: 'list' },
 ] as const;
+
+// ─── Right-side "On This Page" TOC for the Docs tab ──────────────────────────
+function DocsToc({
+  propCount,
+  events,
+  methods,
+  slots,
+  parts,
+  docs,
+  scrollContainerRef,
+}: {
+  propCount: number;
+  events: EventConfig[];
+  methods: MethodConfig[];
+  slots: SlotConfig[];
+  parts: PartConfig[];
+  docs: DocSection[];
+  scrollContainerRef: React.RefObject<HTMLDivElement>;
+}) {
+  const [active, setActive] = useState('docs-props');
+
+  const sections = [
+    { id: 'docs-props', label: 'Props', icon: 'list', count: propCount, color: 'indigo' },
+    ...(events.length > 0 ? [{ id: 'docs-events', label: 'Events', icon: 'zap', count: events.length, color: 'emerald' }] : []),
+    ...(methods.length > 0 ? [{ id: 'docs-methods', label: 'Methods', icon: 'terminal', count: methods.length, color: 'blue' }] : []),
+    ...(slots.length > 0 ? [{ id: 'docs-slots', label: 'Named Slots', icon: 'layout-template', count: slots.length, color: 'amber' }] : []),
+    ...(parts.length > 0 ? [{ id: 'docs-parts', label: 'CSS Parts', icon: 'paintbrush', count: parts.length, color: 'rose' }] : []),
+    ...docs.map((s, i) => ({ id: `docs-guide-${i}`, label: s.title, icon: 'book-open', count: 0, color: 'slate' })),
+  ];
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    const handler = () => {
+      for (const sec of [...sections].reverse()) {
+        const el = container.querySelector(`#${sec.id}`) as HTMLElement | null;
+        if (el && el.offsetTop <= container.scrollTop + 150) {
+          setActive(sec.id);
+          return;
+        }
+      }
+      if (sections.length > 0) setActive(sections[0].id);
+    };
+    container.addEventListener('scroll', handler, { passive: true });
+    return () => container.removeEventListener('scroll', handler);
+  }, [sections.map(s => s.id).join()]);
+
+  const scrollTo = (id: string) => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    const el = container.querySelector(`#${id}`) as HTMLElement | null;
+    if (el) container.scrollTo({ top: el.offsetTop - 32, behavior: 'smooth' });
+    setActive(id);
+  };
+
+  const colorMap: Record<string, string> = {
+    indigo: '#818cf8',
+    emerald: '#34d399',
+    blue: '#60a5fa',
+    amber: '#fbbf24',
+    rose: '#fb7185',
+    slate: '#94a3b8',
+  };
+
+  return (
+    <aside className="cp-docs-toc">
+      <div className="cp-docs-toc-header">
+        <ui-icon name="menu" size="12" />
+        On this page
+      </div>
+      <div className="cp-docs-toc-list">
+        {sections.map(sec => (
+          <button
+            key={sec.id}
+            className={`cp-docs-toc-item${active === sec.id ? ' cp-docs-toc-item--active' : ''}`}
+            style={active === sec.id ? { '--toc-active-color': colorMap[sec.color] } as React.CSSProperties : {}}
+            onClick={() => scrollTo(sec.id)}
+          >
+            <ui-icon name={sec.icon} size="12" />
+            <span>{sec.label}</span>
+            {sec.count > 0 && <span className="cp-docs-toc-count">{sec.count}</span>}
+          </button>
+        ))}
+      </div>
+    </aside>
+  );
+}
 
 // ─── Left Sidebar for Interactive Docs (reserved for future use) ─────────────────
 const _DocsSidebar = null; void _DocsSidebar;
@@ -89,15 +194,18 @@ function InteractiveDocsContent({
   onSectionChange,
   noScrollWrapper = false,
   events = [],
-  methods = []
+  methods = [],
+  slots = [],
+  parts = [],
 }: ComponentPlaygroundProps & {
   propConfigs: PropConfig[];
   onSectionChange: (id: string) => void;
   noScrollWrapper?: boolean;
 }) {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeSubSec, setActiveSubSec] = useState('sub-props');
 
-  // Scroll spy
+  // Scroll spy for top-level sections
   useEffect(() => {
     const container = scrollRef.current;
     if (!container) return;
@@ -115,6 +223,41 @@ function InteractiveDocsContent({
     container.addEventListener('scroll', handler, { passive: true });
     return () => container.removeEventListener('scroll', handler);
   }, []);
+
+  // Scroll spy for API sub-sections
+  useEffect(() => {
+    const getContainer = () => scrollRef.current || document.getElementById('id-center-scroll');
+    const subIds = [
+      'sub-props',
+      ...(events.length > 0 ? ['sub-events'] : []),
+      ...(methods.length > 0 ? ['sub-methods'] : []),
+      ...(slots.length > 0 ? ['sub-slots'] : []),
+      ...(parts.length > 0 ? ['sub-parts'] : []),
+      'sub-notes',
+    ];
+    const handler = () => {
+      const container = getContainer();
+      if (!container) return;
+      for (const id of [...subIds].reverse()) {
+        const el = container.querySelector(`#${id}`) as HTMLElement | null;
+        if (el && el.offsetTop <= container.scrollTop + 160) {
+          setActiveSubSec(id);
+          return;
+        }
+      }
+    };
+    const container = getContainer();
+    container?.addEventListener('scroll', handler, { passive: true });
+    return () => container?.removeEventListener('scroll', handler);
+  }, [events.length, methods.length, slots.length, parts.length]);
+
+  const scrollToSub = (id: string) => {
+    const container = scrollRef.current || document.getElementById('id-center-scroll');
+    if (!container) return;
+    const target = container.querySelector(`#${id}`) as HTMLElement | null;
+    if (target) container.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+    setActiveSubSec(id);
+  };
 
   const scrollToId = (id: string) => {
     const container = scrollRef.current;
@@ -224,31 +367,109 @@ function InteractiveDocsContent({
           <ui-icon name="list" size="18" />
           Props Reference
         </h2>
+
+        {/* ── API ANCHOR NAV ── */}
+        <nav className="cp-api-anchor-nav">
+          <button
+            className={`cp-api-anchor-btn${activeSubSec === 'sub-props' ? ' cp-api-anchor-btn--active' : ''}`}
+            onClick={() => scrollToSub('sub-props')}
+          >
+            <ui-icon name="list" size="12" />
+            Props
+            <span className="cp-api-anchor-count">{propConfigs.length}</span>
+          </button>
+          {events.length > 0 && (
+            <button
+              className={`cp-api-anchor-btn cp-api-anchor-btn--events${activeSubSec === 'sub-events' ? ' cp-api-anchor-btn--active' : ''}`}
+              onClick={() => scrollToSub('sub-events')}
+            >
+              <ui-icon name="zap" size="12" />
+              Events
+              <span className="cp-api-anchor-count">{events.length}</span>
+            </button>
+          )}
+          {methods.length > 0 && (
+            <button
+              className={`cp-api-anchor-btn cp-api-anchor-btn--methods${activeSubSec === 'sub-methods' ? ' cp-api-anchor-btn--active' : ''}`}
+              onClick={() => scrollToSub('sub-methods')}
+            >
+              <ui-icon name="terminal" size="12" />
+              Methods
+              <span className="cp-api-anchor-count">{methods.length}</span>
+            </button>
+          )}
+          {slots.length > 0 && (
+            <button
+              className={`cp-api-anchor-btn cp-api-anchor-btn--slots${activeSubSec === 'sub-slots' ? ' cp-api-anchor-btn--active' : ''}`}
+              onClick={() => scrollToSub('sub-slots')}
+            >
+              <ui-icon name="layout-template" size="12" />
+              Slots
+              <span className="cp-api-anchor-count">{slots.length}</span>
+            </button>
+          )}
+          {parts.length > 0 && (
+            <button
+              className={`cp-api-anchor-btn cp-api-anchor-btn--parts${activeSubSec === 'sub-parts' ? ' cp-api-anchor-btn--active' : ''}`}
+              onClick={() => scrollToSub('sub-parts')}
+            >
+              <ui-icon name="paintbrush" size="12" />
+              CSS Parts
+              <span className="cp-api-anchor-count">{parts.length}</span>
+            </button>
+          )}
+          <button
+            className={`cp-api-anchor-btn cp-api-anchor-btn--notes${activeSubSec === 'sub-notes' ? ' cp-api-anchor-btn--active' : ''}`}
+            onClick={() => scrollToSub('sub-notes')}
+          >
+            <ui-icon name="file-text" size="12" />
+            Notes
+          </button>
+        </nav>
+
         <div className="cp-props-table-wrapper" id="sub-props">
           <table className="cp-props-table">
             <thead>
               <tr>
-                <th>Name</th>
+                <th>Property</th>
+                <th>Attribute</th>
                 <th>Type</th>
                 <th>Default</th>
                 <th>Description</th>
               </tr>
             </thead>
             <tbody>
-              {propConfigs.map(prop => (
-                <tr key={prop.name}>
-                  <td><code className="cp-code-inline">{prop.name}</code></td>
-                  <td><span className="cp-type-badge">{prop.type === 'select' ? prop.options?.join(' | ') : prop.type}</span></td>
-                  <td><code className="cp-code-inline">{String(prop.defaultValue)}</code></td>
-                  <td className="cp-prop-desc">{prop.description || '—'}</td>
-                </tr>
-              ))}
+              {propConfigs.map(prop => {
+                const displayType = prop.rawType || (prop.type === 'select' ? prop.options?.join(' | ') : prop.type) || prop.type;
+                const attrName = prop.attrName || prop.name;
+                const attrDiffers = attrName !== prop.name;
+                return (
+                  <tr key={prop.name}>
+                    <td>
+                      <code className="cp-code-inline">{prop.name}</code>
+                      {prop.required && <span style={{ color: '#f87171', marginLeft: '4px', fontSize: '0.7rem' }} title="Required">*</span>}
+                    </td>
+                    <td>
+                      {attrDiffers
+                        ? <code className="cp-code-inline" style={{ opacity: 0.75 }}>{attrName}</code>
+                        : <span style={{ opacity: 0.35, fontSize: '0.8em' }}>—</span>}
+                    </td>
+                    <td>
+                      <span className="cp-type-badge" title={displayType} style={{ maxWidth: '200px', overflow: 'hidden', textOverflow: 'ellipsis', display: 'inline-block', whiteSpace: 'nowrap' }}>
+                        {displayType.length > 40 ? displayType.slice(0, 38) + '…' : displayType}
+                      </span>
+                    </td>
+                    <td><code className="cp-code-inline">{prop.defaultValue !== undefined ? String(prop.defaultValue) : '—'}</code></td>
+                    <td className="cp-prop-desc">{prop.description || '—'}</td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
 
         {/* ── EVENTS REFERENCE ── */}
-        {events && events.length > 0 && (
+        {events.length > 0 && (
           <div style={{ marginTop: '2rem' }} id="sub-events">
             <h3 className="cp-doc-subsection-title" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1rem', fontWeight: 600, color: '#fff', marginBottom: '1rem' }}>
               <ui-icon name="zap" size="16" />
@@ -259,7 +480,7 @@ function InteractiveDocsContent({
                 <thead>
                   <tr>
                     <th>Event Name</th>
-                    <th>Detail Payload</th>
+                    <th>Detail / Payload</th>
                     <th>Description</th>
                   </tr>
                 </thead>
@@ -267,18 +488,22 @@ function InteractiveDocsContent({
                   {events.map(ev => (
                     <tr key={ev.event}>
                       <td><code className="cp-code-inline">{ev.event}</code></td>
-                      <td><code className="cp-code-inline">{ev.detail}</code></td>
+                      <td><code className="cp-code-inline">{ev.detail || 'void'}</code></td>
                       <td className="cp-prop-desc">{ev.docs || '—'}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
+            <div style={{ marginTop: '0.75rem', padding: '0.75rem 1rem', background: 'rgba(52,211,153,0.06)', borderRadius: '8px', border: '1px solid rgba(52,211,153,0.15)', fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)' }}>
+              <ui-icon name="info" size="13" style={{ marginRight: '6px', verticalAlign: 'middle' }} />
+              Listen via <code style={{ color: '#34d399' }}>element.addEventListener('{events[0]?.event}', e =&gt; console.log(e.detail))</code>
+            </div>
           </div>
         )}
 
         {/* ── METHODS REFERENCE ── */}
-        {methods && methods.length > 0 && (
+        {methods.length > 0 && (
           <div style={{ marginTop: '2rem' }} id="sub-methods">
             <h3 className="cp-doc-subsection-title" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1rem', fontWeight: 600, color: '#fff', marginBottom: '1rem' }}>
               <ui-icon name="terminal" size="16" />
@@ -288,7 +513,7 @@ function InteractiveDocsContent({
               <table className="cp-props-table">
                 <thead>
                   <tr>
-                    <th>Method Name</th>
+                    <th>Method</th>
                     <th>Signature</th>
                     <th>Description</th>
                   </tr>
@@ -297,8 +522,48 @@ function InteractiveDocsContent({
                   {methods.map(m => (
                     <tr key={m.name}>
                       <td><code className="cp-code-inline">{m.name}</code></td>
-                      <td><code className="cp-code-inline">{m.signature}</code></td>
+                      <td><code className="cp-code-inline" style={{ fontSize: '0.75rem' }}>{m.signature}</code></td>
                       <td className="cp-prop-desc">{m.docs || '—'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div style={{ marginTop: '0.75rem', padding: '0.75rem 1rem', background: 'rgba(96,165,250,0.06)', borderRadius: '8px', border: '1px solid rgba(96,165,250,0.15)', fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)' }}>
+              <ui-icon name="info" size="13" style={{ marginRight: '6px', verticalAlign: 'middle' }} />
+              Call via <code style={{ color: '#60a5fa' }}>const el = document.querySelector('{tagName}'); el.{methods[0]?.name}()</code>
+            </div>
+          </div>
+        )}
+
+        {/* ── SLOTS REFERENCE ── */}
+        {slots.length > 0 && (
+          <div style={{ marginTop: '2rem' }} id="sub-slots">
+            <h3 className="cp-doc-subsection-title" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1rem', fontWeight: 600, color: '#fff', marginBottom: '1rem' }}>
+              <ui-icon name="layout-template" size="16" />
+              Named Slots
+            </h3>
+            <div className="cp-props-table-wrapper">
+              <table className="cp-props-table">
+                <thead>
+                  <tr>
+                    <th>Slot Name</th>
+                    <th>Description</th>
+                    <th>Usage</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {slots.map(s => (
+                    <tr key={s.name}>
+                      <td><code className="cp-code-inline">{s.name}</code></td>
+                      <td className="cp-prop-desc">{s.docs || '—'}</td>
+                      <td>
+                        <code className="cp-code-inline" style={{ fontSize: '0.72rem', opacity: 0.7 }}>
+                          {s.name === '(default)'
+                            ? `<${tagName}>content</${tagName}>`
+                            : `<div slot="${s.name}">…</div>`}
+                        </code>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -307,7 +572,41 @@ function InteractiveDocsContent({
           </div>
         )}
 
-        {/* ── NOTES REFERENCE ── */}
+        {/* ── CSS PARTS REFERENCE ── */}
+        {parts.length > 0 && (
+          <div style={{ marginTop: '2rem' }} id="sub-parts">
+            <h3 className="cp-doc-subsection-title" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1rem', fontWeight: 600, color: '#fff', marginBottom: '1rem' }}>
+              <ui-icon name="paintbrush" size="16" />
+              CSS Shadow Parts
+            </h3>
+            <div className="cp-props-table-wrapper">
+              <table className="cp-props-table">
+                <thead>
+                  <tr>
+                    <th>Part Name</th>
+                    <th>Description</th>
+                    <th>Selector</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {parts.map(p => (
+                    <tr key={p.name}>
+                      <td><code className="cp-code-inline">{p.name}</code></td>
+                      <td className="cp-prop-desc">{p.docs || '—'}</td>
+                      <td><code className="cp-code-inline" style={{ fontSize: '0.72rem', opacity: 0.7 }}>{tagName}::part({p.name})</code></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div style={{ marginTop: '0.75rem', padding: '0.75rem 1rem', background: 'rgba(251,191,36,0.06)', borderRadius: '8px', border: '1px solid rgba(251,191,36,0.15)', fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)' }}>
+              <ui-icon name="info" size="13" style={{ marginRight: '6px', verticalAlign: 'middle' }} />
+              Style via CSS: <code style={{ color: '#fbbf24' }}>{tagName}::part({parts[0]?.name}) {'{ color: red; }'}</code>
+            </div>
+          </div>
+        )}
+
+        {/* ── NOTES ── */}
         <div style={{ marginTop: '2rem' }} id="sub-notes">
           <h3 className="cp-doc-subsection-title" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1.05rem', fontWeight: 600, marginBottom: '1rem' }}>
             <ui-icon name="file-text" size="16" />
@@ -315,9 +614,12 @@ function InteractiveDocsContent({
           </h3>
           <div className="cp-consolidated-notes-box">
             <ul className="cp-consolidated-notes-list">
-              <li><strong>Stencil Integration:</strong> This component is built as a standard web component. In React, use camelCase for properties and standard event listeners for custom events.</li>
-              <li><strong>Ref Reflection:</strong> For public methods, obtain a DOM reference using React <code>useRef</code> or <code>document.querySelector</code> and invoke the methods directly on the element.</li>
-              <li><strong>Styling Customization:</strong> Most components support dynamic theme injection. Custom CSS properties can be set via global stylesheets or custom element style attributes.</li>
+              <li><strong>Framework Usage:</strong> In React, pass props as camelCase attributes. Use the HTML attribute name (shown in the Attribute column) in plain HTML.</li>
+              <li><strong>Public Methods:</strong> Obtain a DOM reference via <code>useRef</code> or <code>document.querySelector('{tagName}')</code> and call methods directly on the element.</li>
+              <li><strong>Events:</strong> All custom events bubble and are composed — listen with <code>addEventListener</code> or React synthetic events where supported.</li>
+              {slots.length > 0 && <li><strong>Slots:</strong> Use named slots to inject custom content into specific regions of the component shadow DOM.</li>}
+              {parts.length > 0 && <li><strong>CSS Parts:</strong> Use <code>::part()</code> selectors to style internal shadow DOM elements from the outside without piercing the shadow boundary.</li>}
+              <li><strong>Theming:</strong> Most components inherit CSS custom properties from the nearest ancestor with a <code>data-theme</code> attribute.</li>
             </ul>
           </div>
         </div>
@@ -359,11 +661,14 @@ export default function ComponentPlayground({
   demoSections,
   interactiveDocs = false,
   events = [],
-  methods = []
+  methods = [],
+  slots = [],
+  parts = []
 }: ComponentPlaygroundProps) {
   const [activeTab, setActiveTabState] = useState<'playground' | 'docs' | 'examples'>(
     () => (getTabFromHash() as any) || 'playground'
   );
+  const docsScrollRef = useRef<HTMLDivElement>(null);
   const [propValues, setPropValues] = useState<Record<string, any>>(() => {
     const defaults: Record<string, any> = {};
     propConfigs.forEach(p => { defaults[p.name] = p.defaultValue; });
@@ -427,6 +732,8 @@ export default function ComponentPlayground({
         noScrollWrapper={true}
         events={events}
         methods={methods}
+        slots={slots}
+        parts={parts}
       />
     );
   }
@@ -441,7 +748,7 @@ export default function ComponentPlayground({
             <h1 className="cp-component-name">{componentName}</h1>
           </div>
         </div>
-        <p className="cp-description">{description}</p>
+        {/* <p className="cp-description">{description}</p> */}
 
         {/* Tabs */}
         <div className="cp-tabs">
@@ -541,9 +848,10 @@ export default function ComponentPlayground({
           {/* Docs Tab */}
           {activeTab === 'docs' && (
             <div className="cp-docs-layout">
-              <div className="cp-docs-content">
+              <div className="cp-docs-content" ref={docsScrollRef}>
+
                 {/* Props Table */}
-                <section className="cp-docs-section">
+                <section className="cp-docs-section" id="docs-props">
                   <h2 className="cp-docs-section-title">
                     <ui-icon name="list" size="18" />
                     Props Reference
@@ -552,21 +860,39 @@ export default function ComponentPlayground({
                     <table className="cp-props-table">
                       <thead>
                         <tr>
-                          <th>Name</th>
+                          <th>Property</th>
+                          <th>Attribute</th>
                           <th>Type</th>
                           <th>Default</th>
                           <th>Description</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {propConfigs.map(prop => (
-                          <tr key={prop.name}>
-                            <td><code className="cp-code-inline">{prop.name}</code></td>
-                            <td><span className="cp-type-badge">{prop.type === 'select' ? prop.options?.join(' | ') : prop.type}</span></td>
-                            <td><code className="cp-code-inline">{String(prop.defaultValue)}</code></td>
-                            <td className="cp-prop-desc">{prop.description || '—'}</td>
-                          </tr>
-                        ))}
+                        {propConfigs.map(prop => {
+                          const displayType = prop.rawType || (prop.type === 'select' ? prop.options?.join(' | ') : prop.type) || prop.type;
+                          const attrName = prop.attrName || prop.name;
+                          const attrDiffers = attrName !== prop.name;
+                          return (
+                            <tr key={prop.name}>
+                              <td>
+                                <code className="cp-code-inline">{prop.name}</code>
+                                {prop.required && <span style={{ color: '#f87171', marginLeft: '4px', fontSize: '0.7rem' }} title="Required">*</span>}
+                              </td>
+                              <td>
+                                {attrDiffers
+                                  ? <code className="cp-code-inline" style={{ opacity: 0.75 }}>{attrName}</code>
+                                  : <span style={{ opacity: 0.35, fontSize: '0.8em' }}>—</span>}
+                              </td>
+                              <td>
+                                <span className="cp-type-badge" title={displayType} style={{ maxWidth: '200px', overflow: 'hidden', textOverflow: 'ellipsis', display: 'inline-block', whiteSpace: 'nowrap' }}>
+                                  {displayType.length > 40 ? displayType.slice(0, 38) + '…' : displayType}
+                                </span>
+                              </td>
+                              <td><code className="cp-code-inline">{prop.defaultValue !== undefined ? String(prop.defaultValue) : '—'}</code></td>
+                              <td className="cp-prop-desc">{prop.description || '—'}</td>
+                            </tr>
+                          );
+                        })}
                       </tbody>
                     </table>
                   </div>
@@ -574,7 +900,7 @@ export default function ComponentPlayground({
 
                 {/* Events Table */}
                 {events && events.length > 0 && (
-                  <section className="cp-docs-section">
+                  <section className="cp-docs-section" id="docs-events">
                     <h2 className="cp-docs-section-title">
                       <ui-icon name="zap" size="18" />
                       Events Emitted
@@ -584,7 +910,7 @@ export default function ComponentPlayground({
                         <thead>
                           <tr>
                             <th>Event Name</th>
-                            <th>Detail Payload</th>
+                            <th>Detail / Payload</th>
                             <th>Description</th>
                           </tr>
                         </thead>
@@ -592,19 +918,23 @@ export default function ComponentPlayground({
                           {events.map(ev => (
                             <tr key={ev.event}>
                               <td><code className="cp-code-inline">{ev.event}</code></td>
-                              <td><code className="cp-code-inline">{ev.detail}</code></td>
+                              <td><code className="cp-code-inline">{ev.detail || 'void'}</code></td>
                               <td className="cp-prop-desc">{ev.docs || '—'}</td>
                             </tr>
                           ))}
                         </tbody>
                       </table>
                     </div>
+                    <div style={{ marginTop: '0.75rem', padding: '0.75rem 1rem', background: 'rgba(52,211,153,0.06)', borderRadius: '8px', border: '1px solid rgba(52,211,153,0.15)', fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)' }}>
+                      <ui-icon name="info" size="13" style={{ marginRight: '6px', verticalAlign: 'middle' }} />
+                      Listen via <code style={{ color: '#34d399' }}>element.addEventListener('{events[0]?.event}', e =&gt; console.log(e.detail))</code>
+                    </div>
                   </section>
                 )}
 
                 {/* Methods Table */}
                 {methods && methods.length > 0 && (
-                  <section className="cp-docs-section">
+                  <section className="cp-docs-section" id="docs-methods">
                     <h2 className="cp-docs-section-title">
                       <ui-icon name="terminal" size="18" />
                       Public Methods
@@ -613,7 +943,7 @@ export default function ComponentPlayground({
                       <table className="cp-props-table">
                         <thead>
                           <tr>
-                            <th>Method Name</th>
+                            <th>Method</th>
                             <th>Signature</th>
                             <th>Description</th>
                           </tr>
@@ -622,8 +952,48 @@ export default function ComponentPlayground({
                           {methods.map(m => (
                             <tr key={m.name}>
                               <td><code className="cp-code-inline">{m.name}</code></td>
-                              <td><code className="cp-code-inline">{m.signature}</code></td>
+                              <td><code className="cp-code-inline" style={{ fontSize: '0.75rem' }}>{m.signature}</code></td>
                               <td className="cp-prop-desc">{m.docs || '—'}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    <div style={{ marginTop: '0.75rem', padding: '0.75rem 1rem', background: 'rgba(96,165,250,0.06)', borderRadius: '8px', border: '1px solid rgba(96,165,250,0.15)', fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)' }}>
+                      <ui-icon name="info" size="13" style={{ marginRight: '6px', verticalAlign: 'middle' }} />
+                      Call via <code style={{ color: '#60a5fa' }}>const el = document.querySelector('{tagName}'); el.{methods[0]?.name}()</code>
+                    </div>
+                  </section>
+                )}
+
+                {/* Slots Table */}
+                {slots && slots.length > 0 && (
+                  <section className="cp-docs-section" id="docs-slots">
+                    <h2 className="cp-docs-section-title">
+                      <ui-icon name="layout-template" size="18" />
+                      Named Slots
+                    </h2>
+                    <div className="cp-props-table-wrapper">
+                      <table className="cp-props-table">
+                        <thead>
+                          <tr>
+                            <th>Slot Name</th>
+                            <th>Description</th>
+                            <th>Usage</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {slots.map(s => (
+                            <tr key={s.name}>
+                              <td><code className="cp-code-inline">{s.name}</code></td>
+                              <td className="cp-prop-desc">{s.docs || '—'}</td>
+                              <td>
+                                <code className="cp-code-inline" style={{ fontSize: '0.72rem', opacity: 0.7 }}>
+                                  {s.name === '(default)'
+                                    ? `<${tagName}>content</${tagName}>`
+                                    : `<div slot="${s.name}">…</div>`}
+                                </code>
+                              </td>
                             </tr>
                           ))}
                         </tbody>
@@ -632,20 +1002,64 @@ export default function ComponentPlayground({
                   </section>
                 )}
 
+                {/* CSS Parts Table */}
+                {parts && parts.length > 0 && (
+                  <section className="cp-docs-section" id="docs-parts">
+                    <h2 className="cp-docs-section-title">
+                      <ui-icon name="paintbrush" size="18" />
+                      CSS Shadow Parts
+                    </h2>
+                    <div className="cp-props-table-wrapper">
+                      <table className="cp-props-table">
+                        <thead>
+                          <tr>
+                            <th>Part Name</th>
+                            <th>Description</th>
+                            <th>Selector</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {parts.map(p => (
+                            <tr key={p.name}>
+                              <td><code className="cp-code-inline">{p.name}</code></td>
+                              <td className="cp-prop-desc">{p.docs || '—'}</td>
+                              <td><code className="cp-code-inline" style={{ fontSize: '0.72rem', opacity: 0.7 }}>{tagName}::part({p.name})</code></td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    <div style={{ marginTop: '0.75rem', padding: '0.75rem 1rem', background: 'rgba(251,191,36,0.06)', borderRadius: '8px', border: '1px solid rgba(251,191,36,0.15)', fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)' }}>
+                      <ui-icon name="info" size="13" style={{ marginRight: '6px', verticalAlign: 'middle' }} />
+                      Style via CSS: <code style={{ color: '#fbbf24' }}>{tagName}::part({parts[0]?.name}) {'{ color: red; }'}</code>
+                    </div>
+                  </section>
+                )}
+
                 {/* Doc Sections */}
                 {docs.map((section, i) => (
-                  <section key={i} className="cp-docs-section">
+                  <section key={i} className="cp-docs-section" id={`docs-guide-${i}`}>
                     <h2 className="cp-docs-section-title">
-                      <ui-icon name="file-text" size="18" />
+                      <ui-icon name="book-open" size="18" />
                       {section.title}
                     </h2>
                     <div className="cp-docs-text" dangerouslySetInnerHTML={{ __html: section.content }} />
                   </section>
                 ))}
               </div>
+
+              {/* Right TOC */}
+              <DocsToc
+                propCount={propConfigs.length}
+                events={events}
+                methods={methods}
+                slots={slots}
+                parts={parts}
+                docs={docs}
+                scrollContainerRef={docsScrollRef}
+              />
             </div>
           )}
-
           {/* Examples & Demos Tab */}
           {activeTab === 'examples' && (
             <div className="cp-examples-split-layout">

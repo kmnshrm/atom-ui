@@ -1,5 +1,6 @@
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
 import type { PropConfig, ExampleConfig, DocSection, DemoSection } from '../../components/playground/ComponentPlayground';
+import { getEventsForComponent, getMethodsForComponent, getSlotsForComponent, getPartsForComponent } from '../../utils/componentMetadata';
 
 const propConfigs: PropConfig[] = [
   // Identity
@@ -367,6 +368,10 @@ export default function AvatarPage() {
       docs={docs}
       examples={examples}
       demoSections={demoSections}
+      events={getEventsForComponent('ui-avatar')}
+      methods={getMethodsForComponent('ui-avatar')}
+      slots={getSlotsForComponent('ui-avatar')}
+      parts={getPartsForComponent('ui-avatar')}
     />
   );
 }

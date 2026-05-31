@@ -1,4 +1,4 @@
-import { getDemosForComponent } from '../../utils/componentMetadata';
+import { getDemosForComponent, getEventsForComponent, getMethodsForComponent, getSlotsForComponent, getPartsForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
 import type { PropConfig, ExampleConfig, DocSection } from '../../components/playground/ComponentPlayground';
 
@@ -94,6 +94,10 @@ export default function RadioPage() {
       docs={docs}
       examples={examples}
       demoSections={getDemosForComponent('radio')}
+      events={getEventsForComponent('ui-radio')}
+      methods={getMethodsForComponent('ui-radio')}
+      slots={getSlotsForComponent('ui-radio')}
+      parts={getPartsForComponent('ui-radio')}
     />
   );
 }

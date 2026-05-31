@@ -59,7 +59,37 @@ const COMPONENT_ID_MAP = {
   'snackbar': 'snackbar',
   'stepper': 'stepper',
   'timer': 'timer',
-  'toolbar': 'toolbar'
+  'toolbar': 'toolbar',
+  // Previously missing components
+  'animate-on-scroll': 'animate-on-scroll',
+  'callout-banner': 'callout-banner',
+  'code-preview': 'code-preview',
+  'command-palette': 'command-palette',
+  'complex-form': 'complex-form',
+  'dashboard': 'dashboard',
+  'drag-drop': 'drag-drop',
+  'dropdown-subtitle': 'dropdown-subtitle',
+  'file-upload': 'file-upload',
+  'icon': 'icon',
+  'label': 'label',
+  'multi-level-context-menu': 'multi-level-context-menu',
+  'nav-bar': 'nav-bar',
+  'number-input': 'number-input',
+  'smart-dialog': 'smart-dialog',
+  'smart-stepper': 'smart-stepper',
+  'tooltip': 'tooltip',
+  'workspace-manager': 'workspace-manager',
+  'panel': 'panel',
+  'fab': 'fab',
+  'top-bar': 'top-bar',
+  'horizontal-nav': 'horizontal-nav',
+  'smart-menu': 'smart-menu',
+  'my-profile': 'my-profile',
+  'overview': 'overview',
+  'home': 'home',
+  'about': 'about',
+  'documentation': 'documentation',
+  'skeleton-performance': 'skeleton-performance'
 };
 
 function extractDemos() {
@@ -197,6 +227,73 @@ function extractDemos() {
             description,
             html: html.trim()
           });
+        }
+      }
+    }
+
+    // Fallback: if no show* sections found, try extracting from init*Demo function
+    if (sections.length === 0) {
+      const initRegex = /(?:export\s+)?(?:async\s+)?function\s+(init\w+Demo)\s*\([^)]*\)\s*\{|(?:export\s+)?(?:const\s+)(init\w+Demo)\s*=\s*(?:async\s*)?(?:\(\s*\)\s*=>|function\s*\([^)]*\))\s*\{/g;
+      let initMatch = initRegex.exec(content);
+      if (initMatch) {
+        // Find the opening brace of the function body
+        const bodyStart = content.indexOf('{', initMatch.index + initMatch[0].length - 2);
+        let braceCount = 1;
+        let pos = bodyStart + 1;
+        let inStr = null;
+        let inCmt = null;
+        while (pos < content.length && braceCount > 0) {
+          const ch = content[pos], nx = content[pos + 1];
+          if (inCmt === 'line') { if (ch === '\n') inCmt = null; }
+          else if (inCmt === 'block') { if (ch === '*' && nx === '/') { inCmt = null; pos++; } }
+          else if (inStr) { if (ch === '\\') pos++; else if (ch === inStr) inStr = null; }
+          else {
+            if (ch === '/' && nx === '/') inCmt = 'line';
+            else if (ch === '/' && nx === '*') { inCmt = 'block'; pos++; }
+            else if (ch === "'" || ch === '"' || ch === '`') inStr = ch;
+            else if (ch === '{') braceCount++;
+            else if (ch === '}') braceCount--;
+          }
+          pos++;
+        }
+        const initBody = content.slice(bodyStart + 1, pos - 1);
+
+        // Extract the first .innerHTML = `...` template literal
+        const htmlMatch = initBody.match(/\.innerHTML\s*=\s*`([\s\S]*?)`(?:\s*;)?/);
+        if (htmlMatch) {
+          let html = htmlMatch[1];
+
+          // Extract JS logic after the innerHTML assignment
+          const htmlEndPos = initBody.indexOf(htmlMatch[0]) + htmlMatch[0].length;
+          let jsLogic = initBody.slice(htmlEndPos).trim();
+          // Remove "if (!section) return;" and similar guards
+          jsLogic = jsLogic.replace(/^\s*if\s*\(!?\w+\)\s*return.*;\n?/m, '').trim();
+
+          // Extract title from first h2/h3 in HTML
+          let title = '';
+          const titleMatch = html.match(/<h[23][^>]*>([\s\S]*?)<\/h[23]>/i);
+          if (titleMatch) {
+            title = titleMatch[1].replace(/<[^>]*>/g, '').trim();
+          }
+          if (!title) {
+            title = baseName
+              .split('-')
+              .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+              .join(' ');
+          }
+
+          // Extract description from first <p>
+          let description = '';
+          const descMatch = html.match(/<p[^>]*>([\s\S]*?)<\/p>/i);
+          if (descMatch) {
+            description = descMatch[1].replace(/<[^>]*>/g, '').trim().slice(0, 200);
+          }
+
+          if (jsLogic && jsLogic.length > 10) {
+            html += `\n<script>\n(function() {\n  ${jsLogic}\n})();\n</script>`;
+          }
+
+          sections.push({ title, description, html: html.trim() });
         }
       }
     }

@@ -1,5 +1,6 @@
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
 import type { PropConfig, ExampleConfig, DocSection, DemoSection } from '../../components/playground/ComponentPlayground';
+import { getEventsForComponent, getMethodsForComponent, getSlotsForComponent, getPartsForComponent } from '../../utils/componentMetadata';
 
 const propConfigs: PropConfig[] = [
   // State
@@ -358,6 +359,10 @@ export default function CheckboxPage() {
       docs={docs}
       examples={examples}
       demoSections={demoSections}
+      events={getEventsForComponent('ui-checkbox')}
+      methods={getMethodsForComponent('ui-checkbox')}
+      slots={getSlotsForComponent('ui-checkbox')}
+      parts={getPartsForComponent('ui-checkbox')}
     />
   );
 }

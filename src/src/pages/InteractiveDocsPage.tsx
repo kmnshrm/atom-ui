@@ -182,12 +182,16 @@ function RightToc({
   examples,
   hasEvents,
   hasMethods,
+  hasSlots,
+  hasParts,
 }: {
   activeSection: string;
   onScrollTo: (id: string) => void;
   examples: { title: string; id: string }[];
   hasEvents: boolean;
   hasMethods: boolean;
+  hasSlots: boolean;
+  hasParts: boolean;
 }) {
   return (
     <aside className="id-right-toc">
@@ -202,7 +206,7 @@ function RightToc({
               className={`cp-toc-item ${
                 activeSection === sec.id || 
                 (sec.id === 'section-examples' && examples.some(ex => activeSection === ex.id)) ||
-                (sec.id === 'section-props' && ['sub-props', 'sub-events', 'sub-methods', 'sub-notes'].includes(activeSection))
+                (sec.id === 'section-props' && ['sub-props', 'sub-events', 'sub-methods', 'sub-slots', 'sub-parts', 'sub-notes'].includes(activeSection))
                   ? 'cp-toc-item--active' 
                   : ''
               }`}
@@ -250,6 +254,24 @@ function RightToc({
                   >
                     <ui-icon name="terminal" size="10" />
                     Public Methods
+                  </button>
+                )}
+                {hasSlots && (
+                  <button
+                    className={`cp-toc-item ${activeSection === 'sub-slots' ? 'cp-toc-item--active' : ''}`}
+                    onClick={() => onScrollTo('sub-slots')}
+                  >
+                    <ui-icon name="layout-template" size="10" />
+                    Named Slots
+                  </button>
+                )}
+                {hasParts && (
+                  <button
+                    className={`cp-toc-item ${activeSection === 'sub-parts' ? 'cp-toc-item--active' : ''}`}
+                    onClick={() => onScrollTo('sub-parts')}
+                  >
+                    <ui-icon name="paintbrush" size="10" />
+                    CSS Parts
                   </button>
                 )}
                 <button
@@ -383,6 +405,8 @@ export default function InteractiveDocsPage({ theme, toggleTheme }: { theme: 'li
   const [examples, setExamples] = useState<{ title: string; id: string }[]>([]);
   const [hasEvents, setHasEvents] = useState(false);
   const [hasMethods, setHasMethods] = useState(false);
+  const [hasSlots, setHasSlots] = useState(false);
+  const [hasParts, setHasParts] = useState(false);
 
   // Sync URL → state when user navigates back/forward
   useEffect(() => {
@@ -399,6 +423,8 @@ export default function InteractiveDocsPage({ theme, toggleTheme }: { theme: 'li
     setActiveSection('section-overview');
     setHasEvents(false);
     setHasMethods(false);
+    setHasSlots(false);
+    setHasParts(false);
     setIdInHash(id);
   };
 
@@ -424,6 +450,8 @@ export default function InteractiveDocsPage({ theme, toggleTheme }: { theme: 'li
         'sub-props',
         ...(hasEvents ? ['sub-events'] : []),
         ...(hasMethods ? ['sub-methods'] : []),
+        ...(hasSlots ? ['sub-slots'] : []),
+        ...(hasParts ? ['sub-parts'] : []),
         'sub-notes'
       ];
       for (const id of [...ids].reverse()) {
@@ -437,7 +465,7 @@ export default function InteractiveDocsPage({ theme, toggleTheme }: { theme: 'li
     };
     container.addEventListener('scroll', handler, { passive: true });
     return () => container.removeEventListener('scroll', handler);
-  }, [selectedId, examples, hasEvents, hasMethods]);
+}, [selectedId, examples, hasEvents, hasMethods, hasSlots, hasParts]);
 
   return (
     <div className="id-page">
@@ -465,6 +493,8 @@ export default function InteractiveDocsPage({ theme, toggleTheme }: { theme: 'li
               onMetadataLoaded={(meta) => {
                 setHasEvents(meta.hasEvents);
                 setHasMethods(meta.hasMethods);
+                setHasSlots(meta.hasSlots);
+                setHasParts(meta.hasParts);
               }}
             />
           </Suspense>
@@ -479,6 +509,8 @@ export default function InteractiveDocsPage({ theme, toggleTheme }: { theme: 'li
           examples={examples}
           hasEvents={hasEvents}
           hasMethods={hasMethods}
+          hasSlots={hasSlots}
+          hasParts={hasParts}
         />
       )}
 

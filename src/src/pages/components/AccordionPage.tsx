@@ -1,4 +1,4 @@
-import { getPropsForComponent, getDemosForComponent } from '../../utils/componentMetadata';
+import { getPropsForComponent, getDemosForComponent, getEventsForComponent, getMethodsForComponent, getSlotsForComponent, getPartsForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
 import type { PropConfig, ExampleConfig, DocSection } from '../../components/playground/ComponentPlayground';
 
@@ -77,6 +77,10 @@ export default function AccordionPage() {
       docs={docs}
       examples={examples}
       demoSections={getDemosForComponent('accordion')}
+      events={getEventsForComponent('ui-accordion')}
+      methods={getMethodsForComponent('ui-accordion')}
+      slots={getSlotsForComponent('ui-accordion')}
+      parts={getPartsForComponent('ui-accordion')}
     />
   );
 }

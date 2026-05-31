@@ -1,12 +1,14 @@
 import docsData from '../docs.json';
 import demosData from '../demos.json';
-import type { PropConfig, DemoSection, EventConfig, MethodConfig } from '../components/playground/ComponentPlayground';
+import type { PropConfig, DemoSection, EventConfig, MethodConfig, SlotConfig, PartConfig } from '../components/playground/ComponentPlayground';
 
 interface StencilProp {
   name: string;
   type: string;
+  attr?: string;
   default?: string;
   docs: string;
+  required?: boolean;
   values?: Array<{ value?: string; type?: string }>;
 }
 
@@ -90,7 +92,10 @@ export function getPropsForComponent(tagName: string): PropConfig[] {
       label,
       defaultValue,
       options,
-      description: p.docs || `${label} property`
+      description: p.docs || `${label} property`,
+      rawType: p.type.trim(),
+      attrName: p.attr || p.name.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase(),
+      required: p.required || false,
     };
   });
 
@@ -138,5 +143,29 @@ export function getMethodsForComponent(tagName: string): MethodConfig[] {
     name: m.name,
     signature: m.signature,
     docs: m.docs
+  }));
+}
+
+/**
+ * Returns named slots exposed by a given component (e.g. 'ui-dialog-box')
+ */
+export function getSlotsForComponent(tagName: string): SlotConfig[] {
+  const component = docsData.components.find((c: any) => c.tag === tagName);
+  if (!component || !component.slots) return [];
+  return component.slots.map((s: any) => ({
+    name: s.name || '(default)',
+    docs: s.docs || ''
+  }));
+}
+
+/**
+ * Returns CSS shadow parts exported by a given component for ::part() styling
+ */
+export function getPartsForComponent(tagName: string): PartConfig[] {
+  const component = docsData.components.find((c: any) => c.tag === tagName);
+  if (!component || !component.parts) return [];
+  return component.parts.map((p: any) => ({
+    name: p.name,
+    docs: p.docs || ''
   }));
 }

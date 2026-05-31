@@ -1,4 +1,4 @@
-import { getDemosForComponent } from '../../utils/componentMetadata';
+import { getDemosForComponent, getEventsForComponent, getMethodsForComponent, getSlotsForComponent, getPartsForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
 import type { PropConfig, ExampleConfig, DocSection } from '../../components/playground/ComponentPlayground';
 
@@ -132,6 +132,10 @@ export default function ProgressPage() {
       docs={docs}
       examples={examples}
       demoSections={getDemosForComponent('progress')}
+      events={getEventsForComponent('ui-progress')}
+      methods={getMethodsForComponent('ui-progress')}
+      slots={getSlotsForComponent('ui-progress')}
+      parts={getPartsForComponent('ui-progress')}
     />
   );
 }

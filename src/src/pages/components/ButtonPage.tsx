@@ -1,4 +1,4 @@
-import { getPropsForComponent } from '../../utils/componentMetadata';
+import { getPropsForComponent, getEventsForComponent, getMethodsForComponent, getSlotsForComponent, getPartsForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
 import type { PropConfig, ExampleConfig, DocSection, DemoSection } from '../../components/playground/ComponentPlayground';
 
@@ -592,6 +592,10 @@ export default function ButtonPage() {
       docs={docs}
       examples={examples}
       demoSections={demoSections}
+      events={getEventsForComponent('ui-button')}
+      methods={getMethodsForComponent('ui-button')}
+      slots={getSlotsForComponent('ui-button')}
+      parts={getPartsForComponent('ui-button')}
     />
   );
 }

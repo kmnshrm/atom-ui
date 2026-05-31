@@ -1,4 +1,4 @@
-import { getDemosForComponent } from '../../utils/componentMetadata';
+import { getDemosForComponent, getEventsForComponent, getMethodsForComponent, getSlotsForComponent, getPartsForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
 import type { PropConfig, ExampleConfig, DocSection } from '../../components/playground/ComponentPlayground';
 
@@ -221,6 +221,10 @@ export default function BadgePage() {
       docs={docs}
       examples={examples}
       demoSections={getDemosForComponent('badge')}
+      events={getEventsForComponent('ui-badge')}
+      methods={getMethodsForComponent('ui-badge')}
+      slots={getSlotsForComponent('ui-badge')}
+      parts={getPartsForComponent('ui-badge')}
     />
   );
 }

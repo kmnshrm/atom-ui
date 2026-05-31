@@ -1,4 +1,4 @@
-import { getPropsForComponent, getDemosForComponent } from '../../utils/componentMetadata';
+import { getPropsForComponent, getDemosForComponent, getEventsForComponent, getMethodsForComponent, getSlotsForComponent, getPartsForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
 import type { PropConfig, ExampleConfig, DocSection } from '../../components/playground/ComponentPlayground';
 
@@ -105,6 +105,10 @@ export default function SwitchPage() {
       docs={docs}
       examples={examples}
       demoSections={getDemosForComponent('switch')}
+      events={getEventsForComponent('ui-switch')}
+      methods={getMethodsForComponent('ui-switch')}
+      slots={getSlotsForComponent('ui-switch')}
+      parts={getPartsForComponent('ui-switch')}
     />
   );
 }

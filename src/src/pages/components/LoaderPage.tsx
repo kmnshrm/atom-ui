@@ -1,4 +1,4 @@
-import { getDemosForComponent } from '../../utils/componentMetadata';
+import { getDemosForComponent, getEventsForComponent, getMethodsForComponent, getSlotsForComponent, getPartsForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
 import type { PropConfig, ExampleConfig, DocSection } from '../../components/playground/ComponentPlayground';
 
@@ -510,6 +510,10 @@ export default function LoaderPage() {
       docs={docs}
       examples={examples}
       demoSections={getDemosForComponent('loader')}
+      events={getEventsForComponent('ui-loader')}
+      methods={getMethodsForComponent('ui-loader')}
+      slots={getSlotsForComponent('ui-loader')}
+      parts={getPartsForComponent('ui-loader')}
     />
   );
 }

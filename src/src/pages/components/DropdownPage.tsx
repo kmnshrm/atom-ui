@@ -1,4 +1,4 @@
-import { getDemosForComponent, getPropsForComponent } from '../../utils/componentMetadata';
+import { getDemosForComponent, getPropsForComponent, getEventsForComponent, getMethodsForComponent, getSlotsForComponent, getPartsForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
 import type { PropConfig, ExampleConfig, DocSection } from '../../components/playground/ComponentPlayground';
 
@@ -74,6 +74,10 @@ export default function DropdownPage() {
       docs={docs}
       examples={examples}
       demoSections={getDemosForComponent('dropdown')}
+      events={getEventsForComponent('ui-dropdown')}
+      methods={getMethodsForComponent('ui-dropdown')}
+      slots={getSlotsForComponent('ui-dropdown')}
+      parts={getPartsForComponent('ui-dropdown')}
     />
   );
 }

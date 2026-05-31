@@ -1,5 +1,6 @@
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
 import type { PropConfig, ExampleConfig, DocSection } from '../../components/playground/ComponentPlayground';
+import { getEventsForComponent, getMethodsForComponent, getSlotsForComponent, getPartsForComponent } from '../../utils/componentMetadata';
 
 const propConfigs: PropConfig[] = [
   { name: 'name', type: 'string', label: 'Icon Name', defaultValue: 'star', description: 'Lucide icon name' },
@@ -123,6 +124,10 @@ export default function IconPage() {
       buildCode={buildCode}
       docs={docs}
       examples={examples}
+      events={getEventsForComponent('ui-icon')}
+      methods={getMethodsForComponent('ui-icon')}
+      slots={getSlotsForComponent('ui-icon')}
+      parts={getPartsForComponent('ui-icon')}
     />
   );
 }

@@ -1,4 +1,4 @@
-import { getDemosForComponent, getPropsForComponent } from '../../utils/componentMetadata';
+import { getDemosForComponent, getPropsForComponent, getEventsForComponent, getMethodsForComponent, getSlotsForComponent, getPartsForComponent } from '../../utils/componentMetadata';
 import ComponentPlayground from '../../components/playground/ComponentPlayground';
 import type { PropConfig, ExampleConfig, DocSection } from '../../components/playground/ComponentPlayground';
 
@@ -155,6 +155,10 @@ export default function InputPage() {
       docs={docs}
       examples={examples}
       demoSections={getDemosForComponent('input')}
+      events={getEventsForComponent('ui-input')}
+      methods={getMethodsForComponent('ui-input')}
+      slots={getSlotsForComponent('ui-input')}
+      parts={getPartsForComponent('ui-input')}
     />
   );
 }
