@@ -130,9 +130,18 @@ const getHashFromPageId = (id: string): string => {
   return `#/component/playground/${id}`;
 };
 
+// Bottom navigation items for mobile
+const BOTTOM_NAV_ITEMS = [
+  { id: 'home',              label: 'Home',       icon: 'house' },
+  { id: 'components-guide',  label: 'Components', icon: 'box' },
+  { id: 'interactive-docs',  label: 'Docs',       icon: 'book-open' },
+  { id: 'design-house',      label: 'Design',     icon: 'palette' },
+];
+
 export default function App() {
   const navRef = useRef<any>(null);
   const [collapsed, setCollapsed] = useState(true);
+  const [navOpen, setNavOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(() => {
     return getPageIdFromHash(window.location.hash);
   });
@@ -142,13 +151,39 @@ export default function App() {
 
   const navigate = (id: string) => {
     window.location.hash = getHashFromPageId(id);
+    setNavOpen(false); // close mobile drawer on navigate
   };
+
+  const openNav = () => setNavOpen(true);
+  const closeNav = () => setNavOpen(false);
 
   useEffect(() => {
     document.body.classList.remove('theme-light', 'theme-dark');
     document.body.classList.add(`theme-${theme}`);
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
+
+  // Persist theme preference
+  useEffect(() => {
+    try {
+      localStorage.setItem('ui-theme', theme);
+    } catch {}
+  }, [theme]);
+
+  // Load persisted theme on mount
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('ui-theme') as 'light' | 'dark' | null;
+      if (saved === 'light' || saved === 'dark') setTheme(saved);
+    } catch {}
+  }, []);
+
+  // Close nav on Escape
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => { if (e.key === 'Escape') closeNav(); };
+    document.addEventListener('keydown', handleKey);
+    return () => document.removeEventListener('keydown', handleKey);
+  }, []);
 
   // Sync state with hash change
   useEffect(() => {
@@ -166,7 +201,8 @@ export default function App() {
       const id = (e as CustomEvent).detail?.id;
       if (id) {
         navigate(id);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        const mc = document.querySelector('.main-content');
+        if (mc) mc.scrollTop = 0;
       }
     };
     window.addEventListener('appNavigate', handleGlobalNav);
@@ -203,7 +239,6 @@ export default function App() {
   }, [activeItem]);
 
   const renderContent = () => {
-    // Static pages
     switch (activeItem) {
       case 'home': return <Home onNavigate={navigate} theme={theme} toggleTheme={toggleTheme} />;
       case 'overview': return <Overview />;
@@ -215,7 +250,6 @@ export default function App() {
       case 'interactive-docs': return <InteractiveDocsPage theme={theme} toggleTheme={toggleTheme} />;
     }
 
-    // Component playground pages
     if (COMPONENT_IDS.has(activeItem)) {
       const Page = COMPONENT_PAGES[activeItem];
       return (
@@ -225,7 +259,6 @@ export default function App() {
       );
     }
 
-    // Fallback to Dynamic Design Studio for all other library components
     const isStatic = STATIC_PAGES.has(activeItem);
     if (!isStatic) {
       return (
@@ -235,7 +268,6 @@ export default function App() {
       );
     }
 
-    // Placeholder for other elements
     return <ComponentPlaceholder id={activeItem} />;
   };
 
@@ -243,13 +275,24 @@ export default function App() {
   const isStaticPage = STATIC_PAGES.has(activeItem);
   const isInteractiveDocs = activeItem === 'interactive-docs';
   const isComponentPage = !isStaticPage || isInteractiveDocs;
+  const pageTitle = activeItem.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 
   return (
     <div className={`app-container layout-sidebar ${collapsed ? 'sidebar-collapsed' : ''} theme-${theme}`}>
-      {/* Sidebar Navigation */}
+
+      {/* ── Mobile / Tablet nav overlay backdrop ── */}
+      {navOpen && (
+        <div
+          className="nav-overlay"
+          onClick={closeNav}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* ── Sidebar Navigation ── */}
       <ui-navigation-bar
         ref={navRef}
-        class="main-nav"
+        class={`main-nav${navOpen ? ' nav-open' : ''}`}
         orientation="vertical"
         collapsible="true"
         mode={collapsed ? 'collapsed' : 'expanded'}
@@ -257,6 +300,7 @@ export default function App() {
         show-search="true"
         max-items="100"
         company-name="AetherUI"
+        aria-label="Main navigation"
       >
         <div slot="header" className="nav-brand-header cursor-pointer" onClick={() => navigate('home')}>
           <div className="nav-brand-logo bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white font-bold">
@@ -266,75 +310,104 @@ export default function App() {
         </div>
       </ui-navigation-bar>
 
-      {/* Main Content Area */}
-      <main className={`main-content ${isComponentPage ? 'main-content--component' : ''}`}>
-        {/* Top Bar — hidden on home and component pages (they have their own header) */}
+      {/* ── Main Content Area ── */}
+      <main className={`main-content ${isComponentPage ? 'main-content--component' : ''}`} id="main-content" tabIndex={-1}>
+
+        {/* ── Sticky Header (static pages) ── */}
         {!isHome && !isComponentPage && (
-          <header className="h-16 border-b border-[#222] bg-black/50 backdrop-blur-md flex items-center justify-between px-8 z-20 flex-shrink-0">
-            <div className="flex items-center gap-4">
-              <h1 className="text-lg font-medium capitalize">{activeItem.replace(/-/g, ' ')}</h1>
+          <header className="app-header">
+            <div className="app-header-left">
+              {/* Mobile menu button */}
+              <button
+                className="mobile-menu-btn"
+                onClick={openNav}
+                aria-label="Open navigation menu"
+                aria-expanded={navOpen}
+                aria-controls="main-nav"
+              >
+                <ui-icon name="menu" size="18" />
+              </button>
+              {/* Breadcrumb */}
+              <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm">
+                <button
+                  onClick={() => navigate('home')}
+                  className="text-[var(--text-tertiary)] hover:text-[var(--text-primary)] transition-colors bg-transparent border-none cursor-pointer p-0"
+                  aria-label="Home"
+                >
+                  <ui-icon name="house" size="14" />
+                </button>
+                <ui-icon name="chevron-right" size="12" class="text-[var(--text-tertiary)]" />
+                <h1 className="app-header-title">{pageTitle}</h1>
+              </nav>
             </div>
-            <div className="flex items-center gap-4">
-              <ui-input
-                type="search"
-                placeholder="Search components..."
-                prefix-icon="search"
-                size="sm"
-                class="w-64"
-              />
-              <ui-button
-                icon="bell"
-                icon-only
-                shape="circle"
-                variant="ghost"
-              />
+            <div className="app-header-right">
+              {/* Search — hidden on small mobile via CSS */}
+              <div className="header-search">
+                <ui-input
+                  type="search"
+                  placeholder="Search components..."
+                  prefix-icon="search"
+                  size="sm"
+                  style={{ width: '220px' }}
+                />
+              </div>
               <ui-button
                 icon={theme === 'dark' ? 'sun' : 'moon'}
                 icon-only
                 shape="circle"
                 variant="ghost"
+                size="sm"
                 onClick={toggleTheme}
                 title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
               />
-              <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-purple-500 to-blue-500 border border-white/20" />
+              <div
+                className="h-8 w-8 rounded-full bg-gradient-to-tr from-purple-500 to-blue-500 border border-white/20 flex-shrink-0 cursor-pointer"
+                role="button"
+                aria-label="User menu"
+                tabIndex={0}
+              />
             </div>
           </header>
         )}
 
-        {/* Thin top-bar for component pages */}
+        {/* ── Component page topbar (breadcrumb) ── */}
         {isComponentPage && !isInteractiveDocs && (
-          <div className="cp-topbar">
+          <div className="cp-topbar" role="navigation" aria-label="Component breadcrumb">
             <div className="cp-topbar-breadcrumb">
-              <ui-button
-                icon="house"
-                icon-only
-                shape="circle"
-                variant="ghost"
-                size="sm"
-                class="cp-topbar-home"
+              {/* Mobile menu button */}
+              <button
+                className="mobile-menu-btn"
+                onClick={openNav}
+                aria-label="Open navigation menu"
+                style={{ marginRight: '0.25rem' }}
+              >
+                <ui-icon name="menu" size="16" />
+              </button>
+              <button
+                className="cp-topbar-home"
                 onClick={() => navigate('home')}
-              />
+                aria-label="Home"
+              >
+                <ui-icon name="house" size="13" />
+              </button>
               <ui-icon name="chevron-right" size="12" />
               <span className="cp-topbar-category">Components</span>
               <ui-icon name="chevron-right" size="12" />
-              <span className="cp-topbar-current">{activeItem.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}</span>
+              <span className="cp-topbar-current">{pageTitle}</span>
             </div>
-            <ui-button
-              icon={theme === 'dark' ? 'sun' : 'moon'}
-              icon-only
-              shape="circle"
-              variant="ghost"
-              size="sm"
-              class="cp-topbar-theme-btn"
+            <button
+              className="cp-topbar-theme-btn"
               onClick={toggleTheme}
-              title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            />
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            >
+              <ui-icon name={theme === 'dark' ? 'sun' : 'moon'} size="14" />
+            </button>
           </div>
         )}
 
-        {/* Content Body */}
-        <div className={`content-body ${isHome ? '' : ''} ${isComponentPage ? 'content-body--component' : ''}`}>
-          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        {/* ── Content Body ── */}
+        <div className={`content-body ${isComponentPage ? 'content-body--component' : ''}`}>
+          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true">
             <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-900/10 blur-[100px] rounded-full" />
             <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-green-900/10 blur-[100px] rounded-full" />
           </div>
@@ -344,7 +417,34 @@ export default function App() {
         </div>
       </main>
 
-      {/* Scroll to top button for main scrollable layout */}
+      {/* ── Mobile Bottom Navigation ── */}
+      <nav className="bottom-nav" aria-label="Mobile navigation">
+        <div className="bottom-nav-inner">
+          {BOTTOM_NAV_ITEMS.map(item => (
+            <button
+              key={item.id}
+              className={`bottom-nav-item${activeItem === item.id ? ' bottom-nav-item--active' : ''}`}
+              onClick={() => navigate(item.id)}
+              aria-label={item.label}
+              aria-current={activeItem === item.id ? 'page' : undefined}
+            >
+              <ui-icon name={item.icon} size="20" />
+              <span className="bottom-nav-label">{item.label}</span>
+            </button>
+          ))}
+          {/* Search / More trigger */}
+          <button
+            className="bottom-nav-item"
+            onClick={openNav}
+            aria-label="More navigation"
+          >
+            <ui-icon name="menu" size="20" />
+            <span className="bottom-nav-label">More</span>
+          </button>
+        </div>
+      </nav>
+
+      {/* Scroll to top — not shown in interactive docs */}
       {!isInteractiveDocs && (
         <ui-scroll-top
           target=".main-content"

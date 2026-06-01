@@ -119,6 +119,12 @@ function ComponentListRow({
         {comp.category}
       </span>
 
+      {/* Design Studio chip — visible on hover */}
+      <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-400/0 group-hover:text-emerald-400/80 transition-colors duration-150 flex-shrink-0">
+        <ui-icon name="sliders-horizontal" size="10" />
+        Design Studio
+      </span>
+
       {/* Arrow */}
       <ui-icon name="chevron-right" size="14" class="text-white/20 group-hover:text-white/50 transition-colors flex-shrink-0" />
     </motion.button>
@@ -178,6 +184,14 @@ function ComponentCard({
         <ui-icon name={comp.categoryIcon} size="10" />
         {comp.category}
       </span>
+
+      {/* "Design Studio" CTA — slides up on hover */}
+      <div className="mt-2 overflow-hidden max-h-0 group-hover:max-h-8 transition-all duration-200">
+        <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-400/80 group-hover:text-emerald-400 transition-colors">
+          <ui-icon name="sliders-horizontal" size="10" />
+          Open Design Studio
+        </span>
+      </div>
 
       {/* Arrow — appears on hover */}
       <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-60 transition-opacity">
@@ -301,7 +315,7 @@ export default function ComponentsGuide({ onNavigate, theme, toggleTheme }: Prop
     <div className="min-h-screen bg-[var(--background)] text-[var(--text-primary)]">
 
       {/* ── Hero ─────────────────────────────────────────────────────────────── */}
-      <div className="relative overflow-hidden pt-16 pb-12 px-8">
+      <div className="relative overflow-hidden pt-10 pb-10 px-4 sm:px-8">
         {/* Background glow blobs */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-emerald-500/5 blur-3xl" />
@@ -315,13 +329,13 @@ export default function ComponentsGuide({ onNavigate, theme, toggleTheme }: Prop
           transition={{ duration: 0.5 }}
           className="relative max-w-5xl mx-auto"
         >
-          <div className="inline-flex items-center gap-2 bg-white/[0.04] border border-white/10 rounded-full px-4 py-1.5 text-xs text-white/50 mb-6">
-            <ui-icon name="sparkles" size="12" class="text-emerald-400" />
+          <div className="inline-flex items-center gap-2 text-[11px] font-semibold mb-6" style={{background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 999, padding: '0.3rem 0.9rem', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.04em', textTransform: 'uppercase'}}>
+            <ui-icon name="sparkles" size="11" class="text-emerald-400" />
             Atom UI — Component Library
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-4" style={{ color: 'var(--text-primary)' }}>
-            All <span style={{ color: '#10b981' }}>Components</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4">
+            All <span style={{background: 'linear-gradient(135deg, #10b981, #34d399)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}}>Components</span>
           </h1>
 
           <p className="text-lg text-white/40 max-w-2xl leading-relaxed mb-8">
@@ -337,14 +351,15 @@ export default function ComponentsGuide({ onNavigate, theme, toggleTheme }: Prop
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15 + i * 0.07 }}
-                className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-4 flex items-start gap-3"
+                className="rounded-xl flex items-start gap-3 p-4"
+                style={{background: 'var(--surface-2)', border: '1px solid var(--border)', boxShadow: '0 1px 0 rgba(255,255,255,0.04) inset, 0 2px 8px rgba(0,0,0,0.3)'}}
               >
-                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
-                  <ui-icon name={s.icon} size="16" class="text-emerald-400" />
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.2)'}}>
+                  <ui-icon name={s.icon} size="15" class="text-emerald-400" />
                 </div>
                 <div>
-                  <div className="text-xl font-bold">{s.value}</div>
-                  <div className="text-xs text-white/40">{s.label}</div>
+                  <div className="text-xl font-bold tracking-tight" style={{background: 'linear-gradient(135deg, #f1f5f9, #94a3b8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}}>{s.value}</div>
+                  <div className="text-[11px] font-medium" style={{color: 'var(--text-secondary)'}}>{s.label}</div>
                 </div>
               </motion.div>
             ))}
@@ -353,7 +368,7 @@ export default function ComponentsGuide({ onNavigate, theme, toggleTheme }: Prop
       </div>
 
       {/* ── Sticky Toolbar ────────────────────────────────────────────────────── */}
-      <div className="sticky top-0 z-40 bg-[var(--background)]/90 backdrop-blur-xl border-b border-[var(--border)] px-8 py-4">
+      <div className="sticky top-0 z-40 border-b px-4 sm:px-8 py-3" style={{background: 'color-mix(in srgb, var(--background) 88%, transparent)', backdropFilter: 'blur(20px) saturate(1.2)', WebkitBackdropFilter: 'blur(20px) saturate(1.2)', borderColor: 'var(--border)', boxShadow: '0 1px 0 var(--border-subtle), 0 4px 16px rgba(0,0,0,0.25)'}}>
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row gap-4 items-start sm:items-center">
 
           {/* Search */}
@@ -367,7 +382,10 @@ export default function ComponentsGuide({ onNavigate, theme, toggleTheme }: Prop
               value={search}
               onChange={e => setSearch(e.target.value)}
               placeholder="Search components… (⌘K)"
-              className="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl pl-9 pr-9 py-2.5 text-sm text-[var(--text-primary)] placeholder-white/25 outline-none focus:border-emerald-500/40 focus:bg-white/[0.07] transition-all"
+              className="w-full rounded-lg pl-9 pr-9 py-2 text-[13px] outline-none transition-all"
+              style={{background: 'var(--surface-2)', border: '1px solid var(--border)', color: 'var(--text-primary)'}}
+              onFocus={e => (e.currentTarget.style.borderColor = 'var(--border-strong)')}
+              onBlur={e => (e.currentTarget.style.borderColor = 'var(--border)')}
             />
             {search && (
               <button
@@ -452,7 +470,7 @@ export default function ComponentsGuide({ onNavigate, theme, toggleTheme }: Prop
       </div>
 
       {/* ── Component Grid ────────────────────────────────────────────────────── */}
-      <div className="px-8 py-10">
+      <div className="px-4 sm:px-8 py-8">
         <div className="max-w-5xl mx-auto">
           <AnimatePresence mode="wait">
             {filteredCount === 0 ? (

@@ -30,11 +30,13 @@ function LeftSidebar({
   onSelect,
   theme,
   toggleTheme,
+  isOpen,
 }: {
   activeId: string;
   onSelect: (id: string) => void;
   theme: 'light' | 'dark';
   toggleTheme: () => void;
+  isOpen?: boolean;
 }) {
   const [search, setSearch] = useState('');
   const [viewMode, setViewMode] = useState<'list' | 'card'>('list');
@@ -57,7 +59,7 @@ function LeftSidebar({
   const categories = filterItems(categoryNavItems);
 
   return (
-    <aside className="id-left-sidebar">
+    <aside className={`id-left-sidebar${isOpen ? ' id-sidebar-open' : ''}`} aria-label="Component list" role="navigation">
       <div className="id-sidebar-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', textTransform: 'none' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
           <ui-icon name="layout-panel-left" size="15" />
@@ -407,6 +409,7 @@ export default function InteractiveDocsPage({ theme, toggleTheme }: { theme: 'li
   const [hasMethods, setHasMethods] = useState(false);
   const [hasSlots, setHasSlots] = useState(false);
   const [hasParts, setHasParts] = useState(false);
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
   // Sync URL → state when user navigates back/forward
   useEffect(() => {
@@ -418,6 +421,13 @@ export default function InteractiveDocsPage({ theme, toggleTheme }: { theme: 'li
     return () => window.removeEventListener('hashchange', handler);
   }, [selectedId]);
 
+  // Close mobile sidebar on Escape
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') setMobileSidebarOpen(false); };
+    document.addEventListener('keydown', handler);
+    return () => document.removeEventListener('keydown', handler);
+  }, []);
+
   const handleSelect = (id: string) => {
     setSelectedId(id);
     setActiveSection('section-overview');
@@ -425,6 +435,7 @@ export default function InteractiveDocsPage({ theme, toggleTheme }: { theme: 'li
     setHasMethods(false);
     setHasSlots(false);
     setHasParts(false);
+    setMobileSidebarOpen(false);
     setIdInHash(id);
   };
 
@@ -465,12 +476,28 @@ export default function InteractiveDocsPage({ theme, toggleTheme }: { theme: 'li
     };
     container.addEventListener('scroll', handler, { passive: true });
     return () => container.removeEventListener('scroll', handler);
-}, [selectedId, examples, hasEvents, hasMethods, hasSlots, hasParts]);
+  }, [selectedId, examples, hasEvents, hasMethods, hasSlots, hasParts]);
 
   return (
     <div className="id-page">
+      {/* Mobile sidebar backdrop */}
+      {mobileSidebarOpen && (
+        <div
+          className="nav-overlay"
+          style={{ display: 'block', zIndex: 390 }}
+          onClick={() => setMobileSidebarOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
       {/* Left Sidebar */}
-      <LeftSidebar activeId={selectedId} onSelect={handleSelect} theme={theme} toggleTheme={toggleTheme} />
+      <LeftSidebar
+        activeId={selectedId}
+        onSelect={handleSelect}
+        theme={theme}
+        toggleTheme={toggleTheme}
+        isOpen={mobileSidebarOpen}
+      />
 
       {/* Center Content */}
       <main className="id-center" id="id-center-scroll">
@@ -514,7 +541,17 @@ export default function InteractiveDocsPage({ theme, toggleTheme }: { theme: 'li
         />
       )}
 
-      {/* Scroll to top button for interactive docs content area */}
+      {/* Floating sidebar toggle (mobile only, shown via CSS) */}
+      <button
+        className="id-sidebar-toggle-btn"
+        onClick={() => setMobileSidebarOpen(prev => !prev)}
+        aria-label={mobileSidebarOpen ? 'Close component list' : 'Open component list'}
+        aria-expanded={mobileSidebarOpen}
+      >
+        <ui-icon name={mobileSidebarOpen ? 'x' : 'layout-panel-left'} size="20" />
+      </button>
+
+      {/* Scroll to top */}
       <ui-scroll-top
         target="#id-center-scroll"
         threshold="300"

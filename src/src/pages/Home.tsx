@@ -74,25 +74,28 @@ export default function Home({ onNavigate, theme, toggleTheme }: { onNavigate?: 
   return (
     <div className="min-h-screen text-[var(--text-primary)] overflow-x-hidden relative bg-[var(--background)]">
       {/* Top Navigation */}
-      <nav className="sticky top-0 h-20 border-b border-[var(--border)] bg-[var(--background)]/80 backdrop-blur-xl z-50 px-8 flex items-center justify-between w-full">
-        <div className="flex items-center gap-12">
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => onNavigate?.('home')}>
-            <div className="w-8 h-8 rounded bg-[var(--text-primary)] flex items-center justify-center text-[var(--background)] font-black">A</div>
-            <span className="font-bold text-xl tracking-tight gradient-text">AetherUI</span>
+      <nav className="sticky top-0 h-14 border-b border-[var(--border)] bg-[var(--background)]/85 backdrop-blur-2xl backdrop-saturate-150 z-50 px-4 sm:px-8 flex items-center justify-between w-full" style={{boxShadow: '0 1px 0 var(--border-subtle), 0 4px 20px rgba(0,0,0,0.3)'}}>
+        <div className="flex items-center gap-4 sm:gap-10">
+          <div className="flex items-center gap-2.5 cursor-pointer select-none" onClick={() => onNavigate?.('home')}>
+            <div className="w-7 h-7 rounded-lg flex items-center justify-center font-black text-sm" style={{background: 'linear-gradient(135deg, #10b981, #059669)', boxShadow: '0 0 0 1px rgba(16,185,129,0.3), 0 2px 8px rgba(16,185,129,0.25)'}}>A</div>
+            <span className="font-bold text-[15px] tracking-tight" style={{background: 'linear-gradient(135deg, #f1f5f9 0%, #94a3b8 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}}>AetherUI</span>
           </div>
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[var(--text-secondary)]">
-            <span className="hover:text-[var(--text-primary)] cursor-pointer transition-colors" onClick={() => onNavigate?.('components-guide')}>Components</span>
-            <span className="hover:text-[var(--text-primary)] cursor-pointer transition-colors" onClick={() => onNavigate?.('documentation')}>Docs</span>
-            <span className="hover:text-[var(--text-primary)] cursor-pointer transition-colors" onClick={() => onNavigate?.('pricing')}>Pricing</span>
+          <div className="hidden md:flex items-center gap-6 text-[13px] font-medium text-[var(--text-secondary)]">
+            <span className="hover:text-[var(--text-primary)] cursor-pointer transition-colors duration-150" onClick={() => onNavigate?.('components-guide')}>Components</span>
+            <span className="hover:text-[var(--text-primary)] cursor-pointer transition-colors duration-150" onClick={() => onNavigate?.('documentation')}>Docs</span>
+            <span className="hover:text-[var(--text-primary)] cursor-pointer transition-colors duration-150" onClick={() => onNavigate?.('pricing')}>Pricing</span>
           </div>
         </div>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-3">
           <div className="relative hidden lg:block">
-            <ui-icon name="search" class="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-secondary)]" size="16"></ui-icon>
+            <ui-icon name="search" class="absolute left-3 top-1/2 -translate-y-1/2" size="14" style={{color: 'var(--text-tertiary)'}}></ui-icon>
             <input 
               type="text" 
               placeholder="Search components..." 
-              className="bg-[var(--surface-hover)] border border-[var(--border)] rounded-full py-2 pl-10 pr-4 text-xs text-[var(--text-primary)] placeholder-[var(--text-secondary)]/60 focus:outline-none focus:border-[var(--border)]/80 w-48"
+              className="border rounded-lg py-1.5 pl-9 pr-3 text-[13px] focus:outline-none w-44 transition-all duration-200"
+              style={{background: 'var(--surface-2)', borderColor: 'var(--border)', color: 'var(--text-primary)'}}
+              onFocus={e => { e.currentTarget.style.borderColor = 'var(--border-strong)'; e.currentTarget.style.width = '200px'; }}
+              onBlur={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.width = '176px'; }}
             />
           </div>
           <ui-button
@@ -103,22 +106,23 @@ export default function Home({ onNavigate, theme, toggleTheme }: { onNavigate?: 
             onClick={toggleTheme}
             title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
           />
-          <ui-button variant="primary" shape="pill">
+          <ui-button variant="primary" shape="pill" size="sm">
             Get Started
           </ui-button>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-8 max-w-7xl mx-auto">
+      <section className="relative pt-24 pb-20 px-4 sm:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-10">
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="inline-block px-4 py-1.5 rounded-full bg-[var(--surface)] border border-[var(--border)] text-xs font-bold text-blue-400">
-              AETHER 1.1 IS HERE
+            <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-semibold" style={{background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.22)', color: '#34d399', letterSpacing: '0.05em', textTransform: 'uppercase'}}>
+              <span style={{width: 6, height: 6, borderRadius: '50%', background: '#10b981', boxShadow: '0 0 8px rgba(16,185,129,0.6)', display: 'inline-block'}}></span>
+              Aether 1.1 is here
             </motion.div>
-            <motion.h1 {...fadeInUp} className="text-6xl md:text-7xl font-black leading-[1.1] tracking-tight">
+            <motion.h1 {...fadeInUp} className="text-4xl sm:text-6xl md:text-7xl font-black leading-[1.08] tracking-tight">
               The Absolute Best <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+              <span className="" style={{background: 'linear-gradient(135deg, #f1f5f9 20%, #64748b 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}}>
                 UI Component Hub
               </span>
             </motion.h1>
@@ -126,17 +130,16 @@ export default function Home({ onNavigate, theme, toggleTheme }: { onNavigate?: 
               A premium collection of framework-agnostic UI components designed for building professional, high-performance web applications with ease.
             </motion.p>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {statsCards.map((stat, i) => (
                 <div key={i} className="stat-flip-card">
                   <div className="flip-card-inner">
-                    <div className="flip-card-front glass-panel">
-                      <div className="text-2xl font-black mb-1">{stat.num}</div>
-                      <div className="text-[10px] font-bold text-[var(--text-secondary)] uppercase tracking-widest">{stat.label}</div>
-                      <div className="absolute bottom-2 text-[8px] opacity-40 font-bold uppercase tracking-tighter">Flip</div>
+                    <div className="flip-card-front" style={{background: 'var(--surface-2)', border: '1px solid var(--border)', borderRadius: 16, boxShadow: '0 1px 0 rgba(255,255,255,0.04) inset, 0 4px 12px rgba(0,0,0,0.4)'}}>
+                      <div className="text-2xl font-black mb-1" style={{background: 'linear-gradient(135deg, #f1f5f9, #94a3b8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}}>{stat.num}</div>
+                      <div className="text-[10px] font-semibold text-[var(--text-secondary)] uppercase tracking-widest">{stat.label}</div>
                     </div>
-                    <div className={`flip-card-back glass-panel border-${stat.color}-500/50`}>
-                      <div className={`text-[10px] font-black text-${stat.color}-400 mb-2 uppercase`}>{stat.backTitle}</div>
+                    <div className={`flip-card-back`} style={{background: 'var(--surface-3)', border: '1px solid var(--border-strong)', borderRadius: 16}}>
+                      <div className={`text-[10px] font-black text-${stat.color}-400 mb-2 uppercase tracking-wider`}>{stat.backTitle}</div>
                       <p className="text-[10px] text-[var(--text-secondary)] leading-tight">{stat.backText}</p>
                     </div>
                   </div>
@@ -187,6 +190,7 @@ export default function Home({ onNavigate, theme, toggleTheme }: { onNavigate?: 
               key={i}
               whileHover={{ y: -10 }}
               className="cover-card relative aspect-[3/4] rounded-3xl overflow-hidden border border-[var(--border)] group cursor-pointer shadow-xl"
+              onClick={() => onNavigate?.(comp.id)}
             >
               <div className="absolute inset-0 bg-black/60 z-10 transition-colors group-hover:bg-black/80" />
               <img src={comp.img} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={comp.label} />
@@ -201,6 +205,10 @@ export default function Home({ onNavigate, theme, toggleTheme }: { onNavigate?: 
                   </div>
                   <h3 className="text-xl font-black mb-2 text-white">{comp.label}</h3>
                   <p className="text-xs text-gray-300 line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{comp.description}</p>
+                  <div className="mt-3 inline-flex items-center gap-1.5 text-[10px] font-bold text-emerald-400 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-2.5 py-1">
+                    <ui-icon name="sliders-horizontal" size="10"></ui-icon>
+                    Open Design Studio
+                  </div>
                 </div>
               </div>
               <div className="absolute inset-0 border-2 border-transparent group-hover:border-blue-500/50 rounded-3xl transition-colors z-30 pointer-events-none" />

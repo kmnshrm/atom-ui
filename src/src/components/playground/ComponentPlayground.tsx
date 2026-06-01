@@ -103,11 +103,12 @@ function DocsToc({
   slots: SlotConfig[];
   parts: PartConfig[];
   docs: DocSection[];
-  scrollContainerRef: React.RefObject<HTMLDivElement>;
+  scrollContainerRef: React.RefObject<HTMLDivElement | null>;
 }) {
   const [active, setActive] = useState('docs-props');
 
   const sections = [
+    { id: 'docs-overview', label: 'Overview', icon: 'info', count: 0, color: 'blue' },
     { id: 'docs-props', label: 'Props', icon: 'list', count: propCount, color: 'indigo' },
     ...(events.length > 0 ? [{ id: 'docs-events', label: 'Events', icon: 'zap', count: events.length, color: 'emerald' }] : []),
     ...(methods.length > 0 ? [{ id: 'docs-methods', label: 'Methods', icon: 'terminal', count: methods.length, color: 'blue' }] : []),
@@ -445,22 +446,22 @@ function InteractiveDocsContent({
                 const attrDiffers = attrName !== prop.name;
                 return (
                   <tr key={prop.name}>
-                    <td>
+                    <td data-label="Property">
                       <code className="cp-code-inline">{prop.name}</code>
                       {prop.required && <span style={{ color: '#f87171', marginLeft: '4px', fontSize: '0.7rem' }} title="Required">*</span>}
                     </td>
-                    <td>
+                    <td data-label="Attribute">
                       {attrDiffers
                         ? <code className="cp-code-inline" style={{ opacity: 0.75 }}>{attrName}</code>
                         : <span style={{ opacity: 0.35, fontSize: '0.8em' }}>—</span>}
                     </td>
-                    <td>
+                    <td data-label="Type">
                       <span className="cp-type-badge" title={displayType} style={{ maxWidth: '200px', overflow: 'hidden', textOverflow: 'ellipsis', display: 'inline-block', whiteSpace: 'nowrap' }}>
                         {displayType.length > 40 ? displayType.slice(0, 38) + '…' : displayType}
                       </span>
                     </td>
-                    <td><code className="cp-code-inline">{prop.defaultValue !== undefined ? String(prop.defaultValue) : '—'}</code></td>
-                    <td className="cp-prop-desc">{prop.description || '—'}</td>
+                    <td data-label="Default"><code className="cp-code-inline">{prop.defaultValue !== undefined ? String(prop.defaultValue) : '—'}</code></td>
+                    <td data-label="Description" className="cp-prop-desc">{prop.description || '—'}</td>
                   </tr>
                 );
               })}
@@ -487,9 +488,9 @@ function InteractiveDocsContent({
                 <tbody>
                   {events.map(ev => (
                     <tr key={ev.event}>
-                      <td><code className="cp-code-inline">{ev.event}</code></td>
-                      <td><code className="cp-code-inline">{ev.detail || 'void'}</code></td>
-                      <td className="cp-prop-desc">{ev.docs || '—'}</td>
+                      <td data-label="Event"><code className="cp-code-inline">{ev.event}</code></td>
+                      <td data-label="Detail"><code className="cp-code-inline">{ev.detail || 'void'}</code></td>
+                      <td data-label="Description" className="cp-prop-desc">{ev.docs || '—'}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -521,9 +522,9 @@ function InteractiveDocsContent({
                 <tbody>
                   {methods.map(m => (
                     <tr key={m.name}>
-                      <td><code className="cp-code-inline">{m.name}</code></td>
-                      <td><code className="cp-code-inline" style={{ fontSize: '0.75rem' }}>{m.signature}</code></td>
-                      <td className="cp-prop-desc">{m.docs || '—'}</td>
+                      <td data-label="Method"><code className="cp-code-inline">{m.name}</code></td>
+                      <td data-label="Signature"><code className="cp-code-inline" style={{ fontSize: '0.75rem' }}>{m.signature}</code></td>
+                      <td data-label="Description" className="cp-prop-desc">{m.docs || '—'}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -675,9 +676,18 @@ export default function ComponentPlayground({
     return defaults;
   });
   const [copiedCode, setCopiedCode] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
   const [appTheme, setAppTheme] = useState<string>(
     () => document.documentElement.getAttribute('data-theme') || 'light'
   );
+
+  // Detect mobile breakpoint for playground layout switch
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)');
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
 
   // Track app theme changes so preview components receive the correct theme
   useEffect(() => {
@@ -748,7 +758,6 @@ export default function ComponentPlayground({
             <h1 className="cp-component-name">{componentName}</h1>
           </div>
         </div>
-        {/* <p className="cp-description">{description}</p> */}
 
         {/* Tabs */}
         <div className="cp-tabs">
@@ -757,9 +766,10 @@ export default function ComponentPlayground({
               key={tab.id}
               className={`cp-tab ${activeTab === tab.id ? 'cp-tab--active' : ''}`}
               onClick={() => setActiveTab(tab.id)}
+              title={tab.label}
             >
               <ui-icon name={tab.icon} size="16" />
-              {tab.label}
+              <span className="cp-tab-label">{tab.label}</span>
             </button>
           ))}
         </div>
@@ -770,6 +780,68 @@ export default function ComponentPlayground({
           {/* Playground Tab */}
           {activeTab === 'playground' && (
             <div className="cp-playground-layout">
+              {/* ── Mobile: stacked layout (bypass Shadow DOM of ui-resizable-panel) ── */}
+              {isMobile ? (
+                <>
+                  {/* Controls Panel */}
+                  <div className="cp-controls-panel cp-controls-panel--mobile">
+                    <div className="cp-controls-header">
+                      <ui-icon name="settings-2" size="16" />
+                      <span>Properties</span>
+                    </div>
+                    <PropEditor
+                      propConfigs={propConfigs}
+                      values={propValues}
+                      onChange={handlePropChange}
+                    />
+                    <ui-button
+                      variant="ghost"
+                      icon="rotate-ccw"
+                      full-width
+                      class="cp-reset-btn"
+                      onClick={() => {
+                        const defaults: Record<string, any> = {};
+                        propConfigs.forEach(p => { defaults[p.name] = p.defaultValue; });
+                        setPropValues(defaults);
+                      }}
+                    >
+                      Reset to Defaults
+                    </ui-button>
+                  </div>
+
+                  {/* Preview Panel */}
+                  <div className="cp-preview-panel cp-preview-panel--mobile">
+                    <div className="cp-preview-label">
+                      <span>Live Preview</span>
+                      <div className="cp-preview-actions">
+                        <ui-button
+                          variant={copiedCode ? 'success' : 'outline'}
+                          size="sm"
+                          icon={copiedCode ? 'check' : 'copy'}
+                          onClick={handleCopyCode}
+                          title="Copy code"
+                        >
+                          {copiedCode ? 'Copied!' : 'Copy Code'}
+                        </ui-button>
+                      </div>
+                    </div>
+                    <div className="cp-preview-stage">
+                      <div className="cp-preview-grid-bg" />
+                      <div className="cp-preview-content">
+                        {(() => {
+                          const el = renderPreview(propValues);
+                          return React.isValidElement(el)
+                            ? React.cloneElement(el as React.ReactElement<any>, { theme: appTheme })
+                            : el;
+                        })()}
+                      </div>
+                    </div>
+                    <div className="cp-code-section">
+                      <CodePreview code={buildCode(propValues)} language="html" />
+                    </div>
+                  </div>
+                </>
+              ) : (
               <ui-resizable-panel
                 direction="horizontal"
                 panels='[
@@ -842,6 +914,7 @@ export default function ComponentPlayground({
                   </div>
                 </div>
               </ui-resizable-panel>
+              )}
             </div>
           )}
 
@@ -849,6 +922,42 @@ export default function ComponentPlayground({
           {activeTab === 'docs' && (
             <div className="cp-docs-layout">
               <div className="cp-docs-content" ref={docsScrollRef}>
+
+                {/* Overview Section */}
+                <section className="cp-docs-section" id="docs-overview">
+                  <h2 className="cp-docs-section-title">
+                    <ui-icon name="info" size="18" />
+                    Overview
+                  </h2>
+                  <div className="cp-consolidated-overview-box">
+                    <div className="cp-overview-main-info">
+                      <div className="cp-overview-tags">
+                        <ui-tag label={`<${tagName}>`} color="success" />
+                        <ui-tag label="Web Component" color="info" />
+                        <ui-tag label="Stable" color="primary" />
+                      </div>
+                      <p className="cp-overview-desc">{description}</p>
+                    </div>
+                    <div className="cp-overview-metadata-grid">
+                      <div className="cp-metadata-item">
+                        <span className="cp-metadata-label">HTML Tag</span>
+                        <code className="cp-metadata-value">&lt;{tagName}&gt;</code>
+                      </div>
+                      <div className="cp-metadata-item">
+                        <span className="cp-metadata-label">DOM Class</span>
+                        <code className="cp-metadata-value">HTML{componentName.replace(/\s+/g, '')}Element</code>
+                      </div>
+                      <div className="cp-metadata-item">
+                        <span className="cp-metadata-label">Scope</span>
+                        <code className="cp-metadata-value">Shadow DOM</code>
+                      </div>
+                      <div className="cp-metadata-item">
+                        <span className="cp-metadata-label">Export Name</span>
+                        <code className="cp-metadata-value">{componentName.replace(/\s+/g, '')}</code>
+                      </div>
+                    </div>
+                  </div>
+                </section>
 
                 {/* Props Table */}
                 <section className="cp-docs-section" id="docs-props">
@@ -874,22 +983,22 @@ export default function ComponentPlayground({
                           const attrDiffers = attrName !== prop.name;
                           return (
                             <tr key={prop.name}>
-                              <td>
+                              <td data-label="Property">
                                 <code className="cp-code-inline">{prop.name}</code>
                                 {prop.required && <span style={{ color: '#f87171', marginLeft: '4px', fontSize: '0.7rem' }} title="Required">*</span>}
                               </td>
-                              <td>
+                              <td data-label="Attribute">
                                 {attrDiffers
                                   ? <code className="cp-code-inline" style={{ opacity: 0.75 }}>{attrName}</code>
                                   : <span style={{ opacity: 0.35, fontSize: '0.8em' }}>—</span>}
                               </td>
-                              <td>
+                              <td data-label="Type">
                                 <span className="cp-type-badge" title={displayType} style={{ maxWidth: '200px', overflow: 'hidden', textOverflow: 'ellipsis', display: 'inline-block', whiteSpace: 'nowrap' }}>
                                   {displayType.length > 40 ? displayType.slice(0, 38) + '…' : displayType}
                                 </span>
                               </td>
-                              <td><code className="cp-code-inline">{prop.defaultValue !== undefined ? String(prop.defaultValue) : '—'}</code></td>
-                              <td className="cp-prop-desc">{prop.description || '—'}</td>
+                              <td data-label="Default"><code className="cp-code-inline">{prop.defaultValue !== undefined ? String(prop.defaultValue) : '—'}</code></td>
+                              <td data-label="Description" className="cp-prop-desc">{prop.description || '—'}</td>
                             </tr>
                           );
                         })}
@@ -917,9 +1026,9 @@ export default function ComponentPlayground({
                         <tbody>
                           {events.map(ev => (
                             <tr key={ev.event}>
-                              <td><code className="cp-code-inline">{ev.event}</code></td>
-                              <td><code className="cp-code-inline">{ev.detail || 'void'}</code></td>
-                              <td className="cp-prop-desc">{ev.docs || '—'}</td>
+                              <td data-label="Event"><code className="cp-code-inline">{ev.event}</code></td>
+                              <td data-label="Detail"><code className="cp-code-inline">{ev.detail || 'void'}</code></td>
+                              <td data-label="Description" className="cp-prop-desc">{ev.docs || '—'}</td>
                             </tr>
                           ))}
                         </tbody>
@@ -951,9 +1060,9 @@ export default function ComponentPlayground({
                         <tbody>
                           {methods.map(m => (
                             <tr key={m.name}>
-                              <td><code className="cp-code-inline">{m.name}</code></td>
-                              <td><code className="cp-code-inline" style={{ fontSize: '0.75rem' }}>{m.signature}</code></td>
-                              <td className="cp-prop-desc">{m.docs || '—'}</td>
+                              <td data-label="Method"><code className="cp-code-inline">{m.name}</code></td>
+                              <td data-label="Signature"><code className="cp-code-inline" style={{ fontSize: '0.75rem' }}>{m.signature}</code></td>
+                              <td data-label="Description" className="cp-prop-desc">{m.docs || '—'}</td>
                             </tr>
                           ))}
                         </tbody>
@@ -985,9 +1094,9 @@ export default function ComponentPlayground({
                         <tbody>
                           {slots.map(s => (
                             <tr key={s.name}>
-                              <td><code className="cp-code-inline">{s.name}</code></td>
-                              <td className="cp-prop-desc">{s.docs || '—'}</td>
-                              <td>
+                              <td data-label="Slot"><code className="cp-code-inline">{s.name}</code></td>
+                              <td data-label="Description" className="cp-prop-desc">{s.docs || '—'}</td>
+                              <td data-label="Usage">
                                 <code className="cp-code-inline" style={{ fontSize: '0.72rem', opacity: 0.7 }}>
                                   {s.name === '(default)'
                                     ? `<${tagName}>content</${tagName}>`
@@ -1021,9 +1130,9 @@ export default function ComponentPlayground({
                         <tbody>
                           {parts.map(p => (
                             <tr key={p.name}>
-                              <td><code className="cp-code-inline">{p.name}</code></td>
-                              <td className="cp-prop-desc">{p.docs || '—'}</td>
-                              <td><code className="cp-code-inline" style={{ fontSize: '0.72rem', opacity: 0.7 }}>{tagName}::part({p.name})</code></td>
+                              <td data-label="Part"><code className="cp-code-inline">{p.name}</code></td>
+                              <td data-label="Description" className="cp-prop-desc">{p.docs || '—'}</td>
+                              <td data-label="Selector"><code className="cp-code-inline" style={{ fontSize: '0.72rem', opacity: 0.7 }}>{tagName}::part({p.name})</code></td>
                             </tr>
                           ))}
                         </tbody>
