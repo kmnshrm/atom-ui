@@ -548,6 +548,23 @@ const componentRegistry: Record<string, DynamicMetadata> = {
   },
 
   // ─── New Components ───────────────────────────────────────────────────────
+  label: {
+    description: 'Enterprise-grade, fully accessible form label component supporting tooltips, icons, and validation states.',
+    props: [
+      { name: 'label', type: 'string', label: 'Label Text', defaultValue: 'Email Address', description: 'Primary label text' },
+      { name: 'size', type: 'select', label: 'Size', defaultValue: 'md', options: ['sm', 'md', 'lg'], description: 'Semantic size' },
+      { name: 'weight', type: 'select', label: 'Weight', defaultValue: 'medium', options: ['light', 'normal', 'medium', 'bold'], description: 'Font weight' },
+      { name: 'variant', type: 'select', label: 'Variant', defaultValue: 'default', options: ['default', 'primary', 'success', 'warning', 'danger', 'info'], description: 'Colour variant' },
+      { name: 'required', type: 'boolean', label: 'Required', defaultValue: false, description: 'Shows an asterisk' },
+      { name: 'optional', type: 'boolean', label: 'Optional', defaultValue: false, description: 'Shows (optional) hint' },
+      { name: 'disabled', type: 'boolean', label: 'Disabled', defaultValue: false, description: 'Disabled state' },
+      { name: 'invalid', type: 'boolean', label: 'Invalid', defaultValue: false, description: 'Error state styling' },
+      { name: 'errorText', type: 'string', label: 'Error Text', defaultValue: 'Please enter a valid email.', description: 'Validation message' },
+      { name: 'helperText', type: 'string', label: 'Helper Text', defaultValue: 'We will never share your email.', description: 'Hint text' },
+      { name: 'tooltip', type: 'string', label: 'Tooltip', defaultValue: 'This field is required for communication.', description: 'Info tooltip content' },
+    ],
+  },
+
   'button-toggle-group': {
     description: 'A container for grouping related button toggles with single or multiple selection, validation states, and accessible labeling.',
     props: [

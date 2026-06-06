@@ -60,7 +60,13 @@ export default function DemoRenderer({ html, label }: DemoRendererProps) {
       Array.from(oldScript.attributes).forEach(attr =>
         newScript.setAttribute(attr.name, attr.value)
       );
-      newScript.textContent = scriptText;
+      
+      let finalScriptText = scriptText;
+      if (finalScriptText.includes('section.')) {
+        finalScriptText = `const section = document.currentScript.parentElement;\n` + finalScriptText;
+      }
+      
+      newScript.textContent = finalScriptText;
       oldScript.parentNode?.replaceChild(newScript, oldScript);
     });
   }, [html]);
