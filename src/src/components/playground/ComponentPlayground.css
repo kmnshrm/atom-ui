@@ -598,7 +598,7 @@
 }
 
 /* Light Theme Support */
-.theme-light .cp-root {
+.theme-light.cp-root {
   --cp-text: #1e293b;
 }
 
@@ -654,6 +654,12 @@
 .theme-light .cp-controls-panel::-webkit-scrollbar-track { background: rgba(0,0,0,0.04); }
 .theme-light .cp-controls-panel::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.25); }
 .theme-light .cp-controls-panel::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.4); }
+
+.theme-light .cp-controls-header {
+  color: rgba(0,0,0,0.4);
+  border-bottom-color: rgba(0,0,0,0.08);
+}
+
 
 .theme-light .cp-props-table td,
 .theme-light .cp-docs-text {
@@ -2194,3 +2200,29 @@
 
 
 
+
+/* Global Demo Fixes for Theme Compatibility */
+.cp-root [style*='background: white'],
+.cp-root [style*='background: #fff'],
+.cp-root [style*='background:#fff'],
+.cp-root [style*='background:white'] {
+  background: var(--bg-primary, #1e293b) !important;
+}
+
+.cp-root [style*='background: #f8fafc'],
+.cp-root [style*='background: rgba(0,0,0,0.02)'] {
+  background: var(--bg-secondary, #0f172a) !important;
+}
+
+.cp-root [style*='border: 1px solid rgba(0,0,0,0.05)'],
+.cp-root [style*='border: 1px solid #e2e8f0'],
+.cp-root [style*='border: 1px solid #eef2f6'] {
+  border-color: var(--border-default, rgba(255,255,255,0.1)) !important;
+}
+
+.cp-root [style*='color: #1e293b'],
+.cp-root [style*='color: #4b5563'],
+.cp-root [style*='color: #6b7280'],
+.cp-root [style*='color: #64748b'] {
+  color: var(--text-primary, #f8fafc) !important;
+}

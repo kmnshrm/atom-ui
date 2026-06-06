@@ -103,7 +103,7 @@ function DocsToc({
   slots: SlotConfig[];
   parts: PartConfig[];
   docs: DocSection[];
-  scrollContainerRef: React.RefObject<HTMLDivElement>;
+  scrollContainerRef: React.RefObject<HTMLDivElement | null>;
 }) {
   const [active, setActive] = useState('docs-props');
 
@@ -676,7 +676,7 @@ export default function ComponentPlayground({
   });
   const [copiedCode, setCopiedCode] = useState(false);
   const [appTheme, setAppTheme] = useState<string>(
-    () => document.documentElement.getAttribute('data-theme') || 'light'
+    () => document.documentElement.getAttribute('data-theme') || 'dark'
   );
 
   // Track app theme changes so preview components receive the correct theme
@@ -717,29 +717,31 @@ export default function ComponentPlayground({
   // ── Interactive Docs mode: skip tab shell, render scrollable content directly ──
   if (interactiveDocs) {
     return (
-      <InteractiveDocsContent
-        componentName={componentName}
-        tagName={tagName}
-        description={description}
-        props={propConfigs}
-        propConfigs={propConfigs}
-        renderPreview={renderPreview}
-        buildCode={buildCode}
-        docs={docs}
-        examples={examples}
-        demoSections={demoSections}
-        onSectionChange={() => {}}
-        noScrollWrapper={true}
-        events={events}
-        methods={methods}
-        slots={slots}
-        parts={parts}
-      />
+      <div className={`cp-root theme-${appTheme}`}>
+        <InteractiveDocsContent
+          componentName={componentName}
+          tagName={tagName}
+          description={description}
+          props={propConfigs}
+          propConfigs={propConfigs}
+          renderPreview={renderPreview}
+          buildCode={buildCode}
+          docs={docs}
+          examples={examples}
+          demoSections={demoSections}
+          onSectionChange={() => {}}
+          noScrollWrapper={true}
+          events={events}
+          methods={methods}
+          slots={slots}
+          parts={parts}
+        />
+      </div>
     );
   }
 
   return (
-    <div className="cp-root">
+    <div className={`cp-root theme-${appTheme}`}>
       {/* Header */}
       <div className="cp-header">
         <div className="cp-header-title-row">
@@ -793,9 +795,10 @@ export default function ComponentPlayground({
                     propConfigs={propConfigs}
                     values={propValues}
                     onChange={handlePropChange}
+                    theme={appTheme}
                   />
                   <ui-button
-                    variant="ghost"
+                    variant="outline"
                     icon="rotate-ccw"
                     full-width
                     class="cp-reset-btn"

@@ -26,8 +26,10 @@ initTransferListGlobals();
 (function injectStencilLibrary() {
   const script = document.createElement('script');
   script.type = 'module';
-  // import.meta.env.BASE_URL is replaced at build time ('/atom/' in production, '/' in dev)
-  script.src = `${import.meta.env.BASE_URL}exploration-project-tailwind/exploration-project-tailwind.esm.js`;
+  // Add a timestamp cache buster in development to prevent stale chunk errors
+  const isDev = import.meta.env.DEV;
+  const cacheBuster = isDev ? `?v=${Date.now()}` : '';
+  script.src = `${import.meta.env.BASE_URL}exploration-project-tailwind/exploration-project-tailwind.esm.js${cacheBuster}`;
   document.head.appendChild(script);
 })();
 

@@ -6,9 +6,10 @@ interface PropEditorProps {
   propConfigs: PropConfig[];
   values: Record<string, any>;
   onChange: (name: string, value: any) => void;
+  theme?: string;
 }
 
-export default function PropEditor({ propConfigs, values, onChange }: PropEditorProps) {
+export default function PropEditor({ propConfigs, values, onChange, theme = 'dark' }: PropEditorProps) {
   const booleans = propConfigs.filter(c => c.type === 'boolean');
   const selects = propConfigs.filter(c => c.type === 'select');
   const inputs = propConfigs.filter(c => c.type === 'string' || c.type === 'textarea');
@@ -22,39 +23,38 @@ export default function PropEditor({ propConfigs, values, onChange }: PropEditor
   ];
 
   return (
-    <div className="pe-root">
+    <div className={`pe-root ${theme === 'light' ? 'theme-light' : 'theme-dark'}`}>
       <ui-accordion 
         items={JSON.stringify(items)} 
         multiple="true" 
         default-open={JSON.stringify(items.map(i => i.id))}
-        variant="default"
-        background-color="transparent"
+        class="pe-accordion"
       >
         {booleans.length > 0 && (
           <div slot="content-booleans" className="pe-booleans-wrap pe-accordion-body">
             {booleans.map(config => (
-              <PropControl key={config.name} config={config} value={values[config.name]} onChange={val => onChange(config.name, val)} />
+              <PropControl key={config.name} config={config} value={values[config.name]} onChange={val => onChange(config.name, val)} theme={theme} />
             ))}
           </div>
         )}
         {selects.length > 0 && (
           <div slot="content-selects" className="pe-grid-2 pe-accordion-body">
             {selects.map(config => (
-              <PropControl key={config.name} config={config} value={values[config.name]} onChange={val => onChange(config.name, val)} />
+              <PropControl key={config.name} config={config} value={values[config.name]} onChange={val => onChange(config.name, val)} theme={theme} />
             ))}
           </div>
         )}
         {inputs.length > 0 && (
           <div slot="content-inputs" className="pe-grid-2 pe-accordion-body">
             {inputs.map(config => (
-              <PropControl key={config.name} config={config} value={values[config.name]} onChange={val => onChange(config.name, val)} />
+              <PropControl key={config.name} config={config} value={values[config.name]} onChange={val => onChange(config.name, val)} theme={theme} />
             ))}
           </div>
         )}
         {others.length > 0 && (
           <div slot="content-others" className="pe-grid-2 pe-accordion-body">
             {others.map(config => (
-              <PropControl key={config.name} config={config} value={values[config.name]} onChange={val => onChange(config.name, val)} />
+              <PropControl key={config.name} config={config} value={values[config.name]} onChange={val => onChange(config.name, val)} theme={theme} />
             ))}
           </div>
         )}
@@ -67,10 +67,12 @@ function PropControl({
   config,
   value,
   onChange,
+  theme,
 }: {
   config: PropConfig;
   value: any;
   onChange: (v: any) => void;
+  theme: string;
 }) {
   const [jsonError, setJsonError] = useState<string | null>(null);
   const [jsonText, setJsonText] = useState(() =>
@@ -139,10 +141,15 @@ function PropControl({
     }
   };
 
+  const formatLabel = (name: string) => {
+    const result = name.replace(/([A-Z])/g, ' $1');
+    return result.charAt(0).toUpperCase() + result.slice(1);
+  };
+
   return (
     <div className="pe-control">
       <label className="pe-label">
-        <span className="pe-prop-name">{config.name}</span>
+        <span className="pe-prop-name">{formatLabel(config.name)}</span>
         {config.description && (
           <span className="pe-prop-hint" title={config.description}>?</span>
         )}
@@ -155,7 +162,7 @@ function PropControl({
           label={value ? 'true' : 'false'}
           size="sm"
           color="success"
-          theme="dark"
+          theme={theme}
         />
       )}
 
@@ -165,7 +172,7 @@ function PropControl({
           value={value ?? ''}
           placeholder={config.label}
           size="sm"
-          theme="dark"
+          theme={theme}
         />
       )}
 
@@ -175,7 +182,7 @@ function PropControl({
           value={value ?? ''}
           placeholder={config.label}
           size="sm"
-          theme="dark"
+          theme={theme}
         />
       )}
 
@@ -186,7 +193,7 @@ function PropControl({
             type="number"
             value={String(value ?? 0)}
             size="sm"
-            theme="dark"
+            theme={theme}
             class="pe-number-input"
           />
           <input

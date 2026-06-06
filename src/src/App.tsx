@@ -136,7 +136,7 @@ export default function App() {
   const [activeItem, setActiveItem] = useState(() => {
     return getPageIdFromHash(window.location.hash);
   });
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
 
   const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
 

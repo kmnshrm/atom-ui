@@ -22,8 +22,8 @@ export async function initWorkspaceManagerDemo() {
       <div class="controls-column" style="display: flex; flex-direction: column; gap: 20px;">
         
         <!-- Templates Section -->
-        <div class="control-card" style="background: white; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
-          <h4 style="margin: 0 0 16px; font-size: 14px; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em; display: flex; align-items: center; gap: 8px;">
+        <div class="control-card" style="background: var(--bg-primary); border-radius: 12px; padding: 20px; border: 1px solid var(--border-default); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+          <h4 style="margin: 0 0 16px; font-size: 14px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em; display: flex; align-items: center; gap: 8px;">
             <span style="color: #10b981;">📐</span> Layout Templates
           </h4>
           <div style="display: flex; flex-direction: column; gap: 10px;">
@@ -51,8 +51,8 @@ export async function initWorkspaceManagerDemo() {
         </div>
 
         <!-- Component Actions -->
-        <div class="control-card" style="background: white; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
-          <h4 style="margin: 0 0 16px; font-size: 14px; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em; display: flex; align-items: center; gap: 8px;">
+        <div class="control-card" style="background: var(--bg-primary); border-radius: 12px; padding: 20px; border: 1px solid var(--border-default); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+          <h4 style="margin: 0 0 16px; font-size: 14px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em; display: flex; align-items: center; gap: 8px;">
             <span style="color: #10b981;">⚡</span> Quick Actions
           </h4>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
@@ -67,26 +67,26 @@ export async function initWorkspaceManagerDemo() {
         </div>
 
         <!-- Status & Stats -->
-        <div class="control-card" style="background: #f8fafc; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0;">
-          <h4 style="margin: 0 0 12px; font-size: 12px; text-transform: uppercase; color: #94a3b8; letter-spacing: 0.05em;">Workspace Status</h4>
+        <div class="control-card" style="background: var(--bg-secondary); border-radius: 12px; padding: 20px; border: 1px solid var(--border-default);">
+          <h4 style="margin: 0 0 12px; font-size: 12px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">Workspace Status</h4>
           <div style="display: flex; flex-direction: column; gap: 12px;">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 13px; color: #64748b;">Active Regions</span>
-              <span id="stat-regions" style="font-weight: 700; color: #1e293b; background: white; padding: 2px 8px; border-radius: 4px; border: 1px solid #e2e8f0;">0</span>
+              <span style="font-size: 13px; color: var(--text-secondary);">Active Regions</span>
+              <span id="stat-regions" style="font-weight: 700; color: var(--text-primary); background: var(--bg-primary); padding: 2px 8px; border-radius: 4px; border: 1px solid var(--border-default);">0</span>
             </div>
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 13px; color: #64748b;">Total Panels</span>
-              <span id="stat-panels" style="font-weight: 700; color: #1e293b; background: white; padding: 2px 8px; border-radius: 4px; border: 1px solid #e2e8f0;">0</span>
+              <span style="font-size: 13px; color: var(--text-secondary);">Total Panels</span>
+              <span id="stat-panels" style="font-weight: 700; color: var(--text-primary); background: var(--bg-primary); padding: 2px 8px; border-radius: 4px; border: 1px solid var(--border-default);">0</span>
             </div>
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 13px; color: #64748b;">Persistence</span>
-              <span style="font-size: 11px; background: #dcfce7; color: #15803d; padding: 2px 6px; border-radius: 4px; font-weight: bold;">Enabled</span>
+              <span style="font-size: 13px; color: var(--text-secondary);">Persistence</span>
+              <span style="font-size: 11px; background: var(--color-success-subtle); color: var(--color-success); padding: 2px 6px; border-radius: 4px; font-weight: bold;">Enabled</span>
             </div>
           </div>
         </div>
 
-        <div style="padding: 16px; background: #eff6ff; border-radius: 10px; border-left: 4px solid #10b981;">
-          <p style="margin: 0; font-size: 12px; color: #1e40af; line-height: 1.5;">
+        <div style="padding: 16px; background: var(--bg-selected); border-radius: 10px; border-left: 4px solid var(--color-primary);">
+          <p style="margin: 0; font-size: 12px; color: var(--color-primary); line-height: 1.5;">
             <strong>Pro Tip:</strong> Layouts are persisted to localStorage using the <code>state-key</code> property. Splitters are bidirectionally resizable.
           </p>
         </div>
@@ -94,7 +94,7 @@ export async function initWorkspaceManagerDemo() {
 
       <!-- Main Canvas Area -->
       <div class="canvas-column" style="display: flex; flex-direction: column; gap: 20px;">
-        <div style="background: white; border-radius: 16px; border: 1px solid #e2e8f0; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); height: 750px; position: relative;">
+        <div style="background: var(--bg-primary); border-radius: 16px; border: 1px solid var(--border-default); overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); height: 750px; position: relative;">
           <ui-workspace-manager 
             id="zenith-wm-playground" 
             save-state="true" 
@@ -106,10 +106,10 @@ export async function initWorkspaceManagerDemo() {
         <!-- Data Output -->
         <div id="wm-json-output" style="display: none;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-            <h4 style="margin: 0; font-size: 14px; color: #64748b; text-transform: uppercase;">Exported Layout JSON</h4>
+            <h4 style="margin: 0; font-size: 14px; color: var(--text-muted); text-transform: uppercase;">Exported Layout JSON</h4>
             <ui-button onclick="this.closest('#wm-json-output').style.display='none'" variant="ghost" color="danger" label="Close ×"></ui-button>
           </div>
-          <pre id="wm-json-display" style="background: #0f172a; color: #38bdf8; padding: 20px; border-radius: 12px; font-family: 'Fira Code', monospace; font-size: 12px; overflow-x: auto; max-height: 400px; box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);"></pre>
+          <pre id="wm-json-display" style="background: var(--bg-secondary); color: var(--text-primary); padding: 20px; border-radius: 12px; font-family: 'Fira Code', monospace; font-size: 12px; overflow-x: auto; max-height: 400px; box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);"></pre>
         </div>
       </div>
     </div>
@@ -125,9 +125,12 @@ export async function initWorkspaceManagerDemo() {
       const layoutKey = btn.getAttribute('data-layout');
       if (configs && configs[layoutKey]) {
         // Visual feedback
-        templateBtns.forEach(b => (b.style.borderColor = '#e2e8f0'));
-        btn.style.borderColor = '#10b981';
-        btn.style.background = '#eff6ff';
+        templateBtns.forEach(b => {
+          b.style.borderColor = 'var(--border-default)';
+          b.style.background = 'transparent';
+        });
+        btn.style.borderColor = 'var(--color-primary)';
+        btn.style.background = 'var(--bg-selected)';
 
         await applyLayoutConfig('zenith-wm-playground', configs[layoutKey]);
         updateStats();
