@@ -2072,9 +2072,9 @@ export function initAccordionDemo() {
             content: `
               <div style="margin-bottom:4px;">
                 <h4 style="margin: 0 0 4px 0; font-size: 13px; font-weight: 700; color:var(--text-primary,#1e293b);">Show/Hide operation</h4>
-                <p style="margin:0 0 16px 0; font-size: 13px; color: #475569;">An accordion always contains the category title, an expanded and a collapsed state, an icon indicating expansion, and the spacing between them.</p>
+                <p style="margin:0 0 16px 0; font-size: 13px; ">An accordion always contains the category title, an expanded and a collapsed state, an icon indicating expansion, and the spacing between them.</p>
                 <h4 style="margin: 0 0 4px 0; font-size: 13px; font-weight: 700; color:var(--text-primary,#1e293b);">Tabbed interface</h4>
-                <p style="margin:0 0 16px 0; font-size: 13px; color: #475569;">A list of items where exactly one item is expanded into a panel.</p>
+                <p style="margin:0 0 16px 0; font-size: 13px; ">A list of items where exactly one item is expanded into a panel.</p>
                 <button style="padding: 6px 12px; background:var(--bg-primary,#ffffff); border: 1px solid #cbd5e1; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; transition: all 0.2s ease;">Read more</button>
               </div>
             `,
@@ -2111,7 +2111,7 @@ export function initAccordionDemo() {
             content: `
               <div style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
                 <div style="flex: 1; min-width: 250px;">
-                  <p style="margin: 0 0 16px 0; color: #475569; font-size: 14px; line-height: 1.6;">
+                  <p style="margin: 0 0 16px 0;  font-size: 14px; line-height: 1.6;">
                     Whether it's a system outage or an increase in activity, you need to know! Leverage LogDNA's alert feature to be informed on your system's activity. LogDNA integrates with many 3rd party solutions, so you can receive alerts with other applications like pagerDuty, slack, or another API.
                   </p>
                 </div>

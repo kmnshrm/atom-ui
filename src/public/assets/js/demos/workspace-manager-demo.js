@@ -43,25 +43,25 @@ export async function initWorkspaceManagerDemo() {
             <span style="color:#10b981;">⬡</span> Layout Templates
           </h4>
           <div style="display: flex; flex-direction: column; gap: 8px;">
-            <ui-button class="template-btn" data-layout="copilot" variant="outline" color="secondary" style="--btn-width: 100%; text-align: left; display: block; border: 1px solid rgba(16,185,129,0.2); padding: 10px; background: rgba(16,185,129,0.04);">
-              <strong style="display: block; font-size: 13px; color: #cbd5e1;">GitHub Copilot</strong>
-              <span style="font-size: 11px; color: #475569;">Editor + AI Assistant (70:30)</span>
+            <ui-button class="template-btn" data-layout="copilot" variant="outline">
+              <strong style="display: block; font-size: 13px; ">GitHub Copilot</strong>
+              <span style="font-size: 11px; ">Editor + AI Assistant (70:30)</span>
             </ui-button>
-            <ui-button class="template-btn" data-layout="ide" variant="outline" color="secondary" style="--btn-width: 100%; text-align: left; display: block; border: 1px solid #1e293b; padding: 10px;">
-              <strong style="display: block; font-size: 13px; color: #cbd5e1;">IDE Layout</strong>
-              <span style="font-size: 11px; color: #475569;">Explorer + Editor + Console</span>
+            <ui-button class="template-btn" data-layout="ide" variant="outline">
+              <strong style="display: block; font-size: 13px; ">IDE Layout</strong>
+              <span style="font-size: 11px; ">Explorer + Editor + Console</span>
             </ui-button>
-            <ui-button class="template-btn" data-layout="dashboard" variant="outline" color="secondary" style="--btn-width: 100%; text-align: left; display: block; border: 1px solid #1e293b; padding: 10px;">
-              <strong style="display: block; font-size: 13px; color: #cbd5e1;">Grid Dashboard</strong>
-              <span style="font-size: 11px; color: #475569;">Multi-widget visual layout</span>
+            <ui-button class="template-btn" data-layout="dashboard" variant="outline">
+              <strong style="display: block; font-size: 13px; ">Grid Dashboard</strong>
+              <span style="font-size: 11px; ">Multi-widget visual layout</span>
             </ui-button>
-            <ui-button class="template-btn" data-layout="data-center" variant="outline" color="warning" style="--btn-width: 100%; text-align: left; display: block; border: 1px solid rgba(245,158,11,0.25); padding: 10px; background: rgba(245,158,11,0.04);">
-              <strong style="display: block; font-size: 13px; color: #fcd34d;">📊 Data Center</strong>
+            <ui-button class="template-btn" data-layout="data-center" variant="outline" color="warning" >
+              <strong style="display: block; font-size: 13px; ">📊 Data Center</strong>
               <span style="font-size: 11px; color: #78716c;">Rich tables &amp; metrics demo</span>
             </ui-button>
-            <ui-button class="template-btn" data-layout="containers" variant="outline" color="secondary" style="--btn-width: 100%; text-align: left; display: block; border: 1px solid #1e293b; padding: 10px;">
-              <strong style="display: block; font-size: 13px; color: #cbd5e1;">Container Types</strong>
-              <span style="font-size: 11px; color: #475569;">Content, Nav, and Header-only</span>
+            <ui-button class="template-btn" data-layout="containers" variant="outline">
+              <strong style="display: block; font-size: 13px; ">Container Types</strong>
+              <span style="font-size: 11px; ">Content, Nav, and Header-only</span>
             </ui-button>
           </div>
         </div>
@@ -74,10 +74,10 @@ export async function initWorkspaceManagerDemo() {
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
             <ui-button id="wm-add-panel-btn" variant="outline" color="primary" label="+ Panel"></ui-button>
             <ui-button id="wm-add-region-btn" variant="outline" color="success" label="+ Region"></ui-button>
-            <ui-button id="wm-split-h-btn" variant="outline" color="secondary" label="Split H"></ui-button>
-            <ui-button id="wm-split-v-btn" variant="outline" color="secondary" label="Split V"></ui-button>
+            <ui-button id="wm-split-h-btn" variant="outline"label="Split H"></ui-button>
+            <ui-button id="wm-split-v-btn" variant="outline"label="Split V"></ui-button>
             <ui-button id="wm-merge-btn" variant="outline" color="warning" label="Merge"></ui-button>
-            <ui-button id="wm-export-btn" variant="outline" color="secondary" label="Export JSON"></ui-button>
+            <ui-button id="wm-export-btn" variant="outline"label="Export JSON"></ui-button>
             <ui-button id="wm-reset-btn" variant="outline" color="danger" label="Reset All" style="grid-column: span 2;"></ui-button>
           </div>
         </div>
@@ -141,13 +141,7 @@ export async function initWorkspaceManagerDemo() {
       const layoutKey = btn.getAttribute('data-layout');
       if (configs && configs[layoutKey]) {
         // Visual feedback
-        templateBtns.forEach(b => {
-          b.style.borderColor = '#1e293b';
-          b.style.background = '';
-        });
-        btn.style.borderColor = 'rgba(16,185,129,0.5)';
-        btn.style.background = 'rgba(16,185,129,0.08)';
-
+       
         await applyLayoutConfig('zenith-wm-playground', configs[layoutKey]);
         updateStats();
       }

@@ -225,8 +225,14 @@ export const categoryNavItems: NavItem[] = [
       },
       {
         id: "dropdown",
-        label: "Dropdown",
+        label: "Dropdown down",
         icon: "chevron-down-square",
+        iconLibrary: "lucide",
+      },
+      {
+        id: "multi-cascading-dropdown",
+        label: "Multi-Cascading Dropdown",
+        icon: "layers",
         iconLibrary: "lucide",
       },
       { id: "input", label: "Input", icon: "pencil", iconLibrary: "lucide" },

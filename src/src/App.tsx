@@ -45,6 +45,7 @@ const RadioPage = safeLazy(() => import('./pages/components/RadioPage'));
 const AccordionPage = safeLazy(() => import('./pages/components/AccordionPage'));
 const ButtonTogglePage = safeLazy(() => import('./pages/components/ButtonTogglePage'));
 const DropdownPage = safeLazy(() => import('./pages/components/DropdownPage'));
+const MultiCascadingDropdownPage = safeLazy(() => import('./pages/components/MultiCascadingDropdownPage'));
 const LoaderPage = safeLazy(() => import('./pages/components/LoaderPage'));
 const DynamicComponentPage = safeLazy(() => import('./pages/components/DynamicComponentPage'));
 
@@ -63,6 +64,7 @@ const COMPONENT_PAGES: Record<string, React.ComponentType> = {
   accordian: AccordionPage,
   'button-toggle': ButtonTogglePage,
   dropdown: DropdownPage,
+  'multi-cascading-dropdown': MultiCascadingDropdownPage,
   loader: LoaderPage,
 };
 
@@ -358,3 +360,5 @@ export default function App() {
     </div>
   );
 }
+  / /   t r i g g e r   H M R   u p d a t e  
+ 

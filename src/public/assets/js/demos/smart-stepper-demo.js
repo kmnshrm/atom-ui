@@ -12,7 +12,7 @@ export function initSmartStepperDemo() {
            <div style="padding: 20px;">
              <h4>Step 1: Account Setup</h4>
              <p>Enter your username and password.</p>
-             <ui-button onclick="document.getElementById('mySmartStepper').next()" style="padding: 8px 16px; background: #10b981; color: white; border: none; border-radius: 4px; cursor: pointer;">Next Step</ui-button>
+             <ui-button onclick="document.getElementById('mySmartStepper').next()" >Next Step</ui-button>
            </div>
         </smart-step>
         
@@ -21,8 +21,8 @@ export function initSmartStepperDemo() {
              <h4>Step 2: Profile Information</h4>
              <p>Tell us more about yourself.</p>
              <div style="margin-top: 10px;">
-                <ui-button onclick="document.getElementById('mySmartStepper').prev()" style="padding: 8px 16px; background: #9ca3af; color: white; border: none; border-radius: 4px; cursor: pointer; margin-right: 8px;">Back</ui-button>
-                <ui-button onclick="document.getElementById('mySmartStepper').next()" style="padding: 8px 16px; background: #10b981; color: white; border: none; border-radius: 4px; cursor: pointer;">Next Step</ui-button>
+                <ui-button onclick="document.getElementById('mySmartStepper').prev()" >Back</ui-button>
+                <ui-button onclick="document.getElementById('mySmartStepper').next()" >Next Step</ui-button>
              </div>
            </div>
         </smart-step>
@@ -33,7 +33,7 @@ export function initSmartStepperDemo() {
              <p>Please review all your information before submitting.</p>
              <div style="margin-top: 10px;">
                 <ui-button onclick="document.getElementById('mySmartStepper').prev()" style="padding: 8px 16px; background: #9ca3af; color: white; border: none; border-radius: 4px; cursor: pointer; margin-right: 8px;">Back</ui-button>
-                <ui-button onclick="document.getElementById('mySmartStepper').goTo(0)" style="padding: 8px 16px; background: #10b981; color: white; border: none; border-radius: 4px; cursor: pointer;">Finish & Reset</ui-button>
+                <ui-button onclick="document.getElementById('mySmartStepper').goTo(0)" >Finish & Reset</ui-button>
              </div>
            </div>
         </smart-step>

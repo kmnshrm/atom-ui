@@ -22,22 +22,28 @@
   margin-bottom: 0.5rem;
 }
 
+.pe-label ui-tooltip {
+  display: flex;
+  align-items: center;
+}
+
 .pe-prop-name {
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
   font-size: 0.78rem;
   font-weight: 600;
   color: rgba(255,255,255,0.65);
+  line-height: 1;
 }
 
 .pe-prop-hint {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: rgba(255,255,255,0.08);
-  font-size: 0.65rem;
+  font-size: 0.55rem;
   color: rgba(255,255,255,0.35);
   cursor: help;
   flex-shrink: 0;

@@ -640,7 +640,13 @@ window.showInteractiveStepper = function () {
   if (!container) return;
 
   container.innerHTML = `
-    <div style="background-color: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+    <style>
+      #stepperDemoContainer ui-dropdown,
+      #stepperDemoContainer ui-input {
+        width: 100%;
+      }
+    </style>
+    <div style="background-color: var(--bg-primary, #ffffff); color: var(--text-primary, #111827); border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
       <div style="display: flex; gap: 30px; flex-wrap: wrap;">
         <div style="flex: 1; min-width: 280px;">
           <h3 style="margin-top: 0;">🎮 Interactive Playground</h3>
@@ -678,7 +684,7 @@ window.showInteractiveStepper = function () {
             </div>
           </div>
         </div>
-        <div style="flex: 2; min-width: 400px; background-color: #f9fafb; padding: 40px; border-radius: 12px; border: 1px solid #e5e7eb; display: flex; align-items: center; justify-content: center;">
+        <div style="flex: 2; min-width: 400px; background-color: var(--bg-secondary, #f9fafb); padding: 40px; border-radius: 12px; border: 1px solid var(--border-default, #e5e7eb); display: flex; align-items: center; justify-content: center;">
           <ui-stepper id="interactiveStepper" style="width: 100%;" icon-library="lucide"></ui-stepper>
         </div>
       </div>

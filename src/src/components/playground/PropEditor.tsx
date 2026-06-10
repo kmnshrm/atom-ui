@@ -148,14 +148,14 @@ function PropControl({
 
   return (
     <div className="pe-control">
-      <label className="pe-label">
+      <ui-label className="pe-label">
         <span className="pe-prop-name">{formatLabel(config.name)}</span>
         {config.description && (
           <ui-tooltip content={config.description} position="top" trigger="hover">
             <span slot="target" className="pe-prop-hint">?</span>
           </ui-tooltip>
         )}
-      </label>
+      </ui-label>
 
       {config.type === 'boolean' && (
         <ui-switch
